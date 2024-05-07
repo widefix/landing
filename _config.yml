@@ -1,0 +1,17 @@
+baseurl: ""
+url: "https://widefix.com"
+
+name: WideFix
+title: Your Trusted Ruby On Rails Development Partner - WideFix
+description: "Looking to build custom software with Ruby On Rails? Look no further than our trusted and reliable team. We'll work with you every step of the way to bring your vision to life."
+image: https://raw.githubusercontent.com/widefix/widefix/main/img/block-hero.jpg
+
+plugins:
+  - jekyll-feed
+
+sass:
+  sass_dir: _sass
+
+collections:
+  showcases:
+    output: true

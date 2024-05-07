@@ -1,0 +1,335 @@
+---
+layout: default
+---
+
+<section class="case-banner-top">
+  <div class="inner">
+      <div class="banner-content">
+          <h1>Stripe Integration consistency <span class="oval">fix</span> to prevent financial <span class="stripe">losses</span>
+          </h1>
+      </div>
+      <div class="img-wrapper">
+          <img src="../assets/img/showcases/wo.png" alt="Worship online">
+      </div>
+  </div>
+</section>
+
+<section class="case-description gray">
+  <div class="inner p-vertical">
+      <div class="description">
+          <h2>Solved New User Payment Friction with Stripe Optimization</h2>
+          <p>Identified and eliminated bottlenecks within the payment flow to <strong><i>improve conversion rates</i></strong>
+              for new sign-ups.</p>
+      </div>
+      <div class="menu">
+          <ul>
+              <li><a class="active" href="#what">Stripe Integration</a></li>
+              <li><a href="#problem">Problem</a></li>
+              <li><a href="#solution">Solution</a></li>
+              <li><a href="#results">Results</a></li>
+              <li><a href="#help">Help</a></li>
+              <li><a href="#other">Other Issues</a></li>
+          </ul>
+      </div>
+  </div>
+</section>
+
+<section class="case-details" id="what">
+  <div class="inner p-vertical">
+      <div class="case-details-title">
+          <h2 class="with-crown">
+              Stripe integration
+          </h2>
+          <p>
+              We fixed data consistency issues between the app and Stripe. The fix resulted in an immediate recovery
+              of $525 monthly recurring revenue (MRR) and <strong><i>prevented future financial losses that could be
+              up to $1500 MRR.</i></strong>
+          </p>
+      </div>
+      <div>
+          <img src="../assets/img/showcases/case/stripe-wo.svg" alt="Puzzle" width="670" height="325"/>
+      </div>
+
+  </div>
+</section>
+
+<section class="case-problem gray" id="problem">
+  <div class="inner p-vertical">
+      <h2 class="problem">Problem</h2>
+      <p>
+          While the number of new users increased, the <strong><i>revenue slowly fell</i></strong>.
+      </p>
+      <div class="curvy-image">
+          <img src="../assets/img/showcases/case/laptop.png" alt="Laptop"/>
+      </div>
+  </div>
+</section>
+
+<section class="case-solution" id="solution">
+  <div class="inner p-vertical">
+      <div>
+          <h2 class="solution">Solution</h2>
+          <p>
+              We gathered all the data from Stripe and saved it into our database. We then analyzed it using SQL and
+              Metabase, revealing a severe Stripe integration breach. This breach was related to asynchronous
+              communication and the unordered processing of webhooks. Our team worked together to come up with
+              possible solutions and ultimately found an easy fix for the issue regarding the architecture. The fix
+              didn't pose any risks to the business. We were able to fix the architectural issue related to the
+              webhook processing and correct the historical data. <strong><i>We also activated subscriptions for all
+              users we could recover.</i></strong>
+          </p>
+          <p>
+              We have set up monitoring with Metabase and Slack to prevent the issue from happening again.
+          </p>
+      </div>
+      <div>
+          <img src="../assets/img/showcases/case/slack.png" alt="Solution">
+      </div>
+  </div>
+</section>
+
+<section class="case-results gray" id="results">
+  <div class="inner p-vertical">
+      <h2 class="results">
+          Results
+      </h2>
+      <div class="results-boxes">
+          <!-- <div class="result-box dark-blue">
+              <img src="../assets/img/showcases/case/icons/cancel.svg" alt="icon" aria-hidden="true" />
+              <div class="result-message">Non-Active Subs</div>
+              <div class="result-number">983/9,471</div>
+              <div class="result-percent">-10%</div>
+          </div>
+          <div class="result-box red">
+              <img src="../assets/img/showcases/case/icons/trash.svg" alt="icon" aria-hidden="true" />
+              <div class="result-message">Deleted Status</div>
+              <div class="result-number">514</div>
+              <div class="result-percent">45,2%</div>
+          </div>
+          <div class="result-box green">
+              <img src="../assets/img/showcases/case/icons/flag.svg" alt="icon" aria-hidden="true" />
+              <div class="result-message">Exploit The Issue</div>
+              <div class="result-number">469</div>
+              <div class="result-percent">5%</div>
+          </div>
+          <div class="result-box orange">
+              <img src="../assets/img/showcases/case/icons/piechart.svg" alt="icon" aria-hidden="true" />
+              <div class="result-message">Last Quarter Users</div>
+              <div class="result-number">79</div>
+              <div class="result-percent">1.2%</div>
+          </div>
+          <div class="result-box blue">
+              <img src="../assets/img/showcases/case/icons/user.svg" alt="icon" aria-hidden="true" />
+              <div class="result-message">Subscribed instantly</div>
+              <div class="result-number">20</div>
+              <div class="result-percent">1.2%</div>
+          </div> -->
+          <div class="result-box light-blue">
+              <img src="../assets/img/showcases/case/icons/stock.svg" alt="icon" aria-hidden="true" />
+              <div class="result-message"><strong>MRR increase</strong></div>
+              <div class="result-number">$525</div>
+          </div>
+          <div class="result-box light-green">
+              <img src="../assets/img/showcases/case/icons/money.svg" alt="icon" aria-hidden="true" />
+              <div class="result-message"><strong>Loss Preventation</strong></div>
+              <div class="result-number">$1500</div>
+          </div>
+      </div>
+      <p>
+          983 out of 9,471 premium users did not have an actual subscription, which is roughly 10%. Of these 983
+          users, 514 had a "deleted" status, indicating they had not used the app for a long time. Only 469,
+          equivalent to 5% of all premium users, could exploit the issue. However, only 79 of them had used the app in
+          the last three months and received an attempt to reactivate their subscription. Out of these, 20 immediately
+          acquired an active subscription. The rest got moved to the free plan. <strong><i>The reactivation of the subscriptions
+          resulted in approximately a $525 MRR increase.</i></strong> The applied fix aims to prevent future financial losses that
+          could amount to $1500 in MRR (these are rough calculations done on the historical data).
+      </p>
+  </div>
+</section>
+
+<section class="case-need-help" id="help">
+  <div class="inner p-vertical wrapper">
+      <h2>
+          Need help with Stripe integration?
+      </h2>
+      <div class="button-container">
+          <a type="button" class="button primary" href="https://calendly.com/andrei-kaleshka/30min" target="_blank"
+             rel="nofollow">
+              Get a free consultation
+          </a>
+      </div>
+  </div>
+</section>
+
+<section class="case-related">
+  <div class="inner p-vertical">
+      <h2 class="h2-stripe">Related Articles</h2>
+
+      <div class="case-swiper swiper">
+          <div class="swiper-wrapper">
+              <div class="swiper-slide purple">
+                  <h4>
+                      Worship Online:
+                      Stripe Integration
+                  </h4>
+                  <p>How we reconciled app users with Stripe and prevented financial losses.</p>
+                  <div>
+                      <button type="button" class="tag purple">
+                          Stripe Integration
+                      </button>
+                  </div>
+                  <div class="slide-footer">
+                      <div class="client-img">
+                          <a href="https://blog.widefix.com/reconcile-app-users-against-stripe-and-prevent-financial-losses/" target="_blank" alt="Worship Online"><img src="../assets/img/showcases/clients/wo.svg" alt="Client"></a>
+                      </div>
+                      <a href="https://blog.widefix.com/reconcile-app-users-against-stripe-and-prevent-financial-losses/" target="_blank" class="slide-learn-more">
+                          Learn more
+                      </a>
+                  </div>
+              </div>
+              <!-- <div class="swiper-slide blue">
+                  <h4>
+                      Worship Online:
+                      Stripe Integration
+                  </h4>
+                  <p>We fixed data consistency issues between the app and Stripe.</p>
+                  <div>
+                      <button type="button" class="tag blue">
+                          Stripe Integration
+                      </button>
+                  </div>
+                  <div class="slide-footer">
+                      <div class="client-img">
+                          <a href="javascript:void(0)" alt="Worship Online"><img src="../assets/img/showcases/clients/toptal.svg" alt="Toptal"></a>
+                      </div>
+                      <a href="javascript:void(0)" class="slide-learn-more">
+                          Learn more
+                      </a>
+                  </div>
+              </div>
+              <div class="swiper-slide orange">
+                  <h4>
+                      Worship Online:
+                      Stripe Integration
+                  </h4>
+                  <p>We fixed data consistency issues between the app and Stripe.</p>
+                  <div>
+                      <button type="button" class="tag orange">
+                          Stripe Integration
+                      </button>
+                  </div>
+                  <div class="slide-footer">
+                      <div class="client-img">
+                          <a href="javascript:void(0)" alt="Worship Online"><img src="../assets/img/showcases/clients/toptal.svg" alt="Toptal"></a>
+                      </div>
+                      <a href="javascript:void(0)" class="slide-learn-more">
+                          Learn more
+                      </a>
+                  </div>
+              </div>
+              <div class="swiper-slide green">
+                  <h4>
+                      Worship Online:
+                      Stripe Integration
+                  </h4>
+                  <p>We fixed data consistency issues between the app and Stripe.</p>
+                  <div>
+                      <button type="button" class="tag green">
+                          Stripe Integration
+                      </button>
+                  </div>
+                  <div class="slide-footer">
+                      <div class="client-img">
+                          <a href="javascript:void(0)" alt="Worship Online"><img src="../assets/img/showcases/clients/toptal.svg" alt="Toptal"></a>
+                      </div>
+                      <a href="javascript:void(0)" class="slide-learn-more">
+                          Learn more
+                      </a>
+                  </div>
+              </div>
+              <div class="swiper-slide yellow">
+                  <h4>
+                      Worship Online:
+                      Stripe Integration
+                  </h4>
+                  <p>We fixed data consistency issues between the app and Stripe.</p>
+                  <div>
+                      <button type="button" class="tag green">
+                          Stripe Integration
+                      </button>
+                  </div>
+                  <div class="slide-footer">
+                      <div class="client-img">
+                          <a href="javascript:void(0)" alt="Worship Online"><img src="../assets/img/showcases/clients/toptal.svg" alt="Toptal"></a>
+                      </div>
+                      <a href="javascript:void(0)" class="slide-learn-more">
+                          Learn more
+                      </a>
+                  </div>
+              </div>
+              <div class="swiper-slide sea">
+                  <h4>
+                      Toptal:
+                      Stripe Integration
+                  </h4>
+                  <p>We fixed data consistency issues between the app and Stripe.</p>
+                  <div>
+                      <button type="button" class="tag purple">
+                          Stripe Integration
+                      </button>
+                  </div>
+                  <div class="slide-footer">
+                      <div class="client-img">
+                          <a href="javascript:void(0)" alt="Worship Online"><img src="../assets/img/showcases/clients/wo.svg" alt="Client"></a>
+                      </div>
+                      <a href="javascript:void(0)" class="slide-learn-more">
+                          Learn more
+                      </a>
+                  </div>
+              </div> -->
+          </div>
+          <div class="swiper-prev-next">
+              <button type="button" class="swiper-button-prev" aria-label="Previous slide">
+              </button>
+              <button type="button" class="swiper-button-next" aria-label="Next slide">
+              </button>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section class="case-other-issues" id="other">
+  <div class="inner p-vertical">
+      <div class="fixed-issues">
+          <div>
+              <h2>Other issues fixed</h2>
+
+              <a class="fixed-issue" href="javascript:void(0)">
+                  <span class="fixed-issue-title">
+                      <span class="fixed-issue-title-h">Stripe Integration</span>
+                      <img aria-hidden="true" alt="icon" src="../assets/img/showcases/case/icons/link.svg" />
+                  </span>
+                  <img src="../assets/img/showcases/case/phone.png" alt="Case" />
+              </a>
+          </div>
+          <div>
+              <a class="fixed-issue" href="javascript:void(0)">
+                  <span class="fixed-issue-title">
+                      <span class="fixed-issue-title-h">Database Fix</span>
+                      <img aria-hidden="true" alt="icon" src="../assets/img/showcases/case/icons/link.svg" />
+                  </span>
+                  <img src="../assets/img/showcases/case/db.png" alt="Case" />
+              </a>
+          </div>
+          <div>
+              <a class="fixed-issue" href="javascript:void(0)">
+                  <span class="fixed-issue-title">
+                      <span class="fixed-issue-title-h">Ruby on Rails Error</span>
+                      <img aria-hidden="true" alt="icon" src="../assets/img/showcases/case/icons/link.svg" />
+                  </span>
+                  <img src="../assets/img/showcases/case/html.png" alt="Case" />
+              </a>
+          </div>
+      </div>
+  </div>
+</section>

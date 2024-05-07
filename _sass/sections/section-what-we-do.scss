@@ -1,0 +1,98 @@
+.what-we-do {
+    background: rgba(228, 228, 228, 0.2);
+
+    .header {
+        margin-bottom: 40px;
+        h2 {
+            font: $text-header-2xl;
+            margin-bottom: 32px;
+            color: $text-primary;
+            @include art-decoration('../img/decoration/what-we-do-border-bottom.svg', 3.8rem, 0, 20px);
+            span {
+                &:before {
+                    background-size: auto;
+                }
+            }
+        }
+
+        p {
+            font: $text-body-display-s;
+            color: $text-secondary;
+            font-size: 20px;
+            line-height: 28px;
+        }
+    }
+
+    .block-container {
+        padding-left: 122px;
+        padding-right: 122px;
+        display: flex;
+        flex-wrap: wrap;
+        @media (max-width: $media-md) {
+            padding: 0;
+        }
+        @media (max-width: $media-sm) {
+            flex-direction: column;
+        }
+
+        .block {
+            width: 50%;
+            display: flex;
+            margin-bottom: 50px;
+            height: fit-content;
+
+            @media (max-width: $media-sm) {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    }
+    
+    .block-left {
+        width: 93px;
+        text-align: left;
+        border-right: 3px solid $accent-default;
+        i {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+    }
+ 
+    
+    .block-right {
+        width: 75%;
+        padding-left: 20px;
+        @media (max-width: $media-sm) {
+            width: 100%;
+        }
+
+        h2 {
+            font: $text-header-xl;
+            font-weight: 400;
+            color: $text-primary;
+            margin-bottom: 16px;
+            @media (max-width: $media-md) {
+                font: $text-header-m;
+            }
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                font: $text-body-regular;
+                color: $text-secondary;
+
+                @media (max-width: $media-md) {
+                    font: $text-body-meta-regular;
+                }
+            }
+        }
+    }
+
+    .button-container {
+        text-align: center;
+    }
+}

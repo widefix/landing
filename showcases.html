@@ -1,0 +1,118 @@
+---
+layout: default
+---
+
+<section class="showcases-paddings">
+  <div class="inner portfolio-inner">
+      <div class="portfolio">
+          <div class="we-are-widefix">
+              <div>
+                  <img src="../assets/img/showcases/widefix.svg" alt="We are widefix">
+
+                  <p>
+                      <span>We are</span>
+                  </p>
+                  <p><strong>Widefix</strong></p>
+                  <p>
+                      <a href="mailto:">
+                          call@widefix.com
+                          <img src="../assets/img/showcases/email.svg" alt="Email">
+                      </a>
+                  </p>
+              </div>
+          </div>
+
+          <div class="portfilio-items">
+              <h1>Portfolio</h1>
+              <div class="portfolio-projects-video">
+                  <div>
+                      <img alt="Video" src="../assets/img/showcases/video.png">
+                  </div>
+                  <div>
+                      <div class="portfolio-projects-projects">
+                          <strong>100+</strong>
+                          <p>Projects</p>
+                      </div>
+                      <div class="portfolio-projects-services">
+                          <strong>20+</strong>
+                          <p>Services</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="portfolio-clients">
+                  <div class="clients-swiper-wrapper">
+                      <div class="clients-swiper swiper">
+                          <div class="swiper-wrapper">
+                              <div class="swiper-slide">
+                                  <a href="javascript:void(0)"><img src="../assets/img/showcases/clients/toptal.svg" alt="Toptal"></a>
+                              </div>
+                              <div class="swiper-slide">
+                                  <a href="javascript:void(0)"><img src="../assets/img/showcases/clients/hubstaff.svg" alt="Hubstaff"></a>
+                              </div>
+                              <div class="swiper-slide">
+                                  <a href="javascript:void(0)"><img src="../assets/img/showcases/clients/activeplatform.svg" alt="ActivePlatform"></a>
+                              </div>
+                              <div class="swiper-slide">
+                                  <a href="javascript:void(0)"><img src="../assets/img/showcases/clients/palladium.svg" alt="Palladium"></a>
+                              </div>
+                              <div class="swiper-slide" style="background: black; padding: 5px;">
+                                  <a href="javascript:void(0)"><img src="../assets/img/showcases/clients/wo.svg" alt="WorshipOnline"></a>
+                              </div>
+                              <div class="swiper-slide">
+                                  <a href="javascript:void(0)"><img src="../assets/img/showcases/clients/kajabi.svg" alt="Kajabi"></a>
+                              </div>
+                          </div>
+                          <div class="portfolio-clients-title">Clients</div>
+                          <div class="swiper-pagination"></div>
+                      </div>
+                  </div>
+
+                  <div class="portfolio-developers">
+                      <div class="portfolio-developers-img">
+                          <img alt="Developers" src="../assets/img/showcases/developers.svg">
+                      </div>
+                      <div class="portfolio-developers-n">
+                          <strong>15+</strong>
+                          <p>years of experience</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section class="banner-top showcases-banner">
+  <div class="inner">
+      <h2>We have worked in as developer team for <span class="green-path">15+ Years</span></h2>
+
+      <div class="showcase-banner-clients">
+          <span class="showcase-banner-clients-img">
+              <img src="../assets/img/showcases/clients/toptal.svg" alt="Toptal" />
+          </span>
+          <span class="showcase-banner-clients-img">
+              <img src="../assets/img/showcases/clients/hubstaff.svg" alt="Hubstaff" />
+          </span>
+          <span class="showcase-banner-clients-img">
+              <img src="../assets/img/showcases/clients/palladium.svg" alt="Palladium" />
+          </span>
+          <span class="showcase-banner-clients-img">
+              <img src="../assets/img/showcases/clients/kajabi.svg" alt="Kajabi" />
+          </span>
+          <span class="showcase-banner-clients-img" style="background: black;">
+              <img src="../assets/img/showcases/clients/wo.svg" alt="WorshipOnline" />
+          </span>
+      </div>
+  </div>
+</section>
+
+<section class="case-studies">
+  <div class="inner">
+    <h2 class="h2">Case Studies</h2>
+
+    {% for showcase in site.showcases %}
+      {% include showcases.html showcase=showcase %}
+    {% endfor %}
+    
+  </div>
+</section>

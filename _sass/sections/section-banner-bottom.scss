@@ -1,0 +1,66 @@
+.banner-bottom {
+    background: $background-dark url(../img/banner-bottom-bg.png) no-repeat center right;
+
+    .inner {
+        position:relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 1;
+        max-width: 870px;
+        text-align: center;
+        margin: 0 auto;
+
+        h2 {
+            font: $text-header-2xl;
+            color: $text-button-secondary;
+            margin-bottom: 27px;
+            @media (max-width: $media-md) {
+                font: $text-header-xl;
+            }
+        }
+        p {
+            font: $text-body-regular;
+            color: $text-button-secondary;
+
+            @media (max-width: $media-md) {
+                font: $text-body-meta-regular;
+            }
+            @media (max-width: $media-sm) {
+                font: $text-body-floating-label-regular;
+            }
+
+        }
+        .contacts {
+            display: flex;
+            gap: 20px;
+            margin-top: 27px;
+
+            .contact {
+                display: flex;
+                align-items: center;
+                img {
+                    margin-right: 8px;
+                }
+                p {
+                    font: $text-body-display-xs;
+                    @media (max-width: $media-md) {
+                        font: $text-body-meta-regular;
+                    }
+                    @media (max-width: $media-sm) {
+                        font: $text-body-floating-label-regular;
+                    }
+                    a {
+                        color: $text-link-accent-default;
+                        &[href^=tel] {
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+        .button-container {
+            margin-top: 27px;
+        }
+    }
+}

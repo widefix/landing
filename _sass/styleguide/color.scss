@@ -1,0 +1,88 @@
+/* Primary: Primary colors for links and buttons */
+$primary-default: #F04338;
+$primary-hover: #FC584E;
+$primary-pressed: #D63228;
+$primary-disabled: #FFB5B0;
+
+/* Secondary: Secondary colors for links and buttons */
+$secondary-default: #276CB4;
+$secondary-hover: #3B8BDF;
+$secondary-pressed: #2864A3;
+$secondary-disabled: #C6DFFA;
+
+/* Accent: Brand accent colors to be used across the UI for links and buttons. */
+$accent-default: #ED9048;
+$accent-hover: #FF9F55;
+$accent-pressed: #E98030;
+$accent-disabled: #F6C096;
+
+/* Alert:  Colors that communicate purpose and help users convey messages */
+$alert-error-default: #BE2B13;
+$alert-error-hover: #E03519;
+$alert-error-pressed: #961D09;
+$alert-error-disabled: #EDC3C3;
+$alert-warning-default: #FC9403;
+$alert-warning-hover: #FFA932;
+$alert-warning-pressed: #E88700;
+$alert-warning-disabled: #E3AD61;
+$alert-success-default: #1AAA55;
+$alert-success-hover: #1CC661;
+$alert-success-pressed: #168845;
+$alert-success-disabled: #6DA785;
+$alert-inform-default: #1F78D1;
+$alert-inform-hover: #2793FF;
+$alert-inform-pressed: #1861AB;
+$alert-inform-disabled: #8CB0D3;
+
+/* Background: Background colors used in pages and containers and other components */
+$background-light: #EEF6FF;
+$background-dark: #193B5E;
+$background-card: #FCFCFF;
+$background-page: #FFFFFF;
+$background-overlay: #E9F1FF;
+$background-static: #D1DEF3;
+$background-container-default: #FFFFFF;
+$background-container-hover: #E3ECF6;
+$background-container-pressed: #E0E0E0;
+$background-container-disabled: #EAEAEA;
+$background-container-active: #E2F0FF;
+$background-action-default: #F6FAFF;
+$background-action-hover: #FCFDFF;
+$background-action-pressed: #E4E4E4;
+$background-action-disabled: #EAEDF1;
+$background-action-active: #E8E8FD;
+$background-error: #FFDDD8;
+$background-warning: #FFE5C1;
+$background-success: #DEFFEC;
+$background-inform: #E4F2FF;
+
+/* Text: Colors used in all texts across the entire UI */
+$text-light: #FAFAFA;
+$text-primary:#1C2F42;
+$text-secondary: #5F6675;
+$text-disabled: #CCCCCC;
+$text-button-accent: #FFFFFF;
+$text-button-primary: #FFFFFF;
+$text-button-secondary: #FFFFFF;
+$text-button-alert: #FFFFFF;
+$text-badge-solid: #333645;
+$text-badge-outline: #4F4FFF;
+$text-badge-subtle: #4F4FFF;
+$text-link-accent-default: #ED9048;
+$text-link-accent-hover: #FF9F55;
+$text-link-accent-pressed: #E98030;
+$text-link-primary-default: #F04338;
+$text-link-primary-hover: #FC584E;
+$text-link-primary-pressed: #D63228;
+$text-link-secondary-default: #5F6675;
+$text-link-secondary-hover: #788090;
+$text-link-secondary-pressed: #555C6A;
+$text-success: #15793E;
+$text-warning: #CB7600;
+$text-error: #F6391B;
+
+/* UI Elements: Specific colors to UI elements like dividers and forms outlines */
+$ui-element-divider: #D2D9E9;
+$ui-element-outline-default: #E7E7E7;
+$ui-element-outline-active: #D7DBE7;
+$ui-element-outline-disabled: #F2F2F2;

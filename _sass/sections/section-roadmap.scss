@@ -1,0 +1,55 @@
+.roadmap {
+    .inner {
+        display: flex;
+        @media (max-width: $media-md) {
+            flex-direction: column;
+        }
+        header {
+            max-width: 600px;
+            padding-top: 20px;
+            h2 {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 44px;
+                line-height: 48px;
+                /* or 109% */
+
+                letter-spacing: -0.44px;
+                font: $text-header-2xl;
+                margin-bottom: 27px;
+                @media (max-width: $media-md) {
+                    font: $text-header-xl;
+                }
+                span {
+                    font-weight: 700;
+                    color: $text-link-secondary-hover;
+                }
+            }
+            .subtitle {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 30px;
+                line-height: 28px;
+                color: $text-secondary;
+            }
+        }
+        .section-content {
+            display: flex;
+            @media (max-width: $media-md) {
+                flex-direction: column;
+            }
+            .section-block {
+                .curve {
+                    img {
+                        width: 100%;
+                        @media (max-width: $media-sm) {
+                            height: 200px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

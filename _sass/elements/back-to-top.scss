@@ -1,0 +1,37 @@
+.back-to-top {
+    background-color: #FAFAFA;
+    .inner {
+        padding-top: 16px;
+        padding-bottom: 16px;
+        display: flex;
+        justify-content: flex-end;
+
+        .back-to-top-wrapper {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 8px;
+
+            span {
+                font: 400 16px/24px 'Inter';
+                color: #424242;
+            }
+
+            #toTop {
+                width: 40px;
+                height: 40px;
+                border-radius: 100px;
+                border: none;
+                background-color: $text-link-accent-default;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: $text-link-accent-hover;
+                }
+            }
+        }
+    }
+}

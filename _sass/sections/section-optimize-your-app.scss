@@ -1,0 +1,107 @@
+.optimize-your-app {
+    background-color: #FAFAFA;
+   
+    .inner {
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            @media screen and (max-width: 1024px) {
+                flex-direction: column;
+            }
+
+            h2 {
+                font: $text-header-2xl;
+                width: 65%;
+                letter-spacing: -0.44px;
+                @media screen and (max-width: 1024px) {
+                    width: 100%;
+                    font: $text-header-xl;
+                    margin-bottom: 20px;
+                }
+                span {
+                    position: relative;
+                    height: 3.9rem;
+                    @media screen and (max-width: 1024px) {
+                        height: 40px;
+                    }
+                    padding-left: 10px;
+                    margin-left: -10px;
+                    padding-right: 10px;
+                    margin-right: -10px;
+                    display: inline-block;
+                    &:before {
+                        content: "";
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        display: block;
+                        background: transparent url('../img/decoration/optimize-oval.svg') no-repeat bottom center;
+                        background-size: cover;
+                    }
+                }
+            }
+
+            @media screen and (max-width: 1024px) {
+                .button-wrapper {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+
+        .section-content {
+            display: flex;
+            gap: 31px;
+            @media screen and (max-width: 1024px) {
+                flex-direction: column;
+            }
+
+            .section-block {
+                background-color: #FFF;
+                padding: 32px 24px;
+                height: fit-content;
+                box-sizing: border-box;
+
+                &:nth-child(2) {
+                    margin-top: 47px;
+                    @media screen and (max-width: 1024px) {
+                        margin-top: 0;
+                    }
+                }
+
+                @media screen and (max-width: 1024px) {
+                    padding: 16px 12px;
+                }
+
+                img {
+                    @media screen and (max-width: 1024px) {
+                        float: left;
+                        margin-right: 8px;
+                        height: 42px;
+                    }
+                }
+
+                h3 {
+                    margin-top: 24px;
+                    margin-bottom: 16px;
+                    font: 600 20px/30px 'Inter';
+                    color: #202020;
+                    @media screen and (max-width: 1024px) {
+                       margin-top: 10px;
+                    }
+                }
+
+                p {
+                    color: #707070;
+                    font: 400 16px/24px 'Inter';
+                }
+
+            }
+        }
+    }
+}

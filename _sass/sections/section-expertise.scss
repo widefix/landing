@@ -1,0 +1,109 @@
+.expertise {
+    .inner {
+        text-align: center;
+        h2 {
+            font: $text-header-2xl;
+            margin-bottom: 20px;
+            @media (max-width: $media-md) {
+                font: $text-header-xl;
+            }
+        }
+
+        header {
+            p {
+                margin-bottom: 20px;
+                font: $text-body-medium;
+                color: $text-secondary;
+            }
+        }
+
+        .container {
+            display: flex;
+            gap: 40px;
+            @media (max-width: $media-md) {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .item {
+                width: 25%;
+                @media (max-width: $media-md) {
+                    width: 272px;
+                }
+                a {
+                    text-decoration: none;
+                    &:hover {
+                        h3 {
+                            color: $text-link-accent-hover !important;
+                        }
+                    }
+                }
+                .content {
+                    height: 308px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: space-between;
+                    border-radius: 6px;
+                    position: relative;
+                    padding: 16px 16px 32px;
+                    box-sizing: border-box;
+
+                    span {
+                        padding: 7px 16px;
+                        text-transform: uppercase;
+                        border-radius: 100px;
+                        background-color: rgba(13, 34, 52, 0.5);
+                        color: white;
+                        font: $text-body-floating-label-bold;
+                    }
+                    h3 {
+                        color: white;
+                        font: 700 35px/43px 'Montserrat';
+                        text-align: left;
+
+                        @media (max-width: $media-lg) {
+                            font-size: 28px;
+                            line-height: 32px;
+                        }
+                    }
+                }
+
+                &:nth-child(1) {
+                    .content{
+                        background: url("../img/book.png");
+                        background-position: center;
+                    }
+                }
+                &:nth-child(2) {
+                    .content {
+                        background: linear-gradient(0deg, #000000 0%, rgba(255, 255, 255, 0.2) 98.37%), url("../img/techblog-bg.png");
+                        background-position: center, top center;
+                        background-repeat: no-repeat, no-repeat;
+                    }
+                }
+                &:nth-child(3) {
+                    .content{
+                        background: url("../img/library-blue-icon.svg"), linear-gradient(0deg, #163B9B 0%, rgba(0, 117, 255, 0.1) 105.47%);
+                        background-position: right 16px top 16px, center;
+                        background-repeat: no-repeat, no-repeat;
+                    }
+                }
+                &:nth-child(4) {
+                    .content {
+                        background: url("../img/library-green-icon.svg"), linear-gradient(0.3deg, #169B4B 0.28%, rgba(163, 163, 163, 0.2) 105.47%);
+                        background-position: right 16px top 16px, center;
+                        background-repeat: no-repeat, no-repeat;
+                    }
+                }
+
+                p {
+                    font: $text-body-regular;
+                    margin-top: 24px;
+                    color: $text-secondary;
+                    text-align: left;
+                }
+            }
+        }
+    }
+}

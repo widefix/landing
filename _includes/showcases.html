@@ -1,0 +1,50 @@
+<article class="accordion expanded">
+  <div class="accordion-title">
+    <div class="title-with-icon">
+      <img src="{{ showcase.image_url }}" alt="{{ showcase.title }}">
+      <h3 class="h3">{{ showcase.title }}</h3>
+    </div>
+    <div class="accordion-actions">
+      <button type="button" class="accordion-button" aria-label="Filter">
+        <img src="../assets/img/showcases/acc-filter.svg" alt="Filter">
+      </button>
+      <button 
+        type="button"
+        class="accordion-button accordion-action"
+        aria-expanded="false"
+        aria-label="Expand section">
+      </button>
+    </div>
+  </div>
+  <div class="accordion-content">
+    <div class="case-swiper swiper">
+      <div class="swiper-wrapper">
+        {% for showcase_item in showcase.showcases %}
+          <div class="swiper-slide {{ showcase_item.color }}">
+            <h4>{{ showcase_item.project_name }}</h4>
+            <p>{{ showcase_item.description }}</p>
+            <div>
+              <button type="button" class="tag {{ showcase_item.button_color }}">
+                {{ showcase_item.button_text }}
+              </button>
+            </div>
+            <div class="slide-footer">
+              <div class="client-img">
+                <a href="{{ showcase_item.client_url }}" alt="{{ showcase_item.client_name }}">
+                  <img src="../assets/img/showcases/clients/wo.svg" alt="Client">
+                </a>
+              </div>
+              <a href="{{ showcase_item.showcase_url }}" class="slide-learn-more">
+                Learn more
+              </a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="swiper-prev-next">
+        <button type="button" class="swiper-button-prev" aria-label="Previous slide"></button>
+        <button type="button" class="swiper-button-next" aria-label="Next slide"></button>
+      </div>
+    </div>
+  </div>
+</article>

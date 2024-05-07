@@ -1,0 +1,56 @@
+.button {
+    border-radius: 100px;
+    border: none;
+    height: 52px;
+    line-height: 52px;
+    font: $text-body-large-medium;
+
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0 24px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    &:hover {
+        cursor: pointer;
+    }
+
+    &.primary {
+        color: $text-button-primary;
+        background-color: $primary-default;
+        display: inline-block;
+        vertical-align: center;
+        line-height: 52px;
+
+        &:hover {
+            background-color: $primary-hover;
+        }
+
+        &:active {
+            background-color: $primary-pressed;
+        }
+    }
+    &.secondary {
+        color: $text-link-secondary-default;
+        font: $text-body-floating-label-medium;
+        border: 1px solid $secondary-default;
+        background-color: $background-action-default;
+
+        &:hover {
+            background-color: $primary-hover;
+        }
+
+        &:active {
+            background-color: $primary-pressed;
+        }
+        &.small {
+            padding: 4px 8px;
+        }
+    }
+    &.small {
+        font: $text-body-medium;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 16px;
+    }
+
+}

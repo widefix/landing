@@ -1,0 +1,80 @@
+.you-can-trust {
+
+    h2 {
+        font: $text-header-2xl;
+        margin-bottom: 40px;
+        margin-top: 0;
+        @include art-decoration('../img/decoration/trust-oval.svg', 3.8rem, 25px, 30px);
+        span {
+            position: relative;
+            height: 61px;
+            padding-left: 15px;
+            margin-left: -15px;
+            padding-right: 20px;
+            margin-right: -20px;
+            display: inline-block;
+        }
+    }
+    .content-wrapper {
+        display: flex;
+        align-items: center;
+        @media screen and (max-width: 1280px) {
+           flex-direction: column;
+        }
+
+        .left-content {
+            flex: 1;
+            @media screen and (max-width: 1360px) {
+                margin-bottom: 24px;
+                img {
+                    object-fit: contain;
+                    width: 300px;
+                }
+            }
+            @media screen and (max-width: 1280px) {
+                img {
+                    object-fit: contain;
+                    height: 300px;
+                    width: auto;
+                }
+            }
+        }
+
+        .right-content {
+            max-width: 723px;
+        }
+    }
+
+    .block {
+        margin-bottom: 20px;
+        border-radius: 8px;
+        padding: 16px 24px;
+
+        &.m-expertise {
+            background-color: rgba(240, 67, 56, .08);
+        }
+        &.m-innovative {
+            background-color: rgba(39, 108, 180, .08);
+        }
+        &.m-support {
+            background-color: rgba(237, 144, 72, .08);
+        }
+
+        h3 {
+            display: flex;
+            align-items: center;
+            font: $text-header-l;
+            color: $text-primary;
+            margin-bottom: 16px;
+
+            img {
+                margin-right: 16px;
+            }
+        }
+
+        p {
+            font: $text-body-regular;
+            color: $text-secondary;
+        }
+    }
+}
