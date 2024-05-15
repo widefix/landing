@@ -1,0 +1,40 @@
+$light:        300;
+$regular:      400;
+$medium:       500;
+$semibold:     600;
+$bold:         700;
+
+/* Header (Desktop): Headers are used as the titles of each section or hero of a page in the interface. */
+$text-header-4xl:                           $medium     64px/68px       'Inter';
+$tetx-header-3xl:                           $medium     48px/52px       'Inter';
+$text-header-2xl:                           $medium     44px/48px       'Inter';
+$text-header-xl:                            $medium     32px/36px       'Inter';
+$text-header-l:                             $semibold   24px/28px       'Inter';
+$text-header-m:                             $medium     24px/28px       'Inter';
+$text-header-s:                             $medium     20px/24px       'Inter';
+$text-header-xs:                            $medium     16px/20px       'Inter';
+
+/* Body: Body text has different use cases: Displays can be used as titles in sections, or subheadings when paired with a header text.Body text is used across the whole UI in paragraphs and headings inside a container. Meta texts are used for disclaimer copy, and floating lables are used in input fields. */
+$text-body-display-2xl:                     $bold       60px/72px       'Inter';
+$text-body-display-xl:                      $bold       48px/56px       'Inter';
+$text-body-display-l:                       $light      40px/48px       'Inter';
+$text-body-display-m:                       $regular    30px/36px       'Inter';
+$text-body-display-s:                       $regular    22px/32px       'Inter';
+$text-body-display-xs:                      $regular    20px/32px       'Inter';
+$text-body-large-regular:                   $regular    18px/28px       'Inter';
+$text-body-large-medium:                    $medium     18px/28px       'Inter';
+$text-body-large-bold:                      $bold       18px/28px       'Inter';
+$text-body-regular:                         $regular    16px/24px       'Inter';
+$text-body-medium:                          $medium     16px/24px       'Inter';
+$text-body-bold:                            $bold       16px/24px       'Inter';
+$text-body-meta-regular:                    $regular    14px/20px       'Inter';
+$text-body-meta-medium:                     $medium     14px/20px       'Inter';
+$text-body-meta-bold:                       $bold       14px/20px       'Inter';
+$text-body-floating-label-regular:          $regular    12px/18px       'Inter';
+$text-body-floating-label-medium:           $medium     12px/16px       'Inter';
+$text-body-floating-label-bold:             $bold       12px/16px       'Inter';
+
+/* Link: Link texts across the UI. */
+$text-link-body-large:                      $regular    28px/36px       'Inter';
+$text-link-body-medium:                     $regular    20px/24px       'Inter';
+$text-link-body-small:                      $regular    16px/20px       'Inter';

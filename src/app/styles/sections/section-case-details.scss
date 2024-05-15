@@ -1,0 +1,42 @@
+.case-details {
+  .inner {
+    display: flex;
+    gap: 22px;
+
+    @media screen and (max-width: $media-xsm) {
+      margin: 0 16px;
+
+      img {
+        height: 100%;
+      }
+    }
+  }
+}
+
+h2.with-crown {
+  position: relative;
+  display: inline-block;
+  color: #1C2F42;
+  font-family: "Greycliff CF", serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 52px; /* 108.333% */
+  letter-spacing: -0.48px;
+  margin-bottom: 32px;
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 33px;
+    height: 33px;
+    background-image: url(/img/showcases/crown.svg);
+    top: -9px;
+    right: -9px;
+    background-size: 33px 33px;
+  }
+}
+
+.case-details-title {
+  align-self: center;
+}

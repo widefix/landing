@@ -1,7 +1,31 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
 export default function Header() {
+  useEffect(() => {
+    const toggleButton = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+  
+    const handleClick = () => {
+      if (nav) {
+        nav.classList.toggle('visible');
+      }
+    };
+  
+    if (toggleButton) {
+      toggleButton.addEventListener('click', handleClick);
+    }
+  
+    return () => {
+      if (toggleButton) {
+        toggleButton.removeEventListener('click', handleClick);
+      }
+    };
+  }, [])
+
   return (
     <>
       <noscript>

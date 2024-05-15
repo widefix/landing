@@ -1,15 +1,43 @@
+'use client'
+
 import ShowcaseItem from '@/components/showcases/ShowcaseItem'
+import { useEffect } from 'react'
 import Image from 'next/image'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Showcases - WideFix",
-  description: "Check out our amazing showcases! We've put a ton of effort into making them awesome, and our clients love them because they're affordable and make a big impression."
-};
-
+import { metadata } from './metadata'
 
 export default function ShowcasesPage() {
+
+  useEffect(() => {
+    const accordionButtons = document.querySelectorAll('.accordion-action');
+  
+    const handleClick = (event: any) => {
+      const button = event.currentTarget as HTMLButtonElement;
+      const accordion = button.closest('.accordion');
+      if (accordion) {
+        accordion.classList.toggle('expanded');
+        const isExpanded = accordion.classList.contains('expanded');
+        button.setAttribute('aria-expanded', isExpanded.toString());
+      }
+    };
+  
+    accordionButtons.forEach((button) => {
+      button.addEventListener('click', handleClick);
+    });
+  
+    return () => {
+      accordionButtons.forEach((button) => {
+        button.removeEventListener('click', handleClick);
+      });
+    };
+  }, []);
+
   return (
     <>
       <section className="showcases-paddings">
@@ -51,28 +79,21 @@ export default function ShowcasesPage() {
               <div className="portfolio-clients">
                 <div className="clients-swiper-wrapper">
                   <div className="clients-swiper swiper">
-                    <div className="swiper-wrapper">
-                      <div className="swiper-slide">
-                        <a href="javascript:void(0)"><Image src="/img/showcases/clients/toptal.svg" alt="Toptal" width="125" height="34" /></a>
-                      </div>
-                      <div className="swiper-slide">
-                        <a href="javascript:void(0)"><Image src="/img/showcases/clients/hubstaff.svg" alt="Hubstaff" width="150" height="33" /></a>
-                      </div>
-                      <div className="swiper-slide">
-                        <a href="javascript:void(0)"><Image src="/img/showcases/clients/activeplatform.svg" alt="ActivePlatform" width="202" height="25" /></a>
-                      </div>
-                      <div className="swiper-slide">
-                        <a href="javascript:void(0)"><Image src="/img/showcases/clients/palladium.svg" alt="Palladium" width="181" height="21" /></a>
-                      </div>
-                      <div className="swiper-slide" style={{ background: 'black', padding: '5px' }}>
-                        <a href="javascript:void(0)"><Image src="/img/showcases/clients/wo.svg" alt="WorshipOnline" width="230" height="35" /></a>
-                      </div>
-                      <div className="swiper-slide">
-                        <a href="javascript:void(0)"><Image src="/img/showcases/clients/kajabi.svg" alt="Kajabi" width="138" height="24" /></a>
-                      </div>
-                    </div>
-                    <div className="portfolio-clients-title">Clients</div>
-                    <div className="swiper-pagination"></div>
+                    <Swiper
+                      modules={[Navigation, Pagination]}
+                      slidesPerView={1}
+                      pagination={{ clickable: true }}
+                      onSlideChange={() => console.log('slide change')}
+                      onSwiper={(swiper) => console.log(swiper)}
+                    >
+                      <SwiperSlide><Image src="/img/showcases/clients/toptal.svg" alt="Toptal" width="125" height="34" /></SwiperSlide>
+                      <SwiperSlide><Image src="/img/showcases/clients/hubstaff.svg" alt="Hubstaff" width="150" height="33" /></SwiperSlide>
+                      <SwiperSlide><Image src="/img/showcases/clients/activeplatform.svg" alt="ActivePlatform" width="202" height="25" /></SwiperSlide>
+                      <SwiperSlide><Image src="/img/showcases/clients/palladium.svg" alt="Palladium" width="181" height="21" /></SwiperSlide>
+                      <SwiperSlide style={{background:"black"}}><Image src="/img/showcases/clients/wo.svg" alt="WorshipOnline" width="230" height="35" /></SwiperSlide >
+                      <SwiperSlide><Image src="/img/showcases/clients/kajabi.svg" alt="Kajabi" width="138" height="24" /></SwiperSlide>
+                      <div className="portfolio-clients-title">Clients</div>
+                    </Swiper>
                   </div>
                 </div>
 

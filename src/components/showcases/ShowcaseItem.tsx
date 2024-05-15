@@ -1,5 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
 
 type ShowcaseItemProps = {
   title: string;
@@ -39,20 +46,29 @@ export default function ShowcaseItem({
         </div>
       </div>
       <div className="accordion-content">
-        <div className={`swiper-wrapper ${wrapperColor}`}>
-          <h4>{companyName}:</h4>
-          <h4>{solution}</h4>
-          <p>{results}</p>
-          <div>
-            <button type="button" className={`tag ${buttonColor}`}>{results}</button>
-          </div>
-          <div className="slide-footer">
-            <div className="client-img">
-              <Link href={buttonLink}><Image src={companyImageSrc} alt="Client" width="104" height="25"/></Link>
+        <Swiper
+          slidesPerView={3}
+          navigation
+          onSlideChange={() => console.log('slide change')}
+          onSwiper={(swiper) => console.log(swiper)}
+        >
+          <SwiperSlide>
+            <div className={`swiper-wrapper ${wrapperColor}`}>
+              <h4>{companyName}:</h4>
+              <h4>{solution}</h4>
+              <p>{results}</p>
+              <div>
+                <button type="button" className={`tag ${buttonColor}`}>{results}</button>
+              </div>
+              <div className="slide-footer">
+                <div className="client-img">
+                  <Link href={buttonLink}><Image src={companyImageSrc} alt="Client" width="104" height="25"/></Link>
+                </div>
+                <Link href={buttonLink} className="slide-learn-more">Learn more</Link>
+              </div>
             </div>
-            <Link href={buttonLink} className="slide-learn-more">Learn more</Link>
-          </div>
-        </div>
+          </SwiperSlide>
+        </Swiper>
       </div>
     </article>
   )

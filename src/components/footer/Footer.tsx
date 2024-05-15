@@ -14,22 +14,22 @@ export default function Header() {
               <ul>
                 <li>
                   <Link href="https://www.linkedin.com/company/widefix/" target="_blank" rel="nofollow">
-                    <Image src="../img/icons/linkedin.svg" alt="LinkedIn Icon" width="24" height="24" />
+                    <Image src="/img/icons/linkedin.svg" alt="LinkedIn Icon" width="24" height="24" />
                   </Link>
                 </li>
                 <li>
                   <Link href="https://clutch.co/profile/widefix" target="_blank" rel="nofollow">
-                    <Image src="../img/icons/clutch.svg" alt="Clutch Icon" width="24" height="24" />
+                    <Image src="/img/icons/clutch.svg" alt="Clutch Icon" width="24" height="24" />
                   </Link>
                 </li>
                 <li>
                   <Link href="https://github.com/widefix" target="_blank" rel="nofollow">
-                    <Image src="../img/icons/github.svg" alt="GitHub Icon" width="24" height="24" />
+                    <Image src="/img/icons/github.svg" alt="GitHub Icon" width="24" height="24" />
                   </Link>
                 </li>
                 <li>
                   <Link href="https://twitter.com/ka8725" target="_blank" rel="nofollow">
-                    <Image src="../img/icons/twitter.svg" alt="Twitter Icon" width="24" height="24" />
+                    <Image src="/img/icons/twitter.svg" alt="Twitter Icon" width="24" height="24" />
                   </Link>
                 </li>
               </ul>

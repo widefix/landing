@@ -1,0 +1,55 @@
+.case-need-help {
+  background: #193B5E;
+    @media screen and (max-width: $media-xsm) {
+      .inner {
+        margin: 0 16px;
+        padding: 80px 0;
+      }
+    }
+    .wrapper {
+      position: relative;
+      text-align: center;
+
+      @media (width >= 1024px) {
+        &:after,&:before {
+          content: "";
+          position: absolute;
+        }
+        &:before {
+          width: 232px;
+          height: 128px;
+          bottom: -80px;
+          left: -50px;
+          background-image: url('/img/reviews-bg-left.svg')
+        }
+        &:after {
+          width: 176px;
+          height: 316px;
+          top: -15px;
+          right: -90px;
+          background-image: url('/img/reviews-bg-right.svg')
+        }
+      }
+    }
+
+  h2 {
+    color: #fff;
+    text-align: center;
+    font-family: "Greycliff CF", serif;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px; /* 109.091% */
+    letter-spacing: -0.44px;
+    margin-bottom: 32px;
+  }
+
+
+
+}
+
+
+
+
+
+

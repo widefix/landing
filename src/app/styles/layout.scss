@@ -1,0 +1,26 @@
+section,header,footer {
+    .inner {
+        max-width: $content-width;
+        margin: 0 auto;
+
+        @media screen and (max-width: $media-lg) {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        @media screen and (max-width: $media-xsm) {
+            margin: 0 36px;
+        }
+
+    }
+}
+
+section.has-vertical-paddings {
+    padding: $section-vertical-padding 0;
+
+    @media screen and (max-width: $media-md) {
+        padding: $section-vertical-padding-md 0;
+    }
+    @media screen and (max-width: $media-sm) {
+        padding: $section-vertical-padding-sm 0;
+    }
+}

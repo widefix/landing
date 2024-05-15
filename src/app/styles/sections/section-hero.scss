@@ -1,0 +1,85 @@
+.hero {
+    .inner {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        @media (max-width: $media-md) {
+            flex-direction: column;
+        }
+        p {
+            font: $text-body-display-s;
+            color: $text-secondary;
+            margin-top: 24px;
+        }
+    }
+    .hero-block-left {
+        width: 100%;
+        flex: 1;
+        padding-right: 70px;
+
+        @media (max-width: $media-md) {
+            padding-right: 0;
+            h1 {
+                font: $text-header-2xl !important;
+                @include art-decoration('/img/decoration/optimise-text-border-bottom.svg', 4rem);
+            }
+        }
+
+        @media (width >= 1024px) {
+            h1 {
+                font: $text-header-4xl;
+                @include art-decoration('/img/decoration/optimise-text-border-bottom.svg', 5rem);
+            }
+        }
+
+        .button-container {
+            margin-top: 32px;
+        }
+
+        .promise-block {
+            margin-top: 32px;
+            background: rgba(228, 228, 228, 0.2);
+            border-radius: 16px;
+            padding: 24px;
+
+            .title {
+                font: $text-body-display-s;
+                color: $text-link-secondary-hover;
+            }
+
+            ul {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                margin-top: 24px;
+
+                li {
+                    display: block;
+                    align-items: center;
+                    margin-right: 24px;
+                    white-space: nowrap;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+
+                    img {
+                        margin-right: 8px;
+                    }
+
+                    span {
+                        font: $text-body-meta-regular;
+                        color: $text-secondary;
+                    }
+                }
+            }
+        }
+    }
+
+    .hero-block-right {
+        @media (max-width: $media-md) {
+            display: none;
+        }
+    }
+}

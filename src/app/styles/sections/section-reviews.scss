@@ -1,0 +1,250 @@
+.reviews {
+    background: rgba(228, 228, 228, 0.2);
+
+    .button.primary {
+        @media (max-width: $media-sm) {
+            width: 100%;
+            font-size: 16px;
+        }
+    }
+
+    .inner {
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+
+            h2 {
+                font: $text-header-2xl;
+                color: $text-primary;
+                @include art-decoration('/img/decoration/clients.svg', 4rem);
+                @media (max-width: $media-md) {
+                    font: $text-header-xl;
+                    span {
+                        height: 50px !important;
+                    }
+                }
+            }
+        }
+        .slider-wrapper {
+            position: relative;
+
+            @media (width >= 1024px) {
+                &:after,&:before {
+                    content: "";
+                    position: absolute;
+                }
+                &:before {
+                    width: 232px;
+                    height: 128px;
+                    bottom: -80px;
+                    left: -50px;
+                    background-image: url('/img/reviews-bg-left.svg')
+                }
+                &:after {
+                    width: 176px;
+                    height: 316px;
+                    top: -15px;
+                    right: -90px;
+                    background-image: url('/img/reviews-bg-right.svg')
+                }
+            }
+        }
+        .slider {
+            width: 100%;
+            overflow: hidden;
+            transition: all 500ms;
+
+            .slide {
+                width: 100%;
+                height: 100%;
+                float: left;
+
+                .slide-inner{
+                    display: flex;
+                    gap: 30px;
+                    justify-content: space-between;
+                    @media (max-width: $media-sm) {
+                        flex-direction: column;
+                    }
+                }
+
+                .slide-item {
+                    background-color: white;
+                    border-radius: 8px;
+                    width: 100%;
+                    padding: 40px 32px;
+                    display: flex;
+                    @media (max-width: $media-md) {
+                        padding: 20px 16px;
+                    }
+
+
+                    .client-card {
+                        display: flex;
+                        flex-direction: column;
+                        border-radius: 10px;
+                        header {
+                            display: flex;
+                            align-items: flex-start;
+                            flex-direction: column;
+                            margin-bottom: 16px;
+                            flex: 1;
+
+                            .header {
+                                width: 100%;
+                                display: flex;
+                                margin-bottom: 16px;
+                                align-items: center;
+                            }
+                            .left-header {
+                                margin-right: 16px;
+                                .circle-photo {
+                                    border-radius: 50%;
+                                    width: 80px;
+                                    height: 80px;
+                                }
+                            }
+
+                            .right-header {
+                                flex-grow: 1;
+                                .name {
+                                    font: 600 20px/30px 'Inter';
+                                    color: $text-primary;
+                                }
+                                .job {
+                                    font: 400 16px/24px 'Inter';
+                                    color: $text-secondary;
+                                }
+                            }
+                            blockquote {
+                                font: 400 16px/24px 'Inter';
+                                color: $text-secondary;
+                                margin: 0;
+                            }
+                        }
+                        footer {
+                            display: flex;
+                            align-items: center;
+                            padding: 0;
+                            justify-content: space-between;
+                            @media (max-width: 1170px) {
+                                flex-direction: column;
+                                align-items: flex-start;
+                            }
+
+                            .left-footer {
+                                @media (max-width: 1170px) {
+                                    margin-bottom: 8px;
+                                }
+                                .star-rating {
+                                    color: #ffc107;
+                                    display: flex;
+                                    align-items: center;
+
+                                    .rating-point {
+                                        font: 600 18px/28px 'Inter';
+                                        color: $text-primary;
+                                        margin-right: 8px;
+                                    }
+
+                                    .fa-star:before{
+                                        content:"";
+                                        display: block;
+                                        width: 24px;
+                                        height: 24px;
+                                        background: transparent url('/img/icons/star.svg') no-repeat center center;
+                                        color: #ccc;
+                                    }
+                                    .fa-star.half:before{
+                                        content:"";
+                                        display: block;
+                                        width: 24px;
+                                        height: 24px;
+                                        background: transparent url('/img/icons/half-star.svg') no-repeat center center;
+                                        color: #ffc107;
+                                    }
+                                }
+                            }
+
+                            .right-footer {
+
+                                .verified-review {
+                                    background-color: #DEFFEC;
+                                    padding: 2px 8px;
+                                    border-radius: 6px;
+                                    width: fit-content;
+
+                                    span {
+                                        font: 500 12px/16px 'Inter';
+                                        color: $text-success;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+
+        }
+
+        .slider-footer {
+            margin-top: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+
+            .slide-indicator {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .indicator-item {
+                    width: 12px;
+                    height: 12px;
+                    border: 2px solid none;
+                    margin: 0 5px;
+                    border-radius: 50%;
+                    background-color: #C6DFFA;
+                    cursor: pointer;
+                }
+
+                .indicator-item.active {
+                    border: 2px solid #276CB4;
+                    background-color: #276CB4;
+                }
+            }
+            .slider-controls {
+                position: absolute;
+                right: 0;
+                display: flex;
+                gap: 24px;
+
+                .prev-slide, .next-slide {
+                    border-radius: 100px;
+                    border: none;
+                    font-size: 30px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 32px;
+                    background-color: $background-static;
+                    width: 32px;
+                    cursor: pointer;
+                    &hover {
+                        background-color: $text-link-accent-hover;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+

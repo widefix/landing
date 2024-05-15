@@ -1,0 +1,114 @@
+header {
+  .inner {
+    display: flex;
+    height: 80px;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: $media-xsm) {
+      flex-direction: column;
+      margin-top: 27px;
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+
+  nav {
+    margin-left: 70px;
+    flex: 2;
+    @media (max-width: $media-sm) {
+      visibility: hidden;
+      margin-left: 20px;
+    }
+
+    @media (max-width: $media-xsm) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      margin-left: 0;
+      width: 100%;
+      z-index: 2;
+    }
+
+    ul {
+      display: flex;
+      list-style: none;
+      @media (max-width: $media-sm) {
+        justify-content: space-between;
+      }
+
+      li {
+        margin-right: 80px;
+        transition: color 0.3s;
+        @media (max-width: $media-md) {
+          margin-right: 20px;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        a {
+          font: $text-body-medium;
+          color: $text-link-secondary-default;
+          text-decoration: none;
+          @media (max-width: $media-xsm) {
+            font: $text-link-body-small;
+          }
+        }
+
+        &:hover {
+          a {
+            color: $text-link-secondary-hover;
+          }
+          .sub-menu {
+            display: block;
+            box-shadow: 10px 5px 5px $text-primary;
+            li {
+              line-height: 25px;
+            }
+          }
+        }
+
+        &.has-nested {
+          background: transparent url(/img/icons/arrow-down.svg) no-repeat right center;
+          padding-right: 20px;
+          cursor: pointer;
+        }
+
+        .sub-menu {
+          display: none;
+          position: absolute;
+        }
+      }
+    }
+  }
+
+  .cta-button {
+    flex: 1;
+    text-align: right;
+    @media (max-width: $media-sm) {
+      display: none;
+    }
+  }
+
+  .menu-toggle {
+    display: none;
+    @media (max-width: $media-sm) {
+      display: block;
+      margin-left: 20px;
+      background: none;
+      border: none;
+      font-size: 1.5em;
+    }
+    @media (max-width: $media-xsm) {
+      position: absolute;
+      right: 10px;
+      top: 25px;
+    }
+  }
+
+  nav.visible {
+    visibility: visible;
+  }
+}
