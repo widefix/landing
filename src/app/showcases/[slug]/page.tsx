@@ -6,8 +6,10 @@ import { useParams } from 'next/navigation';
 import categories from '@/showcases';
 import Footer from '@/components/footer/Footer';
 import Header from '@/components/header/Header';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
 
-const ShowcasePage: React.FC = () => {
+export default function ShowcasePage() {
   const params = useParams();
   const { slug } = params;
 
@@ -121,11 +123,18 @@ const ShowcasePage: React.FC = () => {
       <section className="case-related">
         <div className="inner p-vertical">
           <h2 className="h2-stripe">Related Articles</h2>
-
-          <div className="case-swiper swiper">
-            <div className="swiper-wrapper">
-              <div className={`swiper-slide ${showcase.body.related.wrapperColor}`}>
-                <h4 className='company-name'>{showcase.body.related.companyName}:</h4>
+          <Swiper
+            modules={[Navigation]}
+            spaceBetween={39}
+            slidesPerView={'auto'}
+            navigation={{
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            }}
+            className={'case-swiper'}
+          >
+            <SwiperSlide className={`${showcase.body.related.wrapperColor}`}>
+              <h4 className='company-name'>{showcase.body.related.companyName}:</h4>
                 <h4>{showcase.body.related.solution}</h4>
                 <p>{showcase.body.related.results}</p>
                 <div>
@@ -141,13 +150,12 @@ const ShowcasePage: React.FC = () => {
                     Learn more
                   </a>
                 </div>
-              </div>
-            </div>
+            </SwiperSlide>
             <div className="swiper-prev-next">
               <button type="button" className="swiper-button-prev" aria-label="Previous slide" />
               <button type="button" className="swiper-button-next" aria-label="Next slide" />
             </div>
-          </div>
+          </Swiper>
         </div>
       </section>
 
@@ -190,5 +198,3 @@ const ShowcasePage: React.FC = () => {
     </body>
   );
 };
-
-export default ShowcasePage;
