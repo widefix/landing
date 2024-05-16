@@ -1,8 +1,11 @@
+import Footer from '@/components/footer/Footer';
+import Header from '@/components/header/Header';
 import Image from 'next/image'
 
 export default function HomePage() {
   return (
-    <>
+    <body>
+      <Header />
       <section className="hero has-vertical-paddings">
         <div className="inner">
           <div className="hero-block-left">
@@ -672,7 +675,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-    
-    </>
+      <Footer />
+    </body>
   );
 }

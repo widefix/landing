@@ -133,7 +133,6 @@
     flex-direction: column;
     flex-wrap: wrap;
     backdrop-filter: blur(2px);
-    margin: 0 10px;
     width: 30%;
     @media screen and (max-width: $media-xsm) {
       width: 90%;
@@ -163,10 +162,15 @@
       font-weight: 700;
       line-height: normal;
       margin-bottom: 36px;
+
+
+      &.company-name {
+        margin-bottom: 0;
+      }
     }
     p {
       color: #FFF;
-      font-family: Inter, serif;
+      font-family: '__Inter_aaf875' , serif;
       font-size: 20px;
       font-style: normal;
       font-weight: 500;

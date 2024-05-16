@@ -1,18 +1,18 @@
 'use client'
 
-import ShowcaseItem from '@/components/showcases/ShowcaseItem'
+import ShowcaseItems from '@/components/showcases/ShowcaseItems'
 import { useEffect } from 'react'
 import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+import { Pagination } from 'swiper/modules';
 
 import { metadata } from './metadata'
+import Showcases from '@/showcases.tsx';
+import Footer from '@/components/footer/Footer';
+import Header from '@/components/header/Header';
 
 export default function ShowcasesPage() {
+  const showcases = Showcases
 
   useEffect(() => {
     const accordionButtons = document.querySelectorAll('.accordion-action');
@@ -39,7 +39,8 @@ export default function ShowcasesPage() {
   }, []);
 
   return (
-    <>
+    <body className='showcases'>
+      <Header />
       <section className="showcases-paddings">
         <div className="inner portfolio-inner">
           <div className="portfolio">
@@ -80,18 +81,31 @@ export default function ShowcasesPage() {
                 <div className="clients-swiper-wrapper">
                   <div className="clients-swiper swiper">
                     <Swiper
-                      modules={[Navigation, Pagination]}
+                      modules={[Pagination]}
                       slidesPerView={1}
+                      loop={true}
                       pagination={{ clickable: true }}
-                      onSlideChange={() => console.log('slide change')}
-                      onSwiper={(swiper) => console.log(swiper)}
+                      autoplay={true}
+                      className={'clients-swiper'}
                     >
-                      <SwiperSlide><Image src="/img/showcases/clients/toptal.svg" alt="Toptal" width="125" height="34" /></SwiperSlide>
-                      <SwiperSlide><Image src="/img/showcases/clients/hubstaff.svg" alt="Hubstaff" width="150" height="33" /></SwiperSlide>
-                      <SwiperSlide><Image src="/img/showcases/clients/activeplatform.svg" alt="ActivePlatform" width="202" height="25" /></SwiperSlide>
-                      <SwiperSlide><Image src="/img/showcases/clients/palladium.svg" alt="Palladium" width="181" height="21" /></SwiperSlide>
-                      <SwiperSlide style={{background:"black"}}><Image src="/img/showcases/clients/wo.svg" alt="WorshipOnline" width="230" height="35" /></SwiperSlide >
-                      <SwiperSlide><Image src="/img/showcases/clients/kajabi.svg" alt="Kajabi" width="138" height="24" /></SwiperSlide>
+                      <SwiperSlide>
+                        <Image src="/img/showcases/clients/toptal.svg" alt="Toptal" width="125" height="34" />
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <Image src="/img/showcases/clients/hubstaff.svg" alt="Hubstaff" width="150" height="33" />
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <Image src="/img/showcases/clients/activeplatform.svg" alt="ActivePlatform" width="202" height="25" />
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <Image src="/img/showcases/clients/palladium.svg" alt="Palladium" width="181" height="21" />
+                      </SwiperSlide>
+                      <SwiperSlide style={{background: "black"}}>
+                        <Image src="/img/showcases/clients/wo.svg" alt="WorshipOnline" width="230" height="35" />
+                      </SwiperSlide >
+                      <SwiperSlide>
+                        <Image src="/img/showcases/clients/kajabi.svg" alt="Kajabi" width="138" height="24" />
+                      </SwiperSlide>
                       <div className="portfolio-clients-title">Clients</div>
                     </Swiper>
                   </div>
@@ -139,30 +153,17 @@ export default function ShowcasesPage() {
       <section className="case-studies">
         <div className="inner">
           <h2 className="h2">Case Studies</h2>
-          <ShowcaseItem 
-            title="Systems Integrations"
-            imageSrc="/img/showcases/systems-integrations.svg"
-            buttonLink="/showcases/stripe-integration"
-            companyName="Worship Online"
-            companyImageSrc="/img/showcases/clients/wo.svg"
-            solution="Stripe Integration"
-            results="We fixed data consistency issues between the app and Stripe."
-            wrapperColor="purple"
-            buttonColor="purple"
-          />
-          <ShowcaseItem
-            title="Optimizations"
-            imageSrc="/img/showcases/optimisation.svg"
-            buttonLink="/showcases/prevent-account-sharing"
-            companyName="Worship Online"
-            companyImageSrc="/img/showcases/clients/wo.svg"
-            solution="Prevent account sharing"
-            results="We implemented an on-premises solution to combat account sharing."
-            wrapperColor="green"
-            buttonColor="green"
-          />
+          {showcases.map(category => (
+            <ShowcaseItems
+              key={category.id}
+              title={category.title}
+              imageSrc={category.imageSrc}
+              showcases={category.showcases}
+            />
+          ))}
         </div>
       </section>
-    </>
+      <Footer />
+    </body>
   )
 }

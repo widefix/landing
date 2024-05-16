@@ -67,6 +67,7 @@ $themeColor: #007aff !default;
   position: relative;
   transition-property: transform;
   display: block;
+  box-sizing: border-box;
 }
 .swiper-slide-invisible-blank {
   visibility: hidden;
@@ -124,6 +125,7 @@ $themeColor: #007aff !default;
 
 .swiper-pagination {
   display: flex;
+  gap: 8px;
   justify-content: center;
   .swiper-pagination-bullet {
     width: 24px;
@@ -151,6 +153,9 @@ $themeColor: #007aff !default;
     width: 32px;
     height: 32px;
     background-image: url('/img/showcases/chevron-right.svg');
+    &::after {
+      content: none;
+    }
   }
   .swiper-button-prev {
     transform: rotate(180deg);
