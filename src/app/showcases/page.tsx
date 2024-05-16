@@ -84,7 +84,7 @@ export default function ShowcasesPage() {
                       modules={[Pagination]}
                       slidesPerView={1}
                       loop={true}
-                      pagination={{ clickable: true }}
+                      pagination={{ clickable: true, el: '.swiper-pagination' }}
                       autoplay={true}
                       className={'clients-swiper'}
                     >
@@ -107,6 +107,7 @@ export default function ShowcasesPage() {
                         <Image src="/img/showcases/clients/kajabi.svg" alt="Kajabi" width="138" height="24" />
                       </SwiperSlide>
                       <div className="portfolio-clients-title">Clients</div>
+                      <div className="swiper-pagination"></div>
                     </Swiper>
                   </div>
                 </div>
