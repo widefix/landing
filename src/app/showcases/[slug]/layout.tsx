@@ -50,6 +50,16 @@ export async function generateMetadata({ params } : Props): Promise<Metadata> {
   };
 }
 
+export async function generateStaticParams() {
+  const slugs = categories.flatMap(category =>
+    category.showcases.map(showcase => ({
+      slug: showcase.slug
+    }))
+  );
+
+  return slugs;
+}
+
 export default function ShowcaseLayout({
   children,
 }: Readonly<{
