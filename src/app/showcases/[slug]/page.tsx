@@ -165,7 +165,7 @@ export default function ShowcasePage() {
             <div>
               <h2>Other issues fixed</h2>
 
-              <a className="fixed-issue" href="javascript:void(0)">
+              <a className="fixed-issue" href="">
                 <span className="fixed-issue-title">
                   <span className="fixed-issue-title-h">Stripe Integration</span>
                   <Image aria-hidden="true" alt="icon" src="/img/showcases/case/icons/link.svg" width="50" height="50" />
@@ -174,7 +174,7 @@ export default function ShowcasePage() {
               </a>
             </div>
             <div>
-              <a className="fixed-issue" href="javascript:void(0)">
+              <a className="fixed-issue" href="">
                 <span className="fixed-issue-title">
                   <span className="fixed-issue-title-h">Database Fix</span>
                   <Image aria-hidden="true" alt="icon" src="/img/showcases/case/icons/link.svg" width="50" height="50" />
@@ -183,7 +183,7 @@ export default function ShowcasePage() {
               </a>
             </div>
             <div>
-              <a className="fixed-issue" href="javascript:void(0)">
+              <a className="fixed-issue" href="">
                 <span className="fixed-issue-title">
                   <span className="fixed-issue-title-h">Ruby on Rails Error</span>
                   <Image aria-hidden="true" alt="icon" src="/img/showcases/case/icons/link.svg" width="50" height="50" />

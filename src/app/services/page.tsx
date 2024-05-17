@@ -5,7 +5,25 @@ import Header from '@/components/header/Header';
 
 export const metadata: Metadata = {
   title: "Services - WideFix",
-  description: "Whether you're looking to create a website, develop a mobile app, or build a custom software solution, we've got you covered."
+  description: "Whether you're looking to create a website, develop a mobile app, or build a custom software solution, we've got you covered.",
+  alternates: {
+    canonical: "https://widefix.com/services"
+  },
+  openGraph: {
+    title: "Services - WideFix",
+    description: "Whether you're looking to create a website, develop a mobile app, or build a custom software solution, we've got you covered.",
+    url: "https://widefix.com/services",
+    siteName: "WideFix",
+    images: [
+      {
+        url: "https://raw.githubusercontent.com/widefix/widefix/main/img/block-hero.jpg",
+        width: 1440,
+        height: 786,
+      }
+    ],
+    locale: "en_US",
+    type: "website"
+  }
 };
 
 export default function ServicesPage() {

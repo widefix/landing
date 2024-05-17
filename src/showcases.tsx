@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import Image from 'next/image'
 
-interface ShowcasePreview {
+export interface ShowcasePreview {
   companyName: string;
   solution: string;
   results: string;
@@ -11,7 +11,7 @@ interface ShowcasePreview {
   url: string;
 }
 
-interface ShowcaseBody {
+export interface ShowcaseBody {
   bannerTopTitle: ReactNode;
   bannerTopImageSrc: string;
   description: string;
@@ -28,17 +28,19 @@ interface ShowcaseBody {
   related: ShowcasePreview;
 }
 
-interface Showcase {
+export interface Showcase {
   id: number;
-  active: boolean;
   slug: string;
   preview: ShowcasePreview;
   body: ShowcaseBody;
+  metadata: {
+    title: string;
+    description: string;
+  }
 }
 
-interface Category {
+export interface Category {
   id: string;
-  active: boolean;
   title: string;
   imageSrc: string;
   showcases: Showcase[];
@@ -48,13 +50,11 @@ interface Category {
 const categories: Category[] = [
   {
     id: "systems-integrations",
-    active: true,
     title: "Systems Integrations",
     imageSrc: "/img/showcases/systems-integrations.svg",
     showcases: [
       {
         id: 1,
-        active: true,
         slug: "stripe-integration",
         preview: {
           companyName: "Worship Online",
@@ -133,7 +133,7 @@ const categories: Category[] = [
               could amount to $1500 in MRR (these are rough calculations done on the historical data).
             </p>
           ),
-          helpTitle: 'Need help with Stripe integration?',
+          helpTitle: "Need help with Stripe integration?",
           related: {
             companyName: "Worship Online",
             solution: "Stripe Integration",
@@ -142,20 +142,22 @@ const categories: Category[] = [
             buttonColor: "purple",
             companyImageSrc: "/img/showcases/clients/wo.svg",
             url: "https://blog.widefix.com/reconcile-app-users-against-stripe-and-prevent-financial-losses/"
-          },
+          }
+        },
+        metadata: {
+          title: "Stripe Integration - WideFix",
+          description: "See how we fixed Stripe integration data consistency and prevented financial losses."
         }
       }
     ]
   },
   {
     id: "optimisations",
-    active: true,
     title: "Optimisations",
     imageSrc: "/img/showcases/optimisation.svg",
     showcases: [
       {
         id: 2,
-        active: true,
         slug: "prevent-account-sharing",
         preview: {
           companyName: "Worship Online",
@@ -225,7 +227,7 @@ const categories: Category[] = [
               Daily signups increased by <strong><i>30%</i></strong>, login sessions per user <strong><i>decreased by 400%</i></strong>, and revenue stopped declining. Our solution <strong><i>prevented 5%</i></strong> monthly revenue losses.
             </p>
           ),
-          helpTitle: 'Need for help with performance optimization?',
+          helpTitle: "Need for help with performance optimization?",
           related: {
             companyName: "Worship Online",
             solution: "Stripe Integration",
@@ -234,7 +236,11 @@ const categories: Category[] = [
             buttonColor: "purple",
             companyImageSrc: "/img/showcases/clients/wo.svg",
             url: "https://blog.widefix.com/prevent-account-sharing-with-mfa/"
-          },
+          }
+        },
+        metadata: {
+          title: "Prevent account sharing - WideFix",
+          description: "See how we added Multi-Factor Authentication (MFA) and limitted login sessions per user and prevented 5% monthly financial losses."
         }
       }
     ]

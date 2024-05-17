@@ -5,7 +5,6 @@ import ShowcaseItem from './ShowcaseItem';
 
 interface ShowcaseItemProps {
   id: number,
-  active: boolean,
   slug: string,
   preview: {
     companyName: string,
