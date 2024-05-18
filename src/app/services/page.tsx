@@ -1,7 +1,5 @@
 import Image from 'next/image'
 import type { Metadata } from "next";
-import Footer from '@/components/footer/Footer';
-import Header from '@/components/header/Header';
 
 export const metadata: Metadata = {
   title: "Services - WideFix",
@@ -28,8 +26,7 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
-    <body>
-      <Header />
+    <main>
       <section className="hero has-vertical-paddings">
         <div className="inner">
           <div className="hero-block-left">
@@ -78,7 +75,6 @@ export default function ServicesPage() {
           </p>
         </div>
       </section>
-      <Footer />
-    </body>
+    </main>
   )
 }

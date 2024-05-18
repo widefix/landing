@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import "@/app/styles/main.scss";
 import "@/app/styles/normalize.css";
-import Head from "@/components/head/Head";
+import Footer from "@/components/footer/Footer";
+import Header from "@/components/header/Header";
 
 const inter = Inter({
   subsets: ['latin'],
@@ -72,8 +73,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${montserrat.variable}`}>
-      <Head />
-      {children}
+      <body>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

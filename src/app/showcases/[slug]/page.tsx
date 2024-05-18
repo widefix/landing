@@ -4,10 +4,9 @@ import React from 'react';
 import Image from 'next/image'
 import { useParams } from 'next/navigation';
 import categories from '@/showcases';
-import Footer from '@/components/footer/Footer';
-import Header from '@/components/header/Header';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
+import NotFoundPage from '@/app/not-found';
 
 export default function ShowcasePage() {
   const params = useParams();
@@ -22,18 +21,17 @@ export default function ShowcasePage() {
   );
 
   if (!category) {
-    return <p>Showcase not found</p>;
+    return <NotFoundPage />;
   }
 
   const showcase = category.showcases.find(showcase => showcase.slug === slug);
 
   if (!showcase) {
-    return <p>Showcase not found</p>;
+     return <NotFoundPage />;
   }
 
   return (
-    <body className='showcases-case'>
-      <Header />
+    <main className='showcases-case'>
       <section className="case-banner-top">
         <div className="inner">
           <div className="banner-content">
@@ -194,7 +192,6 @@ export default function ShowcasePage() {
           </div>
         </div>
       </section>
-      <Footer />
-    </body>
+    </main>
   );
 };

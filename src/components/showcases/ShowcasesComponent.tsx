@@ -44,8 +44,7 @@ export default function ShowcasesPage() {
   }, []);
 
   return (
-    <body className='showcases'>
-      <Header />
+    <main className='showcases'>
       <section className="showcases-paddings">
         <div className="inner portfolio-inner">
           <div className="portfolio">
@@ -169,7 +168,6 @@ export default function ShowcasesPage() {
           ))}
         </div>
       </section>
-      <Footer />
-    </body>
+    </main>
   )
 }
