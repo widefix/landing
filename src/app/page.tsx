@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link';
 
 export default function HomePage() {
   return (
@@ -25,8 +26,8 @@ export default function HomePage() {
               </ul>
             </div>
             <div className="button-container">
-              <a className="button primary" href="https://calendly.com/andrei-kaleshka/30min" target="_blank"
-                rel="nofollow">Schedule a call now</a>
+              <Link className="button primary" href="https://calendly.com/andrei-kaleshka/30min" target="_blank"
+                rel="nofollow">Schedule a call now</Link>
             </div>
           </div>
           <div className="hero-block-right">
@@ -151,8 +152,8 @@ export default function HomePage() {
             </div>
           </div>
           <div className="button-container">
-            <a className="button primary" href="https://calendly.com/andrei-kaleshka/30min" target="_blank"
-              rel="nofollow">Schedule a call now</a>
+            <Link className="button primary" href="https://calendly.com/andrei-kaleshka/30min" target="_blank"
+              rel="nofollow">Schedule a call now</Link>
           </div>
         </div>
       </section>
@@ -196,8 +197,8 @@ export default function HomePage() {
         <div className="inner">
           <header>
             <h2>You have a lot to consider. Let experts <span>optimize</span> your app that customers will love to use!</h2>
-            <div className="button-wrapper"><a className="button primary" href="https://calendly.com/andrei-kaleshka/30min"
-                target="_blank" rel="nofollow">Schedule a call now</a></div>
+            <div className="button-wrapper"><Link className="button primary" href="https://calendly.com/andrei-kaleshka/30min"
+                target="_blank" rel="nofollow">Schedule a call now</Link></div>
           </header>
           <div className="section-content">
             <div className="section-block">
@@ -247,17 +248,17 @@ export default function HomePage() {
           <div className="contacts">
             <div className="contact">
               <Image src="/img/icons/email.svg" alt="Icon for email" width="40" height="40" />
-              <p>Email: <a href="mailto:call@widefix.com" />call@widefix.com</p>
+              <p>Email: <Link href="mailto:call@widefix.com">call@widefix.com</Link></p>
             </div>
             <div className="contact">
               <Image src="/img/icons/phone.svg" alt="Icon for phone" width="40" height="40" />
-              <p>Phone: <a href="tel:+48516295359">+48516295359</a></p>
+              <p>Phone: <Link href="tel:+48516295359">+48516295359</Link></p>
             </div>
           </div>
 
           <div className="button-container">
-            <a className="button primary" href="https://calendly.com/andrei-kaleshka/30min" target="_blank"
-              rel="nofollow">Schedule a call now</a>
+            <Link className="button primary" href="https://calendly.com/andrei-kaleshka/30min" target="_blank"
+              rel="nofollow">Schedule a call now</Link>
           </div>
         </div>
       </section>
@@ -438,9 +439,9 @@ export default function HomePage() {
                 </g>
               </svg>
               <footer>
-                <a href="https://clutch.co/profile/widefix#review-1399992" rel="nofollow" target="_blank"
+                <Link href="https://clutch.co/profile/widefix#review-1399992" rel="nofollow" target="_blank"
                   className="button secondary small">Project Details <Image src="/img/icons/right-arrow.svg" alt="Right icon"
-                    width="12" height="12" /></a>
+                    width="12" height="12" /></Link>
               </footer>
             </div>
             <div className="client">
@@ -449,9 +450,9 @@ export default function HomePage() {
                 <Image src="/img/clients/activeplatform.png" alt="ActivePlatform icon" width="201" height="24" />
               </picture>
               <footer>
-                <a href="https://clutch.co/profile/widefix#review-2009400" rel="nofollow" target="_blank"
+                <Link href="https://clutch.co/profile/widefix#review-2009400" rel="nofollow" target="_blank"
                   className="button secondary small">Project Details <Image src="/img/icons/right-arrow.svg" alt="Right icon"
-                    width="12" height="12" /></a>
+                    width="12" height="12" /></Link>
               </footer>
             </div>
             <div className="client">
@@ -460,9 +461,9 @@ export default function HomePage() {
                 <Image src="/img/clients/palladium.png" alt="Palladium icon" width="180" height="20" />
               </picture>
               <footer>
-                <a href="https://clutch.co/profile/widefix#review-2046865" rel="nofollow" target="_blank"
+                <Link href="https://clutch.co/profile/widefix#review-2046865" rel="nofollow" target="_blank"
                   className="button secondary small">Project Details <Image src="/img/icons/right-arrow.svg" alt="Right icon"
-                    width="12" height="12" /></a>
+                    width="12" height="12" /></Link>
               </footer>
             </div>
             <div className="client">
@@ -471,9 +472,9 @@ export default function HomePage() {
                 <Image src="/img/clients/schildr.png" alt="SCHILDR icon" width="180" height="50" />
               </picture>
               <footer>
-                <a href="https://clutch.co/profile/widefix#review-1385286" rel="nofollow" target="_blank"
+                <Link href="https://clutch.co/profile/widefix#review-1385286" rel="nofollow" target="_blank"
                   className="button secondary small">Project Details <Image src="/img/icons/right-arrow.svg" alt="Right icon"
-                    width="12" height="12" /></a>
+                    width="12" height="12" /></Link>
               </footer>
             </div>
             <div className="client">
@@ -485,9 +486,9 @@ export default function HomePage() {
                 <path fillRule="evenodd" clipRule="evenodd" d="M73.468 19.5343L75.1503 16.5429C75.8549 17.2286 76.7785 17.8596 78.0269 17.8596C79.7359 17.8596 80.8065 16.7072 80.8065 14.923L80.7996 2.68115H84.6943V14.9777C84.6943 19.3144 82.042 21.3185 78.3242 21.3185C76.507 21.3185 74.7706 20.824 73.468 19.5343ZM58.5039 14.5003L61.3264 6.57958L64.1488 14.5003H58.5039ZM65.2083 17.7455L66.3201 20.9897H70.7183L63.7425 2.68177H58.9103L51.9078 20.9897H56.3044L57.4445 17.7455H65.2083ZM38.8654 13.6609L44.3488 20.9898H49.0985L41.4172 11.2727L48.6105 2.68185H43.8599L37.4469 10.8616V2.68185H33.6002V20.9898H37.4469V15.3625L38.8654 13.6609ZM95.6196 14.2692L98.4429 6.57958L101.265 14.2692H95.6196ZM102.325 17.9767L103.437 20.9897H107.836L100.859 2.68177H96.026L89.0235 20.9897H93.4209L94.5602 17.9767H102.325ZM123.448 15.5004C123.448 14.348 122.634 13.3425 121.113 13.3425H116.084V17.5132H121.113C122.579 17.5132 123.448 16.8179 123.448 15.5004ZM123.095 8.03416C123.095 6.88089 122.281 6.15782 120.978 6.15782H116.084V10.0973H120.978C122.281 10.0973 123.095 9.18655 123.095 8.03416ZM112.189 20.9895V2.68152H121.818C125.266 2.68152 127.03 4.90549 127.03 7.34759C127.03 9.65325 125.619 11.1906 123.909 11.5478C125.835 11.8494 127.383 13.744 127.383 16.0497C127.383 18.7942 125.565 20.9895 122.117 20.9895H112.189ZM137.85 20.9898H134.004V2.68185H137.85V20.9898Z" fill="#040506"/>
               </svg>
               <footer>
-                <a href="https://clutch.co/profile/widefix#review-225249" rel="nofollow" target="_blank"
+                <Link href="https://clutch.co/profile/widefix#review-225249" rel="nofollow" target="_blank"
                   className="button secondary small">Project Details <Image src="/img/icons/right-arrow.svg" alt="Right icon"
-                    width="12" height="12" /></a>
+                    width="12" height="12" /></Link>
               </footer>
             </div>
           </div>
@@ -504,39 +505,39 @@ export default function HomePage() {
           </header>
           <div className="container">
             <div className="item">
-              <a rel="nofollow" href="https://www.packtpub.com/product/rake-task-management-essentials/9781783280773"
+              <Link rel="nofollow" href="https://www.packtpub.com/product/rake-task-management-essentials/9781783280773"
                 target="_blank">
                 <div className="content">
                   <span>BOOK</span>
                 </div>
-              </a>
+              </Link>
               <p>A book authored by the founder of WideFix, Andrei Kaleshka.</p>
             </div>
             <div className="item">
-              <a href="https://blog.widefix.com/spike-of-signups-business-threat/" target="_blank">
+              <Link href="https://blog.widefix.com/spike-of-signups-business-threat/" target="_blank">
                 <div className="content">
                   <span>TECH BLOG</span>
                   <h3>Fake signups: a threat to your business</h3>
                 </div>
-              </a>
+              </Link>
               <p>A recent technology problem that was solved for one of our clients.</p>
             </div>
             <div className="item">
-              <a rel="nofollow" href="https://github.com/ka8725/migration_data" target="_blank">
+              <Link rel="nofollow" href="https://github.com/ka8725/migration_data" target="_blank">
                 <div className="content">
                   <span>Open-Sourced Library</span>
                   <h3>Migration Data</h3>
                 </div>
-              </a>
+              </Link>
               <p>An open-sourced library developed by us to improve our daily developer task routine..</p>
             </div>
             <div className="item">
-              <a rel="nofollow" href="https://github.com/widefix/actual_db_schema" target="_blank">
+              <Link rel="nofollow" href="https://github.com/widefix/actual_db_schema" target="_blank">
                 <div className="content">
                   <span>Open-Sourced Library</span>
                   <h3>Actual DB Schema</h3>
                 </div>
-              </a>
+              </Link>
               <p>An open-sourced library developed by us to improve our daily developer task routine..</p>
             </div>
           </div>
@@ -548,13 +549,13 @@ export default function HomePage() {
           <header id="reviews">
             <h2>Read what our <span>clients</span> have to say.</h2>
             <div className="button-container">
-              <a className="button primary" href="https://calendly.com/andrei-kaleshka/30min" target="_blank"
-                rel="nofollow">Schedule a call now</a>
+              <Link className="button primary" href="https://calendly.com/andrei-kaleshka/30min" target="_blank"
+                rel="nofollow">Schedule a call now</Link>
             </div>
           </header>
-          <a href="https://clutch.co/profile/widefix#reviews" target="_blank" rel="nofollow">
+          <Link href="https://clutch.co/profile/widefix#reviews" target="_blank" rel="nofollow">
             <Image src="/img/powered-by-clutch.png" alt="Clutch Logo" width="130" height="20" />
-          </a>
+          </Link>
           <div className="slider-wrapper">
             <div className="slider">
               <div className="slide">
