@@ -30,12 +30,12 @@ export async function generateMetadata({ params } : Props): Promise<Metadata> {
     title: showcase.metadata.title,
     description: showcase.metadata.description,
     alternates: {
-      canonical: showcase.slug,
+      canonical: `https://widefix.com/showcases/${showcase.slug}`,
     },
     openGraph: {
       title: showcase.metadata.title,
       description: showcase.metadata.description,
-      url: showcase.slug,
+      url: `https://widefix.com/showcases/${showcase.slug}`,
       siteName: 'WideFix',
       images: [
         {

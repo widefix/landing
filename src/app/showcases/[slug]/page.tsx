@@ -7,6 +7,7 @@ import categories from '@/showcases';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import NotFoundPage from '@/app/not-found';
+import Link from 'next/link';
 
 export default function ShowcasePage() {
   const params = useParams();
@@ -142,11 +143,13 @@ export default function ShowcasePage() {
                 </div>
                 <div className="slide-footer">
                   <div className="client-img">
-                    <a href={showcase.body.related.url} target="_blank"><Image src={showcase.body.related.companyImageSrc} alt="Client" width="104" height="25" /></a>
+                    <Link href={showcase.body.related.url} target="_blank">
+                      <Image src={showcase.body.related.companyImageSrc} alt="Client" width="104" height="25" />
+                    </Link>
                   </div>
-                  <a href={showcase.body.related.url} target="_blank" className="slide-learn-more">
-                    Learn more
-                  </a>
+                  <Link href={showcase.body.related.url} target="_blank" className="slide-learn-more">
+                    More about
+                  </Link>
                 </div>
             </SwiperSlide>
             <div className="swiper-prev-next">

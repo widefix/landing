@@ -28,9 +28,11 @@ export default function ShowcaseItem({
       </div>
       <div className="slide-footer">
         <div className="client-img">
-          <Link href={`/showcases/${slug}`}><Image src={companyImageSrc} alt="Client" width="104" height="25"/></Link>
+          <Link href={`/showcases/${slug}`}>
+            <Image src={companyImageSrc} alt="Client" width="104" height="25"/>
+          </Link>
         </div>
-        <Link href={`/showcases/${slug}`} className="slide-learn-more">Learn more</Link>
+        <Link href={`/showcases/${slug}`} className="slide-learn-more">More about</Link>
       </div>
     </>
   )
