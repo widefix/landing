@@ -79,7 +79,7 @@ export default function ShowcasePage() {
           <h2 className="problem">Problem</h2>
           {showcase.body.problemText}
           <div className="curvy-image">
-            <Image src="/img/showcases/case/laptop.png" alt="Laptop" width="1156" height="513" />
+            <Image src="/img/showcases/case/laptop.webp" alt="Laptop" width="1156" height="513" />
           </div>
         </div>
       </section>
