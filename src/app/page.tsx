@@ -9,7 +9,7 @@ export default function HomePage() {
           <div className="hero-block-left">
             <h1>Leave <span>the tech</span> to us and focus on <span>growing</span> your business</h1>
             <div className="promise-block">
-              <h3 className="title">Our promise to you</h3>
+              <h2 className="title">Our promise to you</h2>
               <ul>
                 <li>
                   <Image src="/img/promises/save-time.svg" alt="Save Time" width="24" height="24" />

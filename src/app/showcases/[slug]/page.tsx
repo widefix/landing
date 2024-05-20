@@ -133,8 +133,8 @@ export default function ShowcasePage() {
             className={'case-swiper'}
           >
             <SwiperSlide className={`${showcase.body.related.wrapperColor}`}>
-              <h4 className='company-name'>{showcase.body.related.companyName}:</h4>
-                <h4>{showcase.body.related.solution}</h4>
+              <h3 className='company-name'>{showcase.body.related.companyName}:</h3>
+                <h3>{showcase.body.related.solution}</h3>
                 <p>{showcase.body.related.results}</p>
                 <div>
                   <button type="button" className={`tag ${showcase.body.related.buttonColor}`}>

@@ -38,8 +38,8 @@ export default function ServicesPage() {
           </div>
           <div className="hero-block-right">
             <picture>
-              <source srcSet="/img/services.jpg?as=webp&width=800" type="image/webp" />
-              <Image src="/img/services.jpg?width=800" alt="Optimise your app to get more customers" width="543"
+              <source srcSet="/img/services.webp?as=webp&width=800" type="image/webp" />
+              <Image src="/img/services.webp?width=800" alt="Optimise your app to get more customers" width="543"
                 height="474" />
             </picture>
           </div>

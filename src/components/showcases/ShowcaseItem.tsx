@@ -20,8 +20,8 @@ export default function ShowcaseItem({
 } : ShowcaseItemProps) {
   return (
     <>
-      <h4 className='company-name'>{companyName}:</h4>
-      <h4>{solution}</h4>
+      <h3 className='company-name'>{companyName}:</h3>
+      <h3>{solution}</h3>
       <p>{results}</p>
       <div>
         <button type="button" className={`tag ${buttonColor}`}>{solution}</button>

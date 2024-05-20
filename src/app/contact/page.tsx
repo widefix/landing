@@ -38,9 +38,9 @@ export default function ContactPage() {
           </div>
           <div className="hero-block-right">
             <picture>
-              <source srcSet="/img/contact.jpg?as=webp&width=800" type="image/webp" />
+              <source srcSet="/img/contact.webp?as=webp&width=800" type="image/webp" />
               <Image
-                src="/img/contact.jpg?width=800"
+                src="/img/contact.webp?width=800"
                 alt="Optimise your app to get more customers"
                 width="543"
                 height="474"

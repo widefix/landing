@@ -50,7 +50,7 @@ export default function ShowcasesPage() {
           <div className="portfolio">
             <div className="we-are-widefix">
               <div>
-                <Image src="/img/showcases/widefix.svg" alt="We are widefix" width="408" height="406" />
+                <Image src="/img/showcases/widefix.svg" alt="We are widefix" width="408" height="406" loading="eager" />
                 <p>
                   <span>We are</span>
                 </p>
