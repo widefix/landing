@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://widefix.com
+
+# Sitemaps
+Sitemap: https://widefix.com/sitemap.xml
