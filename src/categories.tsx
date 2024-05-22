@@ -13,7 +13,6 @@ export interface Category {
   active: boolean;
 }
 
-// Массив категорий
 const categories: Category[] = [
   {
     name: CategoryName.systemsIntegrations,
@@ -47,8 +46,4 @@ const categories: Category[] = [
   }
 ];
 
-// Возвращаем массив только активных категорий
-const activeCategories = categories.filter(category => category.active);
-
 export default categories;
-export { activeCategories };
