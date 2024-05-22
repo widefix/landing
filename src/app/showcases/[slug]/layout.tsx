@@ -39,11 +39,7 @@ export async function generateMetadata({ params } : Props): Promise<Metadata> {
 }
 
 export async function generateStaticParams() {
-  const slugs = showcases.map(showcase => (
-    {
-      slug: showcase.slug
-    })
-  );
+  const slugs = showcases.map(showcase => ({ slug: showcase.slug }));
 
   return slugs;
 }

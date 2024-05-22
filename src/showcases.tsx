@@ -62,7 +62,6 @@ export interface ShowcaseBody {
 }
 
 export interface Showcase {
-  id: number;
   category: CategoryName;
   slug: string;
   preview: ShowcasePreview;
@@ -75,7 +74,6 @@ export interface Showcase {
 
 const showcases: Showcase[] = [
   {
-    id: 1,
     slug: "stripe-integration",
     category: CategoryName.systemsIntegrations,
     preview: {
@@ -174,7 +172,6 @@ const showcases: Showcase[] = [
     }
   },
   {
-    id: 2,
     slug: "prevent-account-sharing",
     category: CategoryName.optimisations,
     preview: {
