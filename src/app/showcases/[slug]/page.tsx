@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image'
 import { useParams } from 'next/navigation';
-import categories from '@/showcases';
+import showcases from '@/showcases';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import NotFoundPage from '@/app/not-found';
@@ -11,21 +11,7 @@ import Link from 'next/link';
 
 export default function ShowcasePage() {
   const params = useParams();
-  const { slug } = params;
-
-  if (!slug) {
-    return <p>Loading...</p>;
-  }
-
-  const category = categories.find(category => 
-    category.showcases.some(showcase => showcase.slug === slug)
-  );
-
-  if (!category) {
-    return <NotFoundPage />;
-  }
-
-  const showcase = category.showcases.find(showcase => showcase.slug === slug);
+  const showcase = showcases.find(showcase => showcase.slug === params.slug);
 
   if (!showcase) {
      return <NotFoundPage />;
@@ -132,26 +118,28 @@ export default function ShowcasePage() {
             }}
             className={'case-swiper'}
           >
-            <SwiperSlide className={`${showcase.body.related.wrapperColor}`}>
-              <h3 className='company-name'>{showcase.body.related.companyName}:</h3>
-                <h3>{showcase.body.related.solution}</h3>
-                <p>{showcase.body.related.results}</p>
+            {showcase.body.related.map(showcase => (
+              <SwiperSlide key={`${showcase.solution}`} className={`${showcase.wrapperColor}`}>
+                <h3 className='company-name'>{showcase.companyName}:</h3>
+                <h3>{showcase.solution}</h3>
+                <p>{showcase.results}</p>
                 <div>
-                  <button type="button" className={`tag ${showcase.body.related.buttonColor}`}>
-                    {showcase.body.related.solution}
+                  <button type="button" className={`tag ${showcase.buttonColor}`}>
+                    {showcase.solution}
                   </button>
                 </div>
                 <div className="slide-footer">
                   <div className="client-img">
-                    <Link href={showcase.body.related.url} target="_blank">
-                      <Image src={showcase.body.related.companyImageSrc} alt="Client" width="104" height="25" />
+                    <Link href={showcase.url} target="_blank">
+                      <Image src={showcase.companyImageSrc} alt="Client" width="104" height="25" />
                     </Link>
                   </div>
-                  <Link href={showcase.body.related.url} target="_blank" className="slide-learn-more">
+                  <Link href={showcase.url} target="_blank" className="slide-learn-more">
                     More about
                   </Link>
                 </div>
-            </SwiperSlide>
+              </SwiperSlide>
+            ))}
             <div className="swiper-prev-next">
               <button type="button" className="swiper-button-prev" aria-label="Previous slide" />
               <button type="button" className="swiper-button-next" aria-label="Next slide" />

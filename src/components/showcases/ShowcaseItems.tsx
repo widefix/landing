@@ -2,33 +2,21 @@ import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import ShowcaseItem from './ShowcaseItem';
-
-interface ShowcaseItemProps {
-  id: number,
-  slug: string,
-  preview: {
-    companyName: string,
-    solution: string,
-    results: string,
-    wrapperColor: string,
-    buttonColor: string,
-    companyImageSrc: string,
-    url: string
-  }
-}
-  
+import showcases from '@/showcases.tsx';
 
 interface ShowcaseItemsProps {
+  name: string;
   title: string;
   imageSrc: string;
-  showcases: ShowcaseItemProps[];
 }
 
 export default function ShowcaseItems({
+  name,
   title,
-  imageSrc,
-  showcases
+  imageSrc
 } : ShowcaseItemsProps) {
+  const currentShowcases = showcases.filter(showcase => showcase.category === name);
+
   return (
     <article className="accordion expanded">
       <div className="accordion-title">
@@ -54,7 +42,7 @@ export default function ShowcaseItems({
           }}
           className={'case-swiper'}
         >
-          {showcases.map(showcase => (
+          {currentShowcases.map(showcase => (
             <SwiperSlide key={`slide${showcase.id}`} className={`${showcase.preview.wrapperColor}`}>
               <ShowcaseItem 
                 key={showcase.id}

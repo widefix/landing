@@ -6,10 +6,7 @@ import Image from 'next/image'
 import type { Metadata } from "next";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
-
-import Showcases from '@/showcases.tsx';
-import Footer from '@/components/footer/Footer';
-import Header from '@/components/header/Header';
+import categories from '@/categories.tsx';
 
 export const metadata: Metadata = {
   title: "Showcases - WideFix",
@@ -17,7 +14,7 @@ export const metadata: Metadata = {
 }
 
 export default function ShowcasesPage() {
-  const showcases = Showcases
+  const activeCategories = categories.filter(category => category.active);
 
   useEffect(() => {
     const accordionButtons = document.querySelectorAll('.accordion-action');
@@ -158,12 +155,12 @@ export default function ShowcasesPage() {
       <section className="case-studies">
         <div className="inner">
           <h2 className="h2">Case Studies</h2>
-          {showcases.map(category => (
+          {activeCategories.map(category => (
             <ShowcaseItems
-              key={category.id}
+              key={category.name}
+              name={category.name}
               title={category.title}
               imageSrc={category.imageSrc}
-              showcases={category.showcases}
             />
           ))}
         </div>

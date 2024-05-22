@@ -1,24 +1,12 @@
 import { Metadata } from 'next';
-import categories from '@/showcases';
+import showcases from '@/showcases';
 
 interface Props {
   params: { slug: string };
 }
 
 export async function generateMetadata({ params } : Props): Promise<Metadata> {
-  const { slug } = params;
-
-  const category = categories.find(category =>
-    category.showcases.some(showcase => showcase.slug === slug)
-  );
-
-  if (!category) {
-    return {
-      title: 'Not found'
-    };
-  }
-
-  const showcase = category.showcases.find(showcase => showcase.slug === slug);
+  const showcase = showcases.find(showcase => showcase.slug === params.slug);
 
   if (!showcase) {
     return {
@@ -51,10 +39,10 @@ export async function generateMetadata({ params } : Props): Promise<Metadata> {
 }
 
 export async function generateStaticParams() {
-  const slugs = categories.flatMap(category =>
-    category.showcases.map(showcase => ({
+  const slugs = showcases.map(showcase => (
+    {
       slug: showcase.slug
-    }))
+    })
   );
 
   return slugs;
