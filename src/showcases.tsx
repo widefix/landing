@@ -1,12 +1,45 @@
 import { ReactNode } from 'react';
-import Image from 'next/image'
+
+export enum CategoryName {
+  systemsIntegrations = "systems-integrations",
+  optimisations = "optimisations",
+  devDesign = "dev-design",
+  devops = "devops",
+  qualityAssurance = "quality-assurance"
+}
+
+export enum ResultBoxColor {
+  green = "green",
+  blue = "blue",
+  red = "red",
+  orange = "orange",
+  lightBlue = "light-blue",
+  lightGreen = "light-green",
+  darkBlue = "dark-blue"
+}
+
+export enum SwiperSlideColor {
+  purple = "purple",
+  orange = "orange",
+  green = "green",
+  blue = "blue",
+  yellow = "yellow",
+  sea = "sea"
+}
+
+export interface ResultBox {
+  color: ResultBoxColor;
+  imageSrc: string;
+  message: string;
+  number: string;
+}
 
 export interface ShowcasePreview {
   companyName: string;
   solution: string;
   results: string;
-  wrapperColor: string;
-  buttonColor: string;
+  wrapperColor: SwiperSlideColor;
+  buttonColor: SwiperSlideColor;
   companyImageSrc: string;
   url: string;
 }
@@ -22,7 +55,7 @@ export interface ShowcaseBody {
   problemText: ReactNode;
   solutionFirstText: ReactNode;
   solutionSecondText: ReactNode;
-  resultBoxes: ReactNode;
+  resultBoxes: ResultBox[];
   resultText: ReactNode;
   helpTitle: string;
   related: ShowcasePreview[];
@@ -30,7 +63,7 @@ export interface ShowcaseBody {
 
 export interface Showcase {
   id: number;
-  category: string;
+  category: CategoryName;
   slug: string;
   preview: ShowcasePreview;
   body: ShowcaseBody;
@@ -44,13 +77,13 @@ const showcases: Showcase[] = [
   {
     id: 1,
     slug: "stripe-integration",
-    category: "systems-integrations",
+    category: CategoryName.systemsIntegrations,
     preview: {
       companyName: "Worship Online",
       solution: "Stripe Integration",
       results: "We fixed data consistency issues between the app and Stripe.",
-      wrapperColor: "purple",
-      buttonColor: "purple",
+      wrapperColor: SwiperSlideColor.purple,
+      buttonColor: SwiperSlideColor.purple,
       companyImageSrc: "/img/showcases/clients/wo.svg",
       url: ''
     },
@@ -97,20 +130,20 @@ const showcases: Showcase[] = [
           We have set up monitoring with Metabase and Slack to prevent the issue from happening again.
         </p>
       ),
-      resultBoxes: (
-        <>
-          <div className="result-box light-blue">
-            <Image src="/img/showcases/case/icons/stock.svg" alt="icon" aria-hidden="true" width="35" height="35" />
-            <div className="result-message"><strong>MRR increase</strong></div>
-            <div className="result-number">$525</div>
-          </div>
-          <div className="result-box light-green">
-            <Image src="/img/showcases/case/icons/money.svg" alt="icon" aria-hidden="true" width="35" height="35" />
-            <div className="result-message"><strong>Loss Preventation</strong></div>
-            <div className="result-number">$1500</div>
-          </div>
-        </>
-      ),
+      resultBoxes: [
+        {
+          color: ResultBoxColor.lightBlue,
+          imageSrc: "/img/showcases/case/icons/stock.svg",
+          message: "MRR increase",
+          number: "$525"
+        },
+        {
+          color: ResultBoxColor.lightGreen,
+          imageSrc: "/img/showcases/case/icons/money.svg",
+          message: "Loss Preventation",
+          number: "$1500"
+        },
+      ],
       resultText: (
         <p>
           983 out of 9,471 premium users did not have an actual subscription, which is roughly 10%. Of these 983
@@ -128,8 +161,8 @@ const showcases: Showcase[] = [
           companyName: "Worship Online",
           solution: "Stripe Integration",
           results: "How we reconciled app users with Stripe and prevented financial losses.",
-          wrapperColor: "purple",
-          buttonColor: "purple",
+          wrapperColor: SwiperSlideColor.purple,
+          buttonColor: SwiperSlideColor.purple,
           companyImageSrc: "/img/showcases/clients/wo.svg",
           url: "https://blog.widefix.com/reconcile-app-users-against-stripe-and-prevent-financial-losses/"
         }
@@ -143,13 +176,13 @@ const showcases: Showcase[] = [
   {
     id: 2,
     slug: "prevent-account-sharing",
-    category: "optimisations",
+    category: CategoryName.optimisations,
     preview: {
       companyName: "Worship Online",
       solution: "Prevent account sharing",
       results: "We implemented an on-premises solution to combat account sharing.",
-      wrapperColor: "green",
-      buttonColor: "green",
+      wrapperColor: SwiperSlideColor.green,
+      buttonColor: SwiperSlideColor.green,
       companyImageSrc: "/img/showcases/clients/wo.svg",
       url: ''
     },
@@ -188,25 +221,26 @@ const showcases: Showcase[] = [
           Later, we implemented a <strong><i>login session limit</i></strong> so that one account could have a maximum of 3 simultaneous login sessions. That was possible only after we built the infrastructure around the measurement system.
         </p>
       ),
-      resultBoxes: (
-        <>
-          <div className="result-box dark-blue">
-            <Image src="../img/showcases/case/icons/cancel.svg" alt="icon" aria-hidden="true" width="35" height="35" />
-            <div className="result-message">Revenue losses</div>
-            <div className="result-number">-5%</div>
-          </div>
-          <div className="result-box green">
-            <Image src="../img/showcases/case/icons/flag.svg" alt="icon" aria-hidden="true" width="35" height="35" />
-            <div className="result-message">Exploit The Issue</div>
-            <div className="result-number">-400%</div>
-          </div>
-          <div className="result-box blue">
-            <Image src="../img/showcases/case/icons/user.svg" alt="icon" aria-hidden="true" width="35" height="35" />
-            <div className="result-message">Monthly signups</div>
-            <div className="result-number">+27%</div>
-          </div>
-        </>
-      ),
+      resultBoxes: [
+        {
+          color: ResultBoxColor.darkBlue,
+          imageSrc: "/img/showcases/case/icons/cancel.svg",
+          message: "Revenue losses",
+          number: "-5%"
+        },
+        {
+          color: ResultBoxColor.green,
+          imageSrc: "/img/showcases/case/icons/flag.svg",
+          message: "Exploit The Issue",
+          number: "-400%"
+        },
+        {
+          color: ResultBoxColor.blue,
+          imageSrc: "/img/showcases/case/icons/user.svg",
+          message: "Monthly signups",
+          number: "+27%"
+        },
+      ],
       resultText: (
         <p>
           Daily signups increased by <strong><i>30%</i></strong>, login sessions per user <strong><i>decreased by 400%</i></strong>, and revenue stopped declining. Our solution <strong><i>prevented 5%</i></strong> monthly revenue losses.
@@ -218,8 +252,8 @@ const showcases: Showcase[] = [
           companyName: "Worship Online",
           solution: "Stripe Integration",
           results: "We fixed data consistency issues between the app and Stripe.",
-          wrapperColor: "purple",
-          buttonColor: "purple",
+          wrapperColor: SwiperSlideColor.purple,
+          buttonColor: SwiperSlideColor.purple,
           companyImageSrc: "/img/showcases/clients/wo.svg",
           url: "https://blog.widefix.com/prevent-account-sharing-with-mfa/"
         }

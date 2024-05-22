@@ -87,7 +87,13 @@ export default function ShowcasePage() {
             Results
           </h2>
           <div className="results-boxes">
-            {showcase.body.resultBoxes}
+            {showcase.body.resultBoxes.map((box, index) => (
+              <div className={`result-box ${box.color}`} key={index}>
+                <Image src={box.imageSrc} alt="icon" aria-hidden="true" width="35" height="35" />
+                <div className="result-message"><strong>{box.message}</strong></div>
+                <div className="result-number">{box.number}</div>
+              </div>
+            ))}
           </div>
           {showcase.body.resultText}
         </div>
@@ -118,8 +124,8 @@ export default function ShowcasePage() {
             }}
             className={'case-swiper'}
           >
-            {showcase.body.related.map(showcase => (
-              <SwiperSlide key={`${showcase.solution}`} className={`${showcase.wrapperColor}`}>
+            {showcase.body.related.map((showcase, index) => (
+              <SwiperSlide key={index} className={`${showcase.wrapperColor}`}>
                 <h3 className='company-name'>{showcase.companyName}:</h3>
                 <h3>{showcase.solution}</h3>
                 <p>{showcase.results}</p>

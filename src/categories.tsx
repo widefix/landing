@@ -1,42 +1,54 @@
+export enum CategoryName {
+  systemsIntegrations = "systems-integrations",
+  optimisations = "optimisations",
+  devDesign = "dev-design",
+  devops = "devops",
+  qualityAssurance = "quality-assurance"
+}
+
 export interface Category {
-  name: string;
+  name: CategoryName;
   title: string;
   imageSrc: string;
   active: boolean;
 }
 
-
+// Массив категорий
 const categories: Category[] = [
   {
-    name: "systems-integrations",
+    name: CategoryName.systemsIntegrations,
     title: "Systems Integrations",
     imageSrc: "/img/showcases/systems-integrations.svg",
     active: true
   },
   {
-    name: "optimisations",
+    name: CategoryName.optimisations,
     title: "Optimisations",
     imageSrc: "/img/showcases/optimisation.svg",
     active: true
   },
   {
-    name: "dev-design",
+    name: CategoryName.devDesign,
     title: "Development & Design",
     imageSrc: "/img/showcases/dev-design.svg",
     active: false
   },
   {
-    name: "devops",
+    name: CategoryName.devops,
     title: "Devops & Maintainance",
     imageSrc: "/img/showcases/devops.svg",
     active: false
   },
   {
-    name: "quality-assurance",
+    name: CategoryName.qualityAssurance,
     title: "Quality Assurance",
     imageSrc: "/img/showcases/quality-assurance.svg",
     active: false
   }
 ];
 
+// Возвращаем массив только активных категорий
+const activeCategories = categories.filter(category => category.active);
+
 export default categories;
+export { activeCategories };

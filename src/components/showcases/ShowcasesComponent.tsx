@@ -155,9 +155,9 @@ export default function ShowcasesPage() {
       <section className="case-studies">
         <div className="inner">
           <h2 className="h2">Case Studies</h2>
-          {activeCategories.map(category => (
+          {activeCategories.map((category, index) => (
             <ShowcaseItems
-              key={category.name}
+              key={index}
               name={category.name}
               title={category.title}
               imageSrc={category.imageSrc}

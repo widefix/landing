@@ -42,10 +42,9 @@ export default function ShowcaseItems({
           }}
           className={'case-swiper'}
         >
-          {currentShowcases.map(showcase => (
-            <SwiperSlide key={`slide${showcase.id}`} className={`${showcase.preview.wrapperColor}`}>
+          {currentShowcases.map((showcase, index) => (
+            <SwiperSlide key={index} className={`${showcase.preview.wrapperColor}`}>
               <ShowcaseItem 
-                key={showcase.id}
                 companyName={showcase.preview.companyName}
                 slug={showcase.slug}
                 solution={showcase.preview.solution}
