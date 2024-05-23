@@ -8,17 +8,25 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import NotFoundPage from '@/app/not-found';
 import Link from 'next/link';
+import html2pdf from 'html2pdf.js';
 
 export default function ShowcasePage() {
   const params = useParams();
   const showcase = showcases.find(showcase => showcase.slug === params.slug);
+
+  const generatePDF = () => {
+    const element = document.getElementById('element-to-print');
+    if (element) {
+      html2pdf(element);
+    }
+  }
 
   if (!showcase) {
      return <NotFoundPage />;
   }
 
   return (
-    <main className='showcases-case'>
+    <main id="element-to-print" className='showcases-case'>
       <section className="case-banner-top">
         <div className="inner">
           <div className="banner-content">
@@ -189,6 +197,7 @@ export default function ShowcasePage() {
           </div>
         </div>
       </section>
+      <button onClick={generatePDF} style={{ marginTop: '20px' }}>Download PDF</button>
     </main>
   );
 };
