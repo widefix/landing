@@ -1,0 +1,15 @@
+.element-to-pdf {
+  .pdf-no-print {
+    display: none !important;
+  }
+  
+  .pdf-fixed-height {
+    max-height: 895px !important;
+    overflow: hidden !important;
+  }
+  
+  .page-break {
+    page-break-before: always;
+    break-before: page;
+  }
+}
