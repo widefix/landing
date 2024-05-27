@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function ContactComponent() {
   return (
-    <section className="hero has-vertical-paddings">
+    <section className="hero has-vertical-paddings" id='contact'>
       <div className="inner">
         <div className="hero-block-left">
           <h1>Contact us for <span>cost-effective</span> tech solutions for <span>your</span> business challenges</h1>

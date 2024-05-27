@@ -26,6 +26,36 @@ export default function ShowcasePage() {
       const fixedHeightElements = element.getElementsByClassName('fixed-height');
       const noPrintElements = element.getElementsByClassName('no-print');
 
+      const scaleImagesSize = (scaleFactor: number) => {
+        ['what', 'problem', 'solution', 'contact'].forEach(id => {
+          const section = document.getElementById(id);
+          if (section) {
+            const images = section.getElementsByTagName('img');
+            Array.from(images).forEach(img => {
+              img.dataset.originalWidth = img.width.toString();
+              img.dataset.originalHeight = img.height.toString();
+              img.width /= scaleFactor;
+              img.height /= scaleFactor;
+            });
+          }
+        });
+      };
+  
+      const revertImagesSize = () => {
+        ['what', 'problem', 'solution', 'contact'].forEach(id => {
+          const section = document.getElementById(id);
+          if (section) {
+            const images = section.getElementsByTagName('img');
+            Array.from(images).forEach(img => {
+              if (img.dataset.originalWidth && img.dataset.originalHeight) {
+                img.width = parseInt(img.dataset.originalWidth);
+                img.height = parseInt(img.dataset.originalHeight);
+              }
+            });
+          }
+        });
+      };
+
       const contactComponentHTML = renderToString(<ContactComponent />);
       const contactComponentContainer = document.createElement('div');
       contactComponentContainer.innerHTML = contactComponentHTML;
@@ -33,18 +63,20 @@ export default function ShowcasePage() {
       element.appendChild(contactComponentContainer);
 
       Array.from(fixedHeightElements).forEach(el => {
-        (el as HTMLElement).style.maxHeight = `735px`;
+        (el as HTMLElement).style.maxHeight = `715px`;
       });
 
       Array.from(noPrintElements).forEach(el => {
         (el as HTMLElement).style.display = `none`;
       });
 
+      scaleImagesSize(1.5);
+
       html2pdf().from(element).set({
         filename: `${showcase.slug}.pdf`,
         image: { type: 'jpeg', quality: 0.95 },
         html2canvas: { scale: 2 },
-        margin: 5,
+        margin: 10,
         jsPDF: { format: 'a4', orientation: 'landscape' },
         pagebreak: { mode: 'avoid-all', before: '.page-break' }
       }).save().then(() => {
@@ -56,6 +88,7 @@ export default function ShowcasePage() {
         Array.from(noPrintElements).forEach(el => {
           (el as HTMLElement).style.display = `block`;
         });
+        revertImagesSize();
       });
     }
   }
