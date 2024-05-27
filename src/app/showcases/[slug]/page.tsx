@@ -1,21 +1,23 @@
 'use client'
 
 import React from 'react';
-import Image from 'next/image'
+import Image from 'next/image';
 import { useParams } from 'next/navigation';
+import { renderToString } from 'react-dom/server';
 import showcases from '@/showcases';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import NotFoundPage from '@/app/not-found';
 import Link from 'next/link';
 import html2pdf from 'html2pdf.js';
+import ContactComponent from '@/components/contact/ContactComponent';
 
 export default function ShowcasePage() {
   const params = useParams();
   const showcase = showcases.find(showcase => showcase.slug === params.slug);
 
   if (!showcase) {
-     return <NotFoundPage />;
+    return <NotFoundPage />;
   }
 
   const generatePDF = () => {
@@ -23,6 +25,12 @@ export default function ShowcasePage() {
     if (element) {
       const fixedHeightElements = element.getElementsByClassName('fixed-height');
       const noPrintElements = element.getElementsByClassName('no-print');
+
+      const contactComponentHTML = renderToString(<ContactComponent />);
+      const contactComponentContainer = document.createElement('div');
+      contactComponentContainer.innerHTML = contactComponentHTML;
+  
+      element.appendChild(contactComponentContainer);
 
       Array.from(fixedHeightElements).forEach(el => {
         (el as HTMLElement).style.maxHeight = `735px`;
@@ -40,6 +48,7 @@ export default function ShowcasePage() {
         jsPDF: { format: 'a4', orientation: 'landscape' },
         pagebreak: { mode: 'avoid-all', before: '.page-break' }
       }).save().then(() => {
+        element.removeChild(contactComponentContainer);
         Array.from(fixedHeightElements).forEach(el => {
           (el as HTMLElement).style.maxHeight = ``;
         });
@@ -50,7 +59,6 @@ export default function ShowcasePage() {
       });
     }
   }
-
 
   return (
     <main className="showcases-case">
@@ -139,7 +147,7 @@ export default function ShowcasePage() {
             {showcase.body.resultText}
           </div>
         </section>
-        </div>
+      </div>
       <section className="case-need-help" id="help">
         <div className="inner p-vertical wrapper">
           <h2>
@@ -148,7 +156,7 @@ export default function ShowcasePage() {
           <div className="button-container">
             <a type="button" className="button primary" href="https://calendly.com/andrei-kaleshka/30min" target="_blank"
               rel="nofollow">
-                Get a free consultation
+              Get a free consultation
             </a>
           </div>
         </div>
@@ -195,7 +203,6 @@ export default function ShowcasePage() {
           </Swiper>
         </div>
       </section>
-
       <section className="case-other-issues" id="other">
         <div className="inner p-vertical">
           <div className="fixed-issues">
