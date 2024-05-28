@@ -10,7 +10,7 @@ import { Navigation } from 'swiper/modules';
 import NotFoundPage from '@/app/not-found';
 import Link from 'next/link';
 import html2pdf from 'html2pdf.js';
-import ContactComponent from '@/components/contact/ContactComponent';
+import ShowcaseToPDF from '@/components/showcases/ShowcaseToPDF';
 
 export default function ShowcasePage() {
   const params = useParams();
@@ -21,166 +21,106 @@ export default function ShowcasePage() {
   }
 
   const generatePDF = () => {
-    const element = document.getElementById('element-to-pdf');
-    if (element) {
-      const fixedHeightElements = element.getElementsByClassName('fixed-height');
-      const noPrintElements = element.getElementsByClassName('no-print');
+    const element = document.createElement('div');
+    const elementString = renderToString(<ShowcaseToPDF {...showcase.body} />);
+    element.innerHTML = elementString;
 
-      const scaleImagesSize = (scaleFactor: number) => {
-        ['what', 'problem', 'solution', 'contact'].forEach(id => {
-          const section = document.getElementById(id);
-          if (section) {
-            const images = section.getElementsByTagName('img');
-            Array.from(images).forEach(img => {
-              img.dataset.originalWidth = img.width.toString();
-              img.dataset.originalHeight = img.height.toString();
-              img.width /= scaleFactor;
-              img.height /= scaleFactor;
-            });
-          }
-        });
-      };
-  
-      const revertImagesSize = () => {
-        ['what', 'problem', 'solution', 'contact'].forEach(id => {
-          const section = document.getElementById(id);
-          if (section) {
-            const images = section.getElementsByTagName('img');
-            Array.from(images).forEach(img => {
-              if (img.dataset.originalWidth && img.dataset.originalHeight) {
-                img.width = parseInt(img.dataset.originalWidth);
-                img.height = parseInt(img.dataset.originalHeight);
-              }
-            });
-          }
-        });
-      };
-
-      const contactComponentHTML = renderToString(<ContactComponent />);
-      const contactComponentContainer = document.createElement('div');
-      contactComponentContainer.innerHTML = contactComponentHTML;
-  
-      element.appendChild(contactComponentContainer);
-
-      Array.from(fixedHeightElements).forEach(el => {
-        (el as HTMLElement).style.maxHeight = `715px`;
-      });
-
-      Array.from(noPrintElements).forEach(el => {
-        (el as HTMLElement).style.display = `none`;
-      });
-
-      scaleImagesSize(1.5);
-
-      html2pdf().from(element).set({
-        filename: `${showcase.slug}.pdf`,
-        image: { type: 'jpeg', quality: 0.95 },
-        html2canvas: { scale: 2 },
-        margin: 10,
-        jsPDF: { format: 'a4', orientation: 'landscape' },
-        pagebreak: { mode: 'avoid-all', before: '.page-break' }
-      }).save().then(() => {
-        element.removeChild(contactComponentContainer);
-        Array.from(fixedHeightElements).forEach(el => {
-          (el as HTMLElement).style.maxHeight = ``;
-        });
-
-        Array.from(noPrintElements).forEach(el => {
-          (el as HTMLElement).style.display = `block`;
-        });
-        revertImagesSize();
-      });
-    }
+    html2pdf().from(element).set({
+      filename: `${showcase.slug}.pdf`,
+      image: { type: 'jpeg', quality: 0.95 },
+      html2canvas: { scale: 2 },
+      margin: 10,
+      jsPDF: { unit: 'mm', format: [230, 326], orientation: 'landscape' },
+      pagebreak: { mode: 'avoid-all', before: '.page-break' }
+    }).save().then(() => {});
   }
 
   return (
     <main className="showcases-case">
-      <div id="element-to-pdf">
-        <section className="case-banner-top fixed-height">
-          <div className="inner">
-            <div className="banner-content">
-              {showcase.body.bannerTopTitle}
-            </div>
-            <div className="img-wrapper">
-              <Image src={`${showcase.body.bannerTopImageSrc}`} alt="Banner Image" width={687} height={377} />
+      <section className="case-banner-top">
+        <div className="inner">
+          <div className="banner-content">
+            {showcase.body.bannerTopTitle}
+          </div>
+          <div className="img-wrapper">
+            <Image src={`${showcase.body.bannerTopImageSrc}`} alt="Banner Image" width={687} height={377} />
+          </div>
+        </div>
+      </section>
+      <section className="case-description gray">
+        <div className="inner p-vertical">
+          <div className="description">
+            <h2>{showcase.body.description}</h2>
+            {showcase.body.descriptionText}
+          </div>
+          <div className="menu">
+            <ul>
+              <li><a className="active" href="#what">{showcase.body.detailsTitle}</a></li>
+              <li><a href="#problem">Problem</a></li>
+              <li><a href="#solution">Solution</a></li>
+              <li><a href="#results">Results</a></li>
+              <li><a href="#help">Help</a></li>
+              <li><a href="#other">Other Issues</a></li>
+            </ul>
+            <div className="button-container">
+              <a type="button" className="button primary" onClick={generatePDF} style={{ marginTop: '20px' }}>
+                Download as PDF
+              </a>
             </div>
           </div>
-        </section>
-        <section className="no-print case-description gray">
-          <div className="inner p-vertical">
-            <div className="description">
-              <h2>{showcase.body.description}</h2>
-              {showcase.body.descriptionText}
-            </div>
-            <div className="menu">
-              <ul>
-                <li><a className="active" href="#what">{showcase.body.detailsTitle}</a></li>
-                <li><a href="#problem">Problem</a></li>
-                <li><a href="#solution">Solution</a></li>
-                <li><a href="#results">Results</a></li>
-                <li><a href="#help">Help</a></li>
-                <li><a href="#other">Other Issues</a></li>
-              </ul>
-              <div className="button-container">
-                <a type="button" className="button primary" onClick={generatePDF} style={{ marginTop: '20px' }}>
-                  Download as PDF
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section className="page-break case-details" id="what">
-          <div className="inner p-vertical">
-            <div className="case-details-title">
-              <h2 className="with-crown">
-                {showcase.body.detailsTitle}
-              </h2>
-              {showcase.body.detailsText}
-            </div>
-            <div>
-              <Image src={`${showcase.body.detailsImageSrc}`} alt="Puzzle" width="670" height="325"/>
-            </div>
-          </div>
-        </section>
-        <section className="page-break case-problem gray fixed-height" id="problem">
-          <div className="inner p-vertical">
-            <h2 className="problem">Problem</h2>
-            {showcase.body.problemText}
-            <div className="curvy-image">
-              <Image src="/img/showcases/case/laptop.webp" alt="Laptop" width="1156" height="513" />
-            </div>
-          </div>
-        </section>
-        <section className="page-break case-solution" id="solution">
-          <div className="inner p-vertical">
-            <div>
-              <h2 className="solution">Solution</h2>
-              {showcase.body.solutionFirstText}
-              {showcase.body.solutionSecondText}
-            </div>
-            <div>
-              <Image src="/img/showcases/case/slack.png" alt="Solution" width="549" height="473" />
-            </div>
-          </div>
-        </section>
-        <section className="page-break case-results gray" id="results">
-          <div className="inner p-vertical">
-            <h2 className="results">
-              Results
+        </div>
+      </section>
+      <section className="case-details" id="what">
+        <div className="inner p-vertical">
+          <div className="case-details-title">
+            <h2 className="with-crown">
+              {showcase.body.detailsTitle}
             </h2>
-            <div className="results-boxes">
-              {showcase.body.resultBoxes.map((box, index) => (
-                <div className={`result-box ${box.color}`} key={index}>
-                  <Image src={box.imageSrc} alt="icon" aria-hidden="true" width="35" height="35" />
-                  <div className="result-message"><strong>{box.message}</strong></div>
-                  <div className="result-number">{box.number}</div>
-                </div>
-              ))}
-            </div>
-            {showcase.body.resultText}
+            {showcase.body.detailsText}
           </div>
-        </section>
-      </div>
+          <div>
+            <Image src={`${showcase.body.detailsImageSrc}`} alt="Puzzle" width="670" height="325"/>
+          </div>
+        </div>
+      </section>
+      <section className=" case-problem gray" id="problem">
+        <div className="inner p-vertical">
+          <h2 className="problem">Problem</h2>
+          {showcase.body.problemText}
+          <div className="curvy-image">
+            <Image src="/img/showcases/case/laptop.webp" alt="Laptop" width="1156" height="513" />
+          </div>
+        </div>
+      </section>
+      <section className=" case-solution" id="solution">
+        <div className="inner p-vertical">
+          <div>
+            <h2 className="solution">Solution</h2>
+            {showcase.body.solutionFirstText}
+            {showcase.body.solutionSecondText}
+          </div>
+          <div>
+            <Image src="/img/showcases/case/slack.png" alt="Solution" width="549" height="473" />
+          </div>
+        </div>
+      </section>
+      <section className=" case-results gray" id="results">
+        <div className="inner p-vertical">
+          <h2 className="results">
+            Results
+          </h2>
+          <div className="results-boxes">
+            {showcase.body.resultBoxes.map((box, index) => (
+              <div className={`result-box ${box.color}`} key={index}>
+                <Image src={box.imageSrc} alt="icon" aria-hidden="true" width="35" height="35" />
+                <div className="result-message"><strong>{box.message}</strong></div>
+                <div className="result-number">{box.number}</div>
+              </div>
+            ))}
+          </div>
+          {showcase.body.resultText}
+        </div>
+      </section>
       <section className="case-need-help" id="help">
         <div className="inner p-vertical wrapper">
           <h2>
