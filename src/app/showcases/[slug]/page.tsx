@@ -1,24 +1,60 @@
 'use client'
 
-import React from 'react';
-import Image from 'next/image'
+import React, { useState } from 'react';
+import Image from 'next/image';
 import { useParams } from 'next/navigation';
+import { renderToString } from 'react-dom/server';
 import showcases from '@/showcases';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import NotFoundPage from '@/app/not-found';
 import Link from 'next/link';
+import html2pdf from 'html2pdf.js';
+import ShowcaseToPDF from '@/components/showcases/ShowcaseToPDF';
 
 export default function ShowcasePage() {
   const params = useParams();
   const showcase = showcases.find(showcase => showcase.slug === params.slug);
+  const [isLoading, setIsLoading] = useState(false);
 
   if (!showcase) {
-     return <NotFoundPage />;
+    return <NotFoundPage />;
+  }
+
+  const generatePDF = () => {
+    setIsLoading(true);
+    const element = document.createElement('div');
+    const elementString = renderToString(<ShowcaseToPDF {...showcase.body} />);
+    element.innerHTML = elementString;
+
+    html2pdf().from(element).set({
+      filename: `${showcase.slug}.pdf`,
+      image: { type: 'jpeg', quality: 1 },
+      html2canvas: {
+        scale: 2,
+        dpi: 300,
+        letterRendering: true,
+        useCORS: true,
+        
+      },
+      margin: 10,
+      jsPDF: {
+        unit: 'mm',
+        format: [230, 326],
+        orientation: 'landscape',
+        userUnit: 2,
+        precision: 32
+      },
+      pagebreak: { mode: 'avoid-all', before: '.page-break' }
+    }).save().then(() => {
+      setIsLoading(false);
+    }).catch(() => {
+      setIsLoading(false);
+    });
   }
 
   return (
-    <main className='showcases-case'>
+    <main className="showcases-case">
       <section className="case-banner-top">
         <div className="inner">
           <div className="banner-content">
@@ -32,6 +68,13 @@ export default function ShowcasePage() {
       <section className="case-description gray">
         <div className="inner p-vertical">
           <div className="description">
+            <a type="button" onClick={generatePDF} className='download-pdf-button'>
+              {isLoading ? (
+                <Image src="../img/icons/loader.svg" alt="Loading..." width="64" height="64" className='spinner' />
+              ) : (
+                <Image src="../img/icons/download-pdf.svg" alt="Download as PDF" width="64" height="64" />
+              )}
+            </a>
             <h2>{showcase.body.description}</h2>
             {showcase.body.descriptionText}
           </div>
@@ -106,7 +149,7 @@ export default function ShowcasePage() {
           <div className="button-container">
             <a type="button" className="button primary" href="https://calendly.com/andrei-kaleshka/30min" target="_blank"
               rel="nofollow">
-                Get a free consultation
+              Get a free consultation
             </a>
           </div>
         </div>
@@ -153,7 +196,6 @@ export default function ShowcasePage() {
           </Swiper>
         </div>
       </section>
-
       <section className="case-other-issues" id="other">
         <div className="inner p-vertical">
           <div className="fixed-issues">
