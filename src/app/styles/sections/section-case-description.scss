@@ -100,3 +100,17 @@
 section.gray {
   background: #FAFAFA;
 }
+
+.download-pdf-button {
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
