@@ -45,6 +45,7 @@
   }
 
   .description {
+    margin-top: -70px;
     max-width: 468px;
   }
 }
@@ -103,7 +104,7 @@ section.gray {
 
 .download-pdf-button {
   cursor: pointer;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
 }
 
 @keyframes spin {

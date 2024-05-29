@@ -34,7 +34,8 @@ export default function ShowcasePage() {
         scale: 2,
         dpi: 300,
         letterRendering: true,
-        useCORS: true
+        useCORS: true,
+        
       },
       margin: 10,
       jsPDF: {
