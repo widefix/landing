@@ -9,7 +9,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import NotFoundPage from '@/app/not-found';
 import Link from 'next/link';
-import html2pdf from 'html2pdf.js';
 import ShowcaseToPDF from '@/components/showcases/ShowcaseToPDF';
 
 export default function ShowcasePage() {
@@ -23,35 +22,37 @@ export default function ShowcasePage() {
 
   const generatePDF = () => {
     setIsLoading(true);
-    const element = document.createElement('div');
-    const elementString = renderToString(<ShowcaseToPDF {...showcase.body} />);
-    element.innerHTML = elementString;
+    import('html2pdf.js').then(module => {
+      const html2pdf = module.default;
+      const element = document.createElement('div');
+      const elementString = renderToString(<ShowcaseToPDF {...showcase.body} />);
+      element.innerHTML = elementString;
 
-    html2pdf().from(element).set({
-      filename: `${showcase.slug}.pdf`,
-      image: { type: 'jpeg', quality: 1 },
-      html2canvas: {
-        scale: 2,
-        dpi: 300,
-        letterRendering: true,
-        useCORS: true,
-        
-      },
-      margin: 10,
-      jsPDF: {
-        unit: 'mm',
-        format: [230, 326],
-        orientation: 'landscape',
-        userUnit: 2,
-        precision: 32
-      },
-      pagebreak: { mode: 'avoid-all', before: '.page-break' }
-    }).save().then(() => {
-      setIsLoading(false);
-    }).catch(() => {
-      setIsLoading(false);
+      html2pdf().from(element).set({
+        filename: `${showcase.slug}.pdf`,
+        image: { type: 'jpeg', quality: 1 },
+        html2canvas: {
+          scale: 2,
+          dpi: 300,
+          letterRendering: true,
+          useCORS: true,
+        },
+        margin: 10,
+        jsPDF: {
+          unit: 'mm',
+          format: [230, 326],
+          orientation: 'landscape',
+          userUnit: 2,
+          precision: 32
+        },
+        pagebreak: { mode: 'avoid-all', before: '.page-break' }
+      }).save().then(() => {
+        setIsLoading(false);
+      }).catch(() => {
+        setIsLoading(false);
+      });
     });
-  }
+  };
 
   return (
     <main className="showcases-case">
