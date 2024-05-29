@@ -65,7 +65,7 @@ export default function ShowcaseToPDF({
       </section>
       <section className="page-break case-results">
         <div className="inner" style={{paddingTop: "40px"}}>
-          <h2 className="results">
+          <h2 className="results" style={{marginLeft: "30px"}}>
             Results
           </h2>
           <div className="results-boxes">
