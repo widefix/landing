@@ -102,7 +102,7 @@ export default function ShowcasePage() {
           </div>
         </div>
       </section>
-      <section className=" case-problem gray" id="problem">
+      <section className="case-problem gray" id="problem">
         <div className="inner p-vertical">
           <h2 className="problem">Problem</h2>
           {showcase.body.problemText}
@@ -111,7 +111,7 @@ export default function ShowcasePage() {
           </div>
         </div>
       </section>
-      <section className=" case-solution" id="solution">
+      <section className="case-solution" id="solution">
         <div className="inner p-vertical">
           <div>
             <h2 className="solution">Solution</h2>
@@ -123,7 +123,7 @@ export default function ShowcasePage() {
           </div>
         </div>
       </section>
-      <section className=" case-results gray" id="results">
+      <section className="case-results gray" id="results">
         <div className="inner p-vertical">
           <h2 className="results">
             Results
