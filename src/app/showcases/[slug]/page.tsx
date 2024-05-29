@@ -1,8 +1,8 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { useParams } from 'next/navigation';
+import { useParams, usePathname } from 'next/navigation';
 import { renderToString } from 'react-dom/server';
 import showcases from '@/showcases';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -13,45 +13,31 @@ import ShowcaseToPDF from '@/components/showcases/ShowcaseToPDF';
 
 export default function ShowcasePage() {
   const params = useParams();
-  const showcase = showcases.find(showcase => showcase.slug === params.slug);
+  let showcaseSlug: string = '';
+  if (typeof params.slug === 'string') {
+    showcaseSlug = params.slug.replace('.pdf', '');
+  } else if (Array.isArray(params.slug)) {
+    showcaseSlug = params.slug[0].replace('.pdf', '');
+  }
+  const pathname = usePathname()
+  const showcase = showcases.find(showcase => showcase.slug === showcaseSlug);
   const [isLoading, setIsLoading] = useState(false);
+  const [isPDF, setIsPDF] = useState(false);
+
+  useEffect(() => {
+    setIsPDF(pathname.endsWith('.pdf'));
+  }, [pathname]);
 
   if (!showcase) {
     return <NotFoundPage />;
   }
 
-  const generatePDF = () => {
-    setIsLoading(true);
-    import('html2pdf.js').then(module => {
-      const html2pdf = module.default;
-      const element = document.createElement('div');
-      const elementString = renderToString(<ShowcaseToPDF {...showcase.body} />);
-      element.innerHTML = elementString;
+  if (isPDF) {
+    return <ShowcaseToPDF {...showcase.body} />;
+  }
 
-      html2pdf().from(element).set({
-        filename: `${showcase.slug}.pdf`,
-        image: { type: 'jpeg', quality: 1 },
-        html2canvas: {
-          scale: 2,
-          dpi: 300,
-          letterRendering: true,
-          useCORS: true,
-        },
-        margin: 10,
-        jsPDF: {
-          unit: 'mm',
-          format: [230, 326],
-          orientation: 'landscape',
-          userUnit: 2,
-          precision: 32
-        },
-        pagebreak: { mode: 'avoid-all', before: '.page-break' }
-      }).save().then(() => {
-        setIsLoading(false);
-      }).catch(() => {
-        setIsLoading(false);
-      });
-    });
+  const downloadPDF = () => {
+
   };
 
   return (
@@ -69,7 +55,7 @@ export default function ShowcasePage() {
       <section className="case-description gray">
         <div className="inner p-vertical">
           <div className="description">
-            <a type="button" onClick={generatePDF} className='download-pdf-button'>
+            <a type="button" onClick={downloadPDF} className='download-pdf-button'>
               {isLoading ? (
                 <Image src="../img/icons/loader.svg" alt="Loading..." width="64" height="64" className='spinner' />
               ) : (

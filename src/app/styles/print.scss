@@ -72,4 +72,8 @@
     h3 {
       page-break-after: avoid;
     }
+
+    .page-break {
+      page-break-before: always;
+    }
   }
