@@ -1,22 +1,9 @@
 import { Metadata } from 'next';
 import showcases from '@/showcases';
-import { Inter, Montserrat } from "next/font/google";
 
 interface Props {
   params: { slug: string };
 }
-
-const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-inter',
-})
-
-const montserrat = Montserrat({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-montserrat',
-})
 
 export async function generateMetadata({ params } : Props): Promise<Metadata> {
   const showcase = showcases.find(showcase => showcase.slug === params.slug);
@@ -62,7 +49,5 @@ export default function ShowcaseLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    {children}
-  );
+  return <>{children}</>;
 }
