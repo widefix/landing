@@ -71,7 +71,7 @@ export default function ShowcaseToPDF({
           <div className="results-boxes">
             {resultBoxes && resultBoxes.map((box, index) => (
               <div className={`result-box ${box.color}`} key={index}>
-                <Image src={box.imageSrc} alt="icon" aria-hidden="true" width="35" height="35" />
+                <Image src={`/..${box.imageSrc}`} alt="icon" aria-hidden="true" width="35" height="35" />
                 <div className="result-message"><strong>{box.message}</strong></div>
                 <div className="result-number">{box.number}</div>
               </div>
@@ -102,11 +102,11 @@ export default function ShowcaseToPDF({
             would like to discuss your needs further, you can schedule a consultation with one of our experts</p>
           <div className="contacts">
             <div className="contact">
-              <Image src="/img/icons/email.svg" alt="Icon for email" width="40" height="40" />
+              <Image src="/../img/icons/email.svg" alt="Icon for email" width="40" height="40" />
               <p style={{fontSize: "28px"}}>Email: <Link href="mailto:call@widefix.com">call@widefix.com</Link></p>
             </div>
             <div className="contact">
-              <Image src="/img/icons/phone.svg" alt="Icon for phone" width="40" height="40" />
+              <Image src="/../img/icons/phone.svg" alt="Icon for phone" width="40" height="40" />
               <p style={{fontSize: "28px"}}>Phone: <Link href="tel:+48516295359">+48516295359</Link></p>
             </div>
           </div>
