@@ -28,7 +28,8 @@ export default function ShowcasePage() {
       const elementString = renderToString(<ShowcaseToPDF {...showcase.body} />);
       element.innerHTML = elementString;
 
-      html2pdf().from(element).set({
+      html2pdf()
+      .set({
         filename: `${showcase.slug}.pdf`,
         image: { type: 'jpeg', quality: 1 },
         html2canvas: {
@@ -46,9 +47,13 @@ export default function ShowcasePage() {
           precision: 32
         },
         pagebreak: { mode: 'avoid-all', before: '.page-break' }
-      }).save().then(() => {
+      })
+      .from(element)
+      .save()
+      .then(() => {
         setIsLoading(false);
-      }).catch(() => {
+      })
+      .catch(() => {
         setIsLoading(false);
       });
     });
