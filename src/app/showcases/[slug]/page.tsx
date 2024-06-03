@@ -67,7 +67,14 @@ export default function ShowcasePage() {
             {showcase.body.bannerTopTitle}
           </div>
           <div className="img-wrapper">
-            <Image src={`${showcase.body.bannerTopImageSrc}`} alt="Banner Image" width={687} height={377} />
+            <Image
+              src={`${showcase.body.bannerTopImageSrc}`}
+              priority
+              alt="Banner Image"
+              quality={100}
+              width={687}
+              height={377}
+            />
           </div>
         </div>
       </section>
@@ -114,7 +121,14 @@ export default function ShowcasePage() {
           <h2 className="problem">Problem</h2>
           {showcase.body.problemText}
           <div className="curvy-image">
-            <Image src="/img/showcases/case/laptop.webp" alt="Laptop" width="1156" height="513" />
+            <Image
+              src="/img/showcases/case/laptop.png"
+              priority
+              alt="Laptop"
+              quality={100}
+              width="1156"
+              height="513"
+            />
           </div>
         </div>
       </section>

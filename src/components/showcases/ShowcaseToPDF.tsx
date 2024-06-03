@@ -45,7 +45,14 @@ export default function ShowcaseToPDF({
           <h2 className="problem">Problem</h2>
           {problemText}
           <div className="curvy-image">
-            <Image src="/img/showcases/case/laptop.webp" alt="Laptop" width="1156" height="513" />
+            <Image
+              src="/img/showcases/case/laptop.png"
+              priority
+              alt="Laptop"
+              quality={100}
+              width="1156"
+              height="513"
+            />
           </div>
         </div>
       </section>
@@ -87,8 +94,10 @@ export default function ShowcaseToPDF({
           </div>
           <div className="hero-block-right">
             <Image
-              src="/img/contact.webp?width=800"
+              src="/img/contact.jpg"
+              priority
               alt="Optimise your app to get more customers"
+              quality={100}
               width="434"
               height="379"
             />
