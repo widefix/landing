@@ -13,15 +13,14 @@ export default function ContactComponent() {
           </div>
         </div>
         <div className="hero-block-right">
-          <picture>
-            <source srcSet="/img/contact.webp?as=webp&width=800" type="image/webp" />
-            <Image
-              src="/img/contact.webp?width=800"
-              alt="Optimise your app to get more customers"
-              width="543"
-              height="474"
-            />
-          </picture>
+          <Image
+            src="/img/contact.jpg"
+            priority
+            quality={100}
+            alt="Optimise your app to get more customers"
+            width="543"
+            height="474"
+          />
         </div>
       </div>
       <div className="inner">
