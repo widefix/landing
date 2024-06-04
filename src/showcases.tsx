@@ -189,7 +189,7 @@ const showcases: Showcase[] = [
           Prevent account sharing to <span className="oval">stop</span> financial <span className="stripe">losses</span>
         </h1>
       ),
-      bannerTopImageSrc: "/img/showcases/case/showcase-2-cybersicurity.jpg",
+      bannerTopImageSrc: "/img/showcases/case/showcase-2-cybersecurity.jpg",
       description: "Solved the issue with account sharing by users",
       descriptionText: (
         <p>Added Multi-factor Authentication (MFA) to the project in a risk-free way for the business.
