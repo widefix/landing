@@ -59,7 +59,10 @@ export default function HomePage() {
             </ul>
           </div>
           <div className="img-wrapper">
-            <Image src="/img/app-image.png" alt="Your app is not ready" width="455" height="319" />
+            <picture>
+              <source srcSet="/img/app-image.webp" type="image/webp" />
+              <Image src="/img/app-image.png" alt="Your app is not ready" width="455" height="319" />
+            </picture>
           </div>
         </div>
       </section>
@@ -554,7 +557,10 @@ export default function HomePage() {
             </div>
           </header>
           <Link href="https://clutch.co/profile/widefix#reviews" target="_blank" rel="nofollow">
-            <Image src="/img/powered-by-clutch.png" alt="Clutch Logo" width="130" height="20" />
+            <picture>
+              <source srcSet="/img/powered-by-clutch.webp" type="image/webp" />
+              <Image src="/img/powered-by-clutch.png" alt="Clutch Logo" width="130" height="20" />
+            </picture>
           </Link>
           <div className="slider-wrapper">
             <div className="slider">

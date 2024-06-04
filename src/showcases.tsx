@@ -47,6 +47,7 @@ export interface ShowcasePreview {
 export interface ShowcaseBody {
   bannerTopTitle: ReactNode;
   bannerTopImageSrc: string;
+  bannerTopImageWebpSrc: string;
   description: string;
   descriptionText: ReactNode;
   detailsTitle: string;
@@ -92,6 +93,7 @@ const showcases: Showcase[] = [
         </h1>
       ),
       bannerTopImageSrc: "/img/showcases/wo.png",
+      bannerTopImageWebpSrc: "/img/showcases/wo.webp",
       description: "Solved New User Payment Friction with Stripe Optimization",
       descriptionText: (
         <p>
@@ -190,6 +192,7 @@ const showcases: Showcase[] = [
         </h1>
       ),
       bannerTopImageSrc: "/img/showcases/case/showcase-2-cybersecurity.jpg",
+      bannerTopImageWebpSrc: "/img/showcases/case/showcase-2-cybersecurity.webp",
       description: "Solved the issue with account sharing by users",
       descriptionText: (
         <p>Added Multi-factor Authentication (MFA) to the project in a risk-free way for the business.
