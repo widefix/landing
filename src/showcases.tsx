@@ -47,7 +47,7 @@ export interface ShowcasePreview {
 export interface ShowcaseBody {
   bannerTopTitle: ReactNode;
   bannerTopImageSrc: string;
-  bannerTopImageWebpSrc: string;
+  bannerTopImageWebpSrc?: string;
   description: string;
   descriptionText: ReactNode;
   detailsTitle: string;

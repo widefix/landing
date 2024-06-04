@@ -68,7 +68,7 @@ export default function ShowcasePage() {
           </div>
           <div className="img-wrapper">
             <picture>
-              { showcase.body.bannerTopImageWebpSrc !== '' &&
+              { showcase.body.bannerTopImageWebpSrc &&
                 <source srcSet={showcase.body.bannerTopImageWebpSrc} type="image/webp" />
               }
               <Image
