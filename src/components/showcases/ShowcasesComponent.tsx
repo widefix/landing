@@ -65,7 +65,10 @@ export default function ShowcasesPage() {
               <h1>Portfolio</h1>
               <div className="portfolio-projects-video">
                 <div>
+                  <picture>
+                    <source srcSet="/img/showcases/video.webp" type="image/webp" />
                     <Image alt="Video" src="/img/showcases/video.png" width="480" height="281"  />
+                  </picture>
                 </div>
                 <div>
                   <div className="portfolio-projects-projects">

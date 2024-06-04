@@ -67,14 +67,19 @@ export default function ShowcasePage() {
             {showcase.body.bannerTopTitle}
           </div>
           <div className="img-wrapper">
-            <Image
-              src={`${showcase.body.bannerTopImageSrc}`}
-              priority
-              alt="Banner Image"
-              quality={100}
-              width={687}
-              height={377}
-            />
+            <picture>
+              { showcase.body.bannerTopImageWebpSrc &&
+                <source srcSet={showcase.body.bannerTopImageWebpSrc} type="image/webp" />
+              }
+              <Image
+                src={`${showcase.body.bannerTopImageSrc}`}
+                priority
+                alt="Banner Image"
+                quality={100}
+                width={687}
+                height={377}
+              />
+            </picture>
           </div>
         </div>
       </section>
@@ -121,14 +126,17 @@ export default function ShowcasePage() {
           <h2 className="problem">Problem</h2>
           {showcase.body.problemText}
           <div className="curvy-image">
-            <Image
-              src="/img/showcases/case/laptop.png"
-              priority
-              alt="Laptop"
-              quality={100}
-              width="1156"
-              height="513"
-            />
+            <picture>
+              <source srcSet="/img/showcases/case/laptop.webp" type="image/webp" />
+              <Image
+                src="/img/showcases/case/laptop.png"
+                priority
+                alt="Laptop"
+                quality={100}
+                width="1156"
+                height="513"
+              />
+            </picture>
           </div>
         </div>
       </section>
@@ -140,7 +148,10 @@ export default function ShowcasePage() {
             {showcase.body.solutionSecondText}
           </div>
           <div>
-            <Image src="/img/showcases/case/slack.png" alt="Solution" width="549" height="473" />
+            <picture>
+              <source srcSet="/img/showcases/case/slack.webp" type="image/webp" />
+              <Image src="/img/showcases/case/slack.png" alt="Solution" width="549" height="473" />
+            </picture>
           </div>
         </div>
       </section>
@@ -227,7 +238,10 @@ export default function ShowcasePage() {
                   <span className="fixed-issue-title-h">Stripe Integration</span>
                   <Image aria-hidden="true" alt="icon" src="/img/showcases/case/icons/link.svg" width="50" height="50" />
                 </span>
-                <Image src="/img/showcases/case/phone.png" alt="Case" width="396" height="264" />
+                <picture>
+                  <source srcSet="/img/showcases/case/phone.webp" type="image/webp" />
+                  <Image src="/img/showcases/case/phone.png" alt="Case" width="396" height="264" />
+                </picture>
               </a>
             </div>
             <div>
@@ -236,7 +250,10 @@ export default function ShowcasePage() {
                   <span className="fixed-issue-title-h">Database Fix</span>
                   <Image aria-hidden="true" alt="icon" src="/img/showcases/case/icons/link.svg" width="50" height="50" />
                 </span>
-                <Image src="/img/showcases/case/db.png" alt="Case" width="396" height="264" />
+                <picture>
+                  <source srcSet="/img/showcases/case/db.webp" type="image/webp" />
+                  <Image src="/img/showcases/case/db.png" alt="Case" width="396" height="264" />
+                </picture>
               </a>
             </div>
             <div>
@@ -245,7 +262,10 @@ export default function ShowcasePage() {
                   <span className="fixed-issue-title-h">Ruby on Rails Error</span>
                   <Image aria-hidden="true" alt="icon" src="/img/showcases/case/icons/link.svg" width="50" height="50" />
                 </span>
-                <Image src="/img/showcases/case/html.png" alt="Case" width="396" height="264" />
+                <picture>
+                  <source srcSet="/img/showcases/case/html.webp" type="image/webp" />
+                  <Image src="/img/showcases/case/html.png" alt="Case" width="396" height="264" />
+                </picture>
               </a>
             </div>
           </div>
