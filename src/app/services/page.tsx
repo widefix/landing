@@ -41,7 +41,6 @@ export default function ServicesPage() {
               <source srcSet="/img/services.webp" type="image/webp" />
               <Image
                 src="/img/services.jpg"
-                priority
                 quality={100}
                 alt="Optimise your app to get more customers"
                 width="543"

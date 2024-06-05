@@ -6,6 +6,7 @@ import Link from 'next/link';
 export default function ShowcaseToPDF({
   bannerTopTitle,
   bannerTopImageSrc,
+  bannerTopImageWebpSrc,
   detailsTitle,
   detailsText,
   detailsImageSrc,
@@ -23,6 +24,18 @@ export default function ShowcaseToPDF({
             {bannerTopTitle}
           </div>
           <div className="img-wrapper">
+            <picture>
+              { bannerTopImageWebpSrc &&
+                <source srcSet={bannerTopImageWebpSrc} type="image/webp" />
+              }
+              <Image
+                src={`${bannerTopImageSrc}`}
+                alt="Banner Image"
+                quality={100}
+                width={687}
+                height={377}
+              />
+            </picture>
             <Image src={`${bannerTopImageSrc}`} alt="Banner Image" width={687} height={377} />
           </div>
         </div>
@@ -45,14 +58,16 @@ export default function ShowcaseToPDF({
           <h2 className="problem">Problem</h2>
           {problemText}
           <div className="curvy-image">
-            <Image
-              src="/img/showcases/case/laptop.png"
-              priority
-              alt="Laptop"
-              quality={100}
-              width="1156"
-              height="513"
-            />
+            <picture>
+              <source srcSet="/img/showcases/case/laptop.webp" type="image/webp" />
+              <Image
+                src="/img/showcases/case/laptop.png"
+                alt="Laptop"
+                quality={100}
+                width="1156"
+                height="513"
+              />
+            </picture>
           </div>
         </div>
       </section>
@@ -66,7 +81,10 @@ export default function ShowcaseToPDF({
             </div>
           </div>
           <div>
-            <Image src="/img/showcases/case/slack.png" alt="Solution" width="549" height="473" />
+            <picture>
+              <source srcSet="/img/showcases/case/slack.webp" type="image/webp" />
+              <Image src="/img/showcases/case/slack.png" alt="Solution" width="549" height="473" />
+            </picture>
           </div>
         </div>
       </section>
@@ -93,14 +111,16 @@ export default function ShowcaseToPDF({
             <h1>Contact us for <span>cost-effective</span> tech solutions for <span>your</span> business challenges</h1>
           </div>
           <div className="hero-block-right">
-            <Image
-              src="/img/contact.jpg"
-              priority
-              alt="Optimise your app to get more customers"
-              quality={100}
-              width="434"
-              height="379"
-            />
+            <picture>
+              <source srcSet="/img/contact.webp" type="image/webp" />
+              <Image
+                src="/img/contact.jpg"
+                alt="Optimise your app to get more customers"
+                quality={100}
+                width="434"
+                height="379"
+              />
+            </picture>
           </div>
         </div>
       </section>

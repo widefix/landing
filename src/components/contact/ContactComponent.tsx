@@ -17,7 +17,6 @@ export default function ContactComponent() {
             <source srcSet="/img/contact.webp" type="image/webp" />
             <Image
               src="/img/contact.jpg"
-              priority
               quality={100}
               alt="Optimise your app to get more customers"
               width="543"

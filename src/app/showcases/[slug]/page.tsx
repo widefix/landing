@@ -73,7 +73,6 @@ export default function ShowcasePage() {
               }
               <Image
                 src={`${showcase.body.bannerTopImageSrc}`}
-                priority
                 alt="Banner Image"
                 quality={100}
                 width={687}
@@ -130,7 +129,6 @@ export default function ShowcasePage() {
               <source srcSet="/img/showcases/case/laptop.webp" type="image/webp" />
               <Image
                 src="/img/showcases/case/laptop.png"
-                priority
                 alt="Laptop"
                 quality={100}
                 width="1156"
