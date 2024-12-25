@@ -59,7 +59,11 @@ export interface ShowcaseBody {
   resultBoxes: ResultBox[];
   resultText: ReactNode;
   helpTitle: string;
-  related: ShowcasePreview[];
+  related?: ShowcasePreview[];
+  bannerProblemWebp?: string;
+  bannerProblemPng?: string;
+  bannerSolutionWebp?: string;
+  bannerSolutionPng?: string;
 }
 
 export interface Showcase {
@@ -263,7 +267,114 @@ const showcases: Showcase[] = [
       title: "Prevent account sharing - WideFix",
       description: "See how we added Multi-Factor Authentication (MFA) and limitted login sessions per user and prevented 5% monthly financial losses."
     }
-  }
+  },
+  {
+    slug: "build-crossplatform-mobile-application",
+    category: CategoryName.devDesign,
+    preview: {
+      companyName: "Worship Online",
+      solution: "Mobile app",
+      results: "We have designed and launched a mobile application for both iOS and Android platforms.",
+      wrapperColor: SwiperSlideColor.orange,
+      buttonColor: SwiperSlideColor.orange,
+      companyImageSrc: "/img/showcases/clients/wo.svg",
+      url: ''
+    },
+    body: {
+      bannerTopTitle: (
+        <h1>
+          Launched a mobile app from scratch for both <span className="oval">iOS</span> and <span className="stripe">Android</span>
+        </h1>
+      ),
+      bannerTopImageSrc: "/img/showcases/launch-wo-mobile-app.png",
+      bannerTopImageWebpSrc: "/img/showcases/launch-wo-mobile-app.webp",
+      description: "Launch a mobile app for both iOS and Android platforms",
+      descriptionText: (
+        <p>
+          Designed and built a mobile app from scratch for both iOS and Android platforms, featuring advanced <strong>Audio Signal Processing</strong> functionality. Now available on the <strong>App Store</strong> and <strong>Google Play</strong>. It receives hundreds of installations daily.
+        </p>
+      ),
+      detailsTitle: 'Mobile app development',
+      detailsText: (
+        <p>
+          The client had dreamed of a new mobile app for many years. In just a few months, we developed the app from scratch, adapted the back-end for it, and finally launched it on the <strong>App Store</strong> and <strong>Google Play</strong>.
+        </p>
+      ),
+      detailsImageSrc: "/img/showcases/case/mobile-app-wo.svg",
+      bannerProblemWebp: "/img/showcases/case/mixer.webp",
+      bannerProblemPng: "/img/showcases/case/mixer.png",
+      problemText: (
+        <p>
+          While most of the functionality was straightforward to implement, the real-time <strong>audio mixer</strong> posed a significant challenge. The mixer needed to be both <strong>fast</strong> and <strong>reliable</strong> to ensure a seamless user experience. It was designed to mix multiple audio streams in real-time while applying effects such as stereo panning, adjusting the volume of individual tracks or all tracks simultaneously, rewinding, muting, and soloing tracks.
+        </p>
+      ),
+      bannerSolutionWebp: "/img/showcases/case/mixer-solution.webp",
+      bannerSolutionPng: "/img/showcases/case/mixer-solution.png",
+      solutionFirstText: (
+        <p>
+          We delved into <strong>Digital Signal Processing</strong>, with a focus on <strong>Audio Processing</strong>, and implemented a custom library for both iOS and Android in their native code. This library was then integrated into the app through a React Native module. Designed for speed and reliability, the library ensures a seamless user experience.
+        </p>
+      ),
+      solutionSecondText: (
+        <p>
+          This enabled us to finally launch the app the client had been eager to release for years on the App Store and Google Play. The launch went smoothly, and the app now receives hundreds of installations daily.
+        </p>
+      ),
+      resultBoxes: [
+        {
+          color: ResultBoxColor.lightBlue,
+          imageSrc: "/img/showcases/case/icons/stock.svg",
+          message: "iOS app impressions increase",
+          number: "48%"
+        },
+        {
+          color: ResultBoxColor.lightGreen,
+          imageSrc: "/img/showcases/case/icons/money.svg",
+          message: "iOS app views increase",
+          number: "43%"
+        },
+        {
+          color: ResultBoxColor.darkBlue,
+          imageSrc: "/img/showcases/case/icons/cancel.svg",
+          message: "iOS app crashes decrease",
+          number: "-52%"
+        },
+        {
+          color: ResultBoxColor.green,
+          imageSrc: "/img/showcases/case/icons/user.svg",
+          message: "iOS downloads increase",
+          number: "28%"
+        },
+        {
+          color: ResultBoxColor.orange,
+          imageSrc: "/img/showcases/case/icons/user.svg",
+          message: "Android average daily downloads",
+          number: "200"
+        },
+        {
+          color: ResultBoxColor.red,
+          imageSrc: "/img/showcases/case/icons/money.svg",
+          message: "Android app conversion rate",
+          number: "62%%"
+        }
+      ],
+      resultText: (
+        <>
+          <p>
+            The iOS app has seen a 48% increase in impressions, a 43% rise in product page views, and a 28% boost in downloads, while crashes have decreased by 52%.
+          </p>
+          <p>
+            Since there was no Android app previously, the results are not directly comparable. However, the Android app now averages 200 daily downloads, with this number increasing every day. The conversion rate is 62.15%.
+          </p>
+        </>
+      ),
+      helpTitle: "Looking for assistance with mobile app development?"
+    },
+    metadata: {
+      title: "Mobile app development - WideFix",
+      description: "See how we built and launched a mobile app with an advanced feature that allowed our client to continue growing."
+    }
+  },
 ];
 
 export default showcases;

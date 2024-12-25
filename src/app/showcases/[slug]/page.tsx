@@ -126,9 +126,9 @@ export default function ShowcasePage() {
           {showcase.body.problemText}
           <div className="curvy-image">
             <picture>
-              <source srcSet="/img/showcases/case/laptop.webp" type="image/webp" />
+              <source srcSet={showcase.body.bannerProblemWebp || "/img/showcases/case/laptop.webp"} type="image/webp" />
               <Image
-                src="/img/showcases/case/laptop.png"
+                src={showcase.body.bannerProblemPng || "/img/showcases/case/laptop.png"}
                 alt="Laptop"
                 quality={100}
                 width="1156"
@@ -147,8 +147,8 @@ export default function ShowcasePage() {
           </div>
           <div>
             <picture>
-              <source srcSet="/img/showcases/case/slack.webp" type="image/webp" />
-              <Image src="/img/showcases/case/slack.png" alt="Solution" width="549" height="473" />
+              <source srcSet={showcase.body.bannerSolutionWebp || "/img/showcases/case/slack.webp"} type="image/webp" />
+              <Image src={showcase.body.bannerSolutionPng || "/img/showcases/case/slack.png"} alt="Solution" width="549" height="473" />
             </picture>
           </div>
         </div>
@@ -183,48 +183,50 @@ export default function ShowcasePage() {
           </div>
         </div>
       </section>
-      <section className="case-related">
-        <div className="inner p-vertical">
-          <h2 className="h2-stripe">Related Articles</h2>
-          <Swiper
-            modules={[Navigation]}
-            spaceBetween={39}
-            slidesPerView={'auto'}
-            navigation={{
-              nextEl: '.swiper-button-next',
-              prevEl: '.swiper-button-prev',
-            }}
-            className={'case-swiper'}
-          >
-            {showcase.body.related.map((showcase, index) => (
-              <SwiperSlide key={index} className={`${showcase.wrapperColor}`}>
-                <h3 className='company-name'>{showcase.companyName}:</h3>
-                <h3>{showcase.solution}</h3>
-                <p>{showcase.results}</p>
-                <div>
-                  <button type="button" className={`tag ${showcase.buttonColor}`}>
-                    {showcase.solution}
-                  </button>
-                </div>
-                <div className="slide-footer">
-                  <div className="client-img">
-                    <Link href={showcase.url} target="_blank">
-                      <Image src={showcase.companyImageSrc} alt="Client" width="104" height="25" />
+      {showcase.body.related && showcase.body.related.length > 0 && (
+        <section className="case-related">
+          <div className="inner p-vertical">
+            <h2 className="h2-stripe">Related Articles</h2>
+            <Swiper
+              modules={[Navigation]}
+              spaceBetween={39}
+              slidesPerView={'auto'}
+              navigation={{
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+              }}
+              className={'case-swiper'}
+            >
+              {(showcase.body.related || []).map((showcase, index) => (
+                <SwiperSlide key={index} className={`${showcase.wrapperColor}`}>
+                  <h3 className='company-name'>{showcase.companyName}:</h3>
+                  <h3>{showcase.solution}</h3>
+                  <p>{showcase.results}</p>
+                  <div>
+                    <button type="button" className={`tag ${showcase.buttonColor}`}>
+                      {showcase.solution}
+                    </button>
+                  </div>
+                  <div className="slide-footer">
+                    <div className="client-img">
+                      <Link href={showcase.url} target="_blank">
+                        <Image src={showcase.companyImageSrc} alt="Client" width="104" height="25" />
+                      </Link>
+                    </div>
+                    <Link href={showcase.url} target="_blank" className="slide-learn-more">
+                      More about
                     </Link>
                   </div>
-                  <Link href={showcase.url} target="_blank" className="slide-learn-more">
-                    More about
-                  </Link>
-                </div>
-              </SwiperSlide>
-            ))}
-            <div className="swiper-prev-next">
-              <button type="button" className="swiper-button-prev" aria-label="Previous slide" />
-              <button type="button" className="swiper-button-next" aria-label="Next slide" />
-            </div>
-          </Swiper>
-        </div>
-      </section>
+                </SwiperSlide>
+              ))}
+              <div className="swiper-prev-next">
+                <button type="button" className="swiper-button-prev" aria-label="Previous slide" />
+                <button type="button" className="swiper-button-next" aria-label="Next slide" />
+              </div>
+            </Swiper>
+          </div>
+        </section>
+      )}
       <section className="case-other-issues" id="other">
         <div className="inner p-vertical">
           <div className="fixed-issues">

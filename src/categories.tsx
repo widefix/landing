@@ -30,7 +30,7 @@ const categories: Category[] = [
     name: CategoryName.devDesign,
     title: "Development & Design",
     imageSrc: "/img/showcases/dev-design.svg",
-    active: false
+    active: true
   },
   {
     name: CategoryName.devops,
