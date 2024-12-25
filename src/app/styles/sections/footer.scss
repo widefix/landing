@@ -12,16 +12,16 @@
             @media (max-width: $media-xsm) {
                 flex-direction: column;
             }
-        
+
             .footer-left {
                 text-align: left;
                 color: #424242;
-                font: 400 16px/24px '__Inter_aaf875';
+                font: 400 16px/24px 'Inter';
                 @media (max-width: $media-xsm) {
                     margin-bottom: 16px;
                 }
             }
-              
+
             .footer-right ul {
                 display: flex;
                 gap: 8px;
@@ -29,7 +29,7 @@
                 margin: 0;
                 padding: 0;
             }
-              
+
             .footer-right li {
                 margin: 0;
                 width: 48px;
@@ -40,14 +40,12 @@
                 justify-content: center;
                 align-items: center;
             }
-              
+
             .footer-right a i {
                 border-radius: 50%;
                 border: 1px solid gray;
                 padding: 10px;
-            }    
+            }
         }
     }
 }
-  
-  

@@ -110,16 +110,16 @@
                             .right-header {
                                 flex-grow: 1;
                                 .name {
-                                    font: 600 20px/30px '__Inter_aaf875';
+                                    font: 600 20px/30px 'Inter';
                                     color: $text-primary;
                                 }
                                 .job {
-                                    font: 400 16px/24px '__Inter_aaf875';
+                                    font: 400 16px/24px 'Inter';
                                     color: $text-secondary;
                                 }
                             }
                             blockquote {
-                                font: 400 16px/24px '__Inter_aaf875';
+                                font: 400 16px/24px 'Inter';
                                 color: $text-secondary;
                                 margin: 0;
                             }
@@ -144,7 +144,7 @@
                                     align-items: center;
 
                                     .rating-point {
-                                        font: 600 18px/28px '__Inter_aaf875';
+                                        font: 600 18px/28px 'Inter';
                                         color: $text-primary;
                                         margin-right: 8px;
                                     }
@@ -177,7 +177,7 @@
                                     width: fit-content;
 
                                     span {
-                                        font: 500 12px/16px '__Inter_aaf875';
+                                        font: 500 12px/16px 'Inter';
                                         color: $text-success;
                                     }
                                 }
@@ -242,9 +242,3 @@
         }
     }
 }
-
-
-
-
-
-
