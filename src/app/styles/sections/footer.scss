@@ -16,7 +16,7 @@
             .footer-left {
                 text-align: left;
                 color: #424242;
-                font: 400 16px/24px 'Inter';
+                font: 400 16px/24px var(--font-inter), sans-serif;
                 @media (max-width: $media-xsm) {
                     margin-bottom: 16px;
                 }

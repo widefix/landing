@@ -89,7 +89,7 @@
                 h3 {
                     margin-top: 24px;
                     margin-bottom: 16px;
-                    font: 600 20px/30px 'Inter';
+                    font: 600 20px/30px var(--font-inter), sans-serif;
                     color: #202020;
                     @media screen and (max-width: 1024px) {
                        margin-top: 10px;
@@ -98,7 +98,7 @@
 
                 p {
                     color: #707070;
-                    font: 400 16px/24px 'Inter';
+                    font: 400 16px/24px var(--font-inter), sans-serif;
                 }
 
             }
