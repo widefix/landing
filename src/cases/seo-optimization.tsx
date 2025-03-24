@@ -43,7 +43,7 @@ const result: Showcase = {
     ),
     solutionFirstText: (
       <p>
-        We conducted a thorough SEO audit of the client's website and identified a number of issues that were holding them back. We then implemented a series of changes to improve their search engine rankings and attract more organic traffic.
+        We conducted a thorough SEO audit of the client&apos;s website and identified a number of issues that were holding them back. We then implemented a series of changes to improve their search engine rankings and attract more organic traffic.
       </p>
     ),
     solutionSecondText: (
