@@ -349,7 +349,7 @@ const showcases: Showcase[] = [
           color: ResultBoxColor.orange,
           imageSrc: "/img/showcases/case/icons/user.svg",
           message: "Android average daily downloads",
-          number: "200"
+          number: "25"
         },
         {
           color: ResultBoxColor.red,
