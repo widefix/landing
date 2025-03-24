@@ -2,6 +2,9 @@
   * {
     box-sizing: border-box;
   }
+  img {
+    object-fit: contain;
+  }
   p {
     color: #5F6675;
     font-size: 20px;
@@ -36,7 +39,7 @@
     @media screen and (min-width: $media-md) {
       padding: 157px 32px 174px;
     }
-    @media screen and (max-width: $media-xsm) {  
+    @media screen and (max-width: $media-xsm) {
       margin: 0 16px;
       h1 {
         font-size: 58px;

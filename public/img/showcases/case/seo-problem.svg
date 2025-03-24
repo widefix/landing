@@ -1,0 +1,22 @@
+<svg
+  width="500"
+  height="300"
+  viewBox="0 0 500 300"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Search Bar -->
+  <rect x="50" y="50" width="300" height="40" rx="10" fill="#f1f1f1" stroke="#ccc" stroke-width="2"/>
+  <text x="70" y="75" font-size="18" fill="#666">Search...</text>
+
+  <!-- Magnifying Glass -->
+  <circle cx="340" cy="70" r="15" stroke="#000" stroke-width="3" fill="none"/>
+  <line x1="350" y1="80" x2="370" y2="100" stroke="#000" stroke-width="3"/>
+
+  <!-- Warning Symbol -->
+  <circle cx="250" cy="180" r="30" fill="#ffcc00" stroke="#000" stroke-width="2"/>
+  <line x1="250" y1="160" x2="250" y2="190" stroke="#000" stroke-width="4"/>
+  <circle cx="250" cy="200" r="4" fill="#000"/>
+
+  <!-- Text for SEO issues -->
+  <text x="200" y="230" font-size="18" fill="#d9534f" font-weight="bold">SEO Issues Found</text>
+</svg>
