@@ -30,7 +30,7 @@ const result: Showcase = {
     detailsTitle: 'SEO Optimization',
     detailsText: (
       <p>
-        Our SEO optimization was a game-changer for the client. It resulted in a <strong>4000% increase in organic traffic</strong> and a <strong>300% increase in conversions</strong>.
+        Our SEO optimization was a game-changer for the client. It resulted in a <strong>4000% increase in organic traffic</strong> and a <strong>300% increase in conversions</strong>. We started the optimization process in January 2023 and by the end of the year, the client was seeing dramatic results.
       </p>
     ),
     detailsImageSrc: "/img/showcases/case/seo-problem.svg",
