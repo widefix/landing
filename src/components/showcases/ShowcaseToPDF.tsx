@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-import { ShowcaseBody } from '@/showcases';
 import Link from 'next/link';
+import { ShowcaseBody } from '@/enums';
 
 export default function ShowcaseToPDF({
   bannerTopTitle,
