@@ -18,7 +18,7 @@ export default function ShowcasesPage() {
 
   useEffect(() => {
     const accordionButtons = document.querySelectorAll('.accordion-action');
-  
+
     const handleClick = (event: any) => {
       const button = event.currentTarget as HTMLButtonElement;
       const accordion = button.closest('.accordion');
@@ -28,11 +28,11 @@ export default function ShowcasesPage() {
         button.setAttribute('aria-expanded', isExpanded.toString());
       }
     };
-  
+
     accordionButtons.forEach((button) => {
       button.addEventListener('click', handleClick);
     });
-  
+
     return () => {
       accordionButtons.forEach((button) => {
         button.removeEventListener('click', handleClick);
@@ -72,12 +72,12 @@ export default function ShowcasesPage() {
                 </div>
                 <div>
                   <div className="portfolio-projects-projects">
-                    <strong>100+</strong>
-                    <p>Projects</p>
+                    <strong>Reliable</strong>
+                    <p>Partner</p>
                   </div>
                   <div className="portfolio-projects-services">
-                    <strong>20+</strong>
-                    <p>Services</p>
+                    <strong>Results</strong>
+                    <p>Oriented</p>
                   </div>
                 </div>
               </div>
@@ -121,8 +121,8 @@ export default function ShowcasesPage() {
                     <Image alt="Developers" src="/img/showcases/developers.svg" width="75" height="73" />
                   </div>
                   <div className="portfolio-developers-n">
-                    <strong>15+</strong>
-                    <p>years of experience</p>
+                    <strong>since 2009</strong>
+                    <p>dev experience</p>
                   </div>
                 </div>
               </div>

@@ -8,7 +8,7 @@ export default function Header() {
         <div className="inner">
           <footer>
             <div className="footer-left">
-              © 2024 Widefix. All rights reserved.
+              © 2025 Widefix. All rights reserved.
             </div>
             <div className="footer-right">
               <ul>
