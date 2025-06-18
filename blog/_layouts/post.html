@@ -35,9 +35,9 @@
 <div id="main" role="main">
   <article class="hentry">
     {% if page.image %}
-      {% picture /images/{{ page.image }} --alt {{page.title}} --img style="object-fit: cover; height: 200px; width: 100%;" 16:9 %}
+      {% picture /blog/images/{{ page.image }} --alt {{page.title}} --img style="object-fit: cover; height: 200px; width: 100%;" 16:9 %}
     {% else %}
-      {% picture /images/post.jpg --alt WideFix tech post --img style="object-fit: cover; height: 200px; width: 100%;" %}
+      {% picture /blog/images/post.jpg --alt WideFix tech post --img style="object-fit: cover; height: 200px; width: 100%;" %}
     {% endif %}
     <div class="entry-wrapper">
       <div class="entry-content">
@@ -51,7 +51,7 @@
             {% endif %}
 
             {% if author.avatar %}
-              {% picture /images/{{ author.avatar }} --alt {{ author.name }} --img class="author-photo" %}
+              {% picture /blog/images/{{ author.avatar }} --alt {{ author.name }} --img class="author-photo" %}
             {% endif %}
             <div class="author-data">
               <span class="author vcard">
@@ -113,9 +113,9 @@
                   <article>
                     <a href="{{ page.previous.url }}">
                       {% if page.previous.image %}
-                        {% picture /images/{{ page.previous.image }} --alt {{page.previous.title}} --img style="object-fit: cover; height: 200px; width: 100%;" 16:9 %}
+                        {% picture /blog/images/{{ page.previous.image }} --alt {{page.previous.title}} --img style="object-fit: cover; height: 200px; width: 100%;" 16:9 %}
                       {% else %}
-                        {% picture /images/post.jpg --alt WideFix tech post --img style="object-fit: cover; height: 200px; width: 100%;" %}
+                        {% picture /blog/images/post.jpg --alt WideFix tech post --img style="object-fit: cover; height: 200px; width: 100%;" %}
                       {% endif %}
                       <div class="preview">
                         <h2>{{ page.previous.title }}</h2>
@@ -145,9 +145,9 @@
                   <article>
                     <a href="{{ page.next.url }}">
                       {% if page.next.image %}
-                        {% picture /images/{{ page.next.image }} --alt {{page.next.title}} --img style="object-fit: cover; height: 200px; width: 100%;" 16:9 %}
+                        {% picture /blog/images/{{ page.next.image }} --alt {{page.next.title}} --img style="object-fit: cover; height: 200px; width: 100%;" 16:9 %}
                       {% else %}
-                        {% picture /images/post.jpg --alt WideFix tech post --img style="object-fit: cover; height: 200px; width: 100%;" %}
+                        {% picture /blog/images/post.jpg --alt WideFix tech post --img style="object-fit: cover; height: 200px; width: 100%;" %}
                       {% endif %}
                       <div class="preview">
                         <h2>{{ page.next.title }}</h2>
