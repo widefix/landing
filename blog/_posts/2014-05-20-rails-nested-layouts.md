@@ -26,7 +26,7 @@ Because of this reason the post may be useful for every Rails developer.
 
 This is a prototype of a general web page:
 
-![Typical layout of a web page](/blog/images/layout.jpg)
+{% picture /images/layout.jpg alt="Typical layout of a web page" %}
 
 Every Rails developer knows how to specify a layout for it. Let's revise the knowledge.
 A generated Rails application has a default layout and
@@ -53,7 +53,7 @@ This is a default Rails behavior.
 But assume that you have to make a layout system in the **body** block. On the picture below you can see an example of
 such situation:
 
-![Wizard form](/blog/images/steps.jpg)
+{% picture /images/steps.jpg alt="Wizard form" %}
 
 As you see each of these three steps includes common blocks: they are the progress bar, the "Submit" button and when
 you start to implement the steps you will see that it contains repetitive code. It may be, for example, form tags. This is

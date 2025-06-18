@@ -15,7 +15,7 @@ Since Ruby On Rails 3 released I had a problems with deploy configuring like ass
 ## 1. Free hosting
 
 If you haven't already known **free ruby hosting** I would recomend you to use [heroku](http://heroku.com). It's a beatiful **freehosting** which provides deploy **Rack/Ruby On Rails** applications.
-![Free ruby hosting](//blog/images/heroku.jpg)
+{% picture /images/heroku.jpg alt="Free ruby hosting" %}
 I won't describe how it works here because you can find a lot of information about it on the oficial site.
 
 I have been use **free account** for a months for my blog which you are reading now and I won't have any issues with server fails, long loading or like that. Sometimes it was about 1000 visitors per hour and everything has done. So I think it will be enough **free account** for your starting services or staging/qa environments. If you haven't enough memory you can buy [web dyno](http://devcenter.heroku.com/articles/dynos) for 36$ per month. Also you are able to install [add-ons](https://addons.heroku.com/) - it's a wonderful **heroku**'s feature which saves your time with installing and configuring additional applications required for your application such as:
@@ -44,13 +44,13 @@ I prefer 3rd variant because **heroku** doesn't allow to save any files on the i
 * Go to [AWS](http://aws.amazon.com/) and sign up there. Credit card with positive balanse is required
 * Go to [AWS console](https://console.aws.amazon.com/s3/home?#), choose S3 tab and create bucket
 
-![S3 bucket](//blog/images/aws_s3_console.jpg)
+{% picture /images/aws_s3_console.jpg alt="S3 bucket" %}
 
 NOTE: there are variants of regions where to store bucket. So choose nearest for your feature visitors to have better response from server
 
 * Go to **CloudFront** tab and create distribution for your bucket
 
-![CloudFront distribution](//blog/images/aws_s3_console-2.jpg)
+{% picture /images/aws_s3_console-2.jpg alt="CloudFront distribution" %}
 
 Please, wait for status changed to Deployed and State to Enabled. It will take a few minutes (usual it is 5-10 minutes)
 

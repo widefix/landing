@@ -20,7 +20,7 @@ Sharing an account is one of the backdoors that leads to financial losses. Inste
 
 Another aspect of preventing sharing accounts is security. Someone might steal a user's credentials. The thief will use the account, and nobody will know about it.
 
-![MFA is for security](/blog/images/security.jpg)
+{% picture /images/security.jpg alt="MFA is for security" %}
 
 All of that is very important indeed. However, our primary goal was to boost app revenue.
 
@@ -51,7 +51,7 @@ Thinking this way, we come up with the following initial ideas:
 - Then, if every subsequent request differs from what's inside the cookies, it's a violation.
 - After analyzing these reports, come up with an idea of who should have MFA enabled. Eventually, implement MFA for them.
 
-![Bright idea](/blog/images/idea-bulb.jpg)
+{% picture /images/idea-bulb.jpg alt="Bright idea" %}
 
 ## Solution #1: logs analysis
 
@@ -72,7 +72,7 @@ Using the experience of the previous solution, we implemented a modernized versi
 
 Having the previous solution ready, we can limit the login sessions in the following way: Every time a user logs in, check if the number of login sessions is too big, say 4. If that's the case, prevent the user from going further and ask them to log in from some of the current login sessions. This is what we are implementing next.
 
-![Active login sessions](/blog/images/active-sessions.png)
+{% picture /images/active-sessions.png alt="Active login sessions" %}
 
 ## Our results, analysis, and reports
 
@@ -80,27 +80,27 @@ Now, we have the indicator that shows the dynamic of account sharing violations.
 
 New signups and active users on a paid plan. Note that it includes users on a trial that lasts for 15 days. That's why there is this peak on the right side:
 
-![Active login sessions](/blog/images/prevent-account-sharing/active-users-report.png)
+{% picture /images/prevent-account-sharing/active-users-report.png alt="Active login sessions" %}
 
 Sharing token reports dynamics:
 
-![Token violations report](/blog/images/prevent-account-sharing/token-violations-report.png)
+{% picture /images/prevent-account-sharing/token-violations-report.png alt="Token violations report" %}
 
 The report dynamics are based on log analysis. It turned out to be useless, and for that reason, we will drop it:
 
-![Log analyzed reports](/blog/images/prevent-account-sharing/log-analyzed-reports.png)
+{% picture /images/prevent-account-sharing/log-analyzed-reports.png alt="Log analyzed reports" %}
 
 Active login sessions per user with MFA enabled:
 
-![MFA enabled reports](/blog/images/prevent-account-sharing/otp-enabled-reports.png)
+{% picture /images/prevent-account-sharing/otp-enabled-reports.png alt="MFA enabled reports" %}
 
 Active login sessions per user with MFA disabled:
 
-![MFA disabled reports](/blog/images/prevent-account-sharing/otp-disabled-reports.png)
+{% picture /images/prevent-account-sharing/otp-disabled-reports.png alt="MFA disabled reports" %}
 
 Active login sessions for all users regardless of the MFA toggle. This one has the data combined with the 2 previous charts:
 
-![Regardless MFA toggle reports](/blog/images/prevent-account-sharing/average-per-user-reports.png)
+{% picture /images/prevent-account-sharing/average-per-user-reports.png alt="Regardless MFA toggle reports" %}
 
 Looking into these charts, we conclude that:
 - The number of new paying signups increases. Roughly 30% more new signups daily.

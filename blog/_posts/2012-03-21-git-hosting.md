@@ -17,7 +17,7 @@ Since I've found my **github** repository instead of my project in **google** I 
 **Bitbucket** is the both **mercurial** and **git hosting** with **unlimited number of private projects** and **unlimited disk space** per account! This system has written by Alassian company (JIRA and Confluence founder). Go to their [site](http://bitbucket.org/) and check it out.
 
 ## Pricing
-![BitBucket pricing](/blog/images/bitbucket.jpg)
+{% picture /images/bitbucket.jpg alt="BitBucket pricing" %}
 
 > It can be expired screenshot. To know actual pricing please, follow [bitbucket site](/blog/images/bitbucket.jpg).
 

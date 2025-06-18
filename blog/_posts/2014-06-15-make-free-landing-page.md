@@ -54,4 +54,4 @@ Choosing *GitHub Pages* and *MailChimp* brings us profit if we have to create a 
 
 This is a [working solution](http://introduction.mezuka.com/). The site is hosted on *GitHub Pages* and uses *MailChimp* for sign up forms. Cost of usage - 0$.
 
-![GitHub pages + MailChimp = landing page](/blog/images/gh_mailchimp.jpg)
+{% picture /images/gh_mailchimp.jpg alt="GitHub pages + MailChimp = landing page" %}

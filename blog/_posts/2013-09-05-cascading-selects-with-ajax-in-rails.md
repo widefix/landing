@@ -16,7 +16,7 @@ I bet you had an issue with dynamic populating of values for *select* which depe
 
 This image will clarify the problem without any words:
 
-![Cascading select](//blog/images/select-car.png)
+{% picture /images/select-car.png alt="Cascading select" %}
 
 ## Solution
 

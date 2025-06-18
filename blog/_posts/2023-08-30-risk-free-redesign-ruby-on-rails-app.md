@@ -15,7 +15,7 @@ Redesigning a Ruby on Rails application is a well-known challenge for many proje
 
 While a development team is redesigning, the application should continue functioning. At the development time, the new design gets validated and tested against the back-end. If the back-end is incompatible, it must be adapted to the new realm. These changes should not break the old functionality. Overcoming these issues is essential in a Ruby on Rails application redesign.
 
-![Ruby On Rails redesign decision](/blog/images/redesign-decision.jpg)
+{% picture /images/redesign-decision.jpg alt="Ruby On Rails redesign decision" %}
 
 This article shares the approach we took to apply the new design in one of our projects. The changes we made increased the project revenue by 30%. As a bonus, the implemented changes unleashed many other opportunities, including:
 
@@ -30,7 +30,7 @@ This article shares the approach we took to apply the new design in one of our p
 
 There are several reasons why an app may consider implementing a new UI/UX design. Regardless of the motive, the ultimate goal is always the same - **to increase revenue**. Note, that keeping users using the app and not going away is the same goal.  Due to an old and unhandy design, an app can make the customers leave. In this case, redesign also can help. If it's clear that a redesign won't have a positive impact on revenue, it may be an unnecessary expense. Redesigning is usually an expensive change. So learn from the users if the design is a problem before making this decision.
 
-![Ruby On Rails redesign weigh](/blog/images/redesign-weigh.jpg)
+{% picture /images/redesign-weigh.jpg alt="Ruby On Rails redesign weigh" %}
 
 ## What is the new design
 
@@ -38,7 +38,7 @@ A new design consists of screens (mockups) created by a designer using software 
 
 In our case, the client provided the mockups, and our task was to turn them into code and integrate them with the existing back-end. We aimed to minimize downtime during the transition and reduce development efforts.
 
-![What is the new design](/blog/images/redesign-new-design.jpg)
+{% picture /images/redesign-new-design.jpg alt="What is the new design" %}
 
 ## Different technical approaches of a Ruby on Rails app redesign
 
@@ -46,7 +46,7 @@ Nowadays, web projects must be responsive and have a mobile application. Modern 
 
 In pure Ruby On Rails applications, the front-end code lives alongside the back-end. That can fulfill modern web app requirements and is cheap in the beginning. However, it becomes hard to maintain due to the mix of different technologies in one place. It makes it difficult to find developers who can understand and maintain the system. We prefer separate back-end and front-end. The specialists can do their job quickly with high quality on their end.
 
-![Redesign Ruby On Rails business](/blog/images/redesign-business.jpg)
+{% picture /images/redesign-business.jpg alt="Redesign Ruby On Rails business" %}
 
 ## Risk-free approach of a Ruby on Rails app redesign
 
@@ -56,7 +56,7 @@ To update the UI, we used the Next.js framework with TypeScript and implemented 
 
 The project took almost a year with 2 developers and 1 project manager working on it. To deploy the changes, we used CloudFront as a proxy on top of the old app and the new front-end app. We gradually switched web requests to the new UI using a feature flag to reduce the risk of failures or outages. The transition went smoothly without major issues.
 
-![Risk free Rails App Redesign](/blog/images/rails-app-redesign.png)
+{% picture /images/rails-app-redesign.png alt="Risk free Rails App Redesign" %}
 
 As a bonus, we got all requests geolocated since they pass through the AWS CloudFront. That allowed us to control the users' network traffic and fight against sharing accounts.
 
@@ -64,7 +64,7 @@ As a bonus, we got all requests geolocated since they pass through the AWS Cloud
 
 Switching to the new design made the project more attractive to users, resulting in more signups and increased satisfaction among old users. This allowed us to increase charges by 20% and revenue by 30%. The redesign expenses were paid off within the first 3 months after release. See below for the paid user dynamics analysis.
 
-![User signups dynamics](/blog/images/users-increase.png)
+{% picture /images/users-increase.png alt="User signups dynamics" %}
 
 The release date was on the 1st of February 2021.
 
@@ -74,7 +74,7 @@ Redesigning apps can be painful and distracting. The Rails assets pipeline chang
 
 Next.js was a wise choice for the front-end, improving SEO with image optimization and cache facilities out of the box.
 
-![Redesign Rails App SEO impact](/blog/images/redesign-seo.png)
+{% picture /images/redesign-seo.png alt="Redesign Rails App SEO impact" %}
 
 ## Acknowledges
 

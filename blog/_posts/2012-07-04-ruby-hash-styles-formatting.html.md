@@ -77,5 +77,5 @@ As you can see I've changed only that what I wanted without any regression issue
 A lot of code examples for this theme you can find in book [Code Complete, second edition](http://www.amazon.com/Code-Complete-ebook/dp/B004OR1XGK/ref=sr_1_7?ie=UTF8&qid=1341409481&sr=8-7&keywords=code+complete+2) by Steve McConnel.
 This is a huge book, but it is very interesting, important, and contains a lot of advices for coding. Also it includes in list of books [which must read every programmer](http://stackoverflow.com/questions/1711/what-is-the-single-most-influential-book-every-programmer-should-read). Thank you, Steve, for your hard work!
 <dl class='figure'>
-	<img src='/images/code_complete.jpg' alt='Code Complete, second edition. By Steve McConell'></img>
+	{% picture /images/code_complete.jpg alt="Code Complete, second edition. By Steve McConell" %}
 </dl>

@@ -12,7 +12,7 @@ redirect_from:
 
 I hope you have already known that there is a one company which provide absolutely free domains in **.tk** zone. If you want to get it visit [their site](http://www.dot.tk) and sign up your domain. But there is a one problem which I will tell you in this post.
 
-![Dot.tk - get a free domain. Absolutely free](/blog/images/dot_tk.jpg)
+{% picture /images/dot_tk.jpg alt="Dot.tk - get a free domain. Absolutely free" %}
 
 Firstly, let's go through threir policy. To have a free domain an use it you should accept them:
 
