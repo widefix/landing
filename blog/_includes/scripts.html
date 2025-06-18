@@ -1,6 +1,6 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="/blog/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-<script src="/blog/assets/js/scripts.min.js"></script>
+<script>window.jQuery || document.write('<script src="{{ site.assetsbase }}/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="{{ site.assetsbase }}/assets/js/scripts.min.js"></script>
 {% if site.search %}
 <!-- Jekyll Simple Search option -->
 <script>
@@ -50,7 +50,7 @@
 {% endif %}
 {% include analytics.html %}
 <!-- Load Modernizr -->
-<script src="/blog/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+<script src="{{ site.config.assetsbase }}/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
 
 <!--  disable google ads
 <script data-ad-client="ca-pub-1211604152094627" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
