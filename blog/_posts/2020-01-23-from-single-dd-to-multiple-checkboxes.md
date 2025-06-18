@@ -283,4 +283,4 @@ Unfortunately, it's hard or even not possible to describe all the niceties of th
 - how to handle the migration if UI is a separate single page application ([SPA](https://en.wikipedia.org/wiki/Single-page_application))
 - how to implement the parallel write into the old and the new DB structures if go with ActiveRecord callbacks. Is it worth at all? Partially, this question was elaborated in this article. But those brief explanations may seem not convincing enough.
 
-If you have any of those or other questions, don't hesitate to [ask me](/ruby-consulting/). Thanks for your attention and happy bugless coding in production!
+If you have any of those or other questions, don't hesitate to [ask me](/blog/ruby-consulting/). Thanks for your attention and happy bugless coding in production!
