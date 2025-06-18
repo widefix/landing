@@ -35,13 +35,13 @@ bing_verify:
 # For external links add external: true
 links:
   - title: Home
-    url: /
+    url: /blog
   - title: Articles
-    url: /articles/
+    url: /blog/articles/
   - title: About
-    url: /about-author/
+    url: /blog/about-author/
   - title: Tags
-    url: /tags/
+    url: /blog/tags/
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    America/New_York
@@ -51,7 +51,7 @@ highlighter: rouge
 markdown:    kramdown
 
 # https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink:   /:categories/:title/
+permalink:  /blog/:categories/:title/
 
 kramdown:
   auto_ids: true
