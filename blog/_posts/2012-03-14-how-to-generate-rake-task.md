@@ -68,8 +68,10 @@ The generator provides a skeleton for you. It's easy to use and saves you time. 
 
 ## Learning more
 
-<a href="https://www.packtpub.com/product/rake-task-management-essentials/9781783280773" target="_blank" ref="nofollow">
-  {% picture /images/rake_book.jpg alt="Rake Task Management Essentials" align="left" vspace="5" hspace="5" width="100" %}
-</a>
 
-I've authored a book on the subject called **Rake Task Management Essentials**. To learn more about this remarkable tool, I recommend purchasing a [copy](https://www.packtpub.com/product/rake-task-management-essentials/9781783280773){:ref="nofollow" target="_blank"}. After reading, you will understand how to use **Rake** effectively in your daily tasks. The book guides you through easy-to-follow and practical examples.
+---
+
+{% picture /images/rake_book.jpg alt="Rake Task Management Essentials" align="left" vspace="5" hspace="5" width="100" %}
+
+
+I've authored a book on the subject called **Rake Task Management Essentials**. To learn more about this remarkable tool, I recommend purchasing a [copy](https://www.packtpub.com/product/rake-task-management-essentials/9781783280773){:rel="nofollow" target="_blank"}. After reading, you will understand how to use **Rake** effectively in your daily tasks. The book guides you through easy-to-follow and practical examples.
