@@ -1,0 +1,23 @@
+---
+layout: homepage
+title: Take your Rails development to the next level
+description: "Maximize your business potential through the power of Ruby on Rails development. Learn how to utilize this technology to achieve greater success in your endeavors."
+---
+
+<ul class="post-list">
+  {% for post in site.posts %}
+    {% if post.featured_post %}
+      <li class="main-list featured-post">
+        {% include card.html %}
+      </li>
+    {% endif %}
+  {% endfor %}
+  <h2 class="recent-posts">Recent posts</h2>
+  {% for post in site.posts limit:10 %}
+    {% unless post.featured_post %}
+      <li class="main-list">
+        {% include card.html %}
+      </li>
+    {% endunless %}
+  {% endfor %}
+</ul>

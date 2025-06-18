@@ -1,0 +1,36 @@
+<div class="navigation-wrapper">
+	<nav role="navigation" id="site-nav" class="animated drop">
+	    <ul>
+	        {% for link in site.links %}
+			<li>
+				{% if link.external %}
+					<a href="{{ link.url }}">{{ link.title }}</a>
+				{% else %}
+					<a href="{{ link.url }}">{{ link.title }}</a>
+				{% endif %}
+			</li>
+	        {% endfor %}
+	        <li class="feed"><a href="/atom.xml" title="Atom/RSS feed"><i class="fas fa-rss" style="color: white;"></i> Feed</a></li>
+	        {% if site.search %}<li class="dosearch"><i class="fas fa-search" style="color: white;"></i> Search</li>{% endif %}
+	    </ul>
+	</nav>
+</div><!-- /.navigation-wrapper -->
+
+{% include browser-upgrade.html %}
+
+{% if site.search %}
+	<div class="search-wrapper">
+		<div class="search-form">
+			<input type="text" class="search-field" placeholder="Search...">
+			<i class="far fa-times-circle fa-2x"></i>
+			<ul class="search-results post-list"></ul><!-- /.search-results -->
+		</div><!-- /.search-form -->
+	</div><!-- ./search-wrapper -->
+{% endif %}
+
+{% if site.google_analytics %}
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{site.google_analytics}}"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+{% endif %}

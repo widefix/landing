@@ -75,7 +75,32 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
-      - name: Upload artifact
+
+      # Jekyll build
+      - name: Install JPT's dependencies
+        run: sudo apt-get install libvips-tools
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.6.10
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+          rubygems: 3.3.22
+          cache-version: 1 # Increment this number if you need to re-download cached gems
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - run: |
+          cd blog
+          bundle exec jekyll build
+
+      - name: Merge blog into Next.js output
+        run: |
+          mkdir -p out/blog
+          cp -r blog/_site/* out/blog/
+
+      - name: Upload merged artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out

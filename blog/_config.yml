@@ -1,0 +1,81 @@
+title:            Take your Rails development to the next level
+description:      Maximize your business potential through the power of Ruby on Rails development. Learn how to utilize this technology to achieve greater success in your endeavors.
+# logo:             logo.jpg
+# disqus_shortname: railsart
+search:           true
+# Change url to your domain. Leave localhost server or blank when working locally.
+# You don't need to specify the protocol if you want it available on http and https. Example: //localhost:4000
+# url:              //localhost:4000
+url:              //blog.widefix.com
+
+# Owner/author information
+owner:
+  name:           Andrei Kaleshka
+  avatar:         my_face.jpg
+  email:          ka8725@gmail.com
+  # Social networking links used in footer. Update and remove as you like.
+  twitter:        ka8725
+  facebook:
+  github:         ka8725
+  stackexchange:
+  linkedin:       ka8725
+  instagram:
+  flickr:
+  tumblr:
+  # For Google Authorship https://plus.google.com/authorship
+  google_plus:
+
+# Analytics and webmaster tools stuff goes here
+google_analytics: GTM-NPVP4Z5
+google_verify: googlef4fa20c2c5bc16c6.html
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify:
+
+# Links to include in top navigation
+# For external links add external: true
+links:
+  - title: Home
+    url: /
+  - title: Articles
+    url: /articles/
+  - title: About
+    url: /about-author/
+  - title: Tags
+    url: /tags/
+
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:    America/New_York
+future:      true
+# pygments:    true
+highlighter: rouge
+markdown:    kramdown
+
+# https://github.com/mojombo/jekyll/wiki/Permalinks
+permalink:   /:categories/:title/
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: false
+
+  syntax_highlighter_opts:
+    line_numbers:
+    line_numbers_start: 1
+    tab_width: 4
+    bold_every: 10
+    css: class
+
+gems:
+  - jekyll-redirect-from
+plugins:
+  - jekyll-extlinks
+  - jekyll-toc
+
+extlinks:
+  attributes: {rel: nofollow, target: _blank}
+  rel_exclude: ['widefix.com', 'blog.widefix.com']
+
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Gemfile", "Capfile", "README.md", "LICENSE", "Gemfile.lock", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]

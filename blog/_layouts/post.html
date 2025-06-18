@@ -1,0 +1,190 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  {% include head.html %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": "{{ page.title }}",
+      "image": [
+        {% if page.image %}
+          "https:{{ site.url }}/images/{{ page.image }}"
+         {% else %}
+           "https:{{ site.url }}/images/post.jpg"
+         {% endif %}
+      ],
+      "datePublished": "{{ page.date }}",
+      "dateModified": {% if page.modified %}"{{ page.modified }}"{% else %}"{{ page.date }}"{% endif %},
+      "author": [{
+          "@type": "Person",
+          "name": {% if page.author %}"{{ page.author.name }}"{% else %}"Andrei Kaleshka"{% endif %},
+          "url": {% if page.author %}"https://www.linkedin.com/in/{{ page.author.linkedin }}/"{% else %}"https://www.linkedin.com/in/ka8725/"{% endif %}
+        }]
+    }
+    </script>
+</head>
+
+<body id="post">
+
+{% include navigation.html %}
+
+<div id="main" role="main">
+  <article class="hentry">
+    {% if page.image %}
+      {% picture /images/{{ page.image }} --alt {{page.title}} --img style="object-fit: cover; height: 200px; width: 100%;" 16:9 %}
+    {% else %}
+      {% picture /images/post.jpg --alt WideFix tech post --img style="object-fit: cover; height: 200px; width: 100%;" %}
+    {% endif %}
+    <div class="entry-wrapper">
+      <div class="entry-content">
+        <h1 class="entry-title">{% if page.headline %}{{ page.headline }}{% else %}{{ page.title }}{% endif %}</h1>
+        <div class="entry-running">
+          <div class="display-flex">
+            {% if page.author %}
+              {% assign author = page.author %}
+            {% else %}
+              {% assign author = site.owner %}
+            {% endif %}
+
+            {% if author.avatar %}
+              {% picture /images/{{ author.avatar }} --alt {{ author.name }} --img class="author-photo" %}
+            {% endif %}
+            <div class="author-data">
+              <span class="author vcard">
+                <span class="fn">
+                  {% if page.author %}
+                    {{ page.author.name }}
+                  {% else %}
+                    <a href="/about-author/" title="About {{ site.owner.name }}">  {{ site.owner.name }}
+                    </a>
+                  {% endif %}
+                </span>
+              </span>
+              <div class="entry-date date published">
+                <time datetime="{{ page.date | date_to_xmlschema }}">
+                  {{ page.date | date: "%d %b %Y" }}
+                </time>
+              </div>
+              <div class="author-socials">
+                <span class="social-author">
+                  <a href="http://github.com/{{ author.github }}" title="{{ author.name}} on Github" target="_blank">
+                    <i class="fab fa-github-square"></i>
+                  </a>
+                </span>
+                <span class="social-author">
+                  <a href="http://linkedin.com/in/{{ author.linkedin }}" title="{{ author.name}} on LinkedIn" target="_blank"><i class="fab fa-linkedin"></i>
+                  </a>
+                </span>
+                <span class="social-author">
+                  <a href="http://twitter.com/{{ author.twitter }}" title="{{ author.name}} on Twitter" target="_blank">
+                    <i class="fab fa-twitter-square"></i>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% assign ref='#headline' %}
+        {% if page.toc %}
+          {{ content | toc | extlinks }}
+        {% else %}
+          {{ content | extlinks }}
+        {% endif %}
+        {% assign ref='#bottomline' %}
+        <span class="entry-tags">
+          {% for tag in page.tags %}
+            <a href="/tags/#{{ tag }}" title="Pages tagged {{ tag }}">{{ tag }}</a>
+            {% unless forloop.last %}{% endunless %}
+          {% endfor %}
+        </span>
+
+        {% include seeking_dev_help_magnete.html %}
+
+        <section>
+          <h3 style="margin-bottom: 10px">Read also</h3>
+          <nav>
+            <ul class="post-list">
+              {% if page.previous %}
+                <li class="main-list">
+                  <article>
+                    <a href="{{ page.previous.url }}">
+                      {% if page.previous.image %}
+                        {% picture /images/{{ page.previous.image }} --alt {{page.previous.title}} --img style="object-fit: cover; height: 200px; width: 100%;" 16:9 %}
+                      {% else %}
+                        {% picture /images/post.jpg --alt WideFix tech post --img style="object-fit: cover; height: 200px; width: 100%;" %}
+                      {% endif %}
+                      <div class="preview">
+                        <h2>{{ page.previous.title }}</h2>
+                        <p>{{ page.previous.description }}</p>
+                      </div>
+                    </a>
+                    <div class="display-flex">
+                      <div class="entry-tags">
+                        {% for tag in page.previous.tags %}
+                          <div><a href="/tags/#{{ tag }}" title="Pages tagged {{ tag }}">{{ tag }}</a></div>
+                          {% unless forloop.last %}{% endunless %}
+                        {% endfor %}
+                      </div>
+                      <div class="entry-date">
+                        <a href="{{ page.previous.url }}">
+                          <time datetime="{{ page.previous.date | date_to_xmlschema }}">
+                            {{ page.previous.date | date: "%d %b %Y" }}
+                          </time>
+                        </a>
+                      </div>
+                    </div>
+                  </article>
+                </li>
+              {% endif %}
+              {% if page.next %}
+                <li class="main-list">
+                  <article>
+                    <a href="{{ page.next.url }}">
+                      {% if page.next.image %}
+                        {% picture /images/{{ page.next.image }} --alt {{page.next.title}} --img style="object-fit: cover; height: 200px; width: 100%;" 16:9 %}
+                      {% else %}
+                        {% picture /images/post.jpg --alt WideFix tech post --img style="object-fit: cover; height: 200px; width: 100%;" %}
+                      {% endif %}
+                      <div class="preview">
+                        <h2>{{ page.next.title }}</h2>
+                        <p>{{ page.next.description }}</p>
+                      </div>
+                    </a>
+                    <div class="display-flex">
+                      <div class="entry-tags">
+                        {% for tag in page.next.tags %}
+                          <div><a href="/tags/#{{ tag }}" title="Pages tagged {{ tag }}">{{ tag }}</a></div>
+                          {% unless forloop.last %}{% endunless %}
+                        {% endfor %}
+                      </div>
+                      <div class="entry-date">
+                        <a href="{{ page.next.url }}">
+                          <time datetime="{{ page.next.date | date_to_xmlschema }}">
+                            {{ page.next.date | date: "%d %b %Y" }}
+                          </time>
+                        </a>
+                      </div>
+                    </div>
+                  </article>
+                </li>
+              {% endif %}
+            </ul>
+          </nav>
+        </section>
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+  </article>
+</div><!-- /#main -->
+
+{% include footer.html %}
+{% include scripts.html %}
+
+<!--email_off-->hello@mydomain.com<!--/email_off-->
+<!--email_off-->git@github.com<!--/email_off-->
+
+</body>
+</html>
