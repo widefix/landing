@@ -16,7 +16,7 @@ redirect_from:
 
 ![Locomotive cms - open source content management system](/images/loco.jpg)
 
-It uses **MongoDB** for backend and compatible for deployement with all **rails** web-servers such as: unicorn, passenger or puma and etc. It provides configs for connection with sendgrid and s3, and also there is a [gem](https://github.com/locomotivecms/locomotive-heroku) wich allows [deploy](http://doc.locomotivecms.com/installation/heroku) loco to [Heroku](http://heroku.com), so this means that you are able to have absolutely free web site in the internet (certainly not without limitations as I have alreay said [here](http://railsguides.net/2012/03/19/deploy-ruby-on-rails-3-application-to-free-hosting))
+It uses **MongoDB** for backend and compatible for deployement with all **rails** web-servers such as: unicorn, passenger or puma and etc. It provides configs for connection with sendgrid and s3, and also there is a [gem](https://github.com/locomotivecms/locomotive-heroku) wich allows [deploy](http://doc.locomotivecms.com/installation/heroku) loco to [Heroku](https://heroku.com), so this means that you are able to have absolutely free web site in the internet (certainly not without limitations as I have alreay said [here](https://widefix.com/blog/deploy-ruby-on-rails-3-application-to-free-hosting))
 
 ## Features
 
