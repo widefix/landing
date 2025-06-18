@@ -210,7 +210,7 @@ Now it's time to deploy this migration to production.
 
 #### Step 3: migrate the old data
 
-But that's not all when it comes to data. There is still old data on the `properties.manager_id` without related `managers_properties` row. This can be fixed with so-called "data migration". In short, it's just a code snippet that makes the job done. There are many ways to implement it. All of them can be found in another article [Change data in migrations like a boss](/change-data-in-migrations-like-a-boss/).
+But that's not all when it comes to data. There is still old data on the `properties.manager_id` without related `managers_properties` row. This can be fixed with so-called "data migration". In short, it's just a code snippet that makes the job done. There are many ways to implement it. All of them can be found in another article [Change data in migrations like a boss](/blog/change-data-in-migrations-like-a-boss/).
 
 Run the following SQL snippet against the production DB and that makes all that's needed on this step:
 
