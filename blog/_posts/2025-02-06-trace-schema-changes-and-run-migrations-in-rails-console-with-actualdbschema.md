@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Trace Schema Changes &amp; Run Migrations in Rails Console with ActualDbSchema"
-headline: "Trace Schema Changes &amp; Run Migrations in Rails Console with ActualDbSchema"
+title: "Trace Schema Changes and Run Migrations in Rails Console with ActualDbSchema"
+headline: "Trace Schema Changes and Run Migrations in Rails Console with ActualDbSchema"
 modified: 2025-02-06 12:37:00 +0400
 description: "Some description goes here."
 tags: [actual_db_schema, rails, rails-development, migrations]
