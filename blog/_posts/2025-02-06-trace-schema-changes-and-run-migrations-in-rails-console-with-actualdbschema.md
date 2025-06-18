@@ -25,7 +25,7 @@ The new `diff_schema_with_migrations` Rake task generates a diff of the `sche
 
 Here's an example of what the schema diff with migration annotations looks like in action:
 
-![schema_diff](/images/schema_diff.png)
+![schema_diff](/blog/images/schema_diff.png)
 
 By default, the task uses `db/schema.rb` and `db/migrate` as the schema and migrations paths. You can run it with the following command:
 
@@ -43,7 +43,7 @@ rake actual_db_schema:diff_schema_with_migrations[path/to/custom_schema.rb, path
 
 ## Console Migrations
 
-Sometimes, you need to make quick adjustments to your database schema without creating migration files - whether you’re fixing a corrupted schema, experimenting with indexes, or making quick changes in development. This feature allows you to run the same commands used in migrations directly in the Rails console. 
+Sometimes, you need to make quick adjustments to your database schema without creating migration files - whether you’re fixing a corrupted schema, experimenting with indexes, or making quick changes in development. This feature allows you to run the same commands used in migrations directly in the Rails console.
 
 By default, Console Migrations is disabled. You can enable it in two ways:
 

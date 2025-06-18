@@ -16,7 +16,7 @@ The first goal we have a pretty good handle on. Our team is among the best in th
 
 They’re a platform that published reviews on our work like this.
 
-![Clutch Review](/images/clutch_review.png)
+![Clutch Review](/blog/images/clutch_review.png)
 
 This particular review was provided by a telecommunications firm that we helped integrate a billing system for in the cloud. This was a fairly straightforward project for our team and we were able to flex our capabilities.
 

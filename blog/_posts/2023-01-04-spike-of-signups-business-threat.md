@@ -13,7 +13,7 @@ image: tsunami.jpg
 
 Recently, we experienced a spike in the number of signed up customers within a **Ruby on Rails application** that we provide maintenance services for. As shown in the following graph, the spike occurred without any aggressive marketing campaigns:
 
-![Signups spike in Stripe](/images/stripe_spike.jpg)
+![Signups spike in Stripe](/blog/images/stripe_spike.jpg)
 
 While an increase in new customers is generally a good thing, this particular spike turned out to be a false positive. It was likely the result of an attack, as almost all of the new signups used fake emails and the credit cards used for the signups were passed by Stripe without a CVC check.
 
@@ -25,7 +25,7 @@ To resolve this issue, we implemented a few solutions:
 
 As a result, the number of new signups returned to a normal level, as shown in the following graph:
 
-![Normal signups in Stripe](/images/normal_signups.jpg)
+![Normal signups in Stripe](/blog/images/normal_signups.jpg)
 
 Overall, implementing email verification and reCaptcha helped to stabilize the number of new signups and protect the business and customer data. It's important to take necessary precautions to prevent fake signups and other potential attacks on your application. In this case, quick action helped to mitigate the impact of the fake signups and keep the business running smoothly.
 

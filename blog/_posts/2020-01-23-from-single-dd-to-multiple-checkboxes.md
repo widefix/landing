@@ -29,7 +29,7 @@ As time goes by, the business decides to make the following changes. There is a 
 
 A graphical explanation of the problem:
 
-![From single drop-down to multiple check-boxes](/images/hbtm-ui.png)
+![From single drop-down to multiple check-boxes](/blog/images/hbtm-ui.png)
 
 How to approach that? Well, someone might think it's not a big deal for MVP, PoC, or a fresh startup without real users. And that's true. In all these cases everything can be changed and re-deployed with the old data deleted at a time.
 
@@ -55,7 +55,7 @@ end
 
 In DB it looks like that:
 
-![Property belongs to manager in DB](/images/hbtm-db1.png)
+![Property belongs to manager in DB](/blog/images/hbtm-db1.png)
 
 Nowadays, there are many technologies to implement UI. That's why it's barely possible to give a common recommendation on how to handle that part of the system. For simplicity, assume that UI is rendered by the traditional Rails approach on the server-side in "views". The following assumptions and suggestions are based on this agreement.
 
@@ -85,7 +85,7 @@ end
 
 And its corresponding DB state:
 
-![Property has and belongs to managers in DB](/images/hbtm-db2.png)
+![Property has and belongs to managers in DB](/blog/images/hbtm-db2.png)
 
 If the necessary changes take place at once it means the calls `@property.manager`, `@properly.manager_id`, `@properly.manager_id=`, `@property.manager=` are no longer possible. They are replaced with the respective calls `@property.managers`, `@properly.manager_ids`, `@properly.manager_ids=`, `@property.managers=`. In other words, they break the current interface - API mentioned earlier. And these changes at once are dangerous. They may impact the system. There may be a lot of changes that have to be deployed at a time. Eventually, that may lead to unexpected bugs or even outages. No one well-established business would accept that.
 

@@ -16,7 +16,7 @@ make a user-friendly web application built on [Rails](https://rubyonrails.org/).
 
 That's the application in action we are going to make in a moment:
 
-![Financial plan ActiveAdmin](/images/financial-plan-rails.gif)
+![Financial plan ActiveAdmin](/blog/images/financial-plan-rails.gif)
 
 ### Tools
 

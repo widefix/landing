@@ -23,7 +23,7 @@ Well, first of all before comparing them one should understand that JSON is just
 
 Note, processes can be written in different programming languages as JSON is language-agnostic. Basically, this is just a set of rules that specify data going from Process A to Process B (more about JSON is in [rfc7159](https://tools.ietf.org/html/rfc7159)):
 
-![JSON as a language-agnostic data interchange format](/images/json-pipe.png)
+![JSON as a language-agnostic data interchange format](/blog/images/json-pipe.png)
 
 The red pipe in the picture above is a transport protocol responsible for data delivery. And inside this pipe some data interchanges in JSON format. That's it, JSON is only just a properly formatted **string**, nothing more.
 Note, the protocol can be HTTP, RPC, AMQP, etc., and even just a method call inside the same process!
@@ -44,7 +44,7 @@ Integration tests would solve this issue if they had covered related code to the
 
 But it's possible to reduce the cost. If the processes talked between each other by some **contract**, its violation would mean that integration is broken immediately:
 
-![Contract between services](/images/json-contract.png)
+![Contract between services](/blog/images/json-contract.png)
 
 A contract here is some specification that's understandable for both processes. It supposes to fail instantly if the data doesn't correspond to the contract during serialization or deserialization.
 

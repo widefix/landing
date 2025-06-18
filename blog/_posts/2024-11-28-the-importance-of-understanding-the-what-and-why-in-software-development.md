@@ -14,7 +14,7 @@ image: what-and-why-critical-thinking.jpg
 
 In software development, it’s crucial to understand not just *what* you're doing, but also *why* you're doing it. This simple but essential concept is often overlooked by junior developers, which can lead to incomplete or incorrect implementations. Let me share a story from my experience mentoring a junior developer, where this principle proved pivotal.
 
-![Accounting](/images/accounting.jpg)
+![Accounting](/blog/images/accounting.jpg)
 
 ## The Task: Implementing a Refund Operation
 

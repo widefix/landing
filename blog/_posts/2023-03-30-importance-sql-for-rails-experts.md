@@ -95,7 +95,7 @@ Pay attention to the phrase "Rating Load" as it serves as an indicator. If you n
 
 Another tool is to visually inspect the code. You can feel discomfort and uncertainty when trying to understand how the code pieces relate to each other. Yet, this is not related to performance. The most crucial aspect is that the code contains a nested loop, which indicates that its complexity is squared. As more objects are iterated, a squared function grows rapidly:
 
-![Growth rate for different functions](/images/plot.png)
+![Growth rate for different functions](/blog/images/plot.png)
 
 Sorry for getting into the math, but it's important to understand that your code should ideally grow linearly or at least logarithmically. This is the best way to ensure that your code's performance remains optimal for many years to come.
 

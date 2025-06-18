@@ -36,7 +36,7 @@ Our plan is the following:
 4. Configure Metabase for these reports. Metabase is the system we use to write SQL and build reports. Set up notifications for data discrepancies so that we receive alerts about new cases and can react to them as soon as possible. Luckily, it was already set up for this project. The good news is that its setup takes very little time.
 5. Schedule the data scraper from Step 1 to run automatically every week.
 
-![Shining plan](/images/shining-plan.jpg)
+![Shining plan](/blog/images/shining-plan.jpg)
 
 ## Stripe data store preparation
 
@@ -136,7 +136,7 @@ This script fetches all Stripe customers along with their subscriptions. Later, 
 
 We run this script on the server with the [rails runner](https://guides.rubyonrails.org/command_line.html#bin-rails-runner). Its run can take a while. Not to get the process killed with a closed SSH connection to the server, we use [screen](https://www.gnu.org/software/screen/) utility. At least for the first time, we have to run it manually and monitor for any failures. If there are any issues, we fix them. This way, we verify that the script is valid and reliable. Later, we can automate it to run on a schedule. We've collected data on 85k customers and 8.5k subscriptions, and it took around 1 hour. Not bad for this amount of data.
 
-![Collected data from Stripe](/images/data-stripe.jpg)
+![Collected data from Stripe](/blog/images/data-stripe.jpg)
 
 ## Run the script automatically
 
@@ -280,7 +280,7 @@ The plan with ID = 6 is the free plan, and 121 is a technical one used only for 
 
 We inputted this SQL into Metabase, and this is what it looks like:
 
-![SQL inside Metabase](/images/reported-users.png)
+![SQL inside Metabase](/blog/images/reported-users.png)
 
 > Optionally, we can configure notifications to be sent even when a new record is added to these results. See the bell icon at the bottom right; it's intended for this purpose.
 
@@ -311,7 +311,7 @@ All actions related to fixing data require a thorough understanding of the app a
 
 By simply looking into the app database, we noticed those 514 softly deleted users. This can be easily done by examining the `deleted_at` column in the report. Any Excel-like tool can allow us to filter this information, or we can accomplish this in Metabase.
 
-![Filter by non-null deleted_at column in Metabase](/images/metabase-filters.png)
+![Filter by non-null deleted_at column in Metabase](/blog/images/metabase-filters.png)
 
 We can move these users to free plan right away by writing a Ruby script that was successfully done.
 

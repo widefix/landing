@@ -32,7 +32,7 @@ This process of plan change calculations is called prorations.
 
 Graphically it can be explained as follow:
 
-![Plan change proration](/images/plan-change.png)
+![Plan change proration](/blog/images/plan-change.png)
 
 Stripe can [calculate prorations](https://stripe.com/docs/billing/subscriptions/prorations) for us.
 But that feature is available only for per-seat plans. In this post, you will see how to build a service

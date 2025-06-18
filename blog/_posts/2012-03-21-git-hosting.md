@@ -17,9 +17,9 @@ Since I've found my **github** repository instead of my project in **google** I 
 **Bitbucket** is the both **mercurial** and **git hosting** with **unlimited number of private projects** and **unlimited disk space** per account! This system has written by Alassian company (JIRA and Confluence founder). Go to their [site](http://bitbucket.org/) and check it out.
 
 ## Pricing
-![BitBucket pricing](/images/bitbucket.jpg)
+![BitBucket pricing](/blog/images/bitbucket.jpg)
 
-> It can be expired screenshot. To know actual pricing please, follow [bitbucket site](/images/bitbucket.jpg).
+> It can be expired screenshot. To know actual pricing please, follow [bitbucket site](/blog/images/bitbucket.jpg).
 
 As you see for free account you have constrain - maximum 5 users with write access to your project. 5 members for one team are very big number. If this plan won't be enough you can buy the next plan with 10 collabarators for 10$ per month. Compare with github price - 24$ per month for 10 collabarators and 20 projects, but here you have unlimit number of private projects and unlimit disk space. It is very cheap and tempting offer!
 

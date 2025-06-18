@@ -18,11 +18,11 @@ to avoid them.
 
 Assume that we have to simulate the following automatic gearbox shifting:
 
-![Hyundai automatic gearshift](/images/gearshift.jpg)
+![Hyundai automatic gearshift](/blog/images/gearshift.jpg)
 
 This image will show which operations and states we have:
 
-![Gearbox levels](/images/state_machine.jpg)
+![Gearbox levels](/blog/images/state_machine.jpg)
 
 I use this [state machine gem](https://github.com/pluginaweek/state_machine) and RSpec for tests. And this is how looks possible class
 with gearshift levels flow:

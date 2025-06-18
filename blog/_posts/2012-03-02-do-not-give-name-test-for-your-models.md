@@ -14,7 +14,7 @@ There is a list of reserved words for Ruby On Rails framework. Full list is [her
 But it doesn't contain at least one word which I will describe in this post. There are many reasons to don't give name **Test** for your _models_ in _Ruby On Rails_.
 I will try to describe in this post problems which you will have if you have _model_ with **Test** name.
 
-![Do not give name Test for your models](/images/do_not_give_test_name_for_models.jpg)
+![Do not give name Test for your models](/blog/images/do_not_give_test_name_for_models.jpg)
 
 Let's start with creating new application:
 

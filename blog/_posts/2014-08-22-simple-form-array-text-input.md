@@ -13,7 +13,7 @@ Since Rails 4 supports PostgreSQL array type out of the box it would be great to
 
 This screenshot will explain what I have to do without any words:
 
-![Account and User relation](/images/zips.jpg)
+![Account and User relation](/blog/images/zips.jpg)
 
 In database I'm going to use [PostgreSQL arrays in ActiveRecord](http://blog.plataformatec.com.br/2014/07/rails-4-and-postgresql-arrays/) for saving the data. But in the view we don't have some tool to generate the fields with Rails out of the box. So let's do it with SimpleForm.
 

@@ -15,7 +15,7 @@ Imagine you have a `User` model and it is related to an `Account` with "many to 
 
 This is the UML diagram of the tables:
 
-![Account and User relation](/images/account-users.jpeg)
+![Account and User relation](/blog/images/account-users.jpeg)
 
 Using `Rails`' `ActiveRecord` we would specify the following classes and relations:
 
