@@ -6,7 +6,7 @@ description: ''
 keywords:
 ---
 
-<img src="/images/my_face.jpg" alt="Andrei Kaleshka (Andrey Koleshko)" align="left" vspace="5" hspace="5" width="100"/>
+<img src="{{ site.url }}/images/my_face.jpg" alt="Andrei Kaleshka (Andrey Koleshko)" align="left" vspace="5" hspace="5" width="100"/>
 
 My name is Andrei Kaleshka, a software developer with experience since 2009. Passionate about building maintainable and high-performance applications, I focus on delivering real results for clients. Examples of work and project showcases completed with my team can be found on the personal [GitHub account](https://github.com/ka8725){:ref="nofollow" target="_blank"}, [business GitHub account](https://github.com/widefix){:ref="nofollow" target="_blank"} and the [business site](https://widefix.com/showcases){:ref="nofollow" target="_blank"}. Additionally, I'm the author of [Rake Task Management Essentials](https://www.packtpub.com/product/rake-task-management-essentials/9781783280773){:ref="nofollow" target="_blank"}, a book published by Packt.
 
