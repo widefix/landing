@@ -84,6 +84,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.6.10
+          working-directory: blog
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           rubygems: 3.3.22
           cache-version: 1 # Increment this number if you need to re-download cached gems
