@@ -170,10 +170,10 @@ Advanced SQL understanding allows you to write performant advanced functionality
 
 If you like this article and would like to see more examples of how SQL can improve your software development life read these articles:
 
-  - [Make your Ruby on Rails app 80x faster with SQL](https://blog.widefix.com/importance-sql-for-rails-experts/){:ref="nofollow" target="_blank"}
-  - [Financial plan on PostgreSQL](https://blog.widefix.com/financial-plan-on-postgresql/){:ref="nofollow" target="_blank"}
-  - [Financial plan on Rails](https://blog.widefix.com/financial-plan-on-rails/){:ref="nofollow" target="_blank"}
-  - [From Single drop-down to Multiple check-boxes](https://blog.widefix.com/from-single-dd-to-multiple-checkboxes/){:ref="nofollow" target="_blank"}
-  - [Efficient algorithm to check dates overlap](https://blog.widefix.com/date-ranges-overlap/){:ref="nofollow" target="_blank"}
+  - [Make your Ruby on Rails app 80x faster with SQL](https://widefix.com/blog/importance-sql-for-rails-experts/){:ref="nofollow" target="_blank"}
+  - [Financial plan on PostgreSQL](https://widefix.com/blog/financial-plan-on-postgresql/){:ref="nofollow" target="_blank"}
+  - [Financial plan on Rails](https://widefix.com/blog/financial-plan-on-rails/){:ref="nofollow" target="_blank"}
+  - [From Single drop-down to Multiple check-boxes](https://widefix.com/blog/from-single-dd-to-multiple-checkboxes/){:ref="nofollow" target="_blank"}
+  - [Efficient algorithm to check dates overlap](https://widefix.com/blog/date-ranges-overlap/){:ref="nofollow" target="_blank"}
 
 Have a good day ahead and happy coding!

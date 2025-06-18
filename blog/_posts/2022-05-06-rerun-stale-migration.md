@@ -85,4 +85,4 @@ After running the `rails db:migrate:status` command on my pet project, the outpu
 
 ## How to avoid getting stale migrations
 
-Not long ago, I implemented a solution aimed at automating tasks to prevent falling into the trap of stale migrations. This is where the [actual_db_schema](https://github.com/widefix/actual_db_schema){:ref="nofollow" target="_blank"} gem comes in. Please feel free to install and use it, and your feedback would be greatly appreciated. You can find more information about this gem in the Keep DB schema clean and consistent between branches](https://blog.widefix.com/actual-db-schema/) article.
+Not long ago, I implemented a solution aimed at automating tasks to prevent falling into the trap of stale migrations. This is where the [actual_db_schema](https://github.com/widefix/actual_db_schema){:ref="nofollow" target="_blank"} gem comes in. Please feel free to install and use it, and your feedback would be greatly appreciated. You can find more information about this gem in the Keep DB schema clean and consistent between branches](https://widefix.com/blog/actual-db-schema/) article.

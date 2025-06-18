@@ -10,7 +10,7 @@ toc: true
 image: rocket-launch.jpg
 ---
 
-The previous article [Make your Ruby on Rails app 80x faster with SQL](https://blog.widefix.com/importance-sql-for-rails-experts/){:ref="nofollow" target="_blank"} shows how SQL knowledge can help to optimize your Rails application performance. We discussed it within [Belarus User Group](https://www.brug.by/){:ref="nofollow" target="_blank"} community. Not everyone agreed with the point and didn’t find SQL knowledge a good asset for investment. That's something expected. There is no revelation here. But that meeting had something that everyone was impressed with. We experimented and found out how ChatGPT is good with code optimization. We saw how it transforms Ruby code into performant SQL. The results were great. Check that out within this article.
+The previous article [Make your Ruby on Rails app 80x faster with SQL](https://widefix.com/blog/importance-sql-for-rails-experts/){:ref="nofollow" target="_blank"} shows how SQL knowledge can help to optimize your Rails application performance. We discussed it within [Belarus User Group](https://www.brug.by/){:ref="nofollow" target="_blank"} community. Not everyone agreed with the point and didn’t find SQL knowledge a good asset for investment. That's something expected. There is no revelation here. But that meeting had something that everyone was impressed with. We experimented and found out how ChatGPT is good with code optimization. We saw how it transforms Ruby code into performant SQL. The results were great. Check that out within this article.
 
 ## ChatGPT request to transform Ruby code into SQL
 

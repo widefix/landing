@@ -94,7 +94,7 @@ const showcases: Showcase[] = [
           wrapperColor: SwiperSlideColor.purple,
           buttonColor: SwiperSlideColor.purple,
           companyImageSrc: "/img/showcases/clients/wo.svg",
-          url: "https://blog.widefix.com/reconcile-app-users-against-stripe-and-prevent-financial-losses/"
+          url: "https://widefix.com/blog/reconcile-app-users-against-stripe-and-prevent-financial-losses/"
         }
       ]
     },
@@ -185,7 +185,7 @@ const showcases: Showcase[] = [
           wrapperColor: SwiperSlideColor.purple,
           buttonColor: SwiperSlideColor.purple,
           companyImageSrc: "/img/showcases/clients/wo.svg",
-          url: "https://blog.widefix.com/prevent-account-sharing-with-mfa/"
+          url: "https://widefix.com/blog/prevent-account-sharing-with-mfa/"
         }
       ]
     },

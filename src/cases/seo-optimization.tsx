@@ -93,7 +93,7 @@ const result: Showcase = {
         wrapperColor: SwiperSlideColor.yellow,
         buttonColor: SwiperSlideColor.yellow,
         companyImageSrc: "/img/showcases/clients/wo.svg",
-        url: "https://blog.widefix.com/improve-nextjs-application-performance/"
+        url: "https://widefix.com/blog/improve-nextjs-application-performance/"
       }
     ]
   },

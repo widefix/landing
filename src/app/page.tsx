@@ -517,7 +517,7 @@ export default function HomePage() {
               <p>A book authored by the founder of WideFix, Andrei Kaleshka.</p>
             </div>
             <div className="item">
-              <Link href="https://blog.widefix.com/spike-of-signups-business-threat/" target="_blank">
+              <Link href="https://widefix.com/blog/spike-of-signups-business-threat/" target="_blank">
                 <div className="content">
                   <span>TECH BLOG</span>
                   <h3>Fake signups: a threat to your business</h3>

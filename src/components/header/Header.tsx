@@ -8,17 +8,17 @@ export default function Header() {
   useEffect(() => {
     const toggleButton = document.querySelector('.menu-toggle');
     const nav = document.querySelector('nav');
-  
+
     const handleClick = () => {
       if (nav) {
         nav.classList.toggle('visible');
       }
     };
-  
+
     if (toggleButton) {
       toggleButton.addEventListener('click', handleClick);
     }
-  
+
     return () => {
       if (toggleButton) {
         toggleButton.removeEventListener('click', handleClick);
@@ -53,7 +53,7 @@ export default function Header() {
               <li><Link href="/showcases">Showcases</Link></li>
               <li><Link href="/services">Services</Link></li>
               <li><Link href="/contact">Contact</Link></li>
-              <li><Link href="https://blog.widefix.com" target="_blank">Blog</Link></li>
+              <li><Link href="https://widefix.com/blog" target="_blank">Blog</Link></li>
             </ul>
           </nav>
           <div className="cta-button">

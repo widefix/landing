@@ -306,4 +306,4 @@ Nowadays, there are plenty of courses and books available on the subject. So itâ
 
 But, if you are like me and prefer hands-on learning, you might find the following resource helpful -  [https://pgexercises.com/](https://pgexercises.com/){:ref="nofollow" target="_blank"}.
 
-You might also find this article I wrote previously interesting - [Financial plan on PostgreSQL](https://blog.widefix.com/financial-plan-on-postgresql/).
+You might also find this article I wrote previously interesting - [Financial plan on PostgreSQL](https://widefix.com/blog/financial-plan-on-postgresql/).

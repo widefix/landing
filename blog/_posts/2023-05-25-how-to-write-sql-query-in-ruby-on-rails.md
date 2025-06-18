@@ -117,11 +117,11 @@ Now you know all the essential tricks to work with SQL in a Rails application.
 
 Moving further, you can read the following articles that expand the related knowledge:
 
-  - [Make your Ruby on Rails app 80x faster with SQL](https://blog.widefix.com/importance-sql-for-rails-experts/){:ref="nofollow" target="_blank"}
-  - [Financial plan on PostgreSQL](https://blog.widefix.com/financial-plan-on-postgresql/){:ref="nofollow" target="_blank"}
-  - [Financial plan on Rails](https://blog.widefix.com/financial-plan-on-rails/){:ref="nofollow" target="_blank"}
-  - [From Single drop-down to Multiple check-boxes](https://blog.widefix.com/from-single-dd-to-multiple-checkboxes/){:ref="nofollow" target="_blank"}
-  - [Efficient algorithm to check dates overlap](https://blog.widefix.com/date-ranges-overlap/){:ref="nofollow" target="_blank"}
+  - [Make your Ruby on Rails app 80x faster with SQL](https://widefix.com/blog/importance-sql-for-rails-experts/){:ref="nofollow" target="_blank"}
+  - [Financial plan on PostgreSQL](https://widefix.com/blog/financial-plan-on-postgresql/){:ref="nofollow" target="_blank"}
+  - [Financial plan on Rails](https://widefix.com/blog/financial-plan-on-rails/){:ref="nofollow" target="_blank"}
+  - [From Single drop-down to Multiple check-boxes](https://widefix.com/blog/from-single-dd-to-multiple-checkboxes/){:ref="nofollow" target="_blank"}
+  - [Efficient algorithm to check dates overlap](https://widefix.com/blog/date-ranges-overlap/){:ref="nofollow" target="_blank"}
 
 These articles show how to use SQL within Rails applications efficiently on practical examples. They also explain some useful but not very popular in the Rails community SQL tricks.
 
