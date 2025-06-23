@@ -110,7 +110,3 @@ raise 'dangerous code' unless code.include?('module ActiveSupport')
 Manipulating production systems can be risky and should only be done with a high level of confidence in what you are doing. Although in some scenarios, the console is the only solution to fix a production issue, it should be approached with caution. Before making any changes, consider the potential impact and weigh the decision carefully, as even a small mistake can have significant consequences. In some cases, the cost of fixing the issue through other means may be less than the cost of fixing the mistake made in the production console.
 
 At [WideFix](https://widefix.com){:ref="nofollow" target="_blank"}, we take pride in our expertise and experience. You can trust that our solutions will not harm your business and will always keep your site running smoothly. You can rely on us to provide confident and effective solutions that meet your needs.
-
-<div style="display: flex;align-items:center;justify-content: center;margin-top: 20px;">
-  <a class="btn" style="background-color: #f04338; cursor: pointer;font-size: 24px;" target="_blank" rel="nofollow" href="https://widefix.com">Hire Ruby On Rails expert now</a>
-</div>
