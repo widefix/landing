@@ -3,7 +3,7 @@ layout: post
 title: "Ruby and Rails upgrade: personal experience"
 headline: "Ruby and Rails upgrade: personal experience"
 modified: 2025-06-13 22:33:44 +0200
-description: "A personal reflection on upgrading Ruby and Rails in a project, sharing challenges and lessons learned."
+description: "A personal story on upgrading Ruby from 3.1 to 3.4 and Rails from 6.1 to 7.2 in a live project. Reflection on using AI tools to speed up the process. Shared challenges and lessons learned."
 tags: [rails, rails-development, ruby]
 featured_post: false
 toc: true
