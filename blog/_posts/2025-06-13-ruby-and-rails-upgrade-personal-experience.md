@@ -10,29 +10,29 @@ toc: true
 image:
 ---
 
-Good day, everyone! Today, I want to share my personal experience upgrading Ruby and Rails in a project. This is not a tutorial, but rather a reflection on the process, challenges, and lessons learned. I also honestly share where I used AI tools to speed up the process. Where they were useful and where they weren't. The post is quite long, so grab a cup of coffee and enjoy the read.
+Good day, everyone! Today, I want to share my personal experience upgrading Ruby and Rails in a project. This is not a tutorial, but rather a reflection on the process, challenges, and lessons learned. I also share the instances where I used AI tools to speed up the process. Where they were useful and where they weren't. The post is quite long, so grab a cup of coffee and enjoy the read.
 
 ## Why upgrade Ruby and Rails?
 
-Upgrading Ruby and Rails is necessary to keep your app running smoothly and securely. For me, an additional and undeniable motivation was that Heroku deprecates older Ruby versions. The next Heroku stack will most likely not support Ruby 3.1. Without an upgrade, deployments on Heroku would eventually fail.
+Upgrading Ruby and Rails is necessary to ensure your app operates without issues and maintains security. For me, a more undeniable motivation was that Heroku deprecates older Ruby versions. The next Heroku stack will most likely not support Ruby 3.1. Deployments on Heroku would fail after some time without an upgrade.
 
-The client will definitely stay with Heroku (yes, despite the [recent epic failure](https://www.reddit.com/r/Heroku/comments/1l7sq5p/is_something_happening_cant_access_heroku_also_my/) and price increases). So, I had to upgrade Ruby and Rails to keep the app running on Heroku.
+The client will continue using Heroku. This is true even with the [recent major outage](https://www.reddit.com/r/Heroku/comments/1l7sq5p/is_something_happening_cant_access_heroku_also_my/) and rising prices. So, I had to upgrade Ruby and Rails to keep the app running on Heroku.
 
 ## Current stack of the project
 
 The project ran on Ruby 3.1.4 and Rails 6.1.7.6. Upgrade targets to Ruby 3.4.4 and Rails 7.2.
 
-It’s a Rails monolith mainly serving as a GraphQL API backend. Originally full-stack, the frontend was moved to a separate React app, though some unused legacy controllers, views, helpers, and gems remain.
+It’s a Rails monolith that serves primarily as a GraphQL API backend. The frontend was once part of a full-stack app but is now a separate React app. Some old legacy controllers, views, helpers, and gems are still around, even though they are not used.
 
 The codebase isn’t huge — about 100 models, 3 GraphQL schemas, 200 service objects, 60 background jobs, and around 5 actively used controllers.
 
-PostgreSQL is the main DB. Sidekiq is for background jobs. No caching. RSpec/FactoryBot for testing. Rubocop for code linting.
+PostgreSQL is the main DB; Sidekiq is for background jobs. No caching. RSpec/FactoryBot is for testing; Rubocop for code linting.
 
-Some places of the app use Dry-Rb gems, including monads and the auto-injector. Since the app was maintained by various developers over the years, it has accumulated different approaches and patterns. Pretty average Rails app, I’d say.
+Some places in the app use Dry-Rb gems, including monads and the auto-injector. The app has had many developers over the years. So, it has picked up different approaches and patterns. Pretty average Rails app, I’d say.
 
 ## Iterative changes
 
-I prefer to make small, incremental changes rather than big bang upgrades. This way, I can test each change and ensure everything works as expected. For that reason I started the upgrade with Ruby only, leaving Rails for later. Even though some people might suggest upgrading both Ruby and Rails at the same time, I find it easier to isolate issues when I tackle them one at a time.
+I prefer to make small, incremental changes rather than big-bang upgrades. This way, I can test each change and ensure everything works as expected. For that reason, I started the upgrade with Ruby only, leaving Rails for later. Even though some people might suggest upgrading both Ruby and Rails at the same time, I find it easier to isolate issues when I tackle them one at a time.
 
 ## My log of upgrading Ruby
 
@@ -42,19 +42,19 @@ I install Ruby 3.4.4 locally and update the `Gemfile` to use it:
 ruby '3.4.4'
 ```
 
-Then I remove the `Gemfile.lock` file and run `bundle install` to generate a new lock file with the updated Ruby version and all dependencies compatible with the new Ruby version. If some gems were not compatible, I would update them to the latest versions that support Ruby 3.4.4.
+Next, I delete the `Gemfile.lock` file. Then, I run `bundle install` to create a new lock file. This file includes the updated Ruby version and all dependencies that work with it. If some gems are not compatible, I will update them to the latest versions that support Ruby 3.4.4.
 
-Fortunately, all gems were installed successfully. But installed gems don't guarantee compatibility. So, right after that, I run the test suite to ensure everything works as expected. Besides tests I have set to myself the following checks to pass:
+All gems were installed without any issues. But installed gems don't guarantee compatibility. So, right after that, I run the test suite to ensure everything works as expected. Besides tests, I have set for myself the following checks to pass:
 
-- Assets precompilation
-- Rails console should work
-- Rails server should start without errors
-- Sidekiq should start without errors
-- Rubocop should pass without errors
+- Assets precompilation;
+- Rails console should work;
+- Rails server should start without errors;
+- Sidekiq should start without errors;
+- Rubocop should pass without errors;
 
 But first, I need to fix all tests.
 
-Next you see the list of issues/exceptions I encountered during running tests and the fixes I made.
+Next, you see the list of issues/exceptions I encountered while running tests and the fixes I made.
 
 <a id="issue-1" href="#issue-1">💣 issue 1 🔗</a>
 
@@ -108,12 +108,9 @@ TSort::Cyclic:
 
 ✅ removing `dartsass-sprockets` and `dartsass-rails` from the `Gemfile`.
 
-Neither dart, nor sass engines are used in the project, so I remove them to avoid the cyclic dependency error. The gems were added by the recommendation of the `bootstrap` gem. But those gems are not needed for the project, so I remove them.
+I remove neither dart nor sass engines from the project to avoid the cyclic dependency error. The recommendation of the `bootstrap` gem added the gems. But those gems are not needed for the project, so I remove them.
 
-
-
-At this point the tests started to run, not all of them passed, but at least I could see the progress. I leave the tests fixing for later and move on to the next step - assets precompilation. On that step I encountered the following issues.
-
+At this point, the tests started to run; not all of them passed, but at least I could see the progress. I left the tests fixing for later and moved on to the next step — assets precompilation. On that step, I encountered the following issues.
 
 <a id="issue-6" href="#issue-6">💣 issue 6 🔗</a>
 
@@ -123,7 +120,7 @@ LoadError: cannot load such file -- drb (LoadError)
 
 ✅ add gem `drb` to the `Gemfile`.
 
-New Ruby no longer loads `drb` by default, but it is required by the `rails` gem for assets precompilation.
+The `rails` gem requires `drb` for assets precompilation, but New Ruby no longer loads it by default.
 
 
 <a id="issue-7" href="#issue-7">💣 issue 7 🔗</a>
@@ -190,13 +187,9 @@ Assets precompilation failed on Heroku with the following error:
 
 ✅ add `NODE_OPTIONS=--openssl-legacy-provider` to the Heroku config: `heroku config:set NODE_OPTIONS=--openssl-legacy-provider`.
 
-The `assets:precompile` task forced me to upgrade Node.js to a newer version, which in turn caused the `compression-webpack-plugin` to fail. The error message indicates that the OpenSSL version used by Node.js does not support certain cryptographic operations required by the plugin. Setting the `NODE_OPTIONS` environment variable to `--openssl-legacy-provider` allows it to work with the legacy OpenSSL provider. In the future, I plan to upgrade the `compression-webpack-plugin` to a version that supports the new OpenSSL version, but for now, this workaround is sufficient. Current version of `compression-webpack-plugin` is `11.1.0` but the app has installed `4.0.1`. Even though, the previous upgrade was a few years ago. The number of releases in between is scary. JavaScript ecosystem is a nightmare 😢.
+The `assets:precompile` task forced me to upgrade Node.js to a newer version, which in turn caused the `compression-webpack-plugin` to fail. The error message says that the OpenSSL version in Node.js can’t handle some cryptographic tasks needed by the plugin. Set the `NODE_OPTIONS` environment variable to `--openssl-legacy-provider`. This lets it work with the old OpenSSL provider. I plan to upgrade the `compression-webpack-plugin` to a version that works with the new OpenSSL. For now, this workaround is enough. The current version of `compression-webpack-plugin` is 11.1.0 but the app has installed 4.0.1. Even though the previous upgrade was a few years ago. The number of releases between is scary. The JavaScript ecosystem is a nightmare 😢.
 
-
-
-Eventually, assets got precompiled successfully. Hooray! 🎉 Switchig back to the failed tests.
-
-
+The precompilation of assets was successful in the end. Hooray! 🎉 Switching back to the failed tests.
 
 <a id="issue-9" href="#issue-9">💣 issue 9 🔗</a>
 
@@ -208,11 +201,7 @@ ArgumentError: wrong number of arguments (given 1, expected 0)
 
 ✅ change `scope :something, ->(from:, to:) { where(from:, to:) }` in several models to `scope :something, ->(kwargs = {}) { where(**kwargs) }`.
 
-To be honest, I don't fully understand why it was failing. But it seems that the issue was in uncompatibility of Ruby 3.4.4 and Rails 6.1. Note, Rails 6.1 doesn't maintain Ruby 3.4 officially. I consider this fix as a temporary workaround. When I upgrade Rails to 7.2, I revisit this code and refactor it properly.
-
-Note: it turned out AI was too helpful here. Since there were several places in the codebase with this issue, I simply asked it to fix them all. I used VS Code with GitHub Copilot for that.
-
-Unfortunately, AI is mostly useless when it comes to Ruby/Rails upgrades in general. But it’s quite handy for repetitive, monotonous tasks like this one.
+I don't understand the reasons for its failure. But it seems that the issue was in the incompatibility of Ruby 3.4.4 and Rails 6.1. Rails 6.1 does not officially support Ruby 3.4. Consider this fix a temporary workaround. When I upgrade Rails to 7.2, I will revisit this code to ensure a thorough refactor.
 
 
 <a id="issue-10" href="#issue-10">💣 issue 10 🔗</a>
@@ -223,7 +212,7 @@ Unfortunately, AI is mostly useless when it comes to Ruby/Rails upgrades in gene
 
 ✅ change `Regexp.new('...', nil, 'n')` with `Regexp.new('...', Regexp::FIXEDENCODING | Regexp::NOENCODING)`.
 
-New Ruby has changes in the `Regexp` class, which caused this error. I personally never use `Regexp.new` for regexps. I don't know why it was used in the project like that. But it was failing, so I fixed it. I must admit, it was pretty tricky to figure which parameters the new way of initializing `Regexp` accepts. I had to check Ruby sources for to come up with this solution. And surprise - AI was not helpful here at all 😜.
+New Ruby has changes in the `Regexp` class, which caused this error. I personally never use `Regexp.new` for regexps. I don't know why someone used it in the project like that. But it was failing, so I fixed it. I must admit, it was pretty tricky to figure out which parameters the new way of initializing `Regexp` accepts. I had to check Ruby sources to come up with this solution.
 
 
 <a id="issue-11" href="#issue-11">💣 issue 11 🔗</a>
@@ -265,22 +254,22 @@ module ActionView
 end
 ```
 
-At this moment I thought it was incompatibility between Ruby 3.4.4 and Rails 6.1. Even created a [discussion](https://www.reddit.com/r/rails/comments/1l77bri/rails_6_compatibility_with_ruby_34/) on Reddit. But later I found out that it was actually a problem with `dry-auto_inject` gem. See more details in the [comment](https://github.com/dry-rb/dry-auto_inject/issues/80#issuecomment-2968324620) I left in the reported issue. Later, I removed those monkey-patches and replaced the auto-injection with an explicit class initialization. Fortunately, the project had only one controller that used auto-injection, so it was not a big deal. Again, AI is completely useless here. It generates some crazy fixes that don't work at all. I had to figure it out myself.
+At this moment I thought it was incompatibility between Ruby 3.4.4 and Rails 6.1. I even created a [discussion](https://www.reddit.com/r/rails/comments/1l77bri/rails_6_compatibility_with_ruby_34/) on Reddit. But later I found out that it was actually a problem with `dry-auto_inject` gem. See more details in the [comment](https://github.com/dry-rb/dry-auto_inject/issues/80#issuecomment-2968324620). Later, I took out those monkey-patches and changed the auto-injection to an explicit class initialization. The project had only one controller that used auto-injection, which made the situation manageable.
 
-Ok, tests are passing, assets are precompiled, Rails console works, Rails server starts without errors, and Sidekiq starts without issues. I can now deploy the app to Heroku.
+All tests pass. Assets precompilation doesn't fail. The Rails console works. The Rails server starts without errors. Sidekiq also starts without issues. I can now deploy the app to Heroku.
 
-Moving on to the next step - upgrading Rubucop.
+Moving on to the next step — upgrading Rubocop.
 
 
 <a id="issue-12" href="#issue-12">💣 issue 12 🔗</a>
 
-I upgrade Rubocop and receive a lot of violations with the message `RSpec/BeEq: Prefer be over eq` in a line like this `expect(some_value).to eq(expected_value)`.
+I upgraded Rubocop and got many violations. They say `RSpec/BeEq: Prefer be over eq`. This happens in lines like `expect(some_value).to eq(expected_value)`.
 
 ✅ disable `RSpec/BeEq` cop in the `.rubocop.yml` file.
 
-I decide not to fix them right now. I would like to have the upgrade task to contain as few changes as possible. Moreover, I have doubts that using `be` instead of `eq` is a good idea. I prefer to use `eq` for equality checks it's been working in this project for 7 years and everything has been fine. Why should we change everything now because someone has a different opinion? I will revisit this later, maybe after the Rails upgrade.
+I decide not to fix them right now. I would like to have the upgrade task contain as few changes as possible. Moreover, I have doubts that using `be` instead of `eq` is a good idea. I prefer to use `eq` for equality checks; it's been working in this project for 7 years, and everything has been fine. Why should we change everything now because someone has a different opinion? I will revisit this later, after the Rails upgrade.
 
-So I disable the `RSpec/BeEq` cop in the `.rubocop.yml` file:
+So I disabled the `RSpec/BeEq` cop in the `.rubocop.yml` file:
 
 ```yaml
 RSpec/BeEq:
@@ -295,11 +284,9 @@ Some cops are failing with `undefined method 'empty?' for an instance of Integer
 
 ✅ Do not use Rubocop v1.76.0.
 
-It turned out the `Lint/EmptyInterpolation` cop was failing not only for me but in general. The issue was reproduciable in Rubocop v1.76.0. The cop checks for empty interpolations like `#{}` and raises an error if it finds one. But in Ruby 3.4, the `empty?` method is not defined for `Integer` and other primitives, which causes the error.
+It turned out the `Lint/EmptyInterpolation` cop was failing not only for me but also in general. The issue was reproducible in Rubocop v1.76.0. The cop checks for empty interpolations like `#{}` and raises an error if it finds one. But in Ruby 3.4, the `empty?` method is not defined for `Integer` and other primitives, which causes the error.
 
-I downgrade Rubocop to the previous version and made a [pull request to the Rubocop team](https://github.com/rubocop/rubocop/pull/14245). It was merged almost immediately, and the fix was released in Rubocop v1.76.1. Kudos to the Rubocop team for their quick response! Moreover, I became 900th contributor of RuboCop - congrats me! 🎉
-
-
+I downgraded Rubocop to the previous version and made a [pull request to the Rubocop team](https://github.com/rubocop/rubocop/pull/14245). They merged it almost immediately, and they released the fix in Rubocop v1.76.1. Kudos to the Rubocop team for their quick response! Moreover, I became the 900th contributor to RuboCop - congrats to me! 🎉
 
 There were some other cops that were failing. To avoid too much changes in the code, I regenerate the `.rubocop_todo.yml` file:
 
@@ -309,23 +296,23 @@ rubocop --auto-gen-config
 
 And push the changes to the repository.
 
-Some developers might argue it's best to fix all the violations now — but I disagree. This kind of effort often wastes time without meaningfully improving code quality or test coverage. So, what's the real benefit? I recommend asking yourself: is it worth it? I prefer the 80/20 rule — 20% of the effort yields 80% of the results. In this case, spending 80% of the effort for a questionable 20% gain just isn't worth it.
+Some developers might argue it's best to fix all the violations now — but I disagree. This kind of effort usually results in wasted time and fails to improve code quality. I recommend asking yourself: is it worth it? I prefer the 80/20 rule — 20% of the effort yields 80% of the results. In this case, spending 80% of the effort for a questionable 20% gain isn't worth it.
 
 Ruby upgrade is done! 🎉
 
 ## My log of upgrading Rails
 
-Now that Ruby is upgraded, I can move on to upgrading Rails. I start by updating the `Gemfile` to use Rails 7.2:
+Now that I have upgraded Ruby, I can move on to upgrading Rails. I start by updating the `Gemfile` to use Rails 7.2:
 
 ```ruby
 gem 'rails', '7.2.2.1'
 ```
 
-Then I remove the `Gemfile.lock` file and run `bundle install` to generate a new lock file with the updated Rails version and all dependencies compatible with the new Rails version. If some gems were not compatible, I would update them to the latest versions that support Rails 7.2.
+I delete the `Gemfile.lock` file. Then, I run `bundle install` to create a new lock file. This file has the updated Rails version and all dependencies that work with it. If some gems are not compatible, I will update them to the latest versions that support Rails 7.2.
 
 This time, I had to update several gems to make them compatible with Rails 7.2. I will list them below, along with the fixes I made.
 
-Note, I have not dived deep into each issue. When I encountered an issue, I simply tried to upgrade to max version compatible with the current stack. In all cases that worked well. If even upgrade didn't help, I would look into the issue more deeply. But in this case, fortunately I didn't have to do that.
+Note, I have not dived deep into each issue. When I encountered an issue, I attempted to upgrade to the largest version that is compatible with the current stack. In all cases, that worked well. If an upgrade didn't help, I would investigate the issue in greater depth. But in this case, I didn't have to do that.
 
 
 <a id="issue-14" href="#issue-14">💣 issue 14 🔗</a>
@@ -392,7 +379,7 @@ NoMethodError:
 
 <a id="issue-17" href="#issue-17">💣 issue 17 🔗</a>
 
-During production deployment on Heroku, I receive the following error on the assets precompilation step:
+I get this error during the assets precompilation step when deploying on Heroku:
 
 ```
 Uglifier::Error: Unexpected token: keyword (const). To use ES6 syntax, harmony mode must be enabled with Uglifier.new(:harmony => true)
@@ -423,13 +410,13 @@ RuntimeError:
 
 ✅ upgrade `graphql` gem to 1.13.25.
 
-At that point all gems were updated to the latest versions compatible with Rails 7.2.
+At that point, I updated to the latest versions compatible with Rails 7.2.
 
 <a id="issue-20" href="#issue-20">💣 issue 20 - Zeitwerk 🔗</a>
 
-Next, I encounter a lot of issues related to code eager loading. Rails 7.2 made zeitwerk the default code loader, which is stricter than the previous classic loader. It requires all classes and modules to be defined in files with matching names and paths. This means that if you have a class `Foo::Bar`, it must be defined in a file `foo/bar.rb`.
+Next, I encounter a lot of issues related to code eager loading. Rails 7.2 made Zeitwerk the default code loader, which is stricter than the previous classic loader. You must define all classes and modules in files that have matching names and paths. This means that if you define a class `Foo::Bar`, you must place it in a file `foo/bar.rb`.
 
-Unfortunately, the project has a lot of code that doesn't follow this convention. I could not to come up with any Zeitwerk configuration that would make it work without changing the code. So, I decided to load those failing files manually in an initializer. I created a new initializer file `config/initializers/zeitwerk.rb` and added the following code (note, the code is obfuscated for security reasons):
+Unfortunately, the project has a lot of code that doesn't follow this convention. I could not come up with any Zeitwerk configuration that would make it work without changing the code. So, I decided to load those failing files manually in an initializer. I made a new initializer file called `config/initializers/zeitwerk.rb`. I added this code (it's obfuscated for security reasons):
 
 ```ruby
 # These are classes that don't follow the current inflection rules, and hence Zeitwerk conventions.
@@ -463,7 +450,7 @@ Dir[Rails.root.join("app/modules/baz/**/*.rb")].each { |f| require f }
 Dir[Rails.root.join("app/modules/shared/**/*.rb")].each { |f| require f }
 ```
 
-In the inflections config (`config/initializers/inflections.rb` file) the project had some abbreviations configured, like this:
+In the inflections config (`config/initializers/inflections.rb`), the project had set up abbreviations like this:
 
 ```ruby
 ActiveSupport::Inflector.inflections(:en) do |inflect|
@@ -473,13 +460,13 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
 end
 ```
 
-Having these inflections, Zeitwerk expects `ALPHAProcessJob` class defined in `alpha_process_job.rb` file. But the current class name in this file is `AlphaProcessJob`. The same applies to some more classes. I don't want to jeopardize the existing code by making the class renames. Especially, when some of these classes are Sidekiq jobs. Renaming job classes could fail the existing jobs in production. When it comes to other files, I just want to mitigate any possible risks. Again, I want Ruby and Rails upgrade to be only an upgrade, but not a refactoring task.
+Having these inflections, Zeitwerk expects `ALPHAProcessJob` class defined in `alpha_process_job.rb` file. But the current class name in this file is `AlphaProcessJob`. The same applies to some more classes. I don't want to jeopardize the existing code by making the class renames. Especially, when some of these classes are Sidekiq jobs. Renaming job classes could fail the existing jobs in production. When it comes to other files, I want to mitigate any possible risks. Again, I want Ruby /Rails upgrade to be only an upgrade, but not a refactoring task.
 
-Some folders in the project violate Zeitwerk conventions so badly that neither inflections nor autoloading of these folders doesn't help. For example, the same folder, say `app/modules/foo` has a file `bar.rb` with a class `Bar` (without the required `Foo` namespace!). At the same time, there is another file, say `qux.rb`, in the same folder `app/modules/foo` with a class under the namespace `Foo::Qux`. Crazy stuff! I don't know how it has been working before.
+Some folders in the project break Zeitwerk rules so much that inflections and autoloading can't fix them. For example, the same folder, say `app/modules/foo` has a file `bar.rb` with a class `Bar` (without the required `Foo` namespace!). At the same time, there is another file, say `qux.rb`, in the same folder `app/modules/foo` with a class under the namespace `Foo::Qux`. Crazy stuff! I don't know how it has been working before.
 
-For that reason, I ignore these tricky folders and load the files from these folders manually. Some files needed specific loading order (like class `B` depends on class `A`), so I explicitly required them in the initializer and iterate over the files that depend on base classes like this one with a loop.
+For that reason, I ignore these tricky folders and load the files from them by hand. Some files need a specific loading order. For example, class `B` depends on class `A`. So, I required them in the initializer. Then, I looped through the files that depend on base classes.
 
-If some class is wrapped in a module, Zeitwerk expects the module to be defined in a file with the same name as the module. For example, if you have a class `Foo::Bar`, it must be defined in a file `foo/bar.rb`, it expects `foo.rb` file to have defined `Foo` module/class. The project has several modules missed like that. So, I add the necessary files that define these missed modules. Not a big deal, just a few files.
+If a module wraps a class, Zeitwerk expects the file to have the same name as the module. For example, if you define a class `Foo::Bar`, you must place it in a file `foo/bar.rb`, and the `foo.rb` file must define the `Foo` module/class. The project has several modules missing like that. So, I added the necessary files that define these missing modules.
 
 <a id="issue-21" href="#issue-21">💣 issue 21 🔗</a>
 
@@ -492,13 +479,13 @@ wrong number of arguments (given 1, expected 0) (ArgumentError)
 
 ✅ change `to_s(:utc)` to `to_fs(:utc)`.
 
-This is a change in Rails 7.2, where `to_s` no longer accepts a format argument. Instead, you should use `to_fs` method for formatting dates and times. I asked AI to fix this issue in the coidebase, and it did a good job.
+This is a change in Rails 7.2, where `to_s` no longer accepts a format argument. Instead, you should use `to_fs` method for formatting dates and times.
 
 <a id="issue-22" href="#issue-22">💣 issue 22 🔗</a>
 
-Rails 7 has made some changes on schema.rb. [Read this](https://rubyonrails.org/2022/2/11/this-week-in-rails-rails-7-0-2-schema-versioning-based-on-the-rails-version-and-more-cbcb0592) for more details.
+Rails 7 has made some changes on `schema.rb`. [Read this](https://rubyonrails.org/2022/2/11/this-week-in-rails-rails-7-0-2-schema-versioning-based-on-the-rails-version-and-more-cbcb0592) for more details.
 
-I just regenerate `schema.rb` with `rails db:migrate` and it generates a new schema. The changes I got:
+I regenerate `schema.rb` with `rails db:migrate` and it generates a new schema. The changes I got:
 
 ```ruby
 | -ActiveRecord::Schema.define(version: 2025_04_29_203724) do
@@ -512,7 +499,7 @@ I just regenerate `schema.rb` with `rails db:migrate` and it generates a new sch
 | +    t.datetime "updated_at", precision: nil, null: false
 ```
 
-And so on. As you see, the schema is now versioned, and the datetime columns have their precision removed.
+And so on. As you can see, the schema is now versioned, and the datetime columns have had their precision removed.
 
 <a id="issue-23" href="#issue-23">💣 issue 23 🔗</a>
 
@@ -524,7 +511,7 @@ errors.each do |attribute, message|
 end
 ```
 
-This fails, as instead of attribute and message, it returns an instance of `ActiveModel::Error` class now. So, I change the code to:
+This fails, as instead of attribute and message, it returns an instance of `ActiveModel::Error` class now. So, I changed the code to: A code like this has stopped working:
 
 ```ruby
 errors.each do |error|
@@ -532,11 +519,9 @@ errors.each do |error|
 end
 ```
 
-Again, AI helped me with that. It identified all places in the codebase where this issue occurred and fixed them. I was surprised how well it worked.
-
 <a id="issue-24" href="#issue-24">💣 issue 24 🔗</
 
-A code like this stopped working:
+A code like this has stopped working:
 
 ```ruby
 object.errors[:base] << 'Some error message'
@@ -548,11 +533,11 @@ object.errors[:base] << 'Some error message'
 object.errors.add(:base, 'Some error message')
 ```
 
-This is a change in Rails 7.2, where you should use `add` method to add errors to the base attribute. AI was helpful here as well, it found all places in the codebase where this issue occurred and fixed them.
+This is a change in Rails 7.2, where you should use `add` method to add errors to the base attribute.
 
 <a id="issue-25" href="#issue-25">💣 issue 25 🔗</a>
 
-`alias_attribute` method stopped working on deleted attributes that are columns of the delegated object.
+The `alias_attribute` method no longer works on deleted attributes that are columns of the delegated object.
 
 Say, we have the following code:
 
@@ -582,7 +567,7 @@ def new_my_column
 end
 ```
 
-Fortunately, there were not many places like this in the codebase, so I fixed them manually. AI suggested not working solution, so I had to come up with my own.
+Fortunately, I had to fix only a few places like this.
 
 <a id="issue-26" href="#issue-26">💣 issue 26 🔗</a>
 
@@ -618,28 +603,37 @@ require 'lib/foo/bar'
 ...
 ```
 
-I don't like this solution. But there are not many initializers like this, so I just fixed them manually. Didn't try to use AI here, as I didn't want to waste time on it.
+There were few initializers like this, so I fixed them by hand.
 
-And mostly that's it! 🎉
+And... that's the final point of my story: Ruby/Rails got upgraded; the app works well! 🎉
+
+## Using AI tools
+
+I used AI tools like GitHub Copilot and ChatGPT to help me with the upgrade. They were particularly useful for repetitive tasks, like fixing the same issue in many places. For example, when I had to change `to_s(:utc)` to `to_fs(:utc)`, I asked AI to fix all occurrences in the codebase. It did a good job and saved me a lot of time.
+
+Yet, AI tools were not very helpful when it came to more complex issues. For example, when I had to fix the `Zeitwerk` issues, AI suggested some crazy solutions that didn't work at all. I had to figure it out myself.
+
+So, I can answer a very popular question nowadays: "Will AI replace developers?" - "No, it won't." And I'm pretty confident in my answer. AI will become a handy tool for developers, just as robots once became handy tools for factory workers. But it will not replace software engineers.
+
+I can also understand why junior developers are afraid and feel anxious about their future. If you are a junior developer, don't worry about AI replacing you. Focus on learning and improving your skills. Work on fundamentals like algorithms and data structures. Develop your critical thinking and problem-solving skills.
 
 
 ## First impressions
 
-The code autocompletion in the Rails console is much better now. The suggestions are much faster and more accurate. At first glance, the response time for http requests is much faster on Heroku now. I didn't measure it, but it feels snappier. The changes are not in production yet, so I will measure the performance later and compare the results.
+The code autocompletion in the Rails console works better now. The suggestions are much faster and more accurate. At first glance, the response time for HTTP requests is much lower on Heroku. The changes aren't in production yet. I'll measure the performance later and compare the results.
 
-I like Zeitwerk as the default code loader. It is much stricter than the classic loader, but it helps to catch issues early.
-
+I like Zeitwerk as the default code loader. It is much stricter than the classic loader, but it helps catch issues early.
 
 ## Conclusion
 
-Upgrading Ruby and Rails is a challenging but rewarding task. It requires careful planning, testing, and sometimes a bit of creativity to work around issues. I hope my experience helps you in your own upgrade journey.
+Upgrading Ruby and Rails is a challenging but rewarding task. It takes careful planning and testing. Sometimes, a little creativity helps to solve issues. I hope my experience helps you in your own upgrade journey.
 
-AI tools can be helpful, but they are not a silver bullet. They can speed up the process, but you still need to understand the code and the changes you make. I found AI most useful for repetitive tasks, like fixing the same issue in multiple places. But for more complex issues, I had to rely on my own knowledge and experience.
+AI tools can be helpful, but they are not a silver bullet. They can speed up the process, but you still need to understand the code and the changes you make. I find AI most useful for repetitive tasks, like fixing the same issue in many places. But for more complex issues, I have to rely on my own knowledge and experience.
 
-At first, when I started the upgrade I thought that would be a boring task. But it turned out to be quite interesting and challenging. I learned a lot about the codebase and how Rails works under the hood. I also learned a lot about Ruby 3.4 and Rails 7.2.
+At first, when I started the upgrade, I thought that it would be a boring task. But it turned out to be quite interesting and challenging. I learned a lot about the codebase and how Rails works under the hood. I also learned a lot about Ruby 3.4 and Rails 7.2.
 
-Following the 20/80 rule, I focused on the most important changes that would yield the most significant benefits. I didn't try to fix every single issue or violation. Instead, I concentrated on the changes that would make the app work with the new Ruby and Rails versions.
+I followed the 20/80 rule. I focused on the key changes that would bring the biggest benefits. I didn't try to fix every single issue or violation. Instead, I concentrated on the changes that would make the app work with the new Ruby and Rails versions.
 
-Iterative changes helped me to isolate issues and test each change separately. This way, I could ensure that everything works as expected before moving on to the next step. I highly recommend this approach for any upgrade task.
+Making iterative changes allowed me to identify and test issues in isolation. This way, I could ensure that everything worked as expected before moving on to the next step. As a result, I achieved my goal earlier. I recommend this approach for any complex task.
 
-Additionally, I made some contributions to the open-source community by reporting issues and making pull requests to the gems the project has. I think it's important to give back to the community as it makes me involved in something bigger. Have you ever struggled with finding your purpose, maybe with finding your place in the world? I found that contributing to open-source projects helps me feel more connected to the community and gives me a sense of purpose. I encourage you to do the same.
+I also contributed to the open-source community. I reported issues and made pull requests for the project's gems. I believe it's crucial to contribute to the community as it connects me to something greater. Have you ever struggled with finding your purpose, with finding your place in the world? Contributing to open-source projects makes me feel connected to the community. It also gives me a sense of purpose. I encourage you to do the same.
