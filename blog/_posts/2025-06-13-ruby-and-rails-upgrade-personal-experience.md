@@ -519,7 +519,7 @@ errors.each do |error|
 end
 ```
 
-<a id="issue-24" href="#issue-24">💣 issue 24 🔗</
+<a id="issue-24" href="#issue-24">💣 issue 24 🔗</a>
 
 A code like this has stopped working:
 
@@ -609,14 +609,13 @@ And... that's the final point of my story: Ruby/Rails got upgraded; the app work
 
 ## Using AI tools
 
-I used AI tools like GitHub Copilot and ChatGPT to help me with the upgrade. They were particularly useful for repetitive tasks, like fixing the same issue in many places. For example, when I had to change `to_s(:utc)` to `to_fs(:utc)`, I asked AI to fix all occurrences in the codebase. It did a good job and saved me a lot of time.
+I have GitHub Copilot with the GPT-4.1 model inside VS Code that I tried to use in my task. Hovewer, it was useful only for routine tasks. For example, when I had to change `to_s(<time format>)` to `to_fs(<time format>)` everywhere in the codebase. I had only in 2 such issues out of 27. These issues are: <a href="#issue-21">21</a> and <a href="#issue-23">23</a>. It could also be helpful in <a href="#issue-24">24</a>. But for me, the old phasioned search and replace worked fine. We can say that roughly, AI helped me with <b>less than 10%</b> of the issues.
 
-Yet, AI tools were not very helpful when it came to more complex issues. For example, when I had to fix the `Zeitwerk` issues, AI suggested some crazy solutions that didn't work at all. I had to figure it out myself.
+AI tools were not helpful at all and even led to wasted time with more complex issues. When I had to fix the Zeitwerk configuration (<a href="#issue-20">20</a>), the AI suggested some bizarre solutions that didn't work at all. Another example of time wasted is on the <a href="#issue-11">issue 11</a> with the DRY auto-inject. These kinds of issue is still a great challenge for AI.
 
-So, I can answer a very popular question nowadays: "Will AI replace developers?" - "No, it won't." And I'm pretty confident in my answer. AI will become a handy tool for developers, just as robots once became handy tools for factory workers. But it will not replace software engineers.
+I believe, now I can answer a very popular question nowadays: "Will AI replace software engineers?" - "No, it won't." And I'm pretty confident in my answer. AI will become a handy tool for developers, as robots once became for factory workers.
 
-I can also understand why junior developers are afraid and feel anxious about their future. If you are a junior developer, don't worry about AI replacing you. Focus on learning and improving your skills. Work on fundamentals like algorithms and data structures. Develop your critical thinking and problem-solving skills.
-
+If you are a junior developer and feel anxious about your future, don't worry about AI replacing you. Focus on learning and improving your skills. Learn fundamentals like algorithms and data structures. Develop your critical thinking and problem-solving skills. In the long term, it will pay off. Believe it or not, I relied on these basic skills above all else here. I collected information, analyzed it, and made decisions based on the data I had. AI can assist with some tasks, but it cannot replace your ability to **think critically** and **solve problems**.
 
 ## First impressions
 
