@@ -7,7 +7,7 @@ description: "A personal story on upgrading Ruby from 3.1 to 3.4 and Rails from 
 tags: [rails, rails-development, ruby]
 featured_post: false
 toc: true
-image:
+image: system-upgrade.jpg
 ---
 
 Good day, everyone! Today, I want to share my personal experience upgrading Ruby and Rails in a project. This is not a tutorial, but rather a reflection on the process, challenges, and lessons learned. I also share the instances where I used AI tools to speed up the process. Where they were useful and where they weren't. The post is quite long, so grab a cup of coffee and enjoy the read.
@@ -35,6 +35,8 @@ Some places in the app use Dry-Rb gems, including monads and the auto-injector. 
 I prefer to make small, incremental changes rather than big-bang upgrades. This way, I can test each change and ensure everything works as expected. For that reason, I started the upgrade with Ruby only, leaving Rails for later. Even though some people might suggest upgrading both Ruby and Rails at the same time, I find it easier to isolate issues when I tackle them one at a time.
 
 ## My log of upgrading Ruby
+
+{% picture /images/ruby-upgrade-subtasks.jpg alt="Ruby upgrade in a Rails project step-by-step log" %}
 
 I install Ruby 3.4.4 locally and update the `Gemfile` to use it:
 
@@ -277,7 +279,6 @@ RSpec/BeEq:
 ```
 
 
-
 <a id="issue-13" href="#issue-13">💣 issue 13 🔗</a>
 
 Some cops are failing with `undefined method 'empty?' for an instance of Integer (NoMethodError)`.
@@ -301,6 +302,8 @@ Some developers might argue it's best to fix all the violations now — but I di
 Ruby upgrade is done! 🎉
 
 ## My log of upgrading Rails
+
+{% picture /images/rails-upgrade-notes.jpg alt="Live Rails project upgrade step-by-step log" %}
 
 Now that I have upgraded Ruby, I can move on to upgrading Rails. I start by updating the `Gemfile` to use Rails 7.2:
 
@@ -609,6 +612,8 @@ And... that's the final point of my story: Ruby/Rails got upgraded; the app work
 
 ## Using AI tools
 
+{% picture /images/ai-in-rails-upgrade.jpg alt="Using AI tools in Ruby/Rails upgrade task" %}
+
 I have GitHub Copilot with the GPT-4.1 model inside VS Code that I tried to use in my task. Hovewer, it was useful only for routine tasks. For example, when I had to change `to_s(<time format>)` to `to_fs(<time format>)` everywhere in the codebase. I had only in 2 such issues out of 27. These issues are: <a href="#issue-21">21</a> and <a href="#issue-23">23</a>. It could also be helpful in <a href="#issue-24">24</a>. But for me, the old phasioned search and replace worked fine. We can say that roughly, AI helped me with <b>less than 10%</b> of the issues.
 
 AI tools were not helpful at all and even led to wasted time with more complex issues. When I had to fix the Zeitwerk configuration (<a href="#issue-20">20</a>), the AI suggested some bizarre solutions that didn't work at all. Another example of time wasted is on the <a href="#issue-11">issue 11</a> with the DRY auto-inject. These kinds of issue is still a great challenge for AI.
@@ -619,11 +624,15 @@ If you are a junior developer and feel anxious about your future, don't worry ab
 
 ## First impressions
 
+{% picture /images/rails-upgrade-impression.jpg alt="Live Rails project upgrade first impression" %}
+
 The code autocompletion in the Rails console works better now. The suggestions are much faster and more accurate. At first glance, the response time for HTTP requests is much lower on Heroku. The changes aren't in production yet. I'll measure the performance later and compare the results.
 
 I like Zeitwerk as the default code loader. It is much stricter than the classic loader, but it helps catch issues early.
 
 ## Conclusion
+
+{% picture /images/rails-upgrade-conclusion.jpg alt="Live Rails project upgrade conclusion" %}
 
 Upgrading Rails is not a trivial task, and the process can vary significantly from one project to another. For instance, in another project where we are upgrading Ruby and Rails, the plan is somewhat different. That project uses the Paperclip gem for storing and processing attachments, but this gem is not compatible with the newer versions of Rails. As a result, it will need to be replaced with Active Storage, which is a prerequisite for the actual upgrade.
 
