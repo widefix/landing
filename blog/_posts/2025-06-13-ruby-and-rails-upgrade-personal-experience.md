@@ -625,14 +625,14 @@ I like Zeitwerk as the default code loader. It is much stricter than the classic
 
 ## Conclusion
 
-Upgrading Ruby and Rails is a challenging but rewarding task. It takes careful planning and testing. Sometimes, a little creativity helps to solve issues. I hope my experience helps you in your own upgrade journey.
+Upgrading Rails is not a trivial task, and the process can vary significantly from one project to another. For instance, in another project where we are upgrading Ruby and Rails, the plan is somewhat different. That project uses the Paperclip gem for storing and processing attachments, but this gem is not compatible with the newer versions of Rails. As a result, it will need to be replaced with Active Storage, which is a prerequisite for the actual upgrade.
 
-AI tools can be helpful, but they are not a silver bullet. They can speed up the process, but you still need to understand the code and the changes you make. I find AI most useful for repetitive tasks, like fixing the same issue in many places. But for more complex issues, I have to rely on my own knowledge and experience.
+Each project may have its own set of prerequisites, making the upgrade plan unique to that specific project. This uniqueness primarily stems from the dependencies and the codebase involved. I hope my experience helps you better understand the upgrade process and gives you some ideas on how to approach your own upgrades.
 
-At first, when I started the upgrade, I thought that it would be a boring task. But it turned out to be quite interesting and challenging. I learned a lot about the codebase and how Rails works under the hood. I also learned a lot about Ruby 3.4 and Rails 7.2.
+AI tools can be useful, but they are not a complete solution. They can accelerate the process, but it's still essential to understand the code and the changes you are making. I find AI particularly helpful for repetitive tasks, such as fixing the same issue in multiple locations. However, for more complex problems, I rely on my own knowledge and experience. If I could sense **when AI is unhelpful**, I wouldn't waste time on it. This ability seems to be a skill that an engineer needs to develop independently in order to use AI tools more effectively.
 
-I followed the 20/80 rule. I focused on the key changes that would bring the biggest benefits. I didn't try to fix every single issue or violation. Instead, I concentrated on the changes that would make the app work with the new Ruby and Rails versions.
+I followed the **20/80 rule**. I focused on the key changes that would bring the biggest benefits. I didn't try to fix every single issue or violation. Instead, I concentrated on the changes that would make the app work with the new Ruby and Rails versions.
 
-Making iterative changes allowed me to identify and test issues in isolation. This way, I could ensure that everything worked as expected before moving on to the next step. As a result, I achieved my goal earlier. I recommend this approach for any complex task.
+Making **iterative changes** allowed me to identify and test issues in isolation. This way, I could ensure that everything worked as expected before moving on to the next step. As a result, I achieved my goal earlier. I recommend this approach for any complex task.
 
 I also contributed to the open-source community. I reported issues and made pull requests for the project's gems. I believe it's crucial to contribute to the community as it connects me to something greater. Have you ever struggled with finding your purpose, with finding your place in the world? Contributing to open-source projects makes me feel connected to the community. It also gives me a sense of purpose. I encourage you to do the same.
