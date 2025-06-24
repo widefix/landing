@@ -7,7 +7,7 @@ description: "A personal story on upgrading Ruby from 3.1 to 3.4 and Rails from 
 tags: [rails, rails-development, ruby]
 featured_post: false
 toc: true
-image: system-upgrade.jpg
+image: rails-upgrade-notes.jpg
 ---
 
 Good day, everyone! Today, I want to share my personal experience upgrading Ruby and Rails in a project. This is not a tutorial, but rather a reflection on the process, challenges, and lessons learned. I also share the instances where I used AI tools to speed up the process. Where they were useful and where they weren't. The post is quite long, so grab a cup of coffee and enjoy the read.
