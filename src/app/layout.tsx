@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import "@/app/styles/main.scss";
 import "@/app/styles/normalize.css";
+import "@/app/styles/ideal-clients.css";
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@ka8725",
-    creator: "@ka8725", 
+    creator: "@ka8725",
     images: "https://raw.githubusercontent.com/widefix/widefix/main/img/block-hero.jpg"
   },
   icons: {

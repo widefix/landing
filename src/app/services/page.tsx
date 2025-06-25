@@ -33,7 +33,7 @@ export default function ServicesPage() {
             <h1>We develop custom software that <span>meets</span> your business needs <span>minimizing</span> costs</h1>
             <div className="button-container">
               <a className="button primary" href="https://calendly.com/andrei-kaleshka/30min" target="_blank"
-                rel="nofollow">Schedule a call now</a>
+                rel="nofollow">Request a free 15‑minute app audit</a>
             </div>
           </div>
           <div className="hero-block-right">

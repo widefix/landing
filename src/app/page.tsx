@@ -7,7 +7,7 @@ export default function HomePage() {
       <section className="hero has-vertical-paddings">
         <div className="inner">
           <div className="hero-block-left">
-            <h1>Leave <span>the tech</span> to us and focus on <span>growing</span> your business</h1>
+            <h1>Fix <span>slow</span>, underperforming, or <span>broken</span> apps — fast</h1>
             <div className="promise-block">
               <h2 className="title">Our promise to you</h2>
               <ul>
@@ -27,7 +27,7 @@ export default function HomePage() {
             </div>
             <div className="button-container">
               <Link className="button primary" href="https://calendly.com/andrei-kaleshka/30min" target="_blank"
-                rel="nofollow">Schedule a call now</Link>
+                rel="nofollow">Request a free 15‑minute app audit</Link>
             </div>
           </div>
           <div className="hero-block-right">
@@ -40,11 +40,47 @@ export default function HomePage() {
         </div>
         <div className="inner">
           <p>
-            Unleash the full potential of your business with our expert Ruby on Rails consultant services.
-            At our company, we handle the technical side of things so you can focus on growing your business.
-            Trust our Ruby on Rails developers to deliver top-notch solutions that drive results.
-            Contact us today to learn more.
+            Get expert-level Ruby on Rails performance, stability, and scalability consulting that delivers measurable business results.
           </p>
+        </div>
+      </section>
+
+      <section className="ideal-clients has-vertical-paddings">
+        <div className="inner">
+          <header>
+            <h2>Who we <span>work</span> with</h2>
+            <p>Our expertise is best suited for these client profiles</p>
+          </header>
+          <div className="clients-grid">
+            <div className="client-type">
+              <div className="icon-wrapper">
+                <Image src="/img/clients/saas-startups.svg" alt="SaaS startups" width="64" height="64" />
+              </div>
+              <h3>SaaS startups</h3>
+              <p>With existing applications needing expert optimization and scaling</p>
+            </div>
+            <div className="client-type">
+              <div className="icon-wrapper">
+                <Image src="/img/clients/product-teams.svg" alt="Product teams" width="64" height="64" />
+              </div>
+              <h3>Product teams</h3>
+              <p>Needing a fractional senior developer to elevate code quality and performance</p>
+            </div>
+            <div className="client-type">
+              <div className="icon-wrapper">
+                <Image src="/img/clients/businesses.svg" alt="Businesses" width="64" height="64" />
+              </div>
+              <h3>Businesses</h3>
+              <p>With underperforming or buggy software that needs professional remediation</p>
+            </div>
+            <div className="client-type">
+              <div className="icon-wrapper">
+                <Image src="/img/clients/domains.svg" alt="Domains" width="64" height="64" />
+              </div>
+              <h3>Domains</h3>
+              <p>Companies in industries like e-commerce, logistics, and e-education</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -72,12 +108,11 @@ export default function HomePage() {
           <div className="header" id="services">
             <h2>What we <span>do</span></h2>
             <p>
-              It’s not enough to fix a bug. When you work with us, all underlying issues in your application get fixed.
-              That way, your app won’t be slowed down by a new problem each week. To do this right at Widefix,
-              our experts, including Ruby on Rails consultants and Ruby on Rails developers, are specialised in a wide range of Ruby applications, such as
-              <strong>Ruby on Rails, Hanami, Sinatra, Grape, Roda, Rack, and fully custom Ruby applications.</strong>
+              It's not enough to fix a bug. When you work with us, all underlying issues in your application get fixed.
+              That way, your app won't be slowed down by a new problem each week. The tech stack we work with includes:&nbsp;
+              <strong>Ruby on Rails, Hanami, Sinatra, Grape, Roda, Rack, and fully custom Ruby applications.</strong>&nbsp;
+              We also work with <strong>JavaScript: React, Next.js, ReactNative, Node.js</strong>
             </p>
-            <p>We also work with <strong>JavaScript: React, Next.js, ReactNative, Node.js</strong></p>
           </div>
           <div className="block-container">
             <div className="block">
@@ -86,11 +121,11 @@ export default function HomePage() {
                   alt="Icon for Optimization block" />
               </div>
               <div className="block-right">
-                <h2>Optimization</h2>
+                <h2>Fix performance bottlenecks</h2>
                 <ul>
-                  <li>Application stability improvement</li>
-                  <li>Performance improving</li>
-                  <li>Fixing memory leaks</li>
+                  <li>Speed</li>
+                  <li>Memory leaks</li>
+                  <li>Stability</li>
                 </ul>
               </div>
             </div>
@@ -100,11 +135,11 @@ export default function HomePage() {
                   alt="Icon for Devops & Maintenance block" />
               </div>
               <div className="block-right">
-                <h2>Devops & Maintenance</h2>
+                <h2>Rescue legacy Ruby on Rails apps with</h2>
                 <ul>
-                  <li>Code refactor</li>
-                  <li>Bugs fixing</li>
-                  <li>Deployment</li>
+                  <li>Bugs</li>
+                  <li>Crashes</li>
+                  <li>Outdated tech</li>
                 </ul>
               </div>
             </div>
@@ -114,12 +149,10 @@ export default function HomePage() {
                   alt="Icon for Systems Integration block" />
               </div>
               <div className="block-right">
-                <h2>Systems Integration</h2>
+                <h2>Build & ship high-quality features</h2>
                 <ul>
                   <li>End-to-end feature development</li>
                   <li>Designing & developing new design screens</li>
-                  <li>REST API development & design</li>
-                  <li>GraphQL Development</li>
                 </ul>
               </div>
             </div>
@@ -129,13 +162,10 @@ export default function HomePage() {
                   alt="Icon for Development & Design block" />
               </div>
               <div className="block-right">
-                <h2>Development & Design</h2>
+                <h2>Achieve scale & reliability through</h2>
                 <ul>
-                  <li>Payment gateways integration</li>
-                  <li>Transaction SMS</li>
-                  <li>Auto Phone calls integration</li>
-                  <li>Monitoring & analytics tools</li>
-                  <li>Making your app look good</li>
+                  <li>Infrastructure</li>
+                  <li>Architectural guidance</li>
                 </ul>
               </div>
             </div>
@@ -145,18 +175,18 @@ export default function HomePage() {
                   alt="Icon for Quality Assurance block" />
               </div>
               <div className="block-right">
-                <h2>Quality Assurance</h2>
+                <h2>Boost product velocity</h2>
                 <ul>
-                  <li>Increasing test coverage</li>
-                  <li>Manual and Automated Testing</li>
-                  <li>Performance testing</li>
+                  <li>Clean code</li>
+                  <li>Automated tests</li>
+                  <li>CI/CD</li>
                 </ul>
               </div>
             </div>
           </div>
           <div className="button-container">
             <Link className="button primary" href="https://calendly.com/andrei-kaleshka/30min" target="_blank"
-              rel="nofollow">Schedule a call now</Link>
+              rel="nofollow">Request a free 15‑minute app audit</Link>
           </div>
         </div>
       </section>
@@ -177,6 +207,13 @@ export default function HomePage() {
                     height="56" /> Expertise and experience</h3>
                 <p>Our team of experienced developers has a track record of delivering high-quality code and solving complex
                   problems. We have the skills and knowledge to tackle any project, no matter how challenging</p>
+                <ul style={{ listStyleType: 'none', paddingLeft: 0, lineHeight: 1.5, marginTop: '1rem' }}>
+                  <li>✅ Double revenue by eliminating app friction</li>
+                  <li>✅ Scale without crashes — optimize memory, database, caching</li>
+                  <li>✅ Get to market faster with expert-built features and integrations</li>
+                  <li>✅ Cut dev costs through clean refactoring and reduced downtime</li>
+                  <li>✅ Fix bugs others can't — deep experience with complex Rails codebases</li>
+                </ul>
               </div>
               <div className="block m-innovative">
                 <h3><Image src="/img/icons/innovative.svg" alt="Icon for Innovative solutions block" width="56" height="56" />
@@ -201,7 +238,7 @@ export default function HomePage() {
           <header>
             <h2>You have a lot to consider. Let experts <span>optimize</span> your app that customers will love to use!</h2>
             <div className="button-wrapper"><Link className="button primary" href="https://calendly.com/andrei-kaleshka/30min"
-                target="_blank" rel="nofollow">Schedule a call now</Link></div>
+                target="_blank" rel="nofollow">Request a free 15‑minute app audit</Link></div>
           </header>
           <div className="section-content">
             <div className="section-block">
@@ -261,7 +298,7 @@ export default function HomePage() {
 
           <div className="button-container">
             <Link className="button primary" href="https://calendly.com/andrei-kaleshka/30min" target="_blank"
-              rel="nofollow">Schedule a call now</Link>
+              rel="nofollow">Request a free 15‑minute app audit</Link>
           </div>
         </div>
       </section>
@@ -553,7 +590,7 @@ export default function HomePage() {
             <h2>Read what our <span>clients</span> have to say.</h2>
             <div className="button-container">
               <Link className="button primary" href="https://calendly.com/andrei-kaleshka/30min" target="_blank"
-                rel="nofollow">Schedule a call now</Link>
+                rel="nofollow">Request a free 15‑minute app audit</Link>
             </div>
           </header>
           <Link href="https://clutch.co/profile/widefix#reviews" target="_blank" rel="nofollow">
