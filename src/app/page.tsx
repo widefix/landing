@@ -108,8 +108,8 @@ export default function HomePage() {
           <div className="header" id="services">
             <h2>What we <span>do</span></h2>
             <p>
-              It's not enough to fix a bug. When you work with us, all underlying issues in your application get fixed.
-              That way, your app won't be slowed down by a new problem each week. The tech stack we work with includes:&nbsp;
+              It&apos;s not enough to fix a bug. When you work with us, all underlying issues in your application get fixed.
+              That way, your app won&apos;t be slowed down by a new problem each week. The tech stack we work with includes:&nbsp;
               <strong>Ruby on Rails, Hanami, Sinatra, Grape, Roda, Rack, and fully custom Ruby applications.</strong>&nbsp;
               We also work with <strong>JavaScript: React, Next.js, ReactNative, Node.js</strong>
             </p>
@@ -212,7 +212,7 @@ export default function HomePage() {
                   <li>✅ <b>Scale without crashes</b> — optimize memory, database, caching</li>
                   <li>✅ <b>Get to market faster</b> with expert-built features and integrations</li>
                   <li>✅ <b>Cut dev costs</b> through clean refactoring and reduced downtime</li>
-                  <li>✅ <b>Fix bugs others can't</b> — deep experience with complex Rails codebases</li>
+                  <li>✅ <b>Fix bugs others can&apos;t</b> — deep experience with complex Rails codebases</li>
                 </ul>
               </div>
               <div className="block m-innovative">
