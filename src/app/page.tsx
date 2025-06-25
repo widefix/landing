@@ -208,11 +208,11 @@ export default function HomePage() {
                 <p>Our team of experienced developers has a track record of delivering high-quality code and solving complex
                   problems. We have the skills and knowledge to tackle any project, no matter how challenging</p>
                 <ul style={{ listStyleType: 'none', paddingLeft: 0, lineHeight: 1.5, marginTop: '1rem' }}>
-                  <li>✅ Double revenue by eliminating app friction</li>
-                  <li>✅ Scale without crashes — optimize memory, database, caching</li>
-                  <li>✅ Get to market faster with expert-built features and integrations</li>
-                  <li>✅ Cut dev costs through clean refactoring and reduced downtime</li>
-                  <li>✅ Fix bugs others can't — deep experience with complex Rails codebases</li>
+                  <li>✅ <b>Double revenue</b> by eliminating app friction</li>
+                  <li>✅ <b>Scale without crashes</b> — optimize memory, database, caching</li>
+                  <li>✅ <b>Get to market faster</b> with expert-built features and integrations</li>
+                  <li>✅ <b>Cut dev costs</b> through clean refactoring and reduced downtime</li>
+                  <li>✅ <b>Fix bugs others can't</b> — deep experience with complex Rails codebases</li>
                 </ul>
               </div>
               <div className="block m-innovative">
