@@ -36,7 +36,7 @@ Some places in the app use Dry-Rb gems, including monads and the auto-injector. 
 
 I prefer to make small, incremental changes rather than big-bang upgrades. This way, I can test each change and ensure everything works as expected. For that reason, I started the upgrade with Ruby only, leaving Rails for later. Even though some people might suggest upgrading both Ruby and Rails at the same time, I find it easier to isolate issues when I tackle them one at a time.
 
-## My log of upgrading Ruby
+## The log of upgrading Ruby
 
 {% picture /images/ruby-upgrade-subtasks.jpg alt="Ruby upgrade in a Rails project step-by-step log" %}
 
@@ -303,7 +303,7 @@ There is an approach to fix all the violations now. But I prefer not to do that.
 
 Ruby upgrade is done! 🎉
 
-## My log of upgrading Rails
+## The log of upgrading Rails
 
 {% picture /images/rails-upgrade-notes.jpg alt="Live Rails project upgrade step-by-step log" %}
 
@@ -612,7 +612,7 @@ There were few initializers like this, so I fixed them by hand.
 
 And... that's the final point of my story: Ruby/Rails got upgraded; the app works well! 🎉
 
-## Using AI tools
+## Reflection on AI tools
 
 {% picture /images/ai-in-rails-upgrade.jpg alt="Using AI tools in Ruby/Rails upgrade task" %}
 
@@ -622,9 +622,9 @@ AI tools were not helpful with more complex issues at all. That even led to time
 
 In conclusion, it is unlikely that AI will fully replace software engineers. Instead, I anticipate that AI will serve as a valuable tool for developers, much like how robots have assisted factory workers in improving efficiency and productivity.
 
-## First impressions
+## First impressions after the upgrade
 
-{% picture /images/rails-upgrade-impression.jpg alt="Live Rails project upgrade first impression" %}
+{% picture /images/first-impression-after-rails-upgrade.jpg alt="Live Rails project upgrade first impression" %}
 
 The code autocompletion in the Rails console works better now. The suggestions are much faster and more accurate. Rails server boots also faster. At first glance, the response time for HTTP requests is much lower on Heroku. But these are just my subjective opinions.
 
