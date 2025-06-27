@@ -646,4 +646,6 @@ I followed the **20/80 rule** focusing on the key changes that would bring the b
 
 Making **iterative changes** allowed me to identify and test issues in isolation. This way, I could ensure that everything worked as expected before moving on to the next step. As a result, I believe I achieved my goal earlier.
 
-I also contributed to the open-source community. I reported issues and made pull requests for the project's gems. I believe it's crucial to contribute to the community as it connects me to something greater. Have you ever struggled with finding your purpose, with finding your place in the world? Contributing to open-source projects makes me feel connected to the community. It also gives me a sense of purpose. I encourage you to do the same.
+Fortunately, the upgrading app didn't have much of the Rails "standard" front-end. I've been working with Rails since 2009. So I have gone through many Rails upgrades, and the front-end part has always been a pain in the ass. Nowadays, using Rails as an API-only backend with a separate front-end framework (like React or Vue.js) has become a preferred approach for me.
+
+During the upgrade process, I contributed to the open-source community by reporting an issue in dry-auto_inject and making a pull request to Rubocop. I believe contributing to open-source projects is crucial because it connects me to something greater.
