@@ -299,7 +299,7 @@ rubocop --auto-gen-config
 
 And push the changes to the repository.
 
-Some developers might argue it's best to fix all the violations now — but I disagree. This kind of effort usually results in wasted time and fails to improve code quality. I recommend asking yourself: is it worth it? I prefer the 80/20 rule — 20% of the effort yields 80% of the results. In this case, spending 80% of the effort for a questionable 20% gain isn't worth it.
+There is an approach to fix all the violations now. But I prefer not to do that. This kind of effort usually results in wasted time and fails to improve code quality. Instead, I ask myself: is it worth it? To justify my decision, I prefer the 80/20 rule: 20% of the effort should yield 80% of the results. In this case, spending 80% of the effort for a questionable 20% gain isn't worth it.
 
 Ruby upgrade is done! 🎉
 
@@ -616,19 +616,19 @@ And... that's the final point of my story: Ruby/Rails got upgraded; the app work
 
 {% picture /images/ai-in-rails-upgrade.jpg alt="Using AI tools in Ruby/Rails upgrade task" %}
 
-I have GitHub Copilot with the GPT-4.1 model inside VS Code that I tried to use in my task. Hovewer, it was useful only for routine tasks. For example, when I had to change `to_s(<time format>)` to `to_fs(<time format>)` everywhere in the codebase. I had only in 2 such issues out of 27. These issues are: <a href="#issue-21">21</a> and <a href="#issue-23">23</a>. It could also be helpful in <a href="#issue-24">24</a>. But for me, the old phasioned search and replace worked fine. We can say that roughly, AI helped me with <b>less than 10%</b> of the issues.
+I have GitHub Copilot with the GPT-4.1 model inside VS Code that I tried to use in my task. Hovewer, the assistance was good only in some routine tasks. For example, when I had to change `to_s(<time format>)` to `to_fs(<time format>)` everywhere in the codebase. I had only 2 such issues out of 27. These issues are <a href="#issue-21">21</a> and <a href="#issue-23">23</a>. It could also be helpful in <a href="#issue-24">24</a>. But for me, the old phasioned search and replace worked fine. So roughly, AI helped me with <b>less than 10%</b> of the issues.
 
-AI tools were not helpful at all and even led to wasted time with more complex issues. When I had to fix the Zeitwerk configuration (<a href="#issue-20">20</a>), the AI suggested some bizarre solutions that didn't work at all. Another example of time wasted is on the <a href="#issue-11">issue 11</a> with the DRY auto-inject. These kinds of issue is still a great challenge for AI.
+AI tools were not helpful with more complex issues at all. That even led to time wasted. When I had to fix Zeitwerk configuration (<a href="#issue-20">20</a>), the AI suggested some several bizarre solutions that didn't work. At the end I gave up and stopped wasting time on it. Another example of time wasted is on the <a href="#issue-11">issue 11</a> with the DRY auto-inject. These kinds of issue is still a great challenge for AI.
 
-I believe, now I can answer a very popular question nowadays: "Will AI replace software engineers?" - "No, it won't." And I'm pretty confident in my answer. AI will become a handy tool for developers, as robots once became for factory workers.
-
-If you are a junior developer and feel anxious about your future, don't worry about AI replacing you. Focus on learning and improving your skills. Learn fundamentals like algorithms and data structures. Develop your critical thinking and problem-solving skills. In the long term, it will pay off. Believe it or not, I relied on these basic skills above all else here. I collected information, analyzed it, and made decisions based on the data I had. AI can assist with some tasks, but it cannot replace your ability to **think critically** and **solve problems**.
+In conclusion, it is unlikely that AI will fully replace software engineers. Instead, I anticipate that AI will serve as a valuable tool for developers, much like how robots have assisted factory workers in improving efficiency and productivity.
 
 ## First impressions
 
 {% picture /images/rails-upgrade-impression.jpg alt="Live Rails project upgrade first impression" %}
 
-The code autocompletion in the Rails console works better now. The suggestions are much faster and more accurate. At first glance, the response time for HTTP requests is much lower on Heroku. The changes aren't in production yet. I'll measure the performance later and compare the results.
+The code autocompletion in the Rails console works better now. The suggestions are much faster and more accurate. Rails server boots also faster. At first glance, the response time for HTTP requests is much lower on Heroku. But these are just my subjective opinions.
+
+The changes aren't in production yet. I'll measure the performance later and compare the results.
 
 I like Zeitwerk as the default code loader. It is much stricter than the classic loader, but it helps catch issues early.
 
@@ -636,14 +636,14 @@ I like Zeitwerk as the default code loader. It is much stricter than the classic
 
 {% picture /images/rails-upgrade-conclusion.jpg alt="Live Rails project upgrade conclusion" %}
 
-Upgrading Rails is not a trivial task, and the process can vary significantly from one project to another. For instance, in another project where we are upgrading Ruby and Rails, the plan is somewhat different. That project uses the Paperclip gem for storing and processing attachments, but this gem is not compatible with the newer versions of Rails. As a result, it will need to be replaced with Active Storage, which is a prerequisite for the actual upgrade.
+Upgrading Rails is not a trivial task, and the process can vary significantly from one project to another. In another project where we are upgrading Ruby and Rails, the plan is somewhat different. That project uses the Paperclip gem for storing and processing attachments. But it's not compatible with the newer versions of Rails. As a result, it will need to be replaced with Active Storage, which is a tricky migration. Expect more details in the future in our blog.
 
 Each project may have its own set of prerequisites, making the upgrade plan unique to that specific project. This uniqueness primarily stems from the dependencies and the codebase involved. I hope my experience helps you better understand the upgrade process and gives you some ideas on how to approach your own upgrades.
 
-AI tools can be useful, but they are not a complete solution. They can accelerate the process, but it's still essential to understand the code and the changes you are making. I find AI particularly helpful for repetitive tasks, such as fixing the same issue in multiple locations. However, for more complex problems, I rely on my own knowledge and experience. If I could sense **when AI is unhelpful**, I wouldn't waste time on it. This ability seems to be a skill that an engineer needs to develop independently in order to use AI tools more effectively.
+AI tools can be useful, but they are not a complete solution. They can accelerate the process, but it's still essential to understand the code and the changes you are making. I find AI particularly helpful for repetitive tasks, such as fixing the same issue in multiple locations. However, for more complex problems, I relied on my own knowledge and experience. If I could sense **when AI is unhelpful** before making a prompt, I wouldn't waste time on it. This ability seems to be a skill that an engineer needs to develop independently in order to use AI tools more effectively.
 
-I followed the **20/80 rule**. I focused on the key changes that would bring the biggest benefits. I didn't try to fix every single issue or violation. Instead, I concentrated on the changes that would make the app work with the new Ruby and Rails versions.
+I followed the **20/80 rule** focusing on the key changes that would bring the biggest benefits. I didn't try to fix every single issue or violation. Instead, I concentrated on the essential changes that would make the app work on the new Ruby and Rails versions.
 
-Making **iterative changes** allowed me to identify and test issues in isolation. This way, I could ensure that everything worked as expected before moving on to the next step. As a result, I achieved my goal earlier. I recommend this approach for any complex task.
+Making **iterative changes** allowed me to identify and test issues in isolation. This way, I could ensure that everything worked as expected before moving on to the next step. As a result, I believe I achieved my goal earlier.
 
 I also contributed to the open-source community. I reported issues and made pull requests for the project's gems. I believe it's crucial to contribute to the community as it connects me to something greater. Have you ever struggled with finding your purpose, with finding your place in the world? Contributing to open-source projects makes me feel connected to the community. It also gives me a sense of purpose. I encourage you to do the same.
