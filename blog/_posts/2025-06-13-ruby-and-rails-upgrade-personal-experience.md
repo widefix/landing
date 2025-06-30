@@ -616,7 +616,7 @@ And... that's the final point of my story: Ruby/Rails got upgraded; the app work
 
 {% picture /images/ai-in-rails-upgrade.jpg alt="Using AI tools in Ruby/Rails upgrade task" %}
 
-I have GitHub Copilot with the GPT-4.1 model inside VS Code that I tried to use in my task. However, the assistance was good only in some routine tasks. For example, when I had to change `to_s(<time format>)` to `to_fs(<time format>)` everywhere in the codebase. I had only 2 such issues out of 27. These issues are <a href="#issue-21">21</a> and <a href="#issue-23">23</a>. It could also be helpful in <a href="#issue-24">24</a>. But for me, the old phasioned search and replace worked fine. So roughly, AI helped me with <b>less than 10%</b> of the issues.
+I have GitHub Copilot with the GPT-4.1 model inside VS Code that I tried to use in my task. However, the assistance was good only in some routine tasks. For example, when I had to change `to_s(<time format>)` to `to_fs(<time format>)` everywhere in the codebase. I had only 2 such issues out of 27. These issues are <a href="#issue-21">21</a> and <a href="#issue-23">23</a>. It could also be helpful in <a href="#issue-24">24</a>. But for me, the old fashioned search and replace worked fine. So roughly, AI helped me with <b>less than 10%</b> of the issues.
 
 AI tools were not helpful with more complex issues at all. That even led to time wasted. When I had to fix Zeitwerk configuration (<a href="#issue-20">20</a>), the AI suggested some several bizarre solutions that didn't work. At the end I gave up and stopped wasting time on it. Another example of time wasted is on the <a href="#issue-11">issue 11</a> with the DRY auto-inject. These kinds of issue is still a great challenge for AI.
 
