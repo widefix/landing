@@ -94,7 +94,7 @@ jobs:
         uses: actions/configure-pages@v5
       - run: |
           cd blog
-          bundle exec jekyll build
+          JEKYLL_ENV=production bundle exec jekyll build
 
       - name: Merge blog into Next.js output
         run: |
