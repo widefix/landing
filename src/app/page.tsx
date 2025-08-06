@@ -544,7 +544,16 @@ export default function HomePage() {
             </p>
           </header>
           <div className="container">
-            <div className="item">
+            <div className="item toptal-resume">
+              <Link rel="nofollow" href="https://www.toptal.com/resume/andrey-koleshko"
+                target="_blank">
+                <div className="content">
+                  <span>Verified expert</span>
+                </div>
+              </Link>
+              <p>WideFix founder is among the top 3% of freelance developers accepted worldwide by Toptal.</p>
+            </div>
+            <div className="item book">
               <Link rel="nofollow" href="https://www.packtpub.com/product/rake-task-management-essentials/9781783280773"
                 target="_blank">
                 <div className="content">
@@ -553,32 +562,41 @@ export default function HomePage() {
               </Link>
               <p>A book authored by the founder of WideFix, Andrei Kaleshka.</p>
             </div>
-            <div className="item">
+            <div className="item tech-blog">
               <Link href="https://widefix.com/blog/spike-of-signups-business-threat/" target="_blank">
                 <div className="content">
-                  <span>TECH BLOG</span>
+                  <span>Article</span>
                   <h3>Fake signups: a threat to your business</h3>
                 </div>
               </Link>
-              <p>A recent technology problem that was solved for one of our clients.</p>
+              <p>Recent tech problem solved by us for a client.</p>
             </div>
-            <div className="item">
+            <div className="item rails-upgrade">
+              <Link href="https://widefix.com/blog/ruby-and-rails-upgrade-personal-experience/" target="_blank">
+                <div className="content">
+                  <span>Article</span>
+                  <h3>Ruby and Rails upgrade: personal experience</h3>
+                </div>
+              </Link>
+              <p>Featured article on our blog describes a step-by-step approach to upgrading the Ruby and Rails stack.</p>
+            </div>
+            <div className="item migration-data">
               <Link rel="nofollow" href="https://github.com/ka8725/migration_data" target="_blank">
                 <div className="content">
                   <span>Open-Sourced Library</span>
                   <h3>Migration Data</h3>
                 </div>
               </Link>
-              <p>An open-sourced library developed by us to improve our daily developer task routine..</p>
+              <p>An open-sourced library developed by us to improve our daily developer task routine.</p>
             </div>
-            <div className="item">
+            <div className="item actual-db-schema">
               <Link rel="nofollow" href="https://github.com/widefix/actual_db_schema" target="_blank">
                 <div className="content">
                   <span>Open-Sourced Library</span>
                   <h3>Actual DB Schema</h3>
                 </div>
               </Link>
-              <p>An open-sourced library developed by us to improve our daily developer task routine..</p>
+              <p>An open-sourced library developed by us to improve our daily developer task routine.</p>
             </div>
           </div>
         </div>

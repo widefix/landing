@@ -20,13 +20,14 @@
         .container {
             display: flex;
             gap: 40px;
+            flex-wrap: wrap;
             @media (max-width: $media-md) {
                 flex-direction: column;
                 align-items: center;
             }
 
             .item {
-                width: 25%;
+                max-width: 250px;
                 @media (max-width: $media-md) {
                     width: 272px;
                 }
@@ -68,31 +69,45 @@
                         }
                     }
                 }
-
-                &:nth-child(1) {
+                &.rails-upgrade {
+                    .content {
+                        background: linear-gradient(0deg, #be0d42 0%, rgba(53, 4, 4, 0.2) 98.37%), url("/img/rails-upgrade-bg.svg");
+                        background-position: center;
+                        background-repeat: no-repeat, no-repeat;
+                    }
+                }
+                &.book {
                     .content{
                         background: url("/img/book.png");
                         background-position: center;
                     }
                 }
-                &:nth-child(2) {
+                &.tech-blog {
                     .content {
                         background: linear-gradient(0deg, #000000 0%, rgba(255, 255, 255, 0.2) 98.37%), url("/img/techblog-bg.png");
                         background-position: center, top center;
                         background-repeat: no-repeat, no-repeat;
                     }
                 }
-                &:nth-child(3) {
+                &.migration-data {
                     .content{
                         background: url("/img/library-blue-icon.svg"), linear-gradient(0deg, #163B9B 0%, rgba(0, 117, 255, 0.1) 105.47%);
                         background-position: right 16px top 16px, center;
                         background-repeat: no-repeat, no-repeat;
                     }
                 }
-                &:nth-child(4) {
+                &.actual-db-schema {
                     .content {
                         background: url("/img/library-green-icon.svg"), linear-gradient(0.3deg, #169B4B 0.28%, rgba(163, 163, 163, 0.2) 105.47%);
                         background-position: right 16px top 16px, center;
+                        background-repeat: no-repeat, no-repeat;
+                    }
+                }
+                &.toptal-resume {
+                    .content {
+                        background: url("/img/toptal-quality-item.svg");
+                        border: 1px solid #0f256e;
+                        background-position: center;
                         background-repeat: no-repeat, no-repeat;
                     }
                 }
