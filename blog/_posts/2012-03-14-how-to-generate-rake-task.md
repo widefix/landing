@@ -5,7 +5,7 @@ headline: "Easy way to create your own Rake task"
 description: "Create your own rake task from scratch in a Rails app: rails g namespace task1 task2"
 tags: [ruby, rails, rake]
 share: true
-featured_post: true
+featured_post: false
 comments: true
 image: rake-task.jpg
 redirect_from:
