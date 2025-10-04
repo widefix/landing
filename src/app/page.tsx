@@ -70,11 +70,11 @@ export default function HomePage() {
             </div>
             <div className="achievement-item">
               <div className="number">5★</div>
-              <p>Published author of <Link href="https://www.amazon.com/-/es/Rake-Management-Essentials-Andrey-Koleshko/dp/1783280778" target="_blank" rel="nofollow">"Rails Task Management Essentials"</Link> book</p>
+              <p>Published author of <Link href="https://www.amazon.com/-/es/Rake-Management-Essentials-Andrey-Koleshko/dp/1783280778" target="_blank" rel="nofollow">&ldquo;Rails Task Management Essentials&rdquo;</Link> book</p>
             </div>
             <div className="achievement-item">
               <div className="number">Ruby Creator</div>
-              <p><Link href="https://x.com/yukihiro_matz/status/1249973865544970241" target="_blank" rel="nofollow">Quoted by Yukihiro "Matz" Matsumoto</Link> - Ruby language creator</p>
+              <p><Link href="https://x.com/yukihiro_matz/status/1249973865544970241" target="_blank" rel="nofollow">Quoted by Yukihiro &ldquo;Matz&rdquo; Matsumoto</Link> - Ruby language creator</p>
             </div>
             <div className="achievement-item">
               <div className="number">Most Trusted</div>
@@ -723,7 +723,7 @@ export default function HomePage() {
                           </div>
                         </div>
                         <blockquote>
-                          “It was their speedy response that stood out.”
+                          &ldquo;It was their speedy response that stood out.&rdquo;
                         </blockquote>
                       </header>
                       <footer>
@@ -756,7 +756,7 @@ export default function HomePage() {
                           </div>
                         </div>
                         <blockquote>
-                          “Step by step, tangible progress is made, and the product metrics reflect that.”
+                          &ldquo;Step by step, tangible progress is made, and the product metrics reflect that.&rdquo;
                         </blockquote>
                       </header>
                       <footer>
