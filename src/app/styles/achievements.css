@@ -1,0 +1,87 @@
+.achievements {
+    background-color: #f8f9fa;
+}
+
+.achievements .inner {
+    text-align: center;
+}
+
+.achievements header {
+    margin-bottom: 3rem;
+}
+
+.achievements h2 {
+    font: 700 2.5rem/1.2 var(--font-montserrat), sans-serif;
+    margin-bottom: 20px;
+}
+
+.achievements h2 span {
+    color: #163B9B;
+}
+
+@media (max-width: 768px) {
+    .achievements h2 {
+        font-size: 2rem;
+    }
+}
+
+.achievements header p {
+    font: 400 1.125rem/1.6 var(--font-inter), sans-serif;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .achievements-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+.achievement-item {
+    background: white;
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievement-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.achievement-item .number {
+    font: 700 2.5rem/1.2 var(--font-montserrat), sans-serif;
+    color: #163B9B;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 576px) {
+    .achievement-item .number {
+        font-size: 2rem;
+    }
+}
+
+.achievement-item p {
+    font: 400 1rem/1.6 var(--font-inter), sans-serif;
+    color: #333;
+    margin: 0;
+}
+
+.achievement-item p a {
+    color: #163B9B;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.achievement-item p a:hover {
+    text-decoration: underline;
+}
