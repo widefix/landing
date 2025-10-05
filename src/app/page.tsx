@@ -167,11 +167,52 @@ export default function HomePage() {
           <div className="header" id="services">
             <h2>What we <span>do</span></h2>
             <p>
-              It&apos;s not enough to fix a bug. When you work with us, all underlying issues in your application get fixed.
-              That way, your app won&apos;t be slowed down by a new problem each week. The tech stack we work with includes:&nbsp;
-              <strong>Ruby on Rails, Hanami, Sinatra, Grape, Roda, Rack, and fully custom Ruby applications.</strong>&nbsp;
-              We also work with <strong>JavaScript: React, Next.js, ReactNative, Node.js</strong>
+              We don&apos;t just fix bugs — we transform your entire application ecosystem.
+              When you work with us, all underlying issues get resolved systematically,
+              ensuring your app won&apos;t be slowed down by recurring problems.
             </p>
+            <div className="tech-stack">
+              <h3>Our Technology Expertise</h3>
+              <div className="tech-categories">
+                <div className="tech-category">
+                  <h4>Backend Excellence</h4>
+                  <div className="tech-items">
+                    <span className="tech-item primary">Ruby on Rails</span>
+                    <span className="tech-item">Hanami</span>
+                    <span className="tech-item">Sinatra</span>
+                    <span className="tech-item">Custom Ruby</span>
+                  </div>
+                </div>
+                <div className="tech-category">
+                  <h4>Frontend & Web</h4>
+                  <div className="tech-items">
+                    <span className="tech-item primary">React</span>
+                    <span className="tech-item">Next.js</span>
+                    <span className="tech-item">Node.js</span>
+                    <span className="tech-item">TypeScript</span>
+                  </div>
+                </div>
+                <div className="tech-category">
+                  <h4>Mobile Development</h4>
+                  <div className="tech-items">
+                    <span className="tech-item primary">React Native</span>
+                    <span className="tech-item">Swift (iOS)</span>
+                    <span className="tech-item">Kotlin (Android)</span>
+                    <span className="tech-item">C++</span>
+                  </div>
+                </div>
+                <div className="tech-category">
+                  <h4>Database & Infrastructure</h4>
+                  <div className="tech-items">
+                    <span className="tech-item primary">PostgreSQL</span>
+                    <span className="tech-item">Redis</span>
+                    <span className="tech-item">AWS</span>
+                    <span className="tech-item">Heroku</span>
+                    <span className="tech-item">Docker</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="block-container">
             <div className="block">

@@ -4,6 +4,7 @@ import "@/app/styles/main.scss";
 import "@/app/styles/normalize.css";
 import "@/app/styles/ideal-clients.css";
 import "@/app/styles/achievements.css";
+import "@/app/styles/tech-stack.css";
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 
