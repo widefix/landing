@@ -7,7 +7,7 @@ export default function HomePage() {
       <section className="hero has-vertical-paddings">
         <div className="inner">
           <div className="hero-block-left">
-            <h1>Fix <span>slow</span>, underperforming, or <span>broken</span> apps — fast</h1>
+            <h1>We build <span>complex</span> software systems to <span>last</span> and <span>scale</span></h1>
             <div className="promise-block">
               <h2 className="title">Our promise to you</h2>
               <ul>
@@ -21,7 +21,7 @@ export default function HomePage() {
                 </li>
                 <li>
                   <Image src="/img/promises/get-more-customers.svg" alt="Get more customers" width="24" height="24" />
-                  <span>Your business growth</span>
+                  <span>Your business grows</span>
                 </li>
               </ul>
             </div>
