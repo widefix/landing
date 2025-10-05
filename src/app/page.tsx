@@ -40,7 +40,7 @@ export default function HomePage() {
         </div>
         <div className="inner">
           <p>
-            Get expert-level Ruby on Rails performance, stability, and scalability consulting that delivers measurable business results.
+            Unlock full potential of your business with expert guidance in software development, maximizing efficiency, stability, and growth.
           </p>
         </div>
       </section>
