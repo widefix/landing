@@ -20,7 +20,7 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: "Your Trusted Ruby On Rails Development Partner - WideFix",
+  title: "Your Trusted Software Development Partner - WideFix",
   description: "Looking to build custom software with Ruby On Rails? Look no further than our trusted and reliable team. We'll work with you every step of the way to bring your vision to life.",
   twitter: {
     card: "summary_large_image",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     canonical: "https://widefix.com"
   },
   openGraph: {
-    title: "Your Trusted Ruby On Rails Development Partner - WideFix",
+    title: "Your Trusted Software Development Partner - WideFix",
     description: "Looking to build custom software with Ruby On Rails? Look no further than our trusted and reliable team. We'll work with you every step of the way to bring your vision to life.",
     url: "https://widefix.com",
     siteName: "WideFix",
