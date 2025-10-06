@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -30,10 +31,14 @@ export default function ServicesPage() {
       <section className="hero has-vertical-paddings">
         <div className="inner">
           <div className="hero-block-left">
-            <h1>We develop custom software that <span>meets</span> your business needs <span>minimizing</span> costs</h1>
+            <h1>We develop <span>custom</span> software that meets your business needs while <span>minimizing</span> costs</h1>
+            <p className="hero-description">
+              Transform your business with tailored software solutions built by experts who understand your challenges and deliver results that matter.
+            </p>
             <div className="button-container">
-              <a className="button primary" href="https://calendly.com/andrei-kaleshka/30min" target="_blank"
-                rel="nofollow">Request a free 15‑minute app audit</a>
+              <Link className="button primary" href="https://calendly.com/andrei-kaleshka/30min" target="_blank"
+                rel="nofollow">Get Your Free Consultation</Link>
+              <Link className="button secondary" href="#our-services">Explore Our Services</Link>
             </div>
           </div>
           <div className="hero-block-right">
@@ -42,42 +47,227 @@ export default function ServicesPage() {
               <Image
                 src="/img/services.jpg"
                 quality={100}
-                alt="Optimise your app to get more customers"
+                alt="Custom software development services"
                 width="543"
                 height="474"
+                style={{ borderRadius: '10px' }}
               />
             </picture>
           </div>
         </div>
+      </section>
+
+      <section className="showcase has-vertical-paddings">
         <div className="inner">
-          <p>
-            While thousands of words may not fully capture the essence of our work, we aim to showcase our capabilities in a more tangible way. To achieve this, we are developing our own online product, accessible to everyone.
-          </p>
+          <div className="showcase-content">
+            <div className="showcase-text">
+              <h2>See Our Work in <span>Action</span></h2>
+              <p>
+                Actions speak louder than words. That&apos;s why we&apos;ve built our own product to showcase our capabilities and commitment to quality.
+              </p>
+              <div className="product-highlight">
+                <h3>
+                  <Image src="/img/icons/star.svg" alt="Featured" width="24" height="24" />
+                  Meet BudgetingKid
+                </h3>
+                <p>
+                  A complete financial education app we built from scratch — available on both web and mobile platforms.
+                  It&apos;s not just our portfolio piece, it&apos;s a fully functional product that real families use every day.
+                </p>
+                <div className="product-links">
+                  <Link href="https://get.budgetingkid.com/" target="_blank" className="button primary small">
+                    Try the App <Image src="/img/icons/external-link.svg" alt="External" width="16" height="16" />
+                  </Link>
+                  <Link href="https://github.com/widefix/pocketmoney/" target="_blank" className="button secondary small">
+                    View Source Code <Image src="/img/icons/github.svg" alt="GitHub" width="16" height="16" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="showcase-image">
+              <Image
+                src="/img/budgetingkid-showcase.png"
+                alt="BudgetingKid app showcase"
+                width="400"
+                height="300"
+                className="rounded-image"
+              />
+            </div>
+          </div>
         </div>
+      </section>
+
+      <section className="our-services has-vertical-paddings" id="our-services">
         <div className="inner">
-          <p>
-            Meet <a href="https://get.budgetingkid.com/" target="_blank">BudgetingKid</a>. This application is our creation, and it is <a href="https://github.com/widefix/pocketmoney/" target="_blank">open-source</a>.
-          </p>
+          <header>
+            <h2>Our <span>Services</span></h2>
+            <p>Comprehensive software development solutions tailored to your business needs</p>
+          </header>
+
+          <div className="services-grid">
+            <div className="service-card featured">
+              <div className="service-icon">
+                <Image src="/img/services/mvp-development.svg" alt="MVP Development" width="48" height="48" />
+              </div>
+              <h3>MVP Development</h3>
+              <p>Launch your idea quickly with a minimum viable product that validates your concept and attracts early users.</p>
+              <ul>
+                <li>✓ Rapid prototyping</li>
+                <li>✓ User validation</li>
+                <li>✓ Scalable architecture</li>
+                <li>✓ Market-ready solution</li>
+              </ul>
+              <div className="service-cta">
+                <Link href="https://calendly.com/andrei-kaleshka/30min" target="_blank" className="button primary">
+                  Start Your MVP
+                </Link>
+              </div>
+            </div>
+
+            <div className="service-card">
+              <div className="service-icon">
+                <Image src="/img/services/web-development.svg" alt="Web Development" width="48" height="48" />
+              </div>
+              <h3>Web Application Development</h3>
+              <p>Modern, responsive web applications built with cutting-edge technologies for optimal performance.</p>
+              <ul>
+                <li>✓ React & Next.js frontend</li>
+                <li>✓ Ruby on Rails backend</li>
+                <li>✓ PostgreSQL database</li>
+                <li>✓ Cloud deployment</li>
+              </ul>
+            </div>
+
+            <div className="service-card">
+              <div className="service-icon">
+                <Image src="/img/services/mobile-development.svg" alt="Mobile Development" width="48" height="48" />
+              </div>
+              <h3>Mobile App Development</h3>
+              <p>Native and cross-platform mobile applications that deliver exceptional user experiences.</p>
+              <ul>
+                <li>✓ React Native</li>
+                <li>✓ iOS (Swift)</li>
+                <li>✓ Android (Kotlin)</li>
+                <li>✓ Cross-platform solutions</li>
+              </ul>
+            </div>
+
+            <div className="service-card">
+              <div className="service-icon">
+                <Image src="/img/services/legacy-modernization.svg" alt="Legacy Modernization" width="48" height="48" />
+              </div>
+              <h3>Legacy System Modernization</h3>
+              <p>Breathe new life into your existing applications with modern technologies and improved performance.</p>
+              <ul>
+                <li>✓ Code refactoring</li>
+                <li>✓ Technology upgrades</li>
+                <li>✓ Performance optimization</li>
+                <li>✓ Security enhancements</li>
+              </ul>
+            </div>
+
+            <div className="service-card">
+              <div className="service-icon">
+                <Image src="/img/services/consulting.svg" alt="Technical Consulting" width="48" height="48" />
+              </div>
+              <h3>Technical Consulting</h3>
+              <p>Expert guidance to help you make informed technology decisions that align with your business goals.</p>
+              <ul>
+                <li>✓ Architecture design</li>
+                <li>✓ Technology selection</li>
+                <li>✓ Performance audits</li>
+                <li>✓ Strategic planning</li>
+              </ul>
+            </div>
+
+            <div className="service-card">
+              <div className="service-icon">
+                <Image src="/img/services/maintenance.svg" alt="Maintenance & Support" width="48" height="48" />
+              </div>
+              <h3>Maintenance & Support</h3>
+              <p>Ongoing support and maintenance to keep your applications running smoothly and securely.</p>
+              <ul>
+                <li>✓ 24/7 monitoring</li>
+                <li>✓ Regular updates</li>
+                <li>✓ Bug fixes</li>
+                <li>✓ Performance monitoring</li>
+              </ul>
+            </div>
+          </div>
         </div>
+      </section>
+
+      <section className="why-choose-us has-vertical-paddings">
         <div className="inner">
-          <p>
-            WideFix is a software development company spearheaded by founder Andrei Kaleshka. Our mission is to assist businesses of all sizes in achieving their objectives by providing them with the most effective software solutions. We implement efficient solutions that are simple to develop, maintain, and scale.
-          </p>
+          <div className="content-wrapper">
+            <div className="left-content">
+              <h2>Why Choose <span>WideFix</span>?</h2>
+              <div className="value-props">
+                <div className="value-prop">
+                  <div className="value-icon">
+                    <Image src="/img/icons/global.svg" alt="Global Reach" width="32" height="32" />
+                  </div>
+                  <div className="value-content">
+                    <h3>Global Expertise</h3>
+                    <p>Serving clients across the US, Europe, Americas, UK, Australia, and beyond with world-class solutions.</p>
+                  </div>
+                </div>
+                <div className="value-prop">
+                  <div className="value-icon">
+                    <Image src="/img/icons/cost-effective.svg" alt="Cost Effective" width="32" height="32" />
+                  </div>
+                  <div className="value-content">
+                    <h3>Cost-Effective Solutions</h3>
+                    <p>We believe quality software should be accessible. Get premium solutions at reasonable prices.</p>
+                  </div>
+                </div>
+                <div className="value-prop">
+                  <div className="value-icon">
+                    <Image src="/img/icons/partnership.svg" alt="True Partnership" width="32" height="32" />
+                  </div>
+                  <div className="value-content">
+                    <h3>True Partnership</h3>
+                    <p>We work closely with you to understand your needs and deliver solutions that perfectly match them.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="right-content">
+              <div className="founder-highlight">
+                <Image
+                  src="/img/andrei-kaleshka.jpg"
+                  alt="Andrei Kaleshka, Founder of WideFix"
+                  width="200"
+                  height="200"
+                  className="founder-image"
+                />
+                <div className="founder-info">
+                  <h3>Led by Experience</h3>
+                  <p>
+                    <strong>Andrei Kaleshka</strong>, our founder, brings years of expertise in building scalable
+                    software solutions. His vision drives our commitment to delivering exceptional results for every client.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </section>
+
+      <section className="cta-section has-vertical-paddings">
         <div className="inner">
-          <p>
-            We firmly believe that all businesses should have access to the finest possible service at a reasonable price. That’s why we only provide solutions that we fully endorse. Our solutions are guaranteed to address your business objectives without any unpleasant surprises. We collaborate closely with you to grasp your requirements and develop a solution that perfectly matches them.
-          </p>
-        </div>
-        <div className="inner">
-          <p>
-            Our services encompass the development of minimum viable products (MVPs) for web and mobile applications from scratch. We provide assistance with the development of existing applications, as well as the development of custom software solutions. Additionally, we offer consulting services to guide you in making informed decisions that align with your business goals.
-          </p>
-        </div>
-        <div className="inner">
-          <p>
-            We provide our services to clients worldwide, spanning the United States, Europe, North and South America, the United Kingdom of Great Britain, Australia, and beyond.
-          </p>
+          <div className="cta-content">
+            <h2>Ready to Transform Your Business?</h2>
+            <p>Let&apos;s discuss how we can help you achieve your goals with custom software solutions that deliver real results.</p>
+            <div className="cta-buttons">
+              <Link href="https://calendly.com/andrei-kaleshka/30min" target="_blank" className="button primary large">
+                Schedule Free Consultation
+              </Link>
+              <Link href="/contact" className="button secondary large">
+                Get in Touch
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </main>
