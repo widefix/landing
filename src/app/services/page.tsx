@@ -75,23 +75,26 @@ export default function ServicesPage() {
                   It&apos;s not just our portfolio piece, it&apos;s a fully functional product that real families use every day.
                 </p>
                 <div className="product-links">
-                  <Link href="https://get.budgetingkid.com/" target="_blank" className="button primary small">
-                    Try the App <Image src="/img/icons/external-link.svg" alt="External" width="16" height="16" />
+                  <Link href="https://get.budgetingkid.com/" target="_blank" className="button primary">
+                    Try the App <Image src="/img/mobile-phone-btn.svg" alt="External" width="16" height="16" />
                   </Link>
-                  <Link href="https://github.com/widefix/pocketmoney/" target="_blank" className="button secondary small">
+                  <Link href="https://github.com/widefix/pocketmoney/" target="_blank" className="button secondary">
                     View Source Code <Image src="/img/icons/github.svg" alt="GitHub" width="16" height="16" />
                   </Link>
                 </div>
               </div>
             </div>
             <div className="showcase-image">
-              <Image
-                src="/img/budgetingkid-showcase.png"
-                alt="BudgetingKid app showcase"
-                width="400"
-                height="300"
-                className="rounded-image"
-              />
+              <picture>
+                <source srcSet="/img/try-app.webp" type="image/webp" />
+                <Image
+                  src="/img/try-app.jpg"
+                  alt="BudgetingKid app showcase"
+                  width="400"
+                  height="300"
+                  className="rounded-image"
+                />
+              </picture>
             </div>
           </div>
         </div>
@@ -107,7 +110,7 @@ export default function ServicesPage() {
           <div className="services-grid">
             <div className="service-card featured">
               <div className="service-icon">
-                <Image src="/img/services/mvp-development.svg" alt="MVP Development" width="48" height="48" />
+                <Image src="/img/productboard-icon.svg" alt="MVP Development" width="48" height="48" />
               </div>
               <h3>MVP Development</h3>
               <p>Launch your idea quickly with a minimum viable product that validates your concept and attracts early users.</p>
@@ -126,7 +129,7 @@ export default function ServicesPage() {
 
             <div className="service-card">
               <div className="service-icon">
-                <Image src="/img/services/web-development.svg" alt="Web Development" width="48" height="48" />
+                <Image src="/img/web-dev-icon.svg" alt="Web Development" width="48" height="48" />
               </div>
               <h3>Web Application Development</h3>
               <p>Modern, responsive web applications built with cutting-edge technologies for optimal performance.</p>
@@ -140,7 +143,7 @@ export default function ServicesPage() {
 
             <div className="service-card">
               <div className="service-icon">
-                <Image src="/img/services/mobile-development.svg" alt="Mobile Development" width="48" height="48" />
+                <Image src="/img/mobile-phone.svg" alt="Mobile Development" width="48" height="48" />
               </div>
               <h3>Mobile App Development</h3>
               <p>Native and cross-platform mobile applications that deliver exceptional user experiences.</p>
@@ -154,7 +157,7 @@ export default function ServicesPage() {
 
             <div className="service-card">
               <div className="service-icon">
-                <Image src="/img/services/legacy-modernization.svg" alt="Legacy Modernization" width="48" height="48" />
+                <Image src="/img/system.svg" alt="Legacy Modernization" width="48" height="48" />
               </div>
               <h3>Legacy System Modernization</h3>
               <p>Breathe new life into your existing applications with modern technologies and improved performance.</p>
@@ -168,7 +171,7 @@ export default function ServicesPage() {
 
             <div className="service-card">
               <div className="service-icon">
-                <Image src="/img/services/consulting.svg" alt="Technical Consulting" width="48" height="48" />
+                <Image src="/img/customer-support.svg" alt="Technical Consulting" width="48" height="48" />
               </div>
               <h3>Technical Consulting</h3>
               <p>Expert guidance to help you make informed technology decisions that align with your business goals.</p>
@@ -182,7 +185,7 @@ export default function ServicesPage() {
 
             <div className="service-card">
               <div className="service-icon">
-                <Image src="/img/services/maintenance.svg" alt="Maintenance & Support" width="48" height="48" />
+                <Image src="/img/services.svg" alt="Maintenance & Support" width="48" height="48" />
               </div>
               <h3>Maintenance & Support</h3>
               <p>Ongoing support and maintenance to keep your applications running smoothly and securely.</p>
@@ -205,7 +208,7 @@ export default function ServicesPage() {
               <div className="value-props">
                 <div className="value-prop">
                   <div className="value-icon">
-                    <Image src="/img/icons/global.svg" alt="Global Reach" width="32" height="32" />
+                    <Image src="/img/globe-24.svg" alt="Global Reach" width="32" height="32" />
                   </div>
                   <div className="value-content">
                     <h3>Global Expertise</h3>
@@ -214,7 +217,7 @@ export default function ServicesPage() {
                 </div>
                 <div className="value-prop">
                   <div className="value-icon">
-                    <Image src="/img/icons/cost-effective.svg" alt="Cost Effective" width="32" height="32" />
+                    <Image src="/img/effector.svg" alt="Cost Effective" width="32" height="32" />
                   </div>
                   <div className="value-content">
                     <h3>Cost-Effective Solutions</h3>
@@ -223,7 +226,7 @@ export default function ServicesPage() {
                 </div>
                 <div className="value-prop">
                   <div className="value-icon">
-                    <Image src="/img/icons/partnership.svg" alt="True Partnership" width="32" height="32" />
+                    <Image src="/img/trust.svg" alt="True Partnership" width="32" height="32" />
                   </div>
                   <div className="value-content">
                     <h3>True Partnership</h3>
@@ -234,17 +237,20 @@ export default function ServicesPage() {
             </div>
             <div className="right-content">
               <div className="founder-highlight">
-                <Image
-                  src="/img/andrei-kaleshka.jpg"
-                  alt="Andrei Kaleshka, Founder of WideFix"
-                  width="200"
-                  height="200"
-                  className="founder-image"
-                />
+                <picture>
+                  <source srcSet="/img/andrei-kaleshka.webp" type="image/webp" />
+                  <Image
+                    src="/img/andrei-kaleshka.png"
+                    alt="Andrei Kaleshka, Founder of WideFix"
+                    width="200"
+                    height="200"
+                    className="founder-image"
+                  />
+                </picture>
                 <div className="founder-info">
                   <h3>Led by Experience</h3>
                   <p>
-                    <strong>Andrei Kaleshka</strong>, our founder, brings years of expertise in building scalable
+                    <strong>Andrei Kaleshka</strong>, the <b>WideFix</b> founder, brings years of expertise in building scalable
                     software solutions. His vision drives our commitment to delivering exceptional results for every client.
                   </p>
                 </div>
@@ -260,10 +266,10 @@ export default function ServicesPage() {
             <h2>Ready to Transform Your Business?</h2>
             <p>Let&apos;s discuss how we can help you achieve your goals with custom software solutions that deliver real results.</p>
             <div className="cta-buttons">
-              <Link href="https://calendly.com/andrei-kaleshka/30min" target="_blank" className="button primary large">
+              <Link href="https://calendly.com/andrei-kaleshka/30min" target="_blank" className="button primary">
                 Schedule Free Consultation
               </Link>
-              <Link href="/contact" className="button secondary large">
+              <Link href="/contact" className="button secondary">
                 Get in Touch
               </Link>
             </div>
