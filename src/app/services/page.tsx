@@ -57,49 +57,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="showcase has-vertical-paddings">
-        <div className="inner">
-          <div className="showcase-content">
-            <div className="showcase-text">
-              <h2>See Our Work in <span>Action</span></h2>
-              <p>
-                Actions speak louder than words. That&apos;s why we&apos;ve built our own product to showcase our capabilities and commitment to quality.
-              </p>
-              <div className="product-highlight">
-                <h3>
-                  <Image src="/img/icons/star.svg" alt="Featured" width="24" height="24" />
-                  Meet BudgetingKid
-                </h3>
-                <p>
-                  A complete financial education app we built from scratch — available on both web and mobile platforms.
-                  It&apos;s not just our portfolio piece, it&apos;s a fully functional product that real families use every day.
-                </p>
-                <div className="product-links">
-                  <Link href="https://get.budgetingkid.com/" target="_blank" className="button primary">
-                    Try the App <Image src="/img/mobile-phone-btn.svg" alt="External" width="16" height="16" />
-                  </Link>
-                  <Link href="https://github.com/widefix/pocketmoney/" target="_blank" className="button secondary">
-                    View Source Code <Image src="/img/icons/github.svg" alt="GitHub" width="16" height="16" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className="showcase-image">
-              <picture>
-                <source srcSet="/img/try-app.webp" type="image/webp" />
-                <Image
-                  src="/img/try-app.jpg"
-                  alt="BudgetingKid app showcase"
-                  width="400"
-                  height="300"
-                  className="rounded-image"
-                />
-              </picture>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="our-services has-vertical-paddings" id="our-services">
         <div className="inner">
           <header>
@@ -225,6 +182,49 @@ export default function ServicesPage() {
                 <li>✓ Proprietary payment systems</li>
                 <li>✓ PCI compliance</li>
               </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="showcase has-vertical-paddings">
+        <div className="inner">
+          <div className="showcase-content">
+            <div className="showcase-text">
+              <h2>See Our Work in <span>Action</span></h2>
+              <p>
+                Actions speak louder than words. That&apos;s why we&apos;ve built our own product to showcase our capabilities and commitment to quality.
+              </p>
+              <div className="product-highlight">
+                <h3>
+                  <Image src="/img/icons/star.svg" alt="Featured" width="24" height="24" />
+                  Meet BudgetingKid
+                </h3>
+                <p>
+                  A complete financial education app we built from scratch — available on both web and mobile platforms.
+                  It&apos;s not just our portfolio piece, it&apos;s a fully functional product that real families use every day.
+                </p>
+                <div className="product-links">
+                  <Link href="https://get.budgetingkid.com/" target="_blank" className="button primary">
+                    Try the App <Image src="/img/mobile-phone-btn.svg" alt="External" width="16" height="16" />
+                  </Link>
+                  <Link href="https://github.com/widefix/pocketmoney/" target="_blank" className="button secondary">
+                    View Source Code <Image src="/img/icons/github.svg" alt="GitHub" width="16" height="16" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="showcase-image">
+              <picture>
+                <source srcSet="/img/try-app.webp" type="image/webp" />
+                <Image
+                  src="/img/try-app.jpg"
+                  alt="BudgetingKid app showcase"
+                  width="400"
+                  height="300"
+                  className="rounded-image"
+                />
+              </picture>
             </div>
           </div>
         </div>
