@@ -50,7 +50,7 @@ export default function ServicesPage() {
                 alt="Custom software development services"
                 width="543"
                 height="474"
-                style={{ borderRadius: '10px' }}
+                style={{ borderRadius: '10px', objectFit: 'cover' }}
               />
             </picture>
           </div>
