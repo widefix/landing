@@ -196,6 +196,36 @@ export default function ServicesPage() {
                 <li>✓ Performance monitoring</li>
               </ul>
             </div>
+
+            <div className="service-card">
+              <div className="service-icon">
+                <Image src="/img/receipt-28.svg" alt="Accounting Systems Integration" width="48" height="48" />
+              </div>
+              <h3>Accounting Systems Integration</h3>
+              <p>Seamlessly connect your applications with popular accounting platforms for automated financial workflows.</p>
+              <ul>
+                <li>✓ Xero</li>
+                <li>✓ Sage Accounting</li>
+                <li>✓ Kashflow</li>
+                <li>✓ Clearbooks</li>
+                <li>✓ QuickBooks</li>
+                <li>✓ Custom accounting APIs</li>
+              </ul>
+            </div>
+
+            <div className="service-card">
+              <div className="service-icon">
+                <Image src="/img/credit-card.svg" alt="Payment Systems Integration" width="48" height="48" />
+              </div>
+              <h3>Payment Systems Integration</h3>
+              <p>Implement secure and reliable payment processing with industry-leading payment providers and custom solutions.</p>
+              <ul>
+                <li>✓ Stripe integration</li>
+                <li>✓ PayPal connectivity</li>
+                <li>✓ Proprietary payment systems</li>
+                <li>✓ PCI compliance</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
