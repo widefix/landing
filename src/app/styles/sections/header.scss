@@ -52,20 +52,141 @@ header {
           font: $text-body-medium;
           color: $text-link-secondary-default;
           text-decoration: none;
+          padding: 8px 16px;
+          border-radius: 8px;
+          transition: all 0.3s ease;
+          position: relative;
+          font-weight: 500;
+
           @media (max-width: $media-xsm) {
             font: $text-link-body-small;
+            padding: 0; // Reset padding for mobile
+          }
+        }
+
+        // Pseudo-elements for desktop effects
+        a {
+          // Subtle background gradient effect (desktop only)
+          @media (min-width: 861px) {
+            &::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
+              border-radius: 8px;
+              opacity: 0;
+              transition: opacity 0.3s ease;
+              z-index: -1;
+            }
+
+            // Animated bottom border
+            &::after {
+              content: '';
+              position: absolute;
+              bottom: 0;
+              left: 50%;
+              width: 0;
+              height: 2px;
+              background: linear-gradient(90deg, $primary-default, $primary-hover);
+              transition: all 0.3s ease;
+              transform: translateX(-50%);
+              border-radius: 1px;
+            }
+          }
+        }
+
+        // Active link styles
+        &.active {
+          a {
+            color: $primary-default;
+            font-weight: 600;
+
+            @media (min-width: 861px) {
+              background: linear-gradient(135deg, rgba(240, 67, 56, 0.1) 0%, rgba(252, 88, 78, 0.1) 100%);
+              border: 1px solid rgba(240, 67, 56, 0.3);
+              box-shadow: 0 2px 8px rgba(240, 67, 56, 0.15);
+
+              &::before {
+                opacity: 0.7;
+              }
+
+              &::after {
+                width: 100%;
+              }
+            }
+          }
+
+          // Enhanced hover effect for active links
+          &:hover {
+            @media (min-width: 861px) {
+              transform: translateY(-1px);
+
+              a {
+                box-shadow: 0 6px 16px rgba(240, 67, 56, 0.25);
+                background: linear-gradient(135deg, rgba(240, 67, 56, 0.15) 0%, rgba(252, 88, 78, 0.15) 100%);
+
+                &::before {
+                  opacity: 1;
+                }
+              }
+            }
           }
         }
 
         &:hover {
-          a {
-            color: $text-link-secondary-hover;
+          // Desktop hover effects
+          @media (min-width: 861px) {
+            transform: translateY(-1px);
           }
+
+          a {
+            color: $primary-default;
+
+            @media (min-width: 861px) {
+              box-shadow: 0 4px 12px rgba(240, 67, 56, 0.15);
+              border: 1px solid rgba(240, 67, 56, 0.2);
+
+              &::before {
+                opacity: 1;
+              }
+
+              &::after {
+                width: 100%;
+              }
+            }
+
+            // Keep original mobile hover
+            @media (max-width: $media-sm) {
+              color: $text-link-secondary-hover;
+            }
+          }
+
           .sub-menu {
             display: block;
-            box-shadow: 10px 5px 5px $text-primary;
+            @media (min-width: 861px) {
+              box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+              border-radius: 8px;
+              border: 1px solid rgba(240, 67, 56, 0.1);
+            }
+            @media (max-width: $media-sm) {
+              box-shadow: 10px 5px 5px $text-primary;
+            }
             li {
               line-height: 25px;
+            }
+          }
+        }
+
+        // Active state (desktop only)
+        @media (min-width: 861px) {
+          &:active {
+            transform: translateY(0);
+
+            a {
+              box-shadow: 0 2px 6px rgba(240, 67, 56, 0.2);
             }
           }
         }
@@ -89,6 +210,43 @@ header {
     text-align: right;
     @media (max-width: $media-sm) {
       display: none;
+    }
+
+    // Enhanced CTA button styles (desktop only)
+    @media (min-width: 861px) {
+      .button {
+        background: linear-gradient(135deg, $primary-default 0%, $primary-hover 100%);
+        box-shadow: 0 4px 12px rgba(240, 67, 56, 0.25);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+          transition: left 0.5s ease;
+        }
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(240, 67, 56, 0.35);
+          background: linear-gradient(135deg, $primary-hover 0%, $primary-default 100%);
+
+          &::before {
+            left: 100%;
+          }
+        }
+
+        &:active {
+          transform: translateY(-1px);
+          box-shadow: 0 4px 12px rgba(240, 67, 56, 0.25);
+        }
+      }
     }
   }
 

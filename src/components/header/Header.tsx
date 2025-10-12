@@ -3,8 +3,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import { usePathname } from 'next/navigation'
 
 export default function Header() {
+  const pathname = usePathname()
+
   useEffect(() => {
     const toggleButton = document.querySelector('.menu-toggle');
     const nav = document.querySelector('nav');
@@ -50,10 +53,18 @@ export default function Header() {
           </div>
           <nav className="top-nav">
             <ul>
-              <li><Link href="/showcases">Showcases</Link></li>
-              <li><Link href="/services">Services</Link></li>
-              <li><Link href="/contact">Contact</Link></li>
-              <li><Link href="https://widefix.com/blog" target="_blank">Blog</Link></li>
+              <li className={pathname?.startsWith('/showcases') ? 'active' : ''}>
+                <Link href="/showcases">Showcases</Link>
+              </li>
+              <li className={pathname === '/services' ? 'active' : ''}>
+                <Link href="/services">Services</Link>
+              </li>
+              <li className={pathname === '/contact' ? 'active' : ''}>
+                <Link href="/contact">Contact</Link>
+              </li>
+              <li className={pathname?.includes('blog') ? 'active' : ''}>
+                <Link href="https://widefix.com/blog" target="_blank">Blog</Link>
+              </li>
             </ul>
           </nav>
           <div className="cta-button">
