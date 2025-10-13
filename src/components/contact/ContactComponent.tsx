@@ -1,7 +1,59 @@
+"use client";
+
 import Image from 'next/image'
 import Script from 'next/script'
+import { useEffect } from 'react'
 
 export default function ContactComponent() {
+  useEffect(() => {
+    // Override Mailchimp's default success message
+    const handleFormSubmit = () => {
+      const successDiv = document.getElementById('mce-success-response');
+
+      if (successDiv) {
+        const observer = new MutationObserver((mutations) => {
+          mutations.forEach((mutation) => {
+            if (mutation.type === 'childList' || mutation.type === 'characterData') {
+              const successText = successDiv.textContent;
+              if (successText && successText.includes('subscrib')) {
+                successDiv.innerHTML = '✅ <strong>Thank you!</strong> We\'ve received your project details and will get back to you within 24 hours with a detailed proposal.';
+                successDiv.style.display = 'block';
+              }
+            }
+          });
+        });
+
+        observer.observe(successDiv, {
+          childList: true,
+          subtree: true,
+          characterData: true
+        });
+
+        // Also observe for style changes that make the div visible
+        const styleObserver = new MutationObserver((mutations) => {
+          mutations.forEach((mutation) => {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+              const target = mutation.target as HTMLElement;
+              if (target.style.display !== 'none' && target.textContent) {
+                const successText = target.textContent;
+                if (successText.includes('subscrib')) {
+                  target.innerHTML = '✅ <strong>Thank you!</strong> We\'ve received your project details and will get back to you within 24 hours with a detailed proposal.';
+                }
+              }
+            }
+          });
+        });
+
+        styleObserver.observe(successDiv, {
+          attributes: true,
+          attributeFilter: ['style']
+        });
+      }
+    };
+
+    // Wait for Mailchimp script to load
+    setTimeout(handleFormSubmit, 1000);
+  }, []);
   return (
     <>
       <section className="hero has-vertical-paddings" id='contact'>
@@ -143,6 +195,7 @@ export default function ContactComponent() {
                         name="subscribe"
                         id="mc-embedded-subscribe"
                         className="button primary"
+                        style={{ textDecoration: 'none' }}
                       >
                         Send Project Details
                       </button>
