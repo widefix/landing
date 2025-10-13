@@ -53,52 +53,95 @@ export default function HomePage() {
           </header>
           <div className="achievements-grid">
             <div className="achievement-item">
-              <div className="number">4M+</div>
-              <p>Total downloads of our <Link href="https://rubygems.org/profiles/ka8725" target="_blank" rel="nofollow">open-sourced libraries</Link></p>
-            </div>
-            <div className="achievement-item">
-              <div className="number">3M+</div>
-              <p><Link href="https://rubygems.org/gems/migration_data" target="_blank" rel="nofollow">Migration Data</Link> - our most popular library downloads</p>
-            </div>
-            <div className="achievement-item">
-              <div className="number">400K+</div>
-              <p><Link href="https://rubygems.org/gems/actual_db_schema" target="_blank" rel="nofollow">Actual DB Schema</Link> - our latest valuable library downloads</p>
-            </div>
-            <div className="achievement-item">
               <div className="number">Top 3%</div>
               <p>WideFix founder among <Link href="https://www.toptal.com/resume/andrey-koleshko" target="_blank" rel="nofollow">top software engineers worldwide</Link> (Toptal)</p>
-            </div>
-            <div className="achievement-item">
-              <div className="number">5★</div>
-              <p>Published author of <Link href="https://www.amazon.com/-/es/Rake-Management-Essentials-Andrey-Koleshko/dp/1783280778" target="_blank" rel="nofollow">&ldquo;Rails Task Management Essentials&rdquo;</Link> book</p>
-            </div>
-            <div className="achievement-item">
-              <div className="number">Ruby Creator</div>
-              <p><Link href="https://x.com/yukihiro_matz/status/1249973865544970241" target="_blank" rel="nofollow">Quoted by Yukihiro &ldquo;Matz&rdquo; Matsumoto</Link> - Ruby language creator</p>
-            </div>
-            <div className="achievement-item">
-              <div className="number">Most Trusted</div>
-              <p><Link href="https://www.linkedin.com/feed/update/urn:li:activity:7376194644583350272/" target="_blank" rel="nofollow">Recognized by Techreviewer.co</Link> as most trusted development partner</p>
-            </div>
-            <div className="achievement-item">
-              <div className="number">4.8/5</div>
-              <p><Link href="https://clutch.co/profile/widefix#reviews" target="_blank" rel="nofollow">Average client rating on Clutch</Link> - industry-leading satisfaction</p>
-            </div>
-            <div className="achievement-item">
-              <div className="number">Cost Savings</div>
-              <p><Link href="https://www.linkedin.com/feed/update/urn:li:activity:7379533312295395328/" target="_blank" rel="nofollow">Optimize software efficiently</Link> - no extra infrastructure costs</p>
-            </div>
-            <div className="achievement-item">
-              <div className="number">30% Revenue</div>
-              <p><Link href="https://widefix.com/blog/prevent-account-sharing-with-mfa/" target="_blank" rel="nofollow">Prevented account sharing</Link> increasing client revenue by 30%</p>
-            </div>
-            <div className="achievement-item">
-              <div className="number">4.9★</div>
-              <p><Link href="https://play.google.com/store/apps/details?id=com.worshiponline.iosapp" target="_blank" rel="nofollow">Mobile app created from scratch</Link> - top ratings on both stores</p>
+              <div className="achievement-tags">
+                <div className="achievement-tag founder">Founder</div>
+              </div>
             </div>
             <div className="achievement-item">
               <div className="number">4000%</div>
               <p><Link href="https://widefix.com/showcases/seo-optimization" target="_blank" rel="nofollow">Increased organic Google traffic</Link> through app optimization</p>
+              <div className="achievement-tags">
+                <div className="achievement-tag solutions">Solutions</div>
+                <div className="achievement-tag team">Team</div>
+              </div>
+            </div>
+            <div className="achievement-item">
+              <div className="number">4M+</div>
+              <p>Total downloads of our <Link href="https://rubygems.org/profiles/ka8725" target="_blank" rel="nofollow">open-sourced libraries</Link></p>
+              <div className="achievement-tags">
+                <div className="achievement-tag solutions">Solutions</div>
+                <div className="achievement-tag founder">Founder</div>
+              </div>
+            </div>
+            <div className="achievement-item">
+              <div className="number">3M+</div>
+              <p><Link href="https://rubygems.org/gems/migration_data" target="_blank" rel="nofollow">Migration Data</Link> - our most popular library downloads</p>
+              <div className="achievement-tags">
+                <div className="achievement-tag solutions">Solutions</div>
+                <div className="achievement-tag team">Team</div>
+              </div>
+            </div>
+            <div className="achievement-item">
+              <div className="number">400K+</div>
+              <p><Link href="https://rubygems.org/gems/actual_db_schema" target="_blank" rel="nofollow">Actual DB Schema</Link> - our latest valuable library downloads</p>
+              <div className="achievement-tags">
+                <div className="achievement-tag solutions">Solutions</div>
+                <div className="achievement-tag team">Team</div>
+              </div>
+            </div>
+            <div className="achievement-item">
+              <div className="number">Cost Savings</div>
+              <p><Link href="https://www.linkedin.com/feed/update/urn:li:activity:7379533312295395328/" target="_blank" rel="nofollow">Optimize software efficiently</Link> - no extra infrastructure costs</p>
+              <div className="achievement-tags">
+                <div className="achievement-tag solutions">Solutions</div>
+                <div className="achievement-tag team">Team</div>
+              </div>
+            </div>
+            <div className="achievement-item">
+              <div className="number">30% Revenue</div>
+              <p><Link href="https://widefix.com/blog/prevent-account-sharing-with-mfa/" target="_blank" rel="nofollow">Prevented account sharing</Link> increasing client revenue by 30%</p>
+              <div className="achievement-tags">
+                <div className="achievement-tag solutions">Solutions</div>
+                <div className="achievement-tag team">Team</div>
+              </div>
+            </div>
+            <div className="achievement-item">
+              <div className="number">4.9★</div>
+              <p><Link href="https://play.google.com/store/apps/details?id=com.worshiponline.iosapp" target="_blank" rel="nofollow">Mobile app created from scratch</Link> - top ratings on both stores</p>
+              <div className="achievement-tags">
+                <div className="achievement-tag solutions">Solutions</div>
+                <div className="achievement-tag team">Team</div>
+              </div>
+            </div>
+            <div className="achievement-item">
+              <div className="number">Most Trusted</div>
+              <p><Link href="https://www.linkedin.com/feed/update/urn:li:activity:7376194644583350272/" target="_blank" rel="nofollow">Recognized by Techreviewer.co</Link> as most trusted development partner</p>
+              <div className="achievement-tags">
+                <div className="achievement-tag team">Team</div>
+              </div>
+            </div>
+            <div className="achievement-item">
+              <div className="number">4.8/5</div>
+              <p><Link href="https://clutch.co/profile/widefix#reviews" target="_blank" rel="nofollow">Average client rating on Clutch</Link> - industry-leading satisfaction</p>
+              <div className="achievement-tags">
+                <div className="achievement-tag team">Team</div>
+              </div>
+            </div>
+            <div className="achievement-item">
+              <div className="number">5★</div>
+              <p>Published author of <Link href="https://www.amazon.com/-/es/Rake-Management-Essentials-Andrey-Koleshko/dp/1783280778" target="_blank" rel="nofollow">&ldquo;Rails Task Management Essentials&rdquo;</Link> book</p>
+              <div className="achievement-tags">
+                <div className="achievement-tag founder">Founder</div>
+              </div>
+            </div>
+            <div className="achievement-item">
+              <div className="number">Ruby Creator</div>
+              <p><Link href="https://x.com/yukihiro_matz/status/1249973865544970241" target="_blank" rel="nofollow">Quoted by Yukihiro &ldquo;Matz&rdquo; Matsumoto</Link> - Ruby language creator</p>
+              <div className="achievement-tags">
+                <div className="achievement-tag founder">Founder</div>
+              </div>
             </div>
           </div>
         </div>
@@ -305,7 +348,7 @@ export default function HomePage() {
               <div className="block m-expertise">
                 <h3><Image src="/img/icons/expertise.svg" alt="Icon for Expertise and experience block" width="56"
                     height="56" /> Expertise and experience</h3>
-                <p>Our team of experienced developers has a track record of delivering high-quality code and solving complex
+                <p>Team of experienced developers has a track record of delivering high-quality code and solving complex
                   problems. We have the skills and knowledge to tackle any project, no matter how challenging</p>
                 <ul style={{ listStyleType: 'none', paddingLeft: 0, lineHeight: 1.5, marginTop: '1rem' }}>
                   <li>✅ <b>Double revenue</b> by eliminating app friction</li>
@@ -326,7 +369,7 @@ export default function HomePage() {
                 <h3><Image src="/img/icons/support.svg" alt="Icon for Dedicated block" width="56" height="56" /> Dedicated
                   Support</h3>
                 <p>We offer unparalleled support and customer service. Whether you have a question about your project or
-                  need help troubleshooting, our team is always here to support you and ensure your project’s success.</p>
+                  need help troubleshooting, Team is always here to support you and ensure your project’s success.</p>
               </div>
             </div>
           </div>

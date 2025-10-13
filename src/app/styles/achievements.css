@@ -51,6 +51,9 @@
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
 .achievement-item:hover {
@@ -84,4 +87,43 @@
 
 .achievement-item p a:hover {
     text-decoration: underline;
+}
+
+.achievement-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+    padding-top: 1.5rem;
+}
+
+.achievement-tag {
+    display: inline-block;
+    padding: 0.5rem 0.875rem;
+    font: 500 0.75rem/1.2 var(--font-inter), sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: 600;
+    width: fit-content;
+    flex-shrink: 0;
+}
+
+.achievement-item .achievement-tag.team {
+    background-color: #e8f5e8;
+    color: #2d7d32;
+    border: 1px solid #4caf50;
+}
+
+.achievement-item .achievement-tag.solutions {
+    background-color: #e3f2fd;
+    color: #1565c0;
+    border: 1px solid #2196f3;
+}
+
+.achievement-item .achievement-tag.founder {
+    background-color: #fff3e0;
+    color: #e65100;
+    border: 1px solid #ff9800;
 }
