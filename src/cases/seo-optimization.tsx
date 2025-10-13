@@ -6,7 +6,8 @@ const result: Showcase = {
   category: CategoryName.optimisations,
   preview: {
     companyName: "Worship Online",
-    solution: "SEO Optimization",
+    title: "SEO Optimization",
+    solution: "Optimization",
     results: "Our SEO optimization was a game-changer for the client.",
     wrapperColor: SwiperSlideColor.blue,
     buttonColor: SwiperSlideColor.blue,

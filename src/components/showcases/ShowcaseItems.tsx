@@ -44,7 +44,8 @@ export default function ShowcaseItems({
         >
           {currentShowcases.map((showcase, index) => (
             <SwiperSlide key={index} className={`${showcase.preview.wrapperColor}`}>
-              <ShowcaseItem 
+              <ShowcaseItem
+                title={showcase.preview.title}
                 companyName={showcase.preview.companyName}
                 slug={showcase.slug}
                 solution={showcase.preview.solution}

@@ -8,6 +8,7 @@ const showcases: Showcase[] = [
     slug: "stripe-integration",
     category: CategoryName.systemsIntegrations,
     preview: {
+      title: "Stripe Data Consistency",
       companyName: "Worship Online",
       solution: "Stripe Integration",
       results: "We fixed data consistency issues between the app and Stripe.",
@@ -108,7 +109,8 @@ const showcases: Showcase[] = [
     category: CategoryName.optimisations,
     preview: {
       companyName: "Worship Online",
-      solution: "Prevent account sharing",
+      solution: "System Design",
+      title: "Prevent Account Sharing",
       results: "We implemented an on-premises solution to combat account sharing.",
       wrapperColor: SwiperSlideColor.green,
       buttonColor: SwiperSlideColor.green,
@@ -199,7 +201,8 @@ const showcases: Showcase[] = [
     category: CategoryName.devDesign,
     preview: {
       companyName: "Worship Online",
-      solution: "Mobile app",
+      solution: "Mobile App",
+      title: "Mobile App Development",
       results: "We have designed and launched a mobile application for both iOS and Android platforms.",
       wrapperColor: SwiperSlideColor.orange,
       buttonColor: SwiperSlideColor.orange,
@@ -299,6 +302,100 @@ const showcases: Showcase[] = [
     metadata: {
       title: "Mobile app development - WideFix",
       description: "See how we built and launched a mobile app with an advanced feature that allowed our client to continue growing."
+    }
+  },
+  {
+    slug: "ruby-on-rails-redesign",
+    category: CategoryName.devDesign,
+    preview: {
+      companyName: "WorshipOnline",
+      solution: "System Design",
+      title: "Ruby on Rails App Redesign",
+      results: "We redesigned the app with zero downtime, achieving 20% more signups and 30% revenue increase.",
+      wrapperColor: SwiperSlideColor.blue,
+      buttonColor: SwiperSlideColor.blue,
+      companyImageSrc: "/img/showcases/clients/wo.svg",
+      url: ''
+    },
+    body: {
+      bannerTopTitle: (
+        <h1>
+          Risk-free Ruby on Rails app <span className="oval">redesign</span> with zero <span className="stripe">downtime</span>
+        </h1>
+      ),
+      bannerTopImageSrc: "/img/showcases/redesign-wo.png",
+      bannerTopImageWebpSrc: "/img/showcases/redesign-wo.webp",
+      bannerSolutionPng: "/img/showcases/system-redesign.jpg",
+      bannerSolutionWebp: "/img/showcases/system-redesign.webp",
+      description: "Complete UI/UX overhaul without disrupting existing users",
+      descriptionText: (
+        <p>
+          Successfully redesigned and migrated a Ruby on Rails application to a new front-end while maintaining <strong><i>zero downtime</i></strong> and preserving full functionality for existing mobile app users. The gradual migration approach resulted in <strong><i>20% increase in daily signups</i></strong> and <strong><i>30% revenue growth</i></strong>.
+        </p>
+      ),
+      detailsTitle: 'Zero-Risk Redesign Strategy',
+      detailsText: (
+        <p>
+          We adopted the existing back-end for the new design and built a completely new front-end, seamlessly integrating it with the updated back-end architecture. <strong><i>All changes were implemented with zero downtime</i></strong> and no risks to the business or existing mobile app users. We implemented a gradual user migration system with the ability to switch back to the old UI in case of any issues, ensuring <strong><i>complete risk mitigation</i></strong>.
+        </p>
+      ),
+      detailsImageSrc: "/img/showcases/case/redesign-architecture.svg",
+      problemText: (
+        <p>
+          The existing Ruby on Rails application had an <strong><i>outdated user interface</i></strong> that was affecting user engagement and conversion rates, but a complete redesign posed significant risks to business continuity and existing mobile app functionality.
+        </p>
+      ),
+      solutionFirstText: (
+        <p>
+          We implemented a sophisticated dual-interface system that allowed us to <strong><i>gradually migrate users to the new design</i></strong> while maintaining the old interface as a fallback option. The new front-end was built using modern technologies and seamlessly integrated with the existing Ruby on Rails back-end. We ensured that all existing API endpoints remained functional for the mobile app, preventing any disruption to mobile users.
+        </p>
+      ),
+      solutionSecondText: (
+        <p>
+          The migration strategy included comprehensive testing, user feedback collection, and real-time monitoring to ensure optimal performance. Users could easily switch between the old and new interfaces during the transition period, providing <strong><i>maximum flexibility and risk mitigation</i></strong>.
+        </p>
+      ),
+      resultBoxes: [
+        {
+          color: ResultBoxColor.green,
+          imageSrc: "/img/showcases/case/icons/user.svg",
+          message: "Daily signups increase",
+          number: "+20%"
+        },
+        {
+          color: ResultBoxColor.blue,
+          imageSrc: "/img/showcases/case/icons/money.svg",
+          message: "Revenue growth",
+          number: "+30%"
+        },
+        {
+          color: ResultBoxColor.lightGreen,
+          imageSrc: "/img/showcases/case/icons/flag.svg",
+          message: "System downtime",
+          number: "0min"
+        }
+      ],
+      resultText: (
+        <p>
+          The redesign was completed with <strong><i>zero downtime</i></strong> and no disruption to existing services. We achieved a <strong><i>20% increase in daily new user signups</i></strong> and a <strong><i>30% increase in revenue</i></strong>. The gradual migration approach ensured that all existing mobile app users continued to have uninterrupted service throughout the entire process.
+        </p>
+      ),
+      helpTitle: "Need help with risk-free application redesign?",
+      related: [
+        {
+          companyName: "WorshipOnline",
+          solution: "Prevent account sharing",
+          results: "We implemented an on-premises solution to combat account sharing.",
+          wrapperColor: SwiperSlideColor.green,
+          buttonColor: SwiperSlideColor.green,
+          companyImageSrc: "/img/showcases/clients/wo.svg",
+          url: "https://blog.widefix.com/risk-free-redesign-ruby-on-rails-app/"
+        }
+      ]
+    },
+    metadata: {
+      title: "Ruby on Rails App Redesign - WideFix",
+      description: "See how we redesigned a Ruby on Rails application with zero downtime, achieving 20% more signups and 30% revenue increase."
     }
   },
   SeoOptimization

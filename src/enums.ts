@@ -35,6 +35,7 @@ export interface ResultBox {
 }
 
 export interface ShowcasePreview {
+  title?: string;
   companyName: string;
   solution: string;
   results: string;

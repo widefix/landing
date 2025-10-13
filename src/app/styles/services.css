@@ -334,3 +334,31 @@
     background: white;
     color: #163B9B;
 }
+
+/* Showcase Item Layout */
+.case-swiper {
+    height: auto;
+}
+
+.case-swiper .swiper-slide {
+    height: auto;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.showcase-item-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex: 1;
+}
+
+.showcase-item-main {
+    flex: 1;
+}
+
+.showcase-item-bottom {
+    margin-top: auto;
+    padding-top: 1rem;
+}
