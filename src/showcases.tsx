@@ -312,7 +312,7 @@ const showcases: Showcase[] = [
       solution: "System Design",
       title: "Ruby on Rails App Redesign",
       results: "We redesigned the app with zero downtime, achieving 20% more signups and 30% revenue increase.",
-      wrapperColor: SwiperSlideColor.blue,
+      wrapperColor: SwiperSlideColor.yellow,
       buttonColor: SwiperSlideColor.blue,
       companyImageSrc: "/img/showcases/clients/wo.svg",
       url: ''
