@@ -137,7 +137,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="achievement-item">
-              <div className="number">Ruby Creator</div>
+              <div className="number">Spotlighted Tweet</div>
               <p><Link href="https://x.com/yukihiro_matz/status/1249973865544970241" target="_blank" rel="nofollow">Quoted by Yukihiro &ldquo;Matz&rdquo; Matsumoto</Link> - Ruby language creator</p>
               <div className="achievement-tags">
                 <div className="achievement-tag founder">Founder</div>
