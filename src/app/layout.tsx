@@ -22,7 +22,7 @@ const montserrat = Montserrat({
   variable: '--font-montserrat',
 })
 
-const desc = "WideFix builds custom software solutions to last and scale. Efficient, reliable, and tailored to your business needs.";
+const desc = "WideFix is a custom software agency led by Toptal expert Andrei Kaleshka, part of the top 3% of global talent.";
 
 export const metadata: Metadata = {
   title: "Your Trusted Software Development Partner - WideFix",
