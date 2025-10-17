@@ -22,9 +22,11 @@ const montserrat = Montserrat({
   variable: '--font-montserrat',
 })
 
+const desc = "WideFix builds custom software solutions to last and scale. Efficient, reliable, and tailored to your business needs.";
+
 export const metadata: Metadata = {
   title: "Your Trusted Software Development Partner - WideFix",
-  description: "Looking to build custom software with Ruby On Rails? Look no further than our trusted and reliable team. We'll work with you every step of the way to bring your vision to life.",
+  description: desc,
   twitter: {
     card: "summary_large_image",
     site: "@ka8725",
@@ -56,7 +58,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Your Trusted Software Development Partner - WideFix",
-    description: "Looking to build custom software with Ruby On Rails? Look no further than our trusted and reliable team. We'll work with you every step of the way to bring your vision to life.",
+    description: desc,
     url: "https://widefix.com",
     siteName: "WideFix",
     images: [
