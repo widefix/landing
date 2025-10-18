@@ -6,7 +6,7 @@ tags: [rails, migrations]
 share: true
 comments: true
 redirect_from:
-  - /2014/01/30/change-data-in-migrations-like-a-boss/
+  - /blog/2014/01/30/change-data-in-migrations-like-a-boss/
 ---
 
 TL;DR: use [migration_data](https://github.com/ka8725/migration_data) gem.

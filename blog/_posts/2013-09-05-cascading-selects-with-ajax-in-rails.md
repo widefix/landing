@@ -6,7 +6,7 @@ tags: [coffeescript, rails, ajax]
 share: true
 comments: true
 redirect_from:
-  - /2013/09/05/cascading-selects-with-ajax-in-rails/
+  - /blog/2013/09/05/cascading-selects-with-ajax-in-rails/
 ---
 
 

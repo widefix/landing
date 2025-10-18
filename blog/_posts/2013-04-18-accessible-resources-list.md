@@ -6,7 +6,7 @@ tags: [rails, cancan, refactoring, gem]
 share: true
 comments: true
 redirect_from:
-  - /2013/04/18/accessible-resources-list/
+  - /blog/2013/04/18/accessible-resources-list/
 ---
 
 

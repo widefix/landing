@@ -6,7 +6,7 @@ tags: [git, hosting]
 share: true
 comments: true
 redirect_from:
-  - /2012/03/21/git-hosting/
+  - /blog/2012/03/21/git-hosting/
 ---
 
 

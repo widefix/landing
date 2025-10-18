@@ -6,7 +6,7 @@ tags: [rails, rake, rspec]
 share: true
 comments: true
 redirect_from:
-  - /2013/08/06/do-you-test-your-rake-tasks/
+  - /blog/2013/08/06/do-you-test-your-rake-tasks/
 ---
 
 

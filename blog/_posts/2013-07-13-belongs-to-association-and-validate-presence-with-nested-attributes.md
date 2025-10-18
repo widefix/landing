@@ -6,7 +6,7 @@ tags: [rails, belongs_to, validator, nested_form]
 share: true
 comments: true
 redirect_from:
-  - /2013/07/13/belongs-to-association-and-validate-presence-with-nested-attributes/
+  - /blog/2013/07/13/belongs-to-association-and-validate-presence-with-nested-attributes/
 ---
 
 

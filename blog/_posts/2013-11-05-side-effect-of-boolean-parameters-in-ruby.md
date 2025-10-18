@@ -6,7 +6,7 @@ tags: [ruby]
 share: true
 comments: true
 redirect_from:
-  - /2013/11/05/side-effect-of-boolean-parameters-in-ruby/
+  - /blog/2013/11/05/side-effect-of-boolean-parameters-in-ruby/
 ---
 
 

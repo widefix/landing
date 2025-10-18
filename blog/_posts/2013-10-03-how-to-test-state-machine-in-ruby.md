@@ -7,7 +7,7 @@ tags: [rspec, ruby]
 share: true
 comments: true
 redirect_from:
-  - /2013/10/03/how-to-test-state-machine-in-ruby/
+  - /blog/2013/10/03/how-to-test-state-machine-in-ruby/
 ---
 
 I could not find any worth solution how to test [state machinee](https://github.com/pluginaweek/state_machine) with RSpec.

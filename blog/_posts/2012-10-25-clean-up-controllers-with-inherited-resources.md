@@ -6,7 +6,7 @@ tags: [rails, gem, rest, refactoring]
 share: true
 comments: true
 redirect_from:
-  - /2012/10/25/clean-up-controllers-with-inherited-resources/
+  - /blog/2012/10/25/clean-up-controllers-with-inherited-resources/
 ---
 
 

@@ -6,7 +6,7 @@ tags: [rails, validator]
 share: true
 comments: true
 redirect_from:
-  - /2013/07/11/belongs-to-and-presence-validation-rule1/
+  - /blog/2013/07/11/belongs-to-and-presence-validation-rule1/
 ---
 
 

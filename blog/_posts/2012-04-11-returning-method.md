@@ -6,7 +6,7 @@ tags: [ruby, rails]
 share: true
 comments: true
 redirect_from:
-  - /2012/04/11/returning-method/
+  - /blog/2012/04/11/returning-method/
 ---
 
 

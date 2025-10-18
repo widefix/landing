@@ -6,7 +6,7 @@ tags: [github, mailchimp]
 share: true
 comments: true
 redirect_from:
-  - /2014/06/15/make-free-landing-page/
+  - /blog/2014/06/15/make-free-landing-page/
 ---
 
 

@@ -6,7 +6,7 @@ tags: [rails]
 share: true
 comments: true
 redirect_from:
-  - /2013/06/29/advanced-rails-model-generators/
+  - /blog/2013/06/29/advanced-rails-model-generators/
 ---
 
 

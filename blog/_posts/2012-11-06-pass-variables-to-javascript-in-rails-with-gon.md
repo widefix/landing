@@ -6,7 +6,7 @@ tags: [gem, rails, javascript]
 share: true
 comments: true
 redirect_from:
-  - /2012/11/06/pass-variables-to-javascript-in-rails-with-gon/
+  - /blog/2012/11/06/pass-variables-to-javascript-in-rails-with-gon/
 ---
 
 

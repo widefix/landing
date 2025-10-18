@@ -6,7 +6,7 @@ tags: [rails, callbacks]
 share: true
 comments: true
 redirect_from:
-  - /2014/03/25/skip-callbacks-in-tests/
+  - /blog/2014/03/25/skip-callbacks-in-tests/
 ---
 
 

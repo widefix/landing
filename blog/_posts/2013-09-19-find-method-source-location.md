@@ -6,7 +6,7 @@ tags: [ruby]
 share: true
 comments: true
 redirect_from:
-  - /2013/09/19/find-method-source-location/
+  - /blog/2013/09/19/find-method-source-location/
 ---
 
 

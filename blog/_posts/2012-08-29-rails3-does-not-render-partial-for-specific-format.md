@@ -6,7 +6,7 @@ tags: [rails3, render]
 share: true
 comments: true
 redirect_from:
-  - /2012/08/29/rails3-does-not-render-partial-for-specific-format/
+  - /blog/2012/08/29/rails3-does-not-render-partial-for-specific-format/
 ---
 
 

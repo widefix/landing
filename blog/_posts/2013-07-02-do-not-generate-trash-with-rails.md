@@ -6,7 +6,7 @@ tags: [rails]
 share: true
 comments: true
 redirect_from:
-  - /2013/07/02/do-not-generate-trash-with-rails/
+  - /blog/2013/07/02/do-not-generate-trash-with-rails/
 ---
 
 

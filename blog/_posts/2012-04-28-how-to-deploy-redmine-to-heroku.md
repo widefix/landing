@@ -6,7 +6,7 @@ tags: [heroku, redmine, rails, hosting]
 share: true
 comments: true
 redirect_from:
-  - /2012/04/28/how-to-deploy-redmine-to-heroku/
+  - /blog/2012/04/28/how-to-deploy-redmine-to-heroku/
 ---
 
 

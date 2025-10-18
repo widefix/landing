@@ -6,7 +6,7 @@ tags: [ruby, bundler, gems]
 share: true
 comments: true
 redirect_from:
-  - /2012/08/27/passing-build-options-to-bundler/
+  - /blog/2012/08/27/passing-build-options-to-bundler/
 ---
 
 

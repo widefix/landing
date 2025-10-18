@@ -6,7 +6,7 @@ tags: [rails, gem]
 share: true
 comments: true
 redirect_from:
-  - /2012/10/09/build-associations-automatically-in-fields-for/
+  - /blog/2012/10/09/build-associations-automatically-in-fields-for/
 ---
 
 

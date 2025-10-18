@@ -6,7 +6,7 @@ tags: [ruby]
 share: true
 comments: true
 redirect_from:
-  - /2013/04/29/parse-csv-with-column-names/
+  - /blog/2013/04/29/parse-csv-with-column-names/
 ---
 
 

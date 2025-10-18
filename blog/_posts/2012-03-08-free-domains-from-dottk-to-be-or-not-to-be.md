@@ -6,7 +6,7 @@ tags: [domain]
 share: true
 comments: true
 redirect_from:
-  - /2012/03/08/free-domains-from-dottk-to-be-or-not-to-be/
+  - /blog/2012/03/08/free-domains-from-dottk-to-be-or-not-to-be/
 ---
 
 

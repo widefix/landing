@@ -7,7 +7,7 @@ tags: [rails, layouts, render, partial]
 share: true
 comments: true
 redirect_from:
-  - /2014/05/20/rails-nested-layouts/
+  - /blog/2014/05/20/rails-nested-layouts/
 ---
 
 

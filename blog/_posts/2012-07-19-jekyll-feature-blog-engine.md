@@ -6,7 +6,7 @@ tags: [jekyll, git, hosting, blog]
 share: true
 comments: true
 redirect_from:
-  - /2012/07/19/jekyll-feature-blog-engine/
+  - /blog/2012/07/19/jekyll-feature-blog-engine/
 ---
 
 

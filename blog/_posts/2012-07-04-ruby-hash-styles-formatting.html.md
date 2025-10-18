@@ -6,7 +6,7 @@ tags: [ruby, rails, formatting]
 share: true
 comments: true
 redirect_from:
-  - /2012/07/04/ruby-hash-styles-formatting.html
+  - /blog/2012/07/04/ruby-hash-styles-formatting.html
 ---
 
 

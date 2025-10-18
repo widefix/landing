@@ -6,7 +6,7 @@ tags: [rails, capistrano]
 share: true
 comments: true
 redirect_from:
-  - /2013/02/15/how-to-define-environment-variables-in-rails/
+  - /blog/2013/02/15/how-to-define-environment-variables-in-rails/
 ---
 
 

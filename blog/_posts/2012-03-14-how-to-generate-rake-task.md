@@ -9,7 +9,7 @@ featured_post: false
 comments: true
 image: rake-task.jpg
 redirect_from:
-  - /2012/03/14/how-to-generate-rake-task/
+  - /blog/2012/03/14/how-to-generate-rake-task/
 ---
 
 TL;DR: use rails generator `rails g task my_namespace my_task1 my_task2`.

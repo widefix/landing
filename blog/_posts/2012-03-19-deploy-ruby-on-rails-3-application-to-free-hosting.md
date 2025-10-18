@@ -6,7 +6,7 @@ tags: [hosting, rails]
 share: true
 comments: true
 redirect_from:
-  - /2012/03/19/deploy-ruby-on-rails-3-application-to-free-hosting/
+  - /blog/2012/03/19/deploy-ruby-on-rails-3-application-to-free-hosting/
 ---
 
 

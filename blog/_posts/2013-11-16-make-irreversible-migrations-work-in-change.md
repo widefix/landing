@@ -8,7 +8,7 @@ tags: [rails, migrations]
 share: true
 comments: true
 redirect_from:
-  - /2013/11/16/make-irreversible-migrations-work-in-change/
+  - /blog/2013/11/16/make-irreversible-migrations-work-in-change/
 ---
 
 

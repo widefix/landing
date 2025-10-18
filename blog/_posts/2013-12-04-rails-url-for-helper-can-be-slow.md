@@ -7,7 +7,7 @@ tags: [rails]
 share: true
 comments: true
 redirect_from:
-  - /2013/12/04/rails-url-for-helper-can-be-slow/
+  - /blog/2013/12/04/rails-url-for-helper-can-be-slow/
 ---
 
 

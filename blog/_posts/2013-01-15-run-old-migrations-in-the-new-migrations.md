@@ -6,7 +6,7 @@ tags: [rails, active_record, migrations]
 share: true
 comments: true
 redirect_from:
-  - /2013/01/15/run-old-migrations-in-the-new-migrations/
+  - /blog/2013/01/15/run-old-migrations-in-the-new-migrations/
 ---
 
 
