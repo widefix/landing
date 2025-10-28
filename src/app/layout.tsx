@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter, Montserrat } from "next/font/google";
 import "@/app/styles/main.scss";
 import "@/app/styles/normalize.css";
@@ -80,6 +81,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${montserrat.variable}`}>
+      <head>
+        <Script src="https://analytics.ahrefs.com/analytics.js" data-key="HnkuFuvcrzOwRGEFlpZrIA" async strategy="afterInteractive" />
+      </head>
       <body>
         <Header />
         {children}
