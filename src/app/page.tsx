@@ -349,28 +349,38 @@ export default function HomePage() {
               <div className="block m-expertise">
                 <h3><Image src="/img/icons/expertise.svg" alt="Icon for Expertise and experience block" width="56"
                     height="56" /> Expertise and experience</h3>
-                <p>Team of experienced developers has a track record of delivering high-quality code and solving complex
-                  problems. We have the skills and knowledge to tackle any project, no matter how challenging</p>
-                <ul style={{ listStyleType: 'none', paddingLeft: 0, lineHeight: 1.5, marginTop: '1rem' }}>
-                  <li>✅ <b>Double revenue</b> by eliminating app friction</li>
-                  <li>✅ <b>Scale without crashes</b> — optimize memory, database, caching</li>
-                  <li>✅ <b>Get to market faster</b> with expert-built features and integrations</li>
-                  <li>✅ <b>Cut dev costs</b> through clean refactoring and reduced downtime</li>
-                  <li>✅ <b>Fix bugs others can&apos;t</b> — deep experience with complex Rails codebases</li>
-                </ul>
+                <p>Our team of experienced developers has a proven track record of delivering high-quality code and solving complex problems. We have the skills and knowledge to tackle any project, no matter how challenging.</p>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginTop: '1rem' }}>
+                  <div style={{ padding: '1rem', border: '1px solid #e0e0e0', borderRadius: '8px', backgroundColor: '#f9f9f9' }}>
+                    <b>Double revenue</b>
+                    <p style={{ fontSize: '0.9rem', marginTop: '0.5rem', color: '#666' }}>💰 Eliminate app friction</p>
+                  </div>
+                  <div style={{ padding: '1rem', border: '1px solid #e0e0e0', borderRadius: '8px', backgroundColor: '#f9f9f9' }}>
+                    <b>Scale without crashes</b>
+                    <p style={{ fontSize: '0.9rem', marginTop: '0.5rem', color: '#666' }}>⚡ Optimized memory, database, and caching</p>
+                  </div>
+                  <div style={{ padding: '1rem', border: '1px solid #e0e0e0', borderRadius: '8px', backgroundColor: '#f9f9f9' }}>
+                    <b>Get to market faster</b>
+                    <p style={{ fontSize: '0.9rem', marginTop: '0.5rem', color: '#666' }}>🚀 Expert-built features and integrations</p>
+                  </div>
+                  <div style={{ padding: '1rem', border: '1px solid #e0e0e0', borderRadius: '8px', backgroundColor: '#f9f9f9' }}>
+                    <b>Cut dev costs</b>
+                    <p style={{ fontSize: '0.9rem', marginTop: '0.5rem', color: '#666' }}>💵 Clean refactoring and reduced downtime</p>
+                  </div>
+                  <div style={{ padding: '1rem', border: '1px solid #e0e0e0', borderRadius: '8px', backgroundColor: '#f9f9f9' }}>
+                    <b>Fix bugs others can&apos;t</b>
+                    <p style={{ fontSize: '0.9rem', marginTop: '0.5rem', color: '#666' }}>🔧 Deep Rails codebases experience</p>
+                  </div>
+                </div>
               </div>
               <div className="block m-innovative">
                 <h3><Image src="/img/icons/innovative.svg" alt="Icon for Innovative solutions block" width="56" height="56" />
                   Innovative solutions</h3>
-                <p>We stay on the cutting edge of technology and uses the latest tools to deliver the best solutions to
-                  clients. Timely internal code review and QA ensure in maintaining high standards and meeting client
-                  expectations.</p>
+                <p>We stay on the cutting edge of technology and use the latest tools to deliver the best solutions to our clients. Our timely internal code reviews and QA processes ensure we maintain high standards and meet client expectations.</p>
               </div>
               <div className="block m-support">
-                <h3><Image src="/img/icons/support.svg" alt="Icon for Dedicated block" width="56" height="56" /> Dedicated
-                  Support</h3>
-                <p>We offer unparalleled support and customer service. Whether you have a question about your project or
-                  need help troubleshooting, Team is always here to support you and ensure your project’s success.</p>
+                <h3><Image src="/img/icons/support.svg" alt="Icon for Dedicated block" width="56" height="56" /> Dedicated support</h3>
+                <p>We offer unparalleled support and customer service. Whether you have questions about your project or need help troubleshooting, our team is always here to support you and ensure your project&apos;s success.</p>
               </div>
             </div>
           </div>
