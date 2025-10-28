@@ -1,3 +1,4 @@
+import ClutchWidget from '@/components/ClutchWidget';
 import Image from 'next/image'
 import Link from 'next/link';
 
@@ -754,126 +755,8 @@ export default function HomePage() {
                 rel="nofollow">Request a free 15‑minute app audit</Link>
             </div>
           </header>
-          <Link href="https://clutch.co/profile/widefix#reviews" target="_blank" rel="nofollow">
-            <picture>
-              <source srcSet="/img/powered-by-clutch.webp" type="image/webp" />
-              <Image src="/img/powered-by-clutch.png" alt="Clutch Logo" width="130" height="20" />
-            </picture>
-          </Link>
           <div className="slider-wrapper">
-            <div className="slider">
-              <div className="slide">
-                <div className="slide-inner">
-                  <div className="slide-item">
-                    <div className="client-card">
-                      <header>
-                        <div className="header">
-                          <div className="right-header">
-                            <cite className="name">Damian Repovs</cite>
-                            <p className="job">Founder & CEO, Costa del Home</p>
-                          </div>
-                        </div>
-                        <blockquote>
-                          WideFix did really amazing work on the backend to enable our growth.
-                        </blockquote>
-                      </header>
-                      <footer>
-                        <div className="left-footer">
-                          <div className="star-rating">
-                            <span className="rating-point">5.0</span>
-                            <span className="fa fa-star"></span>
-                            <span className="fa fa-star"></span>
-                            <span className="fa fa-star"></span>
-                            <span className="fa fa-star"></span>
-                            <span className="fa fa-star"></span>
-                          </div>
-                        </div>
-                        <div className="right-footer">
-                          <p className="verified-review">
-                            <Image src="/img/icons/verified.svg" width="16" height="16" alt="Verified icon" />
-                            <span>Verified Review</span>
-                          </p>
-                        </div>
-                      </footer>
-                    </div>
-                  </div>
-                  <div className="slide-item">
-                    <div className="client-card">
-                      <header>
-                        <div className="header">
-                          <div className="right-header">
-                            <cite className="name">Tatiana Solodovnikova</cite>
-                            <p className="job">Founder & Project Manager, CertifyIt</p>
-                          </div>
-                        </div>
-                        <blockquote>
-                          &ldquo;It was their speedy response that stood out.&rdquo;
-                        </blockquote>
-                      </header>
-                      <footer>
-                        <div className="left-footer">
-                          <div className="star-rating">
-                            <span className="rating-point">5.0</span>
-                            <span className="fa fa-star"></span>
-                            <span className="fa fa-star"></span>
-                            <span className="fa fa-star"></span>
-                            <span className="fa fa-star"></span>
-                            <span className="fa fa-star"></span>
-                          </div>
-                        </div>
-                        <div className="right-footer">
-                          <p className="verified-review">
-                            <Image src="/img/icons/verified.svg" width="16" height="16" alt="Verified icon" />
-                            <span>Verified Review</span>
-                          </p>
-                        </div>
-                      </footer>
-                    </div>
-                  </div>
-                  <div className="slide-item">
-                    <div className="client-card">
-                      <header>
-                        <div className="header">
-                          <div className="right-header">
-                            <cite className="name">Sean Flannagan</cite>
-                            <p className="job">Principal Product Manager, Kajabi LLC</p>
-                          </div>
-                        </div>
-                        <blockquote>
-                          &ldquo;Step by step, tangible progress is made, and the product metrics reflect that.&rdquo;
-                        </blockquote>
-                      </header>
-                      <footer>
-                        <div className="left-footer">
-                          <div className="star-rating">
-                            <span className="rating-point">5.0</span>
-                            <span className="fa fa-star"></span>
-                            <span className="fa fa-star"></span>
-                            <span className="fa fa-star"></span>
-                            <span className="fa fa-star"></span>
-                            <span className="fa fa-star"></span>
-                          </div>
-                        </div>
-                        <div className="right-footer">
-                          <p className="verified-review">
-                            <Image src="/img/icons/verified.svg" width="16" height="16" alt="Verified icon" />
-                            <span>Verified Review</span>
-                          </p>
-                        </div>
-                      </footer>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="slider-footer">
-              <div className="slide-indicator">
-                <span className="indicator-item active"></span>
-              </div>
-              <div className="slider-controls">
-              </div>
-            </div>
+            <ClutchWidget />
           </div>
         </div>
       </section>
