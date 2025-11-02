@@ -59,6 +59,9 @@ export default function Header() {
               <li className={pathname === '/services' ? 'active' : ''}>
                 <Link href="/services">Services</Link>
               </li>
+              <li className={pathname === '/career' ? 'active' : ''}>
+                <Link href="/career">Career</Link>
+              </li>
               <li className={pathname === '/contact' ? 'active' : ''}>
                 <Link href="/contact">Contact</Link>
               </li>

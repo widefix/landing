@@ -1,0 +1,392 @@
+.career {
+  background-color: $background-light;
+
+  .inner {
+    header {
+      text-align: center;
+      margin-bottom: 60px;
+
+      h2 {
+        font-size: 48px;
+        font-weight: 600;
+        color: $text-primary;
+        margin-bottom: 12px;
+        line-height: 1.2;
+
+        span {
+          color: $primary-default;
+        }
+
+        @media screen and (max-width: $media-md) {
+          font-size: 36px;
+        }
+
+        @media screen and (max-width: $media-sm) {
+          font-size: 28px;
+        }
+      }
+
+      p {
+        font-size: 18px;
+        color: $text-secondary;
+        max-width: 600px;
+        margin: 0 auto;
+
+        @media screen and (max-width: $media-sm) {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .career-intro {
+    max-width: 900px;
+    margin: 0 auto 80px;
+    background-color: $background-overlay;
+    padding: 40px;
+    border-radius: 12px;
+    border-left: 4px solid $primary-default;
+
+    @media screen and (max-width: $media-md) {
+      margin-bottom: 60px;
+      padding: 30px;
+    }
+
+    @media screen and (max-width: $media-sm) {
+      margin-bottom: 40px;
+      padding: 24px;
+      border-left-width: 3px;
+    }
+
+    .intro-text {
+      font-size: 18px;
+      color: $text-primary;
+      line-height: 1.6;
+      margin: 0;
+
+      @media screen and (max-width: $media-sm) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .roles-section {
+    margin-bottom: 80px;
+
+    @media screen and (max-width: $media-md) {
+      margin-bottom: 60px;
+    }
+
+    @media screen and (max-width: $media-sm) {
+      margin-bottom: 40px;
+    }
+
+    h3 {
+      font-size: 28px;
+      font-weight: 600;
+      color: $text-primary;
+      margin-bottom: 32px;
+
+      @media screen and (max-width: $media-sm) {
+        font-size: 22px;
+        margin-bottom: 24px;
+      }
+    }
+
+    .roles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+
+      @media screen and (max-width: $media-sm) {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .role-card {
+        background-color: $background-page;
+        padding: 32px;
+        border-radius: 8px;
+        border: 2px solid $ui-element-divider;
+        transition: all 0.3s ease;
+
+        @media screen and (max-width: $media-sm) {
+          padding: 24px;
+        }
+
+        &:hover {
+          border-color: $primary-default;
+          box-shadow: 0 4px 12px rgba($primary-default, 0.1);
+          transform: translateY(-2px);
+        }
+
+        h4 {
+          font-size: 20px;
+          font-weight: 600;
+          color: $text-primary;
+          margin: 0 0 12px 0;
+        }
+
+        p {
+          font-size: 16px;
+          color: $text-secondary;
+          margin: 0;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+
+  .values-section {
+    margin-bottom: 80px;
+
+    @media screen and (max-width: $media-md) {
+      margin-bottom: 60px;
+    }
+
+    @media screen and (max-width: $media-sm) {
+      margin-bottom: 40px;
+    }
+
+    h3 {
+      font-size: 28px;
+      font-weight: 600;
+      color: $text-primary;
+      margin-bottom: 40px;
+      text-align: center;
+
+      @media screen and (max-width: $media-sm) {
+        font-size: 22px;
+        margin-bottom: 32px;
+      }
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
+      margin-bottom: 40px;
+
+      @media screen and (max-width: $media-md) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+
+      @media screen and (max-width: $media-sm) {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .value-item {
+        text-align: left;
+        padding: 24px;
+        background-color: $background-page;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        display: flex;
+        gap: 16px;
+
+        @media screen and (max-width: $media-sm) {
+          padding: 20px;
+          gap: 12px;
+        }
+
+        &:hover {
+          background-color: $background-container-hover;
+          transform: translateY(-4px);
+        }
+
+        .value-icon {
+          margin-bottom: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 56px;
+          height: 56px;
+          border-radius: 50%;
+          background-color: rgba($primary-default, 0.1);
+          font-size: 32px;
+          line-height: 1;
+          flex-shrink: 0;
+
+          img {
+            max-width: 48px;
+            height: auto;
+          }
+
+          .unicode-icon {
+            display: inline-block;
+            font-size: 32px;
+            line-height: 1;
+            width: 100%;
+            text-align: center;
+          }
+        }
+
+        .value-content {
+          flex: 1;
+
+          h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: $text-primary;
+            margin: 0 0 12px 0;
+
+            @media screen and (max-width: $media-sm) {
+              font-size: 16px;
+            }
+          }
+
+          p {
+            font-size: 14px;
+            color: $text-secondary;
+            margin: 0;
+            line-height: 1.6;
+          }
+        }
+      }
+    }
+  }
+
+  .value-proposition {
+    background-color: $background-page;
+    padding: 48px;
+    border-radius: 8px;
+    border: 1px solid $ui-element-divider;
+    margin-bottom: 80px;
+
+    @media screen and (max-width: $media-md) {
+      padding: 36px;
+      margin-bottom: 60px;
+    }
+
+    @media screen and (max-width: $media-sm) {
+      padding: 24px;
+      margin-bottom: 40px;
+    }
+
+    h3 {
+      font-size: 28px;
+      font-weight: 600;
+      color: $text-primary;
+      margin-bottom: 32px;
+
+      @media screen and (max-width: $media-sm) {
+        font-size: 22px;
+        margin-bottom: 24px;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        font-size: 16px;
+        color: $text-primary;
+        margin-bottom: 20px;
+        padding-left: 32px;
+        position: relative;
+        line-height: 1.6;
+
+        @media screen and (max-width: $media-sm) {
+          font-size: 15px;
+          margin-bottom: 16px;
+          padding-left: 28px;
+        }
+
+        &::before {
+          content: '✓';
+          position: absolute;
+          left: 0;
+          color: $primary-default;
+          font-weight: bold;
+          font-size: 20px;
+        }
+
+        strong {
+          color: $text-primary;
+          font-weight: 600;
+        }
+      }
+
+      li:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .cta-section {
+    text-align: center;
+    padding: 48px;
+    background-color: $background-dark;
+    border-radius: 8px;
+
+    @media screen and (max-width: $media-md) {
+      padding: 36px;
+    }
+
+    @media screen and (max-width: $media-sm) {
+      padding: 28px;
+    }
+
+    h3 {
+      font-size: 28px;
+      font-weight: 600;
+      color: $text-light;
+      margin-bottom: 16px;
+
+      @media screen and (max-width: $media-sm) {
+        font-size: 22px;
+      }
+    }
+
+    p {
+      font-size: 18px;
+      color: $text-light;
+      margin-bottom: 32px;
+      line-height: 1.6;
+
+      @media screen and (max-width: $media-sm) {
+        font-size: 16px;
+        margin-bottom: 24px;
+      }
+    }
+
+    .button-container {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      @media screen and (max-width: $media-sm) {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .button {
+        &.primary {
+          background-color: $primary-default;
+          color: $text-button-primary;
+
+          &:hover {
+            background-color: $primary-hover;
+          }
+        }
+
+        &.secondary {
+          background-color: transparent;
+          color: $text-light;
+          border: 2px solid $text-light;
+
+          &:hover {
+            background-color: rgba($text-light, 0.1);
+            border-color: $primary-default;
+            color: $primary-default;
+          }
+        }
+      }
+    }
+  }
+}
