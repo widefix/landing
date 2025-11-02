@@ -215,6 +215,11 @@ export default function HomePage() {
               When you work with us, all underlying issues get resolved systematically,
               ensuring your app won&apos;t be slowed down by recurring problems.
             </p>
+            <div className="expertise-highlight">
+              <p className="highlight-text">
+                We are <strong>fintech experts</strong> with deep expertise in <strong>payment systems integration</strong> (Stripe, PayPal, Square) and <strong>accounting software integration</strong> (Xero, QuickBooks, Sage, Clearbooks). Our specialization includes building robust financial workflows, <strong>financial reporting solutions</strong>, and <strong>data analysis systems</strong> that drive business growth.
+              </p>
+            </div>
             <div className="tech-stack">
               <h3>Our Technology Expertise</h3>
               <div className="tech-categories">

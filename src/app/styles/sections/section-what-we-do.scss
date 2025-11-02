@@ -20,6 +20,33 @@
             color: $text-secondary;
             font-size: 20px;
             line-height: 28px;
+            margin-bottom: 24px;
+        }
+
+        .expertise-highlight {
+            background: linear-gradient(135deg, rgba($primary-default, 0.08) 0%, rgba($accent-default, 0.08) 100%);
+            border-left: 4px solid $primary-default;
+            padding: 24px 28px;
+            border-radius: 8px;
+            margin-top: 28px;
+
+            .highlight-text {
+                font: $text-body-display-s;
+                color: $text-primary;
+                font-size: 18px;
+                line-height: 28px;
+                margin: 0;
+
+                strong {
+                    color: $primary-default;
+                    font-weight: 600;
+                }
+
+                @media (max-width: $media-md) {
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+            }
         }
     }
 
@@ -47,7 +74,7 @@
             }
         }
     }
-    
+
     .block-left {
         width: 93px;
         text-align: left;
@@ -57,8 +84,8 @@
             margin-bottom: 10px;
         }
     }
- 
-    
+
+
     .block-right {
         width: 75%;
         padding-left: 20px;
