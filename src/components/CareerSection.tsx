@@ -7,7 +7,7 @@ export default function CareerSection() {
       icon: '/img/career/passion.svg',
       unicode: '⭐',
       title: 'Passion for Quality',
-      description: 'You\'re passionate about building high-quality products that users love'
+      description: 'You&apos;re passionate about building high-quality products that users love'
     },
     {
       icon: '/img/career/algorithms.svg',
@@ -37,7 +37,7 @@ export default function CareerSection() {
       icon: '/img/career/responsive.svg',
       unicode: '⚡',
       title: 'Responsible & Responsive',
-      description: 'You\'re reliable and ready to handle urgent tasks quickly when needed'
+      description: 'You&apos;re reliable and ready to handle urgent tasks quickly when needed'
     },
     {
       icon: '/img/career/analytical.svg',
@@ -78,7 +78,7 @@ export default function CareerSection() {
 
         <div className="career-intro">
           <p className="intro-text">
-            Are you someone who takes pride in building exceptional software? Do you believe that understanding the fundamentals - algorithms, data structures, and architecture - directly impacts product quality? If you're self-organized, result-driven, and passionate about solving real problems, we want to hear from you.
+            Are you someone who takes pride in building exceptional software? Do you believe that understanding the fundamentals - algorithms, data structures, and architecture - directly impacts product quality? If you&apos;re self-organized, result-driven, and passionate about solving real problems, we want to hear from you.
           </p>
         </div>
 
@@ -127,7 +127,7 @@ export default function CareerSection() {
               <strong>Clean code matters</strong>. We invest in code quality, automated testing, and sustainable architecture
             </li>
             <li>
-              <strong>Ownership mindset</strong>. You'll have autonomy to make decisions and own your work
+              <strong>Ownership mindset</strong>. You&apos;ll have autonomy to make decisions and own your work
             </li>
             <li>
               <strong>Global reach</strong>. Work with clients and teams from around the world
