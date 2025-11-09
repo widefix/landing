@@ -2,15 +2,18 @@ import React from 'react';
 import type { Metadata } from 'next';
 import ShowcasesComponent from '@/components/showcases/ShowcasesComponent';
 
+const description = "Discover how WideFix transforms businesses with our expert web development and digital solutions across various industries.";
+const title = "Showcases - WideFix";
+
 export const metadata: Metadata = {
-  title: "Showcases - WideFix",
-  description: "Check out our amazing showcases! We've put a ton of effort into making them awesome, and our clients love them because they're affordable and make a big impression.",
+  title: title,
+  description: description,
   alternates: {
     canonical: "https://widefix.com/showcases"
   },
   openGraph: {
-    title: "Showcases - WideFix",
-    description: "Check out our amazing showcases! We've put a ton of effort into making them awesome, and our clients love them because they're affordable and make a big impression.",
+    title: title,
+    description: description,
     url: "https://widefix.com/showcases",
     siteName: "WideFix",
     images: [

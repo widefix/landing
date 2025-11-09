@@ -8,11 +8,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import categories from '@/categories.tsx';
 
-export const metadata: Metadata = {
-  title: "Showcases - WideFix",
-  description: "Check out our amazing showcases! We've put a ton of effort into making them awesome, and our clients love them because they're affordable and make a big impression."
-}
-
 export default function ShowcasesPage() {
   const activeCategories = categories.filter(category => category.active);
 
