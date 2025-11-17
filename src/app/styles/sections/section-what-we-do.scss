@@ -24,7 +24,7 @@
         }
 
         .expertise-highlight {
-            background: linear-gradient(135deg, rgba($primary-default, 0.08) 0%, rgba($accent-default, 0.08) 100%);
+            background-color: $background-overlay;
             border-left: 4px solid $primary-default;
             padding: 24px 28px;
             border-radius: 8px;
@@ -38,7 +38,7 @@
                 margin: 0;
 
                 strong {
-                    color: $primary-default;
+                    color: #163b9b;
                     font-weight: 600;
                 }
 
