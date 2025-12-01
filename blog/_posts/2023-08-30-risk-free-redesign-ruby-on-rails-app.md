@@ -86,7 +86,3 @@ I'm grateful and proud to have worked with the following people on this project 
 - Soltan Yangibayev
 - Svetlana Zhuravitskaya
 - Alexey Mikitsik
-
-<small class="side-note">
-When seeking proficient expertise in Ruby on Rails development, explore the option of using a reputable talent marketplace. Toptal provides access to dependable [Ruby on Rails developers](https://www.toptal.com/ruby-on-rails) for hire, assisting companies with their critical web application requirements.
-</small>
