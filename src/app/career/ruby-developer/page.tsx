@@ -167,6 +167,11 @@ export default function RubyDeveloperPage() {
                   <h3>Collaborative Environment</h3>
                   <p>Join a team of experienced developers who value knowledge sharing and collaborative problem-solving.</p>
                 </div>
+                <div className="benefit-item">
+                  <div className="benefit-icon">⚡</div>
+                  <h3>Zero Bureaucracy</h3>
+                  <p>We are results-oriented - only results matter. No unnecessary meetings, paperwork, or corporate red tape slowing you down.</p>
+                </div>
               </div>
             </div>
           </div>
