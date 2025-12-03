@@ -137,6 +137,123 @@
     }
   }
 
+  .open-positions-section {
+    margin-bottom: 80px;
+
+    @media screen and (max-width: $media-md) {
+      margin-bottom: 60px;
+    }
+
+    @media screen and (max-width: $media-sm) {
+      margin-bottom: 40px;
+    }
+
+    h3 {
+      font-size: 28px;
+      font-weight: 600;
+      color: $text-primary;
+      margin-bottom: 32px;
+
+      @media screen and (max-width: $media-sm) {
+        font-size: 22px;
+        margin-bottom: 24px;
+      }
+    }
+
+    .positions-grid {
+      display: grid;
+      gap: 24px;
+
+      .position-card {
+        background-color: $background-page;
+        padding: 32px;
+        border-radius: 8px;
+        border: 2px solid $primary-default;
+        transition: all 0.3s ease;
+
+        @media screen and (max-width: $media-sm) {
+          padding: 24px;
+        }
+
+        &:hover {
+          border-color: $primary-hover;
+          box-shadow: 0 4px 12px rgba($primary-default, 0.2);
+          transform: translateY(-2px);
+        }
+
+        .position-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          margin-bottom: 16px;
+          gap: 16px;
+
+          h4 {
+            font-size: 20px;
+            font-weight: 600;
+            color: $text-primary;
+            margin: 0;
+            flex: 1;
+          }
+
+          .position-badge {
+            background-color: rgba($primary-default, 0.1);
+            color: $primary-default;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            flex-shrink: 0;
+          }
+        }
+
+        p {
+          font-size: 16px;
+          color: $text-secondary;
+          margin: 0 0 20px 0;
+          line-height: 1.5;
+        }
+
+        .position-details {
+          display: flex;
+          gap: 16px;
+          margin-bottom: 24px;
+          flex-wrap: wrap;
+
+          @media screen and (max-width: $media-sm) {
+            gap: 12px;
+          }
+
+          .detail-item {
+            font-size: 14px;
+            color: $text-primary;
+            background-color: $background-overlay;
+            padding: 6px 12px;
+            border-radius: 6px;
+            white-space: nowrap;
+          }
+        }
+
+        .position-link {
+          display: inline-flex;
+          align-items: center;
+          color: $primary-default;
+          text-decoration: none;
+          font-weight: 600;
+          font-size: 16px;
+          transition: all 0.3s ease;
+
+          &:hover {
+            color: $primary-hover;
+            transform: translateX(4px);
+          }
+        }
+      }
+    }
+  }
+
   .values-section {
     margin-bottom: 80px;
 

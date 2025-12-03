@@ -94,6 +94,27 @@ export default function CareerSection() {
           </div>
         </div>
 
+        <div className="open-positions-section">
+          <h3>Current Open Positions:</h3>
+          <div className="positions-grid">
+            <div className="position-card">
+              <div className="position-header">
+                <h4>Ruby Developer</h4>
+                <span className="position-badge">Contract</span>
+              </div>
+              <p>Work on integrations with third-party billing systems including Stripe, Xero, and Shopify. Fully remote position.</p>
+              <div className="position-details">
+                <span className="detail-item">🌍 Remote</span>
+                <span className="detail-item">⏰ GMT +/-3h</span>
+                <span className="detail-item">📅 Short-term</span>
+              </div>
+              <Link href="/career/ruby-developer" className="position-link">
+                View Details & Apply →
+              </Link>
+            </div>
+          </div>
+        </div>
+
         <div className="values-section">
           <h3>What we look for:</h3>
           <div className="values-grid">
