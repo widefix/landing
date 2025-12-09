@@ -28,7 +28,7 @@ export default function HomePage() {
             </div>
             <div className="button-container">
               <Link className="button primary" href="https://calendly.com/andrei-kaleshka/30min" target="_blank"
-                rel="nofollow">Request a free 15‑minute app audit</Link>
+                rel="nofollow">Request a free app audit</Link>
             </div>
           </div>
           <div className="hero-block-right">
@@ -335,7 +335,7 @@ export default function HomePage() {
           </div>
           <div className="button-container">
             <Link className="button primary" href="https://calendly.com/andrei-kaleshka/30min" target="_blank"
-              rel="nofollow">Request a free 15‑minute app audit</Link>
+              rel="nofollow">Request a free app audit</Link>
           </div>
         </div>
       </section>
@@ -397,7 +397,7 @@ export default function HomePage() {
           <header>
             <h2>You have a lot to consider. Let experts <span>optimize</span> your app that customers will love to use!</h2>
             <div className="button-wrapper"><Link className="button primary" href="https://calendly.com/andrei-kaleshka/30min"
-                target="_blank" rel="nofollow">Request a free 15‑minute app audit</Link></div>
+                target="_blank" rel="nofollow">Request a free app audit</Link></div>
           </header>
           <div className="section-content">
             <div className="section-block">
@@ -457,7 +457,7 @@ export default function HomePage() {
 
           <div className="button-container">
             <Link className="button primary" href="https://calendly.com/andrei-kaleshka/30min" target="_blank"
-              rel="nofollow">Request a free 15‑minute app audit</Link>
+              rel="nofollow">Request a free app audit</Link>
           </div>
         </div>
       </section>
@@ -767,7 +767,7 @@ export default function HomePage() {
             <h2>Read what our <span>clients</span> have to say.</h2>
             <div className="button-container">
               <Link className="button primary" href="https://calendly.com/andrei-kaleshka/30min" target="_blank"
-                rel="nofollow">Request a free 15‑minute app audit</Link>
+                rel="nofollow">Request a free app audit</Link>
             </div>
           </header>
           <div className="slider-wrapper">

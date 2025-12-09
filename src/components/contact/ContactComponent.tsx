@@ -70,7 +70,7 @@ export default function ContactComponent() {
                 </div>
                 <div className="contact-info">
                   <h3>Schedule a Consultation</h3>
-                  <p>Book a free 15-minute call to discuss your project</p>
+                  <p>Book a free call to discuss your project</p>
                   <a className="button primary" href="https://calendly.com/andrei-kaleshka/30min" target="_blank" rel="nofollow">
                     Schedule Now
                   </a>
