@@ -55,7 +55,7 @@ export default function HomePage() {
           <div className="achievements-grid">
             <div className="achievement-item">
               <div className="number">Top 3%</div>
-              <p>WideFix founder among <Link href="https://www.toptal.com/resume/andrey-koleshko" target="_blank" rel="nofollow">top software engineers worldwide</Link> (Toptal)</p>
+              <p>WideFix founder among <Link href="https://www.toptal.com/resume/andrei-kaleshka" target="_blank" rel="nofollow">top software engineers worldwide</Link> (Toptal)</p>
               <div className="achievement-tags">
                 <div className="achievement-tag founder">Founder</div>
               </div>
@@ -704,7 +704,7 @@ export default function HomePage() {
           </header>
           <div className="container">
             <div className="item toptal-resume">
-              <Link rel="nofollow" href="https://www.toptal.com/resume/andrey-koleshko"
+              <Link rel="nofollow" href="https://www.toptal.com/resume/andrei-kaleshka"
                 target="_blank">
                 <div className="content">
                   <span>Verified expert</span>
