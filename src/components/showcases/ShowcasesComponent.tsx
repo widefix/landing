@@ -105,6 +105,9 @@ export default function ShowcasesPage() {
                       <SwiperSlide>
                         <Image src="/img/showcases/clients/kajabi.svg" alt="Kajabi" width="138" height="24" />
                       </SwiperSlide>
+                      <SwiperSlide>
+                        <Image src="/img/showcases/clients/shopwired.svg" alt="Shopwired" width="150" height="45" />
+                      </SwiperSlide>
                       <div className="portfolio-clients-title">Clients</div>
                       <div className="swiper-pagination"></div>
                     </Swiper>
@@ -145,6 +148,9 @@ export default function ShowcasesPage() {
             </span>
             <span className="showcase-banner-clients-img" style={{ background: 'black' }}>
               <Image src="/img/showcases/clients/wo.svg" alt="WorshipOnline" width="138" height="24" />
+            </span>
+            <span className="showcase-banner-clients-img">
+              <Image src="/img/showcases/clients/shopwired.svg" alt="Shopwired" width="150" height="45" />
             </span>
           </div>
         </div>
