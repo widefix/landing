@@ -431,7 +431,7 @@ const showcases: Showcase[] = [
           We optimized the DelayedJob queue by <strong><i>redesigning job handling and dispatching</i></strong>, fully eliminating daily performance bottlenecks and queue stalls. We also added multiple third-party integrations and fixed critical bugs in existing accounting and retail integrations.
         </p>
       ),
-      detailsImageSrc: "/img/showcases/case/queue-optimization.svg",
+      detailsImageSrc: "/img/showcases/case/stallen-queue.svg",
       problemText: (
         <p>
           The background jobs queue was <strong><i>completely stalled</i></strong>, holding up critical processing of third-party API calls. The application suffered from <strong><i>recurring H12 errors</i></strong> on Heroku multiple times per day, severely impacting system reliability and user experience.
