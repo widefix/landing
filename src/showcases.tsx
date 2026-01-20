@@ -444,7 +444,7 @@ const showcases: Showcase[] = [
       ),
       solutionSecondText: (
         <p>
-          Additionally, we expanded the platform's capabilities by <strong><i>integrating multiple third-party services</i></strong> including Etsy, TikTok, Mailchimp, Awin, and Smiffys. We also fixed critical bugs in existing integrations with accounting systems (Xero, Kashflow, Clearbooks, QuickBooks) and retail platforms (Lightspeed/Vend), ensuring seamless data flow across all connected services.
+          Additionally, we expanded the platform&apos;s capabilities by <strong><i>integrating multiple third-party services</i></strong> including Etsy, TikTok, Mailchimp, Awin, and Smiffys. We also fixed critical bugs in existing integrations with accounting systems (Xero, Kashflow, Clearbooks, QuickBooks) and retail platforms (Lightspeed/Vend), ensuring seamless data flow across all connected services.
         </p>
       ),
       resultBoxes: [
@@ -469,7 +469,7 @@ const showcases: Showcase[] = [
       ],
       resultText: (
         <p>
-          The optimization work resulted in <strong><i>complete elimination</i></strong> of queue stalls and recurring H12 errors. The platform now processes background jobs reliably, and the addition of new integrations expanded the platform's e-commerce capabilities significantly. System uptime and reliability improved dramatically, providing a seamless experience for merchants and end users.
+          The optimization work resulted in <strong><i>complete elimination</i></strong> of queue stalls and recurring H12 errors. The platform now processes background jobs reliably, and the addition of new integrations expanded the platform&apos;s e-commerce capabilities significantly. System uptime and reliability improved dramatically, providing a seamless experience for merchants and end users.
         </p>
       ),
       helpTitle: "Need help with performance optimization and integrations?",
