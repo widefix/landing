@@ -398,6 +398,98 @@ const showcases: Showcase[] = [
       description: "See how we redesigned a Ruby on Rails application with zero downtime, achieving 20% more signups and 30% revenue increase."
     }
   },
+  {
+    slug: "shopwired-queue-optimization",
+    category: CategoryName.optimisations,
+    preview: {
+      title: "Queue Optimization",
+      companyName: "Shopwired (Platform 21 Limited)",
+      solution: "Background Jobs & Integrations",
+      results: "We unblocked a completely stalled background jobs queue and eliminated daily H12 errors.",
+      wrapperColor: SwiperSlideColor.sea,
+      buttonColor: SwiperSlideColor.sea,
+      companyImageSrc: "/img/showcases/clients/shopwired.svg",
+      url: ''
+    },
+    body: {
+      bannerTopTitle: (
+        <h1>
+          Eliminated daily <span className="oval">performance</span> bottlenecks and queue <span className="stripe">stalls</span>
+        </h1>
+      ),
+      bannerTopImageSrc: "/img/showcases/shopwired.jpg",
+      bannerTopImageWebpSrc: "/img/showcases/shopwired.webp",
+      description: "Resolved Critical Performance Issues in E-commerce Platform",
+      descriptionText: (
+        <p>
+          Unblocked a completely stalled background jobs queue and <strong><i>eliminated recurring H12 errors</i></strong> on Heroku that previously occurred multiple times per day.
+        </p>
+      ),
+      detailsTitle: 'Queue Optimization & Integrations',
+      detailsText: (
+        <p>
+          We optimized the DelayedJob queue by <strong><i>redesigning job handling and dispatching</i></strong>, fully eliminating daily performance bottlenecks and queue stalls. We also added multiple third-party integrations and fixed critical bugs in existing accounting and retail integrations.
+        </p>
+      ),
+      detailsImageSrc: "/img/showcases/case/queue-optimization.svg",
+      problemText: (
+        <p>
+          The background jobs queue was <strong><i>completely stalled</i></strong>, holding up critical processing of third-party API calls. The application suffered from <strong><i>recurring H12 errors</i></strong> on Heroku multiple times per day, severely impacting system reliability and user experience.
+        </p>
+      ),
+      solutionFirstText: (
+        <p>
+          We performed a comprehensive analysis of the DelayedJob queue architecture and identified critical bottlenecks in job handling and dispatching. By <strong><i>redesigning the queue management system</i></strong>, we eliminated the daily performance issues and queue stalls that had plagued the platform. We implemented proper monitoring and error handling to prevent future incidents.
+        </p>
+      ),
+      solutionSecondText: (
+        <p>
+          Additionally, we expanded the platform's capabilities by <strong><i>integrating multiple third-party services</i></strong> including Etsy, TikTok, Mailchimp, Awin, and Smiffys. We also fixed critical bugs in existing integrations with accounting systems (Xero, Kashflow, Clearbooks, QuickBooks) and retail platforms (Lightspeed/Vend), ensuring seamless data flow across all connected services.
+        </p>
+      ),
+      resultBoxes: [
+        {
+          color: ResultBoxColor.green,
+          imageSrc: "/img/showcases/case/icons/flag.svg",
+          message: "Queue stalls",
+          number: "0"
+        },
+        {
+          color: ResultBoxColor.blue,
+          imageSrc: "/img/showcases/case/icons/cancel.svg",
+          message: "H12 errors",
+          number: "-100%"
+        },
+        {
+          color: ResultBoxColor.lightBlue,
+          imageSrc: "/img/showcases/case/icons/stock.svg",
+          message: "New integrations",
+          number: "5+"
+        },
+      ],
+      resultText: (
+        <p>
+          The optimization work resulted in <strong><i>complete elimination</i></strong> of queue stalls and recurring H12 errors. The platform now processes background jobs reliably, and the addition of new integrations expanded the platform's e-commerce capabilities significantly. System uptime and reliability improved dramatically, providing a seamless experience for merchants and end users.
+        </p>
+      ),
+      helpTitle: "Need help with performance optimization and integrations?",
+      related: [
+        {
+          companyName: "Worship Online",
+          solution: "System Design",
+          results: "We implemented an on-premises solution to combat account sharing.",
+          wrapperColor: SwiperSlideColor.green,
+          buttonColor: SwiperSlideColor.green,
+          companyImageSrc: "/img/showcases/clients/wo.svg",
+          url: ''
+        }
+      ]
+    },
+    metadata: {
+      title: "Shopwired Queue Optimization - WideFix",
+      description: "See how we eliminated daily performance bottlenecks, unblocked stalled background jobs, and integrated multiple third-party services."
+    }
+  },
   SeoOptimization
 ];
 
