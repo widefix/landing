@@ -52,11 +52,11 @@ Then run:
 bundle install
 ```
 
-For full installation details, check the [official documentation](https://lnkd.in/d97MemJq).
+For full installation details, check the [official documentation](https://github.com/widefix/actual_db_schema).
 
 ### Enable Database-Stored Migrations
 
-To take advantage of the new database adapter for storing migrations, follow the [configuration guide](https://lnkd.in/dPmmkWED).
+To take advantage of the new database adapter for storing migrations, follow the [configuration guide](https://github.com/widefix/actual_db_schema?tab=readme-ov-file#3-store-migrations-in-the-database).
 
 This simple configuration change unlocks the full power of ActualDbSchema in your CI/CD pipelines and shared environments.
 
