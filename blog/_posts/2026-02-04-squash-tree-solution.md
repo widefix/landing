@@ -33,11 +33,16 @@ Squash-tree keeps a *logical squash graph* alongside Git's DAG. You can see how 
 
 ### Install
 
-1. Download the archive for your platform from the [v0.1.0 release](https://github.com/widefix/squash-tree/releases/tag/v0.1.0).
-2. Extract the binary and put it on your `PATH` (e.g. `/usr/local/bin` or `~/bin`).
-3. Register the Git alias:  
-   `git config --global alias.squash-tree '! git-squash-tree'`
-4. In a repo: `git squash-tree init` (or `git squash-tree init --global` for all repos).
+```bash
+curl -sSL https://raw.githubusercontent.com/widefix/squash-tree/refs/heads/main/scripts/install.sh | bash
+```
+
+The script installs the binary, adds it to your PATH (if needed), and configures the Git alias. Run `source ~/.zshrc` or `source ~/.bashrc` (or open a new terminal), then in a repository:
+
+```bash
+git squash-tree init           # this repo only
+git squash-tree init --global  # all repos
+```
 
 Run `git squash-tree init` and it installs hooks that record metadata whenever you squash locally. Say you have a feature branch with three commits. Let's use `rebase -i` to squash them. In the editor you'll see:
 
