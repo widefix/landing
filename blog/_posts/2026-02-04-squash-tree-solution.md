@@ -123,7 +123,7 @@ git squash-tree add-metadata \
 
 Children go oldest first: `ghi9012` (Add login form) was the first commit on the branch, then `def5678`, and finally `abc1234`. After running this, `git squash-tree HEAD` will show the tree.
 
-For the comprehensive info see the [squash-tree repository](https://github.com/widefix/squash-tree).
+For comprehensive information, see the [squash-tree repository](https://github.com/widefix/squash-tree).
 
 ## Conclusion
 
