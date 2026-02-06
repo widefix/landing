@@ -129,4 +129,4 @@ For comprehensive information, see the [squash-tree repository](https://github.c
 
 Use squash-tree to restore **visibility and control** over squash history without fighting Git. This tool might save a decent amount of your time, especially if you frequently squash commits.
 
-> The project is in an early RFC / design-first stage, with focus on locking the data model and building a minimal, correct foundation. Follow the project and provide your feedback on [GitHub](https://github.com/widefix/squash-tree).
+> The project is in an early RFC / design-first stage, with a focus on locking the data model and building a minimal, correct foundation. Follow the project and provide your feedback on [GitHub](https://github.com/widefix/squash-tree).
