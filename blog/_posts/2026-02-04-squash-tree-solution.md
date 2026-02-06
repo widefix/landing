@@ -12,13 +12,14 @@ author:
     name: Yasir Guzmán
     github: jasirguzman123
     linkedin: yasir-guzman
+    twitter: ka8725
 ---
 
-The git [squash](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History#_squashing) command is a very powerful and useful tool. It’s widely used to keep branches clean. But once you squash, the original commits are gone. You lose the ability to inspect how a squashed commit has been composed. You are no longer able to cherry-pick the original commits or audit what happened during the rebase. You lose the history.
+The git [squash](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History#_squashing) command is a very powerful and useful tool. It's widely used to keep branches clean. But once you squash, the original commits are gone. You lose the ability to inspect how a squashed commit has been composed. You are no longer able to cherry-pick the original commits or audit what happened during the rebase. You lose the history.
 
-Although it is possible to recover the original state of the branch before the squash using “reflog”, after some time, it becomes very challenging, if possible at all, as “reflog” is quite messy, and it’s hard to find something in it.
+Although it is possible to recover the original state of the branch before the squash using "reflog", after some time, it becomes very challenging, if possible at all, as "reflog" is quite messy, and it's hard to find something in it.
 
-To improve the situation around squash's original commits, we created [squash-tree](https://github.com/widefix/squash-tree). It’s a Git extension that preserves squash history alongside Git’s native history, so you can inspect it and recover original commits when you need to. If you are a big fan of commit squashing and faced the need for the recovery of the original commits, that might be very helpful for you.
+To improve the situation around that, we created [squash-tree](https://github.com/widefix/squash-tree). It's a Git extension that preserves squash history alongside the native history of Git, so that you can inspect it and recover original commits when you need to. If you are a fan of git squashing and face the need for the recovery of the original commits, that might be a very helpful tool for you.
 
 This post is an overview of this tool on installation, usage, and main scenarios.
 
@@ -40,7 +41,7 @@ $ git log --oneline -1
 xyz7890 Add login feature (squashed)
 ```
 
-The originals are gone from the [DAG](https://git-scm.com/docs/gitglossary/2.19.0#Documentation/gitglossary.txt-DAG). You can't inspect how the squash was composed. You can't cherry-pick one of the three. If you need to recover a specific change or audit what went into the release, you have nowhere to look. Reflog might help for a while, but it gets messy and entries expire.
+The originals are gone from the [DAG](https://git-scm.com/docs/gitglossary/2.19.0#Documentation/gitglossary.txt-DAG). You can't inspect how the squash was composed. You can't cherry-pick one of the three. If you need to recover a specific change or audit what went into the release, you have nowhere to look. Reflog might help for a while, but over time it gets messy and the entries expire.
 
 ## The Solution
 
@@ -59,7 +60,11 @@ git squash-tree init           # this repo only
 git squash-tree init --global  # all repos
 ```
 
-Run `git squash-tree init` and it installs hooks that record metadata whenever you squash locally. Say you have a feature branch with three commits. Let's use `rebase -i` to squash them. Both `squash` and `fixup` work. In the editor you might see:
+Run `git squash-tree init` and it installs hooks that record metadata whenever you squash locally.
+
+### Basic usage
+
+Say you have a feature branch with three commits. Let's use `rebase -i` to squash them. Both `squash` and `fixup` work. In the editor you might see:
 
 ```
 pick abc1234 Add login form
@@ -86,9 +91,21 @@ xyz7890 [SQUASH]  Add login feature (squashed)
 
 `[SQUASH]` means a commit formed by squashing others. `[LEAF]` means an original commit. From here you can cherry-pick any of them to recover.
 
-One caveat: the squash metadata (which commits went into which squash) has to be recorded at the moment you squash. If it wasn't, squash-tree can't reconstruct the tree later. That happens when: you squashed before running `git squash-tree init`; the squash happened elsewhere, e.g. GitHub "Squash and merge" (your local hooks never ran); or you're inspecting a commit someone else squashed in a repo without hooks.
+### Advanced usage
 
-In those cases, use `git squash-tree add-metadata` to record the relationship manually. You need three things: `--root` (the squash commit), `--base` (the commit the branch diverged from, usually the merge base), and `--children` (the original commits, oldest first, comma-separated). For a GitHub squash merge:
+So far so good. There is one caveat though: the squash metadata (that holds info about which commits went into which squash) has to be recorded at the moment you squash. If it wasn't, squash-tree can't reconstruct the tree later. That happens when:
+
+1. You squashed before running `git squash-tree init`;
+2. The squash happened elsewhere, e.g. GitHub "Squash and merge" (your local hooks never ran);
+3. You're inspecting a commit someone else squashed in a repo without hooks.
+
+In those cases, you can reconstruct the squash metadata using `git squash-tree add-metadata` by recording the relationship manually. To do that, you need three things:
+
+1. `--root` - the squash commit;
+2. `--base` - the commit the branch diverged from, usually the merge base;
+3. `--children` - the original commits, oldest first, comma-separated.
+
+For example, say you merged a PR with "Squash and merge". You pull the changes, but the original commits are gone. You find the original commits (e.g. from reflog, or from the PR before it was merged). Then you run:
 
 ```bash
 # After: git pull origin main
@@ -104,10 +121,12 @@ git squash-tree add-metadata \
   --children=ghi9012,def5678,abc1234
 ```
 
-Children go oldest first: `ghi9012` (Add login form) was the first commit on the branch, then `def5678`, then `abc1234`. After running this, `git squash-tree HEAD` will show the tree. If the structure is truly gone (e.g. the branch was deleted and reflog expired), there's nothing to record.
+Children go oldest first: `ghi9012` (Add login form) was the first commit on the branch, then `def5678`, and finally `abc1234`. After running this, `git squash-tree HEAD` will show the tree.
 
-For full setup, CLI options, and edge cases, see the [squash-tree repository](https://github.com/widefix/squash-tree).
+For the comprehensive info see the [squash-tree repository](https://github.com/widefix/squash-tree).
 
 ## Conclusion
 
-Git prioritizes simplicity; squash-tree restores **visibility and control** over squash history without fighting Git. The project is in an early RFC / design-first stage, with focus on locking the data model and building a minimal, correct foundation. You can follow the project and contribute feedback on [GitHub](https://github.com/widefix/squash-tree).
+Use squash-tree to restore **visibility and control** over squash history without fighting Git. This tool might save a decent amount of your time, especially if you frequently squash commits.
+
+> The project is in an early RFC / design-first stage, with focus on locking the data model and building a minimal, correct foundation. Follow the project and provide your feedback on [GitHub](https://github.com/widefix/squash-tree).
