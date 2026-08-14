@@ -1,59 +1,9 @@
 "use client";
 
 import Image from 'next/image'
-import Script from 'next/script'
-import { useEffect } from 'react'
+import ContactForm from './ContactForm'
 
 export default function ContactComponent() {
-  useEffect(() => {
-    // Override Mailchimp's default success message
-    const handleFormSubmit = () => {
-      const successDiv = document.getElementById('mce-success-response');
-
-      if (successDiv) {
-        const observer = new MutationObserver((mutations) => {
-          mutations.forEach((mutation) => {
-            if (mutation.type === 'childList' || mutation.type === 'characterData') {
-              const successText = successDiv.textContent;
-              if (successText && successText.includes('subscrib')) {
-                successDiv.innerHTML = '✅ <strong>Thank you!</strong> We\'ve received your project details and will get back to you within 24 hours with a detailed proposal.';
-                successDiv.style.display = 'block';
-              }
-            }
-          });
-        });
-
-        observer.observe(successDiv, {
-          childList: true,
-          subtree: true,
-          characterData: true
-        });
-
-        // Also observe for style changes that make the div visible
-        const styleObserver = new MutationObserver((mutations) => {
-          mutations.forEach((mutation) => {
-            if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
-              const target = mutation.target as HTMLElement;
-              if (target.style.display !== 'none' && target.textContent) {
-                const successText = target.textContent;
-                if (successText.includes('subscrib')) {
-                  target.innerHTML = '✅ <strong>Thank you!</strong> We\'ve received your project details and will get back to you within 24 hours with a detailed proposal.';
-                }
-              }
-            }
-          });
-        });
-
-        styleObserver.observe(successDiv, {
-          attributes: true,
-          attributeFilter: ['style']
-        });
-      }
-    };
-
-    // Wait for Mailchimp script to load
-    setTimeout(handleFormSubmit, 1000);
-  }, []);
   return (
     <>
       <section className="hero has-vertical-paddings" id='contact'>
@@ -114,97 +64,8 @@ export default function ContactComponent() {
             </div>
 
             <div className="contact-form-container">
-              <div id="mc_embed_signup" className="modern-form">
-                <form
-                  action="https://widefix.us4.list-manage.com/subscribe/post?u=1313d5f2c680ff5f21b500895&amp;id=565f623090&amp;f_id=00b440e8f0"
-                  method="post"
-                  id="mc-embedded-subscribe-form"
-                  name="mc-embedded-subscribe-form"
-                  className="validate contact-form"
-                  target="_blank"
-                >
-                  <div className="form-grid">
-                    <div className="form-row">
-                      <div className="form-field">
-                        <label htmlFor="mce-EMAIL" className="form-label">
-                          Email Address <span className="required">*</span>
-                        </label>
-                        <input
-                          type="email"
-                          name="EMAIL"
-                          className="form-input required email"
-                          id="mce-EMAIL"
-                          required
-                          placeholder="your.email@company.com"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="form-row">
-                      <div className="form-field">
-                        <label htmlFor="mce-FNAME" className="form-label">First Name</label>
-                        <input
-                          type="text"
-                          name="FNAME"
-                          className="form-input"
-                          id="mce-FNAME"
-                          placeholder="John"
-                        />
-                      </div>
-                      <div className="form-field">
-                        <label htmlFor="mce-LNAME" className="form-label">Last Name</label>
-                        <input
-                          type="text"
-                          name="LNAME"
-                          className="form-input"
-                          id="mce-LNAME"
-                          placeholder="Doe"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="form-row">
-                      <div className="form-field full-width">
-                        <label htmlFor="mce-MMERGE7" className="form-label">Project Details</label>
-                        <textarea
-                          name="MMERGE7"
-                          className="form-textarea"
-                          id="mce-MMERGE7"
-                          rows={4}
-                          placeholder="Tell us about your project, current challenges, and what you're looking to achieve..."
-                        ></textarea>
-                      </div>
-                    </div>
-
-                    <div id="mce-responses" className="form-responses">
-                      <div className="response error-response" id="mce-error-response"></div>
-                      <div className="response success-response" id="mce-success-response"></div>
-                    </div>
-
-                    <div aria-hidden="true" className="hidden-field">
-                      <input
-                        type="text"
-                        name="b_1313d5f2c680ff5f21b500895_565f623090"
-                        tabIndex={-1}
-                      />
-                    </div>
-
-                    <div className="form-submit">
-                      <button
-                        type="submit"
-                        name="subscribe"
-                        id="mc-embedded-subscribe"
-                        className="button primary"
-                        style={{ textDecoration: 'none' }}
-                      >
-                        Send Project Details
-                      </button>
-                      <p className="form-note">
-                        We&apos;ll respond within 24 hours with a detailed project proposal
-                      </p>
-                    </div>
-                  </div>
-                </form>
+              <div className="modern-form">
+                <ContactForm />
               </div>
             </div>
           </div>
@@ -238,23 +99,7 @@ export default function ContactComponent() {
         </div>
       </section>
 
-      <Script
-        src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"
-        strategy="lazyOnload"
-      />
-      <Script id="mailchimp-config" strategy="lazyOnload">
-        {`
-          (function($) {
-            window.fnames = new Array();
-            window.ftypes = new Array();
-            fnames[0]='EMAIL';ftypes[0]='email';
-            fnames[1]='FNAME';ftypes[1]='text';
-            fnames[2]='LNAME';ftypes[2]='text';
-            fnames[7]='MMERGE7';ftypes[7]='text';
-          }(jQuery));
-          var $mcj = jQuery.noConflict(true);
-        `}
-      </Script>
+
     </>
   )
 }
