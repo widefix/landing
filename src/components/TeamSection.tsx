@@ -6,7 +6,8 @@ interface TeamMember {
   tagline: string;
   qualities: string[];
   businessValue: string;
-  industries: string[];
+  industries?: string[];
+  linkedin?: string;
 }
 
 const teamMembers: TeamMember[] = [
@@ -61,6 +62,20 @@ const teamMembers: TeamMember[] = [
     ],
     businessValue: 'Brings clarity to complexity by carefully analyzing challenges and ensuring both process and outcomes remain transparent. His collaborative nature helps teams and clients navigate unfamiliar territory with confidence.',
     industries: ['Global Remote Teams', 'Product Development', 'Platform Maintenance']
+  },
+  {
+    name: 'Yasir Guzman',
+    image: '/img/team/team-yasir-guzman.webp',
+    tagline: 'High performance, end-to-end ownership',
+    qualities: [
+      'Communicates clearly at strategic and technical levels',
+      'Learns quickly and builds context across systems',
+      'Consistently performs at a high level',
+      'Takes full ownership from 0 to 100%'
+    ],
+    businessValue: 'Yasir combines clear, high-level communication with a strong ability to learn fast and understand the wider context. He takes ownership of outcomes and reliably drives work from the first idea through to complete delivery.',
+    industries: ['Sports Event Organization', 'AI', 'MedTech', 'Analytics', 'E-commerce', 'FinTech'],
+    linkedin: 'https://www.linkedin.com/in/yasir-guzman/'
   }
 ];
 
@@ -86,7 +101,13 @@ export default function TeamSection() {
                 />
               </div>
               <div className="member-content">
-                <h3>{member.name}</h3>
+                <h3>
+                  {member.linkedin ? (
+                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
+                      {member.name}
+                    </a>
+                  ) : member.name}
+                </h3>
                 <span className="tagline">{member.tagline}</span>
 
                 <p className="business-value">{member.businessValue}</p>
@@ -97,14 +118,16 @@ export default function TeamSection() {
                   ))}
                 </ul>
 
-                <div className="industries">
-                  <span className="label">Experience in:</span>
-                  <div className="industry-tags">
-                    {member.industries.map((industry, iIdx) => (
-                      <span key={iIdx} className="industry-tag">{industry}</span>
-                    ))}
+                {member.industries && (
+                  <div className="industries">
+                    <span className="label">Experience in:</span>
+                    <div className="industry-tags">
+                      {member.industries.map((industry, iIdx) => (
+                        <span key={iIdx} className="industry-tag">{industry}</span>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             </div>
           ))}
