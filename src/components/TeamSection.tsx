@@ -64,7 +64,7 @@ const teamMembers: TeamMember[] = [
     industries: ['Global Remote Teams', 'Product Development', 'Platform Maintenance']
   },
   {
-    name: 'Yasir Guzman',
+    name: 'Yasir',
     image: '/img/team/team-yasir-guzman.webp',
     tagline: 'High performance, end-to-end ownership',
     qualities: [
@@ -76,6 +76,20 @@ const teamMembers: TeamMember[] = [
     businessValue: 'Yasir combines clear, high-level communication with a strong ability to learn fast and understand the wider context. He takes ownership of outcomes and reliably drives work from the first idea through to complete delivery.',
     industries: ['Sports Event Organization', 'AI', 'MedTech', 'Analytics', 'E-commerce', 'FinTech'],
     linkedin: 'https://www.linkedin.com/in/yasir-guzman/'
+  },
+  {
+    name: 'Anton',
+    image: '/img/team/team-anton-jyha.webp',
+    tagline: 'Scalable systems, thoughtful leadership',
+    qualities: [
+      '10+ years building scalable web platforms',
+      'Brings structure and stability to engineering teams',
+      'Finds simple, smart solutions to complex problems',
+      'Reliable, thoughtful, and focused on the product'
+    ],
+    businessValue: 'Anton combines deep engineering experience with calm, practical technical leadership. He thinks ahead, strengthens both products and teams, and delivers efficient solutions that remain reliable as platforms grow.',
+    industries: ['iGaming', 'MVP', 'Scalable Web Platforms', 'Ruby on Rails'],
+    linkedin: 'https://www.linkedin.com/in/anton-jyha-a4437b61/'
   }
 ];
 
