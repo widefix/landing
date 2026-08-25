@@ -74,8 +74,7 @@ const teamMembers: TeamMember[] = [
       'Takes full ownership from 0 to 100%'
     ],
     businessValue: 'Yasir combines clear, high-level communication with a strong ability to learn fast and understand the wider context. He takes ownership of outcomes and reliably drives work from the first idea through to complete delivery.',
-    industries: ['Sports Event Organization', 'AI', 'MedTech', 'Analytics', 'E-commerce', 'FinTech'],
-    linkedin: 'https://www.linkedin.com/in/yasir-guzman/'
+    industries: ['Sports Event Organization', 'AI', 'MedTech', 'Analytics', 'E-commerce', 'FinTech']
   },
   {
     name: 'Anton',
@@ -88,8 +87,7 @@ const teamMembers: TeamMember[] = [
       'Reliable, thoughtful, and focused on the product'
     ],
     businessValue: 'Anton combines deep engineering experience with calm, practical technical leadership. He thinks ahead, strengthens both products and teams, and delivers efficient solutions that remain reliable as platforms grow.',
-    industries: ['iGaming', 'MVP', 'Scalable Web Platforms', 'Ruby on Rails'],
-    linkedin: 'https://www.linkedin.com/in/anton-jyha-a4437b61/'
+    industries: ['iGaming', 'MVP', 'Scalable Web Platforms', 'Ruby on Rails']
   }
 ];
 
