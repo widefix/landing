@@ -87,7 +87,7 @@ const teamMembers: TeamMember[] = [
       'Reliable, thoughtful, and focused on the product'
     ],
     businessValue: 'Anton combines deep engineering experience with calm, practical technical leadership. He thinks ahead, strengthens both products and teams, and delivers efficient solutions that remain reliable as platforms grow.',
-    industries: ['iGaming', 'MVP', 'Scalable Web Platforms', 'Ruby on Rails']
+    industries: ['iGaming', 'MVP', 'Scalable Web Platforms', 'edTech', 'SaaS']
   }
 ];
 
