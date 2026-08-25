@@ -88,6 +88,19 @@ const teamMembers: TeamMember[] = [
     ],
     businessValue: 'Anton combines deep engineering experience with calm, practical technical leadership. He thinks ahead, strengthens both products and teams, and delivers efficient solutions that remain reliable as platforms grow.',
     industries: ['iGaming', 'MVP', 'Scalable Web Platforms', 'edTech', 'SaaS']
+  },
+  {
+    name: 'Lera',
+    image: '/img/team/team-lera.webp',
+    tagline: 'Structure, clarity, confident delivery',
+    qualities: [
+      'Structured, proactive, and attentive to detail',
+      'Keeps multiple workstreams moving smoothly',
+      'Communicates openly across diverse teams',
+      'Turns complexity into clear action plans'
+    ],
+    businessValue: 'Lera brings clarity and transparency to complex projects through thoughtful coordination and strong communication. She keeps sight of the bigger picture, takes ownership of delivery support, and helps teams turn business needs into focused, well-organized solutions.',
+    industries: ['HealthTech', 'Bioinformatics', 'AI', 'Consumer Genetics', 'Drug Discovery', 'EdTech', 'Digital Platforms', 'Advertising']
   }
 ];
 
