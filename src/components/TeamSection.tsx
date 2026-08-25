@@ -61,7 +61,7 @@ const teamMembers: TeamMember[] = [
       'Excellent at explaining technical concepts'
     ],
     businessValue: 'Brings clarity to complexity by carefully analyzing challenges and ensuring both process and outcomes remain transparent. His collaborative nature helps teams and clients navigate unfamiliar territory with confidence.',
-    industries: ['Global Remote Teams', 'Product Development', 'Platform Maintenance']
+    industries: ['FinTech', 'Platform Maintenance', 'E-Commerce']
   },
   {
     name: 'Yasir',
