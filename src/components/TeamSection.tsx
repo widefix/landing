@@ -100,7 +100,7 @@ const teamMembers: TeamMember[] = [
       'Turns complexity into clear action plans'
     ],
     businessValue: 'Lera brings clarity and transparency to complex projects through thoughtful coordination and strong communication. She keeps sight of the bigger picture, takes ownership of delivery support, and helps teams turn business needs into focused, well-organized solutions.',
-    industries: ['HealthTech', 'Bioinformatics', 'AI', 'Consumer Genetics', 'Drug Discovery', 'EdTech', 'Digital Platforms', 'Advertising']
+    industries: ['HealthTech', 'EdTech', 'Civic Tech', 'Digital Products (Web & Mobile)', 'Advertising & Marketing', 'AI']
   }
 ];
 
