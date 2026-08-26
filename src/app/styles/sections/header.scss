@@ -1,4 +1,8 @@
 header {
+  position: relative;
+  z-index: 100;
+  background: #fff;
+
   .inner {
     display: flex;
     height: 80px;
@@ -18,7 +22,7 @@ header {
     flex: 2;
     @media (max-width: $media-sm) {
       visibility: hidden;
-      margin-left: 20px;
+      margin-left: 0;
 
       // Make mobile nav render as an overlay dropdown when visible
       position: absolute;
@@ -26,6 +30,7 @@ header {
       right: 0;
       top: 100%;
       width: 100%;
+      box-sizing: border-box;
       background: #fff;
       padding: 12px 16px;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
@@ -37,10 +42,10 @@ header {
       display: flex;
       align-items: center;
       justify-content: center;
-      background: transparent;
+      background: #fff;
       margin-left: 0;
       width: 100%;
-      z-index: 2;
+      z-index: 3;
     }
 
     ul {
