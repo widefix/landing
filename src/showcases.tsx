@@ -451,8 +451,14 @@ const showcases: Showcase[] = [
         {
           color: ResultBoxColor.green,
           imageSrc: "/img/showcases/case/icons/flag.svg",
-          message: "Queue stalls",
-          number: "0"
+          message: "Stuck jobs",
+          number: "100k+ → 0"
+        },
+        {
+          color: ResultBoxColor.orange,
+          imageSrc: "/img/showcases/case/icons/stock.svg",
+          message: "Job processing time",
+          number: "Hours → ms"
         },
         {
           color: ResultBoxColor.blue,
@@ -469,7 +475,7 @@ const showcases: Showcase[] = [
       ],
       resultText: (
         <p>
-          The optimization work resulted in <strong><i>complete elimination</i></strong> of queue stalls and recurring H12 errors. The platform now processes background jobs reliably, and the addition of new integrations expanded the platform&apos;s e-commerce capabilities significantly. System uptime and reliability improved dramatically, providing a seamless experience for merchants and end users.
+          We reduced the backlog from <strong><i>hundreds of thousands of stuck jobs to zero</i></strong>, cut job processing time from <strong><i>hours to milliseconds</i></strong>, and eliminated recurring H12 errors. The platform now processes background jobs reliably, and the addition of new integrations expanded the platform&apos;s e-commerce capabilities significantly. System uptime and reliability improved dramatically, providing a seamless experience for merchants and end users.
         </p>
       ),
       helpTitle: "Need help with performance optimization and integrations?",
