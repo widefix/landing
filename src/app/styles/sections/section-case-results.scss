@@ -147,28 +147,3 @@ h2.results {
     height: 7px;
   }
 }
-
-// PDF pagination must move the whole row, never individual flex children.
-.showcase-pdf {
-  .pdf-results-group {
-    break-inside: avoid;
-    padding-bottom: 12px; // Include card shadows in the protected block.
-  }
-
-  .results-boxes {
-    flex-direction: row;
-
-    .result-box {
-      display: block;
-      flex: 1;
-      min-width: 0;
-      width: auto;
-
-      img {
-        width: 35px;
-        height: 35px;
-        margin-bottom: 16px;
-      }
-    }
-  }
-}

@@ -23,54 +23,15 @@ export default function ShowcasePage() {
   const generatePDF = async () => {
     if (isLoading) return;
     setIsLoading(true);
-    const element = document.createElement('div');
     try {
-      const { default: html2pdf } = await import('html2pdf.js');
-      const elementString = renderToString(<ShowcaseToPDF {...showcase.body} />);
-      element.innerHTML = elementString;
-
-      // Measure only after assets have settled, at the same width as the PDF.
-      element.style.cssText = 'position: absolute; left: -10000px; top: 0; width: 306mm;';
-      document.body.appendChild(element);
-      await Promise.all(Array.from(element.querySelectorAll('img'), async image => {
-        image.loading = 'eager';
-        await image.decode().catch(() => undefined);
-      }));
-      await document.fonts.ready;
-      element.style.cssText = '';
-      element.remove();
-
-      await html2pdf()
-      .set({
-        filename: `${showcase.slug}.pdf`,
-        image: { type: 'jpeg', quality: 1 },
-        html2canvas: {
-          scale: 2,
-          dpi: 300,
-          letterRendering: true,
-          useCORS: true,
-        },
-        margin: 10,
-        jsPDF: {
-          unit: 'mm',
-          format: [230, 326],
-          orientation: 'landscape',
-          userUnit: 2,
-          precision: 32
-        },
-        pagebreak: {
-          mode: 'css',
-          before: '.page-break',
-          // Keep flex children out of this list: inserted spacers become flex items.
-          avoid: ['.pdf-results-group', 'p', '.curvy-image']
-        }
-      })
-      .from(element)
-      .save();
+      const { downloadShowcasePDF } = await import('@/lib/showcasePdf');
+      await downloadShowcasePDF(
+        renderToString(<ShowcaseToPDF {...showcase.body} />),
+        `${showcase.slug}.pdf`
+      );
     } catch (error) {
       console.error('Failed to generate showcase PDF', error);
     } finally {
-      element.remove();
       setIsLoading(false);
     }
   };

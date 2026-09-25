@@ -18,7 +18,7 @@ export default function ShowcaseToPDF({
  } : Partial<ShowcaseBody>) {
   return (
     <main className="showcases-case showcase-pdf">
-      <section className="case-banner-top" style={{maxHeight: "770px"}}>
+      <section className="case-banner-top">
         <div className="inner">
           <div className="banner-content">
             {bannerTopTitle}
@@ -36,24 +36,23 @@ export default function ShowcaseToPDF({
                 height={377}
               />
             </picture>
-            <Image src={`${bannerTopImageSrc}`} alt="Banner Image" width={687} height={377} />
           </div>
         </div>
       </section>
-      <section className="page-break case-details">
-        <div className="inner" style={{display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: "40px"}}>
+      <section className="case-details">
+        <div className="inner">
           <div className="case-details-title">
             <h2 className="with-crown">
               {detailsTitle}
             </h2>
             {detailsText}
           </div>
-          <div style={{marginTop: '10%'}}>
+          <div className="pdf-details-image">
             <Image src={`${detailsImageSrc}`} alt="Puzzle" width="670" height="325"/>
           </div>
         </div>
       </section>
-      <section className="page-break case-problem">
+      <section className="case-problem">
         <div className="inner" style={{paddingTop: "40px"}}>
           <h2 className="problem">Problem</h2>
           {problemText}
@@ -71,7 +70,7 @@ export default function ShowcaseToPDF({
           </div>
         </div>
       </section>
-      <section className="page-break case-solution">
+      <section className="case-solution">
         <div className="inner" style={{paddingTop: "40px"}}>
           <div>
             <h2 className="solution">Solution</h2>
@@ -88,7 +87,7 @@ export default function ShowcaseToPDF({
           </div>
         </div>
       </section>
-      <section className="page-break case-results">
+      <section className="case-results">
         <div className="inner" style={{paddingTop: "40px"}}>
           <div className="pdf-results-group">
             <h2 className="results" style={{marginLeft: "30px"}}>
@@ -107,42 +106,44 @@ export default function ShowcaseToPDF({
           {resultText}
         </div>
       </section>
-      <section className="page-break hero has-vertical-paddings">
-        <div className="inner">
-          <div className="hero-block-left">
-            <h1>Contact us for <span>cost-effective</span> tech solutions for <span>your</span> business challenges</h1>
-          </div>
-          <div className="hero-block-right">
-            <picture>
-              <source srcSet="/img/contact.webp" type="image/webp" />
-              <Image
-                src="/img/contact.jpg"
-                alt="Optimise your app to get more customers"
-                quality={100}
-                width="434"
-                height="379"
-              />
-            </picture>
-          </div>
-        </div>
-      </section>
-      <section className="banner-bottom has-vertical-paddings" style={{marginTop: "40px"}}>
-        <div className="inner">
-          <h2></h2>
-          <p style={{fontSize: "22px"}}>Optimise your app and get underlying issues fixed. You deserve an app customers will love to use.<br />If you
-            would like to discuss your needs further, you can schedule a consultation with one of our experts</p>
-          <div className="contacts">
-            <div className="contact">
-              <Image src="/img/icons/email.svg" alt="Icon for email" width="40" height="40" />
-              <p style={{fontSize: "28px"}}>Email: <Link href="mailto:call@widefix.com">call@widefix.com</Link></p>
+      <div className="pdf-contact-page">
+        <section className="hero has-vertical-paddings">
+          <div className="inner">
+            <div className="hero-block-left">
+              <h1>Contact us for <span>cost-effective</span> tech solutions for <span>your</span> business challenges</h1>
             </div>
-            <div className="contact">
-              <Image src="/img/icons/phone.svg" alt="Icon for phone" width="40" height="40" />
-              <p style={{fontSize: "28px"}}>Phone: <Link href="tel:+48516295359">+48516295359</Link></p>
+            <div className="hero-block-right">
+              <picture>
+                <source srcSet="/img/contact.webp" type="image/webp" />
+                <Image
+                  src="/img/contact.jpg"
+                  alt="Optimise your app to get more customers"
+                  quality={100}
+                  width="434"
+                  height="379"
+                />
+              </picture>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+        <section className="banner-bottom has-vertical-paddings" style={{marginTop: "40px"}}>
+          <div className="inner">
+            <h2></h2>
+            <p style={{fontSize: "22px"}}>Optimise your app and get underlying issues fixed. You deserve an app customers will love to use.<br />If you
+              would like to discuss your needs further, you can schedule a consultation with one of our experts</p>
+            <div className="contacts">
+              <div className="contact">
+                <Image src="/img/icons/email.svg" alt="Icon for email" width="40" height="40" />
+                <p style={{fontSize: "28px"}}>Email: <Link href="mailto:call@widefix.com">call@widefix.com</Link></p>
+              </div>
+              <div className="contact">
+                <Image src="/img/icons/phone.svg" alt="Icon for phone" width="40" height="40" />
+                <p style={{fontSize: "28px"}}>Phone: <Link href="tel:+48516295359">+48516295359</Link></p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
   );
 };

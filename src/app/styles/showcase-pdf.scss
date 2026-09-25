@@ -1,0 +1,95 @@
+// Export-only layout. Each direct child is rendered as one complete PDF page.
+.showcase-pdf {
+  margin: 0;
+
+  > section,
+  .pdf-contact-page {
+    display: flow-root;
+  }
+
+  section .inner {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 40px 32px;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .case-banner-top {
+    .inner {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      align-items: center;
+      min-height: 770px;
+      padding: 100px 32px;
+    }
+
+    h1 {
+      font-size: 56px;
+      line-height: 1.1;
+    }
+
+    .img-wrapper img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .case-details .inner {
+    display: block;
+  }
+
+  .pdf-details-image {
+    width: 670px;
+    max-width: 100%;
+    margin: 80px auto 0;
+  }
+
+  .case-solution .inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .results-boxes {
+    flex-direction: row;
+    padding-bottom: 12px;
+
+    .result-box {
+      display: block;
+      flex: 0 1 163px;
+      min-width: 0;
+
+      img {
+        width: 35px;
+        height: 35px;
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  .hero .inner {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+  }
+
+  .hero-block-left {
+    padding-right: 0;
+  }
+
+  .hero-block-left h1 {
+    font-size: 56px;
+    line-height: 1.1;
+  }
+
+  .banner-bottom .inner {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+}
