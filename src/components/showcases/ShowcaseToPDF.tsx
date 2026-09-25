@@ -17,7 +17,7 @@ export default function ShowcaseToPDF({
   resultText,
  } : Partial<ShowcaseBody>) {
   return (
-    <main className="showcases-case">
+    <main className="showcases-case showcase-pdf">
       <section className="case-banner-top" style={{maxHeight: "770px"}}>
         <div className="inner">
           <div className="banner-content">
@@ -90,17 +90,19 @@ export default function ShowcaseToPDF({
       </section>
       <section className="page-break case-results">
         <div className="inner" style={{paddingTop: "40px"}}>
-          <h2 className="results" style={{marginLeft: "30px"}}>
-            Results
-          </h2>
-          <div className="results-boxes">
-            {resultBoxes && resultBoxes.map((box, index) => (
-              <div className={`result-box ${box.color}`} key={index}>
-                <Image src={box.imageSrc} alt="icon" aria-hidden="true" width="35" height="35" />
-                <div className="result-message"><strong>{box.message}</strong></div>
-                <div className="result-number">{box.number}</div>
-              </div>
-            ))}
+          <div className="pdf-results-group">
+            <h2 className="results" style={{marginLeft: "30px"}}>
+              Results
+            </h2>
+            <div className="results-boxes">
+              {resultBoxes && resultBoxes.map((box, index) => (
+                <div className={`result-box ${box.color}`} key={index}>
+                  <Image src={box.imageSrc} alt="icon" aria-hidden="true" width="35" height="35" />
+                  <div className="result-message"><strong>{box.message}</strong></div>
+                  <div className="result-number">{box.number}</div>
+                </div>
+              ))}
+            </div>
           </div>
           {resultText}
         </div>

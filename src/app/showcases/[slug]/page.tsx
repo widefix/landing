@@ -20,15 +20,27 @@ export default function ShowcasePage() {
     return <NotFoundPage />;
   }
 
-  const generatePDF = () => {
+  const generatePDF = async () => {
+    if (isLoading) return;
     setIsLoading(true);
-    import('html2pdf.js').then(module => {
-      const html2pdf = module.default;
-      const element = document.createElement('div');
+    const element = document.createElement('div');
+    try {
+      const { default: html2pdf } = await import('html2pdf.js');
       const elementString = renderToString(<ShowcaseToPDF {...showcase.body} />);
       element.innerHTML = elementString;
 
-      html2pdf()
+      // Measure only after assets have settled, at the same width as the PDF.
+      element.style.cssText = 'position: absolute; left: -10000px; top: 0; width: 306mm;';
+      document.body.appendChild(element);
+      await Promise.all(Array.from(element.querySelectorAll('img'), async image => {
+        image.loading = 'eager';
+        await image.decode().catch(() => undefined);
+      }));
+      await document.fonts.ready;
+      element.style.cssText = '';
+      element.remove();
+
+      await html2pdf()
       .set({
         filename: `${showcase.slug}.pdf`,
         image: { type: 'jpeg', quality: 1 },
@@ -46,17 +58,21 @@ export default function ShowcasePage() {
           userUnit: 2,
           precision: 32
         },
-        pagebreak: { mode: 'avoid-all', before: '.page-break' }
+        pagebreak: {
+          mode: 'css',
+          before: '.page-break',
+          // Keep flex children out of this list: inserted spacers become flex items.
+          avoid: ['.pdf-results-group', 'p', '.curvy-image']
+        }
       })
       .from(element)
-      .save()
-      .then(() => {
-        setIsLoading(false);
-      })
-      .catch(() => {
-        setIsLoading(false);
-      });
-    });
+      .save();
+    } catch (error) {
+      console.error('Failed to generate showcase PDF', error);
+    } finally {
+      element.remove();
+      setIsLoading(false);
+    }
   };
 
   return (
