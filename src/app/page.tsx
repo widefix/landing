@@ -47,8 +47,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <AIIntegrationsSection />
-
       <section className="achievements has-vertical-paddings">
         <div className="inner">
           <header>
@@ -342,6 +340,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <AIIntegrationsSection />
 
       <section className="you-can-trust has-vertical-paddings">
         <div className="inner">
