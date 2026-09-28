@@ -1,4 +1,5 @@
 import ClutchWidget from '@/components/ClutchWidget';
+import AIIntegrationsSection from '@/components/AIIntegrationsSection';
 import Image from 'next/image'
 import Link from 'next/link';
 
@@ -45,6 +46,8 @@ export default function HomePage() {
           </p>
         </div>
       </section>
+
+      <AIIntegrationsSection />
 
       <section className="achievements has-vertical-paddings">
         <div className="inner">

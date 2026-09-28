@@ -4,13 +4,13 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Services - WideFix",
-  description: "Whether you're looking to create a website, develop a mobile app, or build a custom software solution, we've got you covered.",
+  description: "Custom web and mobile development, software integrations, and AI agents, assistants, and chatbots powered by OpenAI and Claude.",
   alternates: {
     canonical: "https://widefix.com/services"
   },
   openGraph: {
     title: "Services - WideFix",
-    description: "Whether you're looking to create a website, develop a mobile app, or build a custom software solution, we've got you covered.",
+    description: "Custom web and mobile development, software integrations, and AI agents, assistants, and chatbots powered by OpenAI and Claude.",
     url: "https://widefix.com/services",
     siteName: "WideFix",
     images: [
@@ -33,7 +33,7 @@ export default function ServicesPage() {
           <div className="hero-block-left">
             <h1>We develop <span>custom</span> software that meets your business needs while <span>minimizing</span> costs</h1>
             <p className="hero-description">
-              Transform your business with tailored software solutions built by experts who understand your challenges and deliver results that matter.
+              Transform your business with tailored software solutions, including AI integrations with OpenAI and Claude. We build agents, assistants, and chatbots that connect to your applications and workflows.
             </p>
             <div className="button-container">
               <Link className="button primary" href="https://calendly.com/andrei-kaleshka/30min" target="_blank"
@@ -80,6 +80,25 @@ export default function ServicesPage() {
               <div className="service-cta">
                 <Link href="https://calendly.com/andrei-kaleshka/30min" target="_blank" className="button primary">
                   Start Your MVP
+                </Link>
+              </div>
+            </div>
+
+            <div className="service-card featured" id="ai-integrations">
+              <div className="service-icon">
+                <Image src="/img/what-we-do/icon-systems-integration.svg" alt="" width="48" height="48" />
+              </div>
+              <h3>AI Integrations</h3>
+              <p>Bring OpenAI and Claude into your products and business workflows with AI tools built around your needs.</p>
+              <ul>
+                <li>✓ AI agents for workflow automation</li>
+                <li>✓ Assistants connected to your business data</li>
+                <li>✓ Customer support and product chatbots</li>
+                <li>✓ Integration with your existing apps and APIs</li>
+              </ul>
+              <div className="service-cta">
+                <Link href="/contact" className="button primary">
+                  Talk About AI
                 </Link>
               </div>
             </div>
