@@ -20,7 +20,7 @@ export function OwnershipProcess() {
         <h2>Take over. Stabilize. Maintain. Improve.</h2>
         <p className="rails-intro">Start with what your application needs today. Build a long-term plan around your customers and business priorities.</p>
         <ol className="ownership-steps">
-          {steps.map(([title, text], i) => <li key={title}><span className="step-number">0{i + 1}</span><h3>{title}</h3><p>{text}</p></li>)}
+          {steps.map(([title, text], i) => <li key={title}><div className="ownership-step-heading"><span className="step-number">0{i + 1}</span><h3>{title}</h3></div><p>{text}</p></li>)}
         </ol>
       </div>
     </section>
