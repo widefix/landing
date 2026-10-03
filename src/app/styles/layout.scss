@@ -24,3 +24,7 @@ section.has-vertical-paddings {
         padding: $section-vertical-padding-sm 0;
     }
 }
+// Consistent breathing room for section heading panels throughout the app.
+main section > .inner > header {
+    padding: 10px;
+}

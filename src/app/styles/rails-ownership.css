@@ -109,3 +109,13 @@
   height: auto;
   border-radius: 14px;
 }
+/* Reserve the review widget's height before it loads or changes slides. */
+.rails-home .reviews .slider-wrapper {
+  min-height: 375px;
+}
+@media (min-width: 1024px) {
+  /* The illustration extends 130px beneath the review content. */
+  .rails-home .reviews {
+    padding-bottom: 170px;
+  }
+}
