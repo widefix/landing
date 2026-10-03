@@ -1,3 +1,5 @@
+
+import LinkIndicator from '@/components/LinkIndicator';
 import ClutchWidget from '@/components/ClutchWidget';
 import SituationIcon from '@/components/rails/SituationIcon';
 import { OwnershipProcess, OwnershipCTA, RailsCall } from '@/components/rails/RailsOwnership';
@@ -14,7 +16,7 @@ export default function HomePage() {
             <h1>We take ownership of existing <span>Ruby on Rails</span> applications</h1>
             <p className="rails-lead">Need someone to take over your Rails app?</p>
             <p className="rails-intro">We maintain, stabilize and improve existing Rails applications from production issues and upgrades to new features and infrastructure. Keep your product moving without unnecessary rewrites or rebuilding your engineering team.</p>
-            <div className="rails-actions"><RailsCall /><Link href="#how-we-take-over">How we take over →</Link></div>
+            <div className="rails-actions"><RailsCall /><Link href="#how-we-take-over">How we take over <LinkIndicator /></Link></div>
           </div>
           <div className="rails-hero-aside">
             <Image src="/img/rails-ownership-hero.svg" alt="Your Rails application supported through takeover, stabilization, maintenance and ongoing development" width={560} height={490} priority />
@@ -37,7 +39,7 @@ export default function HomePage() {
               ['ownership', 'You need an owner, not just a fix', 'You want a partner who understands the whole application and can maintain it while shipping new features.'],
             ] as const).map(([kind, title, text]) => <article className="rails-card" key={title}><div className="rails-situation-heading"><SituationIcon kind={kind} /><h3>{title}</h3></div><p>{text}</p></article>)}
           </div>
-          <Link className="rails-text-link" href="/ruby-on-rails-application-takeover">Explore our Rails application takeover service →</Link>
+          <Link className="rails-text-link" href="/ruby-on-rails-application-takeover">Explore our Rails application takeover service <LinkIndicator /></Link>
         </div>
       </section>
       <OwnershipProcess />
@@ -47,7 +49,7 @@ export default function HomePage() {
           <h2>Rails specialists who can handle the rest of your stack too</h2>
           <p className="rails-intro">We look after the existing application and develop what comes next: upgrades, production fixes, PostgreSQL, background jobs, performance, infrastructure, integrations, CI/CD, monitoring, security, architecture and new features.</p>
           <ul className="rails-stack" aria-label="Technologies we work with">{['Ruby on Rails', 'PostgreSQL', 'Redis', 'React', 'React Native', 'AWS', 'Heroku', 'Docker'].map(tech => <li key={tech}>{tech}</li>)}</ul>
-          <Link className="rails-text-link" href="/services">See our full capabilities →</Link>
+          <Link className="rails-text-link" href="/services">See our full capabilities <LinkIndicator /></Link>
         </div>
       </section>
       <section className="rails-section rails-tinted">
@@ -55,11 +57,11 @@ export default function HomePage() {
           <p className="rails-eyebrow">Real applications. Practical results.</p>
           <h2>Existing systems, moving forward</h2>
           <div className="rails-card-grid rails-case-grid">
-            <article className="rails-card"><Image src="/img/showcases/clients/shopwired.svg" width={160} height={48} alt="ShopWired" /><h3>A production background queue stopped processing jobs</h3><p>We diagnosed the bottlenecks, restored processing and eliminated recurring H12 errors on Heroku.</p><Link href="/showcases/shopwired-queue-optimization">Read the queue recovery story →</Link></article>
-            <article className="rails-card"><Image src="/img/showcases/clients/wo.svg" width={160} height={48} alt="Worship Online" /><h3>Stripe and the application disagreed about subscriptions</h3><p>We corrected webhook processing and historical data, recovered subscriptions and added monitoring to catch future inconsistencies.</p><Link href="/showcases/stripe-integration">See how we restored consistency →</Link></article>
-            <article className="rails-card"><Image src="/img/showcases/clients/wo.svg" width={160} height={48} alt="Worship Online" /><h3>A live Rails product needed a new experience</h3><p>We gradually redesigned the application with zero downtime while keeping existing mobile clients working.</p><Link href="/showcases/ruby-on-rails-redesign">Explore the gradual redesign →</Link></article>
+            <article className="rails-card"><Image src="/img/showcases/clients/shopwired.svg" width={160} height={48} alt="ShopWired" /><h3>A production background queue stopped processing jobs</h3><p>We diagnosed the bottlenecks, restored processing and eliminated recurring H12 errors on Heroku.</p><Link href="/showcases/shopwired-queue-optimization">Read the queue recovery story <LinkIndicator /></Link></article>
+            <article className="rails-card"><Image src="/img/showcases/clients/wo.svg" width={160} height={48} alt="Worship Online" /><h3>Stripe and the application disagreed about subscriptions</h3><p>We corrected webhook processing and historical data, recovered subscriptions and added monitoring to catch future inconsistencies.</p><Link href="/showcases/stripe-integration">See how we restored consistency <LinkIndicator /></Link></article>
+            <article className="rails-card"><Image src="/img/showcases/clients/wo.svg" width={160} height={48} alt="Worship Online" /><h3>A live Rails product needed a new experience</h3><p>We gradually redesigned the application with zero downtime while keeping existing mobile clients working.</p><Link href="/showcases/ruby-on-rails-redesign">Explore the gradual redesign <LinkIndicator /></Link></article>
           </div>
-          <Link className="rails-text-link" href="/showcases">View all case studies →</Link>
+          <Link className="rails-text-link" href="/showcases">View all case studies <LinkIndicator /></Link>
         </div>
       </section>
       <section className="expertise has-vertical-paddings">

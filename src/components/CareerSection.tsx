@@ -1,3 +1,5 @@
+
+import LinkIndicator from '@/components/LinkIndicator';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -109,7 +111,7 @@ export default function CareerSection() {
                 <span className="detail-item">📅 Short-term</span>
               </div>
               <Link href="/career/ruby-developer" className="position-link">
-                View Details & Apply →
+                View Details & Apply <LinkIndicator />
               </Link>
             </div>
           </div>

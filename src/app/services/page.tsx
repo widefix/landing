@@ -1,3 +1,5 @@
+
+import LinkIndicator from '@/components/LinkIndicator';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -90,7 +92,7 @@ function ServiceCards({ services }: { services: Service[] }) {
           <h3>{service.title}</h3>
           <p>{service.description}</p>
           <ul className="rails-service-list">{service.items.map(item => <li key={item}>{item}</li>)}</ul>
-          {service.href && <Link href={service.href}>{service.link} →</Link>}
+          {service.href && <Link href={service.href}>{service.link} <LinkIndicator /></Link>}
         </article>
       ))}
     </div>
@@ -106,7 +108,7 @@ export default function ServicesPage() {
             <p className="rails-eyebrow">Services for the whole application</p>
             <h1>Maintain, modernize and develop your <span>Rails application</span></h1>
             <p className="rails-intro">From taking over an existing codebase to shipping the next feature, we handle the work that keeps your product dependable and moving forward. Rails is our specialty; the rest of your stack is part of the job.</p>
-            <div className="rails-actions"><RailsCall /><Link href="#our-services">Explore our services →</Link></div>
+            <div className="rails-actions"><RailsCall /><Link href="#our-services">Explore our services <LinkIndicator /></Link></div>
           </div>
           <div className="rails-hero-aside">
             <Image src="/img/rails-services-hero.svg" alt="Rails services: maintenance, upgrades, performance, development, infrastructure and integrations" width={560} height={490} priority />
@@ -142,14 +144,14 @@ export default function ServicesPage() {
             <h2>A practical plan for the next stage of your product</h2>
             <p className="rails-intro">Need help deciding what to fix, upgrade or build first? We review your architecture and delivery process, explain the tradeoffs and connect technical decisions to your business priorities.</p>
             <ul className="rails-service-list"><li>Architecture reviews and modernization roadmaps</li><li>Performance audits and upgrade planning</li><li>Fractional CTO and solutions architecture support</li><li>Technical guidance alongside hands-on development</li></ul>
-            <Link className="rails-text-link" href="/contact">Discuss your technical priorities →</Link>
+            <Link className="rails-text-link" href="/contact">Discuss your technical priorities <LinkIndicator /></Link>
           </div>
           <aside className="rails-card rails-founder-card">
             <Image src="/img/andrei-kaleshka.webp" alt="Andrei Kaleshka, WideFix founder" width={120} height={120} />
             <h3>Led by Andrei Kaleshka</h3>
             <p>WideFix&apos;s founder is a Toptal-verified engineer, published author and contributor to the Ruby ecosystem. Our open-source tools include Migration Data and Actual DB Schema.</p>
-            <Link href="https://www.toptal.com/resume/andrei-kaleshka" target="_blank" rel="noopener noreferrer">View Andrei&apos;s experience →</Link>
-            <Link href="/showcases">Explore our client work →</Link>
+            <Link href="https://www.toptal.com/resume/andrei-kaleshka" target="_blank" rel="noopener noreferrer">View Andrei&apos;s experience <LinkIndicator /></Link>
+            <Link href="/showcases">Explore our client work <LinkIndicator /></Link>
           </aside>
         </div>
       </section>

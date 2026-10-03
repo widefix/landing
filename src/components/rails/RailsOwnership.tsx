@@ -1,3 +1,5 @@
+
+import LinkIndicator from '@/components/LinkIndicator';
 import Link from 'next/link';
 
 export const railsCallUrl = 'https://calendly.com/andrei-kaleshka/30min';
@@ -34,7 +36,7 @@ export function OwnershipCTA() {
         <p className="rails-eyebrow">Your application. A clear next step.</p>
         <h2>Let&apos;s talk about your Rails application</h2>
         <p>Tell us where the project stands today. We&apos;ll help identify the risks, priorities and a practical way to take it over.</p>
-        <div className="rails-actions"><RailsCall /><Link href="/contact">Prefer to write? Get in touch →</Link></div>
+        <div className="rails-actions"><RailsCall /><Link href="/contact">Prefer to write? Get in touch <LinkIndicator /></Link></div>
       </div>
     </section>
   );

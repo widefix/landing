@@ -1,3 +1,5 @@
+
+import LinkIndicator from '@/components/LinkIndicator';
 import Link from 'next/link';
 
 export default function AIIntegrationsSection() {
@@ -39,7 +41,7 @@ export default function AIIntegrationsSection() {
         </div>
         <div className="ai-integrations-actions">
           <Link href="/contact" className="button primary">Talk About AI</Link>
-          <Link href="/services#ai-integrations" className="ai-integrations-details">Explore AI integration services <span aria-hidden="true">→</span></Link>
+          <Link href="/services#ai-integrations" className="ai-integrations-details">Explore AI integration services <LinkIndicator /></Link>
         </div>
       </div>
     </section>

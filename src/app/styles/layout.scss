@@ -87,3 +87,27 @@ main section.has-vertical-paddings > .inner > header {
 main .clients > .inner > .container {
     margin-top: 0;
 }
+
+.link-indicator {
+    display: inline-flex;
+    width: 22px;
+    height: 22px;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    margin-left: 6px;
+    border-radius: 50%;
+    background: color-mix(in srgb, currentColor 9%, transparent);
+    transition: transform 160ms ease;
+}
+
+a:hover .link-indicator,
+a:focus-visible .link-indicator {
+    transform: translateX(3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .link-indicator { transition: none; }
+    a:hover .link-indicator,
+    a:focus-visible .link-indicator { transform: none; }
+}
