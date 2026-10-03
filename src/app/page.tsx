@@ -12,7 +12,7 @@ export default function HomePage() {
             <p className="rails-eyebrow">Ruby on Rails application ownership</p>
             <h1>We take ownership of existing <span>Ruby on Rails</span> applications</h1>
             <p className="rails-lead">Need someone to take over your Rails app?</p>
-            <p className="rails-intro">We maintain, stabilize and improve existing Rails applications — from production issues and upgrades to new features and infrastructure. Keep your product moving without unnecessary rewrites or rebuilding your engineering team.</p>
+            <p className="rails-intro">We maintain, stabilize and improve existing Rails applications from production issues and upgrades to new features and infrastructure. Keep your product moving without unnecessary rewrites or rebuilding your engineering team.</p>
             <div className="rails-actions"><RailsCall /><Link href="#how-we-take-over">How we take over →</Link></div>
           </div>
           <div className="rails-hero-aside">

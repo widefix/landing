@@ -26,7 +26,7 @@ The project ran on Ruby 3.1.4 and Rails 6.1.7.6. Upgrade targets to Ruby 3.4.4 a
 
 It’s a Rails monolith that serves primarily as a GraphQL API backend. The frontend was once part of a full-stack app but is now a separate React app. Some old legacy controllers, views, helpers, and gems are still around, even though they are not used.
 
-The codebase isn’t huge — about 100 models, 3 GraphQL schemas, 200 service objects, 60 background jobs, and around 5 actively used controllers.
+The codebase isn’t huge - about 100 models, 3 GraphQL schemas, 200 service objects, 60 background jobs, and around 5 actively used controllers.
 
 PostgreSQL is the main DB; Sidekiq is for background jobs. No caching. RSpec/FactoryBot is for testing; Rubocop for code linting.
 
@@ -114,7 +114,7 @@ TSort::Cyclic:
 
 I remove neither dart nor sass engines from the project to avoid the cyclic dependency error. The recommendation of the `bootstrap` gem added the gems. But those gems are not needed for the project, so I remove them.
 
-At this point, the tests started to run; not all of them passed, but at least I could see the progress. I left the tests fixing for later and moved on to the next step — assets precompilation. On that step, I encountered the following issues.
+At this point, the tests started to run; not all of them passed, but at least I could see the progress. I left the tests fixing for later and moved on to the next step - assets precompilation. On that step, I encountered the following issues.
 
 <a id="issue-6" href="#issue-6">💣 issue 6 🔗</a>
 
@@ -262,7 +262,7 @@ At this moment I thought it was incompatibility between Ruby 3.4.4 and Rails 6.1
 
 All tests pass. Assets precompilation doesn't fail. The Rails console works. The Rails server starts without errors. Sidekiq also starts without issues. I can now deploy the app to Heroku.
 
-Moving on to the next step — upgrading Rubocop.
+Moving on to the next step - upgrading Rubocop.
 
 
 <a id="issue-12" href="#issue-12">💣 issue 12 🔗</a>

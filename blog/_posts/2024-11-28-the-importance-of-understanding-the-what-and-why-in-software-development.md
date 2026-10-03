@@ -26,7 +26,7 @@ While the payment was reversed, the outcome didn’t align with the requirements
 - **The invoice remained in a "paid" status**, which was incorrect after a refund.
 - **The payment wasn’t marked as refunded**, leaving the system in an inconsistent state.
 
-The developer was satisfied with the outcome, claiming that the job was complete. This led to a key realization: they had focused solely on the *what*—reverting the transaction—without understanding the *why* behind the operation.
+The developer was satisfied with the outcome, claiming that the job was complete. This led to a key realization: they had focused solely on the *what*-reverting the transaction-without understanding the *why* behind the operation.
 
 ### Why It Happened
 
