@@ -64,6 +64,7 @@ export default function ServicesPage() {
             <p>Comprehensive software development solutions tailored to your business needs</p>
           </header>
 
+          <p style={{ marginBottom: '24px' }}>Need a team for an existing Rails product? <Link href="/ruby-on-rails-application-takeover">Explore Rails application takeover and ongoing ownership →</Link></p>
           <div className="services-grid">
             <div className="service-card featured">
               <div className="service-icon">

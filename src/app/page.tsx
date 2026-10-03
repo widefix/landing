@@ -1,57 +1,138 @@
 import ClutchWidget from '@/components/ClutchWidget';
-import AIIntegrationsSection from '@/components/AIIntegrationsSection';
-import Image from 'next/image'
+import { OwnershipProcess, OwnershipCTA, RailsCall } from '@/components/rails/RailsOwnership';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function HomePage() {
   return (
-    <main>
-      <section className="hero has-vertical-paddings">
-        <div className="inner">
-          <div className="hero-block-left">
-            <h1>We build <span>complex</span> software systems to <span>last</span> and <span>scale</span></h1>
-            <div className="promise-block">
-              <h2 className="title">Our promise to you</h2>
-              <ul>
-                <li>
-                  <Image src="/img/promises/save-time.svg" alt="Save Time" width="24" height="24" />
-                  <span>Your time saved</span>
-                </li>
-                <li>
-                  <Image src="/img/promises/fix-app-problems.svg" alt="Fix app problems" width="24" height="24" />
-                  <span>Tech issues fixed</span>
-                </li>
-                <li>
-                  <Image src="/img/promises/get-more-customers.svg" alt="Get more customers" width="24" height="24" />
-                  <span>Your business grows</span>
-                </li>
-              </ul>
-            </div>
-            <div className="button-container">
-              <Link className="button primary" href="https://calendly.com/andrei-kaleshka/30min" target="_blank"
-                rel="nofollow">Request a free app audit</Link>
-            </div>
+    <main className="rails-home">
+      <section className="rails-section rails-hero">
+        <div className="inner rails-hero-grid">
+          <div>
+            <p className="rails-eyebrow">Ruby on Rails application ownership</p>
+            <h1>We take ownership of existing <span>Ruby on Rails</span> applications</h1>
+            <p className="rails-lead">Need someone to take over your Rails app?</p>
+            <p className="rails-intro">We maintain, stabilize and improve existing Rails applications — from production issues and upgrades to new features and infrastructure. Keep your product moving without unnecessary rewrites or rebuilding your engineering team.</p>
+            <div className="rails-actions"><RailsCall /><Link href="#how-we-take-over">How we take over →</Link></div>
           </div>
-          <div className="hero-block-right">
-            <picture>
-              <source srcSet="/img/hero-section-background.webp" type="image/webp" />
-              <Image src="/img/hero-section-background.jpg" alt="Optimise your app to get more customers" width="543"
-                height="474" />
-            </picture>
+          <div className="rails-hero-aside">
+            <Image src="/img/rails-ownership-hero.svg" alt="Your Rails application supported through takeover, stabilization, maintenance and ongoing development" width={560} height={490} priority />
+            <p>Ongoing maintenance + product development</p>
           </div>
         </div>
+      </section>
+      <section className="rails-section rails-situations">
         <div className="inner">
-          <p>
-            Unlock full potential of your business with expert guidance in software development, maximizing efficiency, stability, and growth.
-          </p>
+          <p className="rails-eyebrow">Does this sound familiar?</p>
+          <h2>Your Rails application needs an owner</h2>
+          <p className="rails-intro">You have a live product and customers who rely on it. You need someone who can understand the existing system and take responsibility for what comes next.</p>
+          <div className="rails-card-grid">
+            {[
+              ['Your developer left', 'Your developer or agency moved on. You need a reliable team to take over the codebase and keep the product running.'],
+              ['Your team needs Rails expertise', 'Your team knows the business, but needs experienced Rails engineers to guide decisions and deliver the work.'],
+              ['Production issues keep returning', 'Slow pages, failed jobs or unreliable deployments pull your attention away from your customers.'],
+              ['Ruby and Rails are falling behind', 'Outdated versions and dependencies make changes harder. You need a safe, incremental upgrade plan.'],
+              ['Development has slowed down', 'Every feature feels risky or takes too long. You need someone to untangle the code and restore momentum.'],
+              ['You need an owner, not just a fix', 'You want a partner who understands the whole application and can maintain it while shipping new features.'],
+            ].map(([title, text]) => <article className="rails-card" key={title}><h3>{title}</h3><p>{text}</p></article>)}
+          </div>
+          <Link className="rails-text-link" href="/ruby-on-rails-application-takeover">Explore our Rails application takeover service →</Link>
+        </div>
+      </section>
+      <OwnershipProcess />
+      <section className="rails-section" id="services">
+        <div className="inner">
+          <p className="rails-eyebrow">One team for the whole application</p>
+          <h2>Rails specialists who can handle the rest of your stack too</h2>
+          <p className="rails-intro">We look after the existing application and develop what comes next: upgrades, production fixes, PostgreSQL, background jobs, performance, infrastructure, integrations, CI/CD, monitoring, security, architecture and new features.</p>
+          <ul className="rails-stack" aria-label="Technologies we work with">{['Ruby on Rails', 'PostgreSQL', 'Redis', 'React', 'React Native', 'AWS', 'Heroku', 'Docker'].map(tech => <li key={tech}>{tech}</li>)}</ul>
+          <Link className="rails-text-link" href="/services">See our full capabilities →</Link>
+        </div>
+      </section>
+      <section className="rails-section rails-tinted">
+        <div className="inner">
+          <p className="rails-eyebrow">Real applications. Practical results.</p>
+          <h2>Existing systems, moving forward</h2>
+          <div className="rails-card-grid rails-case-grid">
+            <article className="rails-card"><Image src="/img/showcases/clients/shopwired.svg" width={160} height={48} alt="ShopWired" /><h3>A production background queue stopped processing jobs</h3><p>We diagnosed the bottlenecks, restored processing and eliminated recurring H12 errors on Heroku.</p><Link href="/showcases/shopwired-queue-optimization">Read the queue recovery story →</Link></article>
+            <article className="rails-card"><Image src="/img/showcases/clients/wo.svg" width={160} height={48} alt="Worship Online" /><h3>Stripe and the application disagreed about subscriptions</h3><p>We corrected webhook processing and historical data, recovered subscriptions and added monitoring to catch future inconsistencies.</p><Link href="/showcases/stripe-integration">See how we restored consistency →</Link></article>
+            <article className="rails-card"><Image src="/img/showcases/clients/wo.svg" width={160} height={48} alt="Worship Online" /><h3>A live Rails product needed a new experience</h3><p>We gradually redesigned the application with zero downtime while keeping existing mobile clients working.</p><Link href="/showcases/ruby-on-rails-redesign">Explore the gradual redesign →</Link></article>
+          </div>
+          <Link className="rails-text-link" href="/showcases">View all case studies →</Link>
+        </div>
+      </section>
+      <section className="expertise has-vertical-paddings">
+        <div className="inner">
+          <header id="proven-track">
+            <h2>Why trust us with an existing Rails application?</h2>
+            <p>
+              Meet the Rails specialists behind the work: a Toptal-verified founder, a published book, practical upgrade experience and open-source tools built for real codebases.
+            </p>
+          </header>
+          <div className="container">
+            <div className="item toptal-resume">
+              <Link rel="nofollow" href="https://www.toptal.com/resume/andrei-kaleshka"
+                target="_blank">
+                <div className="content">
+                  <span>Verified expert</span>
+                </div>
+              </Link>
+              <p>WideFix founder is among the top 3% of freelance developers accepted worldwide by Toptal.</p>
+            </div>
+            <div className="item book">
+              <Link rel="nofollow" href="https://www.packtpub.com/product/rake-task-management-essentials/9781783280773"
+                target="_blank">
+                <div className="content">
+                  <span>BOOK</span>
+                </div>
+              </Link>
+              <p>A book authored by the founder of WideFix, Andrei Kaleshka.</p>
+            </div>
+            <div className="item tech-blog">
+              <Link href="https://widefix.com/blog/spike-of-signups-business-threat/" target="_blank">
+                <div className="content">
+                  <span>Article</span>
+                  <h3>Fake signups: a threat to your business</h3>
+                </div>
+              </Link>
+              <p>Recent tech problem solved by us for a client.</p>
+            </div>
+            <div className="item rails-upgrade">
+              <Link href="https://widefix.com/blog/ruby-and-rails-upgrade-personal-experience/" target="_blank">
+                <div className="content">
+                  <span>Article</span>
+                  <h3>Ruby and Rails upgrade: personal experience</h3>
+                </div>
+              </Link>
+              <p>Featured article on our blog describes a step-by-step approach to upgrading the Ruby and Rails stack.</p>
+            </div>
+            <div className="item migration-data">
+              <Link rel="nofollow" href="https://github.com/ka8725/migration_data" target="_blank">
+                <div className="content">
+                  <span>Open-Sourced Library</span>
+                  <h3>Migration Data</h3>
+                </div>
+              </Link>
+              <p>An open-sourced library developed by us to improve our daily developer task routine.</p>
+            </div>
+            <div className="item actual-db-schema">
+              <Link rel="nofollow" href="https://github.com/widefix/actual_db_schema" target="_blank">
+                <div className="content">
+                  <span>Open-Sourced Library</span>
+                  <h3>Actual DB Schema</h3>
+                </div>
+              </Link>
+              <p>An open-sourced library developed by us to improve our daily developer task routine.</p>
+            </div>
+          </div>
         </div>
       </section>
 
       <section className="achievements has-vertical-paddings">
         <div className="inner">
           <header>
-            <h2>Our <span>Achievements</span> & Recognition</h2>
-            <p>Proven track record of delivering exceptional results and gaining industry recognition</p>
+            <h2>Rails expertise you can <span>build on</span></h2>
+            <p>Open-source contributions, production results and recognition from clients and the Ruby community</p>
           </header>
           <div className="achievements-grid">
             <div className="achievement-item">
@@ -145,322 +226,6 @@ export default function HomePage() {
                 <div className="achievement-tag founder">Founder</div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="ideal-clients has-vertical-paddings">
-        <div className="inner">
-          <header>
-            <h2>Who we <span>work</span> with</h2>
-            <p>Our expertise is best suited for these client profiles</p>
-          </header>
-          <div className="clients-grid">
-            <div className="client-type">
-              <div className="icon-wrapper">
-                <Image src="/img/clients/saas-startups.svg" alt="SaaS startups" width="64" height="64" />
-              </div>
-              <h3>SaaS startups</h3>
-              <p>With existing applications needing expert optimization and scaling</p>
-            </div>
-            <div className="client-type">
-              <div className="icon-wrapper">
-                <Image src="/img/clients/product-teams.svg" alt="Product teams" width="64" height="64" />
-              </div>
-              <h3>Product teams</h3>
-              <p>Needing a fractional senior developer to elevate code quality and performance</p>
-            </div>
-            <div className="client-type">
-              <div className="icon-wrapper">
-                <Image src="/img/clients/businesses.svg" alt="Businesses" width="64" height="64" />
-              </div>
-              <h3>Businesses</h3>
-              <p>With underperforming or buggy software that needs professional remediation</p>
-            </div>
-            <div className="client-type">
-              <div className="icon-wrapper">
-                <Image src="/img/clients/domains.svg" alt="Domains" width="64" height="64" />
-              </div>
-              <h3>Domains</h3>
-              <p>Companies in industries like e-commerce, logistics, and e-education</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="banner-top">
-        <div className="inner">
-          <div className="banner-content">
-            <h2>Your app is <span>not</span> ready</h2>
-            <ul>
-              <li>Customers won’t be impressed by your slow app.</li>
-              <li>You have yet to fix underlying issues of your application.</li>
-              <li>At Widefix, you will get a bug-free app your customers will love to use.</li>
-            </ul>
-          </div>
-          <div className="img-wrapper">
-            <picture>
-              <source srcSet="/img/app-image.webp" type="image/webp" />
-              <Image src="/img/app-image.png" alt="Your app is not ready" width="455" height="319" />
-            </picture>
-          </div>
-        </div>
-      </section>
-
-      <section className="what-we-do has-vertical-paddings">
-        <div className="inner">
-          <div className="header" id="services">
-            <h2>What we <span>do</span></h2>
-            <p>
-              We don&apos;t just fix bugs — we transform your entire application ecosystem.
-              When you work with us, all underlying issues get resolved systematically,
-              ensuring your app won&apos;t be slowed down by recurring problems.
-            </p>
-            <div className="expertise-highlight">
-              <p className="highlight-text">
-                We are <strong>fintech experts</strong> with deep expertise in <strong>payment systems integration</strong> (Stripe, PayPal, Square) and <strong>accounting software integration</strong> (Xero, QuickBooks, Sage, Clearbooks). Our specialization includes building robust financial workflows, <strong>financial reporting solutions</strong>, and <strong>data analysis systems</strong> that drive business growth.
-              </p>
-            </div>
-            <div className="tech-stack">
-              <h3>Our Technology Expertise</h3>
-              <div className="tech-categories">
-                <div className="tech-category">
-                  <h4>Backend Excellence</h4>
-                  <div className="tech-items">
-                    <span className="tech-item primary">Ruby on Rails</span>
-                    <span className="tech-item">Hanami</span>
-                    <span className="tech-item">Sinatra</span>
-                    <span className="tech-item">Custom Ruby</span>
-                  </div>
-                </div>
-                <div className="tech-category">
-                  <h4>Frontend & Web</h4>
-                  <div className="tech-items">
-                    <span className="tech-item primary">React</span>
-                    <span className="tech-item">Next.js</span>
-                    <span className="tech-item">Node.js</span>
-                    <span className="tech-item">TypeScript</span>
-                  </div>
-                </div>
-                <div className="tech-category">
-                  <h4>Mobile Development</h4>
-                  <div className="tech-items">
-                    <span className="tech-item primary">React Native</span>
-                    <span className="tech-item">Swift (iOS)</span>
-                    <span className="tech-item">Kotlin (Android)</span>
-                    <span className="tech-item">C++</span>
-                  </div>
-                </div>
-                <div className="tech-category">
-                  <h4>Database & Infrastructure</h4>
-                  <div className="tech-items">
-                    <span className="tech-item primary">PostgreSQL</span>
-                    <span className="tech-item">Redis</span>
-                    <span className="tech-item">AWS</span>
-                    <span className="tech-item">Heroku</span>
-                    <span className="tech-item">Docker</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="block-container">
-            <div className="block">
-              <div className="block-left">
-                <Image src="/img/what-we-do/icon-optimization.svg" width="64" height="64"
-                  alt="Icon for Optimization block" />
-              </div>
-              <div className="block-right">
-                <h2>Fix performance bottlenecks</h2>
-                <ul>
-                  <li>Speed</li>
-                  <li>Memory leaks</li>
-                  <li>Stability</li>
-                </ul>
-              </div>
-            </div>
-            <div className="block">
-              <div className="block-left">
-                <Image src="/img/what-we-do/icon-devops-and-maintenance.svg" width="64" height="64"
-                  alt="Icon for Devops & Maintenance block" />
-              </div>
-              <div className="block-right">
-                <h2>Rescue legacy Ruby on Rails apps with</h2>
-                <ul>
-                  <li>Bugs</li>
-                  <li>Crashes</li>
-                  <li>Outdated tech</li>
-                </ul>
-              </div>
-            </div>
-            <div className="block">
-              <div className="block-left">
-                <Image src="/img/what-we-do/icon-systems-integration.svg" width="64" height="64"
-                  alt="Icon for Systems Integration block" />
-              </div>
-              <div className="block-right">
-                <h2>Build & ship high-quality features</h2>
-                <ul>
-                  <li>End-to-end feature development</li>
-                  <li>Designing & developing new design screens</li>
-                </ul>
-              </div>
-            </div>
-            <div className="block">
-              <div className="block-left">
-                <Image src="/img/what-we-do/icon-development-and-design.svg" width="64" height="64"
-                  alt="Icon for Development & Design block" />
-              </div>
-              <div className="block-right">
-                <h2>Achieve scale & reliability through</h2>
-                <ul>
-                  <li>Infrastructure</li>
-                  <li>Architectural guidance</li>
-                </ul>
-              </div>
-            </div>
-            <div className="block">
-              <div className="block-left">
-                <Image src="/img/what-we-do/icon-quality-assurance.svg" width="64" height="64"
-                  alt="Icon for Quality Assurance block" />
-              </div>
-              <div className="block-right">
-                <h2>Boost product velocity</h2>
-                <ul>
-                  <li>Clean code</li>
-                  <li>Automated tests</li>
-                  <li>CI/CD</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div className="button-container">
-            <Link className="button primary" href="https://calendly.com/andrei-kaleshka/30min" target="_blank"
-              rel="nofollow">Request a free app audit</Link>
-          </div>
-        </div>
-      </section>
-
-      <AIIntegrationsSection />
-
-      <section className="you-can-trust has-vertical-paddings">
-        <div className="inner">
-          <h2>Why you can <span>trust</span> WideFix for your application</h2>
-          <div className="content-wrapper">
-            <div className="left-content">
-              <picture>
-                <source srcSet="/img/you-can-trust.webp" type="image/webp" />
-                <Image src="/img/you-can-trust.jpg" alt="You can trust WideFix" width="399" height="388" />
-              </picture>
-            </div>
-            <div className="right-content">
-              <div className="block m-expertise">
-                <h3><Image src="/img/icons/expertise.svg" alt="Icon for Expertise and experience block" width="56"
-                    height="56" /> Expertise and experience</h3>
-                <p>Our team of experienced developers has a proven track record of delivering high-quality code and solving complex problems. We have the skills and knowledge to tackle any project, no matter how challenging.</p>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginTop: '1rem' }}>
-                  <div style={{ padding: '1rem', border: '1px solid #e0e0e0', borderRadius: '8px', backgroundColor: '#f9f9f9' }}>
-                    <b>Double revenue</b>
-                    <p style={{ fontSize: '0.9rem', marginTop: '0.5rem', color: '#666' }}>💰 Eliminate app friction</p>
-                  </div>
-                  <div style={{ padding: '1rem', border: '1px solid #e0e0e0', borderRadius: '8px', backgroundColor: '#f9f9f9' }}>
-                    <b>Scale without crashes</b>
-                    <p style={{ fontSize: '0.9rem', marginTop: '0.5rem', color: '#666' }}>⚡ Optimized memory, database, and caching</p>
-                  </div>
-                  <div style={{ padding: '1rem', border: '1px solid #e0e0e0', borderRadius: '8px', backgroundColor: '#f9f9f9' }}>
-                    <b>Get to market faster</b>
-                    <p style={{ fontSize: '0.9rem', marginTop: '0.5rem', color: '#666' }}>🚀 Expert-built features and integrations</p>
-                  </div>
-                  <div style={{ padding: '1rem', border: '1px solid #e0e0e0', borderRadius: '8px', backgroundColor: '#f9f9f9' }}>
-                    <b>Cut dev costs</b>
-                    <p style={{ fontSize: '0.9rem', marginTop: '0.5rem', color: '#666' }}>💵 Clean refactoring and reduced downtime</p>
-                  </div>
-                  <div style={{ padding: '1rem', border: '1px solid #e0e0e0', borderRadius: '8px', backgroundColor: '#f9f9f9' }}>
-                    <b>Fix bugs others can&apos;t</b>
-                    <p style={{ fontSize: '0.9rem', marginTop: '0.5rem', color: '#666' }}>🔧 Deep Rails codebases experience</p>
-                  </div>
-                </div>
-              </div>
-              <div className="block m-innovative">
-                <h3><Image src="/img/icons/innovative.svg" alt="Icon for Innovative solutions block" width="56" height="56" />
-                  Innovative solutions</h3>
-                <p>We stay on the cutting edge of technology and use the latest tools to deliver the best solutions to our clients. Our timely internal code reviews and QA processes ensure we maintain high standards and meet client expectations.</p>
-              </div>
-              <div className="block m-support">
-                <h3><Image src="/img/icons/support.svg" alt="Icon for Dedicated block" width="56" height="56" /> Dedicated support</h3>
-                <p>We offer unparalleled support and customer service. Whether you have questions about your project or need help troubleshooting, our team is always here to support you and ensure your project&apos;s success.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="optimize-your-app has-vertical-paddings">
-        <div className="inner">
-          <header>
-            <h2>You have a lot to consider. Let experts <span>optimize</span> your app that customers will love to use!</h2>
-            <div className="button-wrapper"><Link className="button primary" href="https://calendly.com/andrei-kaleshka/30min"
-                target="_blank" rel="nofollow">Request a free app audit</Link></div>
-          </header>
-          <div className="section-content">
-            <div className="section-block">
-              <Image src="/img/icons/waste-time.svg" alt="Icon for Stop wasting time" width="56" height="56" />
-              <h3>Stop wasting time</h3>
-              <p>You waste a lot of time by guessing how to optimize your app. Let the team of experts at Widefix help you
-                out.</p>
-            </div>
-            <div className="section-block">
-              <Image src="/img/icons/win-over.svg" alt="Icon for Win over your customers" width="56" height="56" />
-              <h3>Win over your customers</h3>
-              <p>With our expertise, your application will stand out in new markets. Customers will love to use your
-                application!</p>
-            </div>
-            <div className="section-block">
-              <Image src="/img/icons/fix-app.svg" alt="Icon for Fix underlying issues in your app" width="56" height="56" />
-              <h3>Fix underlying issues in your app</h3>
-              <p>Identify high-risk technical challenges with suggestions for best solution, technology stack & architecture
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="roadmap">
-        <div className="inner">
-          <header>
-            <Image src="/img/decoration/crown.svg" alt="Crown icon" width="56" height="56" />
-            <h2>It’s super easy to make your app a winner</h2>
-            <span className="subtitle">Here’s what you need to do.</span>
-          </header>
-          <div className="section-content">
-            <div className="section-block">
-              <div className="curve">
-                <Image src="/img/roadmap.svg" alt="Roadmap" width="800" height="400" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="banner-bottom has-vertical-paddings">
-        <div className="inner">
-          <h2>Not sure what kind of support you need?</h2>
-          <p>Optimise your app and get underlying issues fixed. You deserve an app customers will love to use.<br />If you
-            would like to discuss your needs further, you can schedule a consultation with one of our experts</p>
-          <div className="contacts">
-            <div className="contact">
-              <Image src="/img/icons/email.svg" alt="Icon for email" width="40" height="40" />
-              <p>Email: <Link href="mailto:call@widefix.com">call@widefix.com</Link></p>
-            </div>
-            <div className="contact">
-              <Image src="/img/icons/phone.svg" alt="Icon for phone" width="40" height="40" />
-              <p>Phone: <Link href="tel:+48516295359">+48516295359</Link></p>
-            </div>
-          </div>
-
-          <div className="button-container">
-            <Link className="button primary" href="https://calendly.com/andrei-kaleshka/30min" target="_blank"
-              rel="nofollow">Request a free app audit</Link>
           </div>
         </div>
       </section>
@@ -711,80 +476,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="expertise has-vertical-paddings">
-        <div className="inner">
-          <header id="proven-track">
-            <h2>Widefix has a proven track record in application development. Read more about our expertise.</h2>
-            <p>
-              All of that outstanding work has been recognized by our clients and partners. We are proud to be a leading global Ruby on Rails consulting company.
-            </p>
-          </header>
-          <div className="container">
-            <div className="item toptal-resume">
-              <Link rel="nofollow" href="https://www.toptal.com/resume/andrei-kaleshka"
-                target="_blank">
-                <div className="content">
-                  <span>Verified expert</span>
-                </div>
-              </Link>
-              <p>WideFix founder is among the top 3% of freelance developers accepted worldwide by Toptal.</p>
-            </div>
-            <div className="item book">
-              <Link rel="nofollow" href="https://www.packtpub.com/product/rake-task-management-essentials/9781783280773"
-                target="_blank">
-                <div className="content">
-                  <span>BOOK</span>
-                </div>
-              </Link>
-              <p>A book authored by the founder of WideFix, Andrei Kaleshka.</p>
-            </div>
-            <div className="item tech-blog">
-              <Link href="https://widefix.com/blog/spike-of-signups-business-threat/" target="_blank">
-                <div className="content">
-                  <span>Article</span>
-                  <h3>Fake signups: a threat to your business</h3>
-                </div>
-              </Link>
-              <p>Recent tech problem solved by us for a client.</p>
-            </div>
-            <div className="item rails-upgrade">
-              <Link href="https://widefix.com/blog/ruby-and-rails-upgrade-personal-experience/" target="_blank">
-                <div className="content">
-                  <span>Article</span>
-                  <h3>Ruby and Rails upgrade: personal experience</h3>
-                </div>
-              </Link>
-              <p>Featured article on our blog describes a step-by-step approach to upgrading the Ruby and Rails stack.</p>
-            </div>
-            <div className="item migration-data">
-              <Link rel="nofollow" href="https://github.com/ka8725/migration_data" target="_blank">
-                <div className="content">
-                  <span>Open-Sourced Library</span>
-                  <h3>Migration Data</h3>
-                </div>
-              </Link>
-              <p>An open-sourced library developed by us to improve our daily developer task routine.</p>
-            </div>
-            <div className="item actual-db-schema">
-              <Link rel="nofollow" href="https://github.com/widefix/actual_db_schema" target="_blank">
-                <div className="content">
-                  <span>Open-Sourced Library</span>
-                  <h3>Actual DB Schema</h3>
-                </div>
-              </Link>
-              <p>An open-sourced library developed by us to improve our daily developer task routine.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="reviews has-vertical-paddings">
         <div className="inner">
           <header id="reviews">
             <h2>Read what our <span>clients</span> have to say.</h2>
             <div className="button-container">
               <Link className="button primary" href="https://calendly.com/andrei-kaleshka/30min" target="_blank"
-                rel="nofollow">Request a free app audit</Link>
+                rel="nofollow">Discuss your Rails application</Link>
             </div>
           </header>
           <div className="slider-wrapper">
@@ -792,6 +490,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      <OwnershipCTA />
     </main>
   );
 }

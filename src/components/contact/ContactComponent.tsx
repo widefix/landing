@@ -9,9 +9,9 @@ export default function ContactComponent() {
       <section className="hero has-vertical-paddings" id='contact'>
         <div className="inner">
           <div className="hero-block-left">
-            <h1>Ready to <span>transform</span> your business with expert software <span>solutions</span>?</h1>
+            <h1>Let&apos;s talk about your <span>Rails application</span></h1>
             <p className="hero-description">
-              Get in touch with our team of experienced developers and let&apos;s discuss how we can help you achieve your goals with custom software that delivers real results.
+              Tell us where your application stands today, what needs attention and what you want to build next. We&apos;ll discuss a practical path for handover, maintenance and ongoing development.
             </p>
             <div className="contact-options">
               <div className="contact-option">
@@ -59,8 +59,8 @@ export default function ContactComponent() {
         <div className="inner">
           <div className="contact-form-wrapper">
             <div className="form-header">
-              <h2>Get Your <span>Free Project Assessment</span></h2>
-              <p>Tell us about your project and we&apos;ll get back to you within 24 hours with a detailed proposal.</p>
+              <h2>Tell us about your <span>application</span></h2>
+              <p>Share your current setup, priorities and any handover concerns so we can discuss the right next step.</p>
             </div>
 
             <div className="contact-form-container">
