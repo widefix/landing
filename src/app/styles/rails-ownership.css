@@ -119,3 +119,10 @@
     padding-bottom: 170px;
   }
 }
+
+.rails-takeover .rails-hero-aside {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  justify-self: center;
+}
