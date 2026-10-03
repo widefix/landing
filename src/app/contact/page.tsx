@@ -3,13 +3,13 @@ import ContactComponent from '@/components/contact/ContactComponent';
 
 export const metadata: Metadata = {
   title: "Contact - WideFix",
-  description: "Reach out to WideFix, the custom software development agency, to have your tech issues resolved today!",
+  description: "Discuss your existing Rails application with WideFix: handover, maintenance, upgrades and ongoing development.",
   alternates: {
     canonical: "https://widefix.com/contact"
   },
   openGraph: {
     title: "Contact - WideFix",
-    description: "Reach out to WideFix, the custom software development agency, to have your tech issues resolved today!",
+    description: "Discuss your existing Rails application with WideFix: handover, maintenance, upgrades and ongoing development.",
     url: "https://widefix.com/contact",
     siteName: "WideFix",
     images: [

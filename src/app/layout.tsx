@@ -8,6 +8,7 @@ import "@/app/styles/achievements.css";
 import "@/app/styles/tech-stack.css";
 import "@/app/styles/services.css";
 import "@/app/styles/contact.css";
+import "@/app/styles/rails-ownership.css";
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 
@@ -23,10 +24,10 @@ const montserrat = Montserrat({
   variable: '--font-montserrat',
 })
 
-const desc = "WideFix is a custom software agency led by Toptal expert Andrei Kaleshka, part of the top 3% of global talent.";
+const desc = "WideFix takes ownership of existing Ruby on Rails applications: handover, stabilization, maintenance, upgrades and ongoing feature development.";
 
 export const metadata: Metadata = {
-  title: "Your Trusted Software Development Partner - WideFix",
+  title: "Ruby on Rails Application Ownership - WideFix",
   description: desc,
   twitter: {
     card: "summary_large_image",
@@ -58,7 +59,7 @@ export const metadata: Metadata = {
     canonical: "https://widefix.com"
   },
   openGraph: {
-    title: "Your Trusted Software Development Partner - WideFix",
+    title: "Ruby on Rails Application Ownership - WideFix",
     description: desc,
     url: "https://widefix.com",
     siteName: "WideFix",

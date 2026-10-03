@@ -57,7 +57,7 @@ Whatever the reason, it's reduced to just one desire - **demand of controlling S
   "updated_at"=>2023-01-17 23:22:42.275697 UTC,
   "status"=>"Open",
   "category"=>"Website and landing page design",
-  "experience"=>"New to Widefix — under one year",
+  "experience"=>"New to Widefix - under one year",
   "existing_website"=>"Yes, I already have a website set up and live for customers",
   "existing_website_platform"=>"Widefix",
   "category_tasks"=>nil,

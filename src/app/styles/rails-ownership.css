@@ -1,0 +1,128 @@
+.rails-home { color: #1c2f42; }
+.rails-section { padding: 80px 0; }
+.rails-home .rails-section .inner { display: block; height: auto; }
+.rails-home .rails-eyebrow { font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #a82d25; margin-bottom: 20px; }
+.rails-home h1 { font-size: clamp(34px, 4.3vw, 62px); line-height: 1.1; letter-spacing: -.035em; max-width: 960px; }
+.rails-home h1 span { color: #c9372d; }
+.rails-home .rails-section h2 { font-size: clamp(28px, 3vw, 40px); line-height: 1.2; letter-spacing: -.025em; max-width: 900px; }
+.rails-home .rails-section h3 { font-size: 21px; line-height: 1.35; }
+.rails-home .rails-section p { line-height: 1.65; }
+.rails-home .rails-lead { font-size: 22px; font-weight: 600; margin-top: 28px; }
+.rails-home .rails-intro { color: #5f6675; font-size: 18px; max-width: 850px; margin-top: 20px; }
+.rails-home .rails-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 24px; margin-top: 32px; }
+.rails-home .rails-actions a:not(.button), .rails-home .rails-text-link, .rails-home .rails-card a { color: #245c94; font-weight: 600; text-underline-offset: 5px; }
+.rails-home .rails-actions .button { height: auto; min-height: 52px; line-height: 1.4; padding: 15px 24px; box-sizing: border-box; text-align: center; }
+.rails-home a:focus-visible, .rails-home summary:focus-visible { outline: 3px solid #276cb4; outline-offset: 5px; }
+.rails-home .rails-hero { background: linear-gradient(110deg, #fff 55%, #f4f8fc); }
+.rails-home .rails-section .rails-hero-grid { display: grid; grid-template-columns: 1.45fr 1fr; gap: 48px; align-items: center; }
+.rails-hero-aside img { width: 100%; height: auto; border-radius: 24px; }
+.rails-home .rails-hero-aside p { font-size: 14px; color: #5f6675; margin-top: 20px; text-align: center; }
+.rails-tinted { background: #f1f6fc; }
+.rails-situations { border-top: 1px solid #e7edf3; }
+.rails-card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 36px; }
+.rails-card { padding: 28px; border: 1px solid #dce4ed; border-radius: 16px; background: #fff; }
+.rails-home .rails-card p { color: #5f6675; margin-top: 12px; }
+.rails-home .rails-card a { display: inline-block; margin-top: 24px; }
+.rails-case-grid .rails-card { display: flex; flex-direction: column; align-items: flex-start; }
+.rails-case-grid img { object-fit: contain; object-position: left center; margin-bottom: 28px; }
+.rails-case-grid .rails-card a { margin-top: auto; padding-top: 24px; }
+.rails-home .rails-text-link { display: inline-block; margin-top: 32px; }
+.ownership-steps { list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; padding: 0; margin: 40px 0 0; counter-reset: none; }
+.step-number { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; background: #fff; color: #a82d25; font-weight: 700; border: 1px solid #dce4ed; margin-bottom: 20px; }
+.ownership-steps li { position: relative; }
+.ownership-steps li:not(:last-child)::after { content: '→'; position: absolute; right: -25px; top: 8px; color: #70859b; font-size: 24px; }
+.rails-home .ownership-steps p { color: #5f6675; margin-top: 12px; }
+.rails-stack { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.rails-stack li { border: 1px solid #dce4ed; padding: 10px 18px; border-radius: 100px; font-weight: 500; }
+.rails-stack li:first-child { background: #fff1ee; border-color: #f6c7c3; color: #a82d25; }
+.rails-home .rails-final-cta { background: #193b5e; color: #fff; }
+.rails-home .rails-final-cta .rails-eyebrow { color: #ffc0b9; }
+.rails-home .rails-final-cta p:not(.rails-eyebrow) { max-width: 730px; margin-top: 24px; font-size: 19px; color: #e1ebf5; }
+.rails-home .rails-final-cta .rails-actions a:not(.button) { color: #fff; }
+.rails-faq details { max-width: 900px; padding: 24px 0; border-bottom: 1px solid #cbd8e7; }
+.rails-faq summary { cursor: pointer; font-weight: 600; font-size: 20px; }
+.rails-home .rails-faq details p { color: #5f6675; margin-top: 16px; }
+@media (max-width: 1000px) {
+  .rails-home .rails-section .rails-hero-grid { grid-template-columns: 1fr; }
+  .rails-hero-aside { display: none; }
+  .rails-card-grid, .ownership-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .rails-section { padding: 48px 0; }
+  .rails-card-grid, .ownership-steps { grid-template-columns: 1fr; }
+  .rails-card { padding: 24px; }
+  .ownership-steps li:not(:last-child)::after { content: none; }
+  .rails-home .rails-actions { align-items: flex-start; flex-direction: column; }
+  .rails-home .rails-intro { font-size: 17px; }
+}
+/* Keep the review section's decorative artwork within the page. */
+.rails-home .reviews { overflow: clip; }
+@media (max-width: 600px) {
+  .rails-home .rails-section .inner { margin-left: 0; margin-right: 0; padding-left: 24px; padding-right: 24px; }
+}
+.rails-services .rails-service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.rails-service-grid .rails-card { display: flex; flex-direction: column; align-items: flex-start; scroll-margin-top: 24px; }
+.rails-service-grid .rails-card > img { margin-bottom: 24px; }
+.rails-home .rails-service-list { margin-top: 20px; padding-left: 20px; list-style: disc; color: #5f6675; line-height: 1.65; }
+.rails-service-list li + li { margin-top: 8px; }
+.rails-service-grid .rails-card > a { margin-top: auto; padding-top: 24px; }
+.rails-home .rails-section .rails-advisory-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: start; }
+.rails-founder-card > img { border-radius: 50%; margin-bottom: 24px; }
+@media (max-width: 700px) {
+  .rails-services .rails-service-grid, .rails-home .rails-section .rails-advisory-grid { grid-template-columns: 1fr; }
+}
+.rails-home .rails-founder-card > a { display: block; }
+.rails-situation-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 20px;
+  border-radius: 14px;
+  background: #fff1ee;
+  color: #a82d25;
+}
+
+.rails-situation-heading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.rails-situation-heading .rails-situation-icon {
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
+.ownership-step-heading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.ownership-step-heading .step-number {
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+.rails-home .verified-expert-art {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+}
+/* Reserve the review widget's height before it loads or changes slides. */
+.rails-home .reviews .slider-wrapper {
+  min-height: 375px;
+}
+@media (min-width: 1024px) {
+  /* The illustration extends 130px beneath the review content. */
+  .rails-home .reviews {
+    padding-bottom: 170px;
+  }
+}
+
+.rails-takeover .rails-hero-aside {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  justify-self: center;
+}

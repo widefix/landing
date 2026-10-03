@@ -12,7 +12,7 @@ My name is Andrei Kaleshka, a software developer with experience since 2009. Pas
 
 With my extensive Ruby on Rails experience, I can confidently assist you in developing exceptional web applications that exceed your expectations. My dedication to delivering high-quality results ensures your complete satisfaction.
 
-Follow me on social media to stay updated on my unique work in web development. Feel free to reach out with any questions or inquiries — I’m always happy to help!
+Follow me on social media to stay updated on my unique work in web development. Feel free to reach out with any questions or inquiries - I’m always happy to help!
 
 - [Github](https://github.com/ka8725){:ref="nofollow" target="_blank"}
 - [Mastodon](https://ruby.social/@widefix){:ref="nofollow" target="_blank"}

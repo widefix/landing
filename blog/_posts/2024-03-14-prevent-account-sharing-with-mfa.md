@@ -39,7 +39,7 @@ We aimed for user session control, limiting per-user sessions. Account sharing w
 
 As the first step, many recommend using multi-factor authentication (MFA) and stopping there. Indeed, it's an excellent option to consider. We definitely should implement it. Yet, how can we be sure it helps? How can we prevent user loss after enabling MFA? Each app community is different. Their expectations may vary. Enabling MFA for all for no reason could alienate many users. They may leave the app, hurting the business.
 
-Hence, we need indicators to track the impact of our changes on user behavior. Yet, we must decide who gets MFA enabled and assess whether account-sharing prevention works. Thus, an imaginary "violations per user" is a crucial indicator to track. Ultimately, it aligns with login sessions per user—the fewer active login sessions a user has, the fewer violations.
+Hence, we need indicators to track the impact of our changes on user behavior. Yet, we must decide who gets MFA enabled and assess whether account-sharing prevention works. Thus, an imaginary "violations per user" is a crucial indicator to track. Ultimately, it aligns with login sessions per user-the fewer active login sessions a user has, the fewer violations.
 If all goes well, the "violations per user" indicator should drop after enabling MFA. Additionally, we expect more users to sign up. Some users using the shared account should eventually sign up for the app. Moreover, the number of active users should not drop. If all that happens, that would mean the feature works well and improves things rather than hurting the business.
 
 We can easily track the number of new signups and the number of active users without changing the app. Having direct access to the database, we can do that with relatively easy SQL queries.
@@ -111,7 +111,7 @@ Looking into these charts, we conclude that:
 
 In this post, you learned how the positive impact of MFA enabling in your project can be measured. Now, you know which metrics inside your app you should watch for to understand if your solution works and helps the business survive.
 
-Finally, you got a beneficial insight — MFA positively impacts user behavior. It indeed prevents users from sharing accounts. The improvement is significant — roughly 30% more new signups. Additionally, it's a security improvement for your app. It is worth considering for your project. But keep in mind that your auditory can be different, so measure the impact.
+Finally, you got a beneficial insight - MFA positively impacts user behavior. It indeed prevents users from sharing accounts. The improvement is significant - roughly 30% more new signups. Additionally, it's a security improvement for your app. It is worth considering for your project. But keep in mind that your auditory can be different, so measure the impact.
 
 In the next step, we will implement the login session limits. We expect an even more positive impact and will measure the results. Stay tuned!
 

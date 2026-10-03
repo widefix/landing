@@ -62,7 +62,7 @@ This simple configuration change unlocks the full power of ActualDbSchema in you
 
 ## Conclusion
 
-ActualDbSchema v0.9.0 marks a significant step forward in making database schema management seamless across all your development and deployment environments. No more local-only tracking—now you can ensure consistency from development to production.
+ActualDbSchema v0.9.0 marks a significant step forward in making database schema management seamless across all your development and deployment environments. No more local-only tracking-now you can ensure consistency from development to production.
 
 Upgrade today and experience a smoother, more reliable Rails development workflow!
 
