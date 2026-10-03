@@ -1,4 +1,5 @@
 import ClutchWidget from '@/components/ClutchWidget';
+import SituationIcon from '@/components/rails/SituationIcon';
 import { OwnershipProcess, OwnershipCTA, RailsCall } from '@/components/rails/RailsOwnership';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -27,14 +28,14 @@ export default function HomePage() {
           <h2>Your Rails application needs an owner</h2>
           <p className="rails-intro">You have a live product and customers who rely on it. You need someone who can understand the existing system and take responsibility for what comes next.</p>
           <div className="rails-card-grid">
-            {[
-              ['Your developer left', 'Your developer or agency moved on. You need a reliable team to take over the codebase and keep the product running.'],
-              ['Your team needs Rails expertise', 'Your team knows the business, but needs experienced Rails engineers to guide decisions and deliver the work.'],
-              ['Production issues keep returning', 'Slow pages, failed jobs or unreliable deployments pull your attention away from your customers.'],
-              ['Ruby and Rails are falling behind', 'Outdated versions and dependencies make changes harder. You need a safe, incremental upgrade plan.'],
-              ['Development has slowed down', 'Every feature feels risky or takes too long. You need someone to untangle the code and restore momentum.'],
-              ['You need an owner, not just a fix', 'You want a partner who understands the whole application and can maintain it while shipping new features.'],
-            ].map(([title, text]) => <article className="rails-card" key={title}><h3>{title}</h3><p>{text}</p></article>)}
+            {([
+              ['handover', 'Your developer left', 'Your developer or agency moved on. You need a reliable team to take over the codebase and keep the product running.'],
+              ['expertise', 'Your team needs Rails expertise', 'Your team knows the business, but needs experienced Rails engineers to guide decisions and deliver the work.'],
+              ['production', 'Production issues keep returning', 'Slow pages, failed jobs or unreliable deployments pull your attention away from your customers.'],
+              ['upgrades', 'Ruby and Rails are falling behind', 'Outdated versions and dependencies make changes harder. You need a safe, incremental upgrade plan.'],
+              ['momentum', 'Development has slowed down', 'Every feature feels risky or takes too long. You need someone to untangle the code and restore momentum.'],
+              ['ownership', 'You need an owner, not just a fix', 'You want a partner who understands the whole application and can maintain it while shipping new features.'],
+            ] as const).map(([kind, title, text]) => <article className="rails-card" key={title}><div className="rails-situation-heading"><SituationIcon kind={kind} /><h3>{title}</h3></div><p>{text}</p></article>)}
           </div>
           <Link className="rails-text-link" href="/ruby-on-rails-application-takeover">Explore our Rails application takeover service →</Link>
         </div>

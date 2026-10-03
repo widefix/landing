@@ -32,8 +32,8 @@
       <text x="63" y="398">Keep it running</text><text x="329" y="398">Build what comes next</text>
     </g>
     <g font-size="11" fill="#5F6675">
-      <text x="63" y="131">Code · infrastructure · priorities</text><text x="329" y="131">Production · performance · jobs</text>
-      <text x="63" y="417">Upgrades · security · monitoring</text><text x="329" y="417">Features · integrations · growth</text>
+      <text x="63" y="131">Code · infrastructure · priorities</text><text x="329" y="131">Production · performance · resilience</text>
+      <text x="63" y="417">Upgrades · security · monitoring</text><text x="329" y="417">Features · integrations · scale</text>
     </g>
     <text x="280" y="254" text-anchor="middle" font-size="19" font-weight="600" fill="#1C2F42">Your Rails app</text>
     <text x="280" y="276" text-anchor="middle" font-size="12" fill="#5F6675">A team that owns the whole picture</text>

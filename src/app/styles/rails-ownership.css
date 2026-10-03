@@ -72,3 +72,24 @@
   .rails-services .rails-service-grid, .rails-home .rails-section .rails-advisory-grid { grid-template-columns: 1fr; }
 }
 .rails-home .rails-founder-card > a { display: block; }
+.rails-situation-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 20px;
+  border-radius: 14px;
+  background: #fff1ee;
+  color: #a82d25;
+}
+
+.rails-situation-heading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.rails-situation-heading .rails-situation-icon {
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
