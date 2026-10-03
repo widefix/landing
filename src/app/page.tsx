@@ -72,11 +72,11 @@ export default function HomePage() {
           </header>
           <div className="container">
             <div className="item toptal-resume">
-              <Link rel="nofollow" href="https://www.toptal.com/resume/andrei-kaleshka"
-                target="_blank">
-                <div className="content">
-                  <span>Verified expert</span>
-                </div>
+              <Link rel="noopener noreferrer nofollow" href="https://www.toptal.com/resume/andrei-kaleshka"
+                target="_blank" aria-label="View Andrei Kaleshka’s verified Toptal profile">
+                <Image className="verified-expert-art" src="/img/verified-rails-expert.svg"
+                  alt="Andrei Kaleshka, WideFix founder — Verified Expert in Engineering on Toptal"
+                  width={320} height={394} />
               </Link>
               <p>WideFix founder is among the top 3% of freelance developers accepted worldwide by Toptal.</p>
             </div>
