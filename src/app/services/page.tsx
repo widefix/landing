@@ -1,331 +1,159 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import type { Metadata } from "next";
+import Image from 'next/image';
+import Link from 'next/link';
+import type { Metadata } from 'next';
+import { OwnershipCTA, OwnershipProcess, RailsCall } from '@/components/rails/RailsOwnership';
+
+const title = 'Ruby on Rails Maintenance, Development & Modernization - WideFix';
+const description = 'Services for existing Rails applications: takeover, maintenance, production support, Ruby and Rails upgrades, feature development, infrastructure and integrations.';
 
 export const metadata: Metadata = {
-  title: "Services - WideFix",
-  description: "Custom web and mobile development, software integrations, and AI agents, assistants, and chatbots powered by OpenAI and Claude.",
-  alternates: {
-    canonical: "https://widefix.com/services"
-  },
+  title,
+  description,
+  alternates: { canonical: 'https://widefix.com/services' },
   openGraph: {
-    title: "Services - WideFix",
-    description: "Custom web and mobile development, software integrations, and AI agents, assistants, and chatbots powered by OpenAI and Claude.",
-    url: "https://widefix.com/services",
-    siteName: "WideFix",
-    images: [
-      {
-        url: "https://raw.githubusercontent.com/widefix/widefix/main/img/block-hero.jpg",
-        width: 1440,
-        height: 786,
-      }
-    ],
-    locale: "en_US",
-    type: "website"
-  }
+    title, description, url: 'https://widefix.com/services', siteName: 'WideFix',
+    images: [{ url: 'https://widefix.com/img/block-hero.jpg', width: 1440, height: 786 }],
+    locale: 'en_US', type: 'website',
+  },
 };
+
+const coreServices = [
+  {
+    id: 'application-takeover', title: 'Rails application takeover', icon: 'system.svg',
+    description: 'Give your existing product a technical owner. We learn the codebase, map the infrastructure and plan the transition with your team.',
+    items: ['Codebase and dependency review', 'Hosting, access and deployment handover', 'Risk assessment and first priorities', 'Documentation and ownership responsibilities'],
+    href: '/ruby-on-rails-application-takeover', link: 'Explore the takeover service',
+  },
+  {
+    id: 'maintenance-support', title: 'Maintenance & production support', icon: 'what-we-do/icon-devops-and-maintenance.svg',
+    description: 'Keep the application dependable while the business keeps moving. We handle recurring problems and the ongoing work that makes changes safer.',
+    items: ['Production bug diagnosis and fixes', 'Application and job monitoring', 'Dependency and security updates', 'Tests, operational documentation and support'],
+  },
+  {
+    id: 'rails-upgrades', title: 'Ruby & Rails upgrades', icon: 'what-we-do/icon-quality-assurance.svg',
+    description: 'Bring an aging stack forward through manageable steps. We review compatibility and protect existing behavior as dependencies change.',
+    items: ['Ruby, Rails and gem upgrades', 'Deprecated code and dependency fixes', 'Regression tests for critical workflows', 'Staged releases and rollback planning'],
+    href: 'https://widefix.com/blog/ruby-and-rails-upgrade-personal-experience/', link: 'Read our Rails upgrade experience',
+  },
+  {
+    id: 'performance-reliability', title: 'Performance & reliability', icon: 'what-we-do/icon-optimization.svg',
+    description: 'Find what is slowing your application down or interrupting your customers. Address the underlying bottlenecks and measure the result.',
+    items: ['PostgreSQL queries and database tuning', 'Background queues and failed jobs', 'Memory usage, caching and response times', 'Timeouts, error handling and observability'],
+    href: '/showcases/shopwired-queue-optimization', link: 'See a production queue recovery',
+  },
+  {
+    id: 'development-modernization', title: 'Feature development & modernization', icon: 'web-dev-icon.svg',
+    description: 'Keep improving the product your customers already use. We deliver new features and evolve the architecture through incremental changes.',
+    items: ['Rails features, APIs and business workflows', 'React and Next.js interfaces', 'Refactoring and automated tests', 'Gradual redesigns and legacy modernization'],
+    href: '/showcases/ruby-on-rails-redesign', link: 'See a redesign with zero downtime',
+  },
+  {
+    id: 'infrastructure', title: 'Infrastructure & deployment', icon: 'what-we-do/icon-development-and-design.svg',
+    description: 'Make the path from code to production easier to trust. We look after the infrastructure and tooling around your Rails application.',
+    items: ['AWS, Heroku and Docker environments', 'CI/CD pipelines and deployment workflows', 'PostgreSQL, Redis and job infrastructure', 'Monitoring, backups and recovery planning'],
+  },
+];
+
+const supportingServices = [
+  {
+    id: 'payments-accounting', title: 'Payment & accounting integrations', icon: 'credit-card.svg',
+    description: 'Connect your Rails application to the systems your business depends on, with reliable data flow and visibility into failures.',
+    items: ['Stripe and PayPal payment workflows', 'Subscriptions and webhook processing', 'Xero, QuickBooks, Sage and Clearbooks', 'Data reconciliation and integration monitoring'],
+    href: '/showcases/stripe-integration', link: 'See how we fixed Stripe consistency',
+  },
+  {
+    id: 'mobile-development', title: 'Mobile application development', icon: 'mobile-phone.svg',
+    description: 'Extend your product to mobile while keeping the Rails backend and existing integrations working together.',
+    items: ['React Native applications', 'Native iOS and Android development', 'Rails API integration and authentication', 'Product releases and ongoing maintenance'],
+    href: '/showcases/build-crossplatform-mobile-application', link: 'See the Worship Online mobile app',
+  },
+  {
+    id: 'ai-integrations', title: 'AI integrations', icon: 'what-we-do/icon-systems-integration.svg',
+    description: 'Add AI where it serves a clear product or workflow need. Connect agents, assistants and chatbots to your existing application.',
+    items: ['OpenAI and Claude integrations', 'Assistants connected to business data', 'Workflow automation and customer support', 'Integration with your APIs and permissions'],
+  },
+  {
+    id: 'new-products', title: 'New products & MVPs', icon: 'productboard-icon.svg',
+    description: 'Have a new product or an adjacent idea to launch? We can build a focused first version and continue developing it after release.',
+    items: ['Scope and product priorities', 'Rails backends and web interfaces', 'Mobile experiences where needed', 'Testing, deployment and ongoing development'],
+    href: 'https://github.com/widefix/pocketmoney/', link: 'Explore our BudgetingKid source code',
+  },
+];
+
+type Service = (typeof coreServices)[number];
+function ServiceCards({ services }: { services: Service[] }) {
+  return (
+    <div className="rails-card-grid rails-service-grid">
+      {services.map(service => (
+        <article className="rails-card" id={service.id} key={service.id}>
+          <Image src={`/img/${service.icon}`} alt="" width={48} height={48} />
+          <h3>{service.title}</h3>
+          <p>{service.description}</p>
+          <ul className="rails-service-list">{service.items.map(item => <li key={item}>{item}</li>)}</ul>
+          {service.href && <Link href={service.href}>{service.link} →</Link>}
+        </article>
+      ))}
+    </div>
+  );
+}
 
 export default function ServicesPage() {
   return (
-    <main>
-      <section className="hero has-vertical-paddings">
-        <div className="inner">
-          <div className="hero-block-left">
-            <h1>We develop <span>custom</span> software that meets your business needs while <span>minimizing</span> costs</h1>
-            <p className="hero-description">
-              Transform your business with tailored software solutions, including AI integrations with OpenAI and Claude. We build agents, assistants, and chatbots that connect to your applications and workflows.
-            </p>
-            <div className="button-container">
-              <Link className="button primary" href="https://calendly.com/andrei-kaleshka/30min" target="_blank"
-                rel="nofollow">Get Your Free Consultation</Link>
-              <Link className="button secondary" href="#our-services">Explore Our Services</Link>
-            </div>
+    <main className="rails-home rails-services">
+      <section className="rails-section rails-hero">
+        <div className="inner rails-hero-grid">
+          <div>
+            <p className="rails-eyebrow">Services for the whole application</p>
+            <h1>Maintain, modernize and develop your <span>Rails application</span></h1>
+            <p className="rails-intro">From taking over an existing codebase to shipping the next feature, we handle the work that keeps your product dependable and moving forward. Rails is our specialty; the rest of your stack is part of the job.</p>
+            <div className="rails-actions"><RailsCall /><Link href="#our-services">Explore our services →</Link></div>
           </div>
-          <div className="hero-block-right">
-            <picture>
-              <source srcSet="/img/services.webp" type="image/webp" />
-              <Image
-                src="/img/services.jpg"
-                quality={100}
-                alt="Custom software development services"
-                width="543"
-                height="474"
-                style={{ borderRadius: '10px', objectFit: 'cover' }}
-              />
-            </picture>
+          <div className="rails-hero-aside">
+            <Image src="/img/rails-services-hero.svg" alt="Rails services: maintenance, upgrades, performance, development, infrastructure and integrations" width={560} height={490} priority />
+            <p>Technical ownership from handover to ongoing development</p>
           </div>
         </div>
       </section>
 
-      <section className="our-services has-vertical-paddings" id="our-services">
+      <section className="rails-section rails-tinted" id="our-services">
         <div className="inner">
-          <header>
-            <h2>Our <span>Services</span></h2>
-            <p>Comprehensive software development solutions tailored to your business needs</p>
-          </header>
-
-          <p style={{ marginBottom: '24px' }}>Need a team for an existing Rails product? <Link href="/ruby-on-rails-application-takeover">Explore Rails application takeover and ongoing ownership →</Link></p>
-          <div className="services-grid">
-            <div className="service-card featured">
-              <div className="service-icon">
-                <Image src="/img/productboard-icon.svg" alt="MVP Development" width="48" height="48" />
-              </div>
-              <h3>MVP Development</h3>
-              <p>Launch your idea quickly with a minimum viable product that validates your concept and attracts early users.</p>
-              <ul>
-                <li>✓ Rapid prototyping</li>
-                <li>✓ User validation</li>
-                <li>✓ Scalable architecture</li>
-                <li>✓ Market-ready solution</li>
-              </ul>
-              <div className="service-cta">
-                <Link href="https://calendly.com/andrei-kaleshka/30min" target="_blank" className="button primary">
-                  Start Your MVP
-                </Link>
-              </div>
-            </div>
-
-            <div className="service-card featured" id="ai-integrations">
-              <div className="service-icon">
-                <Image src="/img/what-we-do/icon-systems-integration.svg" alt="" width="48" height="48" />
-              </div>
-              <h3>AI Integrations</h3>
-              <p>Bring OpenAI and Claude into your products and business workflows with AI tools built around your needs.</p>
-              <ul>
-                <li>✓ AI agents for workflow automation</li>
-                <li>✓ Assistants connected to your business data</li>
-                <li>✓ Customer support and product chatbots</li>
-                <li>✓ Integration with your existing apps and APIs</li>
-              </ul>
-              <div className="service-cta">
-                <Link href="/contact" className="button primary">
-                  Talk About AI
-                </Link>
-              </div>
-            </div>
-
-            <div className="service-card">
-              <div className="service-icon">
-                <Image src="/img/web-dev-icon.svg" alt="Web Development" width="48" height="48" />
-              </div>
-              <h3>Web Application Development</h3>
-              <p>Modern, responsive web applications built with cutting-edge technologies for optimal performance.</p>
-              <ul>
-                <li>✓ React & Next.js frontend</li>
-                <li>✓ Ruby on Rails backend</li>
-                <li>✓ PostgreSQL database</li>
-                <li>✓ Cloud deployment</li>
-              </ul>
-            </div>
-
-            <div className="service-card">
-              <div className="service-icon">
-                <Image src="/img/mobile-phone.svg" alt="Mobile Development" width="48" height="48" />
-              </div>
-              <h3>Mobile App Development</h3>
-              <p>Native and cross-platform mobile applications that deliver exceptional user experiences.</p>
-              <ul>
-                <li>✓ React Native</li>
-                <li>✓ iOS (Swift)</li>
-                <li>✓ Android (Kotlin)</li>
-                <li>✓ Cross-platform solutions</li>
-              </ul>
-            </div>
-
-            <div className="service-card">
-              <div className="service-icon">
-                <Image src="/img/system.svg" alt="Legacy Modernization" width="48" height="48" />
-              </div>
-              <h3>Legacy System Modernization</h3>
-              <p>Breathe new life into your existing applications with modern technologies and improved performance.</p>
-              <ul>
-                <li>✓ Code refactoring</li>
-                <li>✓ Technology upgrades</li>
-                <li>✓ Performance optimization</li>
-                <li>✓ Security enhancements</li>
-              </ul>
-            </div>
-
-            <div className="service-card">
-              <div className="service-icon">
-                <Image src="/img/customer-support.svg" alt="Technical Consulting" width="48" height="48" />
-              </div>
-              <h3>Technical Consulting</h3>
-              <p>Expert guidance to help you make informed technology decisions that align with your business goals.</p>
-              <ul>
-                <li>✓ Architecture design</li>
-                <li>✓ Technology selection</li>
-                <li>✓ Performance audits</li>
-                <li>✓ Strategic planning</li>
-              </ul>
-            </div>
-
-            <div className="service-card">
-              <div className="service-icon">
-                <Image src="/img/services.svg" alt="Maintenance & Support" width="48" height="48" />
-              </div>
-              <h3>Maintenance & Support</h3>
-              <p>Ongoing support and maintenance to keep your applications running smoothly and securely.</p>
-              <ul>
-                <li>✓ 24/7 monitoring</li>
-                <li>✓ Regular updates</li>
-                <li>✓ Bug fixes</li>
-                <li>✓ Performance monitoring</li>
-              </ul>
-            </div>
-
-            <div className="service-card">
-              <div className="service-icon">
-                <Image src="/img/receipt-28.svg" alt="Accounting Systems Integration" width="48" height="48" />
-              </div>
-              <h3>Accounting Systems Integration</h3>
-              <p>Seamlessly connect your applications with popular accounting platforms for automated financial workflows.</p>
-              <ul>
-                <li>✓ Xero</li>
-                <li>✓ Sage Accounting</li>
-                <li>✓ Kashflow</li>
-                <li>✓ Clearbooks</li>
-                <li>✓ QuickBooks</li>
-                <li>✓ Custom accounting APIs</li>
-              </ul>
-            </div>
-
-            <div className="service-card">
-              <div className="service-icon">
-                <Image src="/img/credit-card.svg" alt="Payment Systems Integration" width="48" height="48" />
-              </div>
-              <h3>Payment Systems Integration</h3>
-              <p>Implement secure and reliable payment processing with industry-leading payment providers and custom solutions.</p>
-              <ul>
-                <li>✓ Stripe integration</li>
-                <li>✓ PayPal connectivity</li>
-                <li>✓ Proprietary payment systems</li>
-                <li>✓ PCI compliance</li>
-              </ul>
-            </div>
-          </div>
+          <p className="rails-eyebrow">Core Rails services</p>
+          <h2>The work your existing application needs</h2>
+          <p className="rails-intro">Start with the priority in front of you: a handover, production issue, overdue upgrade or feature backlog. We can take on a focused project or provide ongoing maintenance and development.</p>
+          <ServiceCards services={coreServices} />
         </div>
       </section>
 
-      <section className="showcase has-vertical-paddings">
+      <section className="rails-section">
         <div className="inner">
-          <div className="showcase-content">
-            <div className="showcase-text">
-              <h2>See Our Work in <span>Action</span></h2>
-              <p>
-                Actions speak louder than words. That&apos;s why we&apos;ve built our own product to showcase our capabilities and commitment to quality.
-              </p>
-              <div className="product-highlight">
-                <h3>
-                  <Image src="/img/icons/star.svg" alt="Featured" width="24" height="24" />
-                  Meet BudgetingKid
-                </h3>
-                <p>
-                  A complete financial education app we built from scratch — available on both web and mobile platforms.
-                  It&apos;s not just our portfolio piece, it&apos;s a fully functional product that real families use every day.
-                </p>
-                <div className="product-links">
-                  <Link href="https://get.budgetingkid.com/" target="_blank" className="button primary">
-                    Try the App <Image src="/img/mobile-phone-btn.svg" alt="External" width="16" height="16" />
-                  </Link>
-                  <Link href="https://github.com/widefix/pocketmoney/" target="_blank" className="button secondary">
-                    View Source Code <Image src="/img/icons/github.svg" alt="GitHub" width="16" height="16" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className="showcase-image">
-              <picture>
-                <source srcSet="/img/try-app.webp" type="image/webp" />
-                <Image
-                  src="/img/try-app.jpg"
-                  alt="BudgetingKid app showcase"
-                  width="400"
-                  height="300"
-                  className="rounded-image"
-                />
-              </picture>
-            </div>
-          </div>
+          <p className="rails-eyebrow">Connected to your product</p>
+          <h2>Capabilities beyond the Rails backend</h2>
+          <p className="rails-intro">Your application is part of a larger system. We also build the interfaces, integrations and new experiences your customers and team need.</p>
+          <ServiceCards services={supportingServices} />
         </div>
       </section>
 
-      <section className="why-choose-us has-vertical-paddings">
-        <div className="inner">
-          <div className="content-wrapper">
-            <div className="left-content">
-              <h2>Why Choose <span>WideFix</span>?</h2>
-              <div className="value-props">
-                <div className="value-prop">
-                  <div className="value-icon">
-                    <Image src="/img/globe-24.svg" alt="Global Reach" width="32" height="32" />
-                  </div>
-                  <div className="value-content">
-                    <h3>Global Expertise</h3>
-                    <p>Serving clients across the US, Europe, Americas, UK, Australia, and beyond with world-class solutions.</p>
-                  </div>
-                </div>
-                <div className="value-prop">
-                  <div className="value-icon">
-                    <Image src="/img/effector.svg" alt="Cost Effective" width="32" height="32" />
-                  </div>
-                  <div className="value-content">
-                    <h3>Cost-Effective Solutions</h3>
-                    <p>We believe quality software should be accessible. Get premium solutions at reasonable prices.</p>
-                  </div>
-                </div>
-                <div className="value-prop">
-                  <div className="value-icon">
-                    <Image src="/img/trust.svg" alt="True Partnership" width="32" height="32" />
-                  </div>
-                  <div className="value-content">
-                    <h3>True Partnership</h3>
-                    <p>We work closely with you to understand your needs and deliver solutions that perfectly match them.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="right-content">
-              <div className="founder-highlight">
-                <picture>
-                  <source srcSet="/img/andrei-kaleshka.webp" type="image/webp" />
-                  <Image
-                    src="/img/andrei-kaleshka.png"
-                    alt="Andrei Kaleshka, Founder of WideFix"
-                    width="200"
-                    height="200"
-                    className="founder-image"
-                  />
-                </picture>
-                <div className="founder-info">
-                  <h3>Led by Experience</h3>
-                  <p>
-                    <strong>Andrei Kaleshka</strong>, the <b>WideFix</b> founder, brings years of expertise in building scalable
-                    software solutions. His vision drives our commitment to delivering exceptional results for every client.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <OwnershipProcess />
 
-      <section className="cta-section has-vertical-paddings">
-        <div className="inner">
-          <div className="cta-content">
-            <h2>Ready to Transform Your Business?</h2>
-            <p>Let&apos;s discuss how we can help you achieve your goals with custom software solutions that deliver real results.</p>
-            <div className="cta-buttons">
-              <Link href="https://calendly.com/andrei-kaleshka/30min" target="_blank" className="button primary">
-                Schedule Free Consultation
-              </Link>
-              <Link href="/contact" className="button secondary">
-                Get in Touch
-              </Link>
-            </div>
+      <section className="rails-section" id="technical-consulting">
+        <div className="inner rails-advisory-grid">
+          <div>
+            <p className="rails-eyebrow">Technical consulting & leadership</p>
+            <h2>A practical plan for the next stage of your product</h2>
+            <p className="rails-intro">Need help deciding what to fix, upgrade or build first? We review your architecture and delivery process, explain the tradeoffs and connect technical decisions to your business priorities.</p>
+            <ul className="rails-service-list"><li>Architecture reviews and modernization roadmaps</li><li>Performance audits and upgrade planning</li><li>Fractional CTO and solutions architecture support</li><li>Technical guidance alongside hands-on development</li></ul>
+            <Link className="rails-text-link" href="/contact">Discuss your technical priorities →</Link>
           </div>
+          <aside className="rails-card rails-founder-card">
+            <Image src="/img/andrei-kaleshka.webp" alt="Andrei Kaleshka, WideFix founder" width={120} height={120} />
+            <h3>Led by Andrei Kaleshka</h3>
+            <p>WideFix&apos;s founder is a Toptal-verified engineer, published author and contributor to the Ruby ecosystem. Our open-source tools include Migration Data and Actual DB Schema.</p>
+            <Link href="https://www.toptal.com/resume/andrei-kaleshka" target="_blank" rel="noopener noreferrer">View Andrei&apos;s experience →</Link>
+            <Link href="/showcases">Explore our client work →</Link>
+          </aside>
         </div>
       </section>
+      <OwnershipCTA />
     </main>
-  )
+  );
 }

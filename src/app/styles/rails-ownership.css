@@ -60,3 +60,15 @@
 @media (max-width: 600px) {
   .rails-home .rails-section .inner { margin-left: 0; margin-right: 0; padding-left: 24px; padding-right: 24px; }
 }
+.rails-services .rails-service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.rails-service-grid .rails-card { display: flex; flex-direction: column; align-items: flex-start; scroll-margin-top: 24px; }
+.rails-service-grid .rails-card > img { margin-bottom: 24px; }
+.rails-home .rails-service-list { margin-top: 20px; padding-left: 20px; list-style: disc; color: #5f6675; line-height: 1.65; }
+.rails-service-list li + li { margin-top: 8px; }
+.rails-service-grid .rails-card > a { margin-top: auto; padding-top: 24px; }
+.rails-home .rails-section .rails-advisory-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: start; }
+.rails-founder-card > img { border-radius: 50%; margin-bottom: 24px; }
+@media (max-width: 700px) {
+  .rails-services .rails-service-grid, .rails-home .rails-section .rails-advisory-grid { grid-template-columns: 1fr; }
+}
+.rails-home .rails-founder-card > a { display: block; }
