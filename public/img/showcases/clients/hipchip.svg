@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="342" height="102" viewBox="0 0 342 102" fill="none">
+  <title>HipChip</title>
+  <g>
+    <circle cx="16" cy="13" r="12" fill="#FF9C43"/>
+    <circle cx="67" cy="13" r="12" fill="#FF9C43"/>
+    <ellipse cx="16" cy="13" rx="4" ry="5" fill="#FFD49A"/>
+    <ellipse cx="67" cy="13" rx="4" ry="5" fill="#FFD49A"/>
+    <path d="M10 101V59C-2 58-2 47 6 33L13 21C20 10 31 6 42 6C55 6 66 14 72 25L79 40C83 50 78 59 72 62V101H10Z" fill="#FF9C43"/>
+    <path d="M19 101C20 86 31 79 42 79C55 79 63 89 65 101" fill="#FFD49A"/>
+    <path d="M24 8L30 6L33 20C28 21 26 16 24 8Z" fill="#784526"/>
+    <path d="M35 6H43L40 26C36 26 36 16 35 6Z" fill="#784526"/>
+    <path d="M48 7L54 10C52 20 49 22 47 21Z" fill="#784526"/>
+    <ellipse cx="26" cy="41" rx="11" ry="12" fill="#FFFDF4"/>
+    <ellipse cx="56" cy="41" rx="11" ry="12" fill="#FFFDF4"/>
+    <circle cx="27" cy="41" r="6" fill="#352619"/>
+    <circle cx="55" cy="41" r="6" fill="#352619"/>
+    <path d="M36 52H47L42 58L36 52Z" fill="#784526"/>
+    <path d="M31 59C34 68 49 70 54 59Z" fill="#784526"/>
+    <path d="M37 60H47V64H37Z" fill="#FFFDF4"/>
+    <path d="M67 57C62 62 60 66 64 72C68 78 75 78 79 70L80 61Z" fill="#865332"/>
+    <path d="M62 60L66 54L78 54L83 59L79 63Z" fill="#654124"/>
+    <path d="M76 55C78 50 82 48 87 49C84 53 81 55 76 55Z" fill="#65963E"/>
+  </g>
+  <text x="94" y="78" fill="#FF9C43" font-family="Arial Rounded MT Bold, Trebuchet MS, Arial, sans-serif" font-size="68" font-weight="700" letter-spacing="-3">HipChip</text>
+</svg>

@@ -243,6 +243,14 @@ export default function HomePage() {
           </header>
           <div className="container">
             <div className="client">
+              <Image src="/img/showcases/clients/hipchip.svg" alt="HipChip" width={180} height={54} />
+              <footer>
+                <Link href="/showcases/hipchip-stripe-ach-integration" className="button secondary small">
+                  Project Details <Image src="/img/icons/right-arrow.svg" alt="" width={12} height={12} />
+                </Link>
+              </footer>
+            </div>
+            <div className="client">
               <Image src="/img/showcases/clients/tma-sport.svg" alt="TMA Sport" width={106} height={70} />
               <footer>
                 <Link href="/showcases/tma-sport-lokkaroom-financial-report" className="button secondary small">

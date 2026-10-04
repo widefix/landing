@@ -5,6 +5,45 @@ import { CategoryName, ResultBoxColor, Showcase, SwiperSlideColor } from './enum
 
 const showcases: Showcase[] = [
   {
+    slug: "hipchip-stripe-ach-integration",
+    category: CategoryName.systemsIntegrations,
+    preview: {
+      title: "HipChip: Stripe & ACH integration",
+      companyName: "HipChip",
+      solution: "Stripe & ACH Integration",
+      results: "Switched payment processing from Braintree to Stripe, retained Braintree as a backup and integrated Stripe ACH payments.",
+      wrapperColor: SwiperSlideColor.orange,
+      buttonColor: SwiperSlideColor.orange,
+      companyImageSrc: "/img/showcases/clients/hipchip.svg",
+      url: '',
+    },
+    body: {
+      bannerTopTitle: <h1><span className="oval">Stripe and ACH</span> integration for HipChip</h1>,
+      bannerTopImageSrc: "/img/showcases/hipchip-stripe-ach.svg",
+      description: "Stripe payments with Braintree retained as a backup",
+      descriptionText: <p>We switched HipChip&apos;s payment processing from Braintree to Stripe while keeping Braintree available as a backup. We also integrated Stripe ACH payments.</p>,
+      detailsTitle: "Payment integration for HipChip",
+      detailsText: <p>HipChip needed to move its payment processing to Stripe without removing its existing Braintree integration. The work also included adding ACH payments through Stripe.</p>,
+      detailsImageSrc: "/img/showcases/hipchip-stripe-ach.svg",
+      problemText: <p>The application used Braintree for payments. The goal was to introduce Stripe and ACH payments while retaining Braintree as a backup option.</p>,
+      solutionFirstText: <p>We integrated Stripe and switched the application&apos;s payment processing to it, keeping Braintree in place as a backup.</p>,
+      solutionSecondText: <p>We also added Stripe ACH integration to support bank account payments alongside the new Stripe payment setup.</p>,
+      bannerSolutionPng: "/img/showcases/hipchip-stripe-ach.svg",
+      bannerSolutionWebp: "/img/showcases/hipchip-stripe-ach.svg",
+      resultBoxes: [
+        { color: ResultBoxColor.lightBlue, imageSrc: "/img/showcases/case/icons/money.svg", message: "Primary payment integration", number: "Stripe" },
+        { color: ResultBoxColor.lightGreen, imageSrc: "/img/showcases/case/icons/link.svg", message: "Backup retained", number: "Braintree" },
+        { color: ResultBoxColor.lightGreen, imageSrc: "/img/showcases/case/icons/flag.svg", message: "Bank account payments", number: "ACH" },
+      ],
+      resultText: <p>HipChip&apos;s payment setup now uses <strong>Stripe</strong>, includes <strong>ACH payments</strong>, and retains <strong>Braintree as a backup</strong>.</p>,
+      helpTitle: "Need to migrate payment providers or add ACH payments?",
+    },
+    metadata: {
+      title: "HipChip Stripe & ACH Integration - WideFix",
+      description: "How WideFix switched HipChip from Braintree to Stripe, retained Braintree as a backup and integrated Stripe ACH payments.",
+    },
+  },
+  {
     slug: "tma-sport-lokkaroom-financial-report",
     category: CategoryName.systemsIntegrations,
     preview: {
