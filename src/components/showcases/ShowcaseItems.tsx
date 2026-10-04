@@ -1,8 +1,7 @@
-import Image from 'next/image'
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
+import type { CSSProperties } from 'react';
+import Image from 'next/image';
 import ShowcaseItem from './ShowcaseItem';
-import showcases from '@/showcases.tsx';
+import showcases from '@/showcases';
 
 interface ShowcaseItemsProps {
   name: string;
@@ -10,57 +9,31 @@ interface ShowcaseItemsProps {
   imageSrc: string;
 }
 
-export default function ShowcaseItems({
-  name,
-  title,
-  imageSrc
-} : ShowcaseItemsProps) {
+export default function ShowcaseItems({ name, title, imageSrc }: ShowcaseItemsProps) {
   const currentShowcases = showcases.filter(showcase => showcase.category === name);
 
   return (
-    <article className="accordion expanded">
-      <div className="accordion-title">
-        <div className="title-with-icon">
-          <Image src={imageSrc} alt={title} width="65" height="65" />
-          <h3 className="h3">{title}</h3>
-        </div>
-        <div className="accordion-actions">
-          <button type="button" className="accordion-button" aria-label="Filter">
-            <Image src="/img/showcases/acc-filter.svg" alt="Filter" width="50" height="51" />
-          </button>
-          <button type="button" className="accordion-button accordion-action" aria-expanded="false" aria-label="Expand section"></button>
-        </div>
+    <article className="showcase-category">
+      <div className="title-with-icon">
+        <Image src={imageSrc} alt="" width={65} height={65} />
+        <h3 className="h3">{title}</h3>
       </div>
-      <div className="accordion-content">
-        <Swiper
-          modules={[Navigation]}
-          spaceBetween={39}
-          slidesPerView={'auto'}
-          navigation={{
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          }}
-          className={'case-swiper'}
-        >
-          {currentShowcases.map((showcase, index) => (
-            <SwiperSlide key={index} className={`${showcase.preview.wrapperColor}`} style={{ '--showcase-art': `url("/img/showcases/cards/${showcase.slug}.svg?v=3")` } as React.CSSProperties}>
-              <ShowcaseItem
-                title={showcase.preview.title}
-                companyName={showcase.preview.companyName}
-                slug={showcase.slug}
-                solution={showcase.preview.solution}
-                results={showcase.preview.results}
-                buttonColor={showcase.preview.buttonColor}
-                companyImageSrc={showcase.preview.companyImageSrc}
-              />
-            </SwiperSlide>
-          ))}
-          <div className="swiper-prev-next">
-            <button type="button" className="swiper-button-prev" aria-label="Previous slide" />
-            <button type="button" className="swiper-button-next" aria-label="Next slide" />
+      <div className="case-swiper showcase-card-grid">
+        {currentShowcases.map(showcase => (
+          <div key={showcase.slug} className={`swiper-slide ${showcase.preview.wrapperColor}`}
+            style={{ '--showcase-art': `url("/img/showcases/cards/${showcase.slug}.svg?v=3")` } as CSSProperties}>
+            <ShowcaseItem
+              title={showcase.preview.title}
+              companyName={showcase.preview.companyName}
+              slug={showcase.slug}
+              solution={showcase.preview.solution}
+              results={showcase.preview.results}
+              buttonColor={showcase.preview.buttonColor}
+              companyImageSrc={showcase.preview.companyImageSrc}
+            />
           </div>
-        </Swiper>
+        ))}
       </div>
     </article>
-  )
+  );
 }

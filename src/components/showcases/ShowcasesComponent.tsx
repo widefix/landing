@@ -1,39 +1,13 @@
 'use client'
 
 import ShowcaseItems from '@/components/showcases/ShowcaseItems'
-import { useEffect } from 'react'
 import Image from 'next/image'
-import type { Metadata } from "next";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import categories from '@/categories.tsx';
 
 export default function ShowcasesPage() {
   const activeCategories = categories.filter(category => category.active);
-
-  useEffect(() => {
-    const accordionButtons = document.querySelectorAll('.accordion-action');
-
-    const handleClick = (event: any) => {
-      const button = event.currentTarget as HTMLButtonElement;
-      const accordion = button.closest('.accordion');
-      if (accordion) {
-        accordion.classList.toggle('expanded');
-        const isExpanded = accordion.classList.contains('expanded');
-        button.setAttribute('aria-expanded', isExpanded.toString());
-      }
-    };
-
-    accordionButtons.forEach((button) => {
-      button.addEventListener('click', handleClick);
-    });
-
-    return () => {
-      accordionButtons.forEach((button) => {
-        button.removeEventListener('click', handleClick);
-      });
-    };
-  }, []);
 
   return (
     <main className='showcases'>
