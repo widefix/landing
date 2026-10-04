@@ -32,9 +32,6 @@
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  div:nth-child(2) {
-    margin-top: 120px;
-  }
 
   @media screen and (max-width: $media-xsm) {
     display: flex;
@@ -81,3 +78,34 @@
     height: 50px;
   }
 }
+
+.case-other-issues > .inner > h2 {
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.2;
+  margin-bottom: 32px;
+  &::after { content: none; }
+}
+.fixed-issue-title {
+  gap: 12px;
+  align-items: flex-start;
+  .fixed-issue-title-h {
+    font-size: 24px;
+    line-height: 1.3;
+    margin-bottom: 20px;
+  }
+  img { width: 32px; height: 32px; flex-shrink: 0; }
+}
+.fixed-issue-art {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  background: #eef6ff;
+}
+.fixed-issue p {
+  margin-top: 16px;
+  color: #5f6675;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.fixed-issue:focus-visible { outline: 3px solid #276cb4; outline-offset: 6px; }

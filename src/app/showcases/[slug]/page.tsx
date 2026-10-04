@@ -20,6 +20,16 @@ export default function ShowcasePage() {
     return <NotFoundPage />;
   }
 
+  const otherShowcases = showcases
+    .filter(item => item.slug !== showcase.slug)
+    .sort((a, b) => {
+      const relevance = (item: typeof showcase) =>
+        (item.preview.companyImageSrc === showcase.preview.companyImageSrc ? 2 : 0) +
+        (item.category === showcase.category ? 1 : 0);
+      return relevance(b) - relevance(a);
+    })
+    .slice(0, 3);
+
   const generatePDF = async () => {
     if (isLoading) return;
     setIsLoading(true);
@@ -206,45 +216,19 @@ export default function ShowcasePage() {
       )}
       <section className="case-other-issues" id="other">
         <div className="inner p-vertical">
+          <h2>Other issues fixed</h2>
           <div className="fixed-issues">
-            <div>
-              <h2>Other issues fixed</h2>
-
-              <a className="fixed-issue" href="">
+            {otherShowcases.map(item => (
+              <Link className="fixed-issue" href={`/showcases/${item.slug}`} key={item.slug}>
                 <span className="fixed-issue-title">
-                  <span className="fixed-issue-title-h">Stripe Integration</span>
-                  <Image aria-hidden="true" alt="icon" src="/img/showcases/case/icons/link.svg" width="50" height="50" />
+                  <span className="fixed-issue-title-h">{item.preview.title || item.preview.solution}</span>
+                  <Image aria-hidden="true" alt="" src="/img/showcases/case/icons/link.svg" width={32} height={32} />
                 </span>
-                <picture>
-                  <source srcSet="/img/showcases/case/phone.webp" type="image/webp" />
-                  <Image src="/img/showcases/case/phone.png" alt="Case" width="396" height="264" />
-                </picture>
-              </a>
-            </div>
-            <div>
-              <a className="fixed-issue" href="">
-                <span className="fixed-issue-title">
-                  <span className="fixed-issue-title-h">Database Fix</span>
-                  <Image aria-hidden="true" alt="icon" src="/img/showcases/case/icons/link.svg" width="50" height="50" />
-                </span>
-                <picture>
-                  <source srcSet="/img/showcases/case/db.webp" type="image/webp" />
-                  <Image src="/img/showcases/case/db.png" alt="Case" width="396" height="264" />
-                </picture>
-              </a>
-            </div>
-            <div>
-              <a className="fixed-issue" href="">
-                <span className="fixed-issue-title">
-                  <span className="fixed-issue-title-h">Ruby on Rails Error</span>
-                  <Image aria-hidden="true" alt="icon" src="/img/showcases/case/icons/link.svg" width="50" height="50" />
-                </span>
-                <picture>
-                  <source srcSet="/img/showcases/case/html.webp" type="image/webp" />
-                  <Image src="/img/showcases/case/html.png" alt="Case" width="396" height="264" />
-                </picture>
-              </a>
-            </div>
+                <Image className="fixed-issue-art" src={item.body.detailsImageSrc}
+                  alt={item.preview.title || item.preview.solution} width={396} height={264} />
+                <p>{item.preview.results}</p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
