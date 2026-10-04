@@ -5,6 +5,45 @@ import { CategoryName, ResultBoxColor, Showcase, SwiperSlideColor } from './enum
 
 const showcases: Showcase[] = [
   {
+    slug: "costa-del-home-heroku-to-aws",
+    category: CategoryName.devops,
+    preview: {
+      title: "Moved services from Heroku to AWS",
+      companyName: "Costa Del Home",
+      solution: "Infrastructure Migration",
+      results: "Moved Costa Del Home from Heroku to AWS with Dokku, reducing hosting costs from €400 to €50 per month — eight times cheaper.",
+      wrapperColor: SwiperSlideColor.green,
+      buttonColor: SwiperSlideColor.green,
+      companyImageSrc: "/img/showcases/clients/costa-del-home.svg",
+      url: '',
+    },
+    body: {
+      bannerTopTitle: <h1>Moved services from <span className="oval">Heroku</span> to <span className="stripe">AWS</span></h1>,
+      bannerTopImageSrc: "/img/showcases/costa-del-home-aws.svg",
+      description: "A smaller monthly infrastructure bill",
+      descriptionText: <p>We moved Costa Del Home&apos;s services from Heroku to AWS and used Dokku for hosting, reducing monthly costs from €400 to €50.</p>,
+      detailsTitle: "Heroku to AWS migration for Costa Del Home",
+      detailsText: <p>After Heroku raised its service prices, Costa Del Home had a €400-per-month hosting contract despite the application not being heavily loaded. We moved its services to AWS with Dokku, bringing the monthly hosting cost down to €50.</p>,
+      detailsImageSrc: "/img/showcases/costa-del-home-aws.svg",
+      problemText: <p>Heroku raised its service prices, leaving the business with a €400-per-month contract for an application that was not heavily loaded. The hosting cost no longer matched the application&apos;s needs.</p>,
+      solutionFirstText: <p>We moved the application&apos;s services from Heroku to AWS and used Dokku to host the application.</p>,
+      solutionSecondText: <p>AWS with Dokku provided a lower-cost hosting setup, bringing the monthly bill down to €50.</p>,
+      bannerSolutionPng: "/img/showcases/costa-del-home-aws.svg",
+      bannerSolutionWebp: "/img/showcases/costa-del-home-aws.svg",
+      resultBoxes: [
+        { color: ResultBoxColor.lightBlue, imageSrc: "/img/showcases/case/icons/money.svg", message: "Monthly cost before", number: "€400" },
+        { color: ResultBoxColor.lightGreen, imageSrc: "/img/showcases/case/icons/money.svg", message: "Monthly cost after", number: "€50" },
+        { color: ResultBoxColor.lightGreen, imageSrc: "/img/showcases/case/icons/piechart.svg", message: "Cost reduction", number: "87.5%" },
+      ],
+      resultText: <p>Hosting is now <strong>eight times cheaper</strong>: €50 per month instead of €400. That saves <strong>€350 per month</strong>, an <strong>87.5% reduction</strong>, equivalent to €4,200 over a year at the same monthly costs.</p>,
+      helpTitle: "Need to reduce your application’s infrastructure costs?",
+    },
+    metadata: {
+      title: "Costa Del Home Heroku to AWS Migration - WideFix",
+      description: "How WideFix moved Costa Del Home from Heroku to AWS with Dokku, reducing hosting costs from €400 to €50 per month — eight times cheaper.",
+    },
+  },
+  {
     slug: "costa-del-home-stripe-integration",
     category: CategoryName.systemsIntegrations,
     preview: {

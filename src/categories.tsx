@@ -34,9 +34,9 @@ const categories: Category[] = [
   },
   {
     name: CategoryName.devops,
-    title: "Devops & Maintainance",
+    title: "DevOps & Maintenance",
     imageSrc: "/img/showcases/devops.svg",
-    active: false
+    active: true
   },
   {
     name: CategoryName.qualityAssurance,
