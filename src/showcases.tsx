@@ -5,6 +5,46 @@ import { CategoryName, ResultBoxColor, Showcase, SwiperSlideColor } from './enum
 
 const showcases: Showcase[] = [
   {
+    slug: "costa-del-home-stripe-integration",
+    category: CategoryName.systemsIntegrations,
+    preview: {
+      title: "Integrated the app with Stripe from scratch",
+      companyName: "Costa Del Home",
+      solution: "Stripe Integration",
+      results: "Replaced cash payment collection with automatic Stripe payments, reducing accountant workload by 90%.",
+      wrapperColor: SwiperSlideColor.sea,
+      buttonColor: SwiperSlideColor.sea,
+      companyImageSrc: "/img/showcases/clients/costa-del-home.svg",
+      url: '',
+    },
+    body: {
+      bannerTopTitle: <h1>Integrated the app with <span className="oval">Stripe</span> from scratch</h1>,
+      bannerTopImageSrc: "/img/showcases/costa-del-home-stripe.svg",
+      description: "From cash payments to automatic collection",
+      descriptionText: <p>We integrated Costa Del Home&apos;s application with Stripe so the business could collect payments automatically instead of relying on cash.</p>,
+      detailsTitle: "Stripe integration for Costa Del Home",
+      detailsText: <p>Costa Del Home needed a more convenient way to collect payments. We built the Stripe integration from scratch, replacing cash collection with an automated payment workflow.</p>,
+      detailsImageSrc: "/img/showcases/costa-del-home-stripe.svg",
+      problemText: <p>The business collected payments in cash, which was inconvenient and created manual work for the company accountant.</p>,
+      solutionFirstText: <p>We integrated the existing application with Stripe from scratch to enable automatic payment collection.</p>,
+      solutionSecondText: <p>The new payment workflow reduced the manual work involved in collecting payments and freed up the accountant&apos;s time.</p>,
+      bannerSolutionPng: "/img/showcases/costa-del-home-stripe.svg",
+      bannerSolutionWebp: "/img/showcases/costa-del-home-stripe.svg",
+      resultBoxes: [{
+        color: ResultBoxColor.lightGreen,
+        imageSrc: "/img/showcases/case/icons/piechart.svg",
+        message: "Reduction in accountant workload",
+        number: "90%",
+      }],
+      resultText: <p>With Stripe collecting payments automatically, <strong>the company accountant&apos;s workload was reduced by 90%</strong>. The business gained a more convenient alternative to cash collection.</p>,
+      helpTitle: "Need to automate payments in your application?",
+    },
+    metadata: {
+      title: "Costa Del Home Stripe Integration - WideFix",
+      description: "How WideFix integrated Costa Del Home with Stripe from scratch, automated payment collection and reduced accountant workload by 90%.",
+    },
+  },
+  {
     slug: "stripe-integration",
     category: CategoryName.systemsIntegrations,
     preview: {
