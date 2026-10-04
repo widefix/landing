@@ -243,6 +243,14 @@ export default function HomePage() {
           </header>
           <div className="container">
             <div className="client">
+              <Image src="/img/showcases/clients/tma-sport.svg" alt="TMA Sport" width={106} height={70} />
+              <footer>
+                <Link href="/showcases/tma-sport-lokkaroom-financial-report" className="button secondary small">
+                  Project Details <Image src="/img/icons/right-arrow.svg" alt="" width={12} height={12} />
+                </Link>
+              </footer>
+            </div>
+            <div className="client">
               <picture>
                 <source srcSet="/img/clients/toptal.webp" type="image/webp" />
                 <Image src="/img/clients/toptal.png" alt="Toptal icon" width="116" height="32" />
