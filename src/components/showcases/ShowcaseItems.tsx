@@ -43,7 +43,7 @@ export default function ShowcaseItems({
           className={'case-swiper'}
         >
           {currentShowcases.map((showcase, index) => (
-            <SwiperSlide key={index} className={`${showcase.preview.wrapperColor}`}>
+            <SwiperSlide key={index} className={`${showcase.preview.wrapperColor}`} style={{ '--showcase-art': `url("/img/showcases/cards/${showcase.slug}.svg?v=3")` } as React.CSSProperties}>
               <ShowcaseItem
                 title={showcase.preview.title}
                 companyName={showcase.preview.companyName}

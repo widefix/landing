@@ -90,7 +90,7 @@
 .accordion {
   &.expanded {
     .accordion-content {
-      max-height: 600px;
+      max-height: 1000px;
     }
     .accordion-action {
       background-image: url(/img/showcases/acc-expanded.svg);
@@ -140,22 +140,22 @@
       max-width: 90%;
     }
     &.purple {
-      background-image: linear-gradient(180deg, rgba(111, 43, 130, 0.75) 0%, #6F2B82 82.28%), url("/img/showcases/laptop.png");
+      background-image: linear-gradient(180deg, rgba(111, 43, 130, 0.15) 0%, #6F2B82 82.28%), var(--showcase-art, none);
     }
     &.blue {
-      background-image: linear-gradient(180deg, rgba(78, 77, 255, 0.75) 0%, #4E4DFF 89%), url("/img/showcases/laptop.png");
+      background-image: linear-gradient(180deg, rgba(78, 77, 255, 0.15) 0%, #4E4DFF 89%), var(--showcase-art, none);
     }
     &.orange {
-      background-image: linear-gradient(180deg, rgba(240, 67, 56, 0.75) 0%, #F04338 88.03%), url("/img/showcases/laptop.png");
+      background-image: linear-gradient(180deg, rgba(240, 67, 56, 0.15) 0%, #F04338 88.03%), var(--showcase-art, none);
     }
     &.green {
-      background-image: linear-gradient(180deg, rgba(25, 59, 93, 0.75) 0%, #193B5D 89%), url("/img/showcases/laptop.png");
+      background-image: linear-gradient(180deg, rgba(25, 59, 93, 0.15) 0%, #193B5D 89%), var(--showcase-art, none);
     }
     &.yellow {
-      background-image: linear-gradient(180deg, rgba(237, 144, 72, 0.75) 0%, #ED9048 89%), url("/img/showcases/laptop.png");
+      background-image: linear-gradient(180deg, rgba(237, 144, 72, 0.15) 0%, #ED9048 89%), var(--showcase-art, none);
     }
     &.sea {
-      background-image: linear-gradient(180deg, rgba(39, 108, 180, 0.75) 0%, #276CB4 89%), url("/img/showcases/laptop.png");
+      background-image: linear-gradient(180deg, rgba(39, 108, 180, 0.15) 0%, #276CB4 89%), var(--showcase-art, none);
     }
     h3 {
       font-family: "Greycliff CF", serif;
@@ -240,4 +240,31 @@
   margin-top: auto;
   display: flex;
   align-items: center;
+}
+
+// Per-showcase artwork behind the content, at half opacity.
+.case-studies .case-swiper .swiper-slide {
+  position: relative;
+  isolation: isolate;
+  background-image: none;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background-image: var(--showcase-art, none);
+    background-size: 100% auto;
+    background-position: center top;
+    background-repeat: no-repeat;
+    opacity: .2;
+    mask-image: linear-gradient(to bottom, #000 0%, transparent 240px);
+    pointer-events: none;
+  }
+  &.purple { background-color: #6F2B82; }
+  &.blue { background-color: #4E4DFF; }
+  &.orange { background-color: #F04338; }
+  &.green { background-color: #193B5D; }
+  &.yellow { background-color: #ED9048; }
+  &.sea { background-color: #276CB4; }
 }
