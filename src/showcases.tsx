@@ -5,6 +5,44 @@ import { CategoryName, ResultBoxColor, Showcase, SwiperSlideColor } from './enum
 
 const showcases: Showcase[] = [
   {
+    slug: "tma-sport-lokkaroom-financial-report",
+    category: CategoryName.systemsIntegrations,
+    preview: {
+      title: "Financial report system across EventCube, Shopify and Stripe",
+      companyName: "TMA Sport",
+      solution: "Financial Reporting & Integrations",
+      results: "Built a consolidated financial reporting system for transactions and charges across EventCube, Shopify and Stripe in response to an urgent client request.",
+      wrapperColor: SwiperSlideColor.green,
+      buttonColor: SwiperSlideColor.green,
+      companyImageSrc: "/img/showcases/clients/tma-sport.svg",
+      url: '',
+    },
+    body: {
+      bannerTopTitle: <h1>Lokkaroom <span className="oval">financial reporting</span> for TMA Sport</h1>,
+      bannerTopImageSrc: "/img/showcases/lokkaroom-financial-report.svg",
+      description: "One financial report across multiple platforms",
+      descriptionText: <p>TMA Sport came to us with an urgent need: a system that could produce a financial report covering transactions and charges across EventCube, Shopify and Stripe.</p>,
+      detailsTitle: "Lokkaroom financial report",
+      detailsText: <p>We implemented Lokkaroom&apos;s reporting system on Ruby on Rails with ActiveAdmin, bringing together financial activity from EventCube, Shopify and Stripe.</p>,
+      detailsImageSrc: "/img/showcases/lokkaroom-financial-report.svg",
+      problemText: <p>The client&apos;s transactions and charges were spread across EventCube, Shopify and Stripe. They urgently needed a consolidated financial report covering all three sources.</p>,
+      solutionFirstText: <p>We built the financial reporting interface with ActiveAdmin on Ruby on Rails, consolidating transactions and charges from EventCube, Shopify and Stripe.</p>,
+      solutionSecondText: <p>Financial activity from EventCube, Shopify and Stripe was brought into a single reporting workflow, giving the client one place to review the combined data.</p>,
+      bannerSolutionPng: "/img/showcases/lokkaroom-financial-report.svg",
+      bannerSolutionWebp: "/img/showcases/lokkaroom-financial-report.svg",
+      resultBoxes: [
+        { color: ResultBoxColor.lightBlue, imageSrc: "/img/showcases/case/icons/link.svg", message: "Financial data sources", number: "3" },
+        { color: ResultBoxColor.lightGreen, imageSrc: "/img/showcases/case/icons/piechart.svg", message: "Consolidated reporting system", number: "1" },
+      ],
+      resultText: <p>The Lokkaroom reporting system provides a consolidated view of transactions and charges across <strong>EventCube, Shopify and Stripe</strong>, addressing the client&apos;s urgent financial reporting requirement.</p>,
+      helpTitle: "Need financial reporting across your business platforms?",
+    },
+    metadata: {
+      title: "TMA Sport Lokkaroom Financial Reporting - WideFix",
+      description: "How WideFix implemented Lokkaroom financial reporting for TMA Sport, using Rails and ActiveAdmin to consolidate transactions and charges across EventCube, Shopify and Stripe.",
+    },
+  },
+  {
     slug: "palladium-rails-upgrade",
     category: CategoryName.devops,
     preview: {

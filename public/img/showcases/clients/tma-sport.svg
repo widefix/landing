@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="142" height="94" viewBox="0 0 142 94" fill="none">
+  <title>TMA Sport</title>
+  <rect width="142" height="94" rx="3" fill="#FFFFFF"/>
+  <text x="71" y="48" text-anchor="middle" fill="#111111" font-family="Arial Black, Arial, sans-serif" font-size="49" font-weight="900" font-style="italic" letter-spacing="-3">TMA</text>
+  <rect x="3" y="56" width="136" height="35" fill="#D5092F"/>
+  <rect x="5" y="58" width="132" height="31" stroke="#FFFFFF" stroke-width=".7"/>
+  <text x="71" y="80" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="18" letter-spacing="7">SPORT</text>
+</svg>

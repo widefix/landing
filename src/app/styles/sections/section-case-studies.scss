@@ -276,3 +276,12 @@
   border-radius: 3px;
   object-fit: contain;
 }
+
+.client-img img[src*="tma-sport"] {
+  display: block;
+  width: 78px;
+  height: auto;
+  background: #fff;
+  padding: 3px;
+  border-radius: 3px;
+}
