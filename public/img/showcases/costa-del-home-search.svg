@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="687" height="377" viewBox="0 0 687 377" fill="none">
+<title>CostaDelHome search: 10 seconds to 100ms</title>
+<rect width="687" height="377" rx="28" fill="#EEF6FF"/>
+<g font-family="Arial, sans-serif">
+<text x="40" y="55" fill="#1C2F42" font-size="25" font-weight="700">CostaDelHome</text>
+<text x="40" y="85" fill="#5F6675" font-size="16">Search performance optimization</text>
+<rect x="40" y="120" width="250" height="110" rx="16" fill="white" stroke="#D2D9E9"/>
+<rect x="397" y="120" width="250" height="110" rx="16" fill="#193B5E"/>
+<text x="165" y="165" text-anchor="middle" fill="#1C2F42" font-size="28" font-weight="700">10 seconds</text>
+<text x="165" y="198" text-anchor="middle" fill="#5F6675" font-size="15">Before optimization</text>
+<text x="522" y="165" text-anchor="middle" fill="white" font-size="28" font-weight="700">100ms</text>
+<text x="522" y="198" text-anchor="middle" fill="white" font-size="15">After optimization</text>
+<text x="40" y="298" fill="#246447" font-size="46" font-weight="700">99%</text>
+<text x="170" y="292" fill="#1C2F42" font-size="20" font-weight="700">less time waiting for search</text>
+<text x="170" y="321" fill="#5F6675" font-size="16">Search pages now load 100 times faster</text>
+</g>
+<path d="M311 175h65m-12-12 12 12-12 12" stroke="#276CB4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

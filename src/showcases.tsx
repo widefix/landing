@@ -5,6 +5,45 @@ import { CategoryName, ResultBoxColor, Showcase, SwiperSlideColor } from './enum
 
 const showcases: Showcase[] = [
   {
+    slug: "costa-del-home-search-performance",
+    category: CategoryName.optimisations,
+    preview: {
+      title: "Improved page load speed of the search functionality",
+      companyName: "CostaDelHome",
+      solution: "Search Performance",
+      results: "Reduced search page load time from 10 seconds to 100ms — a 99% reduction and 100× faster loading.",
+      wrapperColor: SwiperSlideColor.sea,
+      buttonColor: SwiperSlideColor.sea,
+      companyImageSrc: "/img/showcases/clients/costa-del-home.svg",
+      url: '',
+    },
+    body: {
+      bannerTopTitle: <h1>Improved page load speed of the <span className="oval">search</span> functionality</h1>,
+      bannerTopImageSrc: "/img/showcases/costa-del-home-search.svg",
+      description: "Search pages loading in 100ms instead of 10 seconds",
+      descriptionText: <p>We improved CostaDelHome&apos;s search functionality, reducing page load time from 10 seconds to 100ms.</p>,
+      detailsTitle: "Search performance for CostaDelHome",
+      detailsText: <p>CostaDelHome&apos;s search pages took 10 seconds to load. We improved their performance so the same functionality loaded in 100ms.</p>,
+      detailsImageSrc: "/img/showcases/costa-del-home-search.svg",
+      problemText: <p>Users had to wait 10 seconds for search pages to load, making it slow to find what they needed.</p>,
+      solutionFirstText: <p>We optimized the application&apos;s search functionality to reduce page load time.</p>,
+      solutionSecondText: <p>The improved search experience loads in 100ms instead of 10 seconds.</p>,
+      bannerSolutionPng: "/img/showcases/costa-del-home-search.svg",
+      bannerSolutionWebp: "/img/showcases/costa-del-home-search.svg",
+      resultBoxes: [
+        { color: ResultBoxColor.lightBlue, imageSrc: "/img/showcases/case/icons/stock.svg", message: "Load time before", number: "10 seconds" },
+        { color: ResultBoxColor.lightGreen, imageSrc: "/img/showcases/case/icons/stock.svg", message: "Load time after", number: "100ms" },
+        { color: ResultBoxColor.lightGreen, imageSrc: "/img/showcases/case/icons/piechart.svg", message: "Reduction in load time", number: "99%" },
+      ],
+      resultText: <p>Search page load time dropped from <strong>10 seconds to 100ms</strong> — a <strong>99% reduction</strong>. That means search pages now load <strong>100 times faster</strong>.</p>,
+      helpTitle: "Need to improve your application's search performance?",
+    },
+    metadata: {
+      title: "CostaDelHome Search Performance Optimization - WideFix",
+      description: "How WideFix reduced CostaDelHome search page load time from 10 seconds to 100ms — a 99% reduction and 100× faster loading.",
+    },
+  },
+  {
     slug: "costa-del-home-heroku-to-aws",
     category: CategoryName.devops,
     preview: {
