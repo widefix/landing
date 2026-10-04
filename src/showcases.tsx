@@ -5,6 +5,61 @@ import { CategoryName, ResultBoxColor, Showcase, SwiperSlideColor } from './enum
 
 const showcases: Showcase[] = [
   {
+    slug: "palladium-rails-upgrade",
+    category: CategoryName.devops,
+    preview: {
+      title: "Rails upgrade",
+      companyName: "Palladium",
+      solution: "Ruby & Rails Upgrade",
+      results: "Upgraded an existing application from Ruby 3.1.4 and Rails 6.1.7.6 to Ruby 3.4.4 and Rails 7.2, resolving 27 documented compatibility issues.",
+      wrapperColor: SwiperSlideColor.purple,
+      buttonColor: SwiperSlideColor.purple,
+      companyImageSrc: "/img/clients/palladium.webp",
+      url: '',
+    },
+    body: {
+      bannerTopTitle: <h1><span className="oval">Ruby and Rails</span> upgrade for Palladium</h1>,
+      bannerTopImageSrc: "/img/showcases/palladium-rails-upgrade.svg",
+      description: "Upgrading an established Rails application",
+      descriptionText: <p>We updated Palladium&apos;s Ruby and Rails stack while addressing compatibility issues in its existing codebase.</p>,
+      detailsTitle: "Ruby & Rails upgrade",
+      detailsText: <p>The application used PostgreSQL, Sidekiq and GraphQL. We upgraded Ruby first, then Rails, to isolate issues.</p>,
+      detailsImageSrc: "/img/showcases/palladium-rails-upgrade.svg",
+      problemText: <p>Older Ruby versions faced Heroku deprecation. Dependencies and legacy code needed changes to work with the upgraded stack.</p>,
+      solutionFirstText: <p>We updated dependencies and resolved test, asset compilation and application startup failures.</p>,
+      solutionSecondText: <p>We addressed Zeitwerk loading and framework compatibility. <a href="https://widefix.com/blog/ruby-and-rails-upgrade-personal-experience/" target="_blank" rel="noopener noreferrer">Read the detailed upgrade log.</a></p>,
+      bannerSolutionPng: "/img/showcases/palladium-rails-upgrade.svg",
+      bannerSolutionWebp: "/img/showcases/palladium-rails-upgrade.svg",
+      resultBoxes: [
+        { color: ResultBoxColor.lightBlue, imageSrc: "/img/showcases/case/icons/flag.svg", message: "Ruby upgraded to", number: "3.4.4" },
+        { color: ResultBoxColor.lightGreen, imageSrc: "/img/showcases/case/icons/flag.svg", message: "Rails upgraded to", number: "7.2" },
+        { color: ResultBoxColor.lightGreen, imageSrc: "/img/showcases/case/icons/flag.svg", message: "Documented compatibility issues resolved", number: "27" },
+      ],
+      resultText: (
+        <>
+          <p>The application worked on Ruby 3.4.4 and Rails 7.2 after resolving <strong>27 documented compatibility issues</strong>, including dependencies, assets, code loading and framework behavior.</p>
+          <p><strong>Initial improvements observed during validation:</strong> faster Rails server startup, quicker and more accurate console autocompletion, and apparently faster HTTP responses on Heroku. These were qualitative observations; the article reports that production rollout and performance measurements were still pending.</p>
+          <p><strong>Earlier detection of loading issues:</strong> Zeitwerk&apos;s stricter conventions helped expose code-loading problems. We adapted the existing structure while preserving job class names to avoid breaking queued jobs.</p>
+          <p><strong>Contributions beyond the project:</strong> the upgrade also led to a dry-auto_inject issue report and a RuboCop pull request.</p>
+        </>
+      ),
+      helpTitle: "Need help upgrading an existing Rails application?",
+      related: [{
+        companyName: "Palladium",
+        solution: "Ruby and Rails upgrade: personal experience",
+        results: "Read the compatibility issues, fixes and lessons from the upgrade.",
+        wrapperColor: SwiperSlideColor.purple,
+        buttonColor: SwiperSlideColor.purple,
+        companyImageSrc: "/img/clients/palladium.webp",
+        url: "https://widefix.com/blog/ruby-and-rails-upgrade-personal-experience/",
+      }],
+    },
+    metadata: {
+      title: "Palladium Ruby & Rails Upgrade - WideFix",
+      description: "Palladium's incremental Ruby and Rails upgrade: compatibility fixes, dependency updates and validation of an existing application.",
+    },
+  },
+  {
     slug: "costa-del-home-crm-enhancement",
     category: CategoryName.devDesign,
     preview: {

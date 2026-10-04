@@ -268,3 +268,11 @@
   &.yellow { background-color: #ED9048; }
   &.sea { background-color: #276CB4; }
 }
+
+.client-img img[src*="palladium"] {
+  display: block;
+  background-color: #fff;
+  padding: 3px;
+  border-radius: 3px;
+  object-fit: contain;
+}
