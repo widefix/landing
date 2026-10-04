@@ -5,6 +5,55 @@ import { CategoryName, ResultBoxColor, Showcase, SwiperSlideColor } from './enum
 
 const showcases: Showcase[] = [
   {
+    slug: "costa-del-home-crm-enhancement",
+    category: CategoryName.devDesign,
+    preview: {
+      title: "Added advanced functionality to the CRM",
+      companyName: "CostaDelHome",
+      solution: "CRM Development & Data Migration",
+      results: "Enabled multiple managers per property with zero-downtime data and relationship migrations, preserving the existing app and user experience.",
+      wrapperColor: SwiperSlideColor.sea,
+      buttonColor: SwiperSlideColor.sea,
+      companyImageSrc: "/img/showcases/clients/costa-del-home.svg",
+      url: '',
+    },
+    body: {
+      bannerTopTitle: <h1>Added advanced functionality to the <span className="oval">CRM</span></h1>,
+      bannerTopImageSrc: "/img/showcases/costa-del-home-crm.svg",
+      description: "More flexible property management, without downtime",
+      descriptionText: <p>We expanded CostaDelHome&apos;s CRM so a property could be associated with multiple managers instead of just one. Data and relationship migrations happened without downtime or disruption to existing users.</p>,
+      detailsTitle: "CRM relationship migration for CostaDelHome",
+      detailsText: <p>The CRM needed to support more flexible relationships between properties and managers. We changed the single-manager selection into a multiple-manager workflow while preserving existing assignments and keeping the production application available.</p>,
+      detailsImageSrc: "/img/showcases/costa-del-home-crm.svg",
+      problemText: <p>A property could have only one selected manager. Supporting multiple managers required changes to the database, application associations and selection interface in a live system that existing users depended on.</p>,
+      solutionFirstText: <p>We rolled out the migration incrementally: introduced the new relationship structure, kept old and new data structures in sync, and migrated existing assignments before switching the application to the new associations.</p>,
+      solutionSecondText: <p>We replaced the single-selection interface with multiple checkboxes, then removed the old relationship structure after the application had transitioned. <a href="https://blog.widefix.com/from-single-dd-to-multiple-checkboxes/" target="_blank" rel="noopener noreferrer">Read the step-by-step migration article.</a></p>,
+      bannerSolutionPng: "/img/showcases/costa-del-home-crm.svg",
+      bannerSolutionWebp: "/img/showcases/costa-del-home-crm.svg",
+      resultBoxes: [
+        { color: ResultBoxColor.lightGreen, imageSrc: "/img/showcases/case/icons/stock.svg", message: "Migration downtime", number: "Zero" },
+        { color: ResultBoxColor.lightBlue, imageSrc: "/img/showcases/case/icons/user.svg", message: "Managers per property", number: "Multiple" },
+        { color: ResultBoxColor.lightGreen, imageSrc: "/img/showcases/case/icons/flag.svg", message: "Disruption to existing users", number: "Zero" },
+      ],
+      resultText: <p>The CRM now supports multiple managers per property. Existing data and relationships were migrated with <strong>zero downtime and no disruption to existing users</strong>, allowing the business to add functionality while keeping its production application running.</p>,
+      helpTitle: "Need to evolve your CRM without interrupting existing users?",
+      related: [{
+        title: "From Single drop-down to Multiple check-boxes",
+        companyName: "CostaDelHome",
+        solution: "Zero-Downtime Relationship Migration",
+        results: "A step-by-step approach to changing database relationships and selection interfaces in a live Rails application.",
+        wrapperColor: SwiperSlideColor.sea,
+        buttonColor: SwiperSlideColor.sea,
+        companyImageSrc: "/img/showcases/clients/costa-del-home.svg",
+        url: "https://blog.widefix.com/from-single-dd-to-multiple-checkboxes/",
+      }],
+    },
+    metadata: {
+      title: "CostaDelHome CRM Enhancement & Zero-Downtime Migration - WideFix",
+      description: "How WideFix enabled multiple managers per property in CostaDelHome's CRM with zero-downtime data and relationship migrations and no disruption to existing users.",
+    },
+  },
+  {
     slug: "costa-del-home-search-performance",
     category: CategoryName.optimisations,
     preview: {
