@@ -5,6 +5,53 @@ import { CategoryName, ResultBoxColor, Showcase, SwiperSlideColor } from './enum
 
 const showcases: Showcase[] = [
   {
+    slug: "public-api-development",
+    category: CategoryName.devDesign,
+    preview: {
+      title: "Public API development for Palladium",
+      companyName: "Palladium",
+      solution: "API Development & Solutions Architecture",
+      results: "Built an API and backoffice for a new portal without disrupting the old one. Reused and refactored the existing backend, protected data integrity and unblocked delivery across teams.",
+      wrapperColor: SwiperSlideColor.green,
+      buttonColor: SwiperSlideColor.green,
+      companyImageSrc: "/img/clients/palladium.webp",
+      url: '',
+    },
+    body: {
+      bannerTopTitle: <h1><span className="oval">Public API development</span> for Palladium</h1>,
+      bannerTopImageSrc: "/img/showcases/public-api-development.svg",
+      description: "Public API development for Palladium",
+      descriptionText: <p>Palladium needed an API for a new portal being built by another team. The existing portal had to keep working as before. We delivered the API and backoffice, improved the backend code used by both portals and prevented data integrity issues during the changes.</p>,
+      detailsTitle: "GraphQL API development & technical leadership",
+      detailsText: (
+        <>
+          <p>We implemented a <strong>GraphQL API</strong> for a stack using <strong>Ruby on Rails, PostgreSQL and Next.js</strong>.</p>
+          <p>Instead of implementing the same business behavior twice, we reused code from the existing portal&apos;s backend. That meant changes made for the API also affected code the old portal depended on. We made local refactoring changes to support both interfaces, stabilize the existing system and keep their data consistent.</p>
+          <ul className="showcase-tech-stack" aria-label="Technology stack">
+            {['Ruby on Rails', 'PostgreSQL', 'Next.js', 'GraphQL'].map(tech => <li key={tech}>{tech}</li>)}
+          </ul>
+        </>
+      ),
+      detailsImageSrc: "/img/showcases/public-api-development.svg",
+      problemText: <p>The API was consumed by a third-party team. Our work also depended on a service that team was responsible for, creating a circular dependency: we needed their integration to finish parts of our implementation, while the teams&apos; work depended on each other. Waiting would have held up both the API and the backoffice. At the same time, existing users still needed the old portal to function normally.</p>,
+      solutionFirstText: <p>We built the new API with GraphQL and introduced a service adapter so our implementation could proceed independently of the unavailable external integration. It provided the behavior our side needed while the other team continued its work. This removed the immediate blocker and let us build the API and backoffice without waiting for that service to be ready.</p>,
+      solutionSecondText: <p>In parallel, we refactored the specific backend code that the new API reused. We kept the existing portal&apos;s behavior intact, stabilized the affected functionality and addressed data integrity risks rather than carrying them into the new interface. We coordinated the API work with the third-party team throughout delivery.</p>,
+      bannerSolutionPng: "/img/showcases/public-api-development.svg",
+      bannerSolutionWebp: "/img/showcases/public-api-development.svg",
+      resultBoxes: [
+        { color: ResultBoxColor.lightBlue, imageSrc: "/img/showcases/case/icons/link.svg", message: "API & backoffice", number: "Delivered" },
+        { color: ResultBoxColor.lightGreen, imageSrc: "/img/showcases/case/icons/flag.svg", message: "Existing system", number: "Stabilized" },
+        { color: ResultBoxColor.lightGreen, imageSrc: "/img/showcases/case/icons/stock.svg", message: "Data integrity", number: "Protected" },
+      ],
+      resultText: <p>The new API and backoffice were completed despite the cross-team dependency. The old portal continued working without disruption. The shared backend was improved through local refactoring, the existing system was stabilized and data integrity issues were prevented. The service adapter gave our team a way to continue delivery instead of letting another team&apos;s unfinished integration stop the project.</p>,
+      helpTitle: "Need to add an API to an existing application?",
+    },
+    metadata: {
+      title: "Public API Development for Palladium - WideFix",
+      description: "Public API development for Palladium: delivery without disrupting the existing portal, targeted refactoring to stabilize shared code and prevention of data integrity issues.",
+    },
+  },
+  {
     slug: "hipchip-stripe-ach-integration",
     category: CategoryName.systemsIntegrations,
     preview: {

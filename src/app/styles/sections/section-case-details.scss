@@ -40,3 +40,17 @@ h2.with-crown {
 .case-details-title {
   align-self: center;
 }
+.showcase-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+  li {
+    padding: 8px 14px;
+    border-radius: 20px;
+    background: #eef6ff;
+    color: #193b5e;
+    font-size: 14px;
+    font-weight: 600;
+  }
+}

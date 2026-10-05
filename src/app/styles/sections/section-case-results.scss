@@ -147,3 +147,30 @@ h2.results {
     height: 7px;
   }
 }
+
+.case-results .results-boxes {
+  flex-wrap: wrap;
+  .result-box {
+    min-width: 0;
+    .result-number {
+      font-size: 22px;
+      line-height: 1.25;
+      overflow-wrap: anywhere;
+    }
+    .result-message { overflow-wrap: anywhere; }
+    @media (max-width: $media-xsm) {
+      display: grid;
+      grid-template-columns: 35px minmax(0, 1fr);
+      gap: 4px 12px;
+      img {
+        grid-row: 1 / 3;
+        width: 35px;
+        margin: 0;
+      }
+      .result-message, .result-number {
+        grid-column: 2;
+        margin-left: 0;
+      }
+    }
+  }
+}
