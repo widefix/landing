@@ -316,3 +316,13 @@
   gap: 12px;
   .h3 { line-height: 1.3; }
 }
+.case-studies .showcase-category .title-with-icon {
+  min-width: 0;
+  > img { flex-shrink: 0; }
+  .h3 { min-width: 0; overflow-wrap: anywhere; }
+}
+.case-studies .showcase-card-grid {
+  .slide-footer { flex-wrap: wrap; gap: 12px; }
+  .tag { max-width: 100%; box-sizing: border-box; }
+  h3, p { overflow-wrap: anywhere; }
+}
