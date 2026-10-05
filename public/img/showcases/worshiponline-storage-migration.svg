@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" fill="none">
+  <rect width="960" height="560" rx="28" fill="#EFF5EF"/>
+  <path d="M0 108H960M0 452H960M320 108V452M640 108V452" stroke="#DCE8DE" stroke-width="1"/>
+  <text x="48" y="56" fill="#536E5D" font-family="Montserrat, sans-serif" font-size="13" font-weight="700" letter-spacing="1.2">WORSHIPONLINE / STORAGE MIGRATION</text>
+  <text x="912" y="56" text-anchor="end" fill="#536E5D" font-family="Montserrat, sans-serif" font-size="13" font-weight="600">PRODUCTION FLOW</text>
+
+  <rect x="44" y="150" width="250" height="248" rx="18" fill="#FFFFFF" stroke="#D6E3D8" stroke-width="2"/>
+  <rect x="64" y="170" width="106" height="25" rx="12.5" fill="#E8ECE9"/>
+  <text x="117" y="187" text-anchor="middle" fill="#58655D" font-family="Montserrat, sans-serif" font-size="10" font-weight="700" letter-spacing=".7">LEGACY</text>
+  <path d="M80 233H111L124 246H165V282H80V233Z" fill="#E8A94B"/>
+  <path d="M80 247H165V282H80V247Z" fill="#F3C779"/>
+  <text x="68" y="322" fill="#183B30" font-family="Montserrat, sans-serif" font-size="23" font-weight="700">Paperclip</text>
+  <text x="68" y="350" fill="#607267" font-family="Montserrat, sans-serif" font-size="14">Existing uploads + S3 keys</text>
+  <text x="68" y="376" fill="#607267" font-family="Montserrat, sans-serif" font-size="12">Still serving the live application</text>
+
+  <rect x="354" y="136" width="252" height="276" rx="20" fill="#173D32"/>
+  <rect x="375" y="157" width="126" height="25" rx="12.5" fill="#315C4C"/>
+  <text x="438" y="174" text-anchor="middle" fill="#D6E9D8" font-family="Montserrat, sans-serif" font-size="10" font-weight="700" letter-spacing=".6">BRIDGE PHASE</text>
+  <circle cx="390" cy="226" r="6" fill="#F1BC58"/>
+  <text x="408" y="231" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-size="15" font-weight="600">Dual-write uploads</text>
+  <path d="M390 238V267" stroke="#83A591" stroke-width="2" stroke-dasharray="3 5"/>
+  <circle cx="390" cy="282" r="6" fill="#F1BC58"/>
+  <text x="408" y="287" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-size="15" font-weight="600">Backfill old files</text>
+  <path d="M390 294V323" stroke="#83A591" stroke-width="2" stroke-dasharray="3 5"/>
+  <circle cx="390" cy="338" r="6" fill="#F1BC58"/>
+  <text x="408" y="343" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-size="15" font-weight="600">Switch model by model</text>
+  <text x="376" y="386" fill="#BBD0C1" font-family="Montserrat, sans-serif" font-size="12">Verify before retiring Paperclip</text>
+
+  <rect x="666" y="150" width="250" height="248" rx="18" fill="#FFFFFF" stroke="#D6E3D8" stroke-width="2"/>
+  <rect x="686" y="170" width="125" height="25" rx="12.5" fill="#DDF1E2"/>
+  <text x="748" y="187" text-anchor="middle" fill="#26724C" font-family="Montserrat, sans-serif" font-size="10" font-weight="700" letter-spacing=".6">NEW DELIVERY</text>
+  <path d="M718 255C718 241 729 230 743 230C753 212 782 216 787 239C799 240 805 248 805 258C805 270 796 278 784 278H741C728 278 718 268 718 255Z" fill="#BDE2C6"/>
+  <path d="M748 254L762 268L784 243" stroke="#24724B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="690" y="322" fill="#183B30" font-family="Montserrat, sans-serif" font-size="23" font-weight="700">ActiveStorage</text>
+  <text x="690" y="350" fill="#607267" font-family="Montserrat, sans-serif" font-size="14">S3 objects + CloudFront URLs</text>
+  <text x="690" y="376" fill="#607267" font-family="Montserrat, sans-serif" font-size="12">Readable filename, unique key</text>
+
+  <path d="M296 274H345" stroke="#D17948" stroke-width="3" stroke-linecap="round"/>
+  <path d="M338 266L346 274L338 282" stroke="#D17948" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M608 274H657" stroke="#D17948" stroke-width="3" stroke-linecap="round"/>
+  <path d="M650 266L658 274L650 282" stroke="#D17948" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="44" y="472" width="872" height="48" rx="12" fill="#DCEBE0"/>
+  <circle cx="70" cy="496" r="6" fill="#D17948"/>
+  <text x="88" y="501" fill="#264C3D" font-family="Montserrat, sans-serif" font-size="14" font-weight="600">Keep the app live while records and object paths change in controlled steps.</text>
+</svg>

@@ -842,6 +842,45 @@ const showcases: Showcase[] = [
       description: "See how we eliminated daily performance bottlenecks, unblocked stalled background jobs, and integrated multiple third-party services."
     }
   },
+  {
+    slug: "worshiponline-paperclip-activestorage",
+    category: CategoryName.devops,
+    preview: {
+      title: "Paperclip to ActiveStorage",
+      companyName: "WorshipOnline",
+      solution: "Zero-downtime storage migration",
+      results: "Replaced Paperclip with ActiveStorage through dual-writing, a resumable backfill, staged model cutovers and S3 key reconciliation.",
+      wrapperColor: SwiperSlideColor.green,
+      buttonColor: SwiperSlideColor.green,
+      companyImageSrc: "/img/showcases/clients/wo.svg",
+      url: ''
+    },
+    body: {
+      bannerTopTitle: <h1>Moving off <span className="oval">Paperclip</span> without taking production offline</h1>,
+      bannerTopImageSrc: "/img/showcases/worshiponline-storage-migration.svg",
+      description: "A staged move to ActiveStorage for WorshipOnline",
+      descriptionText: <p>We migrated a large library of production media from Paperclip to ActiveStorage without a big-bang cutover. New uploads were dual-written, existing files were backfilled, and models moved across in stages.</p>,
+      detailsTitle: "Storage migration for WorshipOnline",
+      detailsText: <p>Paperclip had become a maintenance and upgrade constraint. We introduced ActiveStorage alongside it, then adapted ActiveStorage keys, variants and public URLs to work with the application&apos;s existing media delivery patterns.</p>,
+      detailsImageSrc: "/img/showcases/worshiponline-storage-migration.svg",
+      problemText: <p>WorshipOnline had gigabytes of media in S3 and a live application that depended on established attachment behavior and public URLs. Replacing the storage layer all at once risked broken uploads, missing assets and a disruptive release.</p>,
+      solutionFirstText: <p>We introduced dual-writing first: Paperclip remained available while new uploads also created ActiveStorage records. A backfill task copied existing Paperclip files into ActiveStorage, skipping records that already had an attachment. We then switched models to native ActiveStorage attachments incrementally.</p>,
+      solutionSecondText: <p>Compatibility code preserved named variants and default URLs, generated readable UUID-based object keys, and served public S3 assets through CloudFront. After the model cutovers, we removed Paperclip and its database columns. Rails and Ruby upgrades followed later.</p>,
+      bannerSolutionPng: "/img/showcases/worshiponline-storage-migration.svg",
+      bannerSolutionWebp: "/img/showcases/worshiponline-storage-migration.svg",
+      resultBoxes: [
+        { color: ResultBoxColor.lightBlue, imageSrc: "/img/showcases/case/icons/link.svg", message: "Production cutover", number: "Staged" },
+        { color: ResultBoxColor.lightGreen, imageSrc: "/img/showcases/case/icons/stock.svg", message: "Attachment systems", number: "Dual-written" },
+        { color: ResultBoxColor.lightGreen, imageSrc: "/img/showcases/case/icons/flag.svg", message: "Paperclip dependency", number: "Removed" },
+      ],
+      resultText: <p>The app moved to ActiveStorage without a single all-at-once media cutover. Once Paperclip usage and columns were removed, the application was positioned to move on to newer Rails and Ruby versions.</p>,
+      helpTitle: "Planning a storage migration for a live Rails application?",
+    },
+    metadata: {
+      title: "WorshipOnline Paperclip to ActiveStorage Migration - WideFix",
+      description: "How WideFix migrated WorshipOnline from Paperclip to ActiveStorage through dual-writing, a backfill, staged model cutovers, custom S3 keys and CloudFront URLs.",
+    },
+  },
   SeoOptimization
 ];
 
