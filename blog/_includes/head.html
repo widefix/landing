@@ -8,7 +8,10 @@
 <meta name="twitter:site" content="@{{ site.owner.twitter }}">
 <meta name="twitter:creator" content="@{{ site.owner.twitter }}">
 
-{% if page.image %}
+{% if page.image_svg %}
+  <meta property="og:image" content="{{ site.url }}/images/{{ page.image_svg }}"/>
+  <meta name="twitter:image" content="{{ site.url }}/images/{{ page.image_svg }}"/>
+{% elsif page.image %}
   <meta property="og:image" content="{{ site.url }}/images/{{ page.image }}"/>
   <meta name="twitter:image" content="{{ site.url }}/images/{{ page.image }}"/>
 {% else %}

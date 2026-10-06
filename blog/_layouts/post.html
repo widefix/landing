@@ -11,7 +11,9 @@
       "@type": "NewsArticle",
       "headline": "{{ page.title }}",
       "image": [
-        {% if page.image %}
+        {% if page.image_svg %}
+          "{{ site.url }}/images/{{ page.image_svg }}"
+        {% elsif page.image %}
           "{{ site.url }}/images/{{ page.image }}"
          {% else %}
            "{{ site.url }}/images/post.jpg"
@@ -34,7 +36,9 @@
 
 <div id="main" role="main">
   <article class="hentry">
-    {% if page.image %}
+    {% if page.image_svg %}
+      <img src="{{ site.url }}/images/{{ page.image_svg }}" alt="{{ page.title }}" width="1800" height="600" style="display: block; width: 100%; max-width: 1200px; height: auto; margin: 0 auto;" />
+    {% elsif page.image %}
       {% picture /images/{{ page.image }} --alt {{page.title}} --img style="object-fit: cover; height: 200px; width: 100%;" 16:9 %}
     {% else %}
       {% picture /images/post.jpg --alt WideFix tech post --img style="object-fit: cover; height: 200px; width: 100%;" %}
@@ -112,7 +116,9 @@
                 <li class="main-list">
                   <article>
                     <a href="{{ site.url }}{{ page.previous.url }}">
-                      {% if page.previous.image %}
+                      {% if page.previous.image_svg %}
+                        <img src="{{ site.url }}/images/{{ page.previous.image_svg }}" alt="{{ page.previous.title }}" width="1800" height="600" style="display: block; width: 100%; max-width: 1200px; height: auto; margin: 0 auto;" />
+                      {% elsif page.previous.image %}
                         {% picture /images/{{ page.previous.image }} --alt {{page.previous.title}} --img style="object-fit: cover; height: 200px; width: 100%;" 16:9 %}
                       {% else %}
                         {% picture /images/post.jpg --alt WideFix tech post --img style="object-fit: cover; height: 200px; width: 100%;" %}
@@ -144,7 +150,9 @@
                 <li class="main-list">
                   <article>
                     <a href="{{ site.url }}{{ page.next.url }}">
-                      {% if page.next.image %}
+                      {% if page.next.image_svg %}
+                        <img src="{{ site.url }}/images/{{ page.next.image_svg }}" alt="{{ page.next.title }}" width="1800" height="600" style="display: block; width: 100%; max-width: 1200px; height: auto; margin: 0 auto;" />
+                      {% elsif page.next.image %}
                         {% picture /images/{{ page.next.image }} --alt {{page.next.title}} --img style="object-fit: cover; height: 200px; width: 100%;" 16:9 %}
                       {% else %}
                         {% picture /images/post.jpg --alt WideFix tech post --img style="object-fit: cover; height: 200px; width: 100%;" %}

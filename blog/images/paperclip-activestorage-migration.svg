@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 600" fill="none">
+  <rect width="1800" height="600" fill="#173C32"/>
+  <path d="M0 120H1800M0 490H1800M450 120V490M900 120V490M1350 120V490" stroke="#A9CEB4" stroke-opacity=".09"/>
+  <circle cx="1600" cy="116" r="236" fill="#255445" fill-opacity=".58"/>
+  <circle cx="1600" cy="116" r="158" stroke="#B2D9B8" stroke-opacity=".18" stroke-width="2"/>
+  <circle cx="1600" cy="116" r="106" stroke="#B2D9B8" stroke-opacity=".18" stroke-width="2" stroke-dasharray="4 11"/>
+
+  <text x="64" y="56" fill="#B8DABD" font-family="Montserrat, sans-serif" font-size="14" font-weight="700" letter-spacing="2">WIDEFIX / FIELD NOTES</text>
+  <text x="1736" y="56" text-anchor="end" fill="#B8DABD" font-family="Montserrat, sans-serif" font-size="14" font-weight="600" letter-spacing="1">RAILS + OBJECT STORAGE</text>
+  <text x="64" y="140" fill="#F7F7F0" font-family="Montserrat, sans-serif" font-size="53" font-weight="700">PAPERCLIP</text>
+  <text x="66" y="190" fill="#A9D9AF" font-family="Montserrat, sans-serif" font-size="38" font-weight="600">to ActiveStorage</text>
+  <text x="68" y="224" fill="#D2E2D5" font-family="Arial, sans-serif" font-size="18">A live migration, one safe step at a time</text>
+
+  <rect x="64" y="286" width="448" height="184" rx="14" fill="#F4F3EA"/>
+  <rect x="88" y="306" width="84" height="24" rx="12" fill="#F4E2C5"/>
+  <text x="130" y="322" text-anchor="middle" fill="#875D2F" font-family="Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1">LEGACY</text>
+  <path d="M92 376H126L141 391H198V431H92V376Z" fill="#E8AD56"/>
+  <path d="M92 393H198V431H92V393Z" fill="#F2C980"/>
+  <text x="222" y="386" fill="#233D32" font-family="Montserrat, sans-serif" font-size="25" font-weight="700">Paperclip</text>
+  <text x="222" y="414" fill="#64756B" font-family="Arial, sans-serif" font-size="15">Existing S3 files</text>
+  <text x="222" y="439" fill="#64756B" font-family="Arial, sans-serif" font-size="13">Keep serving during rollout</text>
+
+  <rect x="676" y="274" width="448" height="208" rx="14" fill="#285443" stroke="#729981" stroke-opacity=".65"/>
+  <rect x="700" y="296" width="132" height="24" rx="12" fill="#3A6854"/>
+  <text x="766" y="312" text-anchor="middle" fill="#D5E8D7" font-family="Arial, sans-serif" font-size="11" font-weight="700" letter-spacing=".8">BRIDGE PHASE</text>
+  <circle cx="711" cy="356" r="5" fill="#E8AD56"/>
+  <text x="732" y="362" fill="#F6F7F1" font-family="Arial, sans-serif" font-size="17" font-weight="600">Dual-write uploads</text>
+  <circle cx="711" cy="398" r="5" fill="#E8AD56"/>
+  <text x="732" y="404" fill="#F6F7F1" font-family="Arial, sans-serif" font-size="17" font-weight="600">Backfill old files</text>
+  <circle cx="711" cy="440" r="5" fill="#E8AD56"/>
+  <text x="732" y="446" fill="#F6F7F1" font-family="Arial, sans-serif" font-size="17" font-weight="600">Switch models gradually</text>
+
+  <rect x="1288" y="286" width="448" height="184" rx="14" fill="#F4F3EA"/>
+  <rect x="1312" y="306" width="106" height="24" rx="12" fill="#DDEEDF"/>
+  <text x="1365" y="322" text-anchor="middle" fill="#39724A" font-family="Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1">DESTINATION</text>
+  <path d="M1320 391C1320 378 1331 367 1344 367C1352 352 1377 355 1381 373C1392 374 1399 381 1399 392C1399 403 1390 410 1379 410H1342C1329 410 1320 402 1320 391Z" fill="#BBDDBF"/>
+  <path d="M1344 389L1357 401L1379 378" stroke="#39724A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="1424" y="386" fill="#233D32" font-family="Montserrat, sans-serif" font-size="24" font-weight="700">ActiveStorage</text>
+  <text x="1424" y="414" fill="#64756B" font-family="Arial, sans-serif" font-size="15">S3 + CloudFront</text>
+  <text x="1424" y="439" fill="#64756B" font-family="Arial, sans-serif" font-size="13">UUID key + filename</text>
+
+  <path d="M520 378H646" stroke="#D98150" stroke-width="3" stroke-linecap="round"/>
+  <path d="M636 368L647 378L636 388" stroke="#D98150" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M1138 378H1258" stroke="#D98150" stroke-width="3" stroke-linecap="round"/>
+  <path d="M1248 368L1259 378L1248 388" stroke="#D98150" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="64" y="516" width="1672" height="48" rx="8" fill="#234A3B"/>
+  <circle cx="92" cy="540" r="6" fill="#D98150"/>
+  <text x="112" y="545" fill="#E1ECE2" font-family="Arial, sans-serif" font-size="15" font-weight="600">Preserve attachment behavior. Migrate files in the background. Retire the old dependency last.</text>
+</svg>

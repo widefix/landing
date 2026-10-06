@@ -1,6 +1,8 @@
 <article>
     <a href="{{site.url}}{{ post.url }}">
-      {% if post.image %}
+      {% if post.image_svg %}
+        <img src="{{ site.url }}/images/{{ post.image_svg }}" alt="{{ post.title }}" width="1800" height="600" style="display: block; width: 100%; max-width: 1200px; height: auto; margin: 0 auto;" />
+      {% elsif post.image %}
         {% picture /images/{{post.image}} --alt {{page.title}} --img style="object-fit: cover; height: 200px; width: 100%;" 16:9 %}
       {% else %}
         {% picture /images/post.jpg --alt {{page.title}} --img style="object-fit: cover; height: 200px; width: 100%;" 16:9 %}
