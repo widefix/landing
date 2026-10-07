@@ -3,7 +3,7 @@
 import { useRef, useState } from 'react';
 import styles from './worshiponline.module.scss';
 
-export default function DownloadPDF() {
+export default function DownloadPDF({ filename = 'worshiponline-paperclip-activestorage.pdf' }: { filename?: string }) {
   const button = useRef<HTMLButtonElement>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -19,7 +19,7 @@ export default function DownloadPDF() {
       copy.classList.add('showcase-pdf');
       copy.querySelectorAll('[data-pdf-exclude]').forEach(element => element.remove());
       const { downloadShowcasePDF } = await import('@/lib/showcasePdf');
-      await downloadShowcasePDF(copy.outerHTML, 'worshiponline-paperclip-activestorage.pdf');
+      await downloadShowcasePDF(copy.outerHTML, filename);
     } catch {
       setError('Could not create the PDF. Please try again.');
     } finally {

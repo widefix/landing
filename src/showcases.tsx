@@ -548,8 +548,8 @@ const showcases: Showcase[] = [
     preview: {
       companyName: "Worship Online",
       solution: "Mobile App",
-      title: "Mobile App Development",
-      results: "We have designed and launched a mobile application for both iOS and Android platforms.",
+      title: "Mobile App & Audio Engineering",
+      results: "React Native for iOS and Android, a custom C audio engine, and ownership through publication on both stores.",
       wrapperColor: SwiperSlideColor.orange,
       buttonColor: SwiperSlideColor.orange,
       companyImageSrc: "/img/showcases/clients/wo.svg",
@@ -561,12 +561,11 @@ const showcases: Showcase[] = [
           Launched a mobile app from scratch for both <span className="oval">iOS</span> and <span className="stripe">Android</span>
         </h1>
       ),
-      bannerTopImageSrc: "/img/showcases/launch-wo-mobile-app.png",
-      bannerTopImageWebpSrc: "/img/showcases/launch-wo-mobile-app.webp",
+      bannerTopImageSrc: "/img/showcases/worshiponline-mobile-engine.svg",
       description: "Launch a mobile app for both iOS and Android platforms",
       descriptionText: (
         <p>
-          Designed and built a mobile app from scratch for both iOS and Android platforms, featuring advanced <strong>Audio Signal Processing</strong> functionality. Now available on the <strong>App Store</strong> and <strong>Google Play</strong>. It receives hundreds of installations daily.
+          Designed and built a mobile app from scratch for both iOS and Android platforms, featuring advanced <strong>Audio Signal Processing</strong> functionality. Now available on the <strong>App Store</strong> and <strong>Google Play</strong>.
         </p>
       ),
       detailsTitle: 'Mobile app development',
@@ -587,67 +586,27 @@ const showcases: Showcase[] = [
       bannerSolutionPng: "/img/showcases/case/mixer-solution.png",
       solutionFirstText: (
         <p>
-          We delved into <strong>Digital Signal Processing</strong>, with a focus on <strong>Audio Processing</strong>, and implemented a custom library for both iOS and Android in their native code. This library was then integrated into the app through a React Native module. Designed for speed and reliability, the library ensures a seamless user experience.
+          We built a custom audio-processing library from scratch in <strong>C</strong> and connected it to <strong>React Native</strong> through a native module. AI-generated prototypes failed to keep tracks synchronized, so we studied the signal-processing theory and implemented the timing and processing ourselves. This delivered the required functionality at a lower cost than the proprietary licensing options we evaluated.
         </p>
       ),
       solutionSecondText: (
         <p>
-          This enabled us to finally launch the app the client had been eager to release for years on the App Store and Google Play. The launch went smoothly, and the app now receives hundreds of installations daily.
+          We supported the client through publication on the <strong>Apple App Store</strong> and <strong>Google Play</strong>, maintained ownership of technical challenges, and continued helping the client team develop the product.
         </p>
       ),
       resultBoxes: [
-        {
-          color: ResultBoxColor.lightBlue,
-          imageSrc: "/img/showcases/case/icons/stock.svg",
-          message: "iOS app impressions increase",
-          number: "48%"
-        },
-        {
-          color: ResultBoxColor.lightGreen,
-          imageSrc: "/img/showcases/case/icons/money.svg",
-          message: "iOS app views increase",
-          number: "43%"
-        },
-        {
-          color: ResultBoxColor.darkBlue,
-          imageSrc: "/img/showcases/case/icons/cancel.svg",
-          message: "iOS app crashes decrease",
-          number: "-52%"
-        },
-        {
-          color: ResultBoxColor.green,
-          imageSrc: "/img/showcases/case/icons/user.svg",
-          message: "iOS downloads increase",
-          number: "28%"
-        },
-        {
-          color: ResultBoxColor.orange,
-          imageSrc: "/img/showcases/case/icons/user.svg",
-          message: "Android average daily downloads",
-          number: "25"
-        },
-        {
-          color: ResultBoxColor.red,
-          imageSrc: "/img/showcases/case/icons/money.svg",
-          message: "Android app conversion rate",
-          number: "62%%"
-        }
+        { color: ResultBoxColor.lightBlue, imageSrc: "/img/showcases/case/icons/stock.svg", message: "Shared React Native app", number: "2 platforms" },
+        { color: ResultBoxColor.lightGreen, imageSrc: "/img/showcases/case/icons/money.svg", message: "Synchronized audio processing", number: "Native C" },
+        { color: ResultBoxColor.green, imageSrc: "/img/showcases/case/icons/user.svg", message: "Publication and team support", number: "Both stores" }
       ],
       resultText: (
-        <>
-          <p>
-            The iOS app has seen a 48% increase in impressions, a 43% rise in product page views, and a 28% boost in downloads, while crashes have decreased by 52%.
-          </p>
-          <p>
-            Since there was no Android app previously, the results are not directly comparable. However, the Android app now averages 200 daily downloads, with this number increasing every day. The conversion rate is 62.15%.
-          </p>
-        </>
+        <p>A live mobile product for iOS and Android, a reusable native audio engine, and client-team support through release and ongoing development.</p>
       ),
       helpTitle: "Looking for assistance with mobile app development?"
     },
     metadata: {
-      title: "Mobile app development - WideFix",
-      description: "See how we built and launched a mobile app with an advanced feature that allowed our client to continue growing."
+      title: "WorshipOnline Mobile App: React Native & Custom C Audio Engine - WideFix",
+      description: "How WideFix built WorshipOnline for iOS and Android, developed a synchronized audio engine in C, and supported store publication."
     }
   },
   {

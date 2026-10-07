@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640" fill="none">
+<title>WorshipOnline mobile app with a custom C audio engine</title>
+<desc>A shared React Native application connects iOS and Android to a native C engine that keeps vocal, guitar, drum and keyboard tracks synchronized.</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="960" y2="640" gradientUnits="userSpaceOnUse"><stop stop-color="#F5EFFB"/><stop offset="1" stop-color="#E9DFF4"/></linearGradient></defs>
+<rect width="960" height="640" rx="26" fill="url(#bg)"/>
+<path d="M0 104h960M0 552h960" stroke="#DDD0EA"/>
+<text x="42" y="53" font-family="Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="1.4" fill="#6B5186">WORSHIPONLINE / MOBILE ENGINEERING</text>
+<text x="918" y="53" text-anchor="end" font-family="Arial,sans-serif" font-size="12" fill="#6B5186">REACT NATIVE + C</text>
+<rect x="42" y="143" width="274" height="366" rx="32" fill="#25183F"/>
+<rect x="54" y="155" width="250" height="342" rx="24" fill="#FCFAFF"/>
+<rect x="141" y="163" width="76" height="8" rx="4" fill="#25183F"/>
+<text x="78" y="211" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#32234E">Rehearse your part</text>
+<text x="78" y="235" font-family="Arial,sans-serif" font-size="12" fill="#78678D">A mixer that stays in sync</text>
+<rect x="78" y="256" width="202" height="48" rx="9" fill="#EEE5F8"/>
+<text x="94" y="276" font-family="Arial,sans-serif" font-size="10" font-weight="700" fill="#78678D">SONG KEY</text>
+<text x="94" y="293" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#563574">D → E</text>
+<text x="78" y="329" font-family="Arial,sans-serif" font-size="12" fill="#544165">Vocals</text><path d="M78 344h202" stroke="#DDD0EA" stroke-width="5" stroke-linecap="round"/><path d="M78 344h144" stroke="#9258C7" stroke-width="5" stroke-linecap="round"/><circle cx="222" cy="344" r="6" fill="#9258C7"/>
+<text x="78" y="370" font-family="Arial,sans-serif" font-size="12" fill="#544165">Guitar</text><path d="M78 385h202" stroke="#DDD0EA" stroke-width="5" stroke-linecap="round"/><path d="M78 385h108" stroke="#DE8063" stroke-width="5" stroke-linecap="round"/><circle cx="186" cy="385" r="6" fill="#DE8063"/>
+<circle cx="179" cy="446" r="25" fill="#563574"/><path d="m173 435 17 11-17 11v-22Z" fill="white"/><path d="M95 438v16m-7-16 12 8-12 8M263 438v16m7-16-12 8 12 8" stroke="#9B85B1" stroke-width="2"/>
+<path d="M318 322h44" stroke="#9E80B8" stroke-width="2" stroke-dasharray="5 5"/><path d="m354 316 8 6-8 6" stroke="#9E80B8" stroke-width="2"/>
+<rect x="372" y="142" width="546" height="365" rx="18" fill="#2E1D4C"/>
+<rect x="396" y="165" width="188" height="28" rx="14" fill="#563574"/>
+<text x="490" y="184" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" font-weight="700" letter-spacing=".6" fill="#EEE5F8">CUSTOM NATIVE C ENGINE</text>
+<text x="396" y="228" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="white">Independent tracks</text>
+<text x="396" y="256" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="white">One shared playback position</text>
+<g font-family="Arial,sans-serif" font-size="12" fill="#D5C2E9"><text x="396" y="302">VOCALS</text><text x="396" y="347">GUITAR</text><text x="396" y="392">DRUMS</text><text x="396" y="437">KEYS</text></g>
+<g stroke-width="2" stroke-linecap="round"><path d="M484 297h30l6-10 8 20 8-23 8 28 8-15h20l7-9 8 18 8-23 8 27 8-13h23l8-13 9 27 9-24 9 10h30l8-10 9 20 8-24 8 28 8-14h28l8-10 8 20 8-22 8 24 8-12h31" stroke="#BD91E5"/><path d="M484 342h28l8-8 8 17 8-21 8 26 8-14h24l8-7 8 14 8-19 8 26 8-14h25l8-11 8 24 8-20 8 7h32l8-8 8 17 8-21 8 26 8-14h30l8-7 8 14 8-19 8 26 8-14h31" stroke="#ECAE95"/><path d="M484 387h26l5-15 7 29 6-14h27l5-15 7 29 6-14h27l5-15 7 29 6-14h27l5-15 7 29 6-14h27l5-15 7 29 6-14h27l5-15 7 29 6-14h27l5-15 7 29 6-14h27" stroke="#9BBCD2"/><path d="M484 432h26l10-8 10 16 10-16 10 8h24l10-8 10 16 10-16 10 8h24l10-8 10 16 10-16 10 8h24l10-8 10 16 10-16 10 8h24l10-8 10 16 10-16 10 8h30" stroke="#B7C895"/></g>
+<path d="M688 277v184" stroke="#FCF5FF" stroke-width="2"/><circle cx="688" cy="277" r="4" fill="#FCF5FF"/>
+<text x="396" y="484" font-family="Arial,sans-serif" font-size="12" fill="#D5C2E9">Mix · Transpose · Mute · Solo · Seek</text>
+<g font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#553F6B"><text x="42" y="589">ONE REACT NATIVE APP</text><text x="438" y="589">iOS + ANDROID</text><text x="918" y="589" text-anchor="end">BUILT + PUBLISHED + SUPPORTED</text></g>
+</svg>
