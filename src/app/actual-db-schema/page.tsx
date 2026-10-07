@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import ActualDbSchemaCalculator from '@/components/ActualDbSchemaCalculator';
 
-const title = 'Actual DB Schema: Less Rails Database Cleanup, More Development - WideFix';
+const title = 'Actual DB Schema: Keep Your Rails Database in Sync with Your Branch - WideFix';
 const description = 'See how Actual DB Schema keeps Rails development databases aligned with the current Git branch, reduces phantom migration cleanup and helps teams estimate the engineering time involved.';
 
 export const metadata: Metadata = {
@@ -26,7 +26,7 @@ export default function ActualDbSchemaPage() {
         <div className="schema-inner schema-hero-grid">
           <div className="schema-hero-copy">
             <p className="schema-eyebrow">Open-source Rails development tool</p>
-            <h1>Keep your development database in step with your branch</h1>
+            <h1>Actual DB Schema: keep your Rails database in sync with your branch.</h1>
             <p className="schema-lead">
               When you switch branches, your local database can retain migrations that do not exist in the code you are working on. Actual DB Schema detects those phantom migrations and reconciles them as part of your usual Rails migration workflow.
             </p>
@@ -34,7 +34,7 @@ export default function ActualDbSchemaPage() {
               <Link className="schema-button" href="https://github.com/widefix/actual_db_schema" target="_blank" rel="noopener noreferrer">
                 Explore the GitHub project
               </Link>
-              <Link className="schema-text-link" href="#actual-db-schema-estimator">Estimate team impact</Link>
+              <a className="schema-text-link" href="#get-started">Get started</a>
             </div>
             <p className="schema-license">MIT-licensed gem · Installed in the development group</p>
           </div>
@@ -44,14 +44,53 @@ export default function ActualDbSchemaPage() {
               <Image src="/img/library-green-icon.svg" alt="" width={56} height={56} priority />
               <div>
                 <span>Actual DB Schema</span>
-                <strong>Branch-aware migrations</strong>
+                <strong>One column. Two branches.</strong>
               </div>
             </div>
             <ol className="schema-workflow-steps">
-              <li><span>01</span><div><strong>Switch branches</strong><small>Some applied migrations belong to other work</small></div></li>
-              <li><span>02</span><div><strong>Run <code>rails db:migrate</code></strong><small>Phantom migrations are identified</small></div></li>
-              <li><span>03</span><div><strong>Continue on the current schema</strong><small>Less manual rollback and schema cleanup</small></div></li>
+              <li><span>01</span><div><strong>Branch A: add a column</strong><small>Apply a reversible migration adding <code>users.timezone</code>.</small></div></li>
+              <li><span>02</span><div><strong>Switch to branch B</strong><small>Branch B has no timezone migration, but the column remains in your local database. That is a phantom migration.</small></div></li>
+              <li><span>03</span><div><strong>Run <code>rails db:migrate</code> with the gem</strong><small>Actual DB Schema rolls back the stored migration from branch A. The extra column is removed and the database matches branch B.</small></div></li>
             </ol>
+            <p className="schema-workflow-note">Example with the gem installed before applying branch A&apos;s migration and the optional checkout hook disabled.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="schema-section schema-video" aria-labelledby="schema-video-title">
+        <div className="schema-inner">
+          <div className="schema-video-heading">
+            <p className="schema-eyebrow">Product walkthrough</p>
+            <h2 id="schema-video-title">See Actual DB Schema in action</h2>
+          </div>
+          <div className="schema-video-frame">
+            <video controls playsInline preload="metadata" aria-label="Actual DB Schema product walkthrough">
+              <source src="/actual_db_schema_h264.mp4" type="video/mp4" />
+              Your browser does not support HTML video.
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <section className="schema-section schema-install" id="get-started" aria-labelledby="schema-install-title">
+        <div className="schema-inner schema-install-grid">
+          <div>
+            <p className="schema-eyebrow">Try it in a Rails application</p>
+            <h2 id="schema-install-title">Get started in your Rails application</h2>
+            <p>Add the gem to the development group, install it, and continue running <code>rails db:migrate</code>. An automatic post-checkout hook is optional; use the migration task directly if you prefer explicit control.</p>
+            <p>Irreversible migrations still need manual attention. Actual DB Schema reports them rather than pretending it can safely reverse them.</p>
+          </div>
+          <div className="schema-install-panel">
+            <pre><code>{[
+              'group :development do',
+              '  gem "actual_db_schema"',
+              'end',
+              '',
+              'bundle install',
+              'rails actual_db_schema:install',
+              'rails db:migrate',
+            ].join('\n')}</code></pre>
+            <Link className="schema-install-link" href="https://github.com/widefix/actual_db_schema" target="_blank" rel="noopener noreferrer">Read installation and configuration details</Link>
           </div>
         </div>
       </section>
@@ -72,21 +111,6 @@ export default function ActualDbSchemaPage() {
             <div><dt>Total downloads</dt><dd>763K</dd></div>
           </dl>
           <p className="schema-stats-note">ClickGems dashboard snapshot, October 7, 2026. Download counts include repeat downloads and do not represent unique users or active installations.</p>
-        </div>
-      </section>
-
-      <section className="schema-section schema-video" aria-labelledby="schema-video-title">
-        <div className="schema-inner">
-          <div className="schema-video-heading">
-            <p className="schema-eyebrow">Product walkthrough</p>
-            <h2 id="schema-video-title">See Actual DB Schema in action</h2>
-          </div>
-          <div className="schema-video-frame">
-            <video controls playsInline preload="metadata" aria-label="Actual DB Schema product walkthrough">
-              <source src="/actual_db_schema_h264.mp4" type="video/mp4" />
-              Your browser does not support HTML video.
-            </video>
-          </div>
         </div>
       </section>
 
@@ -163,37 +187,22 @@ export default function ActualDbSchemaPage() {
         <div className="schema-inner schema-ai-grid">
           <div>
             <p className="schema-eyebrow">Works alongside AI-assisted development</p>
-            <h2>AI can speed up migration work. Branch-specific database state still needs managing</h2>
+            <h2>A consistent database for developers and coding agents</h2>
           </div>
           <div>
-            <p>AI coding tools can help draft migrations and investigate database errors. But a local database can still contain changes from another branch, regardless of how the code was written. Actual DB Schema handles that branch-to-database reconciliation, giving developers and coding agents a more consistent schema to work against.</p>
-            <p>If AI has already reduced the time your team spends diagnosing these issues, use the remaining time in the estimator below. It models the incremental opportunity, not a pre-AI baseline.</p>
+            <p>AI can help write migrations, but switching branches can still leave the local database out of sync. Actual DB Schema reconciles that state, helping developers and coding agents run tests against the schema their current branch expects.</p>
           </div>
         </div>
       </section>
 
       <ActualDbSchemaCalculator />
 
-      <section className="schema-section schema-install">
-        <div className="schema-inner schema-install-grid">
-          <div>
-            <p className="schema-eyebrow">Try it in a Rails application</p>
-            <h2>Keep the workflow your team already knows</h2>
-            <p>Add the gem to the development group, install it, and continue running <code>rails db:migrate</code>. An automatic post-checkout hook is optional; use the migration task directly if you prefer explicit control.</p>
-            <p>Irreversible migrations still need manual attention. Actual DB Schema reports them rather than pretending it can safely reverse them.</p>
-          </div>
-          <div className="schema-install-panel">
-            <pre><code>{[
-              'group :development do',
-              '  gem "actual_db_schema"',
-              'end',
-              '',
-              'bundle install',
-              'rails actual_db_schema:install',
-              'rails db:migrate',
-            ].join('\n')}</code></pre>
-            <Link className="schema-install-link" href="https://github.com/widefix/actual_db_schema" target="_blank" rel="noopener noreferrer">Read installation and configuration details</Link>
-          </div>
+      <section className="schema-section schema-services" aria-labelledby="schema-services-title">
+        <div className="schema-inner">
+          <p className="schema-eyebrow">Built and maintained by WideFix</p>
+          <h2 id="schema-services-title">Your Rails application needs an owner.</h2>
+          <p>We take ownership of existing Ruby on Rails applications, from production issues and upgrades to ongoing development. The same practical experience shapes the tools we build for Rails teams.</p>
+          <Link className="schema-button" href="/services">Explore our Rails maintenance services</Link>
         </div>
       </section>
     </main>

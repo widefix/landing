@@ -64,10 +64,16 @@
   }
 
   a:focus-visible,
-  input:focus-visible {
+  input:focus-visible,
+  summary:focus-visible {
     outline: 3px solid #ed9048;
     outline-offset: 3px;
   }
+}
+
+.schema-workflow-note {
+  margin: 14px 0 0;
+  font-size: 12px;
 }
 
 .schema-hero {
@@ -405,7 +411,7 @@
 }
 
 .schema-estimator {
-  background: #f1f6f3;
+  background: #f7f9fa;
   scroll-margin-top: 24px;
 }
 
@@ -528,8 +534,34 @@
   font-size: 12px;
 }
 
+.schema-estimator-controls {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #e1e8e4;
+
+  summary {
+    color: #245c94;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .schema-estimator-fields {
+    margin-top: 20px;
+  }
+}
+
+.schema-services {
+  background: #eef6f2;
+
+  p:not(.schema-eyebrow) {
+    max-width: 800px;
+    margin-bottom: 28px;
+  }
+}
+
 .schema-install {
   background: #fff;
+  scroll-margin-top: 24px;
 }
 
 .schema-install-grid {
