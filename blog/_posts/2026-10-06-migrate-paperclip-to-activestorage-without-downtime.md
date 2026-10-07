@@ -9,6 +9,9 @@ share: true
 toc: true
 featured_post: true
 image_svg: paperclip-activestorage-migration.svg
+social_image: paperclip-activestorage-migration-social.png
+social_image_width: 1200
+social_image_height: 630
 ---
 
 Paperclip had served a Rails application for years. It also made upgrading the application harder: the gem was deprecated, and keeping it working alongside newer Rails versions was becoming a maintenance risk.

@@ -3,13 +3,12 @@
 <head>
   {% include head.html %}
   {% assign schema_author = page.author | default: site.owner %}
-  {% assign schema_image = page.image_svg | default: page.image | default: 'post.jpg' %}
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": {{ page.title | jsonify }},
-    "image": [{{ site.url | append: '/images/' | append: schema_image | jsonify }}],
+    "image": [{{ social_image_url | jsonify }}],
     "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
     "dateModified": {{ page.modified | default: page.date | date_to_xmlschema | jsonify }},
     "author": {"@type": "Person", "name": {{ schema_author.name | jsonify }}, "url": {{ 'https://www.linkedin.com/in/' | append: schema_author.linkedin | append: '/' | jsonify }}}
