@@ -7,6 +7,7 @@ tags: [rails, activestorage, paperclip, aws, s3]
 comments: true
 share: true
 toc: true
+featured_post: true
 image_svg: paperclip-activestorage-migration.svg
 ---
 

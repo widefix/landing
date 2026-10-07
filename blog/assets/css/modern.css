@@ -347,6 +347,7 @@ body.blog-modern .post-grid {
 }
 .featured-grid .card-image img {
   height: 235px !important;
+  object-fit: contain;
 }
 .blog-cta {
   display: flex;
