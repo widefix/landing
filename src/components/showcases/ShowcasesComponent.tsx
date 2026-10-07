@@ -14,7 +14,7 @@ export default function ShowcasesPage() {
           <div className="portfolio">
             <div className="portfolio-copy">
               <p className="portfolio-eyebrow">Selected work</p>
-              <h1>Software built for the work that matters.</h1>
+              <h1>Software built for the work that matters</h1>
               <p className="portfolio-description">
                 We partner with ambitious teams to improve established products, connect critical systems, and deliver software built to last.
               </p>
