@@ -1,22 +1,5 @@
-<div class="footer-wrapper">
-  <footer role="contentinfo" class="display-flex">
-    <span>&copy; Copyright {{ site.time | date: '%Y' }} {{ site.owner.name }}</span>
-    <div class="social-icons">
-      {% if site.owner.twitter %}
-        <a href="http://twitter.com/{{ site.owner.twitter }}" title="{{ site.owner.name}} on Twitter" target="_blank">
-          <i class="fab fa-twitter"></i>
-        </a>
-      {% endif %}
-      {% if site.owner.linkedin %}
-        <a href="http://linkedin.com/in/{{ site.owner.linkedin }}" title="{{ site.owner.name}} on LinkedIn" target="_blank">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-      {% endif %}
-      {% if site.owner.github %}
-        <a href="http://github.com/{{ site.owner.github }}" title="{{ site.owner.name}} on Github" target="_blank">
-          <i class="fab fa-github"></i>
-        </a>
-      {% endif %}
-    </div><!-- /.social-icons -->
-  </footer>
-</div><!-- /.footer-wrapper -->
+<footer class="blog-footer">
+  <div><a class="footer-brand" href="https://widefix.com">WideFix.</a><p>Practical engineering for Rails applications that businesses depend on.</p></div>
+  <nav aria-label="Footer navigation"><a href="{{ site.url }}/about-author/">About Andrei</a><a href="https://github.com/widefix">Open source</a><a href="{{ site.url }}/feed.xml">RSS feed</a><a href="https://widefix.com/contact">Get in touch</a></nav>
+  <small>© {{ site.time | date: '%Y' }} {{ site.owner.name }}</small>
+</footer>

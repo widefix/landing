@@ -1,38 +1,25 @@
-<div class="navigation-wrapper">
-	<nav role="navigation" id="site-nav" class="animated drop">
-	    <ul>
-	        {% for link in site.links %}
-			<li>
-				{% if link.external %}
-					<a href="{{ link.url }}">{{ link.title }}</a>
-				{% else %}
-					<a href="{{ link.url }}">{{ link.title }}</a>
-				{% endif %}
-			</li>
-	        {% endfor %}
-	        <li class="feed"><a href="{{ site.url }}/feed.xml" title="RSS feed"><i class="fas fa-rss" style="color: white;"></i> Feed</a></li>
-	        {% if site.search %}<li class="dosearch"><i class="fas fa-search" style="color: white;"></i> Search</li>{% endif %}
-	    </ul>
-	</nav>
-</div><!-- /.navigation-wrapper -->
-
-{% include browser-upgrade.html %}
-
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="blog-header">
+  <nav class="blog-nav" aria-label="Main navigation">
+    <a class="blog-brand" href="{{ site.url }}/"><strong>WideFix<span>.</span></strong><span class="brand-caption">Engineering notes</span></a>
+    <div class="nav-links">
+      <a href="{{ site.url }}/articles/" {% if page.url == '/articles/' %}aria-current="page"{% endif %}>Articles</a>
+      <a href="{{ site.url }}/about-author/" {% if page.url == '/about-author/' %}aria-current="page"{% endif %}>About Andrei</a>
+      <a href="{{ site.url }}/tags/" {% if page.url == '/tags/' %}aria-current="page"{% endif %}>Topics</a>
+      {% if site.search %}<button type="button" class="search-trigger" aria-haspopup="dialog">Search <span aria-hidden="true">⌕</span></button>{% endif %}
+      <a class="nav-work" href="https://widefix.com/services">Work with us <span aria-hidden="true">↗</span></a>
+    </div>
+  </nav>
+</header>
 {% if site.search %}
-	<div class="search-wrapper">
-		<div class="search-form">
-			<input type="text" class="search-field" placeholder="Search...">
-			<i class="far fa-times-circle fa-2x"></i>
-			<ul class="search-results post-list"></ul><!-- /.search-results -->
-		</div><!-- /.search-form -->
-	</div><!-- ./search-wrapper -->
+<dialog class="blog-search" aria-labelledby="search-title">
+  <div class="search-heading"><h2 id="search-title">Find an article</h2><button type="button" class="search-close" aria-label="Close search">×</button></div>
+  <label for="blog-search-input">Search by title, topic, or description</label>
+  <input id="blog-search-input" type="search" placeholder="Try Rails, migrations, or PostgreSQL…" autocomplete="off">
+  <p class="search-status" role="status">Start typing to search the archive.</p>
+  <ul class="search-results"></ul>
+</dialog>
 {% endif %}
-
-{% if jekyll.environment == 'production' %}
-{% if site.google_analytics %}
-	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{site.google_analytics}}"
-		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-		<!-- End Google Tag Manager (noscript) -->
-{% endif %}
+{% if jekyll.environment == 'production' and site.google_analytics %}
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{site.google_analytics}}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 {% endif %}
