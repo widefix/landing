@@ -1,38 +1,25 @@
-<div class="navigation-wrapper">
-	<nav role="navigation" id="site-nav" class="animated drop">
-	    <ul>
-	        {% for link in site.links %}
-			<li>
-				{% if link.external %}
-					<a href="{{ link.url }}">{{ link.title }}</a>
-				{% else %}
-					<a href="{{ link.url }}">{{ link.title }}</a>
-				{% endif %}
-			</li>
-	        {% endfor %}
-	        <li class="feed"><a href="{{ site.url }}/feed.xml" title="RSS feed"><i class="fas fa-rss" style="color: white;"></i> Feed</a></li>
-	        {% if site.search %}<li class="dosearch"><i class="fas fa-search" style="color: white;"></i> Search</li>{% endif %}
-	    </ul>
-	</nav>
-</div><!-- /.navigation-wrapper -->
-
-{% include browser-upgrade.html %}
-
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="blog-header">
+  <nav class="blog-nav" aria-label="Main navigation">
+    <a class="blog-brand" href="{{ site.url }}/"><img src="{{ site.url }}/images/widefix-logo.svg" alt="WideFix" width="136" height="31"><span class="brand-caption">Engineering notes</span></a>
+    <div class="nav-links">
+      <a class="nav-icon-link" href="{{ site.url }}/articles/" {% if page.url == '/articles/' %}aria-current="page"{% endif %}><svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></svg>Articles</a>
+      <a class="nav-icon-link" href="{{ site.url }}/about-author/" {% if page.url == '/about-author/' %}aria-current="page"{% endif %}><svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg>About Andrei</a>
+      <a class="nav-icon-link" href="{{ site.url }}/tags/" {% if page.url == '/tags/' %}aria-current="page"{% endif %}><svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h8l10 10-8 8L3 11V3Z"/><circle cx="7.5" cy="7.5" r="1"/></svg>Topics</a>
+      {% if site.search %}<button type="button" class="search-trigger nav-icon-link" aria-haspopup="dialog"><img class="search-icon" src="{{ site.url }}/images/search.svg" alt="" aria-hidden="true" width="18" height="18">Search</button>{% endif %}
+      <a class="nav-work" href="https://widefix.com/services">Work with us <span aria-hidden="true">↗</span></a>
+    </div>
+  </nav>
+</header>
 {% if site.search %}
-	<div class="search-wrapper">
-		<div class="search-form">
-			<input type="text" class="search-field" placeholder="Search...">
-			<i class="far fa-times-circle fa-2x"></i>
-			<ul class="search-results post-list"></ul><!-- /.search-results -->
-		</div><!-- /.search-form -->
-	</div><!-- ./search-wrapper -->
+<dialog class="blog-search" aria-labelledby="search-title">
+  <div class="search-heading"><h2 id="search-title">Find an article</h2><button type="button" class="search-close" aria-label="Close search">×</button></div>
+  <label for="blog-search-input">Search by title, topic, or description</label>
+  <input id="blog-search-input" type="search" placeholder="Try Rails, migrations, or PostgreSQL…" autocomplete="off">
+  <p class="search-status" role="status">Start typing to search the archive.</p>
+  <ul class="search-results"></ul>
+</dialog>
 {% endif %}
-
-{% if jekyll.environment == 'production' %}
-{% if site.google_analytics %}
-	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{site.google_analytics}}"
-		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-		<!-- End Google Tag Manager (noscript) -->
-{% endif %}
+{% if jekyll.environment == 'production' and site.google_analytics %}
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{site.google_analytics}}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 {% endif %}
