@@ -239,3 +239,43 @@ header {
     visibility: visible;
   }
 }
+
+#header .top-nav {
+  ul li {
+    margin-right: clamp(16px, 4vw, 56px);
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      white-space: nowrap;
+    }
+  }
+
+  .header-nav-icon {
+    display: block;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: $media-md) {
+    ul li {
+      margin-right: 16px;
+    }
+  }
+
+  @media (max-width: $media-sm) {
+    ul li {
+      margin-right: 0;
+
+      a {
+        display: flex;
+      }
+    }
+  }
+}
