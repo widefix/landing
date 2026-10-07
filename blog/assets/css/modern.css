@@ -130,19 +130,35 @@ body.blog-modern ol {
 .nav-links a {
   color: var(--ink) !important;
 }
+.nav-icon-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  line-height: 1.5;
+}
+.nav-icon-link svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--blue);
+}
+body.blog-modern .search-trigger .search-icon {
+  display: block;
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+}
 .nav-links a[aria-current] {
   text-decoration: underline;
   text-underline-offset: 6px;
 }
 .search-trigger {
   border: 0;
+  margin: 0;
   padding: 0;
   background: none;
   color: var(--ink);
-}
-.search-trigger span {
-  font-size: 22px;
-  margin-left: 4px;
 }
 .nav-work {
   border: 1px solid var(--line);
@@ -195,7 +211,7 @@ body.blog-modern #main {
   padding: 28px;
   align-self: center;
 }
-.intro-author img {
+body.blog-modern .intro-author img {
   border-radius: 50%;
   width: 88px;
   height: 88px;
@@ -354,7 +370,9 @@ body.blog-modern .post-grid {
 .blog-cta p {
   margin-bottom: 0;
 }
+body.blog-modern .entry-content a.button-link,
 .button-link {
+  text-decoration: none !important;
   display: inline-flex;
   justify-content: center;
   gap: 20px;
@@ -366,6 +384,15 @@ body.blog-modern .post-grid {
   border-radius: 8px;
   font-size: 14px;
   font-weight: 600;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+body.blog-modern .entry-content a.button-link:hover,
+body.blog-modern .entry-content a.button-link:focus-visible,
+body.blog-modern a.button-link:hover,
+body.blog-modern a.button-link:focus-visible {
+  background-color: #d8e9f6;
+  box-shadow: 0 0 0 3px rgba(143, 190, 224, 0.35);
+  text-decoration: none !important;
 }
 .blog-footer {
   max-width: 1136px;
@@ -392,6 +419,17 @@ body.blog-modern .post-grid {
   gap: 22px;
   font-size: 13px;
   align-self: center;
+}
+.blog-footer nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.blog-footer nav svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
 }
 .blog-footer small {
   grid-column: 1/-1;
@@ -504,7 +542,7 @@ body.blog-modern #main.article-shell {
   font-size: 14px;
   margin-top: 28px;
 }
-.article-byline img {
+body.blog-modern .article-byline img {
   border-radius: 50%;
   width: 48px;
   height: 48px;
@@ -613,7 +651,7 @@ body.blog-modern #main.article-shell {
   background: #eaf0f5;
   border-radius: var(--radius);
 }
-.article-author img {
+body.blog-modern .article-author img {
   width: 72px;
   height: 72px;
   object-fit: cover;
@@ -690,8 +728,36 @@ body.blog-modern .author-credentials a {
   border: 1px solid var(--line);
   border-radius: var(--radius);
 }
-.author-services h3 {
-  margin: 0 0 14px;
+.author-service-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.author-services .author-service-heading h3 {
+  margin: 0;
+}
+.author-service-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 48px;
+  height: 48px;
+  border-radius: 12px;
+  color: #1c527d;
+  background: #e8f0f7;
+}
+.author-service-icon.modernization {
+  color: #26704d;
+  background: #e8f2eb;
+}
+.author-service-icon.integrations {
+  color: #925924;
+  background: #fbefdf;
+}
+.author-service-icon.direction {
+  color: #675199;
+  background: #f0ebf8;
 }
 .author-services p {
   color: var(--muted);
@@ -724,6 +790,17 @@ body.blog-modern .author-credentials a {
   flex-wrap: wrap;
   margin-top: 28px;
   font-size: 14px;
+}
+.author-socials a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.author-socials svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
 }
 .blog-search {
   width: min(640px, calc(100% - 32px));
@@ -846,7 +923,7 @@ body.blog-modern .author-credentials a {
   .intro-author {
     padding: 22px;
   }
-  .intro-author img {
+  body.blog-modern .intro-author img {
     width: 64px;
     height: 64px;
     float: right;
@@ -902,7 +979,7 @@ body.blog-modern .author-credentials a {
     padding: 22px;
     gap: 16px;
   }
-  .article-author img {
+  body.blog-modern .article-author img {
     width: 48px;
     height: 48px;
   }
@@ -1010,4 +1087,11 @@ body.blog-modern .author-credentials a {
   .featured-grid > li:only-child .card-body {
     padding: 24px;
   }
+}
+
+.blog-brand img,
+.footer-brand img {
+  display: block;
+  width: 136px;
+  height: auto;
 }
