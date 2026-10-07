@@ -1,3 +1,4 @@
+import { socialPreview, socialTwitter } from '@/lib/socialPreview';
 
 import LinkIndicator from '@/components/LinkIndicator';
 import Image from 'next/image';
@@ -12,9 +13,10 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: 'https://widefix.com/services' },
+  twitter: socialTwitter('/img/rails-services-hero.svg', 'Rails maintenance, development and modernization'),
   openGraph: {
+    images: [socialPreview('/img/rails-services-hero.svg', 'Rails maintenance, development and modernization')],
     title, description, url: 'https://widefix.com/services', siteName: 'WideFix',
-    images: [{ url: 'https://widefix.com/img/block-hero.jpg', width: 1440, height: 786 }],
     locale: 'en_US', type: 'website',
   },
 };

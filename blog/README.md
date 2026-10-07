@@ -26,3 +26,7 @@ To regenerate the Paperclip article's preview:
 rsvg-convert -w 1200 -h 400 images/paperclip-activestorage-migration.svg -o /tmp/widefix-paperclip-hero.png
 magick /tmp/widefix-paperclip-hero.png -background '#173C32' -gravity center -extent 1200x630 images/paperclip-activestorage-migration-social.png
 ```
+
+## Social previews
+
+`_plugins/social_previews.rb` generates 1200 x 630 JPEG previews during every Jekyll build. It uses `social_image` when explicitly supplied, then `image_svg`, then `image`. Pages without artwork use `images/post.jpg`. The same generated preview is used for Open Graph and X/Twitter. The original hero stays unchanged on the article itself.

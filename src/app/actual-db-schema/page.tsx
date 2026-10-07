@@ -1,3 +1,4 @@
+import { socialPreview, socialTwitter } from '@/lib/socialPreview';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -10,7 +11,9 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: 'https://widefix.com/actual-db-schema' },
+  twitter: socialTwitter('/img/actual-db-schema-hero.png', 'Actual DB Schema - branch-aware Rails migrations'),
   openGraph: {
+    images: [socialPreview('/img/actual-db-schema-hero.png', 'Actual DB Schema - branch-aware Rails migrations')],
     title,
     description,
     url: 'https://widefix.com/actual-db-schema',

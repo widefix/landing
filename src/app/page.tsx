@@ -1,3 +1,5 @@
+import type { Metadata } from 'next';
+import { socialPreview, socialTwitter } from '@/lib/socialPreview';
 
 import LinkIndicator from '@/components/LinkIndicator';
 import ClutchWidget from '@/components/ClutchWidget';
@@ -5,6 +7,18 @@ import SituationIcon from '@/components/rails/SituationIcon';
 import { OwnershipProcess, OwnershipCTA, RailsCall } from '@/components/rails/RailsOwnership';
 import Image from 'next/image';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  twitter: socialTwitter('/img/rails-ownership-hero.svg', 'Your Rails application, in good hands'),
+  openGraph: {
+    title: 'Ruby on Rails Application Ownership - WideFix',
+    description: 'WideFix takes ownership of existing Ruby on Rails applications: handover, stabilization, maintenance, upgrades and ongoing feature development.',
+    url: 'https://widefix.com',
+    siteName: 'WideFix',
+    type: 'website',
+    images: [socialPreview('/img/rails-ownership-hero.svg', 'Your Rails application, in good hands')],
+  },
+};
 
 export default function HomePage() {
   return (

@@ -1,10 +1,13 @@
+import { socialPreview, socialTwitter } from '@/lib/socialPreview';
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Ruby Developer - Remote Position | WideFix',
   description: 'Join our team as a Ruby developer to work on integrations with third-party billing systems including Stripe, Xero, and Shopify. Fully remote position.',
+  twitter: socialTwitter(undefined, 'Ruby developer position at WideFix'),
   openGraph: {
+    images: [socialPreview(undefined, 'Ruby developer position at WideFix')],
     title: 'Ruby Developer - Remote Position | WideFix',
     description: 'Join our team as a Ruby developer to work on integrations with third-party billing systems including Stripe, Xero, and Shopify. Fully remote position.',
     url: 'https://widefix.com/career/ruby-developer',

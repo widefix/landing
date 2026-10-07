@@ -1,3 +1,7 @@
+import generateSocialImages from './scripts/generate-social-images.mjs';
+
+await generateSocialImages();
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {

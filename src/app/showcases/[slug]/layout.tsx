@@ -1,3 +1,4 @@
+import { socialPreview, socialTwitter } from '@/lib/socialPreview';
 import { Metadata } from 'next';
 import showcases from '@/showcases';
 
@@ -20,18 +21,13 @@ export async function generateMetadata({ params } : Props): Promise<Metadata> {
     alternates: {
       canonical: `https://widefix.com/showcases/${showcase.slug}`,
     },
+    twitter: socialTwitter(showcase.body.bannerTopImageSrc, showcase.metadata.title),
     openGraph: {
+      images: [socialPreview(showcase.body.bannerTopImageSrc, showcase.metadata.title)],
       title: showcase.metadata.title,
       description: showcase.metadata.description,
       url: `https://widefix.com/showcases/${showcase.slug}`,
       siteName: 'WideFix',
-      images: [
-        {
-          url: 'https://raw.githubusercontent.com/widefix/widefix/main/img/block-hero.jpg',
-          width: 1440,
-          height: 786,
-        },
-      ],
       locale: 'en_US',
       type: 'website',
     },

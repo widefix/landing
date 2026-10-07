@@ -2,6 +2,7 @@
 layout: page
 permalink: /about-author/
 title: Andrei Kaleshka
+image: my_face.jpg
 description: "WideFix founder, Rails specialist, solutions architect, and fractional CTO. I help businesses take ownership of existing applications and move them forward."
 ---
 

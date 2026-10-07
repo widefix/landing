@@ -1,3 +1,4 @@
+import { socialPreview, socialTwitter } from '@/lib/socialPreview';
 import type { Metadata } from "next";
 import TeamSection from '@/components/TeamSection';
 
@@ -7,18 +8,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://widefix.com/team"
   },
+  twitter: socialTwitter(undefined, 'The WideFix team'),
   openGraph: {
+    images: [socialPreview(undefined, 'The WideFix team')],
     title: "Our Team - WideFix",
     description: "Meet the experienced professionals behind WideFix. Our team combines deep technical expertise with a genuine passion for delivering exceptional results for your business.",
     url: "https://widefix.com/team",
     siteName: "WideFix",
-    images: [
-      {
-        url: "https://raw.githubusercontent.com/widefix/widefix/main/img/block-hero.jpg",
-        width: 1440,
-        height: 786,
-      }
-    ],
     locale: "en_US",
     type: "website"
   }

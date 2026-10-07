@@ -669,8 +669,8 @@ const showcases: Showcase[] = [
           Risk-free Ruby on Rails app <span className="oval">redesign</span> with zero <span className="stripe">downtime</span>
         </h1>
       ),
-      bannerTopImageSrc: "/img/showcases/redesign-wo.png",
-      bannerTopImageWebpSrc: "/img/showcases/redesign-wo.webp",
+      bannerTopImageSrc: "/img/showcases/system-redesign.jpg",
+      bannerTopImageWebpSrc: "/img/showcases/system-redesign.webp",
       bannerSolutionPng: "/img/showcases/system-redesign.jpg",
       bannerSolutionWebp: "/img/showcases/system-redesign.webp",
       description: "Complete UI/UX overhaul without disrupting existing users",

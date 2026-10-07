@@ -1,3 +1,4 @@
+import { socialPreview, socialTwitter } from '@/lib/socialPreview';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -66,7 +67,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://widefix.com/showcases/worshiponline-paperclip-activestorage',
   },
+  twitter: socialTwitter('/img/showcases/worshiponline-storage-migration.svg', 'WorshipOnline storage migration from Paperclip to ActiveStorage'),
   openGraph: {
+    images: [socialPreview('/img/showcases/worshiponline-storage-migration.svg', 'WorshipOnline storage migration from Paperclip to ActiveStorage')],
     title: 'WorshipOnline Paperclip to ActiveStorage Migration - WideFix',
     description: 'A staged migration of production media from Paperclip to ActiveStorage.',
     url: 'https://widefix.com/showcases/worshiponline-paperclip-activestorage',

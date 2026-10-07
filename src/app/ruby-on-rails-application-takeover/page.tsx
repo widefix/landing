@@ -1,3 +1,4 @@
+import { socialPreview, socialTwitter } from '@/lib/socialPreview';
 
 import LinkIndicator from '@/components/LinkIndicator';
 import type { Metadata } from 'next';
@@ -11,7 +12,9 @@ const description = 'Need a team to take over your existing Rails application? W
 export const metadata: Metadata = {
   title, description,
   alternates: { canonical: 'https://widefix.com/ruby-on-rails-application-takeover' },
-  openGraph: { title, description, url: 'https://widefix.com/ruby-on-rails-application-takeover' },
+  twitter: socialTwitter('/img/rails-ownership-hero.svg', 'Rails application takeover'),
+  openGraph: {
+    images: [socialPreview('/img/rails-ownership-hero.svg', 'Rails application takeover')], title, description, url: 'https://widefix.com/ruby-on-rails-application-takeover' },
 };
 
 export default function RailsTakeoverPage() {

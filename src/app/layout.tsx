@@ -1,3 +1,4 @@
+import { socialPreview, socialTwitter } from '@/lib/socialPreview';
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Inter, Montserrat } from "next/font/google";
@@ -27,14 +28,9 @@ const montserrat = Montserrat({
 const desc = "WideFix takes ownership of existing Ruby on Rails applications: handover, stabilization, maintenance, upgrades and ongoing feature development.";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://widefix.com"),
   title: "Ruby on Rails Application Ownership - WideFix",
   description: desc,
-  twitter: {
-    card: "summary_large_image",
-    site: "@ka8725",
-    creator: "@ka8725",
-    images: "https://raw.githubusercontent.com/widefix/widefix/main/img/block-hero.jpg"
-  },
   icons: {
     icon: [
       { url: "/img/favicon.ico" },
@@ -58,18 +54,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://widefix.com"
   },
+  twitter: socialTwitter(undefined, 'WideFix - Rails application ownership'),
   openGraph: {
+    images: [socialPreview(undefined, 'WideFix - Rails application ownership')],
     title: "Ruby on Rails Application Ownership - WideFix",
     description: desc,
     url: "https://widefix.com",
     siteName: "WideFix",
-    images: [
-      {
-        url: "https://raw.githubusercontent.com/widefix/widefix/main/img/block-hero.jpg",
-        width: 1440,
-        height: 786,
-      }
-    ],
     locale: "en_US",
     type: "website"
   }

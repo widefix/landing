@@ -1,3 +1,4 @@
+import { socialPreview, socialTwitter } from '@/lib/socialPreview';
 import React from 'react';
 import type { Metadata } from 'next';
 import ShowcasesComponent from '@/components/showcases/ShowcasesComponent';
@@ -11,18 +12,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://widefix.com/showcases"
   },
+  twitter: socialTwitter('/img/showcases/video.webp', 'WideFix case studies'),
   openGraph: {
+    images: [socialPreview('/img/showcases/video.webp', 'WideFix case studies')],
     title: title,
     description: description,
     url: "https://widefix.com/showcases",
     siteName: "WideFix",
-    images: [
-      {
-        url: "https://raw.githubusercontent.com/widefix/widefix/main/img/block-hero.jpg",
-        width: 1440,
-        height: 786,
-      }
-    ],
     locale: "en_US",
     type: "website"
   }
