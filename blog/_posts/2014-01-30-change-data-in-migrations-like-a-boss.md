@@ -189,10 +189,10 @@ Once you can get the following state:
               Timeline
                   |
                   |
-                  |<— change in the DB schema
+                  |<- change in the DB schema
                   |
                   |
-         Squash —>|
+         Squash ->|
                   |
                   |
 {% endhighlight %}

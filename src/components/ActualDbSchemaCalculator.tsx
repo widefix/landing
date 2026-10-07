@@ -108,7 +108,7 @@ export default function ActualDbSchemaCalculator() {
             </div>
             <div>
               <span>Annual engineering time</span>
-              <strong>{hasEstimateInputs ? `${numberFormat.format(recoveredHoursPerYear)} hours` : '—'}</strong>
+              <strong>{hasEstimateInputs ? `${numberFormat.format(recoveredHoursPerYear)} hours` : '-'}</strong>
             </div>
             <div className="schema-estimator-value">
               <span>Estimated annual capacity value</span>

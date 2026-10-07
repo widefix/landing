@@ -239,7 +239,7 @@ const showcases: Showcase[] = [
       title: "Improved page load speed of the search functionality",
       companyName: "CostaDelHome",
       solution: "Search Performance",
-      results: "Reduced search page load time from 10 seconds to 100ms — a 99% reduction and 100× faster loading.",
+      results: "Reduced search page load time from 10 seconds to 100ms - a 99% reduction and 100× faster loading.",
       wrapperColor: SwiperSlideColor.sea,
       buttonColor: SwiperSlideColor.sea,
       companyImageSrc: "/img/showcases/clients/costa-del-home.svg",
@@ -263,12 +263,12 @@ const showcases: Showcase[] = [
         { color: ResultBoxColor.lightGreen, imageSrc: "/img/showcases/case/icons/stock.svg", message: "Load time after", number: "100ms" },
         { color: ResultBoxColor.lightGreen, imageSrc: "/img/showcases/case/icons/piechart.svg", message: "Reduction in load time", number: "99%" },
       ],
-      resultText: <p>Search page load time dropped from <strong>10 seconds to 100ms</strong> — a <strong>99% reduction</strong>. That means search pages now load <strong>100 times faster</strong>.</p>,
+      resultText: <p>Search page load time dropped from <strong>10 seconds to 100ms</strong> - a <strong>99% reduction</strong>. That means search pages now load <strong>100 times faster</strong>.</p>,
       helpTitle: "Need to improve your application's search performance?",
     },
     metadata: {
       title: "CostaDelHome Search Performance Optimization - WideFix",
-      description: "How WideFix reduced CostaDelHome search page load time from 10 seconds to 100ms — a 99% reduction and 100× faster loading.",
+      description: "How WideFix reduced CostaDelHome search page load time from 10 seconds to 100ms - a 99% reduction and 100× faster loading.",
     },
   },
   {
@@ -278,7 +278,7 @@ const showcases: Showcase[] = [
       title: "Moved services from Heroku to AWS",
       companyName: "Costa Del Home",
       solution: "Infrastructure Migration",
-      results: "Moved Costa Del Home from Heroku to AWS with Dokku, reducing hosting costs from €400 to €50 per month — eight times cheaper.",
+      results: "Moved Costa Del Home from Heroku to AWS with Dokku, reducing hosting costs from €400 to €50 per month - eight times cheaper.",
       wrapperColor: SwiperSlideColor.green,
       buttonColor: SwiperSlideColor.green,
       companyImageSrc: "/img/showcases/clients/costa-del-home.svg",
@@ -307,7 +307,7 @@ const showcases: Showcase[] = [
     },
     metadata: {
       title: "Costa Del Home Heroku to AWS Migration - WideFix",
-      description: "How WideFix moved Costa Del Home from Heroku to AWS with Dokku, reducing hosting costs from €400 to €50 per month — eight times cheaper.",
+      description: "How WideFix moved Costa Del Home from Heroku to AWS with Dokku, reducing hosting costs from €400 to €50 per month - eight times cheaper.",
     },
   },
   {
