@@ -119,13 +119,13 @@ export default function HomePage() {
               <p>An open-sourced library developed by us to improve our daily developer task routine.</p>
             </div>
             <div className="item actual-db-schema">
-              <Link rel="nofollow" href="https://github.com/widefix/actual_db_schema" target="_blank">
+              <Link href="/actual-db-schema">
                 <div className="content">
                   <span>Open-Sourced Library</span>
                   <h3>Actual DB Schema</h3>
                 </div>
               </Link>
-              <p>An open-sourced library developed by us to improve our daily developer task routine.</p>
+              <p>Keeps Rails development databases aligned with the current branch by handling phantom migrations.</p>
             </div>
           </div>
         </div>
