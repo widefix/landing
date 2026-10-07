@@ -73,16 +73,6 @@ export default function Header() {
               </li>
             </ul>
           </nav>
-          <div className="cta-button">
-            <a
-              className="button primary small"
-              href="https://calendly.com/andrei-kaleshka/30min"
-              target="_blank"
-              rel="nofollow"
-            >
-              Schedule call
-            </a>
-          </div>
           <button className="menu-toggle">&#9776;</button>
         </div>
       </header>
