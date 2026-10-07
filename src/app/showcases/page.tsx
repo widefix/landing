@@ -12,9 +12,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://widefix.com/showcases"
   },
-  twitter: socialTwitter('/img/showcases/video.webp', 'WideFix case studies'),
+  twitter: socialTwitter('/img/showcases/technology-cloud.svg', 'WideFix technology cloud: web, mobile, data and cloud engineering'),
   openGraph: {
-    images: [socialPreview('/img/showcases/video.webp', 'WideFix case studies')],
+    images: [socialPreview('/img/showcases/technology-cloud.svg', 'WideFix technology cloud: web, mobile, data and cloud engineering')],
     title: title,
     description: description,
     url: "https://widefix.com/showcases",

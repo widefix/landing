@@ -16,26 +16,26 @@ export default function ShowcaseItem({
   slug,
   solution,
   results,
-  buttonColor,
+  companyName,
   companyImageSrc
 } : ShowcaseItemProps) {
   return (
     <div className="showcase-item-content">
       <div className="showcase-item-main">
-        <h3 style={{ marginBottom: '8px' }} className='company-name'>{title}</h3>
+        <h3 className="company-name"><Link href={`/showcases/${slug}`}>{title}</Link></h3>
         <p>{results}</p>
       </div>
       <div className="showcase-item-bottom">
         <div>
-          <button type="button" className={`tag ${buttonColor}`}>{solution}</button>
+          <span className="tag">{solution}</span>
         </div>
         <div className="slide-footer">
           <div className="client-img">
             <Link href={`/showcases/${slug}`}>
-              <Image src={companyImageSrc} alt="Client" width="104" height="25"/>
+              <Image src={companyImageSrc} alt={companyName} width="104" height="25"/>
             </Link>
           </div>
-          <Link href={`/showcases/${slug}`} className="slide-learn-more">More about</Link>
+          <Link href={`/showcases/${slug}`} className="slide-learn-more" aria-label={`Read case study: ${title}`}>Read case study <span aria-hidden="true">↗</span></Link>
         </div>
       </div>
     </div>

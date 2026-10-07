@@ -26,10 +26,10 @@ export default function ShowcasesPage() {
 
             <figure className="portfolio-media">
               <Image
-                src="/img/showcases/video.webp"
-                alt="WideFix developer introducing JavaScript and Ruby on Rails"
-                width={480}
-                height={281}
+                src="/img/showcases/technology-cloud.svg"
+                alt="Technology cloud connecting Ruby, Rails, PostgreSQL, React Native, Next.js, React, AWS, GraphQL, Stripe and C"
+                width={800}
+                height={640}
                 sizes="(max-width: 768px) 100vw, 560px"
                 priority
               />
@@ -43,30 +43,9 @@ export default function ShowcasesPage() {
         </div>
       </section>
 
-      <section className="banner-top showcases-banner">
+      <section className="showcases-experience">
         <div className="inner">
-          <h2><span className="green-path">15+ years</span> of software development experience</h2>
-
-          <div className="showcase-banner-clients">
-            <span className="showcase-banner-clients-img">
-              <Image src="/img/showcases/clients/toptal.svg" alt="Toptal" width="125" height="34" />
-            </span>
-            <span className="showcase-banner-clients-img">
-              <Image src="/img/showcases/clients/hubstaff.svg" alt="Hubstaff" width="150" height="33" />
-            </span>
-            <span className="showcase-banner-clients-img">
-              <Image src="/img/showcases/clients/palladium.svg" alt="Palladium" width="202" height="25" />
-            </span>
-            <span className="showcase-banner-clients-img">
-              <Image src="/img/showcases/clients/kajabi.svg" alt="Kajabi" width="181" height="21" />
-            </span>
-            <span className="showcase-banner-clients-img" style={{ background: 'black' }}>
-              <Image src="/img/showcases/clients/wo.svg" alt="WorshipOnline" width="138" height="24" />
-            </span>
-            <span className="showcase-banner-clients-img">
-              <Image src="/img/showcases/clients/shopwired.svg" alt="Shopwired" width="150" height="45" />
-            </span>
-          </div>
+          <h2><span className="showcases-experience-number">15+ years</span><span>of software development experience</span></h2>
         </div>
       </section>
 

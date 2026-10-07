@@ -12,7 +12,7 @@ export default async function generateSocialImages() {
     '/img/rails-services-hero.svg',
     '/img/actual-db-schema-hero.png',
     '/img/contact.jpg',
-    '/img/showcases/video.webp',
+    '/img/showcases/technology-cloud.svg',
   ]);
   for (const file of ['src/showcases.tsx', 'src/cases/seo-optimization.tsx']) {
     const source = await readFile(path.join(root, file), 'utf8');
