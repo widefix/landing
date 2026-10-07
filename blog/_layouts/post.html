@@ -1,35 +1,21 @@
 <!doctype html>
-<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
-<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<html lang="en">
 <head>
   {% include head.html %}
+  {% assign schema_author = page.author | default: site.owner %}
+  {% assign schema_image = page.image_svg | default: page.image | default: 'post.jpg' %}
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "NewsArticle",
-      "headline": "{{ page.title }}",
-      "image": [
-        {% if page.image_svg %}
-          "{{ site.url }}/images/{{ page.image_svg }}"
-        {% elsif page.image %}
-          "{{ site.url }}/images/{{ page.image }}"
-         {% else %}
-           "{{ site.url }}/images/post.jpg"
-         {% endif %}
-      ],
-      "datePublished": "{{ page.date }}",
-      "dateModified": {% if page.modified %}"{{ page.modified }}"{% else %}"{{ page.date }}"{% endif %},
-      "author": [{
-          "@type": "Person",
-          "name": {% if page.author %}"{{ page.author.name }}"{% else %}"Andrei Kaleshka"{% endif %},
-          "url": {% if page.author %}"https://www.linkedin.com/in/{{ page.author.linkedin }}/"{% else %}"https://www.linkedin.com/in/ka8725/"{% endif %}
-        }]
-    }
-    </script>
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": {{ page.title | jsonify }},
+    "image": [{{ site.url | append: '/images/' | append: schema_image | jsonify }}],
+    "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+    "dateModified": {{ page.modified | default: page.date | date_to_xmlschema | jsonify }},
+    "author": {"@type": "Person", "name": {{ schema_author.name | jsonify }}, "url": {{ 'https://www.linkedin.com/in/' | append: schema_author.linkedin | append: '/' | jsonify }}}
+  }
+  </script>
 </head>
-
 <body class="blog-modern post-layout">
 {% include navigation.html %}
 <main id="main" class="article-shell">
