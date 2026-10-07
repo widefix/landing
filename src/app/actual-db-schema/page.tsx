@@ -121,23 +121,38 @@ export default function ActualDbSchemaPage() {
           <h2>More than branch cleanup</h2>
           <div className="schema-capability-list">
             <article>
-              <h3>Clean, current schema dumps</h3>
+              <div className="schema-capability-heading">
+                <span className="schema-capability-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3" /><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3" /></svg></span>
+                <h3>Clean, current schema dumps</h3>
+              </div>
               <p>Keeps <code>schema.rb</code> or <code>structure.sql</code> aligned with the current branch, so unrelated migration state does not leave noisy or misleading schema changes behind.</p>
             </article>
             <article>
-              <h3>Make development database changes with Ruby</h3>
+              <div className="schema-capability-heading">
+                <span className="schema-capability-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="16" rx="2" /><path d="m7 9 3 3-3 3m6 0h4" /></svg></span>
+                <h3>Make development database changes with Ruby</h3>
+              </div>
               <p>Enable Console Migrations to run Rails migration DSL commands directly in the Rails console for experiments or local repairs, without writing SQL. This optional feature is disabled by default.</p>
             </article>
             <article>
-              <h3>Trace schema changes to their migration</h3>
+              <div className="schema-capability-heading">
+                <span className="schema-capability-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M4 6h10M4 11h6M4 16h6" /><circle cx="16" cy="14" r="4" /><path d="m19 17 2 2" /></svg></span>
+                <h3>Trace schema changes to their migration</h3>
+              </div>
               <p>Annotated schema diffs identify which migration introduced a change in <code>schema.rb</code>. The local management UI also provides schema-diff views for investigating database changes.</p>
             </article>
             <article>
-              <h3>Recognizes phantom migrations</h3>
+              <div className="schema-capability-heading">
+                <span className="schema-capability-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><circle cx="6" cy="5" r="2" /><circle cx="6" cy="19" r="2" /><circle cx="18" cy="19" r="2" /><path d="M8 5h5a5 5 0 0 1 5 5v7" /></svg></span>
+                <h3>Recognizes phantom migrations</h3>
+              </div>
               <p>Tracks executed migration code and identifies migrations that are not present in the current branch, so they can be rolled back in the correct dependency order.</p>
             </article>
             <article>
-              <h3>Fits real Rails setups</h3>
+              <div className="schema-capability-heading">
+                <span className="schema-capability-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="8" height="7" rx="1" /><rect x="13" y="13" width="8" height="7" rx="1" /><path d="M7 11v3h10v-1m-2 2 2-2 2 2" /></svg></span>
+                <h3>Fits real Rails setups</h3>
+              </div>
               <p>Supports multiple databases and includes optional Git hooks and a local management UI when your workflow needs them.</p>
             </article>
           </div>
