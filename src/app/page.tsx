@@ -4,6 +4,7 @@ import { socialPreview, socialTwitter } from '@/lib/socialPreview';
 import LinkIndicator from '@/components/LinkIndicator';
 import ClutchWidget from '@/components/ClutchWidget';
 import SituationIcon from '@/components/rails/SituationIcon';
+import RailsFAQ from '@/components/rails/RailsFAQ';
 import { OwnershipProcess, OwnershipCTA, RailsCall } from '@/components/rails/RailsOwnership';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -417,6 +418,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      <RailsFAQ />
       <OwnershipCTA />
     </main>
   );

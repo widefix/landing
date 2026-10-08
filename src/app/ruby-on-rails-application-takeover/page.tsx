@@ -5,6 +5,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import SituationIcon from '@/components/rails/SituationIcon';
+import RailsFAQ from '@/components/rails/RailsFAQ';
 import { OwnershipProcess, OwnershipCTA, RailsCall } from '@/components/rails/RailsOwnership';
 
 const title = 'Ruby on Rails Application Takeover - WideFix';
@@ -59,15 +60,7 @@ export default function RailsTakeoverPage() {
           </div>
         </div>
       </section>
-      <section className="rails-section rails-tinted">
-        <div className="inner rails-faq">
-          <h2>Questions about taking over a Rails application</h2>
-          <details><summary>Can you help if the original developer is unavailable?</summary><p>Yes. We can begin with the repository, documentation and access you have. We identify missing information and agree with you on how to recover it before making changes.</p></details>
-          <details><summary>Will you need to rewrite the application?</summary><p>A takeover starts with reviewing what already works. We favor targeted fixes and incremental improvements. If a larger change is justified, we explain the tradeoffs and agree on the approach with you.</p></details>
-          <details><summary>Can you maintain the application and build new features?</summary><p>Yes. Ongoing maintenance, upgrades and feature development are part of the same engagement. Priorities are based on the state of your application and your business goals.</p></details>
-          <details><summary>What should I bring to the first call?</summary><p>Tell us what the application does, who currently maintains it and what is most urgent. You do not need to prepare a technical audit before talking to us.</p></details>
-        </div>
-      </section>
+      <RailsFAQ detailed />
       <OwnershipCTA />
     </main>
   );

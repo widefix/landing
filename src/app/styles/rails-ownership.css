@@ -39,9 +39,22 @@
 .rails-home .rails-final-cta .rails-eyebrow { color: #ffc0b9; }
 .rails-home .rails-final-cta p:not(.rails-eyebrow) { max-width: 730px; margin-top: 24px; font-size: 19px; color: #e1ebf5; }
 .rails-home .rails-final-cta .rails-actions a:not(.button) { color: #fff; }
-.rails-faq details { max-width: 900px; padding: 24px 0; border-bottom: 1px solid #cbd8e7; }
-.rails-faq summary { cursor: pointer; font-weight: 600; font-size: 20px; }
-.rails-home .rails-faq details p { color: #5f6675; margin-top: 16px; }
+.rails-home .rails-section .rails-faq-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: 64px; align-items: start; }
+.rails-faq-section { scroll-margin-top: 24px; }
+.rails-faq-heading .rails-intro { font-size: 17px; }
+.rails-faq { border-top: 1px solid #cbd8e7; }
+.rails-faq details { border-bottom: 1px solid #cbd8e7; }
+.rails-faq summary { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 24px 0; cursor: pointer; font-weight: 600; font-size: 19px; line-height: 1.5; list-style: none; }
+.rails-faq summary::-webkit-details-marker { display: none; }
+.rails-faq summary::marker { content: ''; }
+.rails-faq summary::after { content: '+'; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 30px; height: 30px; border: 1px solid #cbd8e7; border-radius: 50%; color: #245c94; font-size: 23px; font-weight: 400; }
+.rails-faq details[open] summary::after { content: '−'; }
+.rails-faq summary:hover { color: #245c94; }
+.rails-faq-answer { padding-bottom: 24px; }
+.rails-home .rails-faq-answer p { color: #5f6675; margin: 0; font-size: 16px; line-height: 1.75; }
+.rails-home .rails-faq-answer p + p { margin-top: 16px; }
+@media (max-width: 900px) { .rails-home .rails-section .rails-faq-grid { grid-template-columns: 1fr; gap: 32px; } }
+@media (max-width: 600px) { .rails-faq summary { font-size: 17px; gap: 16px; } }
 @media (max-width: 1000px) {
   .rails-home .rails-section .rails-hero-grid { grid-template-columns: 1fr; }
   .rails-hero-aside { display: none; }
