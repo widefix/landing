@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Shopwired background queue rescued and integrations restored</title>
+  <desc id="desc">Shopwired events flow through the Ruby dispatcher into a repaired DelayedJob queue and connected services. More than 100,000 stuck jobs were cleared, processing improved from hours to milliseconds, and daily Heroku H12 errors were eliminated.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="960" y2="640" gradientUnits="userSpaceOnUse"><stop stop-color="#F5FAF6"/><stop offset="1" stop-color="#DFEEE3"/></linearGradient>
+    <linearGradient id="recovery" x1="48" y1="406" x2="912" y2="582" gradientUnits="userSpaceOnUse"><stop stop-color="#183D32"/><stop offset="1" stop-color="#2C5A47"/></linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" stroke="#416F58" stroke-opacity=".055"/></pattern>
+    <filter id="shadow" x="-15%" y="-20%" width="130%" height="150%"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#183D32" flood-opacity=".07"/></filter>
+  </defs>
+  <rect width="960" height="640" rx="24" fill="url(#background)"/>
+  <rect width="960" height="640" rx="24" fill="url(#grid)"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="48" y="60" fill="#5D806B" font-size="14" font-weight="700" letter-spacing="2">SHOPWIRED / PRODUCTION APP RESCUE</text>
+    <text x="48" y="105" fill="#18382F" font-size="32" font-weight="700">A clear queue. Reliable integrations.</text>
+    <text x="48" y="140" fill="#63796B" font-size="20">Repair dispatching. Clear the backlog. Keep services connected.</text>
+
+    <path d="M306 270H351M609 270H654" stroke="#8BB39A" stroke-width="3" stroke-linecap="round"/>
+    <path d="m339 261 12 9-12 9m303-18 12 9-12 9" stroke="#8BB39A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <g filter="url(#shadow)">
+      <rect x="48" y="190" width="258" height="172" rx="18" fill="#FFF" stroke="#CFE0D3"/>
+      <rect x="351" y="190" width="258" height="172" rx="18" fill="#FFF" stroke="#CFE0D3"/>
+      <rect x="654" y="190" width="258" height="172" rx="18" fill="#FFF" stroke="#CFE0D3"/>
+    </g>
+    <rect x="72" y="212" width="48" height="48" rx="13" fill="#367C5B"/>
+    <path d="m91 226-8 10 8 10m10-20 8 10-8 10" stroke="#FFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="136" y="244" fill="#367C5B" font-size="18" font-weight="700">DISPATCH</text>
+    <text x="72" y="298" fill="#18382F" font-size="23" font-weight="700">Ruby application</text>
+    <text x="72" y="330" fill="#63796B" font-size="19">Event dispatcher</text>
+
+    <rect x="375" y="212" width="48" height="48" rx="13" fill="#E6F1E8"/>
+    <path d="M386 226h26m-26 10h26m-26 10h15" stroke="#4B8863" stroke-width="2.5" stroke-linecap="round"/><path d="m405 246 4 4 8-9" stroke="#4B8863" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="439" y="244" fill="#5D806B" font-size="18" font-weight="700">REPAIRED</text>
+    <text x="375" y="298" fill="#18382F" font-size="23" font-weight="700">DelayedJob queue</text>
+    <text x="375" y="330" fill="#63796B" font-size="19">Reliable job processing</text>
+
+    <rect x="678" y="212" width="48" height="48" rx="13" fill="#E1F1E9"/>
+    <path d="M694 236h12m-6-6v12" stroke="#398068" stroke-width="2.5" stroke-linecap="round"/><rect x="687" y="223" width="10" height="10" rx="3" stroke="#398068" stroke-width="2"/><rect x="705" y="241" width="10" height="10" rx="3" stroke="#398068" stroke-width="2"/>
+    <text x="742" y="244" fill="#398068" font-size="18" font-weight="700">CONNECTED</text>
+    <text x="678" y="298" fill="#18382F" font-size="23" font-weight="700">External services</text>
+    <text x="678" y="330" fill="#63796B" font-size="19">Accounting + commerce</text>
+
+    <rect x="48" y="406" width="864" height="178" rx="20" fill="url(#recovery)"/>
+    <text x="78" y="444" fill="#BADBC4" font-size="15" font-weight="700" letter-spacing="1.5">STUCK JOBS CLEARED</text>
+    <text x="78" y="524" fill="#FFF" font-size="54" font-weight="700">100k+ → 0</text>
+    
+    <text x="80" y="557" fill="#BADBC4" font-size="18">Processing time: hours → milliseconds</text>
+    <path d="M530 446v98" stroke="#7CAA8C" stroke-opacity=".5"/>
+    <circle cx="568" cy="459" r="5" fill="#A7D7B9"/>
+    <text x="585" y="466" fill="#DFF0E4" font-size="20" font-weight="700">Daily H12 errors eliminated</text>
+    <path d="M562 514h304" stroke="#B7DCC3" stroke-width="3" stroke-linecap="round"/><circle cx="866" cy="514" r="5" fill="#B7DCC3"/><text x="562" y="552" fill="#BADBC4" font-size="18">Monitoring + error handling</text>
+    <text x="48" y="616" fill="#5D806B" font-size="14">Existing platform rescued · 5+ new integrations</text>
+    <text x="912" y="616" text-anchor="end" fill="#5D806B" font-size="14" font-weight="700">WIDEFIX</text>
+  </g>
+</svg>

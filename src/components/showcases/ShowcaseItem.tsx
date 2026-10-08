@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { showcasePositioning } from '@/lib/showcasePositioning'
 
 type ShowcaseItemProps = {
   slug: string;
@@ -27,7 +28,7 @@ export default function ShowcaseItem({
       </div>
       <div className="showcase-item-bottom">
         <div>
-          <span className="tag">{solution}</span>
+          <span className="tag">{showcasePositioning[slug]?.cardLabel || solution}</span>
         </div>
         <div className="slide-footer">
           <div className="client-img">

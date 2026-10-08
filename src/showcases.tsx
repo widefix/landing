@@ -200,7 +200,12 @@ const showcases: Showcase[] = [
       bannerTopTitle: <h1>Added advanced functionality to the <span className="oval">CRM</span></h1>,
       bannerTopImageSrc: "/img/showcases/costa-del-home-crm.svg",
       description: "More flexible property management, without downtime",
-      descriptionText: <p>We expanded CostaDelHome&apos;s CRM so a property could be associated with multiple managers instead of just one. Data and relationship migrations happened without downtime or disruption to existing users.</p>,
+      descriptionText: (
+        <>
+          <p>CostaDelHome’s existing developer was busy with other work, so the team needed help delivering changes to its live Rails application. We stepped in to get the work moving, bringing Stripe and performance expertise alongside the technical maturity needed to migrate relationships safely and preserve existing users’ workflows.</p>
+          <p>We expanded CostaDelHome&apos;s CRM so a property could be associated with multiple managers instead of just one. Data and relationship migrations happened without downtime or disruption to existing users.</p>
+        </>
+      ),
       detailsTitle: "CRM relationship migration for CostaDelHome",
       detailsText: <p>The CRM needed to support more flexible relationships between properties and managers. We changed the single-manager selection into a multiple-manager workflow while preserving existing assignments and keeping the production application available.</p>,
       detailsImageSrc: "/img/showcases/costa-del-home-crm.svg",
@@ -249,7 +254,12 @@ const showcases: Showcase[] = [
       bannerTopTitle: <h1>Improved page load speed of the <span className="oval">search</span> functionality</h1>,
       bannerTopImageSrc: "/img/showcases/costa-del-home-search.svg",
       description: "Search pages loading in 100ms instead of 10 seconds",
-      descriptionText: <p>We improved CostaDelHome&apos;s search functionality, reducing page load time from 10 seconds to 100ms.</p>,
+      descriptionText: (
+        <>
+          <p>CostaDelHome’s existing developer was occupied with other work, leaving the team needing support with a slow Rails application. We stepped in with the technical maturity and performance expertise to tackle the bottleneck. Our wider work with the client also drew on our Stripe integration experience, giving the team specialist support across payments and performance.</p>
+          <p>We improved CostaDelHome&apos;s search functionality, reducing page load time from 10 seconds to 100ms.</p>
+        </>
+      ),
       detailsTitle: "Search performance for CostaDelHome",
       detailsText: <p>CostaDelHome&apos;s search pages took 10 seconds to load. We improved their performance so the same functionality loaded in 100ms.</p>,
       detailsImageSrc: "/img/showcases/costa-del-home-search.svg",
@@ -288,7 +298,12 @@ const showcases: Showcase[] = [
       bannerTopTitle: <h1>Moved services from <span className="oval">Heroku</span> to <span className="stripe">AWS</span></h1>,
       bannerTopImageSrc: "/img/showcases/costa-del-home-aws.svg",
       description: "A smaller monthly infrastructure bill",
-      descriptionText: <p>We moved Costa Del Home&apos;s services from Heroku to AWS and used Dokku for hosting, reducing monthly costs from €400 to €50.</p>,
+      descriptionText: (
+        <>
+          <p>CostaDelHome’s existing developer was loaded with other work, so we stepped in to support the team and move its infrastructure improvements forward. We brought the technical maturity to assess the existing application’s hosting needs and implement the migration. Our Stripe and performance expertise also supported the wider work we delivered for the client.</p>
+          <p>We moved Costa Del Home&apos;s services from Heroku to AWS and used Dokku for hosting, reducing monthly costs from €400 to €50.</p>
+        </>
+      ),
       detailsTitle: "Heroku to AWS migration for Costa Del Home",
       detailsText: <p>After Heroku raised its service prices, Costa Del Home had a €400-per-month hosting contract despite the application not being heavily loaded. We moved its services to AWS with Dokku, bringing the monthly hosting cost down to €50.</p>,
       detailsImageSrc: "/img/showcases/costa-del-home-aws.svg",
@@ -327,7 +342,12 @@ const showcases: Showcase[] = [
       bannerTopTitle: <h1>Integrated the app with <span className="oval">Stripe</span> from scratch</h1>,
       bannerTopImageSrc: "/img/showcases/costa-del-home-stripe.svg",
       description: "From cash payments to automatic collection",
-      descriptionText: <p>We integrated Costa Del Home&apos;s application with Stripe so the business could collect payments automatically instead of relying on cash.</p>,
+      descriptionText: (
+        <>
+          <p>CostaDelHome’s existing developer was busy with other work, and the team needed specialist help to deliver payment automation. We stepped in with Stripe integration and application performance expertise, bringing the technical maturity to implement the payment workflow in the existing Rails application and keep the product moving.</p>
+          <p>We integrated Costa Del Home&apos;s application with Stripe so the business could collect payments automatically instead of relying on cash.</p>
+        </>
+      ),
       detailsTitle: "Stripe integration for Costa Del Home",
       detailsText: <p>Costa Del Home needed a more convenient way to collect payments. We built the Stripe integration from scratch, replacing cash collection with an automated payment workflow.</p>,
       detailsImageSrc: "/img/showcases/costa-del-home-stripe.svg",
@@ -369,8 +389,7 @@ const showcases: Showcase[] = [
           Stripe Integration consistency <span className="oval">fix</span> to prevent financial <span className="stripe">losses</span>
         </h1>
       ),
-      bannerTopImageSrc: "/img/showcases/wo.png",
-      bannerTopImageWebpSrc: "/img/showcases/wo.webp",
+      bannerTopImageSrc: "/img/showcases/stripe-revenue-recovery.svg",
       description: "Solved New User Payment Friction with Stripe Optimization",
       descriptionText: (
         <p>
@@ -455,7 +474,7 @@ const showcases: Showcase[] = [
     category: CategoryName.optimisations,
     preview: {
       companyName: "Worship Online",
-      solution: "System Design",
+      solution: "System Design · Data Analysis · Solution",
       title: "Prevent Account Sharing",
       results: "We implemented an on-premises solution to combat account sharing.",
       wrapperColor: SwiperSlideColor.green,
@@ -469,8 +488,7 @@ const showcases: Showcase[] = [
           Prevent account sharing to <span className="oval">stop</span> financial <span className="stripe">losses</span>
         </h1>
       ),
-      bannerTopImageSrc: "/img/showcases/case/showcase-2-cybersecurity.jpg",
-      bannerTopImageWebpSrc: "/img/showcases/case/showcase-2-cybersecurity.webp",
+      bannerTopImageSrc: "/img/showcases/account-sharing-revenue-protection.svg",
       description: "Solved the issue with account sharing by users",
       descriptionText: (
         <p>Added Multi-factor Authentication (MFA) to the project in a risk-free way for the business.
@@ -491,12 +509,12 @@ const showcases: Showcase[] = [
       ),
       solutionFirstText: (
         <p>
-          We collected the necessary data to determine who shares their accounts and how severely. Then, we defined indicators showing the situation dynamics and started measuring and monitoring them. We used Metabase to monitor and analyze the data. The users who shared their accounts severely and for sure <strong><i>got Multi-factor Authentication (MFA) enabled</i></strong>, which we also implemented. That increased daily signups by <strong><i>roughly 30%</i></strong>. The average login session per user decreased <strong><i>from 6 to 1.5, or by 400%</i></strong>. Revenue has stopped declining.
+          We collected the necessary data to determine who shares their accounts and how severely. Then, we defined indicators showing the situation dynamics and started measuring and monitoring them. We installed and configured Metabase ourselves as the analytics tool for this work. We used it to analyze account-sharing patterns, define measurable indicators, and track the results of our changes over time, taking ownership of the data analysis as well as the application changes. The users who shared their accounts severely and for sure <strong><i>got Multi-factor Authentication (MFA) enabled</i></strong>, which we also implemented. That increased daily signups by <strong><i>roughly 30%</i></strong>. The average login session per user decreased <strong><i>from 6 to 1.5, or by 400%</i></strong>. Revenue has stopped declining.
         </p>
       ),
       solutionSecondText: (
         <p>
-          Later, we implemented a <strong><i>login session limit</i></strong> so that one account could have a maximum of 3 simultaneous login sessions. That was possible only after we built the infrastructure around the measurement system.
+          Later, we implemented a <strong><i>login session limit</i></strong> so that one account could have a maximum of 3 simultaneous login sessions. That was possible only after we built the infrastructure around the measurement system. We continued using Metabase to measure changes in login activity, signups, and revenue after introducing MFA and session limits.
         </p>
       ),
       resultBoxes: [
@@ -520,9 +538,10 @@ const showcases: Showcase[] = [
         },
       ],
       resultText: (
-        <p>
-          Daily signups increased by <strong><i>30%</i></strong>, login sessions per user <strong><i>decreased by 400%</i></strong>, and revenue stopped declining. Our solution <strong><i>prevented 5%</i></strong> monthly revenue losses.
-        </p>
+        <>
+          <p>Daily signups increased by <strong><i>30%</i></strong>, login sessions per user <strong><i>decreased by 400%</i></strong>, and revenue stopped declining. Our solution <strong><i>prevented 5%</i></strong> monthly revenue losses.</p>
+          <p>We tracked and measured the results with the Metabase analytics setup we installed and configured. Ongoing data analysis helped us assess the effect of the account-sharing controls and monitor login activity, signups, and subscription revenue.</p>
+        </>
       ),
       helpTitle: "Need for help with performance optimization?",
       related: [
@@ -722,8 +741,7 @@ const showcases: Showcase[] = [
           Eliminated daily <span className="oval">performance</span> bottlenecks and queue <span className="stripe">stalls</span>
         </h1>
       ),
-      bannerTopImageSrc: "/img/showcases/shopwired.jpg",
-      bannerTopImageWebpSrc: "/img/showcases/shopwired.webp",
+      bannerTopImageSrc: "/img/showcases/shopwired-queue-rescue.svg",
       description: "Resolved Critical Performance Issues in E-commerce Platform",
       descriptionText: (
         <p>

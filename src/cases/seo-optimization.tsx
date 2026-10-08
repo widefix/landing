@@ -7,8 +7,8 @@ const result: Showcase = {
   preview: {
     companyName: "Worship Online",
     title: "SEO Optimization",
-    solution: "Optimization",
-    results: "Our SEO optimization was a game-changer for the client.",
+    solution: "SEO optimization",
+    results: "SEO improvements increased organic traffic by 4000% and conversions by 300% for the existing product.",
     wrapperColor: SwiperSlideColor.blue,
     buttonColor: SwiperSlideColor.blue,
     companyImageSrc: "/img/showcases/clients/wo.svg",
@@ -22,13 +22,14 @@ const result: Showcase = {
     ),
     bannerTopImageSrc: "/img/showcases/seo-results.png",
     bannerTopImageWebpSrc: "/img/showcases/seo-results.webp",
-    description: "SEO optimization was a game-changer for the client",
+    description: "Take ownership of the legacy app. Build a path to growth",
     descriptionText: (
-      <p>
-        Our SEO optimization was a game-changer for the client. It resulted in a <strong>4000% increase in organic traffic</strong> and a <strong>300% increase in conversions</strong>.
-      </p>
+      <>
+        <p>We inherited WorshipOnline as a legacy Ruby on Rails application from its previous developer and took ownership of improving the existing product. We first redesigned the application, applying system design changes to prepare it for the shift toward better search visibility. Gradual SEO improvements followed the redesign.</p>
+        <p>The SEO work resulted in a <strong>4000% increase in organic traffic</strong> and a <strong>300% increase in conversions</strong>, helping the business reach more customers through the product it already had.</p>
+      </>
     ),
-    detailsTitle: 'SEO Optimization',
+    detailsTitle: 'Legacy application improvements for SEO',
     detailsText: (
       <p>
         Our SEO optimization was a game-changer for the client. It resulted in a <strong>4000% increase in organic traffic</strong> and a <strong>300% increase in conversions</strong>. We started the optimization process in January 2023 and by the end of the year, the client was seeing dramatic results.
@@ -39,17 +40,17 @@ const result: Showcase = {
     bannerProblemPng: "/img/showcases/case/seo-wo.png",
     problemText: (
       <p>
-        The client had a great product but was struggling to attract new customers. Their website was not ranking well in search engine results, and they were missing out on a lot of potential business.
+        The client had a great product but was struggling to attract new customers. Their website was not ranking well in search engine results, and they were missing out on potential business. We also had to work with the legacy Ruby on Rails system inherited from the previous developer. The application needed a redesign before we could make the shift toward better search visibility.
       </p>
     ),
     solutionFirstText: (
       <p>
-        We conducted a thorough SEO audit of the client&apos;s website and identified a number of issues that were holding them back. We then implemented a series of changes to improve their search engine rankings and attract more organic traffic.
+        We reviewed the inherited Ruby on Rails application and first redesigned it, applying system design changes to the existing product. That redesign created the foundation needed for the SEO work. We then conducted an SEO audit to identify what was holding search visibility back.
       </p>
     ),
     solutionSecondText: (
       <p>
-        Year-to-year results were dramatic. The client saw a <strong>4000% increase in organic traffic</strong> and a <strong>300% increase in conversions</strong>. They were able to attract new customers and grow their business like never before.
+        After the redesign, we introduced SEO improvements gradually, evolving the Ruby on Rails application step by step to support better search visibility and conversion. The work started in January 2023; by the end of the year, organic traffic had increased by <strong>4000%</strong> and conversions by <strong>300%</strong>. The business gained new customers through improvements to its existing product.
       </p>
     ),
     bannerSolutionWebp: "/img/showcases/seo-results.png",

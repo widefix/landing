@@ -3,8 +3,8 @@ import React from 'react';
 import type { Metadata } from 'next';
 import ShowcasesComponent from '@/components/showcases/ShowcasesComponent';
 
-const description = "Discover how WideFix transforms businesses with our expert web development and digital solutions across various industries.";
-const title = "Showcases - WideFix";
+const description = "Existing Ruby on Rails applications maintained, stabilized and improved: case studies in Rails upgrades, performance, integrations, infrastructure and business growth.";
+const title = "Rails Application Maintenance & Takeover Case Studies - WideFix";
 
 export const metadata: Metadata = {
   title: title,
