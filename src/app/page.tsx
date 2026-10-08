@@ -193,7 +193,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="achievement-item">
-              <div className="number">Cost Savings</div>
+              <div className="number achievement-heading">Cost Savings</div>
               <p><Link href="https://www.linkedin.com/feed/update/urn:li:activity:7379533312295395328/" target="_blank" rel="nofollow">Optimize software efficiently</Link> - no extra infrastructure costs</p>
               <div className="achievement-tags">
                 <div className="achievement-tag solutions">Solutions</div>
@@ -201,7 +201,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="achievement-item">
-              <div className="number">30% Revenue</div>
+              <div className="number">30%<span className="achievement-metric-label">Revenue</span></div>
               <p><Link href="https://widefix.com/blog/prevent-account-sharing-with-mfa/" target="_blank" rel="nofollow">Prevented account sharing</Link> increasing client revenue by 30%</p>
               <div className="achievement-tags">
                 <div className="achievement-tag solutions">Solutions</div>
@@ -217,7 +217,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="achievement-item">
-              <div className="number">Most Trusted</div>
+              <div className="number achievement-heading">Most Trusted</div>
               <p><Link href="https://www.linkedin.com/feed/update/urn:li:activity:7376194644583350272/" target="_blank" rel="nofollow">Recognized by Techreviewer.co</Link> as most trusted development partner</p>
               <div className="achievement-tags">
                 <div className="achievement-tag team">Team</div>
@@ -238,7 +238,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="achievement-item">
-              <div className="number">Spotlighted Tweet</div>
+              <div className="number achievement-heading">Spotlighted Tweet</div>
               <p><Link href="https://x.com/yukihiro_matz/status/1249973865544970241" target="_blank" rel="nofollow">Quoted by Yukihiro &ldquo;Matz&rdquo; Matsumoto</Link> - Ruby language creator</p>
               <div className="achievement-tags">
                 <div className="achievement-tag founder">Founder</div>
