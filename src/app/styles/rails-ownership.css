@@ -126,12 +126,6 @@
 .rails-home .reviews .slider-wrapper {
   min-height: 375px;
 }
-@media (min-width: 1024px) {
-  /* The illustration extends 130px beneath the review content. */
-  .rails-home .reviews {
-    padding-bottom: 170px;
-  }
-}
 
 .rails-takeover .rails-hero-aside {
   display: block;
