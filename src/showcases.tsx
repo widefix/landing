@@ -58,7 +58,7 @@ const showcases: Showcase[] = [
       title: "HipChip: Stripe & ACH integration",
       companyName: "HipChip",
       solution: "Stripe & ACH Integration",
-      results: "Switched payment processing from Braintree to Stripe, retained Braintree as a backup and integrated Stripe ACH payments.",
+      results: "Took ownership of a legacy Ruby on Rails app after its developer left, added automated tests, and delivered Stripe and ACH alongside performance and stability improvements.",
       wrapperColor: SwiperSlideColor.orange,
       buttonColor: SwiperSlideColor.orange,
       companyImageSrc: "/img/showcases/clients/hipchip.svg",
@@ -86,8 +86,8 @@ const showcases: Showcase[] = [
       helpTitle: "Need to migrate payment providers or add ACH payments?",
     },
     metadata: {
-      title: "HipChip Stripe & ACH Integration - WideFix",
-      description: "How WideFix switched HipChip from Braintree to Stripe, retained Braintree as a backup and integrated Stripe ACH payments.",
+      title: "HipChip: Legacy Rails App Takeover, Stripe & ACH - WideFix",
+      description: "Existing Rails app takeover for HipChip: ownership after its Rails developer left, automated tests, Stripe and ACH integration, and legacy Rails maintenance.",
     },
   },
   {
