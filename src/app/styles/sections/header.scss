@@ -249,3 +249,29 @@ header {
     }
   }
 }
+
+#header .cta-button {
+  flex-shrink: 0;
+  margin-left: 24px;
+  white-space: nowrap;
+
+  .button {
+    height: 34px;
+    line-height: 34px;
+    padding: 0 16px;
+    font-size: 14px;
+  }
+
+  @media (max-width: $media-sm) {
+    display: none;
+  }
+}
+
+@media (min-width: 861px) {
+  #header .top-nav {
+    margin-left: clamp(16px, 2vw, 28px);
+
+    ul li { margin-right: clamp(12px, 1.6vw, 24px); }
+    ul li:last-child { margin-right: 0; }
+  }
+}
