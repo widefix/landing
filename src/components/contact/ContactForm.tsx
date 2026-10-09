@@ -63,7 +63,7 @@ export default function ContactForm() {
           </div>
         </div>
 
-        <div className="form-responses">
+        <div className="form-responses" hidden={resultType === ''}>
           <div className="response error-response" style={{ display: resultType === 'error' ? 'block' : 'none' }}>{resultType === 'error' ? result : ''}</div>
           <div className="response success-response" style={{ display: resultType === 'success' ? 'block' : 'none' }}>{resultType === 'success' ? result : ''}</div>
         </div>

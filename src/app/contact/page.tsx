@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main>
+    <main className="rails-home rails-contact">
       <ContactComponent />
     </main>
   )
