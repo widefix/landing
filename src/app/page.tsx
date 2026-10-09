@@ -23,19 +23,27 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <main className="rails-home">
+    <main className="rails-home rails-homepage">
       <section className="rails-section rails-hero">
         <div className="inner rails-hero-grid">
           <div>
             <p className="rails-eyebrow">Ruby on Rails application ownership</p>
             <h1>We take ownership of existing <span>Ruby on Rails</span> applications</h1>
+
             <p className="rails-lead">Need someone to take over your Rails app?</p>
             <p className="rails-intro">We maintain, stabilize and improve existing Rails applications from production issues and upgrades to new features and infrastructure. Keep your product moving without unnecessary rewrites or rebuilding your engineering team.</p>
             <div className="rails-actions"><RailsCall /><Link href="#how-we-take-over">How we take over <LinkIndicator /></Link></div>
+
           </div>
           <div className="rails-hero-aside">
+
             <Image src="/img/rails-ownership-hero.svg" alt="Your Rails application supported through takeover, stabilization, maintenance and ongoing development" width={560} height={490} priority />
             <p>Ongoing maintenance + product development</p>
+            <div className="rails-hero-awards" aria-label="Clutch awards">
+              <Image src="/img/awards/clutch-application-management-support-2026.svg" alt="Clutch Top Application Management and Support Company 2026" width={999} height={1080} />
+              <Image src="/img/awards/clutch-rails-developer-2024.svg" alt="Clutch Top Ruby on Rails Developer 2024" width={800} height={1080} />
+              <Image src="/img/awards/clutch-rails-developer-2023.svg" alt="Clutch Top Ruby on Rails Developer 2023" width={800} height={1080} />
+            </div>
           </div>
         </div>
       </section>
@@ -44,7 +52,7 @@ export default function HomePage() {
           <header id="clients">
             <h2>Clients who <span>trusted</span> us with their projects</h2>
             <p>
-              We provide our services to clients worldwide, spanning the United States, Europe, North and South America, the United Kingdom of Great Britain, Australia, and beyond.
+              We serve clients across the United States, Europe, and the United Kingdom.
             </p>
           </header>
           <div className="container">

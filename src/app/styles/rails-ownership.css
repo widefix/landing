@@ -133,3 +133,22 @@
   max-width: 560px;
   justify-self: center;
 }
+
+.rails-hero-awards { display: flex; align-items: center; flex-wrap: wrap; gap: 20px; margin-top: 28px; }
+.rails-hero-awards img { display: block; width: auto; height: 112px; max-width: 110px; object-fit: contain; }
+@media (max-width: 600px) {
+  .rails-hero-awards { gap: 16px; margin-top: 24px; }
+  .rails-hero-awards img { height: 100px; max-width: 100px; }
+}
+
+.rails-hero-aside .rails-hero-awards { justify-content: center; margin: 24px 0 0; }
+.rails-hero-aside .rails-hero-awards img { width: auto; height: 112px; max-width: 110px; border-radius: 0; }
+.rails-home .rails-hero .rails-hero-aside { display: block; }
+@media (max-width: 600px) {
+  .rails-hero-aside .rails-hero-awards img { height: 100px; max-width: 100px; }
+}
+
+.rails-homepage .rails-hero { padding: 20px 0 32px; }
+@media (max-width: 600px) {
+  .rails-homepage .rails-hero { padding: 20px 0 24px; }
+}
