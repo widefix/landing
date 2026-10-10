@@ -157,6 +157,7 @@ export default function ServicesPage() {
           </aside>
         </div>
       </section>
+      <section className="rails-section rails-tinted"><div className="inner"><p className="rails-eyebrow">Beyond individual tickets</p><h2>Looking for a long-term technical partner?</h2><p className="rails-intro">We take ownership of your Rails application's health, priorities, and ongoing development, not just the next task.</p><Link className="rails-text-link" href="/technical-partner">Explore our partnership approach <LinkIndicator /></Link></div></section>
       <OwnershipCTA />
     </main>
   );
