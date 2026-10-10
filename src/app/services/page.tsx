@@ -119,6 +119,11 @@ export default function ServicesPage() {
         </div>
       </section>
 
+
+
+      <OwnershipProcess />
+      <section className="rails-section rails-tinted"><div className="inner"><p className="rails-eyebrow">Beyond individual tickets</p><h2>Looking for a long-term technical partner?</h2><p className="rails-intro">We take ownership of your Rails application&apos;s health, priorities, and ongoing development, not just the next task.</p><Link className="rails-text-link" href="/technical-partner">Explore our partnership approach <LinkIndicator /></Link></div></section>
+
       <section className="rails-section rails-tinted" id="our-services">
         <div className="inner">
           <p className="rails-eyebrow">Core Rails services</p>
@@ -136,8 +141,6 @@ export default function ServicesPage() {
           <ServiceCards services={supportingServices} />
         </div>
       </section>
-
-      <OwnershipProcess />
 
       <section className="rails-section" id="technical-consulting">
         <div className="inner rails-advisory-grid">
@@ -157,7 +160,6 @@ export default function ServicesPage() {
           </aside>
         </div>
       </section>
-      <section className="rails-section rails-tinted"><div className="inner"><p className="rails-eyebrow">Beyond individual tickets</p><h2>Looking for a long-term technical partner?</h2><p className="rails-intro">We take ownership of your Rails application's health, priorities, and ongoing development, not just the next task.</p><Link className="rails-text-link" href="/technical-partner">Explore our partnership approach <LinkIndicator /></Link></div></section>
       <OwnershipCTA />
     </main>
   );

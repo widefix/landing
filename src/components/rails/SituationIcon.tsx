@@ -1,6 +1,8 @@
-type Situation = 'handover' | 'expertise' | 'production' | 'upgrades' | 'momentum' | 'ownership' | 'review' | 'priorities';
+type Situation = 'handover' | 'expertise' | 'production' | 'upgrades' | 'momentum' | 'ownership' | 'review' | 'priorities' | 'communication' | 'payments';
 
 const paths: Record<Situation, React.ReactNode> = {
+  communication: <><path d="M4 5h24v17H15l-7 6v-6H4zM9 11h14M9 16h10" /></>,
+  payments: <><rect x="3" y="7" width="26" height="19" rx="3" /><path d="M3 13h26M8 20h6m7 0h3" /></>,
   review: <><path d="M17 27H5V4h14l5 5v6M19 4v6h5M9 13h8M9 18h5" /><circle cx="22" cy="22" r="5" /><path d="m26 26 4 4" /></>,
   priorities: <><path d="M5 7h3m5 0h14M5 16h3m5 0h14M5 25h3m5 0h14" /><path d="m4 6 2 2 3-4m-5 11 2 2 3-4m-5 11 2 2 3-4" /></>,
   handover: <><circle cx="10" cy="8" r="3" /><path d="M4 21v-2a6 6 0 0 1 12 0M18 11h9m-4-4 4 4-4 4" /></>,

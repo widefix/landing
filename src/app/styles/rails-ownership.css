@@ -152,3 +152,5 @@
 @media (max-width: 600px) {
   .rails-homepage .rails-hero { padding: 20px 0 24px; }
 }
+
+.rails-technical-partner .rails-section:not(.rails-hero):not(.rails-tinted):not(.rails-final-cta) { background: #fff; }

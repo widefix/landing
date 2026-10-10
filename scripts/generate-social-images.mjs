@@ -10,6 +10,7 @@ export default async function generateSocialImages() {
     '/img/block-hero.jpg',
     '/img/rails-ownership-hero.svg',
     '/img/rails-services-hero.svg',
+    '/img/rails-technical-partner-hero.svg',
     '/img/actual-db-schema-hero.png',
     '/img/contact.jpg',
     '/img/showcases/technology-cloud.svg',
