@@ -11,6 +11,7 @@ image: rake-task.jpg
 redirect_from:
   - /blog/2012/03/14/how-to-generate-rake-task/
 modified: 2026-10-11
+tested_with: "Rails 8.1.0 and Ruby 3.4.9"
 related_posts:
   - /do-you-test-your-rake-tasks/
   - /do-not-generate-trash-with-rails/
@@ -101,6 +102,6 @@ See the [Rails command-line guide](https://guides.rubyonrails.org/v8.1/command_l
 
 ## Learning more
 
-{% picture /images/rake_book.jpg alt="Rake Task Management Essentials" align="left" vspace="5" hspace="5" width="100" %}
+{% picture /images/rake_book.jpg alt="Rake Task Management Essentials" align="left" vspace="5" hspace="5" width="100" style="margin-right: 24px;" %}
 
 My book, **Rake Task Management Essentials**, covers Rake through practical examples. You can find it at [Packt](https://www.packtpub.com/product/rake-task-management-essentials/9781783280773){:rel="nofollow" target="_blank"}.
