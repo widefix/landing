@@ -25,6 +25,7 @@
       {% if page.description %}<p class="article-deck">{{ page.description }}</p>{% endif %}
       {% assign author = page.author | default: site.owner %}
       <div class="article-byline">{% if author.avatar %}<img src="{{ site.url }}/images/{{ author.avatar }}" alt="{{ author.name }}" width="48" height="48">{% endif %}<div>{% if page.author %}<strong>{{ author.name }}</strong>{% else %}<a href="{{ site.url }}/about-author/">{{ author.name }}</a>{% endif %}<span><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %d, %Y' }}</time> · {% assign words = content | strip_html | number_of_words %}{{ words | divided_by: 200 | plus: 1 }} min read</span></div></div>
+      {% if page.modified %}<p class="article-updated">Updated <time datetime="{{ page.modified | date_to_xmlschema }}">{{ page.modified | date: '%B %d, %Y' }}</time>{% if page.tested_with %} · Tested with {{ page.tested_with | escape }}{% endif %}</p>{% endif %}
     </header>
     {% if page.image_svg %}<div class="article-cover"><img src="{{ site.url }}/images/{{ page.image_svg }}" alt="{{ page.title | escape }}"></div>{% elsif page.image %}<div class="article-cover"><img src="{{ site.url }}/images/{{ page.image }}" alt="{{ page.title | escape }}"></div>{% endif %}
     <div class="entry-content article-content">
@@ -32,7 +33,7 @@
       <div class="entry-tags">{% for tag in page.tags %}<a href="{{ site.url }}/tags/#{{ tag | escape }}">{{ tag }}</a>{% endfor %}</div>
     </div>
     {% unless page.author %}<aside class="article-author"><img src="{{ site.url }}/images/my_face.jpg" alt="Andrei Kaleshka" width="72" height="72"><div><p class="eyebrow">ABOUT THE AUTHOR</p><h2>Andrei Kaleshka</h2><p>I help businesses take ownership of existing Rails applications, modernize their systems, and keep delivering safely.</p><a href="{{ site.url }}/about-author/">More about my work ↗</a></div></aside>{% endunless %}
-    <section class="related-posts"><div class="section-heading"><h2>Keep reading</h2></div><ul class="post-grid">{% if page.previous %}{% assign post = page.previous %}<li>{% include card.html %}</li>{% endif %}{% if page.next %}{% assign post = page.next %}<li>{% include card.html %}</li>{% endif %}</ul></section>
+    <section class="related-posts"><div class="section-heading"><h2>Keep reading</h2></div><ul class="post-grid">{% if page.related_posts %}{% for related_url in page.related_posts %}{% assign post = site.posts | where: "url", related_url | first %}{% if post %}<li>{% include card.html %}</li>{% endif %}{% endfor %}{% else %}{% if page.previous %}{% assign post = page.previous %}<li>{% include card.html %}</li>{% endif %}{% if page.next %}{% assign post = page.next %}<li>{% include card.html %}</li>{% endif %}{% endif %}</ul></section>
   </article>
 </main>
 {% include footer.html %}{% include scripts.html %}
