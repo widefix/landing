@@ -85,6 +85,33 @@ export default function RailsTakeoverPage() {
           </div>
         </div>
       </section>
+      <section className="rails-section" id="proven-work">
+        <div className="inner">
+          <p className="rails-eyebrow">Work with existing products</p>
+          <h2>We have stepped into unfamiliar Rails codebases before</h2>
+          <p className="rails-intro">A takeover is more than a technical review. These existing client stories show how we helped live applications keep moving after a handover or through complex changes.</p>
+          <div className="rails-card-grid rails-case-grid">
+            <article className="rails-card">
+              <Image src="/img/showcases/clients/hipchip.svg" alt="HipChip" width={160} height={48} />
+              <h3>HipChip: took over after the developer left</h3>
+              <p>We took ownership of an existing legacy Rails application, added automated tests and delivered Stripe and ACH payments while improving stability and performance.</p>
+              <Link href="/showcases/hipchip-stripe-ach-integration">Read the takeover story <LinkIndicator /></Link>
+            </article>
+            <article className="rails-card">
+              <Image src="/img/showcases/clients/wo.svg" alt="Worship Online" width={160} height={48} />
+              <h3>Worship Online: evolve a live application without a rewrite</h3>
+              <p>We gradually redesigned an existing Rails product while keeping it available and preserving its existing mobile integrations.</p>
+              <Link href="/showcases/ruby-on-rails-redesign">Read the incremental redesign story <LinkIndicator /></Link>
+            </article>
+            <article className="rails-card">
+              <Image src="/img/showcases/clients/wo.svg" alt="Worship Online" width={160} height={48} />
+              <h3>Worship Online: upgrade critical storage safely</h3>
+              <p>A staged migration replaced Paperclip with ActiveStorage while keeping uploads and public media available during the transition.</p>
+              <Link href="/showcases/worshiponline-paperclip-activestorage">Read the production migration story <LinkIndicator /></Link>
+            </article>
+          </div>
+        </div>
+      </section>
       <RailsFAQ detailed />
       <OwnershipCTA />
     </main>
