@@ -5,6 +5,39 @@ import { CategoryName, ResultBoxColor, Showcase, SwiperSlideColor } from './enum
 
 const showcases: Showcase[] = [
   {
+    slug: 'worshiponline-application-support-maintenance',
+    category: CategoryName.devops,
+    preview: {
+      title: 'Rails Application Support & Maintenance',
+      companyName: 'Worship Online',
+      solution: 'Application Takeover & Long-Term Ownership',
+      results: 'Took over an existing Rails app as its developer was leaving, fixed defects, added tests and delivered a redesign with specialists selected around project needs and budget.',
+      wrapperColor: SwiperSlideColor.green,
+      buttonColor: SwiperSlideColor.green,
+      companyImageSrc: '/img/showcases/clients/wo.svg',
+      url: '',
+    },
+    body: {
+      bannerTopTitle: <h1>Worship Online Rails Application Support &amp; Maintenance</h1>,
+      bannerTopImageSrc: '/img/showcases/worshiponline-ownership.svg',
+      description: 'Rails application takeover, stabilization and ongoing ownership',
+      descriptionText: <p>WideFix stepped into an existing Rails application when the previous developer was leaving.</p>,
+      detailsTitle: 'Handover and ongoing support',
+      detailsText: <p>We took ownership while implementing a redesign and improving quality and stability.</p>,
+      detailsImageSrc: '/img/showcases/worshiponline-ownership.svg',
+      problemText: <p>Support for the existing application needed to continue while a redesign was underway.</p>,
+      solutionFirstText: <p>We fixed defects and added automated tests.</p>,
+      solutionSecondText: <p>We brought in specialists with the right expertise and coordinated work with the project budget in mind.</p>,
+      resultBoxes: [],
+      resultText: <p>Support and feature development continued beyond the initial redesign request.</p>,
+      helpTitle: 'Need Ruby on Rails application support and maintenance?',
+    },
+    metadata: {
+      title: 'Rails Application Support and Maintenance: Worship Online - WideFix',
+      description: 'WideFix took over Worship Online’s existing Rails app, stabilized it, expanded tests and delivered a redesign while coordinating specialist expertise.',
+    },
+  },
+  {
     slug: "public-api-development",
     category: CategoryName.devDesign,
     preview: {
