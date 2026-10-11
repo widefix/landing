@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" fill="none">
+<rect width="960" height="560" rx="28" fill="#EFF5EF"/><path d="M0 108H960M0 452H960M320 108V452M640 108V452" stroke="#DCE8DE"/>
+<text x="48" y="56" fill="#536E5D" font-family="Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="1">WORSHIP ONLINE / APPLICATION SUPPORT &amp; MAINTENANCE</text>
+<rect x="42" y="155" width="258" height="245" rx="18" fill="#FFF" stroke="#D6E3D8" stroke-width="2"/>
+<rect x="62" y="174" width="173" height="27" rx="13" fill="#F6E7D3"/><text x="75" y="192" fill="#915833" font-family="Arial,sans-serif" font-size="11" font-weight="700">EXISTING RAILS APP</text>
+<rect x="72" y="229" width="194" height="20" rx="6" fill="#E0E6E0"/><rect x="72" y="265" width="152" height="12" rx="6" fill="#E0E6E0"/><rect x="72" y="291" width="180" height="12" rx="6" fill="#E0E6E0"/>
+<text x="72" y="344" fill="#183B30" font-family="Arial,sans-serif" font-size="20" font-weight="700">Developer handover</text><text x="72" y="372" fill="#607267" font-family="Arial,sans-serif" font-size="13">Legacy code and defects</text>
+<path d="M306 278H352M343 269L353 278L343 287" stroke="#D17948" stroke-width="3" stroke-linecap="round"/>
+<rect x="359" y="135" width="240" height="284" rx="18" fill="#173D32"/><rect x="380" y="157" width="126" height="26" rx="13" fill="#315C4C"/>
+<text x="393" y="175" fill="#D6E9D8" font-family="Arial,sans-serif" font-size="11" font-weight="700">WIDEFIX</text>
+<circle cx="390" cy="227" r="6" fill="#F1BC58"/><circle cx="390" cy="282" r="6" fill="#F1BC58"/><circle cx="390" cy="337" r="6" fill="#F1BC58"/>
+<path d="M390 235V273M390 290V329" stroke="#83A591" stroke-width="2" stroke-dasharray="4 5"/>
+<g fill="#FFFFFF" font-family="Arial,sans-serif" font-size="16" font-weight="600"><text x="408" y="232">Take over</text><text x="408" y="287">Stabilize + test</text><text x="408" y="342">Build the right team</text></g>
+<text x="380" y="390" fill="#BBD0C1" font-family="Arial,sans-serif" font-size="12">Scope and budget alignment</text>
+<path d="M605 278H651M642 269L652 278L642 287" stroke="#D17948" stroke-width="3" stroke-linecap="round"/>
+<rect x="658" y="155" width="260" height="245" rx="18" fill="#FFF" stroke="#D6E3D8" stroke-width="2"/><rect x="678" y="174" width="152" height="27" rx="13" fill="#DDF1E2"/><text x="691" y="192" fill="#26724C" font-family="Arial,sans-serif" font-size="11" font-weight="700">ONGOING OWNERSHIP</text>
+<rect x="691" y="226" width="190" height="86" rx="8" fill="#E4F0E8"/><path d="M708 282L747 250L769 266L802 238L851 263" stroke="#28744D" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="688" y="344" fill="#183B30" font-family="Arial,sans-serif" font-size="20" font-weight="700">Redesign + support</text><text x="688" y="372" fill="#607267" font-family="Arial,sans-serif" font-size="13">Keep improving the product</text>
+<rect x="44" y="468" width="872" height="47" rx="12" fill="#DCEBE0"/><circle cx="70" cy="491" r="6" fill="#D17948"/><text x="87" y="496" fill="#264C3D" font-family="Arial,sans-serif" font-size="14" font-weight="600">From an inherited application to ongoing Rails technical ownership.</text>
+</svg>
