@@ -239,7 +239,7 @@ export default function HomePage() {
             </div>
             <div className="achievement-item">
               <div className="number">5★</div>
-              <p>Published author of <Link href="https://www.amazon.com/-/es/Rake-Management-Essentials-Andrey-Koleshko/dp/1783280778" target="_blank" rel="nofollow">&ldquo;Rails Task Management Essentials&rdquo;</Link> book</p>
+              <p>Published author of <Link href="https://www.amazon.com/-/es/Rake-Management-Essentials-Andrey-Koleshko/dp/1783280778" target="_blank" rel="nofollow">&ldquo;Rake Task Management Essentials&rdquo;</Link> book</p>
               <div className="achievement-tags">
                 <div className="achievement-tag founder">Founder</div>
               </div>
