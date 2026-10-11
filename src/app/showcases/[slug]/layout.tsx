@@ -40,7 +40,7 @@ export async function generateMetadata({ params } : Props): Promise<Metadata> {
 }
 
 export async function generateStaticParams() {
-  const customPages = new Set(['hipchip-stripe-ach-integration', 'build-crossplatform-mobile-application', 'worshiponline-paperclip-activestorage']);
+  const customPages = new Set(['hipchip-stripe-ach-integration', 'build-crossplatform-mobile-application', 'worshiponline-paperclip-activestorage', 'worshiponline-application-support-maintenance']);
   const slugs = showcases.filter(showcase => !customPages.has(showcase.slug)).map(showcase => ({ slug: showcase.slug }));
 
   return slugs;
