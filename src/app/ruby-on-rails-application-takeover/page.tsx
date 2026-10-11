@@ -48,6 +48,31 @@ export default function RailsTakeoverPage() {
           </div>
         </div>
       </section>
+      <section className="rails-section" id="first-weeks">
+        <div className="inner">
+          <p className="rails-eyebrow">A practical starting plan</p>
+          <h2>What the first weeks of a Rails takeover can look like</h2>
+          <p className="rails-intro">Every inherited application is different. We agree on the scope and pace after learning about your product, rather than promising a fixed timeline before seeing the system.</p>
+          <div className="rails-card-grid">
+            <article className="rails-card"><h3>Understand the business and code</h3><p>Discuss critical user journeys, current incidents and goals. Review the repository, runtime, database, dependencies and third-party services.</p></article>
+            <article className="rails-card"><h3>Map production responsibilities</h3><p>Check access, deployment and rollback paths, monitoring, backups and operational documentation. Identify gaps and agree on who handles which risks.</p></article>
+            <article className="rails-card"><h3>Prioritize safe improvements</h3><p>Share a practical list of urgent fixes, upgrades and product work. Agree on the support arrangement and start with the most valuable, manageable changes.</p></article>
+          </div>
+        </div>
+      </section>
+      <section className="rails-section rails-tinted" id="ways-to-work">
+        <div className="inner">
+          <p className="rails-eyebrow">Support that fits your product</p>
+          <h2>Start with the help you actually need</h2>
+          <div className="rails-card-grid">
+            <article className="rails-card"><h3>Application takeover</h3><p>For products left by a previous developer or agency. Establish the technical picture, access, priorities and a safer handover.</p></article>
+            <article className="rails-card"><h3>Ongoing maintenance</h3><p>For live applications that need production fixes, updates, monitoring and an accountable technical partner.</p></article>
+            <article className="rails-card"><h3>Maintenance + development</h3><p>For teams that need someone to look after reliability while continuing to deliver features and modernization.</p></article>
+          </div>
+          <p className="rails-intro">We define the work, availability and communication expectations together. An initial conversation is not a commitment to a full development engagement.</p>
+          <RailsCall>Discuss the right starting point</RailsCall>
+        </div>
+      </section>
       <OwnershipProcess />
       <section className="rails-section">
         <div className="inner">
