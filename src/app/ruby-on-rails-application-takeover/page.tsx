@@ -101,7 +101,7 @@ export default function RailsTakeoverPage() {
               <Image src="/img/showcases/clients/wo.svg" alt="Worship Online" width={160} height={48} />
               <h3>Worship Online: evolve a live application without a rewrite</h3>
               <p>We gradually redesigned an existing Rails product while keeping it available and preserving its existing mobile integrations.</p>
-              <Link href="/showcases/ruby-on-rails-redesign">Read the incremental redesign story <LinkIndicator /></Link>
+              <Link href="/showcases/worshiponline-application-support-maintenance">Read the long-term ownership story <LinkIndicator /></Link>
             </article>
             <article className="rails-card">
               <Image src="/img/showcases/clients/wo.svg" alt="Worship Online" width={160} height={48} />
