@@ -23,7 +23,7 @@ export default function ContactForm() {
       const data = await response.json();
       if (data.success) {
         setResultType('success');
-        setResult('✅ Thank you! We\'ve received your project details and will get back to you within 24 hours.');
+        setResult('✅ Thank you! We\'ve received your application details and will get back to you within 24 hours.');
         form.reset();
       } else {
         setResultType('error');
@@ -58,8 +58,8 @@ export default function ContactForm() {
 
         <div className="form-row">
           <div className="form-field full-width">
-            <label htmlFor="message" className="form-label">Project Details</label>
-            <textarea id="message" name="message" className="form-textarea" rows={4} placeholder="Tell us about your project, current challenges, and what you're looking to achieve..."></textarea>
+            <label htmlFor="message" className="form-label">Application Details</label>
+            <textarea id="message" name="message" className="form-textarea" rows={4} placeholder="Tell us about your Rails application, current challenges, and what you want to build next..."></textarea>
           </div>
         </div>
 
@@ -73,8 +73,8 @@ export default function ContactForm() {
         </div>
 
         <div className="form-submit">
-          <button type="submit" className="button primary">Send Project Details</button>
-          <p className="form-note">We&apos;ll respond within 24 hours with a detailed project proposal</p>
+          <button type="submit" className="button primary">Send Application Details</button>
+          <p className="form-note">We&apos;ll respond within 24 hours to discuss your application and agree on the next step.</p>
         </div>
       </div>
     </form>

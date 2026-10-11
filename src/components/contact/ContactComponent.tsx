@@ -37,10 +37,10 @@ export default function ContactComponent() {
                 <Image src="/img/icons/support.svg" alt="Schedule" width="24" height="24" />
               </div>
               <div className="contact-info">
-                <h3>Schedule a Consultation</h3>
-                <p>Book a free call to discuss your project</p>
+                <h3>Discuss your Rails application</h3>
+                <p>Book a free call to discuss your application and next steps</p>
                 <a className="button primary" href="https://calendly.com/andrei-kaleshka/30min" target="_blank" rel="noopener noreferrer nofollow">
-                  Schedule Now
+                  Discuss your Rails application
                 </a>
               </div>
             </div>
