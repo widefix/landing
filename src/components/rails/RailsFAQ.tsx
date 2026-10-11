@@ -20,6 +20,26 @@ const questions = [
     detail: 'We agree on the scope, priorities, and communication rhythm so maintenance and product development move forward together.',
   },
   {
+    question: 'Do I need a full-time Rails team or a long-term contract?',
+    answer: 'Not necessarily. We discuss the application, priorities and expected workload before recommending a focused takeover, ongoing maintenance or maintenance with development.',
+    detail: 'We will explain the proposed scope and engagement terms before work begins. The first conversation does not commit you to a full development contract.',
+  },
+  {
+    question: 'How much does Rails maintenance cost?',
+    answer: 'It depends on the size and condition of the application, the support coverage you need and whether you also want new development. We can discuss an appropriate scope after learning about your situation.',
+    detail: 'Rather than quoting an invented fixed price, we clarify priorities, expected workload and working arrangements before proposing an engagement.',
+  },
+  {
+    question: 'What happens if production breaks?',
+    answer: 'We start by understanding the impact, available monitoring and recovery options. As part of the handover we agree on incident contacts, responsibilities and response expectations.',
+    detail: 'Monitoring and around-the-clock engineer availability are different services. Any required coverage and response hours should be explicitly agreed rather than assumed.',
+  },
+  {
+    question: 'What will happen on the first call?',
+    answer: 'We discuss what the product does, what is worrying you, who currently maintains it and what needs attention first. We then suggest a sensible next step, such as a focused technical review or a handover plan.',
+    detail: 'You do not need to grant access or prepare a full technical audit before the introductory conversation.',
+  },
+  {
     question: 'Can you work alongside our existing development team?',
     answer: 'Yes. We can bring Rails expertise and technical ownership to support your existing team. We agree on responsibilities, coordinate changes, and help with difficult parts of the application while your team continues its work.',
     detail: 'This can include upgrades, performance work, integrations, architecture decisions, and coordination with teams building other parts of the product.',

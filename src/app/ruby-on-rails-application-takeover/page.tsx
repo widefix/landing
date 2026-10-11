@@ -48,6 +48,31 @@ export default function RailsTakeoverPage() {
           </div>
         </div>
       </section>
+      <section className="rails-section" id="first-weeks">
+        <div className="inner">
+          <p className="rails-eyebrow">A practical starting plan</p>
+          <h2>What the first weeks of a Rails takeover can look like</h2>
+          <p className="rails-intro">Every inherited application is different. We agree on the scope and pace after learning about your product, rather than promising a fixed timeline before seeing the system.</p>
+          <div className="rails-card-grid">
+            <article className="rails-card"><h3>Understand the business and code</h3><p>Discuss critical user journeys, current incidents and goals. Review the repository, runtime, database, dependencies and third-party services.</p></article>
+            <article className="rails-card"><h3>Map production responsibilities</h3><p>Check access, deployment and rollback paths, monitoring, backups and operational documentation. Identify gaps and agree on who handles which risks.</p></article>
+            <article className="rails-card"><h3>Prioritize safe improvements</h3><p>Share a practical list of urgent fixes, upgrades and product work. Agree on the support arrangement and start with the most valuable, manageable changes.</p></article>
+          </div>
+        </div>
+      </section>
+      <section className="rails-section rails-tinted" id="ways-to-work">
+        <div className="inner">
+          <p className="rails-eyebrow">Support that fits your product</p>
+          <h2>Start with the help you actually need</h2>
+          <div className="rails-card-grid">
+            <article className="rails-card"><h3>Application takeover</h3><p>For products left by a previous developer or agency. Establish the technical picture, access, priorities and a safer handover.</p></article>
+            <article className="rails-card"><h3>Ongoing maintenance</h3><p>For live applications that need production fixes, updates, monitoring and an accountable technical partner.</p></article>
+            <article className="rails-card"><h3>Maintenance + development</h3><p>For teams that need someone to look after reliability while continuing to deliver features and modernization.</p></article>
+          </div>
+          <p className="rails-intro">We define the work, availability and communication expectations together. An initial conversation is not a commitment to a full development engagement.</p>
+          <RailsCall>Discuss the right starting point</RailsCall>
+        </div>
+      </section>
       <OwnershipProcess />
       <section className="rails-section">
         <div className="inner">
@@ -57,6 +82,33 @@ export default function RailsTakeoverPage() {
             <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="production" /><h3>Production recovery</h3></div><p>See how we restored a stalled background queue and eliminated recurring Heroku errors for ShopWired.</p><Link href="/showcases/shopwired-queue-optimization">Read the case study <LinkIndicator /></Link></article>
             <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="upgrades" /><h3>Incremental modernization</h3></div><p>See how we redesigned Worship Online&apos;s Rails application with zero downtime and preserved its mobile integrations.</p><Link href="/showcases/ruby-on-rails-redesign">Read the case study <LinkIndicator /></Link></article>
             <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="expertise" /><h3>Practical Rails expertise</h3></div><p>Read our founder&apos;s experience upgrading Ruby and Rails in an existing application, including dependencies and deployment challenges.</p><Link href="https://widefix.com/blog/ruby-and-rails-upgrade-personal-experience/">Read the upgrade article <LinkIndicator /></Link></article>
+          </div>
+        </div>
+      </section>
+      <section className="rails-section" id="proven-work">
+        <div className="inner">
+          <p className="rails-eyebrow">Work with existing products</p>
+          <h2>We have stepped into unfamiliar Rails codebases before</h2>
+          <p className="rails-intro">A takeover is more than a technical review. These existing client stories show how we helped live applications keep moving after a handover or through complex changes.</p>
+          <div className="rails-card-grid rails-case-grid">
+            <article className="rails-card">
+              <Image src="/img/showcases/clients/hipchip.svg" alt="HipChip" width={160} height={48} />
+              <h3>HipChip: took over after the developer left</h3>
+              <p>We took ownership of an existing legacy Rails application, added automated tests and delivered Stripe and ACH payments while improving stability and performance.</p>
+              <Link href="/showcases/hipchip-stripe-ach-integration">Read the takeover story <LinkIndicator /></Link>
+            </article>
+            <article className="rails-card">
+              <Image src="/img/showcases/clients/wo.svg" alt="Worship Online" width={160} height={48} />
+              <h3>Worship Online: evolve a live application without a rewrite</h3>
+              <p>We gradually redesigned an existing Rails product while keeping it available and preserving its existing mobile integrations.</p>
+              <Link href="/showcases/worshiponline-application-support-maintenance">Read the long-term ownership story <LinkIndicator /></Link>
+            </article>
+            <article className="rails-card">
+              <Image src="/img/showcases/clients/wo.svg" alt="Worship Online" width={160} height={48} />
+              <h3>Worship Online: upgrade critical storage safely</h3>
+              <p>A staged migration replaced Paperclip with ActiveStorage while keeping uploads and public media available during the transition.</p>
+              <Link href="/showcases/worshiponline-paperclip-activestorage">Read the production migration story <LinkIndicator /></Link>
+            </article>
           </div>
         </div>
       </section>
