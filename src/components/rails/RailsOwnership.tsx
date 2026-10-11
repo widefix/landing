@@ -19,7 +19,7 @@ export function OwnershipProcess() {
     <section className="rails-section rails-tinted" id="how-we-take-over">
       <div className="inner">
         <p className="rails-eyebrow">A clear path forward</p>
-        <h2>Take over. Stabilize. Maintain. Improve.</h2>
+        <h2>Take over. Stabilize. Maintain. Improve</h2>
         <p className="rails-intro">Start with what your application needs today. Build a long-term plan around your customers and business priorities.</p>
         <ol className="ownership-steps">
           {steps.map(([title, text], i) => <li key={title}><div className="ownership-step-heading"><span className="step-number">0{i + 1}</span><h3>{title}</h3></div><p>{text}</p></li>)}

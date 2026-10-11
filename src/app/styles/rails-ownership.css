@@ -154,3 +154,5 @@
 }
 
 .rails-technical-partner .rails-section:not(.rails-hero):not(.rails-tinted):not(.rails-final-cta) { background: #fff; }
+
+.rails-home .rails-engagement-note { margin-bottom: 24px; }

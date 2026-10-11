@@ -1,6 +1,7 @@
 import { socialPreview, socialTwitter } from '@/lib/socialPreview';
 
 import LinkIndicator from '@/components/LinkIndicator';
+import SituationIcon from '@/components/rails/SituationIcon';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -166,9 +167,9 @@ export default function ServicesPage() {
           <h2>Three ways to work with WideFix</h2>
           <p className="rails-intro">You do not need to hire a full-time team to get help with an existing Rails application. We start with the current problem and agree on scope, responsibilities and availability.</p>
           <div className="rails-card-grid">
-            <article className="rails-card"><h3>Take over an application</h3><p>Transition away from an unavailable developer or agency, review the codebase and clarify ownership.</p><Link href="/ruby-on-rails-application-takeover">How takeover works <LinkIndicator /></Link></article>
-            <article className="rails-card"><h3>Maintain a live product</h3><p>Address production bugs, upgrades, integrations and reliability through ongoing technical support.</p><Link href="/ruby-on-rails-application-takeover#ways-to-work">Explore maintenance options <LinkIndicator /></Link></article>
-            <article className="rails-card"><h3>Maintain and keep building</h3><p>Combine application stewardship with feature development, modernization and business priorities.</p><Link href="/technical-partner">Explore technical partnership <LinkIndicator /></Link></article>
+            <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="handover" /><h3>Take over an application</h3></div><p>Transition away from an unavailable developer or agency, review the codebase and clarify ownership.</p><Link href="/ruby-on-rails-application-takeover">How takeover works <LinkIndicator /></Link></article>
+            <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="ownership" /><h3>Maintain a live product</h3></div><p>Address production bugs, upgrades, integrations and reliability through ongoing technical support.</p><Link href="/ruby-on-rails-application-takeover#ways-to-work">Explore maintenance options <LinkIndicator /></Link></article>
+            <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="expertise" /><h3>Maintain and keep building</h3></div><p>Combine application stewardship with feature development, modernization and business priorities.</p><Link href="/technical-partner">Explore technical partnership <LinkIndicator /></Link></article>
           </div>
         </div>
       </section>
