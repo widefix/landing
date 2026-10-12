@@ -1,0 +1,33 @@
+.tools {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.book {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 24px;
+}
+
+.cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 600px) {
+  .tools {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .book {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .cover {
+    width: 180px;
+    margin-inline: auto;
+  }
+}

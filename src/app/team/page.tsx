@@ -3,6 +3,7 @@ import { RailsCall } from '@/components/rails/RailsOwnership';
 import { socialPreview, socialTwitter } from '@/lib/socialPreview';
 import type { Metadata } from "next";
 import TeamSection from '@/components/TeamSection';
+import FounderPublications from '@/components/rails/FounderPublications';
 import SituationIcon from '@/components/rails/SituationIcon';
 
 export const metadata: Metadata = {
@@ -28,6 +29,7 @@ export default function TeamPage() {
     <main className="rails-home rails-services">
       <section className="rails-section rails-hero"><div className="inner"><p className="rails-eyebrow">A small team for an existing product</p><h1>Rails engineering with clear delivery ownership</h1><p className="rails-intro">Andrei Kaleshka leads technical direction and delivery. We choose the engineers and specialist skills needed for your SaaS, work alongside your existing team or provide the engineering capacity you are missing, and keep maintenance and feature development in one prioritized backlog.</p><div className="rails-actions"><RailsCall>Discuss the team your SaaS needs</RailsCall><Link href="/technical-partner#fractional-cto">Fractional CTO and technical partnership →</Link></div></div></section>
       <TeamSection />
+      <FounderPublications />
       <section className="rails-section rails-tinted"><div className="inner"><h2>How a small team supports your SaaS</h2><div className="rails-card-grid">
         <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="expertise" /><h3>Technical lead and Rails engineers</h3></div><p>Andrei leads application assessment, architecture and priorities. Rails engineers investigate production bugs, deliver backend features and maintain tests and dependencies. We agree who owns each workstream at the start.</p></article>
         <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="production" /><h3>Interfaces, operations and coordination</h3></div><p>Bring in web, mobile or delivery expertise when the scope calls for it. Keep API contracts, deployment steps and progress updates connected to the Rails work.</p></article>
