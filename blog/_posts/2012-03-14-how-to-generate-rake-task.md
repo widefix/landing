@@ -2,7 +2,7 @@
 layout: post
 title: "How to generate a Rake task"
 headline: "An easy way to create your own Rake task"
-description: "Generate a Rake task with bin/rails generate task namespace task1 task2, add Ruby code, and run it in your Rails app."
+description: "Learn how to generate and run custom Rake tasks in Ruby on Rails, with a complete example covering namespaces, task descriptions, and application loading."
 tags: [ruby, rails, rake]
 share: true
 featured_post: false

@@ -8,6 +8,7 @@
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": {{ page.title | jsonify }},
+    "description": {{ meta_description | jsonify }},
     "image": [{{ social_image_url | jsonify }}],
     "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
     "dateModified": {{ page.modified | default: page.date | date_to_xmlschema | jsonify }},

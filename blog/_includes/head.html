@@ -1,10 +1,11 @@
 <meta charset="utf-8">
+{% assign meta_description = page.description | default: site.description | strip_html | normalize_whitespace %}
 <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta name="description" content="{{ meta_description | escape }}">
 {% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{% endif %}
 
 <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta name="twitter:description" content="{{ meta_description | escape }}">
 <meta name="twitter:site" content="@{{ site.owner.twitter }}">
 <meta name="twitter:creator" content="@{{ site.owner.twitter }}">
 
@@ -35,7 +36,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta property="og:description" content="{{ meta_description | escape }}">
 <meta property="og:url" content="{{ site.url }}{{ page.url }}">
 <meta property="og:site_name" content="{{ site.title }}">
 
