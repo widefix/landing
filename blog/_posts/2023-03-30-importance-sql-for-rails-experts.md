@@ -310,3 +310,6 @@ You might also find this article I wrote previously interesting - [Financial pla
 
 
 Need a measured investigation of your application? Explore our [Rails performance audit and optimization service](/ruby-on-rails-performance).
+
+
+Need help with your existing database? Explore our [PostgreSQL performance consulting](/postgresql-performance-consulting) for query, index, locking and connection investigations.

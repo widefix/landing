@@ -532,3 +532,6 @@ It helps to build easier, maintainable solutions without overengineering.
 Later on, the solution can be reused in a Rails application.
 So that we can have a website that helps to generate a personal financial plan.
 But that's a story for another article. Keep posted!
+
+
+Need help with your existing database? Explore our [PostgreSQL performance consulting](/postgresql-performance-consulting) for query, index, locking and connection investigations.

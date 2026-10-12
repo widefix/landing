@@ -24,6 +24,12 @@ export const metadata: Metadata = {
 
 const coreServices = [
   {
+    id: 'postgresql-performance', title: 'PostgreSQL performance consulting', icon: 'what-we-do/icon-optimization.svg',
+    description: 'Investigate slow SQL, execution plans, indexes, locks and connection pressure in your existing application.',
+    items: ['Workload and query analysis', 'Index and locking investigations', 'Prioritized fixes and before-and-after validation'],
+    href: '/postgresql-performance-consulting', link: 'Explore PostgreSQL performance consulting',
+  },
+  {
     id: 'application-rescue', title: 'Rails application rescue', icon: 'system.svg',
     description: 'Restore a troubled application with recurring crashes, stalled jobs, broken integrations or unreliable releases.',
     items: ['Root-cause diagnosis and incident priorities', 'Production stabilization and validated recovery', 'Monitoring, regression checks and recovery runbooks', 'A follow-up plan to prevent repeat incidents'],

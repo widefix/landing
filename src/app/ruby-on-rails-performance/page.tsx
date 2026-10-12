@@ -86,6 +86,12 @@ const service: FocusedService = {
   ],
   "reading": [
     {
+      "title": "PostgreSQL performance consulting",
+      "href": "/postgresql-performance-consulting",
+      "icon": "review",
+      "detail": "Investigate slow SQL, execution plans, indexes, locks and connection pressure with a focused database engagement."
+    },
+    {
       "title": "Why SQL knowledge matters for Rails performance",
       "href": "/blog/importance-sql-for-rails-experts/",
       "icon": "review",
