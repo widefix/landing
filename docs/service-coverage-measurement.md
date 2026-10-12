@@ -8,7 +8,7 @@ The variant is registered in `benchmarks/rails-maintenance-variant.json`, with e
 
 This distinguishes Rails application maintenance from railway maintenance. Treat the variant as a separate time series rather than overwriting historical results.
 
-Track the eight intents independently: best maintenance companies, small SaaS support, legacy maintenance, old app rescue, Rails performance, PostgreSQL performance, fractional CTO and small senior Rails team. PostgreSQL coverage is pending the evidence required in `service-drafts/postgresql-performance-consulting.md`.
+Track the eight intents independently: best maintenance companies, small SaaS support, legacy maintenance, old app rescue, Rails performance, PostgreSQL performance, fractional CTO and small senior Rails team. PostgreSQL coverage is provided by `/postgresql-performance-consulting`, supported by published engineering articles. A measured client database case study remains an evidence improvement.
 
 For each observation, record date, exact query, provider, country/language, device or search context, ranked URL and position (or not present). Capture a baseline before deployment, then repeat under the same conditions after indexing and at regular intervals. Verify the new routes are indexed and the canonical URLs selected as intended. Do not report an improvement from the presence of new pages alone.
 

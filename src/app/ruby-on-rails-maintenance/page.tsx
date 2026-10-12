@@ -130,6 +130,12 @@ export default function Page() {
           <p className="rails-eyebrow">Client feedback</p>
           <h2 id="maintenance-reviews-title">Independent client reviews</h2>
           <p className="rails-intro">Read attributed client reviews on Clutch, including the engagement context and feedback on delivery.</p>
+          <figure className="rails-card">
+            <blockquote cite="https://clutch.co/profile/widefix#reviews">
+              <p>&ldquo;WideFix really takes ownership of the process and is not just a group of robots.&rdquo;</p>
+            </blockquote>
+            <figcaption>Shalon Palmer, CEO of Worship Online · <a href="https://clutch.co/profile/widefix#reviews" target="_blank" rel="noopener noreferrer">Verified Clutch review, September 23, 2026</a></figcaption>
+          </figure>
           <div className="rails-review-panel">
             <div className="rails-situation-heading"><SituationIcon kind="communication" /><h3>What clients say about working with WideFix</h3></div>
             <div className="rails-review-widget"><ClutchWidget /></div>

@@ -66,14 +66,14 @@ const teamMembers: TeamMember[] = [
   {
     name: 'Yasir',
     image: '/img/team/team-yasir-guzman.webp',
-    tagline: 'High performance, end-to-end ownership',
+    tagline: 'Infrastructure and operations · Application reliability',
     qualities: [
       'Communicates clearly at strategic and technical levels',
       'Learns quickly and builds context across systems',
       'Consistently performs at a high level',
       'Takes full ownership from 0 to 100%'
     ],
-    businessValue: 'Yasir combines clear, high-level communication with a strong ability to learn fast and understand the wider context. He takes ownership of outcomes and reliably drives work from the first idea through to complete delivery.',
+    businessValue: 'Yasir supports infrastructure and operations for existing applications. He works with the application engineers on hosting, deployments and operational reliability, keeping infrastructure work connected to product priorities.',
     industries: ['Sports Event Organization', 'AI', 'MedTech', 'Analytics', 'E-commerce', 'FinTech']
   },
   {
