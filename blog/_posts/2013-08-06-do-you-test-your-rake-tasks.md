@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Do you test your rake tasks?"
-description: "This post explains how to test custom rake tasks in the Rails application"
+title: "Do you test your Rake tasks?"
+description: "This post explains how to test custom Rake tasks in a Rails application."
 tags: [rails, rake, rspec]
 share: true
 comments: true
@@ -10,16 +10,16 @@ redirect_from:
 ---
 
 
-I think that many of you think that writing tests for custom rake tasks is a redundant thing.
-But as practice shows if you think so you are wrong.
+I think that many of you think writing tests for custom Rake tasks is redundant.
+But as practice shows, if you think so, you are wrong.
 In this post I will show how to test **custom rake tasks**.
 
 # Issue
 
-Assuming that we have **rake task** for example *products:load*, and you can run it from the terminal by the following command: `rake products:load`.
-At first glance you could test it manually on running `spec`, or you could configure default rake which runs rspec and this rake task.
-But 1st approach has side effect - your rake task will always populate database with products in this case, we don't want to do it, we just want to make sure that rake works.
-2nd approach looks like more robust, but if you use default rake task for other things it's definitely not your choice. I prefer to test rakes by **rspec**.
+Assume that we have a **Rake task**, for example *products:load*, and you can run it from the terminal with the following command: `rake products:load`.
+At first glance, you could test it manually when running `spec`, or you could configure the default Rake task to run RSpec and this task.
+But the 1st approach has a side effect: your Rake task will always populate the database with products. We don't want to do that; we just want to make sure that the task works.
+The 2nd approach looks more robust, but if you use the default Rake task for other things, it's definitely not your choice. I prefer to test Rake tasks with **RSpec**.
 
 # Solution
 
@@ -36,7 +36,7 @@ describe 'db:seeds' do
 end
 {% endhighlight %}
 
-**MyApp::Application** is a my application name, you can get it from `config/application.rb`:
+**MyApp::Application** is my application name; you can get it from `config/application.rb`:
 
 {% highlight ruby %}
 module MyApp
@@ -46,4 +46,4 @@ module MyApp
 end
 {% endhighlight %}
 
-I hope this code doesn't require deeper explanation and other lines of code are clear for you.
+I hope this code doesn't require a deeper explanation and the other lines are clear to you.

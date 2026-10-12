@@ -11,7 +11,7 @@ image: why-learn-sql.jpg
 
 SQL can improve the performance and efficiency of your Ruby on Rails application. No need for heavy technologies. No need for switching to another programming language or framework.
 
-SQL is a powerful tool that can take your Ruby on Rails expertise to the next level. Nowadays many technologies claim to replace SQL or deem Ruby on Rails as "too slow". But it remains a popular and efficient choice for many web projects. This article will explore the importance of SQL for Ruby on Rails experts. It will show why it's a must-have skill in today's development landscape.
+SQL is a powerful tool that can take your Ruby on Rails expertise to the next level. Nowadays many technologies claim to replace SQL or deem Ruby on Rails "too slow". But it remains a popular and efficient choice for many web projects. This article will explore the importance of SQL for Ruby on Rails experts. It will show why it's a must-have skill in today's development landscape.
 
 ## Why Ruby on Rails can be slow
 
@@ -68,7 +68,7 @@ end
 
 Your application is running in production and serving the needs of hundreds of users. You've noticed that the related page is becoming slower and slower with each passing day. This can be a frustrating problem to solve. It's natural to feel tempted to consider drastic measures. You can think of switching to a faster programming language. Or you might plan to use heavy technology.
 
-Before taking such drastic steps take a step back and understand the root cause of the issue.
+Before taking such drastic steps, take a step back and understand the root cause of the issue.
 
 There are a few things that could be contributing to the slowness of this code:
 
@@ -76,16 +76,16 @@ There are a few things that could be contributing to the slowness of this code:
 
 - Nested `each` loops: The code is using this method to iterate over the Service. For each service in the nested loop, it iterates through all related Rating records. That can also be slow if there are many records. Instead, it would be better to use SQL joins to fetch all the data in a single query.
 
-- Redundant queries: The code is calling `Category.find` many times. Instead, better to fetch all the category data using a single query. And then use it to populate the `service_hash` object.
+- Redundant queries: The code is calling `Category.find` many times. Instead, it's better to fetch all the category data using a single query. And then use it to populate the `service_hash` object.
 
-Optimizing this code will need a combination of SQL query optimization. That should cut unnecessary database queries and improve the performance of the code.
+Optimizing this code will require a combination of SQL query optimizations. That should cut unnecessary database queries and improve the performance of the code.
 
 
 ## How to analyze slow Ruby On Rails code
 
 There are plenty of tools out there, like [bullet](https://github.com/flyerhzm/bullet){:ref="nofollow" target="_blank"}, [benchmark-ips](https://github.com/evanphx/benchmark-ips){:ref="nofollow" target="_blank"}, or any others.
 
-But before taking these radical steps use what you already have.  Open logs  (use command `tail -f log/development.log` for local).  Observe what happens there while you open the slow page in your browser. If you spot many repeating lines like this one you have an N+1 problem:
+But before taking these radical steps, use what you already have.  Open the logs (use the command `tail -f log/development.log` locally).  Observe what happens there while you open the slow page in your browser. If you spot many repeating lines like this one, you have an N+1 problem:
 
 ```ruby
 00:03:22 web.1 | Rating Load (1.6ms)  SELECT "ratings".* FROM "ratings" WHERE "ratings"."user_id" = $1  [["user_id", 15]]
@@ -168,7 +168,7 @@ class ServicesStatsQuery
 end
 ```
 
-This SQL query can provide fast results for most Ruby On Rails applications. Although, it assumes that the DB has appropriate indexes defined.
+This SQL query can provide fast results for most Ruby On Rails applications. However, it assumes that the DB has appropriate indexes defined.
 
 ## Native SQL is much faster than the pure Ruby on Rails code
 
@@ -187,7 +187,7 @@ Benchmark.ips do |x|
 end
 ```
 
-We change the `ServicesStatsQuery` a bit to have the two methods defined `call_ruby` and `call_sql` instead of one method `call`:
+We change the `ServicesStatsQuery` a bit to define two methods, `call_ruby` and `call_sql`, instead of one method, `call`:
 
 ```ruby
 class ServicesStatsQuery
@@ -290,11 +290,11 @@ I have developed a [demo application using both Ruby and SQL versions](https://g
 
 You can analyze performance issues and measure optimization results without fancy tools. [benchmark-ips](https://github.com/evanphx/benchmark-ips){:ref="nofollow" target="_blank"} is for demonstration purposes. The best tools are reading the code, and understanding it. Then analyze its complexity. Finally, use SQL knowledge. These tools are enough. Nothing can replace them. Well, except in the distant future, ChatGPT may offer more help.
 
-There are always plenty of built-in tools by your hand. Learn how to use them. For example, moving further, the written SQL can be slow. You will have to check why. Use [explain analyze](https://www.postgresql.org/docs/current/sql-explain.html){:ref="nofollow" target="_blank"} for that. This is a built-in tool in all modern SQL databases.
+There are always plenty of built-in tools at hand. Learn how to use them. For example, moving further, the written SQL can be slow. You will have to check why. Use [explain analyze](https://www.postgresql.org/docs/current/sql-explain.html){:ref="nofollow" target="_blank"} for that. This is a built-in tool in all modern SQL databases.
 
-## Why Ruby on Rails expert should know SQL
+## Why a Ruby on Rails expert should know SQL
 
-Ruby on Rails is a powerful web application framework. It provides developers with high-level abstractions and conventions. That allows to build web applications quickly and efficiently. But, despite its powerful abstractions, Ruby on Rails experts need to know SQL.
+Ruby on Rails is a powerful web application framework. It provides developers with high-level abstractions and conventions. That allows developers to build web applications quickly and efficiently. But, despite its powerful abstractions, Ruby on Rails experts need to know SQL.
 
 SQL allows Ruby on Rails experts to write efficient and optimized database queries. That can improve the performance of a web application. By understanding SQL, a Ruby on Rails expert can design the database schema and data access layer.  If that's done well, the application maximizes performance, scalability, and maintainability.
 
@@ -302,9 +302,9 @@ SQL is a widely-used and powerful language. People use it beyond interacting wit
 
 SQL allows Ruby on Rails experts to have more control over their web applications. They write more efficient and optimized code. They make better data-driven decisions.
 
-## How can a Ruby on Rails expert learn SQL
+## How can a Ruby on Rails expert learn SQL?
 
-Nowadays, there are plenty of courses and books available on the subject. So it’s hard to recommend specific resources. You can choose whatever you like and suits your learning style.
+Nowadays, there are plenty of courses and books available on the subject. So it’s hard to recommend specific resources. You can choose whatever you like and whatever suits your learning style.
 
 But, if you are like me and prefer hands-on learning, you might find the following resource helpful -  [https://pgexercises.com/](https://pgexercises.com/){:ref="nofollow" target="_blank"}.
 

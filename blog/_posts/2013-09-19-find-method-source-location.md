@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to find the method definition in Ruby"
-description: "This post describes how to get location (file and line) where method is defined. When it's impossible and what to do to avoid losing location of method definition."
+description: "This post describes how to get the location (file and line) where a method is defined, when this is impossible, and how to avoid losing that location."
 tags: [ruby]
 share: true
 comments: true
@@ -10,11 +10,11 @@ redirect_from:
 ---
 
 
-For the first glance it seems rather easy problem to find method definition. You know class name for the object, open documentation for this class and read it. But in real life it's no so simple as seems. In Ruby the method for object can be defined from many places: modules, inheritance, meta-programming, other language's extensions and etc. Imagine that you have installed a lot of gems in your application and every gem potentially can define or redefine method on any object. How to find the method definition in this situation?
+At first glance, finding a method definition seems rather easy. You know the object's class name, open the documentation for this class and read it. But in real life, it's not as simple as it seems. In Ruby, an object's method can be defined in many places: modules, inheritance, metaprogramming, extensions in other languages and so on. Imagine that you have installed a lot of gems in your application, and every gem can potentially define or redefine a method on any object. How do you find the method definition in this situation?
 
 ## Source location
 
-Getting location of method definition is rather simple. Assume you have class `A` defined in the `a.rb` like this:
+Getting the location of a method definition is rather simple. Assume you have a class, `A`, defined in `a.rb` like this:
 
 > a.rb
 
@@ -26,25 +26,25 @@ end
 {% endhighlight %}
 
 
-In Ruby each method is an object too and you can get it using method with called `#method`. It returns object of class `Method`:
+In Ruby, each method is an object too, and you can get it using a method called `#method`. It returns an object of the `Method` class:
 
 {% highlight ruby %}
 m = A.new.method(:m) #=> #<Method: A#m>
 {% endhighlight %}
 
-Object of class `Method` has '#source_location' method which returns the file where the method defined and the line:
+An object of the `Method` class has a '#source_location' method, which returns the file and line where the method is defined:
 
 {% highlight ruby %}
 m.source_location #=> => ["/Users/ka8725/sl/a.rb", 2]
 {% endhighlight %}
 
-Now we know where the method is defined, open this file and see how it's implemented. The method doesn't work for methods which are defined with other languages extensions:
+Now we know where the method is defined. Open this file and see how it's implemented. This method doesn't work for methods defined by extensions in other languages:
 
 {% highlight ruby %}
 {}.method(:[]).source_location #=> nil
 {% endhighlight %}
 
-And pay attention that methods which are defined by meta-programming can lose their source location too:
+And note that methods defined by metaprogramming can lose their source location too:
 
 > b.rb
 
@@ -59,7 +59,7 @@ end
 B.new.method(:m).source_location #=> ["(eval)", 1]
 {% endhighlight %}
 
-Avoid missing line this way:
+Avoid losing the line information this way:
 
 > b.rb
 
@@ -75,12 +75,12 @@ B.new.method(:m).source_location #=> ["/Users/ka8725/sl/activebilling/b.rb", 5]
 {% endhighlight %}
 
 
-Feel free to use `#define_method` - it doesn't lose it's source location. But if method appears on the object with `#method_missing` help it can't know anything about it's definition place.
+Feel free to use `#define_method` — it doesn't lose its source location. But if a method appears on an object with the help of `#method_missing`, it can't know anything about where it was defined.
 
 ## Practical application
 
-Recently I had a problem in our Rails application. I defined `Resource` model `ResourcesController` and as usual it's routes but there was surprise when I opened page which contained this helper: `link_to 'Resource', resource_path(@resource)`. This code caused exception `SystemStackError - stack level too deep`. Rather strange situation, isn't it? Going through sources of Rails I didn't find any collisions there but finally with `Method#source_location` help I found the source of this method definition (it's [inherited_resources](https://github.com/josevalim/inherited_resources) gem which we use) and as a result I [patched this gem](https://github.com/josevalim/inherited_resources/pull/318). I would say that patch is good but at least it looks logical.
+Recently, I had a problem in our Rails application. I defined a `Resource` model, `ResourcesController` and, as usual, its routes. But there was a surprise when I opened a page containing this helper: `link_to 'Resource', resource_path(@resource)`. This code caused the exception `SystemStackError - stack level too deep`. Rather strange, isn't it? Going through the Rails source, I didn't find any collisions there, but finally, with the help of `Method#source_location`, I found the source of this method definition (it's the [inherited_resources](https://github.com/josevalim/inherited_resources) gem we use). As a result, I [patched this gem](https://github.com/josevalim/inherited_resources/pull/318). I would say the patch is good, but at least it looks logical.
 
 ## Conclusion
 
-No doubt that `Method#source_location` method is very helpful. But sometimes it can be useless whatever. So the conclusion here is avoid using `#method_missing` (there are many reasons to avoid it and this is one of the all cases).
+No doubt, the `Method#source_location` method is very helpful. But sometimes it can be useless. So the conclusion here is to avoid using `#method_missing` (there are many reasons to avoid it, and this is one of them).

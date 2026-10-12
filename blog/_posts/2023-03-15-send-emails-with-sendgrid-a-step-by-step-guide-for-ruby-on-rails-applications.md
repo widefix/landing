@@ -21,10 +21,10 @@ It's recommended to have [completed the Domain Authentication process](https://d
 
 When using SendGrid to send emails from your Ruby on Rails application, it's essential to [verify the email address from which the emails will be sent](https://docs.sendgrid.com/ui/sending-email/sender-verification){:ref="nofollow" target="_blank"}. This verification process involves adding the email address to your SendGrid account and proving that you have access to it. Failure to verify the email address can result in errors when attempting to send emails, such as authentication failures or email delivery issues. Therefore, it's crucial to verify any email addresses you plan to use for sending emails to ensure reliable and error-free email delivery.
 
-After these steps completed, you should have:
-1. The API key (a long abrakadabra string) like this: `SG.ve9OolaiLeenoh0iatoon0.hei8geiz1Shoorohtai6choopah8cahjae9vako8uBa`
-1. Verified domain, let it be `mydomain.com`
-1. Verified sender email address, let it be `hello@mydomain.com`
+After completing these steps, you should have:
+1. An API key (a long abracadabra string) like this: `SG.ve9OolaiLeenoh0iatoon0.hei8geiz1Shoorohtai6choopah8cahjae9vako8uBa`
+1. A verified domain, say `mydomain.com`
+1. A verified sender email address, say `hello@mydomain.com`
 
 ### Configure server
 
@@ -47,7 +47,7 @@ Here is an example of how to do that using the Heroku command line:
 heroku config:set SMTP_DEFAULT_FROM="Hello <hello@mydomain.com>" SMTP_DOMAIN=mydomain.com SMTP_LOGIN=apikey SMTP_PASSWORD=SG.ve9OolaiLeenoh0iatoon0.hei8geiz1Shoorohtai6choopah8cahjae9vako8uBa SMTP_PORT=587
 ```
 
-### Configure Ruby On Rails
+### Configure Ruby on Rails
 
 Emails are typically sent from a production server. Therefore, you need to add the necessary configuration to the `config/environments/production.rb` file as follows:
 
@@ -70,13 +70,13 @@ If you need to send emails from development or staging mode, add these lines to 
 
 ### Testing
 
-That's all the steps needed to get it done. But before moving on to your next task, let's make sure everything is working correctly. Open the Rails console and define a variable with the email address you want to send a verification email to (for this example, we'll use `my@example.com`; replace it with your own):
+Those are all the steps needed to get it done. But before moving on to your next task, let's make sure everything is working correctly. Open the Rails console and define a variable with the email address you want to send a verification email to (for this example, we'll use `my@example.com`; replace it with your own):
 
 ```ruby
 to_email = 'my@example.com'
 ```
 
-And then paste there the following code snippet:
+And then paste the following code snippet:
 
 ```ruby
 mailer = ActionMailer::Base.new

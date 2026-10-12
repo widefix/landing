@@ -21,7 +21,7 @@ Although it is possible to recover the original state of the branch before the s
 
 To improve the situation around that, we created [squash-tree](https://github.com/widefix/squash-tree). It's a Git extension that preserves squash history alongside the native history of Git, so that you can inspect it and recover original commits when you need to. If you are a fan of git squashing and face the need for the recovery of the original commits, that might be a very helpful tool for you.
 
-This post is an overview of this tool on installation, usage, and main scenarios.
+This post is an overview of this tool, covering installation, usage, and main scenarios.
 
 ## The Problem
 
@@ -80,7 +80,7 @@ fixup def5678 Fix typo
 fixup ghi9012 Address review
 ```
 
-Keep `pick` on the first commit and change the rest to `squash` or `fixup`, save and close. With hooks installed, the metadata is recorded automatically. Then run `git squash-tree HEAD` and you'll see:
+Keep `pick` on the first commit and change the rest to `squash` or `fixup`, then save and close. With hooks installed, the metadata is recorded automatically. Then run `git squash-tree HEAD` and you'll see:
 
 ```
 xyz7890 [SQUASH]  Add login feature (squashed)

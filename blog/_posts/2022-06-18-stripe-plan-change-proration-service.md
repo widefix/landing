@@ -2,7 +2,7 @@
 layout: post
 title: "Stripe plan change proration service"
 modified: 2022-06-18 00:41:06 +0300
-description: "A practical example of a ruby service object that calculates Stripe plan change proration."
+description: "A practical example of a Ruby service object that calculates Stripe plan change proration."
 tags: [stripe, ruby]
 keywords: "how to turn off prorate on stripe, stripe prorate, stripe prorate subscription, stripe subscription prorate, prorate stripe"
 comments: true
@@ -10,27 +10,27 @@ share: true
 image: proration.jpg
 ---
 
-In this post you will see how to to turn off prorate on Stripe.
+In this post you will see how to turn off proration on Stripe.
 
-[Stripe](https://stripe.com/) is a popular payment system. And very mature one. This service has
-a lot of built-in functionality that all contemporary businesses needs online.
-One example of these functionalities is subscriptions along with plans. When a subscription plan gets
-changed in the middle of the billing cycle, we might want to charge the client with the new plan amount
-only for the rest part of the current billing cycle and return the not used amount of the current billing cycle.
-So the price of subscription is fair and calculated daily.
+[Stripe](https://stripe.com/) is a popular payment system. And a very mature one. This service has
+a lot of built-in functionality that all contemporary businesses need online.
+One example of these features is subscriptions along with plans. When a subscription plan gets
+changed in the middle of the billing cycle, we might want to charge the client the new plan amount
+only for the remaining part of the current billing cycle and return the unused amount of the current billing cycle.
+So the price of the subscription is fair and calculated daily.
 
-For example, current plan costs 10$. Assuming the client has already paid it.
-The new plan costs 20$. The client switches plan in the middle of the billing cycle.
-The new plan daily amount for the remaining time of the current billing cycle is 1/2 of 20$, it's 10$.
-As it's a plan upgrade and thew new plan costs more, we could just charge them with these 10$.
-But wait, there is not used daily amount of the current plan that's 1/2 of 10$, it's 5$. In other words,
+For example, the current plan costs $10. Assume the client has already paid for it.
+The new plan costs $20. The client switches plans in the middle of the billing cycle.
+The new plan daily amount for the remaining time of the current billing cycle is 1/2 of $20: $10.
+As it's a plan upgrade and the new plan costs more, we could just charge them this $10.
+But wait, there is an unused daily amount from the current plan that's 1/2 of $10: $5. In other words,
 the client has already paid some money for the remaining time of the current billing cycle.
 So, we deduct that money from the charge.
-As the result, in this example, we need to charge the client only 5$.
-It's calculated as 10$ (new plan remaining time of the current billing cycle) - 5$ (already paid money for that period).
-This process of plan change calculations is called prorations.
+As a result, in this example, we need to charge the client only $5.
+It's calculated as $10 (the new plan for the remaining time of the current billing cycle) - $5 (money already paid for that period).
+This process of plan change calculations is called proration.
 
-Graphically it can be explained as follow:
+Graphically it can be explained as follows:
 
 ![Plan change proration](/blog/images/plan-change.png)
 
@@ -40,7 +40,7 @@ written in Ruby from scratch that calculates prorations. It also demonstrates a 
 
 ### Prorations
 
-Use Ruby programming language with some tricks we come up with the following class:
+Using the Ruby programming language with some tricks, we come up with the following class:
 
 ```ruby
 class PlanChangeProration
@@ -136,6 +136,6 @@ service.total # also 5$, but this is the charge amount
 [memoist](https://github.com/matthewrudy/memoist) and [dry-initializer](https://dry-rb.org/gems/dry-initializer/3.0/)
 made this service clean and readable.
 
-At WideFix, we specialize in connecting Rails applications to Stripe payment systems and maintaining them for optimal performance. Our team of experts have extensive experience in integrating Stripe into Rails apps, and we will work closely with you to ensure a seamless integration. We understand the importance of having a reliable and secure payment system for your business, and we are committed to providing the highest level of support and maintenance to ensure that your Stripe integration runs smoothly. Trust us to handle all of your Stripe integration and maintenance needs, so you can focus on growing your business.
+At WideFix, we specialize in connecting Rails applications to Stripe payment systems and maintaining them for optimal performance. Our team of experts has extensive experience in integrating Stripe into Rails apps, and we will work closely with you to ensure a seamless integration. We understand the importance of having a reliable and secure payment system for your business, and we are committed to providing the highest level of support and maintenance to ensure that your Stripe integration runs smoothly. Trust us to handle all of your Stripe integration and maintenance needs, so you can focus on growing your business.
 
 Find out more about the services we offer on our official page at [WideFix.com](https://widefix.com/).

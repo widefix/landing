@@ -11,7 +11,7 @@ image: fake-time-now.png
 
 TL;DR: see this [gist](https://gist.github.com/ka8725/95c21119b8fd4883925132ac0514f966){:ref="nofollow" target="_blank"}.
 
-As a Ruby on Rails expert, you may find yourself wondering how to debug a Rails application in production. In some cases, you may need to mimic the current time to check a time-dependent function result.
+As a Ruby on Rails expert, you may find yourself wondering how to debug a Rails application in production. In some cases, you may need to mimic the current time to check a time-dependent function’s result.
 
 While there are third-party gems that offer the ability to fake `Time.now` functionality, Rails has this built-in functionality as part of the `ActiveSupport::Testing::TimeHelpers` module. However, this module is only intended for use in testing and not in production environments.
 
@@ -22,7 +22,7 @@ Time.now          # => Tue, 07 Feb 2023 14:01:33 UTC +00:00
 Date.current      # => Tue, 07 Feb 2023
 ```
 
-Check in production console:
+Check in the production console:
 
 ```ruby
 travel 1.day.ago
@@ -30,7 +30,7 @@ travel 1.day.ago
 #    NoMethodError (undefined method `travel' for main:Object)
 ```
 
-If you want to use the `travel` or `freeze_time` method in production, you can load the module source code and include it into the console runtime:
+If you want to use the `travel` or `freeze_time` method in production, you can load the module source code and include it in the console runtime:
 
 ```ruby
 mod = "https://raw.githubusercontent.com/rails/rails/2a2a6ab6219b12e9e77931a60fe83c658db44ac7/activesupport/lib/active_support/testing/time_helpers.rb"

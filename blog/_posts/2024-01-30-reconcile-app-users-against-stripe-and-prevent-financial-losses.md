@@ -30,7 +30,7 @@ While we used Ruby for scripting, this solution is universal and can be applied 
 
 Our plan is the following:
 
-1. Fetch all relevant data from Stripe via Stripe REST API. In our case that included all customer entities and their subscriptions.
+1. Fetch all relevant data from Stripe via the Stripe REST API. In our case, that included all customer entities and their subscriptions.
 2. Put the fetched data into our database. To avoid polluting the main database schema, use a separate namespace for these tables. In fact, PostgreSQL refers to this namespace concept as `schema`. The default schema is `public`. We create the `stripe` schema and necessary tables inside it.
 3. Analyze the discrepancies using SQL queries. SQL is not only faster and less prone to bugs for this kind of task in terms of data processing but also in development. This means we will obtain results faster with fewer expenses for the business.
 4. Configure Metabase for these reports. Metabase is the system we use to write SQL and build reports. Set up notifications for data discrepancies so that we receive alerts about new cases and can react to them as soon as possible. Luckily, it was already set up for this project. The good news is that its setup takes very little time.
@@ -89,9 +89,9 @@ class StripeSubscription < StripeSchema
 end
 ```
 
-We have a special folder in the app, `app/scripts`, where we put this kind of ad-hoc code. Later, we use Rails runner to execute them on the production server against the real data. They can also be run locally for testing purposes during script development. This script code was put into `app/scripts/stripe_classes.rb` file.
+We have a special folder in the app, `app/scripts`, where we put this kind of ad-hoc code. Later, we use Rails runner to execute them on the production server against the real data. They can also be run locally for testing purposes during script development. This script code was put into the `app/scripts/stripe_classes.rb` file.
 
-## The Stripe data scrapper
+## The Stripe data scraper
 
 And this is the script we've come up with:
 
@@ -134,7 +134,7 @@ end
 
 This script fetches all Stripe customers along with their subscriptions. Later, using this data, we can compare it against our app's database and identify any deviations.
 
-We run this script on the server with the [rails runner](https://guides.rubyonrails.org/command_line.html#bin-rails-runner). Its run can take a while. Not to get the process killed with a closed SSH connection to the server, we use [screen](https://www.gnu.org/software/screen/) utility. At least for the first time, we have to run it manually and monitor for any failures. If there are any issues, we fix them. This way, we verify that the script is valid and reliable. Later, we can automate it to run on a schedule. We've collected data on 85k customers and 8.5k subscriptions, and it took around 1 hour. Not bad for this amount of data.
+We run this script on the server with the [rails runner](https://guides.rubyonrails.org/command_line.html#bin-rails-runner). Its run can take a while. To prevent the process from being killed when the SSH connection to the server closes, we use the [screen](https://www.gnu.org/software/screen/) utility. At least for the first time, we have to run it manually and monitor for any failures. If there are any issues, we fix them. This way, we verify that the script is valid and reliable. Later, we can automate it to run on a schedule. We've collected data on 85k customers and 8.5k subscriptions, and it took around 1 hour. Not bad for this amount of data.
 
 ![Collected data from Stripe](/blog/images/data-stripe.jpg)
 
@@ -216,11 +216,11 @@ We chose that time as the servers are less loaded during those hours.
 
 ## Analyze Stripe data discrepancies with SQL
 
-We are all set. With the data in place, we can use SQL to identify all deviations. This will involve using common table expression (CTE), views, joins, filters, and aggregation functions.
+We are all set. With the data in place, we can use SQL to identify all deviations. This will involve using common table expressions (CTEs), views, joins, filters, and aggregation functions.
 
 Note that the script fetches the Stripe data once a week, and it takes around 1 hour to run. Consequently, the app data will always be ahead of the Stripe data. This is crucial to understand because we cannot join the current app data against the cached Stripe data due to this time lag. Therefore, we need the app data snapshot at the moment the script was run.
 
-Creating a real data snapshot is an option, but it would significantly complicate our architectural story. Fortunately, we have Papertrail configured in the app, a gem that stores all changes to users. This means we can reinstall actual data at the moment the script fetched Stripe data was run. The only field of interest for us is `plan_id`. Therefore, we reinstall only this field. To reuse the reinstalled data, we utilize views. These are kind of virtual tables inside SQL but don't store the collected data:
+Creating a real data snapshot is an option, but it would significantly complicate our architectural story. Fortunately, we have Papertrail configured in the app, a gem that stores all changes to users. This means we can reconstruct the actual data at the moment the script that fetched Stripe data was run. The only field of interest for us is `plan_id`. Therefore, we reconstruct only this field. To reuse the reconstructed data, we utilize views. These are a kind of virtual table inside SQL but don't store the collected data:
 
 ```sql
 create view stripe.users_with_actual_plan as (
@@ -307,19 +307,19 @@ Further data analysis shows that 514 of these 983 discrepancies are related to d
 
 ## Fixing the data deviations between the app and Stripe
 
-All actions related to fixing data require a thorough understanding of the app at a good level. We can either examine the instances of discrepancies one by one, allowing us to understand what happened to each of them. When we analyze each instance of discrepancy, we check the app database, logs, Papertrail records, Stripe logs, Rollbar, and any other data sources that could help us determine what happened to a certain user.
+All actions related to fixing data require a thorough understanding of the app at a good level. We can examine the instances of discrepancies one by one, allowing us to understand what happened to each of them. When we analyze each instance of discrepancy, we check the app database, logs, Papertrail records, Stripe logs, Rollbar, and any other data sources that could help us determine what happened to a certain user.
 
 By simply looking into the app database, we noticed those 514 softly deleted users. This can be easily done by examining the `deleted_at` column in the report. Any Excel-like tool can allow us to filter this information, or we can accomplish this in Metabase.
 
 ![Filter by non-null deleted_at column in Metabase](/blog/images/metabase-filters.png)
 
-We can move these users to free plan right away by writing a Ruby script that was successfully done.
+We can move these users to the free plan right away by writing a Ruby script, which we successfully did.
 
-Now, there are only 469 records with data discrepancies remaining. We go through some of them. That shows that all of them indeed had data discrepancies. Delving into the codebase with some hypotheses about what happened, we spot a serious breach inside the app. Each Stripe webhook has its own handler with specific code manipulating the user subscription data. All processed by Sidekiq. But Sidekiq doesn't guarantee the order of incoming webhook processing.
+Now, there are only 469 records with data discrepancies remaining. We go through some of them. That shows that all of them indeed had data discrepancies. Delving into the codebase with some hypotheses about what happened, we spot a serious breach inside the app. Each Stripe webhook has its own handler with specific code manipulating the user subscription data. All are processed by Sidekiq. But Sidekiq doesn't guarantee the order of incoming webhook processing.
 
 At this point, we decide to address this issue by making slight adjustments to the architecture. From now on, all webhooks will be processed by one handler that consistently checks the actual Stripe subscription state before changing the user's plan within the app. Hence, the multiple webhooks that used to process subscription-related actions will now utilize only one blocking handler, ensuring it cannot run in parallel for several requests for one user.
 
-This is the simplicied version of the code we used to fix the bug:
+This is the simplified version of the code we used to fix the bug:
 
 ```ruby
 def sync_app_subscription
@@ -341,9 +341,9 @@ end
 
 After fixing the bug, we transferred all users who had not used the app in the last 90 days to the free plan. There were 391 such accounts. The remaining users got moved to the paid subscription. In the end, the result looked like that:
 - 30 users got moved to the free plan;
-- For the rest 48, we tried to reactivate the subscription. 19 of which got successfully reactivated. 5 of them, could not have created the subscription due to a missing payment method. 24 of them created subscriptions but with the payment failing, they will be moved to the free plan after 3 failed attempts, or remain active if paid.
+- For the remaining 48 users, we tried to reactivate their subscriptions. 19 were successfully reactivated. 5 could not create a subscription due to a missing payment method. 24 created subscriptions, but their payments failed; they will be moved to the free plan after 3 failed attempts or remain active if they pay.
 
-That resulted in roughly a $525 immediate increase in Monthly Recurring Revenue (MRR) and 600$ in potential MRR increase if all the users with failed payments will be reactivated.
+That resulted in roughly a $525 immediate increase in Monthly Recurring Revenue (MRR) and $600 in potential MRR increase if all the users with failed payments are reactivated.
 
 ## Preventing future discrepancies
 

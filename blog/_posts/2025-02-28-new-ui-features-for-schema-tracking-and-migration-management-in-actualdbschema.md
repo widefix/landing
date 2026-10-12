@@ -21,7 +21,7 @@ Hello, Rails developers! We're thrilled to announce the release of ActualDbSche
 
 Ever wanted to inspect your schema and trace which migration introduced a specific change directly from the browser? Now you can!
 
-Navigate to the migrations page (`http://localhost:3000/rails/migrations`) and click the **`View Schema`** button to see the schema diff rendered in the UI, annotated with the migrations that created each change. In case there is no pending changes, the UI shows the entire schema.
+Navigate to the migrations page (`http://localhost:3000/rails/migrations`) and click the **`View Schema`** button to see the schema diff rendered in the UI, annotated with the migrations that created each change. If there are no pending changes, the UI shows the entire schema.
 
 **Key Features:**
 
@@ -87,7 +87,7 @@ Tired of scrolling through hundreds of migrations? We've added a search bar to
 
 By default, ActualDbSchema stores migration records in `tmp/migrated`. Now you can customize this path to match your project structure:
 
-1️⃣ **Using Environment Variable**
+1️⃣ **Using an Environment Variable**
 
 Set the environment variable `ACTUAL_DB_SCHEMA_MIGRATED_FOLDER` to your desired folder path:
 
@@ -95,7 +95,7 @@ Set the environment variable `ACTUAL_DB_SCHEMA_MIGRATED_FOLDER` to your desire
 export ACTUAL_DB_SCHEMA_MIGRATED_FOLDER="custom/migrated"
 ```
 
-2️⃣ **Using Initializer**
+2️⃣ **Using an Initializer**
 
 Add the following line to your initializer file (`config/initializers/actual_db_schema.rb`):
 

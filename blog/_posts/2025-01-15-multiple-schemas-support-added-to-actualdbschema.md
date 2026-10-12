@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Multiple schemas support added to ActualDbSchema"
-headline: "Multiple schemas support added to ActualDbSchema"
+title: "Support for multiple schemas added to ActualDbSchema"
+headline: "Support for multiple schemas added to ActualDbSchema"
 modified: 2025-01-15 19:21:16 +0100
 description: "Some description goes here."
 tags: [actual_db_schema, rails, rails-development, migrations]
@@ -26,7 +26,7 @@ rake actual_db_schema:install
 
 To make the gem configuration more flexible and reliable, we have introduced a DSL.
 
-Use the following DSL to configure the gem. This will also be generated as a content of `config/initializers/actual_db_schema.rb` by the init command above.
+Use the following DSL to configure the gem. This will also be generated as the content of `config/initializers/actual_db_schema.rb` by the init command above.
 
 ```ruby
 ActualDbSchema.configure do |config|
@@ -63,7 +63,7 @@ end
 
 The [Rubygems.org](https://rubygems.org/gems/actual_db_schema) page now correctly displays the changelog link, which was previously broken.
 
-## Run the git hook on switch branch only
+## Run the git hook only when switching branches
 
 The gem now runs the git hook only when switching branches, ensuring that the rollback process is triggered only when necessary.
 

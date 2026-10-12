@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Deploy Ruby On Rails 3 application to free hosting"
-description: "This is article from series of Ruby On Rails guides. Here you can find information how to deploy Rails 3 application to free rails hosting. There is a beautiful free reseller hosting which provides deploy ruby applications."
+title: "Deploy a Ruby on Rails 3 application to free hosting"
+description: "An article from a series of Ruby on Rails guides. Learn how to deploy a Rails 3 application to free Rails hosting that supports Ruby applications."
 tags: [hosting, rails]
 share: true
 comments: true
@@ -10,60 +10,60 @@ redirect_from:
 ---
 
 
-Since Ruby On Rails 3 released I had a problems with deploy configuring like assets precompile. Of course if you deploy application to powerful **host** you won't have any problems and deployment to such **host** will be standart and simple. But if you have server with not much RAM (less 1 Gb) you will have to waiting long time till assets precompiled. So, here I will tell how to avoid precompiling assets on the server and decrease time for deployment.
+Since Ruby on Rails 3 was released, I have had problems with deployment configuration, such as asset precompilation. Of course, if you deploy an application to a powerful **host**, you won't have any problems, and deployment to such a **host** will be standard and simple. But if you have a server with little RAM (less than 1 GB), you will have to wait a long time for assets to be precompiled. So here I will explain how to avoid precompiling assets on the server and decrease deployment time.
 
 ## 1. Free hosting
 
-If you haven't already known **free ruby hosting** I would recomend you to use [heroku](http://heroku.com). It's a beatiful **freehosting** which provides deploy **Rack/Ruby On Rails** applications.
+If you don't already know about **free Ruby hosting**, I would recommend [heroku](http://heroku.com). It's a beautiful **free hosting** service that lets you deploy **Rack/Ruby on Rails** applications.
 {% picture /images/heroku.jpg alt="Free ruby hosting" %}
-I won't describe how it works here because you can find a lot of information about it on the oficial site.
+I won't describe how it works here because you can find a lot of information about it on the official site.
 
-I have been use **free account** for a months for my blog which you are reading now and I won't have any issues with server fails, long loading or like that. Sometimes it was about 1000 visitors per hour and everything has done. So I think it will be enough **free account** for your starting services or staging/qa environments. If you haven't enough memory you can buy [web dyno](http://devcenter.heroku.com/articles/dynos) for 36$ per month. Also you are able to install [add-ons](https://addons.heroku.com/) - it's a wonderful **heroku**'s feature which saves your time with installing and configuring additional applications required for your application such as:
+I have been using a **free account** for months for the blog you are reading now, and I haven't had any issues with server failures, long loading times or anything like that. Sometimes there were about 1000 visitors per hour, and everything worked. So I think a **free account** will be enough for your new services or staging/QA environments. If you don't have enough memory, you can buy a [web dyno](http://devcenter.heroku.com/articles/dynos) for $36 per month. You can also install [add-ons](https://addons.heroku.com/) — a wonderful **heroku** feature that saves you time installing and configuring additional services required by your application, such as:
 
 * **Free email services**
 * **Scheduling**
 * **Databases**
 * **Search engines**
-* and etc.
+* and so on.
 
 NOTE: there are restrictions for every add-on.
 
-I hope you have already signed up here and ready to the next step.
+I hope you have already signed up and are ready for the next step.
 
 ## 2. Assets bucket
-There are many variants to precompile assets and connect them with **Rails 3** application:
+There are several ways to precompile assets and connect them to a **Rails 3** application:
 
-1. You can precompile assets on your local machine and make commit. But I think it is bad idea because you will have fat commits if any js/css change
-2. Precompiling assets during deploy on the server. Requires instance with at least 1 Gb memory and access to write files in assets directory
-3. Include assets directory in ignore for your VCS (Version Control Systems), precompile assets upload assets to the **assets bucket**. **Assets bucket** it's a server which allow to save static data and get it through public url
+1. You can precompile assets on your local machine and make a commit. But I think it is a bad idea because you will have large commits whenever any JS/CSS changes.
+2. Precompile assets during deployment on the server. This requires an instance with at least 1 GB of memory and write access to the assets directory.
+3. Add the assets directory to the ignore list for your VCS (Version Control System), precompile the assets and upload them to an **assets bucket**. An **assets bucket** is a server that lets you store static data and retrieve it through a public URL.
 
-I prefer 3rd variant because **heroku** doesn't allow to save any files on the instance. Also 1 **free web dyno** has only 512 MB memory. To save assets in the bucket we should choose server with API for our issue. There are a lot of services in the internet: AWS S3, Dropbox, Rackspace Cloud Files and etc. It will be simple to use Dropbox for our problem: you have precompiled assets, you just copy them to Dropbox public folder, say to your application where it should look for assets and that's it! But I prefer use S3 because I calculated that it will be cheaper for me in the feature.
+I prefer the 3rd option because **heroku** doesn't allow you to save files on the instance. Also, 1 **free web dyno** has only 512 MB of memory. To save assets in the bucket, we should choose a server with an API for our needs. There are a lot of services on the internet: AWS S3, Dropbox, Rackspace Cloud Files and so on. It would be simple to use Dropbox for our problem: once you have precompiled assets, just copy them to the Dropbox public folder, tell your application where to look for assets, and that's it! But I prefer to use S3 because I calculated that it will be cheaper for me in the future.
 
 ## 3. Amazon S3
 
-* Go to [AWS](http://aws.amazon.com/) and sign up there. Credit card with positive balanse is required
-* Go to [AWS console](https://console.aws.amazon.com/s3/home?#), choose S3 tab and create bucket
+* Go to [AWS](http://aws.amazon.com/) and sign up there. A credit card with a positive balance is required.
+* Go to the [AWS console](https://console.aws.amazon.com/s3/home?#), choose the S3 tab and create a bucket.
 
 {% picture /images/aws_s3_console.jpg alt="S3 bucket" %}
 
-NOTE: there are variants of regions where to store bucket. So choose nearest for your feature visitors to have better response from server
+NOTE: There are several regions where you can store your bucket. Choose the nearest one to your future visitors for a better server response time.
 
 * Go to **CloudFront** tab and create distribution for your bucket
 
 {% picture /images/aws_s3_console-2.jpg alt="CloudFront distribution" %}
 
-Please, wait for status changed to Deployed and State to Enabled. It will take a few minutes (usual it is 5-10 minutes)
+Please wait for the status to change to Deployed and the state to Enabled. It will take a few minutes (usually 5–10 minutes).
 
 ## 4. Deployment
 
-To upload assets in the bucket I use gem **jammit-s3**. It is simple to configure and to use.
+To upload assets to the bucket, I use the **jammit-s3** gem. It is simple to configure and use.
 
-* Add it your gem file this line: **gem 'jammit-s3', :group => :development**
-* Install new gem by typing command **bundle** in terminal
-* Go to [AWS security credentials](https://aws-portal.amazon.com/gp/aws/securityCredentials) page and get there **Access Key Id** and **Secret Access Key** and create shell variables AWS_KEY and AWS_SECRET (steps 4-5)
+* Add this line to your Gemfile: **gem 'jammit-s3', :group => :development**
+* Install the new gem by typing the command **bundle** in the terminal.
+* Go to the [AWS security credentials](https://aws-portal.amazon.com/gp/aws/securityCredentials) page, get your **Access Key Id** and **Secret Access Key**, and create the shell variables AWS_KEY and AWS_SECRET (steps 4–5).
 * **export AWS_KEY=YOUR_ACEESS_KEY_ID **
 * **export AWS_SECRET=YOUR_SECRET_ACCESS_KEY**
-* Create file **config/assets.yml** with content:
+* Create the file **config/assets.yml** with this content:
 
 {% highlight ruby %}
 s3_bucket: YOUR_BUCKET_HERE
@@ -103,14 +103,14 @@ MyApplication::Application.configure do
 end
 {% endhighlight %}
 
-> Pay attention on **config.action_controller.asset_host**, it should be your bucket url!
+> Pay attention to **config.action_controller.asset_host**: it should be your bucket URL!
 
 * Add **public/assets** to **.gitignore**:
 
 	/public/assets
 
-In production mode file *manifest.yml* is required. It generates to the */public/assets* folder when assets are precompiling.
-I see the nice solution in changing path for *manifest.yml* file. Go to the **config/environments/production.rb** and edit it like this way:
+In production mode, the *manifest.yml* file is required. It is generated in the */public/assets* folder when assets are precompiled.
+I see a nice solution in changing the path for the *manifest.yml* file. Go to **config/environments/production.rb** and edit it like this:
 
 {% highlight ruby %}
 # ...
@@ -119,31 +119,31 @@ config.assets.manifest = 'public/manifest'
 # ...
 {% endhighlight %}
 
-We have ready to **deploy** application. Let's precompile assets:
+We are ready to **deploy** the application. Let's precompile the assets:
 
 {% highlight ruby %}
 RAILS_ENV=production rake assets:precompile --trace
 {% endhighlight %}
 
-Upload assets to S3 is very simple:
+Uploading assets to S3 is very simple:
 
 {% highlight ruby %}
 bundle exec jammit-s3
 {% endhighlight %}
 
-Create **heroku application**:
+Create a **heroku application**:
 
 	heroku create
 
-Make commit, and push it to the heroku:
+Make a commit and push it to heroku:
 
 	git commit -am 'assets precompiled'
 	git push heroku master
 
 
-Default DB for heroku application is *postgresql*. If you would like to change it install preferred for you add-on.
+The default DB for a heroku application is *postgresql*. If you would like to change it, install your preferred add-on.
 
-Of course you should run migrations if your application has it:
+Of course, you should run migrations if your application has any:
 
 	heroku run rake db:migrate
 	heroku run rake db:seed # if you have required seeds

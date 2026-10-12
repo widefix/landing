@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Build associations automatically in fields_for helper"
-description: "Check out my gem. It is extension for fields_for helper which allows to avoid boring code foe creating associated object belongs_to and has_one association."
+description: "Check out my gem. It is an extension for the fields_for helper that lets you avoid boring code for creating associated objects in belongs_to and has_one associations."
 tags: [rails, gem]
 share: true
 comments: true
@@ -18,7 +18,7 @@ form_for :company do |f|
     ff.text_field :name
 {% endhighlight %}
 
-With [get_or_build](https://github.com/ka8725/get_or_build) gem you are able to translate this code to code like this:
+With the [get_or_build](https://github.com/ka8725/get_or_build) gem, you can turn this code into the following:
 
 {% highlight ruby %}
 form_for :company do |f|
@@ -26,4 +26,4 @@ form_for :company do |f|
     ff.text_field :name
 {% endhighlight %}
 
-Hope you will enjoy this gem! Thank you for your attention!
+I hope you will enjoy this gem! Thank you for your attention!

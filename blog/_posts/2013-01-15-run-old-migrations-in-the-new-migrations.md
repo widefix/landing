@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Run old migrations in the new migrations"
-description: "This post describes steps of using old migrations in the new migrations which you have just created and need to write code which you have already wrote in the older migrations."
+title: "Run old migrations in new migrations"
+description: "This post describes how to use old migrations in new ones when you need code you have already written in earlier migrations."
 tags: [rails, active_record, migrations]
 share: true
 comments: true
@@ -10,14 +10,14 @@ redirect_from:
 ---
 
 
-Imagine you have to write new migration with a lot of code and this migration should have a lot of code, code which you have already wrote in older migration and this required code is exactly up/down/change part of those migration. Another words you would like to run migration part (up, down or change) in the new migration. Pay attention - you have to write or copy paste a lot of code You have 2 variants how to overcome this issue:
+Imagine you have to write a new migration with a lot of code that you have already written in an older migration. The required code is exactly the up/down/change part of that migration. In other words, you would like to run a migration part (up, down or change) in the new migration. Pay attention — you would have to write or copy and paste a lot of code. You have 2 ways to overcome this issue:
 
-1. The simplest and boring solution - it is copy and paste this code, or write it with scratch. This is not our case. Old code and new code will mix and you will have a huge amount of disgusting code - you won't able to detect which is new code and which is old
-2. Use oldest migration in DRY way. Just use those code as you use another class, for instance `User` model which you probably have
+1. The simplest and most boring solution is to copy and paste this code or write it from scratch. This is not our choice. Old code and new code will mix, and you will have a huge amount of disgusting code — you won't be able to tell which code is new and which is old.
+2. Use the older migration in a DRY way. Just use that code as you use another class, for instance the `User` model you probably have.
 
 ## Input data
 
-In one project I had to rollback my old migration which has a lot of code. Check out this code:
+In one project, I had to roll back my old migration, which had a lot of code. Check it out:
 
 > db/migrate/20121107173946_add_search_content_to_products.rb
 
@@ -111,12 +111,12 @@ end
 
 {% endhighlight %}
 
-As I have already said I would like to rollback it in my new migration on up.
-Write new migration and paste there this code is not right solution. I think you are agreed with me.
+As I have already said, I would like to roll it back in the up part of my new migration.
+Writing a new migration and pasting this code there is not the right solution. I think you agree with me.
 
 ## Solution
 
-I think the best solution will be to include this migration in my new migration then use this migration class as usual code (yes - migration is a class too and we are able to do it). So the final code below:
+I think the best solution is to include this migration in my new one, then use its class as usual code (yes — a migration is a class too, and we can do this). So here is the final code:
 
 {% highlight ruby %}
 require File.join(Rails.root, 'db/migrate/20121107173946_add_search_content_to_products.rb') # (1)
@@ -193,11 +193,11 @@ class ChangeSearchFunctions < ActiveRecord::Migration
 end
 {% endhighlight %}
 
-See the first line (1): `require File.join(Rails.root, 'db/migrate/20121107173946_add_search_content_to_products.rb')`. With this line I include migration file and after this we are able to use old migration's class. On the fifth line (2) we I just use it: `AddSearchContentToProducts.new.down` to rollback old migration. On down I have to up this migration, see mark (3): `AddSearchContentToProducts.new.up`.
+See the first line (1): `require File.join(Rails.root, 'db/migrate/20121107173946_add_search_content_to_products.rb')`. With this line, I include the migration file, and after this we can use the old migration's class. On the fifth line (2), I use it: `AddSearchContentToProducts.new.down` to roll back the old migration. In down, I have to run that migration's up method; see mark (3): `AddSearchContentToProducts.new.up`.
 
-In this example I had to rewrite stored procedure for postgresql database and I've got clean and DRY solution as you can see. Imagine how many code I would have if I just pasted all entire migration in the new! I hope you will find this article useful and if you have issues like I had you won't have problems now to solve them.
+In this example, I had to rewrite a stored procedure for a PostgreSQL database, and I've got a clean, DRY solution, as you can see. Imagine how much code I would have if I pasted the entire migration into the new one! I hope you will find this article useful, and if you have issues like mine, you won't have problems solving them now.
 
-UPDATE 26.06.2013: In Rails 4 new method is appeared which allows to revert all migrations. Check it out:
+UPDATE 26.06.2013: In Rails 4, a new method appeared that allows you to revert all migrations. Check it out:
 
 ```ruby
 require_relative '2012121212_example_migration'

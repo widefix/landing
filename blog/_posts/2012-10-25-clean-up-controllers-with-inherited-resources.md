@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Clean up your controllers with inherited resources"
-description: "This posts describes how to use one of the best rails tools - inherited_resources gem. You will find out how to use it in rails development and how it can help you to spend less time have less bugs in your code. I hope this technique will be useful for all rails developers"
+description: "This post describes how to use one of the best Rails tools: the inherited_resources gem. Learn how it can help you spend less time and have fewer bugs in your Rails code. I hope this technique will be useful for all Rails developers."
 tags: [rails, gem, rest, refactoring]
 share: true
 comments: true
@@ -10,16 +10,16 @@ redirect_from:
 ---
 
 
-If you haven't noticed yet that main rule in rails development says do not complicate logic in controller I recommend you to read these articles:
+If you haven't noticed yet that a main rule in Rails development is not to complicate controller logic, I recommend reading these articles:
 
 * [Skinny controller, fat model](http://weblog.jamisbuck.org/2006/10/18/skinny-controller-fat-model)
 * [Rails Model View Controller + Presenter?](http://blog.jayfields.com/2006/09/rails-model-view-controller-presenter.html)
 
-This post assumes that you've already known this truth and it's not necessary to clarify it for you. Also I assume that you know what is [REST](https://peepcode.com/products/rest-for-rails-2) and those idea that you should follow [RESTful](https://peepcode.com/products/rest-for-rails-2) rules. I will show you how to avoid writting boring repetitive code in controllers.
+This post assumes that you already know this truth, so it's not necessary to clarify it for you. I also assume that you know what [REST](https://peepcode.com/products/rest-for-rails-2) is and that you should follow [RESTful](https://peepcode.com/products/rest-for-rails-2) rules. I will show you how to avoid writing boring, repetitive code in controllers.
 
 ## Boring code
 
-Imagine you have controller:
+Imagine you have a controller:
 
 {% highlight ruby %}
 class ChannelsController < ApplicationController
@@ -62,7 +62,7 @@ class ChannelsController < ApplicationController
 end
 {% endhighlight %}
 
-This code is looking pretty nice. But it contains a lot of repetitive code such as: `current_user.channels.find(params[:id])`, `respond_with` and so on. Of cource you can write before filters to avoid this collision like this:
+This code looks pretty nice. But it contains a lot of repetitive code, such as `current_user.channels.find(params[:id])`, `respond_with` and so on. Of course, you can write before filters to avoid this repetition:
 
 {% highlight ruby %}
 class ChannelsController < ApplicationController
@@ -108,7 +108,7 @@ class ChannelsController < ApplicationController
 end
 {% endhighlight %}
 
-Looks beter, yes? But it's possible to write this functionality in 3 (!!!) lines at all. Check it out:
+Looks better, yes? But it's possible to write all this functionality in 3 (!!!) lines. Check it out:
 
 {% highlight ruby %}
 class ChannelsController < InheritedResources::Base
@@ -116,22 +116,22 @@ class ChannelsController < InheritedResources::Base
 end
 {% endhighlight %}
 
-So, there is no any boring code, it's really clean controller and you can fill confident that it doesn't contain any bug, your views work as before and you don't have to change there anything.
-If you are interested in it just insert this line in your *Gemfile*:
+So there is no boring code. It's a really clean controller, and you can feel confident that it doesn't contain any bugs, your views work as before, and you don't have to change anything there.
+If you are interested, just insert this line into your *Gemfile*:
 
     gem 'inherited_resources'
 
-and that's it. Pay attention that you have to inherit your controllers not from `ApplicationController` but from `InheritedResources::Base`.
+and that's it. Note that you have to inherit your controllers from `InheritedResources::Base`, not `ApplicationController`.
 
 ## Complicated logic
 
-May be you've paid attention that `ChannelsController` had private method:
+Maybe you've noticed that `ChannelsController` had a private method:
 
     def current_user
       @current_user ||= User.find(params[:user_id])
     end
 
-which gets current_user for each request, also this controller requires *:user_id* param. This controller listens to following routes:
+which gets current_user for each request. This controller also requires the *:user_id* parameter. It listens to the following routes:
 
            user_channels GET    /users/:user_id/channels(.:format)              channels#index
                          POST   /users/:user_id/channels(.:format)              channels#create
@@ -141,7 +141,7 @@ which gets current_user for each request, also this controller requires *:user_i
                          PUT    /users/:user_id/channels/:id(.:format)          channels#update
                          DELETE /users/:user_id/channels/:id(.:format)          channels#destroy
 
-But what if you don't want to pass :user_id to every call and all channels should be in current_user scope? Here `current_user` is a helper method in `ApplicationController` which holds signed in user. It's not problem for `inherited_resources` gem too:
+But what if you don't want to pass :user_id to every call, and all channels should be scoped to current_user? Here, `current_user` is a helper method in `ApplicationController` that holds the signed-in user. This isn't a problem for the `inherited_resources` gem either:
 
 {% highlight ruby %}
 class ChannelsController < InheritedResources::Base
@@ -153,7 +153,7 @@ class ChannelsController < InheritedResources::Base
 end
 {% endhighlight %}
 
-It will be enough to get working contoller for our demands. Now you can change your routes:
+This will be enough to get a working controller for our needs. Now you can change your routes:
 
            user_channels GET    /user/channels(.:format)              channels#index
                          POST   /user/channels(.:format)              channels#create
@@ -163,7 +163,7 @@ It will be enough to get working contoller for our demands. Now you can change y
                          PUT    /user/channels/:id(.:format)          channels#update
                          DELETE /user/channels/:id(.:format)          channels#destroy
 
-Let's complicate logic and rework our controller to listen to both variants of routes:
+Let's complicate the logic and rework our controller to listen to both sets of routes:
 
            user_channels GET    /user/channels(.:format)              channels#index
                          POST   /user/channels(.:format)              channels#create
@@ -180,7 +180,7 @@ Let's complicate logic and rework our controller to listen to both variants of r
                          PUT    /users/:user_id/channels/:id(.:format)          channels#update
                          DELETE /users/:user_id/channels/:id(.:format)          channels#destroy
 
-How to change our `ChannelController`? Very simple:
+How do we change our `ChannelController`? Very simply:
 
 {% highlight ruby %}
 class ChannelsController < InheritedResources::Base
@@ -192,12 +192,12 @@ class ChannelsController < InheritedResources::Base
 end
 {% endhighlight %}
 
-This way we have universal RESTful controller and we fit it in 6 lines of code instead of 100 or may be 200.
+This way, we have a universal RESTful controller in 6 lines of code instead of 100 or maybe 200.
 
 ## Resources
 
-Check out [InheritedResources gem](https://github.com/josevalim/inherited_resources) and read its README. I promise you will find there a lot of interesting information which I've omited in my post. Also README is not contained information for all possibilities, so I would recommend you to read sources.
+Check out the [InheritedResources gem](https://github.com/josevalim/inherited_resources) and read its README. I promise you will find a lot of interesting information there that I've omitted in my post. The README doesn't cover all the possibilities either, so I would recommend reading the source.
 
-I hope you don't blame me for your spent time. Thank you for your reading!
+I hope you don't blame me for the time you spent. Thank you for reading!
 
-PS. *InheritedResources* is  compatible with [cacan](https://github.com/ryanb/cancan/wiki/Inherited-Resources). You have to add one line code `load_and_authorize_resource` and your restrictions will work exactly how you want.
+PS. *InheritedResources* is compatible with [cancan](https://github.com/ryanb/cancan/wiki/Inherited-Resources). You have to add one line of code, `load_and_authorize_resource`, and your restrictions will work exactly as you want.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Cascading selects with AJAX in Rails"
-description: "This post describes technique which allows to populate select which relates to chosen value by other select. For example there 2 selects on the page: country and state, when I choose country the state's select should be populated with states of chosen country"
+description: "This post describes a technique for populating a select based on the chosen value in another select. For example, a page has country and state selects: when I choose a country, the state select should be populated with its states."
 tags: [coffeescript, rails, ajax]
 share: true
 comments: true
@@ -10,7 +10,7 @@ redirect_from:
 ---
 
 
-I bet you had an issue with dynamic populating of values for *select* which depends on a chosen value of other *select*. For example when I choose the country,  *select* of the state  should be populated by the states of the chosen country. There are many solutions of this problem. You could find them with Google but none of them  is suitable for me because of bugs or using the approach with caching. I have had this issue again and again and my googling was not successful. Eventually some time ago I invented jQuery library and approach with solves this problem and completely  suits me. This approach assumes that you don't use javascript frameworks like *Ember.js* or *Angular.js*.  In other case, my solution may be needless  in your application.
+I bet you have had an issue with dynamically populating a *select* that depends on the chosen value of another *select*. For example, when I choose a country, the state *select* should be populated with that country's states. There are many solutions to this problem. You can find them with Google, but none suited me because of bugs or approaches involving caching. I had this issue again and again, and my googling was unsuccessful. Eventually, some time ago, I created a jQuery library and an approach that solves this problem and completely suits me. This approach assumes that you don't use JavaScript frameworks like *Ember.js* or *Angular.js*. Otherwise, my solution may be unnecessary in your application.
 
 ## Problem
 
@@ -20,7 +20,7 @@ This image will clarify the problem without any words:
 
 ## Solution
 
-The first thing which I should pay attention to in my solution is a *jQuery* library:
+The first thing I should draw attention to in my solution is a *jQuery* library:
 
 > app/assets/javascripts/jquery-dynamic-selectable.coffee
 
@@ -60,14 +60,14 @@ class DynamicSelectable
       @urlTemplate.replace(/:.+_id/, id)
 {% endhighlight %}
 
-This peace of code extends jQuery with a *dynamicSelectable* function which you can call on *select* which should be listened to change and populate the dependent *select*. The listened *select* should has data attributes: *selectable-url* and *selectable-target*. Their names explain what they are for:
+This piece of code extends jQuery with a *dynamicSelectable* function that you can call on the *select* whose changes should trigger population of the dependent *select*. The watched *select* should have these data attributes: *selectable-url* and *selectable-target*. Their names explain what they are for:
 
-*selectable-url* - is an url pattern with the model id. For example: `/dynamic_select/:country_id/states`. In this case the pattern should be populated with the chosen country id (assuming that we add listener to country's select) and request will go to this url to get JSON data for populating related *select*.
+*selectable-url* is a URL pattern with the model ID. For example: `/dynamic_select/:country_id/states`. In this case, the pattern should be populated with the chosen country ID (assuming that we add a listener to the country select), and a request will go to this URL to get JSON data for populating the related *select*.
 
-*selectable-target* - is a css selector of *select* which should be populated with given JSON data from the server.
+*selectable-target* is a CSS selector for the *select* that should be populated with the JSON data received from the server.
 
 
-I call *dynamicSelectable* function for every *select* on the page which has both data attributes *selectable-url* and *selectable-target* simultaneously:
+I call the *dynamicSelectable* function for every *select* on the page that has both the *selectable-url* and *selectable-target* data attributes:
 
 > app/assets/javascripts/application.coffee
 
@@ -77,7 +77,7 @@ $ ->
   $('select[data-dynamic-selectable-url][data-dynamic-selectable-target]').dynamicSelectable()
 {% endhighlight %}
 
-To make our application workable we should have a controller which will be responsible for the route `/dynamic_select/:country_id/states`. Firstly have a look at how I generate route:
+To make our application work, we should have a controller responsible for the route `/dynamic_select/:country_id/states`. Firstly, have a look at how I generate the route:
 
 > config/routes.rb
 
@@ -106,7 +106,7 @@ module DynamicSelect
 end
 {% endhighlight %}
 
-And this is a template of *index action*:
+And this is a template for the *index action*:
 
 > app/views/dynamic_select/states/index.json.jbuilder
 
@@ -116,7 +116,7 @@ json.array!(@states) do |state|
 end
 {% endhighlight %}
 
-Returned JSON data from server should not include root elements:
+The JSON data returned from the server should not include root elements:
 
 > config/intializers/wrap_parameters.rb
 
@@ -127,7 +127,7 @@ ActiveSupport.on_load(:active_record) do
 end
 {% endhighlight %}
 
-And the last thing which I should focus on is a form:
+And the last thing I should focus on is the form:
 
 {% highlight ruby %}
 <div class="field">
@@ -149,4 +149,4 @@ And the last thing which I should focus on is a form:
 
 Check out the [code on github](https://github.com/widefix/dynamic-selectable-demo) and the live [demo here](http://afternoon-lake-2182.herokuapp.com/events/new).
 
-If you have any proposals concerning this solution or if you have spotted any typo, bug, inconsistency or lacks feel free to contact with me.
+If you have any suggestions concerning this solution, or if you have spotted a typo, bug, inconsistency or gap, feel free to contact me.

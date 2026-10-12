@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Rails 3 does not render partial for specific format - resolving issue"
-description: "There is a problem in Rails 3: if you would like to render for example html format for partial in ajax request you won't manage it in Rails 3. In this post I will describe how to avoid this problem"
+title: "Rails 3 does not render a partial for a specific format — resolving the issue"
+description: "There is a problem in Rails 3: if you want to render a partial in HTML format in an AJAX request, you won't be able to. In this post, I describe how to avoid this problem."
 tags: [rails3, render]
 share: true
 comments: true
@@ -12,30 +12,30 @@ redirect_from:
 
 ## Problem
 
-For example you make ajax request with json format to the server. And assume we have to render some partial in the controller or view and return it in json object. In the view you may have code like this:
+For example, you make an AJAX request to the server in JSON format. Assume we have to render a partial in the controller or view and return it in a JSON object. In the view, you may have code like this:
 
 + *Rails3 view*
 {% highlight ruby %}
 <%= {:form => render('form')}.to_json %>
 {% endhighlight %}
 
-In the Rails 2 you could pass format as option in reder function and it fixed problem:
+In Rails 2, you could pass the format as an option to the render function, and it fixed the problem:
 
 + *Rails2 view*
 {% highlight ruby %}
 <%= {:form => render(:partial => 'form', :format => :html)}.to_json %>
 {% endhighlight %}
 
-But in Rails 2 this is not working. But there is a fix this issue and it merged to the master. So, in rails 4 it indeed will work and signature for method will be like this:
+But in Rails 2, this is not working. There is a fix for this issue, and it has been merged into master. So in Rails 4, it will indeed work, and the method signature will look like this:
 
 + *Rails4 view*
 {% highlight ruby %}
 <%= {:form => render(:partial => 'form', :formats => [:html])}.to_json %>
 {% endhighlight %}
 
-To enable this feature in Rails 3 you can make monkey patch: just create new file *config/initializers/renderer.rb* in your application and paste there this code:
+To enable this feature in Rails 3, you can make a monkey patch: just create a new file, *config/initializers/renderer.rb*, in your application and paste this code there:
 
-+ *Mokeypatch for Rails3*
++ *Monkey patch for Rails 3*
 {% highlight ruby %}
 class ActionView::PartialRenderer
   private

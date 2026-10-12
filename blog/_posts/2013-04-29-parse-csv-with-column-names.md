@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Parse CSV with column names"
-description: "There is a convenient and robust way in ruby to parse CSV rather than using column indexes. If you have in CSV header as a first row you can use it in your code"
+description: "There is a convenient and robust way to parse CSV in Ruby instead of using column indexes. If your CSV has a header as the first row, you can use it in your code."
 tags: [ruby]
 share: true
 comments: true
@@ -10,11 +10,11 @@ redirect_from:
 ---
 
 
-Say you have CSV with header as a first row. It contains column names. And you have to parse this CSV. I have always been seeing code which solve this problem but it's not so convenient and reliable as I wanted. The solution was unreliable and unmaintainable because there were hard-coded indexes for the columns: 0, 1, 2, ... and etc. I decided to figure out how to use provided column names instead of numeric indexes. So welcome on broad.
+Say you have a CSV file with a header as the first row. It contains column names, and you have to parse it. I have often seen code that solves this problem but isn't as convenient and reliable as I wanted. The solution was unreliable and unmaintainable because it used hard-coded column indexes: 0, 1, 2, and so on. I decided to figure out how to use the provided column names instead of numeric indexes. So welcome aboard.
 
 # Simple solution
 
-Let's we have this CSV:
+Let's say we have this CSV:
 
 {% highlight ruby %}
 Make; Model; Year
@@ -23,7 +23,7 @@ Audi; A6; 2005
 BMW; 740; 2001
 {% endhighlight %}
 
-The simplest solution with disadvantages will look like this:
+The simplest solution, with some disadvantages, will look like this:
 
 {% highlight ruby %}
 CSV.foreach(file_path, :headers => true, :col_sep => ';') do |row|
@@ -31,11 +31,11 @@ CSV.foreach(file_path, :headers => true, :col_sep => ';') do |row|
 end
 {% endhighlight %}
 
-Disadvantages of this solution are obvious: if columns' order changes you will get wrong system behavior and fail.
+The disadvantages of this solution are obvious: if the column order changes, the system will behave incorrectly and fail.
 
 # Robust solution
 
-See how is simple to write more reliable code which solves this problem:
+See how simple it is to write more reliable code that solves this problem:
 
 {% highlight ruby %}
 CSV.foreach(file_path, :headers => true, :col_sep => ';') do |row|
@@ -43,8 +43,8 @@ CSV.foreach(file_path, :headers => true, :col_sep => ';') do |row|
 end
 {% endhighlight %}
 
-Pay attention that you are not able to get values of row through original string representation in symbols (:Make, :Model or :Year) and even through underscored strings/symbols ('make' or :make). To achieve this you should make monkey patch which resolves this problem. I won't provide it here - it's up to you.
+Note that you cannot get row values using symbols corresponding to the original strings (:Make, :Model or :Year), or even using underscored strings/symbols ('make' or :make). To achieve this, you should make a monkey patch that resolves the problem. I won't provide it here — it's up to you.
 
-This solution is more reliable - it's ready for columns' order changes, it's readable for humans, it's not sensible for number of columns. But there is a still possible fail - if there is a mistake in header of CSV this solution will fail too. In this case I can give only one advice - to check header, read column names before parsing. `CSV.foreach` methods receive more parameters, you can find their [here](http://ruby-doc.org/stdlib-1.9.3/libdoc/csv/rdoc/CSV.html).
+This solution is more reliable — it's ready for changes in column order, it's readable for humans, and it's not sensitive to the number of columns. But there is still a possible failure: if there is a mistake in the CSV header, this solution will fail too. In this case, I can give only one piece of advice: check the header and read the column names before parsing. The `CSV.foreach` method accepts more parameters; you can find them [here](http://ruby-doc.org/stdlib-1.9.3/libdoc/csv/rdoc/CSV.html).
 
-PS. Firstly I've reinvented bicycle which reads first row and creates hash of indexes for each column (underscored symbol of column name as a key and index number as a value), but [@avsej](http://github.com/avsej) proposed me this solution. Despite the fact that I didn't find the solution from examples or official docs I've learned on more lesson here - don't invent bicycle. Thanks for [@avsej](http://github.com/avsej)!
+PS. At first, I reinvented the wheel with code that reads the first row and creates a hash of indexes for each column (an underscored symbol of the column name as the key and the index number as the value), but [@avsej](http://github.com/avsej) suggested this solution to me. Although I didn't find the solution in examples or official docs, I've learned one more lesson here — don't reinvent the wheel. Thanks to [@avsej](http://github.com/avsej)!

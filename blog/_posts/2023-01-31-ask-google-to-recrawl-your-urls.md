@@ -28,9 +28,9 @@ All of that is correct. Unfortunately, in practice, one might encounter the foll
 
 If you face this issue, the automated option is available. This article includes an example of how **to request Google to reindex a group of URLs** using the **Ruby programming language**.
 
-First, register your project in the Google API Console and obtain a JSON private key file. Follo [these instructions](https://developers.google.com/search/apis/indexing-api/v3/prereqs){:ref="nofollow" target="_blank"} on how to do so.
+First, register your project in the Google API Console and obtain a JSON private key file. Follow [these instructions](https://developers.google.com/search/apis/indexing-api/v3/prereqs){:ref="nofollow" target="_blank"} on how to do so.
 
-Next, with the preparation step complete, we move on to the scripting. Let's say we have a list of artists and songs that need to be reindexed. The following Ruby script will schedule their reindex in a bulk request, meaning it will make only one HTTP request instead of multiple. The script implies  [google-api-ruby-client gem](https://github.com/googleapis/google-api-ruby-client){:ref="nofollow" target="_blank"} installed.
+Next, with the preparation step complete, we move on to the scripting. Let's say we have a list of artists and songs that need to be reindexed. The following Ruby script will schedule their reindexing in a bulk request, meaning it will make only one HTTP request instead of multiple. The script assumes the [google-api-ruby-client gem](https://github.com/googleapis/google-api-ruby-client){:ref="nofollow" target="_blank"} is installed.
 
 ```ruby
 require 'google/apis/indexing_v3'
@@ -115,6 +115,6 @@ end
 
 By scheduling your pages for Google recrawl in this manner, the pages will appear in Google much faster and you won't have to wait for weeks or even months.
 
-For more information and details on how it works, see [here](https://developers.google.com/search/apis/indexing-api/v3/quickstart){:ref="nofollow" target="_blank"}. Also, note that there are other programming languages available for this type of scripting. A list of available libraries for other programming lagunages can be found on the [official page](https://developers.google.com/search/apis/indexing-api/v3/libraries){:ref="nofollow" target="_blank"}.
+For more information and details on how it works, see [here](https://developers.google.com/search/apis/indexing-api/v3/quickstart){:ref="nofollow" target="_blank"}. Also, note that there are other programming languages available for this type of scripting. A list of available libraries for other programming languages can be found on the [official page](https://developers.google.com/search/apis/indexing-api/v3/libraries){:ref="nofollow" target="_blank"}.
 
-If you have questions or need a script like this for your project, feel free to [contacting us](https://widefix.com/).
+If you have questions or need a script like this for your project, feel free to [contact us](https://widefix.com/).

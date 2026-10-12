@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Improve NextJS application performance"
-headline: "Learn how to improve performance of Next.js application"
+headline: "Learn how to improve the performance of a Next.js application"
 modified: 2023-05-24 18:23:56 +0200
-description: "Learn what you need to do in order to improve performance of your Next.js application."
+description: "Learn what you need to do in order to improve the performance of your Next.js application."
 tags: [performance]
 featured_post: false
 toc: true
@@ -23,7 +23,7 @@ Using TypeScript's type checking can catch potential errors and improve code qua
 
 Split your code into smaller chunks using dynamic imports and code splitting. This allows you to load only the necessary code for each page or component, reducing the initial bundle size and improving load times.
 Analyze your bundle using tools like Webpack Bundle Analyzer to identify and eliminate any unnecessary dependencies or large libraries.
-Compress and optimize your assets (images, CSS, etc.) to reduce their size and improve load times. Next.js has built-in `Image` component that allows to compress images on the fly. It also converts then to modern image formats that are lightweight.
+Compress and optimize your assets (images, CSS, etc.) to reduce their size and improve load times. Next.js has a built-in `Image` component that allows you to compress images on the fly. It also converts them to modern image formats that are lightweight.
 
 ## Server-Side Rendering (SSR) and Static Site Generation (SSG)
 

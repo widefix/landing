@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Git hosting"
-description: "Are you looking for free git hosting? Or, may be, do you want to find mercurial hosting? Do you want to find unfuddle VCS unlike github.com? If you answer yes at least for one of these questions this post will be useful for you. You are welcome!"
+description: "Are you looking for free Git hosting? Or perhaps Mercurial hosting or a VCS hosting alternative to github.com? If you answer yes to at least one of these questions, this post will be useful for you. You are welcome!"
 tags: [git, hosting]
 share: true
 comments: true
@@ -10,18 +10,18 @@ redirect_from:
 ---
 
 
-Since I've found my **github** repository instead of my project in **google** I started to search **free git hosting** which would allow to hide my projects from **google crawl**. And I wondered when I found a lot of satisfied for me services. One of them I will describe in this article it is **bitbucket**.
+After finding my **github** repository instead of my project in **google**, I started searching for **free Git hosting** that would let me hide my projects from **Google's crawler**. And I was surprised when I found a lot of services that suited me. I will describe one of them in this article: **bitbucket**.
 
 ## Introduction
 
-**Bitbucket** is the both **mercurial** and **git hosting** with **unlimited number of private projects** and **unlimited disk space** per account! This system has written by Alassian company (JIRA and Confluence founder). Go to their [site](http://bitbucket.org/) and check it out.
+**Bitbucket** provides both **mercurial** and **git hosting**, with an **unlimited number of private projects** and **unlimited disk space** per account! This system was written by Atlassian, the company behind JIRA and Confluence. Go to their [site](http://bitbucket.org/) and check it out.
 
 ## Pricing
 {% picture /images/bitbucket.jpg alt="BitBucket pricing" %}
 
-> It can be expired screenshot. To know actual pricing please, follow [bitbucket site](/blog/images/bitbucket.jpg).
+> This screenshot may be outdated. To check current pricing, please visit the [bitbucket site](/blog/images/bitbucket.jpg).
 
-As you see for free account you have constrain - maximum 5 users with write access to your project. 5 members for one team are very big number. If this plan won't be enough you can buy the next plan with 10 collabarators for 10$ per month. Compare with github price - 24$ per month for 10 collabarators and 20 projects, but here you have unlimit number of private projects and unlimit disk space. It is very cheap and tempting offer!
+As you can see, a free account has a restriction: a maximum of 5 users with write access to your project. 5 members is a very large number for one team. If this plan isn't enough, you can buy the next plan with 10 collaborators for $10 per month. Compare that with github's price — $24 per month for 10 collaborators and 20 projects — while here you have an unlimited number of private projects and unlimited disk space. It is a very cheap and tempting offer!
 
 ## Sign up
 
@@ -38,22 +38,22 @@ It is very easy to sign up here. OpenID is available through services:
 * VeriSign
 * ClaimID
 
-After sign up you are able to create repository.
+After signing up, you can create a repository.
 
 ## Migrate from github
 
-It is very easy to create git repository here. You have 2 choices: create project from scratch like you do it on **github** or import existing repository from **github**, **Google code**, **Mercurial**, **SourceForge** or **Subversion**. I preffered import my source code from **github**:
+It is very easy to create a Git repository here. You have 2 choices: create a project from scratch as you do on **github**, or import an existing repository from **github**, **Google code**, **Mercurial**, **SourceForge** or **Subversion**. I preferred to import my source code from **github**:
 
-1. Type url for your public repo. If you want to migrate private repo you should check _Requires authorization_ checkbox and fill in *username* and *password* for your github account
-2. Type repository name which will be used by **bitbucket**. You are also able to check if this repo will be **private** or **public**. Select VCS: **git** ot **mercurial**
-3. You are able also check **issues tracking** and **Wiki pages**
-4. Select then main programming language for your repository. Also you can write **description** and set **website url**
+1. Type the URL for your public repo. If you want to migrate a private repo, check the _Requires authorization_ checkbox and fill in the *username* and *password* for your github account.
+2. Type the repository name that **bitbucket** will use. You can also choose whether this repo will be **private** or **public**. Select the VCS: **git** or **mercurial**.
+3. You can also enable **issue tracking** and **Wiki pages**.
+4. Then select the main programming language for your repository. You can also write a **description** and set a **website URL**.
 
-And that's it! Press **Import** button, wait while **bitbucket** fetch code from **github**. Nice feature - you can migrate your existing source code from **github** in several minutes. Don't forget to add your ssh key for **bitbucket** account if you want to commit in the migrated repository.
+And that's it! Press the **Import** button and wait while **bitbucket** fetches the code from **github**. Nice feature — you can migrate your existing source code from **github** in several minutes. Don't forget to add your SSH key to your **bitbucket** account if you want to commit to the migrated repository.
 
 ## Alternatives
 
-Theare many another similiar services:
+There are many other similar services:
 
 * [Unfuddle](http://unfuddle.com/)
 * [repositoryhosting.com](http://repositoryhosting.com/)
@@ -70,4 +70,4 @@ Theare many another similiar services:
 * [Codesion](http://codesion.com/)
 * [XP-dev](http://xp-dev.com/)
 
-But they have a more constrains or bigger price. So my choice is **bitbucket**!
+But they have more restrictions or higher prices. So my choice is **bitbucket**!

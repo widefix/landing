@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Rule #1 to use belongs_to with presence validator"
-description: "This post describes rules of thumb how to use presence validator for belongs_to association in Rails. Do you know what pass to validates (or validate_presence_of) method for belongs_to association? You will figure out it in this post."
+title: "Rule #1 for using belongs_to with a presence validator"
+description: "This post describes rules of thumb for using a presence validator for a belongs_to association in Rails. Do you know what to pass to validates (or validate_presence_of) for a belongs_to association? You will find out in this post."
 tags: [rails, validator]
 share: true
 comments: true
@@ -10,11 +10,11 @@ redirect_from:
 ---
 
 
-I've always wondered which argument pass to validates method for model which hash *belongs_to* association: *association name* or *field name* (Rails names it as a foreign_key). Do you know? Have you ever been asked this question? I know the answer for this question and of course I will share my idea with you in this post.
+I've always wondered which argument to pass to the validates method for a model that has a *belongs_to* association: the *association name* or the *field name* (Rails calls it a foreign_key). Do you know? Have you ever been asked this question? I know the answer, and of course I will share my idea with you in this post.
 
-## Association name of foreign key?
+## Association name or foreign key?
 
-Assume we have to models: `Account` and `User`. Account has mane users and user belongs to account. The code below:
+Assume we have two models: `Account` and `User`. An account has many users, and a user belongs to an account. Here is the code:
 
 {% highlight ruby %}
 class Account < ActiveRecord::Base
@@ -26,9 +26,9 @@ class User < ActiveRecord::Base
 end
 {% endhighlight %}
 
-We want to add validation for user to check if account is presented. And it can be achieved with two ways:
+We want to add validation for the user to check whether the account is present. This can be achieved in two ways:
 
-* We can add user User class presence validator for association name:
+* We can add a presence validator for the association name to the User class:
 
 {% highlight ruby %}
 class User < ActiveRecord::Base
@@ -37,7 +37,7 @@ class User < ActiveRecord::Base
 end
 {% endhighlight %}
 
-* Or we can add presence valitator for foreign key:
+* Or we can add a presence validator for the foreign key:
 
 {% highlight ruby %}
 class User < ActiveRecord::Base
@@ -46,7 +46,7 @@ class User < ActiveRecord::Base
 end
 {% endhighlight %}
 
-Which way do you use? Do you know what is difference between them? Let's check it in rails console.
+Which way do you use? Do you know the difference between them? Let's check it in the Rails console.
 
 ### 1.1. Foreign key way
 
@@ -65,7 +65,7 @@ irb(main):004:0> u.valid? # => true
 irb(main):005:0> Account.exists?(100) # => nil - make sure that there is no account with id = 100
 {% endhighlight %}
 
-This test shows us one idea - presence validator for foreign key don't care about record existence. It means that you are able to pass *account_id* from form (for example, or API) with any value and ActiveRecord will save it silently. It's obvious that it's a hole in the application! Let's say now what happens with second approach.
+This test shows us one thing: the presence validator for a foreign key doesn't care whether the record exists. It means that you can pass *account_id* from a form (or API, for example) with any value, and ActiveRecord will save it silently. It's obvious that this is a hole in the application! Let's now see what happens with the second approach.
 
 ### Association name way
 
@@ -91,8 +91,8 @@ irb(main):026:0> u.account = Account.new
 irb(main):026:0> u.save # => true - this record has saved because account doesn't have validations at all. If it had the user wouldn't be saved never!
 {% endhighlight %}
 
-This approach obviously is more robust - this validation cares about associated object existence, foreign key presence and also automatically validated associated object.
+This approach is obviously more robust — this validation checks that the associated object exists, that the foreign key is present, and also automatically validates the associated object.
 
 ### Conclusion
 
-As you see 1st approach can bring the security issue and database inconsistency. So the answer is the following: **use *association name* for presence validator.**
+As you can see, the 1st approach can introduce a security issue and database inconsistency. So the answer is the following: **use the *association name* for the presence validator.**

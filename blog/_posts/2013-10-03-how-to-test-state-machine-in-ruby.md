@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "How to test state machine in Ruby"
-description: "I've invented approach which rids of headache of testing state machine in Ruby.
-This solution is only for RSpec now, but approach can be used for test unit as well."
+title: "How to test a state machine in Ruby"
+description: "I've invented an approach that gets rid of the headache of testing a state machine in Ruby.
+This solution is currently only for RSpec, but the approach can be used for test unit as well."
 tags: [rspec, ruby]
 share: true
 comments: true
@@ -10,8 +10,8 @@ redirect_from:
   - /blog/2013/10/03/how-to-test-state-machine-in-ruby/
 ---
 
-I could not find any worth solution how to test [state machinee](https://github.com/pluginaweek/state_machine) with RSpec.
-Until now I met only one solution which is proposed by [stackoverflow](http://stackoverflow.com/questions/3047630/rails-how-to-test-state-machine) habitants. But there are some disadvantages of this approach and in this post I will try to explain what are they and how
+I could not find any worthwhile solution for testing a [state machine](https://github.com/pluginaweek/state_machine) with RSpec.
+Until now, I had found only one solution, proposed by [stackoverflow](http://stackoverflow.com/questions/3047630/rails-how-to-test-state-machine) users. But this approach has some disadvantages, and in this post I will try to explain what they are and how
 to avoid them.
 
 ## What we have
@@ -24,8 +24,8 @@ This image will show which operations and states we have:
 
 ![Gearbox levels](/blog/images/state_machine.jpg)
 
-I use this [state machine gem](https://github.com/pluginaweek/state_machine) and RSpec for tests. And this is how looks possible class
-with gearshift levels flow:
+I use this [state machine gem](https://github.com/pluginaweek/state_machine) and RSpec for tests. Here is a possible class
+with the gearshift state flow:
 
 {% highlight ruby %}
 class GearBox
@@ -51,7 +51,7 @@ end
 
 ## Headache
 
-[Stackoverflowers proposes](http://stackoverflow.com/questions/3047630/rails-how-to-test-state-machine) to build object and then change state step by step with generated method-events. The possible
+[Stack Overflow users propose](http://stackoverflow.com/questions/3047630/rails-how-to-test-state-machine) building an object and then changing its state step by step with generated event methods. The possible
 tests for this situation would look like this:
 
 {% highlight ruby %}
@@ -88,19 +88,19 @@ describe Gearbox do
 end
 {% endhighlight %}
 
-No so much code, but it has some problems:
+Not so much code, but it has some problems:
 
-1. It's not readable and it's very easy to miss some typo because of a lot of calls method-events (switch_to_r, switch_to_d, and etc.).
-It looks like we test not state machine but some field which is changed by some method rather than test events and what they do
-2. We have to worry about how the state machine works: we set `gear` to appropriate state for any test
-3. If we change state name we will have to fix ALL these tests
-4. If the `subject` doesn't have appropriate state a test will be failed
+1. It's not readable, and it's very easy to miss a typo because of the many event method calls (switch_to_r, switch_to_d and so on).
+It looks like we test a field changed by a method rather than the state machine's events and what they do.
+2. We have to worry about how the state machine works: we set `gear` to the appropriate state for every test.
+3. If we change a state name, we will have to fix ALL these tests.
+4. If the `subject` doesn't have the appropriate state, a test will fail.
 
-I used to this approach till now but every time I had issues with maintaining tests like above. Eventually I decided to invent some DSL which helps me to get rid of these problems forever. Hopefully I found solution and I'm going to share it with you in this post. Also I would like to know your opinion about it.
+I used this approach until now, but every time I had issues maintaining tests like the ones above. Eventually, I decided to invent a DSL that helps me get rid of these problems forever. Fortunately, I found a solution, and I'm going to share it with you in this post. I would also like to know your opinion about it.
 
 ## Use custom matcher
 
-I hope you know that RSpec has mechanism which allows to [create your custom matchers](https://github.com/dchelimsky/rspec/wiki/Custom-Matchers). I'm inspired how the [should-matchers](https://github.com/thoughtbot/shoulda-matchers) is written and how it helps to test my Rails code. So I decided to create some matcher as [shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers) provides:
+I hope you know that RSpec has a mechanism that allows you to [create your custom matchers](https://github.com/dchelimsky/rspec/wiki/Custom-Matchers). I'm inspired by how [shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers) is written and how it helps test my Rails code. So I decided to create a matcher like those [shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers) provides:
 
 {% highlight ruby %}
 RSpec::Matchers.define :have_transition do |transition|
@@ -188,13 +188,13 @@ describe GearBox do
 end
 {% endhighlight %}
 
-Obviously that we have much more code, but it's readable, maintainable, the tests says about what they do without any description. If we change state machine's field all what we have to do is to change input data for tests. By the way, we can move our input data (I mean all let's) to [shared example](https://www.relishapp.com/rspec/rspec-core/docs/example-groups/shared-examples). And then if we had many classes with similar state flow we would use this shared example there.
+Obviously, we have much more code, but it's readable and maintainable. The tests say what they do without any description. If we change the state machine's field, all we have to do is change the tests' input data. By the way, we can move our input data (I mean all the lets) to a [shared example](https://www.relishapp.com/rspec/rspec-core/docs/example-groups/shared-examples). Then, if we had many classes with a similar state flow, we could use this shared example there.
 
 ## Conclusion
 
-With this approach I forgot my troubles with testing state machine and created reusable solution which I always will use in my code from now. I have an idea to create gem for this but I'm not sure that it will have any popularity. If you like this solution, please, let me know about it. Thank you for your attention!
+With this approach, I forgot my troubles with testing state machines and created a reusable solution that I will always use in my code from now on. I have an idea to create a gem for this, but I'm not sure it will be popular. If you like this solution, please let me know. Thank you for your attention!
 
-I've created [gist](https://gist.github.com/ka8725/6794542) for this solution.
+I've created a [gist](https://gist.github.com/ka8725/6794542) for this solution.
 
 
-UPDATE: I've invented much easier solution. It's much easier and elegant. Check [it out](https://gist.github.com/ka8725/7943510)
+UPDATE: I've invented a much simpler solution. It's easier and more elegant. Check [it out](https://gist.github.com/ka8725/7943510).

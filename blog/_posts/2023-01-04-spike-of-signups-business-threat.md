@@ -2,7 +2,7 @@
 layout: post
 title: "Fake signups: a threat to your business"
 modified: 2023-01-04 15:00:00 +0000
-description: "Learn why a sudden increase in new customers can pose a risk to your business and discover how to protect against fake signups. Find out how we successfully mitigated the impact of a signups spike in our Ruby on Rails application and kept our business running smoothly."
+description: "Learn why a sudden increase in new customers can pose a risk to your business and discover how to protect against fake signups. Find out how we successfully mitigated the impact of a signup spike in our Ruby on Rails application and kept our business running smoothly."
 tags: []
 comments: true
 share: true
@@ -11,7 +11,7 @@ image: tsunami.jpg
 
 **TL;DR:** Use captcha and email verification services.
 
-Recently, we experienced a spike in the number of signed up customers within a **Ruby on Rails application** that we provide maintenance services for. As shown in the following graph, the spike occurred without any aggressive marketing campaigns:
+Recently, we experienced a spike in the number of customers signing up within a **Ruby on Rails application** that we provide maintenance services for. As shown in the following graph, the spike occurred without any aggressive marketing campaigns:
 
 ![Signups spike in Stripe](/blog/images/stripe_spike.jpg)
 

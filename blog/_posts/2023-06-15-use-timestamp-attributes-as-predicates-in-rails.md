@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Use timestamp for predicates in Rails"
-headline: "Use timestamp type attribute for predicates in Rails"
+title: "Use timestamps for predicates in Rails"
+headline: "Use timestamp attributes for predicates in Rails"
 modified: 2023-06-15 15:19:16 +0200
 description: "Discover the benefits of using timestamp columns over boolean fields in Ruby on Rails and learn a helpful technique for utilizing timestamp columns defined in a Rails application model as predicates."
 tags: [rails, active_record, DSL]
@@ -10,17 +10,17 @@ toc: true
 image: checklist.jpg
 ---
 
-## Why use timestamp field instead of boolean for checkbox
+## Why use a timestamp field instead of a boolean for a checkbox
 
-You are about to add a new boolean attribute into your model inside a Ruby on Rails application. It's simple as is - add a boolean column in DB and call it a day. But stop and think - consider a timestamp type for the corresponding columns in the database.
+You are about to add a new boolean attribute to your model inside a Ruby on Rails application. It's simple as it is - add a boolean column to the DB and call it a day. But stop and think - consider a timestamp type for the corresponding columns in the database.
 
-This approach allows for tracking the time when the value change. That can be helpful in debugging, especially when dealing with production issues.
+This approach allows for tracking the time when the value changes. That can be helpful in debugging, especially when dealing with production issues.
 
-Ok, it's preferable to use the timestamp field type on the back-end. But it is still convenient to have a checkbox on the user interface. Thus, the timestamp column type does not match the UI field type (checkbox). That means the value (such as true/false, yes/no, or any other) from the front-end should be transformed into a timestamp or `nil` on the back-end. That's needed, to ensure compatibility with the mass-assignment methods (`.new` or `#update`).
+Ok, it's preferable to use the timestamp field type on the back-end. But it is still convenient to have a checkbox on the user interface. Thus, the timestamp column type does not match the UI field type (checkbox). That means the value (such as true/false, yes/no, or any other) from the front-end should be transformed into a timestamp or `nil` on the back-end. That's needed to ensure compatibility with the mass-assignment methods (`.new` or `#update`).
 
-## Avoid code duplicating with a universal solution
+## Avoid code duplication with a universal solution
 
-One could write this type of transformation logic ad-hoc inside controllers. But you can create a universal solution. One way to achieve this is by defining a helper method in the base model class. In Rails, the base model class is typically `ApplicationRecord`. By doing this, you can ensure its availability across all models in the application. See the following example how to do this:
+One could write this type of transformation logic ad-hoc inside controllers. But you can create a universal solution. One way to achieve this is by defining a helper method in the base model class. In Rails, the base model class is typically `ApplicationRecord`. By doing this, you can ensure its availability across all models in the application. See the following example of how to do this:
 
 ```ruby
 class ApplicationRecord < ActiveRecord::Base
@@ -83,6 +83,6 @@ It is important to note that after the second assignment of muted = true, the ti
 
 ## Conclusion
 
-Use a timestamp type for columns in the database. Create a universal solution to transform boolean values. As a result, enhance the functionality and debugging capabilities of our models. The timestamp type allows us to track the values change time. That can aid in identifying and troubleshooting issues, particularly in production environments. Avoid code duplication and ensure consistent behavior across models with a universal solution. Metaprogramming can help with that. These improvements contribute to a more robust and efficient application.
+Use a timestamp type for columns in the database. Create a universal solution to transform boolean values. As a result, enhance the functionality and debugging capabilities of our models. The timestamp type allows us to track when values change. That can aid in identifying and troubleshooting issues, particularly in production environments. Avoid code duplication and ensure consistent behavior across models with a universal solution. Metaprogramming can help with that. These improvements contribute to a more robust and efficient application.
 
 Happy coding!

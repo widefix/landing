@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Safe enums in Ruby"
-description: "Safe enums implementation in Ruby. Why and what for? Read this post about the
+description: "An implementation of safe enums in Ruby. Why, and what for? Read this post about the
               mezuka/enum gem."
 modified: 2015-12-27 17:03:55 +0300
 tags: [ruby, gem]
@@ -9,16 +9,16 @@ comments: true
 share: true
 ---
 
-For those people who came into Ruby from Java, C# and similar OOP languages, it may be very
-surprising that Ruby doesn't have enums implementation out from box. Someone could argue that
-there is `Symbol` type in Ruby and it will be enough using this instead. Well, it may be true for
-a very small project but if you have a big one things go much harder.
+For people who came to Ruby from Java, C# and similar OOP languages, it may be very
+surprising that Ruby doesn't have an enum implementation out of the box. Someone could argue that
+there is a `Symbol` type in Ruby, and using it instead would be enough. Well, that may be true for
+a very small project, but if you have a big one, things get much harder.
 
 **TL;DR:** use [this gem](https://github.com/mezuka/enum).
 
 ## What the heck?
 
-Firstly let's try to understand what are *enums*, which issues they solve and what for they were
+Firstly, let's try to understand what *enums* are, which issues they solve and why they were
 invented. I will quote [Wikipedia](https://en.wikipedia.org/wiki/Enumerated_type#Rationale) for this:
 
 > *...* If a programmer wanted a variable, for example `myColor`, to have a value of `red`, the variable `red` would be declared and assigned **some arbitrary value**, usually an integer constant. The variable `red` would then be assigned to `myColor`*...*
@@ -33,7 +33,7 @@ is accepted, even if `TRIANGLE` and `RED` are both internally represented as `1`
 
 > Conceptually, an enumerated type is similar to a list of nominals (numeric codes), since each possible value of the type is assigned a distinctive natural number. A given enumerated type is thus a concrete implementation of this notion. When order is meaningful and/or used for comparison, then an enumerated type becomes an ordinal type.
 
-In brief currently we have implementations of enums in many programming languages (note that only **Python** from scripting family implements them and it's interestingly that starting only from one of latest versions - 3.4). Earlier people used integers for the purpose of enumeration of values and this approach had drawbacks. In programming the enum type basically solves the following issues:
+In brief, we currently have enum implementations in many programming languages (note that only **Python** from the scripting family implements them, and interestingly, only starting with one of its latest versions, 3.4). Earlier, people used integers to enumerate values, and this approach had drawbacks. In programming, the enum type basically addresses these issues:
 
 - Unpredictable behavior;
 - Maintenance;
@@ -43,32 +43,32 @@ And this type has the following characteristics:
 
 - It defines a set of identifiers (set of named values, called enumerators of the type or elements);
 - The elements behave as constants;
-- A variable that has been declared as having an enumerated type can be assigned any of elements.
+- A variable declared as having an enumerated type can be assigned any of its elements.
 
-Notably that neither existing Symbols nor other standard Ruby types cover all of the enum definition.
+Notably, neither existing Symbols nor other standard Ruby types cover the entire enum definition.
 
 ## The solution
 
-In our project ([Mezuka](https://mezuka.com)) we have a lot of entities that should behave like enums. And we, actually, used one of the already implemented gem (to be honest I used many implementations of enums in Ruby in my projects before). But it wasn't fit to us and has excess functionality. During yet another refactoring we introduced our own library that solves the issues and completely fits us. And finally we released this [gem](https://github.com/mezuka/enum) which is called [safe-enum](https://rubygems.org/gems/safe-enum).
+In our project ([Mezuka](https://mezuka.com)), we have many entities that should behave like enums. We used one of the existing gems (to be honest, I had used many Ruby enum implementations in my projects before). But it didn't fit us and had unnecessary functionality. During yet another refactoring, we introduced our own library that solves these issues and completely fits us. Finally, we released this [gem](https://github.com/mezuka/enum), called [safe-enum](https://rubygems.org/gems/safe-enum).
 
-So, what the issues does it solve?:
+So what issues does it solve?
 
-- Serialization into DB - the value should be as written as read and represented in Ruby without any pitfalls;
-- Safety - if there is not defined enum value I should have runtime error (ideally complication error, but, remember, in Ruby we don't have a compiler);
-- Easy to define - simple DSL;
+- Serialization into the DB — the value should be read back as it was written and represented in Ruby without pitfalls;
+- Safety — if an enum value is not defined, I should get a runtime error (ideally a compilation error, but remember, in Ruby we don't have a compiler);
+- Easy definition — a simple DSL;
 - It should be an ordinal type - we should be able to compare the enum values and sort them sometimes;
 - It should be used in pure Ruby classes (not only with ActiveRecord or other ORM);
-- Easy enum values internationalization (I18n) and their keys maintenance.
+- Easy internationalization (I18n) of enum values and maintenance of their keys.
 
-And these are architect decisions of the [gem](https://rubygems.org/gems/safe-enum) that allows to implement it as we wanted:
+And these are the [gem](https://rubygems.org/gems/safe-enum)'s architectural decisions that allow us to implement it as we wanted:
 
-- As the enum value should be written into DB, due to the integer disadvantages and the fact that symbols (or atoms) are not supported by our DB (PostgreSQL) all the enum values are represented only and only as strings in the gem internals.
-- The enums are saved into `Set` in order to quickly figure out if the value is valid and defined;
-- The order of the values definition is saved and they have their integer representation for comparison (just their definition index for simplicity);
-- Raise an **exception** if there is no defined enum value when there is an attempt to use it;
-- Easy to use DSL for the enum values and the I18n keys definition.
+- Because enum values should be written to the DB, integers have disadvantages, and symbols (or atoms) are not supported by our DB (PostgreSQL), all enum values are represented only as strings in the gem's internals.
+- Enums are saved in a `Set` to quickly determine whether a value is valid and defined;
+- The definition order is preserved, and values have an integer representation for comparison (just their definition index, for simplicity);
+- An **exception** is raised when attempting to use an undefined enum value;
+- An easy-to-use DSL defines enum values and I18n keys.
 
-I paste here a few examples of the gem usage:
+Here are a few examples of using the gem:
 
 {% highlight ruby %}
 require 'enum'
@@ -119,7 +119,7 @@ WeekDay.index(:monday) # => 1
 WeekDay.indexes # => [0, 1, 2, 3, 4, 5, 6]
 {% endhighlight %}
 
-> Note: the I18n functionality is optional. So If you don't have installed I18n in your project NameError exception will be raised on the name method call.
+> Note: I18n functionality is optional. If you don't have I18n installed in your project, a NameError exception will be raised when calling the name method.
 
 
 As a bonus we introduced safe setters and convenient predicates in order to manipulate the enum values in a Ruby object:
@@ -151,12 +151,12 @@ end
 @table.side_any?(:invalid, :left) # => Enum::TokenNotFoundError: token 'invalid'' not found in the enum Side
 {% endhighlight %}
 
-> If you pass to the predicate `nil` or have `nil` value in the field the result will be always `false`. If you want to check that the field is `nil` just use Ruby's standard method `nil?`.
+> If you pass `nil` to the predicate or have a `nil` value in the field, the result will always be `false`. If you want to check whether the field is `nil`, just use Ruby's standard `nil?` method.
 
 ## Alternatives
 
-There are many other gems that tried to implement Ruby enums but as I already said no one of them suites us. And there are many reasons why. I won't review them in this post separately but, in two words, I can say here that all of them violates the rule - **enums should behave like constants**. Some of the implementations break other rules of the enum definition of have redundancy.
+There are many other gems that try to implement Ruby enums, but as I already said, none suits us. There are many reasons why. I won't review them separately in this post, but briefly, all of them violate the rule that **enums should behave like constants**. Some implementations break other rules of the enum definition or have redundancy.
 
 ## Conclusion
 
-In our gem we tried to follow the enum definition rules and having easy solution to use and maintain. I think we managed to do this. If you have any feedback please comment, post issues in [github](https://github.com/mezuka/enum/issues) and your pull requests are always welcome.
+In our gem, we tried to follow the enum definition rules while having a solution that's easy to use and maintain. I think we managed this. If you have feedback, please comment or post issues on [github](https://github.com/mezuka/enum/issues). Your pull requests are always welcome.

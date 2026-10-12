@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Advanced Rails model generators"
-description: "Check out how the rails generators are awesome. In this post you will read how to use rails model generators for 100%"
+description: "Check out how awesome Rails generators are. In this post, you will learn how to make full use of Rails model generators."
 tags: [rails]
 share: true
 comments: true
@@ -10,23 +10,23 @@ redirect_from:
 ---
 
 
-There are some people who give advice to not use rails generators and create models, controllers and etc. things manually. I don't agree with them and my advice here is to figure out deeply how they work and then make conclusion.
+Some people advise against using Rails generators and suggest creating models, controllers and other things manually. I don't agree with them. My advice is to understand deeply how the generators work and then draw a conclusion.
 
-In this post I will describe the most often and useful generator - it's a model generator. I bet if you don't use rails generators yet this post will make you to change your work. Using Rails generators saves your time, increases performance, helps to get consistent data for your application.
+In this post, I will describe the most commonly used and useful generator: the model generator. I bet that if you don't use Rails generators yet, this post will make you change how you work. Using Rails generators saves you time, increases productivity and helps you get consistent data for your application.
 
 ## Basic usage
 
-Let's start with simple example:
+Let's start with a simple example:
 
     $ rails g model user email
 
-This command will generate *user* model with *email* field type of *string*, migration which creates *users* table, test for model and factory (if you have it). You are able to generate model with few fields like this:
+This command will generate a *user* model with an *email* field of type *string*, a migration that creates the *users* table, a model test and a factory (if you have it). You can generate a model with several fields like this:
 
     $ rails g model user first_name last_name email
 
-This example will generate yet model with 3 string fields: first_name, last_name and email.
+This example will generate a model with 3 string fields: first_name, last_name and email.
 
-If you want to have model with different type of string pass type after field name following by : and type. Example:
+If you want a model with a field of a type other than string, pass the type after the field name, separated by a colon. Example:
 
     $ rails g model user email age:integer
 
@@ -45,22 +45,22 @@ The whole list of available types:
     datetime
     timestamp
 
-You are able to pass *--option* parameter to generator. It will inherit generating class from passed name to achieve STI (sing table inheritance):
+You can pass the *--option* parameter to the generator. The generated class will inherit from the name you pass to achieve STI (single table inheritance):
 
     $ rails g model admin --parent user
 
-This example generates model:
+This example generates a model:
 
 {% highlight ruby %}
 class Admin < User
 end
 {% endhighlight %}
 
-Interesting fact that if you generate model in some scope passing model like *admin/user* or *Admin::User*:
+An interesting fact: if you generate a model in a namespace by passing a name like *admin/user* or *Admin::User*:
 
     $ rails g model admin/user
 
-you will get generated model in scope *app/models/admin/user.rb*, defined scope *app/models/admin.rb* which is requred to define module. Let's see to the content of generated module:
+you will get a generated model in *app/models/admin/user.rb* and a file, *app/models/admin.rb*, that defines the module. Let's look at the generated module's content:
 
 {% highlight ruby %}
 module Admin
@@ -70,19 +70,19 @@ module Admin
 end
 {% endhighlight %}
 
-It means that generated table name for *Admin::User* starts with prefix *admin_users*. This feature allows to have separated namespaced models as in rails code as in db schema. Very convenient and useful feature for multimodule applications for my opinion.
+It means that the generated table name for *Admin::User* starts with the prefix *admin_users*. This feature allows separate namespaced models in both Rails code and the DB schema. In my opinion, it is a very convenient and useful feature for applications with multiple modules.
 
 ## Advanced usage
 
-Sometimes you have to automatically add index for columns in your migration. It's not a problem:
+Sometimes you have to add indexes for columns in your migration automatically. It's not a problem:
 
     $ rails g model user email:index location_id:integer:index
 
-Or uniq index:
+Or a unique index:
 
     $ rails g model user pseudo:string:uniq
 
-Set limit for field of integer, string, text and binary fields:
+Set a limit for integer, string, text and binary fields:
 
     $ rails generate model user pseudo:string{30}
 
@@ -90,17 +90,17 @@ Special syntax to generate decimal field with scale and precision:
 
     $ rails generate model product 'price:decimal{10,2}'
 
-> Pay attention that you have to wrap parameter `price:decimal{10,2}` to quotes. It's vital and you may have incorrect behavior of generator if you don't do it. Full explanation of this case is [here](https://github.com/rails/rails/pull/12642).
+> Note that you have to wrap the parameter `price:decimal{10,2}` in quotes. It's vital, and the generator may behave incorrectly if you don't do it. A full explanation of this case is [here](https://github.com/rails/rails/pull/12642).
 
 You can combine any single curly brace option with the index options:
 
     $ rails generate model user username:string{30}:uniq
 
-And the last useful feature of generators - it's options to generate reference columns (fields which are used in rails as foreign keys):
+And the last useful generator feature is the option to generate reference columns (fields used in Rails as foreign keys):
 
     $ rails generate model photo album:references
 
-This command will generate *photos* table with integer field *album_id* and also it will add index for this field automatically. Make sure in it by looking at generated migration:
+This command will generate a *photos* table with an integer field, *album_id*, and add an index for this field automatically. Confirm this by looking at the generated migration:
 
 {% highlight ruby %}
 class CreatePhotos < ActiveRecord::Migration
@@ -115,7 +115,7 @@ class CreatePhotos < ActiveRecord::Migration
 end
 {% endhighlight %}
 
-For polymorphic reference use this syntax:
+For a polymorphic reference, use this syntax:
 
     $ rails generate model product supplier:references{polymorphic}
 
@@ -126,6 +126,6 @@ Polymorphic reference with indexes:
 
 ## Conclusion
 
-As you see there a lot of useful things in rails model generator which can decrease your developing time. Thank you for reading this trolling post but anyway I hope you find it useful because I didn't find any similar post or literature which describes rails model generator fully.
+As you can see, there are a lot of useful things in the Rails model generator that can decrease your development time. Thank you for reading this trolling post, but anyway, I hope you find it useful because I didn't find any similar post or literature that fully describes the Rails model generator.
 
-PS. Foundation for this post was got from [this](https://github.com/rails/rails/blob/master/railties/lib/rails/generators/rails/model/USAGE) rails description usage which is located only in sources of rails on github.
+PS. The foundation for this post came from [this](https://github.com/rails/rails/blob/master/railties/lib/rails/generators/rails/model/USAGE) Rails usage description, which is located only in the Rails source on GitHub.

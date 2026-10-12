@@ -10,21 +10,21 @@ redirect_from:
 ---
 
 
-I hope you have already known that there is a one company which provide absolutely free domains in **.tk** zone. If you want to get it visit [their site](http://www.dot.tk) and sign up your domain. But there is a one problem which I will tell you in this post.
+I hope you already know that there is a company that provides absolutely free domains in the **.tk** zone. If you want to get one, visit [their site](http://www.dot.tk) and register your domain. But there is one problem that I will tell you about in this post.
 
 {% picture /images/dot_tk.jpg alt="Dot.tk - get a free domain. Absolutely free" %}
 
-Firstly, let's go through threir policy. To have a free domain an use it you should accept them:
+Firstly, let's go through their policy. To have a free domain and use it, you should accept these conditions:
 
-1. Site should not contain inappropriate content. There is a not explaining what contain is inappropriate and what isn't
-2. Site should have any content
-3. You mustdn't protect site by basic authentification or like this
-4. Site should shouldn't be inactive
-5. 25 views in 90 days are required
+1. The site should not contain inappropriate content. There is no explanation of what content is inappropriate and what isn't.
+2. The site should have some content.
+3. You mustn't protect the site with basic authentication or anything similar.
+4. The site shouldn't be inactive.
+5. 25 views in 90 days are required.
 
-And etc. All conditions you can find [their official site](http://www.dot.tk).
+And so on. You can find all the conditions on [their official site](http://www.dot.tk).
 
-OK. You have site which compliances all this conditions. You would think that you can enjoy your site like your other bought domains. So did I. But in 3 days my domain was cancelled. Why? I didn't get any email or message from support that's way I sent them abuse. I got response in 2 days. It's content:
+OK. You have a site that complies with all these conditions. You would think that you can enjoy your site just like those on your other, paid domains. So did I. But after 3 days, my domain was cancelled. Why? I didn't get any email or message from support, so I sent them a complaint. I got a response after 2 days. Here is its content:
 
 >Our systems auto-checks every free Dot TK domain and cancels any that potentially contravenes our terms and conditions, eg: inappropriate content, no content, password protected or if your site was down or not active, then it is cancelled.
 
@@ -40,6 +40,6 @@ OK. You have site which compliances all this conditions. You would think that yo
 
 >Please make sure that your domain complies with Dot TK’s terms and conditions for free domains so that your domain is not closed down again. Our terms and conditions for free domains can be found on our homepage under 'Policies'.
 
-But I'm sure that my site was working all time and I was observing google analytic when domain was refused, exactly at those time. So my assumption is the following. I got a lot of unique visitors in one day, so they wanted to get them I think.
+But I'm sure that my site was working the whole time, and I was watching Google Analytics at the exact time the domain was cancelled. So my assumption is the following: I got a lot of unique visitors in one day, and I think they wanted to get them.
 
-Any way I would recomend you to use some another zone or just pay for domain in **.tk** zone. Yes, you are able to buy it. To taste the honey you've got to pay some money
+Anyway, I would recommend using another zone or just paying for a domain in the **.tk** zone. Yes, you can buy one. To taste the honey, you've got to pay some money.

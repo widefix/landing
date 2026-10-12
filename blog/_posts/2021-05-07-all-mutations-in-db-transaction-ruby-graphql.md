@@ -8,10 +8,10 @@ comments: true
 share: true
 ---
 
-The [graphql-ruby](https://github.com/rmosolgo/graphql-ruby) is a cool gem that allows a server definition for GraphQL on Ruby.
-It provides a ton of useful functionalities out of the box. So, you won't find them in the [official docs](https://graphql-ruby.org/).
+[graphql-ruby](https://github.com/rmosolgo/graphql-ruby) is a cool gem that lets you define a GraphQL server in Ruby.
+It provides a ton of useful functionality out of the box. Some of it isn't described in the [official docs](https://graphql-ruby.org/).
 
-This post reveals one of the features that's so useful that worth being in the docs.
+This post reveals one of the features that's so useful that it's worth being in the docs.
 
 Consider a Rails application that defines a GraphQL server using the [graphql-ruby](https://github.com/rmosolgo/graphql-ruby) gem.
 The app has a base mutation for all:
@@ -21,7 +21,7 @@ class BaseMutation < GraphQL::Schema::Mutation
 end
 ```
 
-The rest mutations are inherited from it:
+The remaining mutations inherit from it:
 
 ```ruby
 class SomeMutation < BaseMutation
@@ -36,8 +36,8 @@ end
 
 Also, as you may guess, the app has many mutations, not just this one.
 Potentially, any of these mutations might have several DB writes (an `update`/`delete`/`insert` SQL statement) as in the `SomeMutation` above.
-To guarantee the mutation [atomicity](https://en.wikipedia.org/wiki/Atomicity_(database_systems)) (all DB inserts occur or none, if any of them is unsuccessful)
-the both `create!` operations should be wrapped into a DB transaction:
+To guarantee the mutation's [atomicity](https://en.wikipedia.org/wiki/Atomicity_(database_systems)) (all DB inserts occur or none, if any of them is unsuccessful)
+both `create!` operations should be wrapped into a DB transaction:
 
 ```ruby
 class SomeMutation < BaseMutation
@@ -52,16 +52,16 @@ class SomeMutation < BaseMutation
 end
 ```
 
-Besides that, any new mutation might require this wrapper as well. But as it's created by humans that thing might be easily missed.
-That's why we want the transaction open implicitly for all mutations.
+Besides that, any new mutation might require this wrapper as well. But as it's created by humans, that detail may easily be missed.
+That's why we want the transaction to open implicitly for all mutations.
 Also, we don't want to change all mutations that have defined the `#resolve` method as above and have missed an open transaction.
-Rewriting all mutations would be a monkey business, and it's too risky.
+Rewriting all mutations would be monkey business, and it's too risky.
 
 In cases like this one we jump into the gem internals and see what's defined in the base.
 We need to figure out how these `#resolve` methods are called and try to extend the functionality so that we achieve the desired behavior.
-It's not hard to find the searching code on [GitHub](https://github.com/rmosolgo/graphql-ruby/blob/bace1e4027900fc8779a5c2fd393ff6456046cea/lib/graphql/schema/resolver.rb#L65-L119).
+It's not hard to find the code we're looking for on [GitHub](https://github.com/rmosolgo/graphql-ruby/blob/bace1e4027900fc8779a5c2fd393ff6456046cea/lib/graphql/schema/resolver.rb#L65-L119).
 
-Specifically, these lines we are interested in:
+Specifically, we are interested in these lines:
 
 ```ruby
 # Finally, all the hooks have passed, so resolve it
@@ -72,8 +72,8 @@ else
 end
 ```
 
-Aha! It turns out that in the end, it calls a method name that's dynamic, it's defined in the `self.class.resolve_method`.
-By default, as expected it's set to `:resolve`, it's easy to check in a Rails console:
+Aha! It turns out that in the end, it calls a dynamic method name defined in `self.class.resolve_method`.
+By default, as expected, it's set to `:resolve`. It's easy to check in a Rails console:
 
 ```ruby
 > BaseMutation.resolve_method
@@ -95,12 +95,12 @@ end
 
 That means we can define our own "resolve" method that will be called by the gem internals instead of the default `#resolve` one.
 
-Using that knowledge, it's easy to see that we've got a solution with all needs:
+Using that knowledge, it's easy to see that we've got a solution that meets all our needs:
 - define a custom resolver in the `BaseMutation`
 - it will be a wrapper for the already defined `#resolve` methods in all mutations
 - it will call these already defined `#resolve` methods inside an opened DB transaction.
 
-That's all what we need:
+That's all we need:
 
 ```ruby
 class BaseMutation < GraphQL::Schema::Mutation
@@ -120,5 +120,5 @@ Ta-da! That's all that should be done. A few lines of code and we've solved a co
 
 ## Conclusion
 
-See how it's important to have code organized, that has the same API (set of public methods) and behavior.
-Changing just a base code with just a few lines of code we easily change the whole family of classes!
+See how important it is to organize code with the same API (set of public methods) and behavior.
+By changing just a few lines of base code, we easily change the whole family of classes!

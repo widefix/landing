@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Returning method"
-description: "Ruby On Rails has beautiful method which can help you clean up your code. It is returning method"
+description: "Ruby on Rails has a beautiful method that can help you clean up your code: the returning method."
 tags: [ruby, rails]
 share: true
 comments: true
@@ -10,19 +10,19 @@ redirect_from:
 ---
 
 
-Have you ever write code on **Ruby On Rails** with this use cases?
+Have you ever written code in **Ruby on Rails** for these use cases?
 
-1. Initialize **object** which will contain **result** of the method (**the resulting object**)
-2. Change **the resulting object** with some operations and the last operation might be **nil**
-3. Retun **the resulting object** from the first step. You should do it because you have to return **not** result of last operation **and** object which you manipulated with, ie **the resulting object**
+1. Initialize an **object** that will contain the **result** of the method (**the resulting object**).
+2. Change **the resulting object** with some operations, where the last operation might return **nil**.
+3. Return **the resulting object** from the first step. You should do this because you have to return the object you manipulated, i.e. **the resulting object**, rather than the result of the last operation.
 
-> There are a lot of 'the resulting object' references. Don't they?
+> There are a lot of 'the resulting object' references, aren't there?
 
 If your answer is *yes* this post is especially for you.
 
-#How to use clean up the code?
+# How can we clean up the code?
 
-Assume that you have method like I have already written above:
+Assume that you have a method like the one I described above:
 
 {% highlight ruby %}
 def my_action
@@ -35,7 +35,7 @@ def my_action
 end
 {% endhighlight %}
 
-The is a perfect method in Ruby On Rails - **returning**. According **rdoc** we can clean up our code like this:
+There is a perfect method in Ruby on Rails — **returning**. According to **rdoc**, we can clean up our code like this:
 
 {% highlight ruby %}
 def my_action
@@ -61,12 +61,12 @@ def my_action
 end
 {% endhighlight %}
 
-The result of method **my_action** will be modified array. It doesn't matter which approach to use: first or second.
-Choose which one you would like. So this code looks a little bit better then repetitive code which was before.
+The result of **my_action** will be the modified array. It doesn't matter which approach you use: the first or the second.
+Choose whichever one you like. This code looks a little better than the repetitive code we had before.
 
 ## Fail
 
-But there is a one *pitfall*. Let's try to use it like this:
+But there is one *pitfall*. Let's try to use it like this:
 
 {% highlight ruby %}
 class Order < ActiveRecord::Base
@@ -82,7 +82,7 @@ class Order < ActiveRecord::Base
 end
 {% endhighlight %}
 
- You will wonder that it doesn't work as code like in *my_action*! We have changed **reference** for local object **orders**. That's why we will have unexpected result: **self** instead of scope object (assume we passed **:service_type** parameter for instance, ie we called method: *Order.search(:service_type => 'test')*). We can use method **returning** here, so right code should be this:
+You will be surprised that it doesn't work like the code in *my_action*! We have changed the **reference** for the local object **orders**. That's why we will get an unexpected result: **self** instead of the scope object (assume we passed the **:service_type** parameter, for instance, i.e. we called *Order.search(:service_type => 'test')*). We can use **returning** here, so the correct code should be this:
 
 {% highlight ruby %}
 # ...
@@ -98,6 +98,6 @@ end
 
 ## Conclusion
 
- So the conclusion of this post is to use method **returning** if you have initialized one object and do some changes and then return it. But be attentive: **If you change reference for returning object to new object you will have result with old one.**
+So the conclusion of this post is to use **returning** when you initialize an object, make some changes and then return it. But be attentive: **If you change the reference from the returning object to a new object, the result will still be the old one.**
 
-> Attention! Method returning provided ONLY Ruby On Rails, but NOT Ruby!
+> Attention! The returning method is provided ONLY by Ruby on Rails, NOT Ruby!

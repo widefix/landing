@@ -10,8 +10,8 @@ redirect_from:
 ---
 
 
-There are a lot of troubles around callbacks in Rails's ActiveRecord. In common people use callbacks to process complicated operations such as sending emails, creating related models and etc. Basically all of them should be prevented from execution in tests because of slowing down speed and increasing time execution of the tests. It's not a secret that there are best practices to avoid the problem, but in some cases it's almost impossible to apply them on your project.
-This post shares idea about how to prevent the callbacks execution if you are in the same situation.
+There are a lot of troubles around callbacks in Rails' ActiveRecord. In general, people use callbacks for complicated operations, such as sending emails, creating related models and so on. Basically, all of them should be prevented from running in tests because they slow the tests down. It's no secret that there are best practices for avoiding this problem, but in some cases it's almost impossible to apply them to your project.
+This post shares an idea for preventing callback execution if you are in the same situation.
 
 
 ## Problem
@@ -30,13 +30,13 @@ class User < ActiveRecord::Base
 end
 {% endhighlight %}
 
-Here we have one `after_create` callback `:send_greeting_email` which will be called after user creation. The callback should send real email to the user.
+Here, we have one `after_create` callback, `:send_greeting_email`, called after the user is created. The callback should send a real email to the user.
 
-> Note: We are not provided here with the `NotificationSystem` class because it is not required to understand the problem.
+> Note: We don't provide the `NotificationSystem` class here because it is not required to understand the problem.
 
-For the first glance there is no problem with this code. But when you start to test it you may have a problem. The problem is that the callback should not be run in all tests except one place where we want to test only the callback. How to do it?
+At first glance, there is no problem with this code. But when you start testing it, you may have a problem: the callback shouldn't run in any tests except the one place where we want to test it. How do we do that?
 
-One of possible solution may be to just stub the `send_greeting_email` in all tests and *unstub* it where its call is really needed. Of course this solution will work but it requires some monkey business because you have to place the stubbing code in all test files of your project. This is possible `RSpec` code to do it:
+One possible solution is to stub `send_greeting_email` in all tests and *unstub* it where its call is really needed. Of course, this will work, but it requires some monkey business because you have to put the stubbing code in all your project's test files. Here is possible `RSpec` code for doing it:
 
 {% highlight ruby %}
 describe User do
@@ -59,23 +59,23 @@ describe User do
 end
 {% endhighlight %}
 
-And the code in `before(:all)` blocks we should include in all tests where we have some manipulations with a `user` object. It's not convenient solution at all and moreover is not robust, because, if you change the callback name, you will have to fix a number of tests. Finally, remember, that we have to test class's interface but not its internals, but here, stubbing the callback method, we violate the rule.
+We should include the code in the `before(:all)` blocks in all tests that manipulate a `user` object. It's not convenient at all. Moreover, it's not robust because, if you change the callback name, you will have to fix many tests. Finally, remember that we have to test a class's interface, not its internals, but by stubbing the callback method here, we violate that rule.
 
-Another solution may be using [rails observers](https://github.com/rails/rails-observers). Having observers you may disable them in tests as default and enable in desired places. Simple speaking this solution works on some straightforward projects. But the observers bring to problems in debugging process on complicated projects where you have models inheritance, many observers per model and so on. So, this solution is not our case either, because, as you've already guessed, we have a complicated project.
+Another solution might be to use [Rails observers](https://github.com/rails/rails-observers). With observers, you can disable them in tests by default and enable them where desired. Simply speaking, this works for some straightforward projects. But observers cause debugging problems in complicated projects with model inheritance, many observers per model and so on. So this isn't our solution either because, as you've already guessed, we have a complicated project.
 
 So this solution won't work for us.
 
 ## Trending solutions
 
-The most popular solution is to don't trap in this problem at all. You may use best practices like [service objects](http://blog.codeclimate.com/blog/2012/10/17/7-ways-to-decompose-fat-activerecord-models/) or [form objects](http://blog.codeclimate.com/blog/2012/10/17/7-ways-to-decompose-fat-activerecord-models/). It will allow you to write callbacks' logic separately from the model. With this approach we won't have defined callbacks in models at all. Also service or form objects can be tested easily in isolation.
+The most popular solution is to avoid falling into this trap at all. You can use best practices like [service objects](http://blog.codeclimate.com/blog/2012/10/17/7-ways-to-decompose-fat-activerecord-models/) or [form objects](http://blog.codeclimate.com/blog/2012/10/17/7-ways-to-decompose-fat-activerecord-models/). This lets you write callback logic separately from the model. With this approach, we won't have callbacks defined in models at all. Service or form objects can also be tested easily in isolation.
 
-But despite of the fact that this solution doesn't have minuses there are cases where the appliance may be too expensive. For example, if you already have a big project with a lot of objects and controllers. In this case we will have to write a number of service of form objects and change code in almost all controllers. It is a huge piece of work.
+But although this solution has no drawbacks, there are cases where applying it may be too expensive. For example, you may already have a big project with many objects and controllers. In this case, we would have to write many service or form objects and change code in almost all controllers. It is a huge piece of work.
 
 ## Solution with skipping callbacks
 
-Reasonable solution here can be just turn off all callbacks in tests and turn on them in particular places. We can do it with implementing a switcher in all models and add a condition for all callbacks. The condition will check for the switcher's status and will pass callbacks if it's allowed and will deny them if it's prohibited.
+A reasonable solution here is to turn off all callbacks in tests and turn them on in particular places. We can do this by implementing a switch in all models and adding a condition for all callbacks. The condition will check the switch's status and allow or block the callbacks accordingly.
 
-Let's implement it. Firstly, add switcher to the models with this monkey patch:
+Let's implement it. Firstly, add a switch to the models with this monkey patch:
 
 {% highlight ruby %}
 class ActiveRecord::Base
@@ -85,7 +85,7 @@ end
 
 > Note: the most suitable place for this code in a Rails project is the `config/initializers` folder. If you place the code in `config/initializers/active_record.rb`, for example, it will run on each application start.
 
-On the next step add the condition to the controlled callbacks. Check out how to do it on the `User` model:
+In the next step, add the condition to the controlled callbacks. Check out how to do it in the `User` model:
 
 {% highlight ruby %}
 class User < ActiveRecord::Base
@@ -99,7 +99,7 @@ class User < ActiveRecord::Base
 end
 {% endhighlight %}
 
-That's all. Now we can turn on callbacks and turn off them where we need it:
+That's all. Now we can turn callbacks on and off where we need to:
 
 {% highlight ruby %}
 ActiveRecord::Base.skip_callbacks = true
@@ -108,9 +108,9 @@ ActiveRecord::Base.skip_callbacks = false
 User.create # callbacks will be run
 {% endhighlight %}
 
-> You can find the ready to use example [here](https://gist.github.com/ka8725/9767340) and run it with the command `ruby <exmaple>.rb`. To run the code you should have installed *Rails* any version.
+> You can find the ready-to-use example [here](https://gist.github.com/ka8725/9767340) and run it with the command `ruby <exmaple>.rb`. To run the code, you should have any version of *Rails* installed.
 
-With this approach you even may write simple switcher for the tests. Place this code to the `spec/spec_helper.rb`:
+With this approach, you can even write a simple switch for the tests. Put this code in `spec/spec_helper.rb`:
 
 {% highlight ruby %}
 RSpec.configure do |config|
@@ -127,7 +127,7 @@ end
 ActiveRecord::Base.skip_callbacks = true
 {% endhighlight %}
 
-Now you are able to write context or tests with enabled/disabled callbacks in your tests:
+Now you can write contexts or tests with callbacks enabled or disabled:
 
 {% highlight ruby %}
 describe User do
@@ -144,7 +144,7 @@ describe User do
 end
 {% endhighlight %}
 
-If you want you may even turn on/off callbacks for particular model:
+If you want, you can even turn callbacks on or off for a particular model:
 
 {% highlight ruby %}
 User.skip_callbacks = true
@@ -157,4 +157,4 @@ User.create
 
 ## Conclusion
 
-If you start a new Rails project think over and avoid using callbacks. Use service objects or form objects instead callbacks. But if your project already started and it has a lot of models the skipping callbacks solution may save you.
+If you start a new Rails project, think it over and avoid using callbacks. Use service objects or form objects instead. But if your project has already started and has many models, skipping callbacks may save you.

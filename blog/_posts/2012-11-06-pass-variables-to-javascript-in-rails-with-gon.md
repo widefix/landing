@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Pass variables to javascript with gon"
-description: "This post describes how to use gon gem with fun. Gon allows to pass ruby variables from rails server to javascript, but it can grow your controllers in huge monsters. So I offer interesting approach how to avoid it"
+title: "Pass variables to JavaScript with gon"
+description: "This post describes how to enjoy using the gon gem. Gon lets you pass Ruby variables from the Rails server to JavaScript, but it can turn your controllers into huge monsters. I offer an interesting approach to avoid this."
 tags: [gem, rails, javascript]
 share: true
 comments: true
@@ -10,11 +10,11 @@ redirect_from:
 ---
 
 
-If you haven't noticed yet that there is a good solution passing *Rails* variables from controllers to javascript I will be happy to make you fun with [gon](https://github.com/gazay/gon). In this post I will show how to use it with controller's filters in a clean, dry and the best way. This approach will help you to avoid growing controllers in a big monsters.
+If you haven't noticed yet that there is a good solution for passing *Rails* variables from controllers to JavaScript, I will be happy to introduce you to [gon](https://github.com/gazay/gon). In this post, I will show how to use it with controller filters in a clean, DRY way. This approach will help you avoid turning controllers into big monsters.
 
-## Using filters in contollers
+## Using filters in controllers
 
-If you don't know what is contoller filters and how use them, checkout [oficial documentation](http://guides.rubyonrails.org/action_controller_overview.html#filters). In our case we have to know that there are posibilities to apply filters for one action and this one form of using:
+If you don't know what controller filters are or how to use them, check out the [official documentation](http://guides.rubyonrails.org/action_controller_overview.html#filters). In our case, we have to know that filters can be applied to one action. Here is one way to use them:
 
 {% highlight ruby %}
 class ApplicationController < ActionController::Base
@@ -33,7 +33,7 @@ end
 
 ## Using Gon
 
-Say, we have to pass *location* model as a json object from server side to client side (from rails controller to javascript). With *gon* we can reduce it to:
+Say we have to pass a *location* model as a JSON object from the server side to the client side (from a Rails controller to JavaScript). With *gon*, we can reduce it to:
 
 {% highlight ruby %}
 class ProductsController < ApplicationController
@@ -44,7 +44,7 @@ class ProductsController < ApplicationController
 end
 {% endhighlight %}
 
-Everything is ok, but if we have to pass a lot of variables to javascript we will get a fat controller. Also it's not easy to test controllers. So my solution will be to use `before_filter` here. Here is a example of fat controller's action:
+Everything is OK, but if we have to pass a lot of variables to JavaScript, we will get a fat controller. Controllers aren't easy to test either. So my solution is to use `before_filter` here. Here is an example of a fat controller action:
 
 {% highlight ruby %}
   def show
@@ -66,11 +66,11 @@ Everything is ok, but if we have to pass a lot of variables to javascript we wil
   end
 {% endhighlight %}
 
-This code looks too bad and I don't know how you fill when you see it, but my brain explodes.
+This code looks too bad, and I don't know how you feel when you see it, but my brain explodes.
 
-## Useing Gon in a DRY way
+## Using Gon in a DRY way
 
-So go down to business and make something with this peace of ugly code. Let's create `LocationGonFilter` class and move it to `app/filters` folder. You should create this folder if you don't have it.
+So let's get down to business and do something with this piece of ugly code. Let's create a `LocationGonFilter` class and move it to the `app/filters` folder. You should create this folder if you don't have it.
 
 {% highlight ruby %}
 class LocationGonFilter
@@ -104,7 +104,7 @@ class ProductsController < ApplicationController
 end
 {% endhighlight %}
 
-Test for this filter will be look like this:
+A test for this filter will look like this:
 
 {% highlight ruby %}
 require 'spec_helper'
@@ -143,4 +143,4 @@ end
 
 > I'm using FactoryGirl here to create locations
 
-PS. I believe that every class should be responsible for only one thing (this is a [Single responsibility principle (SRP)](http://en.wikipedia.org/wiki/Single_responsibility_principle)). In my post I've explained how to achieve it for controller layer. Filters are separated layer and there we should filter parameters, controllers should inly listen requests, pass action to bottom layer (model) and then response on request, they should not contain complidated logic
+PS. I believe that every class should be responsible for only one thing (this is the [Single Responsibility Principle (SRP)](http://en.wikipedia.org/wiki/Single_responsibility_principle)). In my post, I've explained how to achieve this for the controller layer. Filters are a separate layer, where we should filter parameters. Controllers should only listen for requests, pass the action to the lower layer (the model) and then respond to the request. They should not contain complicated logic.

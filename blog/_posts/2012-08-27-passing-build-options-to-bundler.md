@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Passing build options to bundler"
-description: "When you have to pass build options to bundler using bundler-config will solve your problems with very easy way."
+description: "When you have to pass build options to Bundler, bundler-config solves the problem very easily."
 tags: [ruby, bundler, gems]
 share: true
 comments: true
@@ -12,7 +12,7 @@ redirect_from:
 
 ## Problem
 
-Have you ever had exception dusing installing gems through bundler like below?
+Have you ever had an exception while installing gems through Bundler, like the one below?
 
     Installing mysql2 (0.3.11) with native extensions
     Gem::Installer::ExtensionBuildError: ERROR: Failed to build gem native extension.
@@ -85,12 +85,12 @@ Have you ever had exception dusing installing gems through bundler like below?
     An error occured while installing mysql2 (0.3.11), and Bundler cannot continue.
     Make sure that `gem install mysql2 -v '0.3.11'` succeeds before bundling.
 
-The problem solves by passing build options for this gem:
+The problem is solved by passing build options for this gem:
 
     $ gem install mysql -v '0.3.10' -- --with-mysql-config=/usr/local/Cellar/mysql/5.5.20/bin/mysql_config
 
-But this solution is ugly because you have to install problematic gems independently from bundler and if you have a lot of ruby versions in
-your operation system you will have to do it for each ruby version. But there is a another solution, much better this one.
+But this solution is ugly because you have to install problematic gems independently of Bundler, and if you have a lot of Ruby versions in
+your operating system, you will have to do it for each Ruby version. But there is another solution, much better than this one.
 
 ## Solution
 
@@ -102,4 +102,4 @@ And now you are able to install gems through bundler without issues:
 
     bundler install
 
-That's it - you have installed all gems for your project. Full documentation is located [here](http://gembundler.com/man/bundle-config.1.html)
+That's it — you have installed all the gems for your project. The full documentation is located [here](http://gembundler.com/man/bundle-config.1.html).

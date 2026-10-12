@@ -13,7 +13,7 @@ Are you looking to harness the power of artificial intelligence and machine lear
 
 Before you start integrating the ChatGPT API, you need to register for an API key and obtain your credentials from the ChatGPT website. To do that, follow this [page](https://platform.openai.com/account/api-keys){:ref="nofollow" target="_blank"}.
 
-Create the following class in your Ruby On Rails or any other Ruby-based project:
+Create the following class in your Ruby on Rails project or any other Ruby-based project:
 
 ```ruby
 class OpenaiPrompt
@@ -59,7 +59,7 @@ class OpenaiPrompt
 end
 ```
 
-You can define your ChatGPT class within an existing file or create a new one specifically for it. However, it is generally recommended to create a separate file for your ChatGPT class for better organization and modularity of your code. This makes it easier to find and modify your ChatGPT code in the future without affecting other parts of your project. If it's a Ruby On Rails application, `app/services/openai_prompt.rb` is a good file location for this piece of code.
+You can define your ChatGPT class within an existing file or create a new one specifically for it. However, it is generally recommended to create a separate file for your ChatGPT class for better organization and modularity of your code. This makes it easier to find and modify your ChatGPT code in the future without affecting other parts of your project. If it's a Ruby on Rails application, `app/services/openai_prompt.rb` is a good file location for this piece of code.
 
 This class has the following dependencies (gems) that should be added to your `Gemfile`:
 - `faraday` - This is a handy library that provides an abstract interface for making HTTP requests. It simplifies the process of making requests to external APIs and handling responses.
@@ -82,4 +82,4 @@ The `OpenaiPrompt` class serves as an example of how you can use ChatGPT to answ
 
 Furthermore, integrating ChatGPT with a user interface, such as a web form or a chatbot, can allow users to ask questions and get responses in a more intuitive manner. This can be particularly useful for applications that require natural language processing and understanding, such as customer service chatbots or virtual assistants. By integrating ChatGPT with a UI, you can make it more accessible and user-friendly for non-technical users.
 
-If you have questions or need to integrate ChatGPT into your Ruby On Rails or any other Ruby-based project, please [contact](https://widefix.com/).
+If you have questions or need to integrate ChatGPT into your Ruby on Rails project or any other Ruby-based project, please [contact](https://widefix.com/).

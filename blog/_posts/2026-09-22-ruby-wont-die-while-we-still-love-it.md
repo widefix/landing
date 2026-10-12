@@ -26,7 +26,7 @@ What is important to me is that people still use them. `migration_data` has more
 
 Of course, the download number does not tell us exactly how many people use a gem. But I can see that these gems are still being downloaded. I can see that they are still helping Ruby developers solve real problems. And I am very grateful for that. **I am grateful to every person who trusted my work enough to add one of my gems to their project.** I am grateful to the people who opened issues, suggested improvements, contributed code, shared the gems with others, or simply used them in their daily work.
 
-When you publish open-source software, you give a part of your knowledge and experience to the community. When other developers continue using your work years later, it means a lot. Their trust also gives me responsibility. It gives me a reason to maintain these projects, improve them, and continue contributing to Ruby. For me, this is what makes a programming language alive. It is not only about how many companies use it. It is not only about its position in a popularity ranking.
+When you publish open-source software, you give a part of your knowledge and experience to the community. When other developers continue using your work years later, it means a lot. Their trust also gives me a responsibility. It gives me a reason to maintain these projects, improve them, and continue contributing to Ruby. For me, this is what makes a programming language alive. It is not only about how many companies use it. It is not only about its position in a popularity ranking.
 
 **It is about people.** One developer creates something. Another developer decides to trust it. Someone else reports a problem or improves the code. Then many projects benefit from this shared work.
 

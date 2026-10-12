@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Optimize Rails app performance with ChatGPT"
-headline: "See how ChatGPT is good with code refactoring or performance optimization"
+headline: "See how good ChatGPT is at code refactoring or performance optimization"
 modified: 2023-06-07 18:30:34 +0200
 description: "Learn how to use ChatGPT in order to optimize your Rails app performance by code refactoring from Ruby to SQL."
 tags: [chatgpt, sql, postgresql, performance, active_record]
@@ -10,13 +10,13 @@ toc: true
 image: rocket-launch.jpg
 ---
 
-The previous article [Make your Ruby on Rails app 80x faster with SQL](https://widefix.com/blog/importance-sql-for-rails-experts/){:ref="nofollow" target="_blank"} shows how SQL knowledge can help to optimize your Rails application performance. We discussed it within [Belarus User Group](https://www.brug.by/){:ref="nofollow" target="_blank"} community. Not everyone agreed with the point and didn’t find SQL knowledge a good asset for investment. That's something expected. There is no revelation here. But that meeting had something that everyone was impressed with. We experimented and found out how ChatGPT is good with code optimization. We saw how it transforms Ruby code into performant SQL. The results were great. Check that out within this article.
+The previous article [Make your Ruby on Rails app 80x faster with SQL](https://widefix.com/blog/importance-sql-for-rails-experts/){:ref="nofollow" target="_blank"} shows how SQL knowledge can help to optimize your Rails application performance. We discussed it within the [Belarus User Group](https://www.brug.by/){:ref="nofollow" target="_blank"} community. Not everyone agreed with the point; some didn’t consider SQL knowledge a good investment. That's something expected. There is no revelation here. But that meeting had something that everyone was impressed with. We experimented and found out how good ChatGPT is at code optimization. We saw how it transforms Ruby code into performant SQL. The results were great. Check it out in this article.
 
 ## ChatGPT request to transform Ruby code into SQL
 
 As before, we are going to use this [experimental repository](https://github.com/widefix/demo-fast-sql){:ref="nofollow" target="_blank"}.
 
-We took [the following code snippet](https://github.com/widefix/demo-fast-sql/blob/4ea63b68d4404403e543b1d09978e5cdd5742f36/app/queries/services_stats_query.rb#L31-L64){:ref="nofollow" target="_blank"}, the slowest and original version, and asked to improve its performance by rewriting it into SQL:
+We took [the following code snippet](https://github.com/widefix/demo-fast-sql/blob/4ea63b68d4404403e543b1d09978e5cdd5742f36/app/queries/services_stats_query.rb#L31-L64){:ref="nofollow" target="_blank"}, the slowest and original version, and asked ChatGPT to improve its performance by rewriting it into SQL:
 
 ```ruby
 # the original code
@@ -99,13 +99,13 @@ Comparison:
                 ruby:        6.8 i/s - 89.01x  slower
 ```
 
-We also checked that the result of the query service is the same for both calls. That means there are no bugs in the produced SQL by the AI.
+We also checked that the result of the query service is the same for both calls. That means there are no bugs in the SQL produced by the AI.
 
-The ChatGPT result is the fastest one. At the same time, no business logic was defective. That's a very good result!
+The ChatGPT result is the fastest one. At the same time, the business logic remained intact. That's a very good result!
 
 ## Should one use ChatGPT to optimize code performance or not
 
-While the AI results are good, it's still doubtful who and how to use the tool. Not seasoned developers might don't understand where the bottleneck is. They would struggle with finding a correct question for ChatGPT. They would not understand how to fix the generated code if it has bugs. Some time later I tried to repeat the experiment and know the machine produced a very different SQL that has bugs inside:
+While the AI results are good, it's still unclear who should use the tool and how. Less experienced developers might not understand where the bottleneck is. They would struggle with finding a correct question for ChatGPT. They would not understand how to fix the generated code if it has bugs. Some time later, I tried to repeat the experiment and found that the machine produced very different SQL with bugs:
 
 ```sql
 -- Get average ratings and count for each service
@@ -142,7 +142,7 @@ WHERE s.user = <user_id> AND s.status = 'approved' AND s.active = true
 ORDER BY completed_projects_count DESC;
 ```
 
-While the AI results are good, it's still doubtful who and how to use the tool. Not seasoned developers might don't understand where the bottleneck is. They would struggle with finding a correct question for ChatGPT. They would not understand how to fix the generated code if it has bugs. Later, I tried to repeat the experiment. This time the machine produced a very different SQL:
+While the AI results are good, it's still unclear who should use the tool and how. Less experienced developers might not understand where the bottleneck is. They would struggle with finding a correct question for ChatGPT. They would not understand how to fix the generated code if it has bugs. Later, I tried to repeat the experiment. This time the machine produced very different SQL:
 
 ```
 Warming up --------------------------------------
@@ -167,9 +167,9 @@ However, it's still faster than the original rewrite to SQL.
 
 ## Conclusion
 
-ChatGPT is very good at code refactoring and transforming Ruby code into SQL. Even though the results are impressive it still needs an expert communicating with the tool to form a correct question, check the produced results, and fix minor issues. The results can be a good start in code refactoring and optimization.
+ChatGPT is very good at code refactoring and transforming Ruby code into SQL. Even though the results are impressive, it still needs an expert communicating with the tool to form a correct question, check the produced results, and fix minor issues. The results can be a good start in code refactoring and optimization.
 
-That was a great meeting. We had a memorable time together. Thanks to everyone who participated. I am looking forward to our weekly calls and I invite everyone to join the community.
+That was a great meeting. We had a memorable time together. Thanks to everyone who participated. I am looking forward to our weekly calls, and I invite everyone to join the community.
 
 Happy coding!
 

@@ -47,7 +47,7 @@ Sometimes, you need to make quick adjustments to your database schema without cr
 
 By default, Console Migrations is disabled. You can enable it in two ways:
 
-**1. Using Environment Variable**
+**1. Using an Environment Variable**
 
 Set the environment variable `ACTUAL_DB_SCHEMA_CONSOLE_MIGRATIONS_ENABLED` to `true`:
 
@@ -55,7 +55,7 @@ Set the environment variable `ACTUAL_DB_SCHEMA_CONSOLE_MIGRATIONS_ENABLED` to�
 export ACTUAL_DB_SCHEMA_CONSOLE_MIGRATIONS_ENABLED=true
 ```
 
-**2. Using Initializer**
+**2. Using an Initializer**
 
 Add the following line to your initializer file (`config/initializers/actual_db_schema.rb`):
 

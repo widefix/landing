@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Jekyll - the best blog engine"
-description: "This post describes how to use github pages (gh-pages) as hosting to have a simple blog based on jekyll engine. You don't have to pay for hosting at all for it"
+description: "This post describes how to use GitHub Pages (gh-pages) to host a simple blog based on Jekyll. You don't have to pay for hosting."
 tags: [jekyll, git, hosting, blog]
 share: true
 comments: true
@@ -10,46 +10,46 @@ redirect_from:
 ---
 
 
-Have you ever wanted to have a nice, simple to use free blog engine for developer? If have this post is especially for you.
+Have you ever wanted a nice, simple-to-use, free blog engine for developers? If so, this post is especially for you.
 
 ## Blog engine
 
-I think that *Jekyll* is the best blog engine for programmer today. It has everything what you want as developer to write your thoughts down:
+I think that *Jekyll* is the best blog engine for programmers today. It has everything you want as a developer to write your thoughts down:
 
 * simple template system
-* *markdown*, *html* or *textile* templates with *liquid* includes and *possibilities* to add inline html
+* *markdown*, *html* or *textile* templates with *liquid* includes and the ability to add inline HTML
 * code highlighting
-* ability to extend system with plugins
-* ready to use html templates ([twitter, tom, the-program, the-minimum and mark-reid](http://themes.jekyllbootstrap.com/preview/twitter/) are available for now)
+* the ability to extend the system with plugins
+* ready-to-use HTML templates ([twitter, tom, the-program, the-minimum and mark-reid](http://themes.jekyllbootstrap.com/preview/twitter/) are available for now)
 * permalink customization
-* SEO features (meta tags, sitemap.xml, atom.xml are available out of box)
-* tags supporting
+* SEO features (meta tags, sitemap.xml and atom.xml are available out of the box)
+* tag support
 * lightweight and fast
-* without database
-* without hosting headaches
-* comments system out of box
-* google analytics out of box
+* no database
+* no hosting headaches
+* a comments system out of the box
+* Google Analytics out of the box
 
-In the same time this blog engine is very simple and it generates static pages, so it works rather quickly. There is a just engine without any template and it available on [GitHub](https://github.com/mojombo/jekyll) but you can use [ready templates](http://jekyllbootstrap.com/). I prefer second variant to install it.
+At the same time, this blog engine is very simple and generates static pages, so it works rather quickly. The engine itself, without any templates, is available on [GitHub](https://github.com/mojombo/jekyll), but you can use [ready-made templates](http://jekyllbootstrap.com/). I prefer the second option for installation.
 
-As a hosting jekyll get on well with [github-pages](http://pages.github.com/). It is the simplest way to push your blog to the internet.
+For hosting, Jekyll gets on well with [github-pages](http://pages.github.com/). It is the simplest way to put your blog on the internet.
 
-If you have blog on another engine (Tumblr, Posterous, Blogger/Blogspot, Mephisto, TextPattern, Typo 4+, Movable Type, Drupal or WordPress) you are able to migrate to this one very simple. How to do it you can find [here](https://github.com/mojombo/jekyll/wiki/Blog-Migrations).
+If you have a blog on another engine (Tumblr, Posterous, Blogger/Blogspot, Mephisto, TextPattern, Typo 4+, Movable Type, Drupal or WordPress), you can migrate to this one very easily. You can find out how [here](https://github.com/mojombo/jekyll/wiki/Blog-Migrations).
 
 ## Installation
 
-> I will describe here deployment process only to github pages. If you would like to deploy code to your server you should follow [these instructions](https://github.com/mojombo/jekyll/wiki/Deployment).
+> I will describe the deployment process only for GitHub Pages here. If you would like to deploy the code to your server, follow [these instructions](https://github.com/mojombo/jekyll/wiki/Deployment).
 
-Firstly you should have account on the [GitHub](http://github.com). If you don't have one, sign up there. Then [Create repository](https://github.com/repositories/new) with name *USERNAME.github.com*.
+Firstly, you should have an account on [GitHub](http://github.com). If you don't have one, sign up there. Then [create a repository](https://github.com/repositories/new) named *USERNAME.github.com*.
 
     $ git clone https://github.com/plusjade/jekyll-bootstrap.git USERNAME.github.com
     $ cd USERNAME.github.com
     $ git remote set-url origin git@github.com:USERNAME/USERNAME.github.com.git
     $ git push origin master
 
-After this actions you will have ready to use blog template. To write posts locally you should [install](https://github.com/mojombo/jekyll/wiki/Install) *jekyll* gem.
+After these steps, you will have a ready-to-use blog template. To write posts locally, you should [install](https://github.com/mojombo/jekyll/wiki/Install) the *jekyll* gem.
 
-Available actions with blog are:
+The available blog actions are:
 
     rake page           # Create a new page.
     rake post           # Begin a new post in ./_posts

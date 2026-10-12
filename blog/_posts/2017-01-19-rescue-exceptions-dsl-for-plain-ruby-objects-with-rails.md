@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Rescue exceptions DSL for plain Ruby objects with Rails"
-description: "A solution to consume rescue_from DSL in a Rails application.
+title: "An exception-rescue DSL for plain Ruby objects with Rails"
+description: "A solution for using the rescue_from DSL in a Rails application.
               Likewise in Rails controllers we have a useful functionality to
               catch exceptions with rescue_from in order to change the default
               behavior, it's too easy to obtain it for any other type of a Ruby object in Rails applications."
@@ -11,16 +11,16 @@ comments: true
 share: true
 ---
 
-At some point, you can start to think about how it would be great to have in your pure Ruby objects
-of your Rails application the same DSL as Rails' controllers have to rescue exceptions coming from
-actions with the `rescue_from` help. If you are interested in this topic then keep reading and I will
-show how it's easy to implement it from scratch.
+At some point, you may think how great it would be for the pure Ruby objects
+in your Rails application to have the same DSL as Rails controllers for rescuing exceptions from
+actions with the help of `rescue_from`. If you are interested in this topic, keep reading, and I will
+show how easy it is to implement it from scratch.
 
 **TL;DR:** use [ActiveSupport::Rescuable](http://api.rubyonrails.org/v5.0/classes/ActiveSupport/Rescuable/ClassMethods.html).
 
 ## Introduction
 
-It's not a secret to everyone that it's too easy to catch all targeted exceptions raised in any Rails controller. Just use `rescue_from` in a base controller like this:
+It's no secret that catching targeted exceptions raised in a Rails controller is very easy. Just use `rescue_from` in a base controller like this:
 
 ```ruby
 class ApplicationController < ActionController::Base
@@ -30,19 +30,19 @@ class ApplicationController < ActionController::Base
 end
 ```
 
-And that's it. Whenever the `CanCan::AccessDenied` is raised in some action of inherited controllers from the `ApplicationController` the Ruby interpreter jumps into this block, defined with the `rescue_from` and then it's executed. As a result, a user will be redirected to the main page with an alert and the original exception is suppressed. There are different ways how to use the `rescue_from` method, but this post is not about this, so you can find all variations [here](http://api.rubyonrails.org/v5.0/classes/ActiveSupport/Rescuable/ClassMethods.html#method-i-rescue_from).
+And that's it. Whenever `CanCan::AccessDenied` is raised in an action of a controller inheriting from `ApplicationController`, the Ruby interpreter jumps into the block defined with `rescue_from` and executes it. As a result, the user is redirected to the main page with an alert, and the original exception is suppressed. There are different ways to use `rescue_from`, but this post isn't about them. You can find all the variations [here](http://api.rubyonrails.org/v5.0/classes/ActiveSupport/Rescuable/ClassMethods.html#method-i-rescue_from).
 
-The main idea of this article is to show you how to add such functionality into some other type of objects of your Rails application. Say, you have a bunch of service objects that reside at the same hierarchy branch.
-And you want to catch some general exception in the base class of these service objects easily and, you think,
-that it would be good to have this functionality in the descendants.
+The main idea of this article is to show how to add this functionality to other types of objects in your Rails application. Say you have a bunch of service objects on the same hierarchy branch.
+You want to catch a general exception easily in their base class, and you think
+it would be good to have this functionality in the descendants.
 
 
 ## Extend custom objects with Rescuable
 
 Actually, it's not a problem at all. All you have to do is just to include the `ActiveSupport::Rescuable`
-module into a base class and wrap the method responsible for the execution of some work that could raise an exception which you would like to catch later with the `rescue_from`.
+module in a base class and wrap the method that does work that could raise an exception you want to catch with `rescue_from`.
 
-To not be wordy I will just provide the following code snippet which demonstrates the main idea:
+To avoid being wordy, I will just provide a code snippet that demonstrates the main idea:
 
 ```ruby
 class BaseService
@@ -115,11 +115,11 @@ LoginUserService.new(email: 'kill -9').call
 ```
 
 The main trick here is in the `include ActiveSupport::Rescuable`. It provides us with the `rescue_from`
-method, defined on the class level. And also it adds the `rescue_with_handler` method which tries to find a handler for a raised exception and call this handler if it's found. The handler is defined with the `rescue_from` in a service object - it's just a block. We use this in the `call_with_rescue` method, which wraps that method that does a real job and can raise an exception at some point (this is the `useful_yield` method).
-And this exception can be caught with the `rescue_from` and some useful work can be done suppressing the error. Or it will be raised up and an end user will observe it in case if we don't have a defined rescue handler for
+method, defined at the class level. It also adds `rescue_with_handler`, which tries to find a handler for a raised exception and calls it if found. The handler is defined with `rescue_from` in a service object — it's just a block. We use this in `call_with_rescue`, which wraps the method that does the real work and may raise an exception (`useful_yield`).
+The exception can be caught with `rescue_from`, and some useful work can be done while suppressing the error. Or it will propagate, and an end user will see it if we don't have a rescue handler defined for
 this exception.
 
-Now let's experiment with this code. Just place the code above in a `test.rb` file located in a Rails application and execute it with the [rails runner](http://guides.rubyonrails.org/command_line.html#rails-runner) using following command: `rails runner test.rb`. You will have an output similar to this one:
+Now let's experiment with this code. Put it in a `test.rb` file in a Rails application and execute it with [rails runner](http://guides.rubyonrails.org/command_line.html#rails-runner) using this command: `rails runner test.rb`. You will get output similar to this:
 
 ```
 Logged invalid login attempt: LoginUserService::InvalidEmailError - email is invalid
@@ -129,13 +129,13 @@ Field is empty: BaseService::FieldIsNilError - email is nil
 test.rb:49:in `useful_yield': throw out (LoginUserService::SecurityError)
 ```
 
-If you feel uncomfortable at this point you can change this code and rerun it with the rails runner, it's rather easy, as you see. Or just comment on this post. I would be glad to hear your response and questions.
+If you feel uncomfortable at this point, you can change the code and rerun it with rails runner. It's rather easy, as you can see. Or just comment on this post. I would be glad to hear your feedback and questions.
 
 
 ## Conclusion
 
-Try to understand how interesting things are implemented, that you would like to have in your code, and consume
-the implementation. But note, that sometimes it's easier to implement some things yourself
-from scratch, there are may be many reasons for this: code quality, lack of functionality that can't be
-extended easily and so on. Every case should be analyzed and a correct decision should be taken. But it's not
-about this case. The `ActiveSupport::Rescuable` does its work and does it gracefully.
+Try to understand how interesting things you would like in your code are implemented, and reuse
+the implementation. But note that sometimes it's easier to implement things yourself
+from scratch. There may be many reasons: code quality, missing functionality that can't be
+added easily and so on. Every case should be analyzed, and the correct decision made. But that doesn't apply
+here. `ActiveSupport::Rescuable` does its work gracefully.
