@@ -278,7 +278,9 @@ Comparison:
                 ruby:        5.7 i/s - 79.74x  slower
 ```
 
-Performance boost of almost 80 times! The slow-loading page that took over 30 seconds now loads within 300ms. This significant improvement is not the programming language or framework merit.
+The benchmark above measures Ruby-versus-SQL processing throughput: 451.144 iterations per second for SQL versus 5.658 for Ruby, a 79.74× improvement. It does not measure end-to-end page loading.
+
+Separately, the slow-loading page that took over 30 seconds was reported to load within 300ms after optimization. Browser, device, network conditions and the page timing method were not recorded here, so this page-load observation should be read separately from the reproducible processing benchmark. No LCP, INP or CLS measurements are provided; this evidence does not establish a Core Web Vitals improvement.
 
 ## Demo: Faster SQL in Ruby on Rails App
 

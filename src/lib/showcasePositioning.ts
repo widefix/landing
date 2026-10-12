@@ -16,11 +16,11 @@ export const showcasePositioning: Record<string, ShowcasePositioning> = {
     steps: ['Analyze the slow page and prioritize bottlenecks', 'Optimize the data path and verify the result'],
     cardLabel: 'Rails performance optimization',
     hook: 'RAILS PERFORMANCE OPTIMIZATION',
-    headline: 'Kajabi Experts pages became 80× faster',
+    headline: 'Kajabi Experts: faster SQL processing, usable pages',
     value: 'An MVP page had become unusable for some end users. Targeted Rails and SQL optimization restored a responsive experience without replacing the product or its framework.',
     help: 'Need to improve performance in an existing Rails app?', theme: 'amber',
     title: 'Kajabi Experts: Rails Performance Optimization - WideFix',
-    description: 'WideFix took ownership of slow Kajabi Experts pages, optimized the Rails data path and measured an 80× performance improvement.',
+    description: 'Kajabi Experts Rails and SQL optimization: a 79.74× processing benchmark and a separately reported page-load improvement.',
   },
   'public-api-development': {
     steps: ['Deliver the API and backoffice', 'Refactor the shared Rails backend'],

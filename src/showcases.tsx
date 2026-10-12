@@ -44,14 +44,14 @@ const showcases: Showcase[] = [
       title: 'Kajabi Experts: Rails Performance Optimization',
       companyName: 'Kajabi',
       solution: 'Rails Application Performance Optimization',
-      results: 'Took ownership of pages that some users could not open, optimized the Rails data path and measured an 80× performance improvement.',
+      results: 'Optimized the Rails data path for unusable pages. The Ruby-versus-SQL processing benchmark showed 79.74× higher throughput; separately, the article reports page loading falling from over 30 seconds to 300ms.',
       wrapperColor: SwiperSlideColor.sea,
       buttonColor: SwiperSlideColor.sea,
       companyImageSrc: '/img/showcases/clients/kajabi.svg',
       url: '',
     },
     body: {
-      bannerTopTitle: <h1>Kajabi Experts: <span className="oval">80× faster pages</span></h1>,
+      bannerTopTitle: <h1>Kajabi Experts: <span className="oval">Faster SQL processing and usable pages</span></h1>,
       bannerTopImageSrc: '/img/showcases/optimisation.svg',
       description: 'Performance optimization for the Kajabi Experts product',
       descriptionText: <p>Kajabi Experts had launched as an MVP, but some pages had become so slow that end users could not open them. WideFix took ownership of the performance issue and worked with Kajabi to make the product responsive again.</p>,
@@ -60,15 +60,15 @@ const showcases: Showcase[] = [
       detailsImageSrc: '/img/showcases/optimisation.svg',
       problemText: <p>The MVP had shipped without enough attention to performance. As a result, some important pages took so long to respond that they were effectively unavailable to users. That created a poor first impression and made the product harder to adopt.</p>,
       solutionFirstText: <p>We took ownership of the issue, analyzed the slow page and its Rails data path, then prioritized the changes most likely to improve response time. The work focused on efficient database querying rather than replacing the framework or rebuilding the product.</p>,
-      solutionSecondText: <p>We implemented the optimization and measured performance before and after the change, checking that the page continued to return the expected data. The affected page became <strong>80× faster</strong>, turning an unusable experience into a responsive one.</p>,
+      solutionSecondText: <p>We moved expensive Ruby-side processing into SQL and checked that the page returned the expected data. The published benchmark compares processing throughput: SQL achieved 451.144 iterations per second versus 5.658 for Ruby, a <strong>79.74× improvement</strong>. Separately, the article reports page loading falling from over 30 seconds to 300ms; that observation is not the processing benchmark.</p>,
       bannerSolutionPng: '/img/showcases/optimisation.svg',
       bannerSolutionWebp: '/img/showcases/optimisation.svg',
       resultBoxes: [
-        { color: ResultBoxColor.lightBlue, imageSrc: '/img/showcases/case/icons/stock.svg', message: 'Page performance', number: '80× faster' },
-        { color: ResultBoxColor.lightGreen, imageSrc: '/img/showcases/case/icons/flag.svg', message: 'Slow pages', number: 'Usable again' },
-        { color: ResultBoxColor.lightGreen, imageSrc: '/img/showcases/case/icons/stock.svg', message: 'Core Web Vitals', number: 'Improved' },
+        { color: ResultBoxColor.lightBlue, imageSrc: '/img/showcases/case/icons/stock.svg', message: 'SQL vs Ruby processing throughput', number: '79.74×' },
+        { color: ResultBoxColor.lightGreen, imageSrc: '/img/showcases/case/icons/flag.svg', message: 'Reported page load before', number: '>30 seconds' },
+        { color: ResultBoxColor.lightGreen, imageSrc: '/img/showcases/case/icons/stock.svg', message: 'Reported page load after', number: '300ms' },
       ],
-      resultText: <p>After the changes, the page was <strong>80× faster</strong> and end users could access it reliably. The better experience made Kajabi Experts more attractive to users and improved its Core Web Vitals, supporting the product&apos;s technical SEO.</p>,
+      resultText: <p>The published <strong>79.74× result measures Ruby-versus-SQL processing throughput</strong>, not end-to-end page performance. The article separately reports a page-load change from <strong>over 30 seconds to 300ms</strong>, without documenting the browser, device, network or timing method. No LCP, INP or CLS measurements are published, so these results do not establish a Core Web Vitals improvement.</p>,
       helpTitle: 'Need to make slow Rails pages usable again?',
       related: [
         {
@@ -83,7 +83,7 @@ const showcases: Showcase[] = [
         {
           companyName: 'WideFix',
           solution: 'Make your Ruby on Rails app 80x faster with SQL',
-          results: 'How SQL optimization can remove repeated work from a slow Rails page and how to measure the improvement.',
+          results: 'A 79.74× Ruby-versus-SQL processing benchmark, plus a separately reported page-load change from over 30 seconds to 300ms.',
           wrapperColor: SwiperSlideColor.sea,
           buttonColor: SwiperSlideColor.sea,
           companyImageSrc: '/img/showcases/widefix.svg',
@@ -93,7 +93,7 @@ const showcases: Showcase[] = [
     },
     metadata: {
       title: 'Kajabi Experts: Rails Performance Optimization - WideFix',
-      description: 'How WideFix took ownership of slow Kajabi Experts pages, optimized the Rails data path and measured an 80× performance improvement.',
+      description: 'Kajabi Experts Rails and SQL optimization: a 79.74× processing throughput benchmark and separately reported page-load improvement.',
     },
   },
   {

@@ -53,9 +53,16 @@ const service: FocusedService = {
       ]
     }
   ],
-  "evidenceEyebrow": "Published engineering work",
-  "evidenceHeading": "Explore our SQL and PostgreSQL work",
+  "evidenceEyebrow": "Client work and engineering evidence",
+  "evidenceHeading": "SQL optimization for Kajabi Experts",
   "evidence": [
+    {
+      "title": "Kajabi Experts: Rails and SQL optimization",
+      "detail": "We moved expensive Ruby-side processing into SQL to make slow pages usable again. The published processing benchmark shows 79.74× higher throughput; the article separately reports page loading falling from over 30 seconds to 300ms. These are distinct measurements, not Core Web Vitals results.",
+      "href": "/showcases/kajabi-experts-performance",
+      "icon": "momentum",
+      "linkLabel": "Read the Kajabi Experts case study"
+    },
     {
       "title": "SQL knowledge for Rails experts",
       "detail": "An engineering article about using SQL to understand and improve Rails applications.",
