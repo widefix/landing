@@ -29,7 +29,7 @@ export default function ShowcasePage({ params }: { params: { slug: string } }) {
         <div className={shared.container}>
           <div className={shared.topline}>
             <Link className={shared.backLink} href="/showcases">All case studies</Link>
-            <span className={showcase.slug === 'shopwired-queue-optimization' ? styles.logoPlate : undefined}>
+            <span className={['shopwired-queue-optimization', 'kajabi-experts-performance'].includes(showcase.slug) ? styles.logoPlate : undefined}>
               <Image src={preview.companyImageSrc} alt={preview.companyName} width={138} height={35} priority />
             </span>
           </div>

@@ -1,4 +1,5 @@
 export const relatedServiceLinks: Record<string, { href: string; title: string }[]> = {
+  'kajabi-experts-performance': [{ href: '/ruby-on-rails-performance', title: 'Rails performance audit and optimization' }, { href: '/postgresql-performance-consulting', title: 'PostgreSQL performance consulting' }],
   'costa-del-home-search-performance': [{ href: '/ruby-on-rails-performance', title: 'Rails performance audit and optimization' }],
   'shopwired-queue-optimization': [{ href: '/ruby-on-rails-rescue', title: 'Rails rescue and recovery' }, { href: '/ruby-on-rails-performance', title: 'Rails performance consulting' }],
   'palladium-rails-upgrade': [{ href: '/legacy-ruby-on-rails-maintenance', title: 'Legacy Rails maintenance and modernization' }],
