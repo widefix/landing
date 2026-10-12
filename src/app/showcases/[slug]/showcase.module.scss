@@ -23,6 +23,22 @@
 .navigation a:hover { text-decoration: underline; text-underline-offset: 4px; }
 .challenge, .delivery, .results, .articles, .related { padding: 84px 0; }
 .challenge, .results { background: var(--surface); }
+.decisionMatrixSection { padding: 84px 0; background: var(--surface); }
+.decisionMatrixIntro { max-width: 800px; margin-bottom: 32px; }
+.decisionMatrixIntro h2 { font-size: 38px; line-height: 1.2; margin-bottom: 16px; }
+.decisionMatrixIntro p { color: var(--muted); font-size: 16px; line-height: 1.8; }
+.decisionMatrixScroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 8px; background: #fff; -webkit-overflow-scrolling: touch; }
+.decisionMatrix { width: 100%; min-width: 900px; border-collapse: collapse; color: var(--ink); font-size: 14px; line-height: 1.55; }
+.decisionMatrix caption { padding: 16px 20px; color: var(--muted); text-align: left; }
+.decisionMatrix caption a { margin-left: 8px; color: var(--ink); font-weight: 700; text-underline-offset: 3px; }
+.decisionMatrix th, .decisionMatrix td { padding: 14px 16px; border-top: 1px solid var(--border); text-align: left; vertical-align: middle; }
+.decisionMatrix thead th { border: 0; background: var(--dark); color: #fff; font-size: 12px; letter-spacing: 0; text-transform: uppercase; }
+.decisionMatrix thead th:nth-child(2), .decisionMatrix thead th:nth-child(3), .decisionMatrix tbody td:nth-child(2), .decisionMatrix tbody td:nth-child(3) { width: 110px; text-align: center; }
+.decisionMatrix tbody th { width: 220px; font-weight: 650; }
+.decisionScore, .decisionWinner { display: inline-flex; min-width: 36px; min-height: 36px; align-items: center; justify-content: center; border-radius: 6px; background: #edf1ed; font-weight: 750; }
+.decisionWinner { background: var(--accent); color: var(--dark); }
+.decisionMatrix tfoot th, .decisionMatrix tfoot td { border-top: 2px solid var(--dark); background: #f8faf8; font-weight: 700; }
+.decisionMatrix tfoot strong { display: block; margin-top: 4px; font-size: 20px; }
 .split { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 64px; align-items: start; }
 .challenge h2, .sectionHeading h2, .results h2, .articles h2, .related h2 { font-size: 38px; line-height: 1.2; margin-bottom: 24px; }
 .copy { color: var(--muted); font-size: 16px; line-height: 1.8; overflow-wrap: anywhere; }
@@ -67,9 +83,9 @@
 @media (max-width: 1024px) { .page .hero h1 { font-size: 40px; } .split { gap: 32px; } .steps li, .resultGrid article { padding: 24px; } }
 @media (max-width: 860px) { .split, .steps, .relatedGrid { grid-template-columns: 1fr; } }
 @media (max-width: 600px) {
-  .challenge, .delivery, .results, .articles, .related { padding: 56px 0; }
+  .challenge, .delivery, .results, .articles, .related, .decisionMatrixSection { padding: 56px 0; }
   .page .hero h1 { font-size: 36px; }
-  .challenge h2, .sectionHeading h2, .results h2, .articles h2, .related h2 { font-size: 30px; }
+  .challenge h2, .sectionHeading h2, .results h2, .articles h2, .related h2, .decisionMatrixIntro h2 { font-size: 30px; }
   .serviceLink { display: flex; margin-left: 0; }
 }
 @media (prefers-reduced-motion: reduce) { .page { scroll-behavior: auto; } }

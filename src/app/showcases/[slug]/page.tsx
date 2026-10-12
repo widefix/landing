@@ -8,6 +8,26 @@ import DownloadPDF from '../worshiponline-paperclip-activestorage/DownloadPDF';
 import shared from '../worshiponline-paperclip-activestorage/worshiponline.module.scss';
 import styles from './showcase.module.scss';
 
+const tmaDecisionCriteria = [
+  ['Advanced customization', 2, 5, 'A custom system allows full control over business rules, architecture and integrations.'],
+  ['Debugging and support', 2, 5, 'Custom code offers more detailed diagnostics and direct control over fixes.'],
+  ['Data consistency', 1, 5, 'A purpose-built workflow can define its own delivery and idempotency guarantees.'],
+  ['Time to first results', 5, 2, 'Zapier workflows can launch quickly; custom development takes longer upfront.'],
+  ['Data protection and ownership', 2, 5, 'A custom solution keeps the data flow under the product team’s control.'],
+  ['Long-run maintenance cost', 2, 4, 'Usage-based automation can grow in cost; custom work has a larger initial investment.'],
+  ['Scalability', 2, 5, 'Custom processing can be tuned as event volume and workload grow.'],
+  ['Hosting cost', 4, 3, 'Zapier includes hosting; a custom solution needs its own infrastructure.'],
+  ['Developer onboarding', 2, 4, 'Custom code in version control is easier to inspect and hand over.'],
+  ['Real-time latency', 2, 5, 'Custom processing can avoid the seconds-to-minutes delay of automation workflows.'],
+  ['Batch processing and throughput', 1, 5, 'A custom system can batch work, parallelize processing and tune API usage.'],
+  ['Monitoring and observability', 2, 5, 'A custom system can integrate the metrics, tracing and dashboards the team needs.'],
+  ['Vendor lock-in risk', 1, 5, 'Custom code and open standards offer a more portable path.'],
+  ['Integration availability', 5, 3, 'Zapier provides many ready-made connectors; custom integrations require development.'],
+  ['Compliance and certifications', 3, 5, 'A custom system can be designed around specific compliance requirements.'],
+  ['Error handling and retries', 2, 5, 'Custom workflows can define retry policies, dead-letter handling and alerts.'],
+  ['Cost structure', 2, 5, 'Custom development shifts more cost upfront and can lower marginal cost at scale.'],
+] as const;
+
 export default function ShowcasePage({ params }: { params: { slug: string } }) {
   const showcase = showcases.find(item => item.slug === params.slug);
   if (!showcase) notFound();
@@ -84,6 +104,29 @@ export default function ShowcasePage({ params }: { params: { slug: string } }) {
           {body.bannerSolutionPng && <div className={styles.solutionVisual}><Image src={body.bannerSolutionWebp || body.bannerSolutionPng} alt={`${preview.companyName}: delivered ${preview.solution.toLowerCase()}`} width={960} height={640} sizes="(max-width: 860px) 100vw, 800px" /></div>}
         </div>
       </section>
+
+      {showcase.slug === 'tma-sport-lokkaroom-financial-report' && <section className={styles.decisionMatrixSection} aria-labelledby="decision-matrix-title">
+        <div className={shared.container}>
+          <p className={shared.sectionTag}>SOLUTION SELECTION</p>
+          <div className={styles.decisionMatrixIntro}>
+            <h2 id="decision-matrix-title">Zapier or a purpose-built solution?</h2>
+            <p>We compared the options across 17 criteria before committing to the reporting workflow. Zapier scored higher for speed to launch and ready-made integrations; a self-made solution scored higher for control, consistency, observability and long-term scale.</p>
+          </div>
+          <div className={styles.decisionMatrixScroll} role="region" aria-label="Zapier versus self-made solution decision matrix" tabIndex={0}>
+            <table className={styles.decisionMatrix}>
+              <caption>Scores from the decision matrix: 1 is a lower fit and 5 is a higher fit. <a href="https://gist.github.com/ka8725/242f49a4c82008790533c201c4b3e561" target="_blank" rel="noopener noreferrer">View the source analysis ↗</a></caption>
+              <thead><tr><th scope="col">Criterion</th><th scope="col">Zapier</th><th scope="col">Self-made</th><th scope="col">Tradeoff</th></tr></thead>
+              <tbody>{tmaDecisionCriteria.map(([criterion, zapier, selfMade, tradeoff]) => <tr key={criterion}>
+                <th scope="row">{criterion}</th>
+                <td><span className={zapier > selfMade ? styles.decisionWinner : styles.decisionScore} aria-label={`${zapier} out of 5`}>{zapier}</span></td>
+                <td><span className={selfMade > zapier ? styles.decisionWinner : styles.decisionScore} aria-label={`${selfMade} out of 5`}>{selfMade}</span></td>
+                <td>{tradeoff}</td>
+              </tr>)}</tbody>
+              <tfoot><tr><th scope="row">Total score across 17 criteria</th><td><strong>40 / 85</strong></td><td><strong>76 / 85</strong></td><td>Self-made leads overall</td></tr></tfoot>
+            </table>
+          </div>
+        </div>
+      </section>}
 
       <section className={styles.results} id="results">
         <div className={shared.container}>

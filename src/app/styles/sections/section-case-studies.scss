@@ -469,7 +469,8 @@
   .showcases .case-studies .showcase-card-grid .swiper-slide { transition: none; }
 }
 
-.showcases .case-studies .showcase-card-grid .client-img img[src*="shopwired"] {
+.showcases .case-studies .showcase-card-grid .client-img img[src*="shopwired"],
+.showcases .case-studies .showcase-card-grid .client-img img[src*="kajabi"] {
   display: block;
   height: 34px;
   padding: 5px;

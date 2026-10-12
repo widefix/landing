@@ -201,11 +201,11 @@ const showcases: Showcase[] = [
       description: "One financial report across multiple platforms",
       descriptionText: <p>TMA Sport came to us with an urgent need: a system that could produce a financial report covering transactions and charges across EventCube, Shopify and Stripe.</p>,
       detailsTitle: "Lokkaroom financial report",
-      detailsText: <p>We implemented Lokkaroom&apos;s reporting system on Ruby on Rails with ActiveAdmin, bringing together financial activity from EventCube, Shopify and Stripe.</p>,
+      detailsText: <p>We implemented Lokkaroom&apos;s reporting system on Ruby on Rails with ActiveAdmin, bringing together financial activity from EventCube, Shopify and Stripe. Before building, we evaluated Zapier against a self-made solution across 17 criteria to make the tradeoffs explicit.</p>,
       detailsImageSrc: "/img/showcases/lokkaroom-financial-report.svg",
       problemText: <p>The client&apos;s transactions and charges were spread across EventCube, Shopify and Stripe. They urgently needed a consolidated financial report covering all three sources.</p>,
       solutionFirstText: <p>We built the financial reporting interface with ActiveAdmin on Ruby on Rails, consolidating transactions and charges from EventCube, Shopify and Stripe.</p>,
-      solutionSecondText: <p>Financial activity from EventCube, Shopify and Stripe was brought into a single reporting workflow, giving the client one place to review the combined data.</p>,
+      solutionSecondText: <p>Zapier offered a faster start and a broad catalog of integrations. The decision matrix favored a purpose-built solution for data control, consistency, monitoring, and long-term scaling, so we built the reporting workflow into the Rails application.</p>,
       bannerSolutionPng: "/img/showcases/lokkaroom-financial-report.svg",
       bannerSolutionWebp: "/img/showcases/lokkaroom-financial-report.svg",
       resultBoxes: [
