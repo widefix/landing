@@ -156,3 +156,15 @@
 .rails-technical-partner .rails-section:not(.rails-hero):not(.rails-tinted):not(.rails-final-cta) { background: #fff; }
 
 .rails-home .rails-engagement-note { margin-bottom: 24px; }
+
+.rails-home .rails-resource-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.rails-home .rails-resource-card { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+.rails-home .rails-resource-card > p { margin: 0; }
+.rails-home .rails-resource-card > a { margin-top: auto; padding-top: 8px; }
+.rails-home .rails-review-panel { padding: 32px; border: 1px solid #e4e7ec; border-radius: 18px; background: #fff; }
+.rails-home .rails-review-widget { min-height: 375px; margin-top: 24px; }
+.rails-home .rails-review-widget iframe { max-width: 100%; }
+@media (max-width: 700px) {
+  .rails-home .rails-resource-grid { grid-template-columns: 1fr; }
+  .rails-home .rails-review-panel { padding: 20px 16px; }
+}

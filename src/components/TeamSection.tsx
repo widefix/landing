@@ -14,53 +14,53 @@ const teamMembers: TeamMember[] = [
   {
     name: 'Andrei',
     image: '/img/andrei-kaleshka.webp',
-    tagline: 'Founder · Scaling businesses with confidence',
+    tagline: 'Founder · Technical lead and Rails engineer',
     qualities: [
       'Transforms complex challenges into growth opportunities',
       'Builds and leads high-performing teams',
       'Published author and recognized industry expert',
       'Open-source contributor with 4M+ downloads'
     ],
-    businessValue: 'With 15+ years helping businesses scale, Andrei brings proven expertise in billing, payments, and accounting systems. As a Toptal-verified top 3% engineer, he combines technical depth with strategic thinking to deliver solutions that drive measurable business growth.',
+    businessValue: 'Andrei leads technical direction and delivery, with 15+ years of experience across billing, payments and accounting systems. A Toptal-verified engineer, published author and Ruby open-source contributor, he combines architecture decisions with hands-on engineering.',
     industries: ['FinTech', 'Billing Systems', 'E-commerce', 'SaaS']
   },
   {
     name: 'Svetlana',
     image: '/img/team/team-svetlana.webp',
-    tagline: 'Precision meets ownership',
+    tagline: 'Full-stack engineer · Rails, web and mobile',
     qualities: [
       'Detail-oriented and highly focused',
       'Takes exceptional ownership of every task',
       'Dives deep into complex problems',
       'Finds thoughtful and practical solutions'
     ],
-    businessValue: 'Known for her structured mindset and ability to navigate complexity, she consistently delivers solutions that balance business goals with user needs. Her meticulous approach ensures nothing gets overlooked.',
-    industries: ['HRTech', 'MobilityTech', 'FaithTech', 'MusicEdTech', 'EdTech']
+    businessValue: 'Svetlana works across backend and frontend development using Ruby on Rails, React, Next.js and React Native. She supports product changes across web and mobile interfaces with attention to maintainability and existing workflows.',
+    industries: ['MusicEdTech', 'EdTech', 'SaaS']
   },
   {
     name: 'Vlad',
     image: '/img/team/team-vlad.webp',
-    tagline: 'Relentless curiosity, reliable results',
+    tagline: 'Full-stack engineer · Rails and React',
     qualities: [
       'Strong problem-solving mindset',
       'Genuine passion for learning',
       'Leaves no detail unexplored',
       'Go-to expert for complex questions'
     ],
-    businessValue: 'Thrives on tackling seemingly impossible tasks and turning them into reliable, high-quality solutions. His deep commitment to quality helps turn complex requirements into scalable products.',
+    businessValue: 'Vlad builds backend and frontend features with Ruby on Rails, React, Next.js, TypeScript, GraphQL and PostgreSQL. His experience spans FinTech, FoodTech and MedTech, including responsive interfaces for mobile and tablet users.',
     industries: ['FinTech', 'FoodTech', 'MedTech']
   },
   {
     name: 'Samuel',
     image: '/img/team/team-sam.webp',
-    tagline: 'Clarity through complexity',
+    tagline: 'Rails engineer · Platform maintenance and delivery tooling',
     qualities: [
       'Structured and thoughtful approach',
       'Breaks down problems into clear parts',
       'Patient and supportive by nature',
       'Excellent at explaining technical concepts'
     ],
-    businessValue: 'Brings clarity to complexity by carefully analyzing challenges and ensuring both process and outcomes remain transparent. His collaborative nature helps teams and clients navigate unfamiliar territory with confidence.',
+    businessValue: 'Samuel works on Rails product development, platform maintenance and developer tooling. His experience includes building and maintaining complex systems, connecting application changes with dependable delivery workflows.',
     industries: ['FinTech', 'Platform Maintenance', 'E-Commerce']
   },
   {
@@ -79,7 +79,7 @@ const teamMembers: TeamMember[] = [
   {
     name: 'Anton',
     image: '/img/team/team-anton-jyha.webp',
-    tagline: 'Scalable systems, thoughtful leadership',
+    tagline: 'Web platform engineer · Technical leadership',
     qualities: [
       '10+ years building scalable web platforms',
       'Brings structure and stability to engineering teams',
@@ -92,7 +92,7 @@ const teamMembers: TeamMember[] = [
   {
     name: 'Lera',
     image: '/img/team/team-lera.webp',
-    tagline: 'Structure, clarity, confident delivery',
+    tagline: 'Delivery coordination · Web and mobile products',
     qualities: [
       'Structured, proactive, and attentive to detail',
       'Keeps multiple workstreams moving smoothly',

@@ -172,3 +172,6 @@ ChatGPT is very good at code refactoring and transforming Ruby code into SQL. Ev
 That was a great meeting. We had a memorable time together. Thanks to everyone who participated. I am looking forward to our weekly calls and I invite everyone to join the community.
 
 Happy coding!
+
+
+For an audit of slow requests, queries, jobs or memory use in your product, explore our [Rails performance consulting](/ruby-on-rails-performance).

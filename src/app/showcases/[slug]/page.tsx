@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import showcases from '@/showcases';
+import { relatedServiceLinks } from '@/lib/relatedServiceLinks';
 import { showcasePositioning } from '@/lib/showcasePositioning';
 import DownloadPDF from '../worshiponline-paperclip-activestorage/DownloadPDF';
 import shared from '../worshiponline-paperclip-activestorage/worshiponline.module.scss';
@@ -102,6 +103,7 @@ export default function ShowcasePage({ params }: { params: { slug: string } }) {
           {showcase.slug === 'public-api-development' && <p>Looking for a fractional CTO for Rails? Discuss the technical direction, cross-team coordination, and ongoing ownership your application needs.</p>}
           {showcase.slug === 'palladium-rails-upgrade' && <p>If your Rails developer left, we can help you understand the inherited codebase and prioritize an old Rails app rescue, maintenance, and upgrades.</p>}
           <Link href="https://calendly.com/andrei-kaleshka/30min" target="_blank" rel="noopener noreferrer" className={`${shared.outcomeLink} ${styles.action}`}>Discuss your Rails app <span aria-hidden="true">↗</span></Link>
+          {(relatedServiceLinks[showcase.slug] || []).map(service => <Link key={service.href} href={service.href} className={styles.serviceLink}>{service.title} →</Link>)}
           <Link href="/ruby-on-rails-application-takeover" className={styles.serviceLink}>Explore existing Rails app takeover <span aria-hidden="true">→</span></Link>
         </div>
       </section>

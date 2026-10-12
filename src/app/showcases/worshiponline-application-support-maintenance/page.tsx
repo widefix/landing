@@ -133,7 +133,7 @@ export default function WorshipOnlineOwnershipShowcase() {
         <p className={styles.sectionTag}>WHAT APPLICATION OWNERSHIP DELIVERED</p>
         <h2>More than a redesign: an ongoing technical partner.</h2>
         <p>WideFix took over the inherited Rails application, addressed accumulated defects, expanded automated testing and delivered redesign work while coordinating specialist expertise against project needs and budget. That engagement continued into application support, maintenance and technical modernization.</p>
-        <Link href="/ruby-on-rails-application-takeover" className={styles.outcomeLink}>Discuss taking over your Rails application <span aria-hidden="true">↗</span></Link>
+        <Link href="/ruby-on-rails-maintenance" className={styles.outcomeLink}>Explore ongoing Rails maintenance →</Link><Link href="/technical-partner#fractional-cto" className={styles.outcomeLink}>Fractional CTO and specialist coordination →</Link><Link href="/ruby-on-rails-application-takeover" className={styles.outcomeLink}>Discuss taking over your Rails application <span aria-hidden="true">↗</span></Link>
       </div>
     </section>
   </main>;

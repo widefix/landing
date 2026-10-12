@@ -649,3 +649,6 @@ Making **iterative changes** allowed me to identify and test issues in isolation
 Fortunately, the upgrading app didn't have much of the Rails "standard" front-end. I've been working with Rails since 2009. So I have gone through many Rails upgrades, and the front-end part has always been a pain in the ass. Nowadays, using Rails as an API-only backend with a separate front-end framework (like React or Vue.js) has become a preferred approach for me.
 
 During the upgrade process, I contributed to the open-source community by reporting an issue in dry-auto_inject and making a pull request to Rubocop. I believe contributing to open-source projects is crucial because it connects me to something greater.
+
+
+Need help maintaining an older application? Explore our [legacy Rails maintenance](/legacy-ruby-on-rails-maintenance) and [ongoing Rails support](/ruby-on-rails-maintenance). If production is already unreliable, see our [Rails rescue service](/ruby-on-rails-rescue).

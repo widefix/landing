@@ -24,6 +24,12 @@ export const metadata: Metadata = {
 
 const coreServices = [
   {
+    id: 'application-rescue', title: 'Rails application rescue', icon: 'system.svg',
+    description: 'Restore a troubled application with recurring crashes, stalled jobs, broken integrations or unreliable releases.',
+    items: ['Root-cause diagnosis and incident priorities', 'Production stabilization and validated recovery', 'Monitoring, regression checks and recovery runbooks', 'A follow-up plan to prevent repeat incidents'],
+    href: '/ruby-on-rails-rescue', link: 'Explore Rails rescue',
+  },
+  {
     id: 'application-takeover', title: 'Rails application takeover', icon: 'system.svg',
     description: 'Give your existing product a technical owner. We learn the codebase, map the infrastructure and plan the transition with your team.',
     items: ['Codebase and dependency review', 'Hosting, access and deployment handover', 'Risk assessment and first priorities', 'Documentation and ownership responsibilities'],
@@ -32,19 +38,20 @@ const coreServices = [
   {
     id: 'maintenance-support', title: 'Maintenance & production support', icon: 'what-we-do/icon-devops-and-maintenance.svg',
     description: 'Keep the application dependable while the business keeps moving. We handle recurring problems and the ongoing work that makes changes safer.',
+    href: '/ruby-on-rails-maintenance', link: 'Explore Rails maintenance',
     items: ['Production bug diagnosis and fixes', 'Application and job monitoring', 'Dependency and security updates', 'Tests, operational documentation and support'],
   },
   {
     id: 'rails-upgrades', title: 'Ruby & Rails upgrades', icon: 'what-we-do/icon-quality-assurance.svg',
     description: 'Bring an aging stack forward through manageable steps. We review compatibility and protect existing behavior as dependencies change.',
     items: ['Ruby, Rails and gem upgrades', 'Deprecated code and dependency fixes', 'Regression tests for critical workflows', 'Staged releases and rollback planning'],
-    href: 'https://widefix.com/blog/ruby-and-rails-upgrade-personal-experience/', link: 'Read our Rails upgrade experience',
+    href: '/legacy-ruby-on-rails-maintenance', link: 'Explore legacy Rails maintenance',
   },
   {
     id: 'performance-reliability', title: 'Performance & reliability', icon: 'what-we-do/icon-optimization.svg',
     description: 'Find what is slowing your application down or interrupting your customers. Address the underlying bottlenecks and measure the result.',
     items: ['PostgreSQL queries and database tuning', 'Background queues and failed jobs', 'Memory usage, caching and response times', 'Timeouts, error handling and observability'],
-    href: '/showcases/shopwired-queue-optimization', link: 'See a production queue recovery',
+    href: '/ruby-on-rails-performance', link: 'Explore Rails performance consulting',
   },
   {
     id: 'development-modernization', title: 'Feature development & modernization', icon: 'web-dev-icon.svg',
@@ -150,7 +157,7 @@ export default function ServicesPage() {
             <h2>A practical plan for the next stage of your product</h2>
             <p className="rails-intro">Need help deciding what to fix, upgrade or build first? We review your architecture and delivery process, explain the tradeoffs and connect technical decisions to your business priorities.</p>
             <ul className="rails-service-list"><li>Architecture reviews and modernization roadmaps</li><li>Performance audits and upgrade planning</li><li>Fractional CTO and solutions architecture support</li><li>Technical guidance alongside hands-on development</li></ul>
-            <Link className="rails-text-link" href="/contact">Discuss your technical priorities <LinkIndicator /></Link>
+            <Link className="rails-text-link" href="/technical-partner#fractional-cto">Explore fractional CTO support <LinkIndicator /></Link>
           </div>
           <aside className="rails-card rails-founder-card">
             <Image src="/img/andrei-kaleshka.webp" alt="Andrei Kaleshka, WideFix founder" width={120} height={120} />
@@ -168,7 +175,7 @@ export default function ServicesPage() {
           <p className="rails-intro">You do not need to hire a full-time team to get help with an existing Rails application. We start with the current problem and agree on scope, responsibilities and availability.</p>
           <div className="rails-card-grid">
             <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="handover" /><h3>Take over an application</h3></div><p>Transition away from an unavailable developer or agency, review the codebase and clarify ownership.</p><Link href="/ruby-on-rails-application-takeover">How takeover works <LinkIndicator /></Link></article>
-            <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="ownership" /><h3>Maintain a live product</h3></div><p>Address production bugs, upgrades, integrations and reliability through ongoing technical support.</p><Link href="/ruby-on-rails-application-takeover#ways-to-work">Explore maintenance options <LinkIndicator /></Link></article>
+            <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="ownership" /><h3>Maintain a live product</h3></div><p>Address production bugs, upgrades, integrations and reliability through ongoing technical support.</p><Link href="/ruby-on-rails-maintenance#ways-to-work">Explore maintenance options <LinkIndicator /></Link></article>
             <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="expertise" /><h3>Maintain and keep building</h3></div><p>Combine application stewardship with feature development, modernization and business priorities.</p><Link href="/technical-partner">Explore technical partnership <LinkIndicator /></Link></article>
           </div>
         </div>

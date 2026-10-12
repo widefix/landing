@@ -6,8 +6,8 @@ import SituationIcon from '@/components/rails/SituationIcon';
 import { RailsCall, OwnershipCTA } from '@/components/rails/RailsOwnership';
 import { socialPreview, socialTwitter } from '@/lib/socialPreview';
 
-const title = 'Ruby on Rails Technical Partner | WideFix';
-const description = 'A long-term technical partner for existing Ruby on Rails applications. WideFix takes ownership of maintenance, modernization, reliability, and ongoing development.';
+const title = 'Fractional CTO & Ruby on Rails Technical Partner | WideFix';
+const description = 'Fractional CTO support led by Andrei Kaleshka: technical roadmaps, architecture decisions, team coordination, budget planning and hands-on Rails delivery.';
 
 export const metadata: Metadata = {
   title, description,
@@ -124,6 +124,18 @@ export default function TechnicalPartnerPage() {
         </div>
       </section>
 
+      <section className="rails-section rails-tinted" id="fractional-cto"><div className="inner">
+        <p className="rails-eyebrow">Fractional CTO support</p><h2>Technical leadership with hands-on Rails delivery</h2>
+        <p className="rails-intro">For founders who need technical direction without a full-time CTO, Andrei Kaleshka leads the relationship: reviewing the existing application, discussing architecture choices, coordinating delivery and contributing hands-on engineering. We agree his involvement, decision responsibilities and availability around your product.</p>
+        <div className="rails-card-grid">
+          <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="priorities" /><h3>Roadmap and architecture</h3></div><p>Turn business goals into a sequenced technical roadmap. Record architecture choices, risks and alternatives so you can decide what to build, maintain or modernize next.</p></article>
+          <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="communication" /><h3>Team coordination</h3></div><p>Clarify ownership across your developers, WideFix engineers and outside specialists. Align interfaces, unblock dependencies and review delivery priorities.</p></article>
+          <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="momentum" /><h3>Budget and delivery</h3></div><p>Compare implementation scope, infrastructure costs and staffing options. Agree spending limits and review progress, while keeping leadership connected to code reviews and hands-on changes.</p></article>
+        </div>
+        <p className="rails-intro">A typical starting scope is an application assessment, a prioritized roadmap and a recurring decision and delivery review. Ongoing leadership and implementation capacity are agreed separately.</p>
+        <p>At <Link href="/showcases/worshiponline-application-support-maintenance">Worship Online</Link>, we coordinated specialist expertise around ongoing maintenance, product work and the budget. For <Link href="/showcases/public-api-development">Palladium</Link>, we coordinated API delivery across teams while protecting the existing portal.</p>
+        <div className="rails-actions"><RailsCall>Discuss fractional CTO support</RailsCall><Link href="/team">Meet the engineers supporting delivery →</Link></div>
+      </div></section>
       <OwnershipCTA />
     </main>
   );

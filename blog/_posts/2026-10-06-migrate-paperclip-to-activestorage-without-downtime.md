@@ -205,3 +205,6 @@ We also audited for ActiveStorage blobs without attachments. A blob can appear t
 - Measure performance separately. A framework upgrade may improve performance, but a storage migration is not a benchmark.
 
 ActiveStorage supports attaching files to ActiveRecord models and storing them on services such as Amazon S3. Its [official guide](https://guides.rubyonrails.org/active_storage_overview.html) is a useful reference for the standard behavior. In our case, the least risky route was to preserve the existing contract temporarily, migrate the data incrementally, and remove the compatibility layer only when the application no longer depended on Paperclip.
+
+
+Planning modernization of a live application? Our [legacy Rails maintenance service](/legacy-ruby-on-rails-maintenance) covers incremental upgrades and storage migrations.

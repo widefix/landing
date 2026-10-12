@@ -1,0 +1,7 @@
+export const relatedServiceLinks: Record<string, { href: string; title: string }[]> = {
+  'costa-del-home-search-performance': [{ href: '/ruby-on-rails-performance', title: 'Rails performance audit and optimization' }],
+  'shopwired-queue-optimization': [{ href: '/ruby-on-rails-rescue', title: 'Rails rescue and recovery' }, { href: '/ruby-on-rails-performance', title: 'Rails performance consulting' }],
+  'palladium-rails-upgrade': [{ href: '/legacy-ruby-on-rails-maintenance', title: 'Legacy Rails maintenance and modernization' }],
+  'ruby-on-rails-redesign': [{ href: '/ruby-on-rails-maintenance', title: 'Ongoing Rails maintenance' }, { href: '/legacy-ruby-on-rails-maintenance', title: 'Incremental Rails modernization' }],
+  'public-api-development': [{ href: '/technical-partner#fractional-cto', title: 'Fractional CTO and technical leadership' }, { href: '/team', title: 'Meet our Rails engineering team' }],
+};
