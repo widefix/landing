@@ -111,7 +111,7 @@ export default function HomePage() {
                   <span>BOOK</span>
                 </div>
               </Link>
-              <p>A book authored by the founder of WideFix, Andrei Kaleshka.</p>
+              <p>Packt invited Andrei Kaleshka to write <em>Rake Task Management Essentials</em> after discovering his technical article. <Link href="/team#open-source-publications">Read the story behind the book →</Link></p>
             </div>
             <div className="item tech-blog">
               <Link href="https://widefix.com/blog/spike-of-signups-business-threat/" target="_blank">
