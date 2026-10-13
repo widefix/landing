@@ -1,0 +1,23 @@
+name: Growth SEO audit
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 7 * * 1'
+permissions:
+  contents: read
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node growth/scan.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: growth-seo-report
+          path: growth/reports/latest.json
+          retention-days: 30
