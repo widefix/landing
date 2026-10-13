@@ -1,3 +1,4 @@
+import GemDownloadPDF from '@/components/GemDownloadPDF';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -70,6 +71,7 @@ export default function MigrationDataPage() {
             <div className="schema-actions">
               <Link className="schema-button" href={projectUrl} target="_blank" rel="noopener noreferrer">Explore the GitHub project</Link>
               <a className="schema-text-link" href="#get-started">Get started</a>
+              <GemDownloadPDF filename="migration-data.pdf" />
             </div>
             <p className="schema-license">MIT-licensed gem · Data hooks within Rails migrations</p>
           </div>

@@ -1,3 +1,4 @@
+import GemDownloadPDF from '@/components/GemDownloadPDF';
 import { socialPreview, socialTwitter } from '@/lib/socialPreview';
 import type { Metadata } from 'next';
 import Image from 'next/image';
@@ -39,6 +40,7 @@ export default function ActualDbSchemaPage() {
                 Explore the GitHub project
               </Link>
               <a className="schema-text-link" href="#get-started">Get started</a>
+              <GemDownloadPDF filename="actual-db-schema.pdf" />
             </div>
             <p className="schema-license">MIT-licensed gem · Installed in the development group</p>
           </div>

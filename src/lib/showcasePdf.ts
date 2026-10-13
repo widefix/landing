@@ -44,7 +44,7 @@ async function prepareBackgrounds(page: HTMLElement, images: Map<string, Promise
   doc.head.appendChild(style);
 }
 
-export async function downloadShowcasePDF(markup: string, filename: string) {
+export async function downloadShowcasePDF(markup: string, filename: string, rootSelector = '.showcase-pdf') {
   const container = document.createElement('div');
   container.setAttribute('aria-hidden', 'true');
   container.style.cssText = `position: absolute; left: -10000px; top: 0; width: ${RENDER_WIDTH}px;`;
@@ -52,7 +52,8 @@ export async function downloadShowcasePDF(markup: string, filename: string) {
   document.body.appendChild(container);
 
   try {
-    const root = container.querySelector<HTMLElement>('.showcase-pdf')!;
+    const root = container.querySelector<HTMLElement>(rootSelector);
+    if (!root) throw new Error('PDF content was not found');
     await Promise.all(Array.from(root.querySelectorAll('img'), async image => {
       image.loading = 'eager';
       await image.decode().catch(() => undefined);

@@ -751,3 +751,15 @@
   figcaption a { color: #193b5e; font-weight: 600; overflow-wrap: anywhere; }
   figcaption span { color: #596f82; font-size: 14px; line-height: 1.5; }
 }
+
+.actual-db-schema-page .schema-pdf-download {
+  button {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    font: inherit;
+    cursor: pointer;
+    &:disabled { opacity: .65; cursor: wait; }
+  }
+  p { margin: 8px 0 0; font-size: 14px; color: #a22929; }
+}
