@@ -10,7 +10,10 @@ share: true
 toc: true
 featured_post: false
 tested_with: "Ruby 3.4.9, Rails 8.1.0, and SQLite"
-image: actual_db_schema.png
+image_svg: rails-migrations-git-branches.svg
+social_image: rails-migrations-git-branches-social.png
+social_image_width: 1200
+social_image_height: 630
 ---
 
 Git is very good at switching the files in your working directory. Your database lives outside that directory's version history, so it keeps its own state.
