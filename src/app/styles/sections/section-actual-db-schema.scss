@@ -713,3 +713,27 @@
     padding: 16px;
   }
 }
+
+.actual-db-schema-page {
+  .schema-testimonials { background: #f4f8fb; }
+  .schema-testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 28px;
+  }
+  .schema-testimonial-column {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    min-width: 0;
+  }
+  .schema-reddit-embed {
+    min-width: 0;
+    iframe { display: block; width: 100%; max-width: 100%; border-radius: 12px; }
+    > blockquote { margin: 0; padding: 24px; background: #fff; border-radius: 12px; }
+  }
+  @media (max-width: 900px) {
+    .schema-testimonial-grid { grid-template-columns: 1fr; }
+  }
+}

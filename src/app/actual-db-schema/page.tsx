@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import ActualDbSchemaCalculator from '@/components/ActualDbSchemaCalculator';
+import RedditTestimonials from '@/components/RedditTestimonials';
 
 const title = 'Actual DB Schema: Keep Your Rails Database in Sync with Your Branch - WideFix';
 const description = 'See how Actual DB Schema keeps Rails development databases aligned with the current Git branch, reduces phantom migration cleanup and helps teams estimate the engineering time involved.';
@@ -114,6 +115,15 @@ export default function ActualDbSchemaPage() {
             <div><dt>Total downloads</dt><dd>763K</dd></div>
           </dl>
           <p className="schema-stats-note">ClickGems dashboard snapshot, October 7, 2026. Download counts include repeat downloads and do not represent unique users or active installations.</p>
+        </div>
+      </section>
+
+      <section className="schema-section schema-testimonials" id="community-feedback" aria-labelledby="schema-testimonials-title">
+        <div className="schema-inner">
+          <p className="schema-eyebrow">From the Rails community</p>
+          <h2 id="schema-testimonials-title">What developers are saying</h2>
+          <p className="schema-section-intro">Public feedback from Reddit discussions about Actual DB Schema. Follow each comment to read it in context.</p>
+          <RedditTestimonials />
         </div>
       </section>
 
