@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 600" fill="none" role="img" aria-labelledby="title description">
+  <title id="title">schema.rb: less conflict, more clarity</title>
+  <desc id="description">A noisy Rails schema diff becomes a reviewed schema by tracing migrations, cleaning leftover branch changes, and regenerating the file.</desc>
+  <rect width="1800" height="600" fill="#173C32"/>
+  <path d="M0 120H1800M0 490H1800M450 120V490M900 120V490M1350 120V490" stroke="#A9CEB4" stroke-opacity=".09"/>
+  <circle cx="1600" cy="116" r="236" fill="#255445" fill-opacity=".58"/>
+  <circle cx="1600" cy="116" r="158" stroke="#B2D9B8" stroke-opacity=".18" stroke-width="2"/>
+  <circle cx="1600" cy="116" r="106" stroke="#B2D9B8" stroke-opacity=".18" stroke-width="2" stroke-dasharray="4 11"/>
+  <text x="64" y="56" fill="#B8DABD" font-family="Montserrat, Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="2">WIDEFIX / FIELD NOTES</text>
+  <text x="1736" y="56" text-anchor="end" fill="#B8DABD" font-family="Montserrat, Arial, sans-serif" font-size="14" font-weight="600" letter-spacing="1">RAILS + DATABASES</text>
+  <text x="64" y="140" fill="#F7F7F0" font-family="Montserrat, Arial, sans-serif" font-size="56" font-weight="700">schema.rb</text>
+  <text x="66" y="193" fill="#A9D9AF" font-family="Montserrat, Arial, sans-serif" font-size="38" font-weight="600">Less conflict. More clarity</text>
+  <text x="68" y="231" fill="#D2E2D5" font-family="Arial, sans-serif" font-size="18">One intended change should not become five unexplained diffs</text>
+
+  <rect x="64" y="278" width="448" height="208" rx="14" fill="#F4F3EA"/>
+  <rect x="88" y="298" width="112" height="24" rx="12" fill="#F4E2C5"/>
+  <text x="144" y="314" text-anchor="middle" fill="#875D2F" font-family="Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1">NOISY DIFF</text>
+  <path d="M438 302h32m-16-16v32" stroke="#D98150" stroke-width="3" stroke-linecap="round" transform="rotate(45 454 302)"/>
+  <rect x="88" y="340" width="400" height="36" rx="6" fill="#F0DACA"/>
+  <text x="102" y="364" fill="#985132" font-family="Menlo, Consolas, monospace" font-size="18">+ users.timezone</text>
+  <rect x="88" y="385" width="400" height="36" rx="6" fill="#F0DACA"/>
+  <text x="102" y="409" fill="#985132" font-family="Menlo, Consolas, monospace" font-size="18">+ unrelated tables</text>
+  <text x="90" y="457" fill="#64756B" font-family="Arial, sans-serif" font-size="15">Which branch left these behind?</text>
+
+  <rect x="676" y="266" width="448" height="232" rx="14" fill="#285443" stroke="#729981" stroke-opacity=".65"/>
+  <rect x="700" y="288" width="140" height="24" rx="12" fill="#3A6854"/>
+  <text x="770" y="304" text-anchor="middle" fill="#D5E8D7" font-family="Arial, sans-serif" font-size="11" font-weight="700" letter-spacing=".8">FIND THE CAUSE</text>
+  <circle cx="718" cy="350" r="15" fill="#E8AD56"/>
+  <text x="718" y="355" text-anchor="middle" fill="#233D32" font-family="Arial, sans-serif" font-size="13" font-weight="700">1</text>
+  <text x="748" y="356" fill="#F6F7F1" font-family="Arial, sans-serif" font-size="19" font-weight="600">Trace the migrations</text>
+  <circle cx="718" cy="405" r="15" fill="#E8AD56"/>
+  <text x="718" y="410" text-anchor="middle" fill="#233D32" font-family="Arial, sans-serif" font-size="13" font-weight="700">2</text>
+  <text x="748" y="411" fill="#F6F7F1" font-family="Arial, sans-serif" font-size="19" font-weight="600">Clean leftover changes</text>
+  <circle cx="718" cy="460" r="15" fill="#E8AD56"/>
+  <text x="718" y="465" text-anchor="middle" fill="#233D32" font-family="Arial, sans-serif" font-size="13" font-weight="700">3</text>
+  <text x="748" y="466" fill="#F6F7F1" font-family="Arial, sans-serif" font-size="19" font-weight="600">Regenerate the schema</text>
+
+  <rect x="1288" y="278" width="448" height="208" rx="14" fill="#F4F3EA"/>
+  <rect x="1312" y="298" width="134" height="24" rx="12" fill="#DDEEDF"/>
+  <text x="1379" y="314" text-anchor="middle" fill="#39724A" font-family="Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1">REVIEWED DIFF</text>
+  <circle cx="1694" cy="310" r="17" fill="#BBDDBF"/>
+  <path d="m1686 310 6 6 10-12" stroke="#39724A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="1312" y="340" width="400" height="36" rx="6" fill="#DDEEDF"/>
+  <text x="1326" y="364" fill="#39724A" font-family="Menlo, Consolas, monospace" font-size="18">+ intended changes</text>
+  <text x="1314" y="414" fill="#233D32" font-family="Montserrat, Arial, sans-serif" font-size="23" font-weight="700">A diff you can explain</text>
+  <text x="1314" y="457" fill="#64756B" font-family="Arial, sans-serif" font-size="15">Keep the changes that belong</text>
+
+  <path d="M532 382H646m-10-10 12 10-12 10" stroke="#D98150" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M1144 382H1258m-10-10 12 10-12 10" stroke="#D98150" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="64" y="524" width="1672" height="40" rx="8" fill="#234A3B"/>
+  <circle cx="92" cy="544" r="6" fill="#D98150"/>
+  <text x="112" y="549" fill="#E1ECE2" font-family="Arial, sans-serif" font-size="15" font-weight="600">Git switches your files. Your database needs its own cleanup.</text>
+</svg>

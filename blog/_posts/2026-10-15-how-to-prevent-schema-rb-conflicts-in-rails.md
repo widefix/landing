@@ -10,7 +10,10 @@ share: true
 toc: true
 featured_post: false
 tested_with: "Ruby 3.4.9, Rails 8.1.0, and SQLite"
-image: actual_db_schema.jpg
+image_svg: schema-rb-conflicts.svg
+social_image: schema-rb-conflicts-social.png
+social_image_width: 1200
+social_image_height: 630
 ---
 
 You changed one column. Your pull request changes five tables in `db/schema.rb`. A teammate asks why, and you have no good answer yet.
