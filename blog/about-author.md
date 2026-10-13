@@ -3,14 +3,14 @@ layout: page
 permalink: /about-author/
 title: Andrei Kaleshka
 image: my_face.jpg
-description: "WideFix founder, Rails specialist, solutions architect, and fractional CTO. I help businesses take ownership of existing applications and move them forward."
+description: "Andrei Kaleshka, WideFix founder and software engineer since 2009. I take ownership of existing software, solve complex problems, and help businesses move forward."
 ---
 
 <div class="author-hero">
   <div>
-    <p class="eyebrow">RAILS EXPERTISE. BUSINESS RESPONSIBILITY.</p>
-    <p class="author-lead">I help businesses turn an existing Rails application into a system they can trust, maintain, and grow.</p>
-    <p>I’m Andrei Kaleshka, the founder of WideFix. I’ve been developing software since 2009. Today, my work combines hands-on Rails engineering with solutions architecture and fractional CTO support: understanding the codebase, deciding what matters, and helping the team deliver it.</p>
+    <p class="eyebrow">TECHNICAL OWNERSHIP. BUSINESS RESPONSIBILITY.</p>
+    <p class="author-lead">I help companies stop worrying about their software.</p>
+    <p>I’m Andrei Kaleshka, founder of WideFix. I’ve been building and maintaining software since 2009. I take ownership of existing applications, solve difficult technical problems, and help teams deliver without constant supervision. Ruby on Rails and PostgreSQL are my deepest specialties, but the real work is understanding what the business needs and making sound decisions to get there.</p>
     <div class="author-credentials"><a href="https://www.toptal.com/resume/andrei-kaleshka">Verified Expert in Engineering · Toptal</a><span>Building software since 2009</span><span>Published technical author</span></div>
   </div>
   <img src="{{ site.url }}/images/my_face.jpg" alt="Andrei Kaleshka, founder of WideFix" width="260" height="300">
@@ -18,6 +18,7 @@ description: "WideFix founder, Rails specialist, solutions architect, and fracti
 
 <section class="author-section">
   <h2>Where I can make a difference</h2>
+  <p>Whether a developer has left, releases have slowed down, or an application needs a clear technical direction, I step in to understand the situation and take responsibility for moving it forward.</p>
   <div class="author-services">
     <div><div class="author-service-heading"><span class="author-service-icon ownership" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 3 4 6v6c0 5 8 9 8 9s8-4 8-9V6l-8-3Z"/><path d="m8 12 3 3 5-6"/></svg></span><h3>Own an existing Rails application</h3></div><p>Take over from a previous team, understand the application and its infrastructure, stabilize the parts that cause trouble, and build a clear plan for ongoing maintenance and improvements.</p></div>
     <div><div class="author-service-heading"><span class="author-service-icon modernization" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M20 8a8 8 0 0 0-14-2L3 9m0-6v6h6M4 16a8 8 0 0 0 14 2l3-3m0 6v-6h-6"/></svg></span><h3>Modernize without disrupting users</h3></div><p>Upgrade Ruby and Rails, replace outdated dependencies, improve slow database queries, and migrate data and infrastructure in controlled stages.</p></div>
@@ -27,26 +28,28 @@ description: "WideFix founder, Rails specialist, solutions architect, and fracti
 </section>
 
 <section class="author-section" markdown="1">
-## The work behind the advice
+## Experience you can verify
 
 I write about problems I encounter in real codebases: upgrades, database behavior, production performance, and the small engineering decisions that make a system easier to live with.
 
 With the WideFix team, I’ve helped reduce hosting costs, improve search performance, automate payment collection, and deliver APIs while existing applications kept working. These projects are described in our [case studies](https://widefix.com/showcases).
 
-I’m the author of [*Rake Task Management Essentials*](https://www.packtpub.com/product/rake-task-management-essentials/9781783280773), published by Packt. I also build open-source tools, including [Actual DB Schema](https://github.com/widefix/actual_db_schema), to reduce the friction of everyday Rails development.
+I’m the author of [*Rake Task Management Essentials*](https://www.packtpub.com/product/rake-task-management-essentials/9781783280773), published by Packt. I maintain open-source Ruby libraries, including [Actual DB Schema](https://github.com/widefix/actual_db_schema) and [Migration Data](https://github.com/ka8725/migration_data), that have reached millions of downloads. These are tools built from real problems I have encountered in production.
 </section>
 
 <section class="author-section" markdown="1">
-## How I approach an application
+## How I work
 
 I start with the business and the code that already exists. Which workflows must keep running? Where are users or the team losing time? What makes the next release risky?
 
-From there, I favor focused changes, clear ownership, and gradual migrations. Reusing working code, protecting data integrity, and making the team’s next change easier often matter more than replacing everything at once.
+From there, I take responsibility for priorities and execution. I favor focused changes, clear communication, and gradual migrations. Reusing working code, protecting data integrity, and making the team’s next change easier often matter more than replacing everything at once.
+
+I also use AI throughout research, implementation, and review to reduce repetitive work and move faster. Experience still matters: I verify the results, make the tradeoffs, and remain accountable for what ships. When a project needs more capacity, I work with a small WideFix team rather than adding layers of management.
 </section>
 
 <section class="author-contact">
   <h2>Need someone to own the next step?</h2>
-  <p>If you have an existing Rails application that needs attention—or a team that needs technical direction—let’s talk about what would help most.</p>
+  <p>If your software needs a reliable owner—whether that means taking over an existing application, improving performance, or helping your team make better technical decisions—let’s discuss what matters most to your business.</p>
   <a class="button-link" href="https://calendly.com/andrei-kaleshka/30min">Discuss your application <span aria-hidden="true">↗</span></a>
 </section>
 <!-- Brand icons adapted from bundled Font Awesome Free 5.13.0 (CC BY 4.0). -->
