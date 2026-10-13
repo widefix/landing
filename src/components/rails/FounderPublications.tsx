@@ -35,8 +35,8 @@ export default function FounderPublications() {
           <article className="rails-card">
             <p className="rails-eyebrow">Open-source Rails tooling</p>
             <h3>migration_data</h3>
-            <p>A Rails gem for managing data migrations separately from schema migrations.</p>
-            <a href="https://github.com/widefix/migration_data" target="_blank" rel="noopener noreferrer">Explore migration_data on GitHub ↗</a>
+            <p>A Rails gem for adding testable data hooks to schema migrations.</p>
+            <Link href="/migration-data">Explore migration_data →</Link>
           </article>
         </div>
       </div>

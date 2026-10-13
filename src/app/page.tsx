@@ -132,7 +132,7 @@ export default function HomePage() {
               <p>Featured article on our blog describes a step-by-step approach to upgrading the Ruby and Rails stack.</p>
             </div>
             <div className="item migration-data">
-              <Link rel="nofollow" href="https://github.com/ka8725/migration_data" target="_blank">
+              <Link href="/migration-data">
                 <div className="content">
                   <span>Open-Sourced Library</span>
                   <h3>Migration Data</h3>

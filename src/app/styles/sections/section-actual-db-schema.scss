@@ -737,3 +737,17 @@
     .schema-testimonial-grid { grid-template-columns: 1fr; }
   }
 }
+
+.migration-data-page .migration-testimonial {
+  margin: 0;
+  padding: 28px;
+  background: #fff;
+  border: 1px solid #dce6ef;
+  border-radius: 12px;
+
+  blockquote { margin: 20px 0 24px; padding: 0; border: 0; }
+  blockquote p { margin: 0; font-size: 20px; line-height: 1.6; }
+  figcaption { display: flex; flex-direction: column; gap: 8px; }
+  figcaption a { color: #193b5e; font-weight: 600; overflow-wrap: anywhere; }
+  figcaption span { color: #596f82; font-size: 14px; line-height: 1.5; }
+}

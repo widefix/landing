@@ -207,3 +207,5 @@ When you have to update a lot of data, the `migration_data` gem might not be a g
 - [Data Migrations in Rails](https://robots.thoughtbot.com/data-migrations-in-rails)
 - [Seed Migration](https://github.com/harrystech/seed_migration)
 - [data-migrate](https://github.com/ilyakatz/data-migrate)
+
+Explore [Migration Data](/migration-data) for installation instructions, data hooks, and a backfill example with an accompanying test.

@@ -215,7 +215,10 @@ export default function ActualDbSchemaPage() {
           <p className="schema-eyebrow">Built and maintained by WideFix</p>
           <h2 id="schema-services-title">Your Rails application needs an owner.</h2>
           <p>We take ownership of existing Ruby on Rails applications, from production issues and upgrades to ongoing development. The same practical experience shapes the tools we build for Rails teams.</p>
-          <Link className="schema-button" href="/services">Explore our Rails maintenance services</Link>
+          <div className="schema-actions">
+            <Link className="schema-button" href="/services">Explore our Rails maintenance services</Link>
+            <Link className="schema-text-link" href="/migration-data">Explore Migration Data →</Link>
+          </div>
         </div>
       </section>
     </main>
