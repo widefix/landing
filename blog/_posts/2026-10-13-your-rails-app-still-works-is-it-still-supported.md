@@ -7,7 +7,12 @@ tags: [rails, ruby, maintenance, modernization, security]
 comments: true
 share: true
 toc: true
-featured_post: true
+featured_post: false
+image: rails-support-runway-social.png
+image_svg: rails-support-runway.svg
+social_image: rails-support-runway-social.png
+social_image_width: 1200
+social_image_height: 630
 related_posts:
   - /ruby-and-rails-upgrade-personal-experience/
   - /migrate-paperclip-to-activestorage-without-downtime/
@@ -15,15 +20,17 @@ related_posts:
 
 Customers can log in. Payments go through. The dashboard loads. From the outside, your Rails application looks healthy.
 
-But when did someone last check whether its framework, runtime, and hosting environment still receive security updates?
+That tells you the application works today. It does not tell you whether its framework, runtime, and hosting environment will receive the fixes it needs tomorrow.
+
+When did someone last check?
 
 For a founder running an established product, this is an easy question to postpone. New features have visible value. Maintenance often stays invisible until a deployment fails or a security issue forces an urgent change.
 
-**A working application and a supported application are two different things.** Understanding the difference helps you plan maintenance around your business instead of around an emergency.
+**A working application and a supported application are two different things.** You do not need to replace a useful product just because its stack is getting old. You do need to understand where support has ended, what that means for your application, and how to keep changes manageable.
 
 ## What does “supported” mean?
 
-Support here means updates from the people maintaining the software your application depends on. It does not mean that your developer or agency is available to answer questions.
+Here, “supported” means the people maintaining the software your application depends on still provide fixes for the release you use. Having a developer or agency available is valuable, but it does not extend Ruby’s or Rails’ upstream support period.
 
 There are three useful states to distinguish:
 
@@ -53,11 +60,13 @@ Sources: [Ruby maintenance branches](https://www.ruby-lang.org/en/downloads/bran
 
 For example, upgrading Rails while leaving an end-of-life Ruby version in production addresses only part of the problem. A hosting upgrade may also require changes to native dependencies that your application uses for image processing or database connections.
 
-Ask for an inventory of the whole production environment before choosing the destination versions.
+Ask for an inventory of the whole production environment before choosing the destination versions. A version in the repository may differ from the one deployed, so the review needs to include the running application and its workers.
+
+The useful result is a short table: each component’s production version, maintenance status, support deadline, proposed target, and any known blockers. That gives you something concrete to plan and revisit.
 
 ## What needs attention now, and what can be planned?
 
-Every outdated dependency does not have the same urgency. A useful assessment separates three situations.
+Outdated dependencies do not all have the same urgency. A useful assessment separates three situations.
 
 ### A known vulnerability affects your application
 
@@ -83,7 +92,7 @@ The first question I want answered is: **what must keep working while we change 
 
 For a subscription product, that might include registration, payments, renewals, cancellations, and access permissions. For another business, it could be order imports, inventory updates, or accounting exports.
 
-Those workflows define what needs verification. They also make the upgrade easier to explain to someone approving the budget.
+Those workflows define what needs verification. They also make the upgrade easier to explain to someone approving the budget: the work protects the parts of the product customers and the business rely on.
 
 A practical sequence is:
 
@@ -95,6 +104,8 @@ A practical sequence is:
 6. **Validate and deploy.** Test integrations and representative data, plan rollback or recovery, then monitor the application after deployment.
 
 A code rollback may not undo a database or data migration. That needs its own plan before the release.
+
+“Upgrade Rails” is too broad to be a useful delivery milestone on its own. “Upgrade this step, verify billing and background jobs, deploy, and check production” gives everyone a clearer way to judge progress.
 
 We used a staged approach when [moving a live Rails application from Paperclip to ActiveStorage](/blog/migrate-paperclip-to-activestorage-without-downtime/): preserve existing behavior, migrate incrementally, and remove the old dependency after the cutover had been verified.
 
@@ -114,6 +125,8 @@ Ask the person responsible for your application these questions:
 - Who owns this review, and when will it happen again?
 
 The answers should lead to a short, prioritized plan: urgent remediation, scheduled upgrades, and improvements that can wait. An estimate should state its assumptions and unresolved blockers rather than hide them behind a confident number.
+
+If a full upgrade estimate is still uncertain, ask for a bounded first step: inventory the stack, investigate the main blockers, and agree on the next milestone. You can approve that work without pretending the entire upgrade is already understood.
 
 ## Give maintenance a clear owner
 

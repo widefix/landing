@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1000" role="img" aria-labelledby="title description">
+  <title id="title">Keeping the path ahead open</title>
+  <desc id="description">A textured mountain landscape in golden morning light. A winding path crosses a bridge supported by layered stone piers, with a repaired section connecting the established route to the hills ahead.</desc>
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#9ebcc7"/><stop offset=".65" stop-color="#eee0bc"/><stop offset="1" stop-color="#f1c780"/></linearGradient>
+    <linearGradient id="water" x2=".3" y2="1"><stop stop-color="#a6c5c3"/><stop offset="1" stop-color="#37696f"/></linearGradient>
+    <linearGradient id="earth" x2="0" y2="1"><stop stop-color="#c3b57c"/><stop offset="1" stop-color="#777959"/></linearGradient>
+    <linearGradient id="road" x2="0" y2="1"><stop stop-color="#f6e4b7"/><stop offset="1" stop-color="#c5905e"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#fff1c3" stop-opacity=".9"/><stop offset="1" stop-color="#ffe8aa" stop-opacity="0"/></radialGradient>
+    <filter id="paper" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".32" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".11"/></feComponentTransfer><feBlend in="SourceGraphic" mode="soft-light"/></filter>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="14" stdDeviation="10" flood-color="#344943" flood-opacity=".22"/></filter>
+  </defs>
+  <g filter="url(#paper)">
+    <path fill="url(#sky)" d="M0 0h1800v1000H0z"/>
+    <ellipse cx="1300" cy="220" rx="410" ry="310" fill="url(#glow)"/>
+    <circle cx="1300" cy="200" r="75" fill="#ffedbb"/>
+    <g fill="none" stroke="#fff1d5" stroke-linecap="round" opacity=".4"><path d="M95 170q150-50 270-10t220-15" stroke-width="35"/><path d="M1420 110q100-30 230 15" stroke-width="23"/></g>
+    <path fill="#acbab3" d="m0 400 190-110 140 60 230-150 200 170 150-70 190 70 260-150 150 110 180-90 110 90v350H0z"/>
+    <path fill="#eee5ca" d="m560 200 90 77-80-22-72 46zM1360 220l110 81-99-31-72 45z"/>
+    <path fill="#76969a" d="m0 490 170-70 200 40 170-120 230 150 230-115 170 100 200-130 200 120 230-60v340H0z"/>
+    <path fill="#b3c5bd" d="m540 340 115 75-109-24-85 47zM1370 345l110 65-118-24-75 63z"/>
+    <path fill="#638878" d="M0 575q190-140 390-60t380 30 410-35 620 30v460H0z"/>
+    <path fill="url(#water)" d="M1140 490q280-10 330 65t-225 106-305 128 130 211H390q-80-145 120-245t455-127 175-92-150-12z"/>
+    <g fill="none" stroke="#dfdfbc" stroke-linecap="round" opacity=".5"><path d="M1180 535q100 0 185 25" stroke-width="6"/><path d="M1030 620q95-4 175-25M690 800q70-48 140-66M590 900q45-47 105-70" stroke-width="8"/></g>
+    <path fill="url(#earth)" d="M0 640q200-110 420 12t90 170-110 178H0zM1450 605q200-66 350-16v411h-650q-135-120-50-185t350-210z"/>
+    <path fill="#d6c08b" d="M0 830q215-100 415 15l-42 44q-180-89-373 9z" opacity=".55"/>
+    <path fill="#d7c49b" d="M1220 794q185-115 580-88v37q-350-10-530 84z" opacity=".5"/>
+    <path fill="url(#road)" d="M150 1000q35-140 240-205t490-125 440-95 100-65l38-1q180 35-91 110t-443 100-425 130-190 151z"/>
+    <g filter="url(#shadow)">
+      <path fill="#88795f" d="m598 705 80-17 6 176-71 14zM844 660l84-16 12 159-77 22zM1100 606l80-15 14 143-78 25z"/>
+      <path fill="#baa780" d="m598 705 28-6 6 174-19 5zM844 660l29-6 13 165-23 6zM1100 606l28-6 13 151-25 8z"/>
+      <path fill="#8b6a47" d="m470 733 769-169 6 42-770 172z"/>
+      <path fill="#ebcc91" d="m470 733 767-169 46 21-766 174z"/>
+      <path fill="#f5dfaa" d="m848 650 127-28 46 21-126 29z"/>
+      <g stroke="#957650" stroke-width="4" opacity=".7"><path d="m554 715 47 20M625 699l47 20M695 684l47 20M766 668l47 20M837 653l47 20M908 637l47 20M979 621l47 20M1050 606l47 20M1121 590l47 20M1192 575l47 20"/></g>
+      <path fill="none" stroke="#876c49" stroke-width="9" stroke-linecap="round" d="m475 698 760-169M520 727v-40M665 694v-40M810 662v-40M955 630v-40M1100 598v-40M1235 568v-40"/>
+    </g>
+    <g fill="#355c4d"><path d="m92 680 30-91 30 91h-23v52h-14v-52zM170 718l37-110 37 110h-30v61h-15v-61zM1610 650l31-91 31 91h-24v51h-14v-51zM1710 685l41-126 41 126h-34v73h-15v-73z"/></g>
+    <g fill="#d7b778" opacity=".8"><ellipse cx="270" cy="877" rx="45" ry="16"/><ellipse cx="1450" cy="851" rx="70" ry="18"/><ellipse cx="1560" cy="919" rx="100" ry="23"/></g>
+    <path fill="#f5dfa5" opacity=".1" d="m1240 0 260 0-810 1000H390z"/>
+  </g>
+</svg>
