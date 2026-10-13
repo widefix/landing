@@ -11,6 +11,7 @@ export default function Header() {
               © {new Date().getFullYear()} Widefix. All rights reserved.
             </div>
             <div className="footer-right">
+              <Link href="/recognition">Recognition &amp; contributions →</Link>
               <ul>
                 <li>
                   <Link href="https://www.linkedin.com/company/widefix/" target="_blank" rel="nofollow">

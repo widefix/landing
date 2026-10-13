@@ -1,3 +1,4 @@
+import ServiceRecognition from '@/components/rails/ServiceRecognition';
 import FocusedServicePage, { serviceMetadata, type FocusedService } from '@/components/rails/FocusedServicePage';
 import ClutchWidget from '@/components/ClutchWidget';
 import SituationIcon from '@/components/rails/SituationIcon';
@@ -125,6 +126,7 @@ export const metadata = serviceMetadata(service);
 export default function Page() {
   return (
     <FocusedServicePage service={service}>
+      <ServiceRecognition kind="maintenance" />
       <section className="rails-section rails-client-reviews" aria-labelledby="maintenance-reviews-title">
         <div className="inner">
           <p className="rails-eyebrow">Client feedback</p>

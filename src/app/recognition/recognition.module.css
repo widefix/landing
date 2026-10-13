@@ -1,0 +1,21 @@
+.page { overflow-wrap: anywhere; }
+.proofPanel { padding: 36px; border: 1px solid #dae5ef; border-radius: 24px; background: #fff; box-shadow: 0 12px 40px #193b5e0d; }
+.proofPanel > :first-child { margin-bottom: 20px; }
+.rating { display: block; font-size: 76px; line-height: 1.1; color: #193b5e; }
+.rating span { font-size: 32px; color: #61768b; }
+.note { font-size: 14px; color: #617084; line-height: 1.6; margin-top: 24px; }
+.sectionNav { border-block: 1px solid #e1e8f0; background: #fff; }
+.sectionNav > div { display: flex; gap: 28px; flex-wrap: wrap; padding-block: 22px; }
+.sectionNav a { color: #245c94; font-weight: 600; font-size: 15px; }
+.twoColumns { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.downloads { font-size: 30px; font-weight: 700; color: #193b5e; }
+.downloads span { display: block; font-size: 14px; color: #617084; font-weight: 400; }
+.bookPanel { display: grid; grid-template-columns: 210px 1fr; align-items: center; gap: 36px; margin-top: 36px; padding: 32px; border: 1px solid #dce6ef; border-radius: 20px; background: #f7fafc; }
+.bookPanel img { width: 100%; height: auto; }
+@media (max-width: 600px) {
+  .twoColumns, .bookPanel { grid-template-columns: 1fr; }
+  .bookPanel { padding: 24px; }
+  .bookPanel img { max-width: 150px; }
+  .sectionNav > div { gap: 16px 24px; }
+  .proofPanel { padding: 28px; }
+}

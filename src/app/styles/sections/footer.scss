@@ -22,6 +22,16 @@
                 }
             }
 
+            .footer-right {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                flex-wrap: wrap;
+                gap: 20px;
+                > a { color: #245c94; font-size: 14px; font-weight: 600; }
+                @media (max-width: $media-xsm) { justify-content: center; }
+            }
+
             .footer-right ul {
                 display: flex;
                 gap: 8px;

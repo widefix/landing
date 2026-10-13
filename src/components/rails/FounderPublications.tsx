@@ -20,11 +20,12 @@ export default function FounderPublications() {
             <p>The book explores using Rake to organize and automate development tasks. This is the same area of engineering behind his Rails tooling: making repetitive work easier and helping teams maintain a reliable development workflow.</p>
             <p>Published under his earlier name, Andrey Koleshko.</p>
             <div className="rails-actions">
-              <a href="https://www.packtpub.com/product/rake-task-management-essentials/9781783280773" target="_blank" rel="noopener noreferrer">View the book at Packt ↗</a>
+              <a href="https://www.packtpub.com/en-us/product/rake-task-management-essentials-9781783280773" target="_blank" rel="noopener noreferrer">View the book at Packt →</a>
               <Link href="/blog/how-to-generate-rake-task/">Read the article that started it →</Link>
             </div>
           </div>
         </article>
+        <div className="rails-actions"><Link href="/recognition">Explore recognition &amp; contributions →</Link></div>
         <div className={`rails-card-grid ${styles.tools}`}>
           <article className="rails-card">
             <p className="rails-eyebrow">Open-source Rails tooling</p>

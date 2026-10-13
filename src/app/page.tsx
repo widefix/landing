@@ -1,3 +1,4 @@
+import CommunityRecognition from '@/components/rails/CommunityRecognition';
 import type { Metadata } from 'next';
 import { socialPreview, socialTwitter } from '@/lib/socialPreview';
 
@@ -153,6 +154,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      <CommunityRecognition />
       <section className="achievements has-vertical-paddings">
         <div className="inner">
           <header>
@@ -246,7 +248,7 @@ export default function HomePage() {
             </div>
             <div className="achievement-item">
               <div className="number achievement-heading">Spotlighted Tweet</div>
-              <p><Link href="https://x.com/yukihiro_matz/status/1249973865544970241" target="_blank" rel="nofollow">Quoted by Yukihiro &ldquo;Matz&rdquo; Matsumoto</Link> - Ruby language creator</p>
+              <p><Link href="https://x.com/yukihiro_matz/status/1249973865544970241" target="_blank" rel="nofollow">Article shared by Yukihiro &ldquo;Matz&rdquo; Matsumoto</Link> - Ruby language creator</p>
               <div className="achievement-tags">
                 <div className="achievement-tag founder">Founder</div>
               </div>

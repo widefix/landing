@@ -1,3 +1,4 @@
+import ServiceRecognition from '@/components/rails/ServiceRecognition';
 import FocusedServicePage, { serviceMetadata, type FocusedService } from '@/components/rails/FocusedServicePage';
 
 const service: FocusedService = {
@@ -97,5 +98,5 @@ const service: FocusedService = {
 export const metadata = serviceMetadata(service);
 
 export default function Page() {
-  return <FocusedServicePage service={service} />;
+  return <FocusedServicePage service={service}><ServiceRecognition kind="database" /></FocusedServicePage>;
 }
