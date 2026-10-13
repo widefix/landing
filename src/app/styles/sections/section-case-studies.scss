@@ -478,3 +478,12 @@
   background: #fff;
   object-fit: contain;
 }
+
+.seo-evidence {
+  .seo-evidence-table { overflow-x: auto; margin: 24px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 16px; }
+  th, td { padding: 12px; border-bottom: 1px solid #dce6ef; text-align: left; vertical-align: top; }
+  figure { margin: 24px 0; }
+  figure img { width: 100%; height: auto; display: block; border-radius: 12px; }
+  figcaption { margin-top: 10px; font-size: 14px; line-height: 1.5; color: #526577; }
+}

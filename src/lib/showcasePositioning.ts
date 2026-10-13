@@ -140,6 +140,6 @@ export const showcasePositioning: Record<string, ShowcasePositioning> = {
     value: 'We took ownership of a legacy Ruby on Rails application left by its previous developer. We redesigned it first, then introduced gradual SEO improvements to help the existing product attract more customers and turn search traffic into business growth.',
     help: 'Need technical SEO improvements for your existing product?', theme: 'purple',
     title: 'WorshipOnline: Technical SEO, Traffic & Conversion Growth - WideFix',
-    description: 'Legacy Ruby on Rails app takeover: redesign followed by gradual SEO improvements delivered 4000% more organic traffic and 300% more conversions for WorshipOnline.',
+    description: 'Legacy Ruby on Rails app takeover: redesign followed by gradual SEO improvements for WorshipOnline, with published Search Console screenshots and measurement context.',
   },
 };

@@ -168,8 +168,8 @@ export default function HomePage() {
               </div>
             </div>
             <div className="achievement-item">
-              <div className="number">4000%</div>
-              <p><Link href="https://widefix.com/showcases/seo-optimization" target="_blank" rel="nofollow">Increased organic Google traffic</Link> through app optimization</p>
+              <div className="number achievement-heading">SEO</div>
+              <p><Link href="https://widefix.com/showcases/seo-optimization" target="_blank" rel="nofollow">Search visibility improvements</Link> with published Search Console screenshots</p>
               <div className="achievement-tags">
                 <div className="achievement-tag solutions">Solutions</div>
                 <div className="achievement-tag team">Team</div>
@@ -192,8 +192,8 @@ export default function HomePage() {
               </div>
             </div>
             <div className="achievement-item">
-              <div className="number">400K+</div>
-              <p><Link href="https://rubygems.org/gems/actual_db_schema" target="_blank" rel="nofollow">Actual DB Schema</Link> - our latest valuable library downloads</p>
+              <div className="number">753K+</div>
+              <p><Link href="https://rubygems.org/gems/actual_db_schema" target="_blank" rel="nofollow">Actual DB Schema</Link> downloads · RubyGems, October 13, 2026</p>
               <div className="achievement-tags">
                 <div className="achievement-tag solutions">Solutions</div>
                 <div className="achievement-tag team">Team</div>
@@ -208,8 +208,8 @@ export default function HomePage() {
               </div>
             </div>
             <div className="achievement-item">
-              <div className="number">30%<span className="achievement-metric-label">Revenue</span></div>
-              <p><Link href="https://widefix.com/blog/prevent-account-sharing-with-mfa/" target="_blank" rel="nofollow">Prevented account sharing</Link> increasing client revenue by 30%</p>
+              <div className="number">+30%<span className="achievement-metric-label">Paid signups</span></div>
+              <p><Link href="https://widefix.com/blog/prevent-account-sharing-with-mfa/" target="_blank" rel="nofollow">Prevented account sharing</Link> increased daily new paid signups by roughly 30%</p>
               <div className="achievement-tags">
                 <div className="achievement-tag solutions">Solutions</div>
                 <div className="achievement-tag team">Team</div>
@@ -231,8 +231,8 @@ export default function HomePage() {
               </div>
             </div>
             <div className="achievement-item">
-              <div className="number">4.8/5</div>
-              <p><Link href="https://clutch.co/profile/widefix#reviews" target="_blank" rel="nofollow">Average client rating on Clutch</Link> - industry-leading satisfaction</p>
+              <div className="number">4.9/5</div>
+              <p><Link href="https://clutch.co/profile/widefix#reviews" target="_blank" rel="nofollow">Average client rating on Clutch</Link> · 12 reviews, checked October 13, 2026</p>
               <div className="achievement-tags">
                 <div className="achievement-tag team">Team</div>
               </div>

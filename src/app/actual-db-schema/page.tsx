@@ -104,19 +104,18 @@ export default function ActualDbSchemaPage() {
       <section className="schema-section schema-stats" aria-labelledby="schema-stats-title">
         <div className="schema-inner schema-stats-layout">
           <div className="schema-stats-intro">
-            <p className="schema-eyebrow">RubyGems download activity</p>
-            <h2 id="schema-stats-title">Download activity at a glance</h2>
-            <Link className="schema-text-link" href="https://clickgems.clickhouse.com/dashboard/actual_db_schema" target="_blank" rel="noopener noreferrer">
-              View the ClickGems dashboard
+            <p className="schema-eyebrow">RubyGems project snapshot</p>
+            <h2 id="schema-stats-title">Downloads and current release</h2>
+            <Link className="schema-text-link" href="https://rubygems.org/gems/actual_db_schema" target="_blank" rel="noopener noreferrer">
+              View the RubyGems listing
             </Link>
           </div>
           <dl className="schema-stats-values">
-            <div><dt>Last day</dt><dd>2K</dd></div>
-            <div><dt>Last week</dt><dd>9.6K</dd></div>
-            <div><dt>Last month</dt><dd>36K</dd></div>
-            <div><dt>Total downloads</dt><dd>763K</dd></div>
+            <div><dt>Total downloads</dt><dd>753K+</dd></div>
+            <div><dt>Current release</dt><dd>0.10.0</dd></div>
+            <div><dt>License</dt><dd>MIT</dd></div>
           </dl>
-          <p className="schema-stats-note">ClickGems dashboard snapshot, October 7, 2026. Download counts include repeat downloads and do not represent unique users or active installations.</p>
+          <p className="schema-stats-note">RubyGems API snapshot, October 13, 2026: 753,655 downloads. Download counts include repeat downloads and do not represent unique users or active installations.</p>
         </div>
       </section>
 

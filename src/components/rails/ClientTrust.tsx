@@ -18,18 +18,6 @@ export default function ClientTrust() {
               <Image src="/img/showcases/clients/tma-sport.svg" alt="TMA Sport" width={106} height={70} />
             </div>
             <div className="client">
-              <picture>
-                <source srcSet="/img/clients/toptal.webp" type="image/webp" />
-                <Image src="/img/clients/toptal.png" alt="Toptal icon" width="116" height="32" />
-              </picture>
-            </div>
-            <div className="client">
-              <picture>
-                <source srcSet="/img/clients/hubstaff.webp" type="image/webp" />
-                <Image src="/img/clients/hubstaff.png" alt="Hubstaff icon" width="150" height="32" />
-              </picture>
-            </div>
-            <div className="client">
               <svg xmlns="http://www.w3.org/2000/svg" width="190" height="45" viewBox="0 0 295.299 66.068">
                 <defs>
                   <linearGradient id="2DERaw" x1="0.103" y1="1.006" x2="1.092" y2="-0.156" gradientUnits="objectBoundingBox">
