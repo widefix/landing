@@ -12,6 +12,17 @@ export interface ShowcasePositioning {
 }
 
 export const showcasePositioning: Record<string, ShowcasePositioning> = {
+  'ditchcarbon-sap-ariba-integration': {
+    steps: ['Understand the complete integration architecture', 'Coordinate teams and deliver the integration'],
+    cardLabel: 'SAP Ariba integration',
+    hook: 'SOLUTIONS ARCHITECTURE + COMMUNICATION',
+    headline: 'Procurement emissions tracking through SAP Ariba',
+    value: 'A successful integration requires a complete technical picture and clear communication across teams. WideFix founder Andrei Kaleshka brought those together, independently handling the architecture and implementation while coordinating with DitchCarbon and SAP.',
+    help: 'Need help delivering an integration across multiple teams?',
+    theme: 'green',
+    title: 'DitchCarbon: SAP Ariba Integration for Procurement Emissions - WideFix',
+    description: 'SAP Ariba integration for DitchCarbon’s procurement emissions tracking, delivered through solutions architecture and coordination with the founder and SAP teams.',
+  },
   'kajabi-experts-performance': {
     steps: ['Analyze the slow page and prioritize bottlenecks', 'Optimize the data path and verify the result'],
     cardLabel: 'Rails performance optimization',

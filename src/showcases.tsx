@@ -5,6 +5,43 @@ import { CategoryName, ResultBoxColor, Showcase, SwiperSlideColor } from './enum
 
 const showcases: Showcase[] = [
   {
+    slug: 'ditchcarbon-sap-ariba-integration',
+    category: CategoryName.systemsIntegrations,
+    preview: {
+      title: 'SAP Ariba Integration for Procurement Emissions',
+      companyName: 'DitchCarbon',
+      solution: 'Solutions Architecture & Cross-Team Communication',
+      results: 'WideFix founder Andrei Kaleshka independently delivered a SAP Ariba integration to track procurement emissions, coordinating with the DitchCarbon founder and SAP teams and resolving conflicting implementation guidance.',
+      wrapperColor: SwiperSlideColor.green,
+      buttonColor: SwiperSlideColor.green,
+      companyImageSrc: '/img/showcases/clients/ditchcarbon.svg',
+      url: '',
+    },
+    body: {
+      bannerTopTitle: <h1>DitchCarbon SAP Ariba Integration</h1>,
+      bannerTopImageSrc: '/img/showcases/ditchcarbon-ariba.svg',
+      description: 'Connecting procurement with emissions tracking',
+      descriptionText: <><p>DitchCarbon needed a SAP Ariba integration to track procurement emissions. Andrei Kaleshka, WideFix’s founder, handled the solutions architecture and implementation himself, coordinating with the DitchCarbon founder and the SAP teams involved.</p><p>The application’s backend used Ruby on Rails and PostgreSQL. The integration connected a REST API on the DitchCarbon side with a SOAP API on the SAP Ariba side.</p></>,
+      detailsTitle: 'Finding a workable path across multiple teams',
+      detailsText: <p>Responsibility for the integration was distributed across several teams on the SAP side. Communication gaps led to conflicting guidance, including suggested implementation directions that turned out to be unsuitable.</p>,
+      detailsImageSrc: '/img/showcases/ditchcarbon-ariba.svg',
+      problemText: <p>Implementing individual instructions was not enough. Andrei needed to understand the complete integration picture, reconcile the guidance with the documentation, and coordinate the implementation with the people responsible on both sides.</p>,
+      solutionFirstText: <p>Andrei worked through the integration documentation to understand the whole picture and identify a workable implementation approach. The integration connected DitchCarbon’s REST API with SAP Ariba’s SOAP API, using a Ruby on Rails backend and PostgreSQL. This required solutions architecture: connecting the business goal with the technical requirements instead of treating each instruction in isolation.</p>,
+      solutionSecondText: <p>Andrei coordinated with the DitchCarbon founder and SAP teams as the implementation progressed, working through misunderstandings and conflicting directions. Combining that communication with a complete understanding of the documentation enabled him to deliver the integration.</p>,
+      resultBoxes: [
+        { color: ResultBoxColor.lightGreen, imageSrc: '/img/showcases/case/icons/flag.svg', number: 'SAP Ariba', message: 'Integration delivered' },
+        { color: ResultBoxColor.lightBlue, imageSrc: '/img/showcases/case/icons/stock.svg', number: 'Architecture', message: 'A complete integration approach' },
+        { color: ResultBoxColor.lightGreen, imageSrc: '/img/showcases/case/icons/flag.svg', number: 'Coordination', message: 'Founder and SAP teams aligned on delivery' },
+      ],
+      resultText: <p>Andrei independently completed the SAP Ariba integration for DitchCarbon’s procurement emissions tracking, owning the architecture, implementation, and coordination throughout. The work demonstrated solutions architecture and communication: understanding the whole system, resolving conflicting guidance, and carrying the implementation through to completion across organizational boundaries.</p>,
+      helpTitle: 'Need help delivering a complex integration?',
+    },
+    metadata: {
+      title: 'DitchCarbon: SAP Ariba Integration for Procurement Emissions - WideFix',
+      description: 'WideFix delivered DitchCarbon’s SAP Ariba integration for procurement emissions tracking through solutions architecture and coordination with the founder and SAP teams.',
+    },
+  },
+  {
     slug: 'worshiponline-application-support-maintenance',
     category: CategoryName.devops,
     preview: {

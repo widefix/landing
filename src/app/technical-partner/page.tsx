@@ -134,6 +134,7 @@ export default function TechnicalPartnerPage() {
         </div>
         <p className="rails-intro">A typical starting scope is an application assessment, a prioritized roadmap and a recurring decision and delivery review. Ongoing leadership and implementation capacity are agreed separately.</p>
         <p>At <Link href="/showcases/worshiponline-application-support-maintenance">Worship Online</Link>, we coordinated specialist expertise around ongoing maintenance, product work and the budget. For <Link href="/showcases/public-api-development">Palladium</Link>, we coordinated API delivery across teams while protecting the existing portal.</p>
+        <p>For <Link href="/showcases/ditchcarbon-sap-ariba-integration">DitchCarbon’s SAP Ariba integration</Link>, we combined solutions architecture with communication across the founder and SAP teams to deliver procurement emissions tracking.</p>
         <div className="rails-actions"><RailsCall>Discuss fractional CTO support</RailsCall><Link href="/team">Meet the engineers supporting delivery →</Link></div>
       </div></section>
       <OwnershipCTA />
