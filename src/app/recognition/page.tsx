@@ -51,7 +51,7 @@ export default function RecognitionPage() {
       </section>
 
       <nav className={styles.sectionNav} aria-label="Recognition sections">
-        <div className="inner"><a href="#industry-recognition">Industry recognition</a><a href="#ruby-community">Ruby community</a><a href="#open-source">Open source</a><a href="#publications-speaking">Publications &amp; speaking</a></div>
+        <div className={styles.sectionNavLinks}><a href="#industry-recognition">Industry recognition</a><a href="#ruby-community">Ruby community</a><a href="#open-source">Open source</a><a href="#publications-speaking">Publications &amp; speaking</a></div>
       </nav>
 
       <section className="rails-section rails-tinted" id="industry-recognition">

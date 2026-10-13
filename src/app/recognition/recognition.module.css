@@ -5,8 +5,9 @@
 .rating span { font-size: 32px; color: #61768b; }
 .note { font-size: 14px; color: #617084; line-height: 1.6; margin-top: 24px; }
 .sectionNav { border-block: 1px solid #e1e8f0; background: #fff; }
-.sectionNav > div { display: flex; gap: 28px; flex-wrap: wrap; padding-block: 22px; }
-.sectionNav a { color: #245c94; font-weight: 600; font-size: 15px; }
+.sectionNavLinks { display: flex; gap: 12px; flex-wrap: wrap; max-width: 1228px; margin: 0 auto; padding: 20px 24px; box-sizing: content-box; }
+.sectionNav a { display: inline-flex; align-items: center; min-height: 44px; padding: 10px 16px; box-sizing: border-box; border: 1px solid #dce4ed; border-radius: 10px; background: #f7fafc; color: #245c94; font-weight: 600; font-size: 15px; line-height: 1.4; text-decoration: none; }
+.sectionNav a:hover { background: #eaf2fa; border-color: #245c94; }
 .page .twoColumns { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .downloads { font-size: 30px; font-weight: 700; color: #193b5e; }
 .downloads span { display: block; font-size: 14px; color: #617084; font-weight: 400; }
@@ -21,6 +22,6 @@
 }
 @media (max-width: 600px) {
   .bookPanel { padding: 24px; }
-  .sectionNav > div { gap: 16px 24px; }
+  .sectionNavLinks { flex-direction: column; gap: 12px; }
   .proofPanel { padding: 28px; }
 }
