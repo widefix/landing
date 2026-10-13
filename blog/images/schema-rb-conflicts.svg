@@ -1,53 +1,71 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 600" fill="none" role="img" aria-labelledby="title description">
-  <title id="title">schema.rb: less conflict, more clarity</title>
-  <desc id="description">A noisy Rails schema diff becomes a reviewed schema by tracing migrations, cleaning leftover branch changes, and regenerating the file.</desc>
-  <rect width="1800" height="600" fill="#173C32"/>
-  <path d="M0 120H1800M0 490H1800M450 120V490M900 120V490M1350 120V490" stroke="#A9CEB4" stroke-opacity=".09"/>
-  <circle cx="1600" cy="116" r="236" fill="#255445" fill-opacity=".58"/>
-  <circle cx="1600" cy="116" r="158" stroke="#B2D9B8" stroke-opacity=".18" stroke-width="2"/>
-  <circle cx="1600" cy="116" r="106" stroke="#B2D9B8" stroke-opacity=".18" stroke-width="2" stroke-dasharray="4 11"/>
-  <text x="64" y="56" fill="#B8DABD" font-family="Montserrat, Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="2">WIDEFIX / FIELD NOTES</text>
-  <text x="1736" y="56" text-anchor="end" fill="#B8DABD" font-family="Montserrat, Arial, sans-serif" font-size="14" font-weight="600" letter-spacing="1">RAILS + DATABASES</text>
-  <text x="64" y="140" fill="#F7F7F0" font-family="Montserrat, Arial, sans-serif" font-size="56" font-weight="700">schema.rb</text>
-  <text x="66" y="193" fill="#A9D9AF" font-family="Montserrat, Arial, sans-serif" font-size="38" font-weight="600">Less conflict. More clarity</text>
-  <text x="68" y="231" fill="#D2E2D5" font-family="Arial, sans-serif" font-size="18">One intended change should not become five unexplained diffs</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1000" fill="none" role="img" aria-labelledby="title description">
+  <title id="title">Finding a clear path through branching histories</title>
+  <desc id="description">A warm, textured landscape of layered paper mountains and winding paths. Several tangled routes in the foreground meet at a sunlit bridge and continue as a single clear path toward distant mountains.</desc>
+  <defs>
+    <linearGradient id="sky" x1="900" y1="0" x2="900" y2="750" gradientUnits="userSpaceOnUse"><stop stop-color="#9ABCC9"/><stop offset=".45" stop-color="#E9D8AD"/><stop offset="1" stop-color="#F4B967"/></linearGradient>
+    <linearGradient id="light" x1="1480" y1="110" x2="440" y2="980" gradientUnits="userSpaceOnUse"><stop stop-color="#FFE5A2" stop-opacity=".8"/><stop offset="1" stop-color="#FFE5A2" stop-opacity="0"/></linearGradient>
+    <linearGradient id="water" x1="1210" y1="380" x2="730" y2="900" gradientUnits="userSpaceOnUse"><stop stop-color="#A7C5C5"/><stop offset=".5" stop-color="#6D9D9F"/><stop offset="1" stop-color="#356568"/></linearGradient>
+    <linearGradient id="ground" x1="900" y1="540" x2="900" y2="1000" gradientUnits="userSpaceOnUse"><stop stop-color="#C9B16F"/><stop offset="1" stop-color="#83784D"/></linearGradient>
+    <linearGradient id="ribbon" x1="340" y1="950" x2="1200" y2="510" gradientUnits="userSpaceOnUse"><stop stop-color="#C18A55"/><stop offset=".6" stop-color="#EDC887"/><stop offset="1" stop-color="#F8E5B6"/></linearGradient>
+    <radialGradient id="sun"><stop stop-color="#FFF3CA"/><stop offset=".45" stop-color="#FFE6A1" stop-opacity=".8"/><stop offset="1" stop-color="#FFE6A1" stop-opacity="0"/></radialGradient>
+    <filter id="grain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".42" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".12"/></feComponentTransfer><feBlend in="SourceGraphic" mode="soft-light"/></filter>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#343D38" flood-opacity=".2"/></filter>
+  </defs>
+  <g filter="url(#grain)">
+    <path d="M0 0H1800V1000H0Z" fill="url(#sky)"/>
+    <ellipse cx="1370" cy="175" rx="300" ry="235" fill="url(#sun)"/>
+    <circle cx="1370" cy="175" r="70" fill="#FFF0B7" opacity=".85"/>
+    <path d="M0 154C155 106 266 185 414 145S675 64 830 136" stroke="#FAF0D5" stroke-opacity=".45" stroke-width="38" stroke-linecap="round"/>
+    <path d="M115 230C315 200 416 241 556 204" stroke="#FAF0D5" stroke-opacity=".38" stroke-width="20" stroke-linecap="round"/>
+    <path d="M1465 80C1577 65 1681 116 1800 97" stroke="#FFF3D6" stroke-opacity=".4" stroke-width="30" stroke-linecap="round"/>
 
-  <rect x="64" y="278" width="448" height="208" rx="14" fill="#F4F3EA"/>
-  <rect x="88" y="298" width="112" height="24" rx="12" fill="#F4E2C5"/>
-  <text x="144" y="314" text-anchor="middle" fill="#875D2F" font-family="Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1">NOISY DIFF</text>
-  <path d="M438 302h32m-16-16v32" stroke="#D98150" stroke-width="3" stroke-linecap="round" transform="rotate(45 454 302)"/>
-  <rect x="88" y="340" width="400" height="36" rx="6" fill="#F0DACA"/>
-  <text x="102" y="364" fill="#985132" font-family="Menlo, Consolas, monospace" font-size="18">+ users.timezone</text>
-  <rect x="88" y="385" width="400" height="36" rx="6" fill="#F0DACA"/>
-  <text x="102" y="409" fill="#985132" font-family="Menlo, Consolas, monospace" font-size="18">+ unrelated tables</text>
-  <text x="90" y="457" fill="#64756B" font-family="Arial, sans-serif" font-size="15">Which branch left these behind?</text>
+    <path d="M0 405 166 318 241 347 391 240 488 329 630 277 802 356 944 267 1072 347 1276 232 1423 312 1574 241 1800 344V639H0Z" fill="#A5B8B3"/>
+    <path d="m391 240 97 89-99-35-57 35Z" fill="#EAE3C6" opacity=".65"/>
+    <path d="m1276 232 147 80-125-27-83 55Z" fill="#F4EAD0" opacity=".8"/>
+    <path d="M0 454 120 376 266 425 440 335 583 446 777 340 913 451 1078 365 1233 437 1427 337 1545 423 1693 336 1800 376V674H0Z" fill="#6E9498"/>
+    <path d="m440 335 143 111-123-53-130 62Z" fill="#B5C6BE"/>
+    <path d="m777 340 136 111-142-56-108 50Z" fill="#9DB5B3"/>
+    <path d="m1427 337 118 86-110-40-122 79Z" fill="#BFCBC0"/>
+    <path d="M0 559C231 437 335 477 468 524S713 461 887 507 1155 450 1350 490 1636 438 1800 478V778H0Z" fill="#658574"/>
+    <path d="M0 587C154 525 317 537 470 575S752 517 888 555" stroke="#B8BB88" stroke-width="12" opacity=".45"/>
 
-  <rect x="676" y="266" width="448" height="232" rx="14" fill="#285443" stroke="#729981" stroke-opacity=".65"/>
-  <rect x="700" y="288" width="140" height="24" rx="12" fill="#3A6854"/>
-  <text x="770" y="304" text-anchor="middle" fill="#D5E8D7" font-family="Arial, sans-serif" font-size="11" font-weight="700" letter-spacing=".8">FIND THE CAUSE</text>
-  <circle cx="718" cy="350" r="15" fill="#E8AD56"/>
-  <text x="718" y="355" text-anchor="middle" fill="#233D32" font-family="Arial, sans-serif" font-size="13" font-weight="700">1</text>
-  <text x="748" y="356" fill="#F6F7F1" font-family="Arial, sans-serif" font-size="19" font-weight="600">Trace the migrations</text>
-  <circle cx="718" cy="405" r="15" fill="#E8AD56"/>
-  <text x="718" y="410" text-anchor="middle" fill="#233D32" font-family="Arial, sans-serif" font-size="13" font-weight="700">2</text>
-  <text x="748" y="411" fill="#F6F7F1" font-family="Arial, sans-serif" font-size="19" font-weight="600">Clean leftover changes</text>
-  <circle cx="718" cy="460" r="15" fill="#E8AD56"/>
-  <text x="718" y="465" text-anchor="middle" fill="#233D32" font-family="Arial, sans-serif" font-size="13" font-weight="700">3</text>
-  <text x="748" y="466" fill="#F6F7F1" font-family="Arial, sans-serif" font-size="19" font-weight="600">Regenerate the schema</text>
+    <path d="M994 490C1185 471 1435 477 1568 517S1518 611 1306 629 1018 679 926 761 956 943 1127 1000H560C473 903 553 766 725 699S1103 631 1223 585 1094 539 919 532Z" fill="url(#water)"/>
+    <path d="M1081 515C1223 504 1407 521 1459 539" stroke="#F8E2AA" stroke-width="6" stroke-linecap="round" opacity=".7"/>
+    <path d="M1013 555C1191 554 1387 548 1395 568" stroke="#D4DFCA" stroke-width="5" stroke-linecap="round" opacity=".55"/>
+    <path d="M955 656C1099 628 1219 625 1297 603" stroke="#D4DFCA" stroke-width="7" stroke-linecap="round" opacity=".4"/>
+    <path d="M735 792C785 737 851 706 926 688" stroke="#BBD0BD" stroke-width="8" stroke-linecap="round" opacity=".45"/>
 
-  <rect x="1288" y="278" width="448" height="208" rx="14" fill="#F4F3EA"/>
-  <rect x="1312" y="298" width="134" height="24" rx="12" fill="#DDEEDF"/>
-  <text x="1379" y="314" text-anchor="middle" fill="#39724A" font-family="Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1">REVIEWED DIFF</text>
-  <circle cx="1694" cy="310" r="17" fill="#BBDDBF"/>
-  <path d="m1686 310 6 6 10-12" stroke="#39724A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="1312" y="340" width="400" height="36" rx="6" fill="#DDEEDF"/>
-  <text x="1326" y="364" fill="#39724A" font-family="Menlo, Consolas, monospace" font-size="18">+ intended changes</text>
-  <text x="1314" y="414" fill="#233D32" font-family="Montserrat, Arial, sans-serif" font-size="23" font-weight="700">A diff you can explain</text>
-  <text x="1314" y="457" fill="#64756B" font-family="Arial, sans-serif" font-size="15">Keep the changes that belong</text>
+    <path d="M0 651C199 556 390 588 551 651S736 778 628 867 594 953 659 1000H0Z" fill="url(#ground)"/>
+    <path d="M1800 596C1655 539 1487 574 1379 642S1223 761 1266 875 1442 973 1549 1000H1800Z" fill="#919668"/>
+    <path d="M1800 673C1632 602 1502 655 1413 701S1380 811 1453 851 1611 881 1800 859" stroke="#D2BD7C" stroke-width="28"/>
+    <path d="M1800 732C1655 681 1503 720 1481 758S1556 812 1695 815" stroke="#647B59" stroke-width="24"/>
+    <path d="M1800 917C1606 884 1468 931 1483 988" stroke="#B7AB6D" stroke-width="45"/>
 
-  <path d="M532 382H646m-10-10 12 10-12 10" stroke="#D98150" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M1144 382H1258m-10-10 12 10-12 10" stroke="#D98150" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="64" y="524" width="1672" height="40" rx="8" fill="#234A3B"/>
-  <circle cx="92" cy="544" r="6" fill="#D98150"/>
-  <text x="112" y="549" fill="#E1ECE2" font-family="Arial, sans-serif" font-size="15" font-weight="600">Git switches your files. Your database needs its own cleanup.</text>
+    <path d="M0 824C194 680 330 720 419 804S670 835 746 741" stroke="#495F4C" stroke-width="76" stroke-linecap="round" opacity=".3"/>
+    <path d="M-60 822C140 677 293 685 414 790S617 849 746 741" stroke="url(#ribbon)" stroke-width="45" stroke-linecap="round"/>
+    <path d="M87 1070C233 880 458 1011 546 867S353 696 283 816 558 998 746 741" stroke="#515F4C" stroke-width="64" stroke-linecap="round" opacity=".3"/>
+    <path d="M78 1043C225 853 450 984 538 840S345 669 275 789 550 971 746 741" stroke="#E4BA76" stroke-width="34" stroke-linecap="round"/>
+    <path d="M440 1076C577 944 718 1031 783 930S565 827 576 738 701 706 746 741" stroke="#4E654F" stroke-width="63" stroke-linecap="round" opacity=".3"/>
+    <path d="M432 1057C569 925 710 1012 775 911S557 808 568 719 693 687 746 741" stroke="#F0D299" stroke-width="35" stroke-linecap="round"/>
+    <path d="M-60 809C140 664 293 672 414 777" stroke="#FAE4B6" stroke-width="5" stroke-linecap="round" opacity=".6"/>
+    <path d="M259 791C254 858 388 886 485 851" stroke="#F6DFA6" stroke-width="5" stroke-linecap="round" opacity=".6"/>
+
+    <g filter="url(#shadow)">
+      <path d="m692 750 411-154 76 47-411 171Z" fill="#684C36"/>
+      <path d="m692 733 411-154 76 47-411 171Z" fill="#F0D39A"/>
+      <path d="m719 741 412-154M748 756l410-155M781 779l399-153" stroke="#B98D57" stroke-width="3" opacity=".65"/>
+      <path d="m761 708 69 52m-10-74 69 51m-9-73 68 50m-6-73 69 48m-6-73 68 49m-7-72 68 47" stroke="#B98D57" stroke-width="4" opacity=".5"/>
+      <path d="m723 724 410-151M720 735v-40m86 6v-40m91 5v-40m89 5v-40m93 6v-40m57 15v-40" stroke="#9D7545" stroke-width="8" stroke-linecap="round"/>
+      <path d="m781 790 400-167m-392 163v-40m86 5v-40m91 3v-40m91 4v-40m91 4v-40" stroke="#9D7545" stroke-width="7" stroke-linecap="round"/>
+    </g>
+    <path d="M1128 602C1248 590 1288 539 1253 504S1178 468 1233 436 1391 430 1428 379" stroke="#F2D8A5" stroke-width="27" stroke-linecap="round"/>
+    <path d="M1145 595C1265 583 1283 544 1250 512" stroke="#FFF0C7" stroke-width="4" stroke-linecap="round" opacity=".65"/>
+
+    <g fill="#D5C088" opacity=".65"><path d="m20 645 133-37 136 34-125 38Z"/><path d="m90 600 80-27 76 16-74 27Z"/><path d="m339 595 111 6 53 25-111-7Z"/><path d="m1510 650 152-38 99 25-152 39Z"/></g>
+    <g stroke="#698052" stroke-width="5" stroke-linecap="round"><path d="m86 687-16-48m16 48 15-40m-14 35-32-16m141 48-13-39m13 39 22-31m-3 13 10-4m256 50 3-36m-3 36-19-22m1147-105-9-31m9 31 15-28m85 58-3-43m3 43 20-29"/></g>
+    <g fill="#3C5E4D"><path d="M-18 718C65 733 85 832 34 863S-11 935 42 1000H0Z"/><path d="M1800 726C1698 743 1679 818 1721 860S1731 958 1677 1000H1800Z"/></g>
+    <g fill="#647947"><ellipse cx="22" cy="803" rx="65" ry="17" transform="rotate(-30 22 803)"/><ellipse cx="21" cy="858" rx="68" ry="18" transform="rotate(25 21 858)"/><ellipse cx="1761" cy="798" rx="75" ry="18" transform="rotate(33 1761 798)"/><ellipse cx="1757" cy="875" rx="83" ry="20" transform="rotate(-27 1757 875)"/></g>
+    <path d="m1480 0-640 1000h630L1730 0Z" fill="url(#light)" opacity=".28"/>
+    <path d="M0 965C209 892 375 953 480 1000H0Z" fill="#756B46" opacity=".4"/>
+  </g>
 </svg>
