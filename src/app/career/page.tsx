@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 export default function CareerPage() {
   return (
     <main>
+      <h1>Careers at WideFix</h1>
       <CareerSection />
     </main>
   )
