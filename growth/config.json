@@ -1,0 +1,16 @@
+{
+  "site": "https://widefix.com",
+  "sitemap": "https://widefix.com/sitemap.xml",
+  "maxPages": 150,
+  "concurrency": 3,
+  "timeoutMs": 12000,
+  "commercialQueries": [
+    "ruby on rails maintenance company",
+    "rails developer left application takeover",
+    "legacy rails application maintenance",
+    "small saas support",
+    "rails performance optimization company",
+    "postgresql performance optimization consultant",
+    "fractional cto ruby on rails"
+  ]
+}
