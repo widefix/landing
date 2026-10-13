@@ -7,15 +7,20 @@
 .sectionNav { border-block: 1px solid #e1e8f0; background: #fff; }
 .sectionNav > div { display: flex; gap: 28px; flex-wrap: wrap; padding-block: 22px; }
 .sectionNav a { color: #245c94; font-weight: 600; font-size: 15px; }
-.twoColumns { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.page .twoColumns { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .downloads { font-size: 30px; font-weight: 700; color: #193b5e; }
 .downloads span { display: block; font-size: 14px; color: #617084; font-weight: 400; }
-.bookPanel { display: grid; grid-template-columns: 210px 1fr; align-items: center; gap: 36px; margin-top: 36px; padding: 32px; border: 1px solid #dce6ef; border-radius: 20px; background: #f7fafc; }
+.bookPanel { display: grid; grid-template-columns: 210px minmax(0, 1fr); align-items: center; gap: 36px; margin-top: 36px; padding: 32px; border: 1px solid #dce6ef; border-radius: 20px; background: #f7fafc; }
 .bookPanel img { width: 100%; height: auto; }
-@media (max-width: 600px) {
-  .twoColumns, .bookPanel { grid-template-columns: 1fr; }
-  .bookPanel { padding: 24px; }
+.bookPanel > div { min-width: 0; }
+.page .bookPanel h3 + p { margin-top: 12px; color: #5f6675; }
+.page section[id] { scroll-margin-top: 24px; }
+@media (max-width: 900px) {
+  .page .twoColumns, .bookPanel { grid-template-columns: 1fr; }
   .bookPanel img { max-width: 150px; }
+}
+@media (max-width: 600px) {
+  .bookPanel { padding: 24px; }
   .sectionNav > div { gap: 16px 24px; }
   .proofPanel { padding: 28px; }
 }
