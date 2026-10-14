@@ -149,6 +149,15 @@ export default function HomePage() {
               </Link>
               <p>An open-sourced library developed by us to improve our daily developer task routine.</p>
             </div>
+            <div className="item shared-authenticator">
+              <Link href="/shared-authenticator">
+                <div className="content">
+                  <span>Team access</span>
+                  <h3>Team Authenticator</h3>
+                </div>
+              </Link>
+              <p>We built this open-source tool for our own team to make shared account access easier and keep work moving. Teammates get 2FA codes independently, with fewer interruptions and less waiting.</p>
+            </div>
             <div className="item actual-db-schema">
               <Link href="/actual-db-schema">
                 <div className="content">
