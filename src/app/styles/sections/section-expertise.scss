@@ -96,6 +96,22 @@
                         background-repeat: no-repeat, no-repeat;
                     }
                 }
+                &.shared-authenticator {
+                    .content {
+                        background: linear-gradient(0deg, rgba(15, 18, 49, .95), transparent 65%), url("/img/shared-authenticator/team-access-card.webp");
+                        background-size: cover;
+                        background-position: center;
+                        background-repeat: no-repeat;
+
+                        h3 {
+                            max-width: 100%;
+                            margin: 0;
+                            font-size: 26px;
+                            line-height: 1.2;
+                            overflow-wrap: anywhere;
+                        }
+                    }
+                }
                 &.actual-db-schema {
                     .content {
                         background: url("/img/library-green-icon.svg"), linear-gradient(0.3deg, #169B4B 0.28%, rgba(163, 163, 163, 0.2) 105.47%);
