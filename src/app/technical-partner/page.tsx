@@ -35,6 +35,14 @@ const principles = [
   ['upgrades', 'Continuous improvement', 'We make incremental improvements to reliability, maintainability, performance, and delivery.'],
 ] as const;
 
+const deliveryPractices = [
+  ['ownership', 'Features owned through production', 'We clarify the outcome and carry the work across frontend, backend, integrations and deployment. Progress means a working change delivered to users.'],
+  ['communication', 'Short, useful updates', 'You receive concise updates on what shipped, what comes next and what needs a decision. We agree an update rhythm so you can follow delivery without chasing status.'],
+  ['priorities', 'Blockers raised with a way forward', 'When a dependency, risk or scope change affects delivery, we flag it early, explain the impact and recommend the next step.'],
+  ['momentum', 'AI in the daily workflow', 'We use agentic coding tools such as Claude Code to accelerate research, implementation and repetitive work. Engineers review the output and remain responsible for technical decisions and what ships.'],
+  ['production', 'Verification matched to the risk', 'We check the user journeys affected by a change, test critical workflows and use production monitoring to catch regressions. Release and rollback planning reflect the impact of the work.'],
+] as const;
+
 const steps = [
   ['expertise', 'Understand', 'Learn your product, codebase, business goals, and immediate concerns.'],
   ['review', 'Assess', 'Identify technical risks, constraints, and opportunities for improvement.'],
@@ -96,6 +104,17 @@ export default function TechnicalPartnerPage() {
           <h2>We think beyond the ticket</h2>
           <p className="rails-intro">Good engineering starts with understanding the problem, not simply following instructions. We combine hands-on Rails expertise with judgment and clear communication.</p>
           <div className="rails-card-grid">{principles.map(([icon, heading, detail]) => (
+            <article className="rails-card" key={heading}><div className="rails-situation-heading"><SituationIcon kind={icon} /><h3>{heading}</h3></div><p>{detail}</p></article>
+          ))}</div>
+        </div>
+      </section>
+
+      <section className="rails-section rails-tinted" id="delivery">
+        <div className="inner">
+          <p className="rails-eyebrow">Ownership in everyday delivery</p>
+          <h2>How we keep work moving</h2>
+          <p className="rails-intro">Your product needs steady delivery and a clear view of progress. We agree priorities, take responsibility for execution and keep you informed as the work reaches production.</p>
+          <div className="rails-card-grid">{deliveryPractices.map(([icon, heading, detail]) => (
             <article className="rails-card" key={heading}><div className="rails-situation-heading"><SituationIcon kind={icon} /><h3>{heading}</h3></div><p>{detail}</p></article>
           ))}</div>
         </div>

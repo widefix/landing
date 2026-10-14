@@ -65,6 +65,14 @@ export default function HomePage() {
           <Link className="rails-text-link" href="/ruby-on-rails-application-takeover">Explore our Rails application takeover service <LinkIndicator /></Link>
         </div>
       </section>
+      <section className="rails-section rails-tinted">
+        <div className="inner">
+          <p className="rails-eyebrow">Ownership in everyday delivery</p>
+          <h2>Your product keeps moving. You know where the work stands.</h2>
+          <p className="rails-intro">We carry agreed priorities through frontend, backend and deployment, share concise progress updates, and raise blockers early with a proposed next step. AI coding tools help us move faster; code review, checks on critical workflows and production monitoring keep delivery grounded in reliability.</p>
+          <Link className="rails-text-link" href="/technical-partner#delivery">How we keep work moving <LinkIndicator /></Link>
+        </div>
+      </section>
       <OwnershipProcess />
       <section className="rails-section" id="services">
         <div className="inner">

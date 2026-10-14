@@ -44,7 +44,11 @@ I start with the business and the code that already exists. Which workflows must
 
 From there, I take responsibility for priorities and execution. I favor focused changes, clear communication, and gradual migrations. Reusing working code, protecting data integrity, and making the team’s next change easier often matter more than replacing everything at once.
 
-I also use AI throughout research, implementation, and review to reduce repetitive work and move faster. Experience still matters: I verify the results, make the tradeoffs, and remain accountable for what ships. When a project needs more capacity, I work with a small WideFix team rather than adding layers of management.
+I use agentic AI coding tools, including Claude Code, daily for codebase research, implementation, and repetitive work. I review the generated changes, check the affected user journeys, and verify critical workflows before release. I make the technical tradeoffs and remain accountable for what ships.
+
+I carry work across frontend, backend, and infrastructure when that is what a finished feature needs. Clients receive concise updates on progress, next steps, and decisions. If something blocks delivery, I raise it early and propose a way forward. When a project needs more capacity, I work with a small WideFix team rather than adding layers of management.
+
+Read more about [how WideFix keeps delivery moving](https://widefix.com/technical-partner#delivery).
 </section>
 
 <section class="author-contact">
