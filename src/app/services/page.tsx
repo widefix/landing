@@ -61,8 +61,8 @@ const coreServices = [
   },
   {
     id: 'development-modernization', title: 'Feature development & modernization', icon: 'web-dev-icon.svg',
-    description: 'Keep improving the product your customers already use. We deliver new features and evolve the architecture through incremental changes.',
-    items: ['Rails features, APIs and business workflows', 'React and Next.js interfaces', 'Refactoring and automated tests', 'Gradual redesigns and legacy modernization'],
+    description: 'Keep improving the product your customers already use. We own features from clarifying the requirement through frontend and backend implementation, verification, deployment and production monitoring.',
+    items: ['Rails features, APIs and business workflows', 'React and Next.js interfaces', 'AI-assisted implementation with code review and critical workflow checks', 'Deployment, monitoring and gradual modernization'],
     href: '/showcases/ruby-on-rails-redesign', link: 'See a redesign with zero downtime',
   },
   {
