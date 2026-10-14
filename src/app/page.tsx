@@ -150,6 +150,15 @@ export default function HomePage() {
               <p>An open-sourced library developed by us to improve our daily developer task routine.</p>
             </div>
             <div className="item actual-db-schema">
+              <Link href="/shared-authenticator">
+                <div className="content">
+                  <span>Team productivity tool</span>
+                  <h3>Shared Team Authenticator</h3>
+                </div>
+              </Link>
+              <p>Give teammates independent access to shared account authentication codes. Install it yourself or ask WideFix for setup help.</p>
+            </div>
+            <div className="item actual-db-schema">
               <Link href="/actual-db-schema">
                 <div className="content">
                   <span>Open-Sourced Library</span>
