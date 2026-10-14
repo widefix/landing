@@ -79,6 +79,25 @@ export default function SharedAuthenticatorPage() {
       <div className={styles.split}><div><p className={styles.eyebrow}>Choose who can access what</p><h2>One place to manage your team’s access</h2><p>Invite members, assign their role, and select their vaults. Teammates get access to the authenticators relevant to their work.</p><p>Reveal only the code you need. Authenticator secrets remain encrypted and are not sent to the codes page.</p></div><Image className={styles.screenshot} src="/img/shared-authenticator/members.webp" alt="Members and access screen showing roles and WideFix vault permissions; member emails are redacted" width={1507} height={1044} sizes="(max-width: 640px) calc(100vw - 48px), (max-width: 900px) calc(100vw - 40px), (max-width: 1228px) calc((100vw - 96px) * 0.6), 680px" /></div>
       <p className={styles.note}>Product screenshots with account names and personal information redacted.</p>
     </div></section>
+    <section className={styles.tinted} aria-labelledby="team-fit-title"><div className={styles.inner}>
+      <p className={styles.eyebrow}>Benefits and tradeoffs</p>
+      <h2 id="team-fit-title">Is it right for your team?</h2>
+      <p className={styles.intro}>We built Shared Team Authenticator to make our own team’s work easier, then open-sourced it so others can use and adapt it. It suits teams that want shared authentication codes on their own infrastructure.</p>
+      <div className={styles.grid}>
+        <article>
+          <div className={styles.cardHeading}><CardIcon name="server" /><h3>Your infrastructure, your responsibility</h3></div>
+          <p>Your team manages hosting, updates, backups, and service availability. There is no hosted service to sign up for. Keep a recovery plan for shared accounts in case the app is unavailable.</p>
+        </article>
+        <article>
+          <div className={styles.cardHeading}><CardIcon name="key" /><h3>Codes here, passwords elsewhere</h3></div>
+          <p>The app focuses on authenticator codes and team access to them. Keep using your password manager or existing process for account passwords.</p>
+        </article>
+        <article>
+          <div className={styles.cardHeading}><CardIcon name="integration" /><h3>Consider what you already use</h3></div>
+          <p>If your password manager already provides shared authentication codes, using that feature may be simpler than running another app. A hosted service may suit teams that prefer a provider to manage the infrastructure.</p>
+        </article>
+      </div>
+    </div></section>
     <section className={styles.tinted} id="get-started"><div className={styles.inner}>
       <p className={styles.eyebrow}>Two ways to get started</p><h2>Install it yourself or let us help</h2>
       <p className={styles.intro}>At the moment, we share the source code only. There is no hosted service to sign up for. You can install it on your own infrastructure, or reach out to WideFix for help getting it running.</p>
