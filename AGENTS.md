@@ -26,3 +26,13 @@ Apply these conventions when creating or editing pages in this repository.
 ## Verification
 
 - For page changes, run TypeScript checking and lint the affected page. If a local server is available, verify that the route loads.
+
+## Blog articles
+
+- Write blog posts in `blog/_posts/` using the existing Jekyll front matter and article layout.
+- Always connect articles to WideFix's business context: taking over existing Ruby on Rails applications, taking technical ownership, and providing ongoing maintenance. Explain the connection naturally through the article's topic, with concrete implications for application owners and teams.
+- Include a relevant paragraph about WideFix's work and a useful next step. Link to the appropriate existing service pages: `/ruby-on-rails-application-takeover`, `/ruby-on-rails-maintenance`, or `/legacy-ruby-on-rails-maintenance`. Do not invent service capabilities or force unrelated sales claims into the article.
+- Create an original, topic-specific SVG hero illustration for each new post, following the visual quality and composition of existing blog artwork. Store Jekyll blog illustrations under `blog/images/` and set `image_svg` in front matter. Include an accessible title and description, preserve the full composition, and check that the SVG renders.
+- Use the existing Jekyll social preview generator for raster social images; do not change shared templates just to add an article illustration.
+- Verify cited statistics against their sources, distinguish opinions and predictions from findings, and preserve the author's personal voice.
+- Validate front matter and run a Jekyll build when the local Ruby environment supports it. Report build blockers accurately. TypeScript and page lint checks apply when changing Next.js pages, not Markdown-only blog edits.

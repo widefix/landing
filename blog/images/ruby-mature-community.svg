@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1000" role="img" aria-labelledby="title description">
+  <title id="title">An established Ruby garden with room to grow</title>
+  <desc id="description">A mature tree shelters a ruby-shaped greenhouse and young plants. Gardeners tend the established garden and its new growth, representing the care and shared ownership behind Ruby's future.</desc>
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#b4ced0"/><stop offset="1" stop-color="#f5e9c9"/></linearGradient>
+    <linearGradient id="land" x2="0" y2="1"><stop stop-color="#a7b58b"/><stop offset="1" stop-color="#547864"/></linearGradient>
+    <linearGradient id="glass" x2="1" y2="1"><stop stop-color="#f0b09b" stop-opacity=".85"/><stop offset="1" stop-color="#a84f50" stop-opacity=".9"/></linearGradient>
+    <filter id="paper"><feTurbulence type="fractalNoise" baseFrequency=".4" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".07"/></feComponentTransfer><feBlend in="SourceGraphic" mode="soft-light"/></filter>
+  </defs>
+  <g filter="url(#paper)">
+    <path fill="url(#sky)" d="M0 0h1800v1000H0z"/>
+    <circle cx="1420" cy="210" r="95" fill="#fff0c5"/>
+    <path fill="#9eb5aa" d="M0 580q250-200 500-45t590-45 710 40v470H0z"/>
+    <path fill="url(#land)" d="M0 700q380-180 760-55t1040-35v390H0z"/>
+    <path fill="#dfc89c" d="M690 1000q35-200 340-270l85 24q-230 84-245 246z"/>
+    <ellipse cx="510" cy="790" rx="365" ry="65" fill="#365d4b" opacity=".22"/>
+    <path fill="#82684b" d="M440 770q65-190 30-430l67-10q-13 180 65 440h-63l-35-150-20 150z"/>
+    <g fill="none" stroke="#82684b" stroke-width="24" stroke-linecap="round"><path d="m500 515-135-170M510 440l128-155M495 390l-30-150"/></g>
+    <g fill="#416e57"><ellipse cx="300" cy="325" rx="155" ry="130"/><ellipse cx="485" cy="235" rx="185" ry="150"/><ellipse cx="675" cy="330" rx="170" ry="150"/><ellipse cx="485" cy="410" rx="220" ry="130"/></g>
+    <g fill="#6a9067"><ellipse cx="310" cy="270" rx="104" ry="76"/><ellipse cx="485" cy="170" rx="128" ry="85"/><ellipse cx="668" cy="275" rx="110" ry="85"/></g>
+    <g fill="#c86d5d"><circle cx="330" cy="362" r="16"/><circle cx="530" cy="274" r="16"/><circle cx="675" cy="380" r="16"/></g>
+    <path fill="#d9c6a2" d="m865 755 355-35 340 40-348 77z"/>
+    <path fill="url(#glass)" stroke="#884e49" stroke-width="10" stroke-linejoin="round" d="m920 720-15-235 125-130h290l165 130-35 235-265 80z"/>
+    <g fill="none" stroke="#f6d2b6" stroke-width="7" stroke-linejoin="round"><path d="m905 485 280 65 300-65M1030 355l155 195 135-195M1185 550v250M920 720l265-170 265 170"/></g>
+    <path fill="#704c43" d="M1140 800V670q45-55 90 0v116l-45 14z"/>
+    <path fill="#deb18e" d="M1153 796V677q32-36 64 0v112l-32 8z"/>
+    <g stroke="#365f49" stroke-width="8" fill="#71935f"><path d="M1400 875v-80m0 48q-60-5-50-45 50-5 50 45m0-18q3-46 48-48 7 40-48 48M1540 868v-110m0 55q-65-5-55-50 50 0 55 50m0-15q5-55 55-55 5 45-55 55"/></g>
+    <g fill="#c7af7d"><ellipse cx="1400" cy="884" rx="74" ry="15"/><ellipse cx="1540" cy="879" rx="75" ry="15"/></g>
+    <g stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="745" cy="637" r="25" fill="#c58b66"/>
+      <path d="m740 680-15 88m18-62 48 30m-62 30-25 64m25-64 30 60" fill="none" stroke="#344e55" stroke-width="22"/>
+      <path d="m710 674 47-6 9 66-55 8z" fill="#e2b46f"/>
+      <path d="m790 737 33 9-10 30-32-12z" fill="#738e93"/>
+      <path d="m821 752 27 8" stroke="#738e93" stroke-width="8"/>
+      <circle cx="1600" cy="644" r="24" fill="#d3a27b"/>
+      <path d="m1595 690-30 62m25-40-41 28m18 15-18 65m20-66 49 43" fill="none" stroke="#445c59" stroke-width="21"/>
+      <path d="m1574 675 41 15-25 57-43-12z" fill="#ac6658"/>
+    </g>
+    <g fill="#f1d79b"><circle cx="230" cy="845" r="7"/><circle cx="280" cy="870" r="7"/><circle cx="1020" cy="900" r="7"/><circle cx="1650" cy="908" r="7"/></g>
+  </g>
+</svg>
