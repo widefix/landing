@@ -68,9 +68,38 @@ export default function HomePage() {
       <section className="rails-section rails-tinted">
         <div className="inner">
           <p className="rails-eyebrow">Ownership in everyday delivery</p>
-          <h2>Your product keeps moving. You know where the work stands.</h2>
-          <p className="rails-intro">We carry agreed priorities through frontend, backend and deployment, share concise progress updates, and raise blockers early with a proposed next step. AI coding tools help us move faster; code review, checks on critical workflows and production monitoring keep delivery grounded in reliability.</p>
+          <h2>Bring the business problem and we own the technical delivery</h2>
+          <p className="rails-intro">Tell us what is affecting your customers or holding your product back. We investigate the system, recommend a solution and agree on scope and success criteria with you. We carry the work through implementation, release and verification, with concise updates and decisions raised early. You do not need to translate every concern into a technical ticket.</p>
           <Link className="rails-text-link" href="/technical-partner#delivery">How we keep work moving <LinkIndicator /></Link>
+        </div>
+      </section>
+      <section className="rails-section" id="starting-points" aria-labelledby="starting-points-title">
+        <div className="inner">
+          <p className="rails-eyebrow">Choose your starting point</p>
+          <h2 id="starting-points-title">What you get when we start working together</h2>
+          <p className="rails-intro">Start with the problem your application has today. We agree on the scope, budget, access and availability before work begins.</p>
+          <div className="rails-card-grid">
+            <article className="rails-card">
+              <div className="rails-situation-heading"><SituationIcon kind="handover" /><h3>Take over after your developer leaves</h3></div>
+              <p>Get an access and responsibility map, a prioritized risk assessment and an agreed plan for the first changes. Start by walking us through the product and the handover situation.</p>
+              <p><Link href="/ruby-on-rails-application-takeover">Explore Rails application takeover <LinkIndicator /></Link></p>
+              <Link href="/showcases/hipchip-stripe-ach-integration">See the HipChip takeover story <LinkIndicator /></Link>
+            </article>
+            <article className="rails-card">
+              <div className="rails-situation-heading"><SituationIcon kind="production" /><h3>Resolve recurring production failures</h3></div>
+              <p>Get documented findings, agreed fixes and recovery checks using errors, queue progress or integration consistency. Start with the affected customer workflow and available logs.</p>
+              <p><Link href="/ruby-on-rails-rescue">Explore Rails rescue and stabilization <LinkIndicator /></Link></p>
+              <Link href="/showcases/shopwired-queue-optimization">See the ShopWired queue recovery <LinkIndicator /></Link>
+            </article>
+            <article className="rails-card">
+              <div className="rails-situation-heading"><SituationIcon kind="ownership" /><h3>Maintain your app while shipping changes</h3></div>
+              <p>Get a shared backlog, agreed delivery checks and updates on releases, risks and decisions. Start with your next business priority and the support your product needs.</p>
+              <p><Link href="/ruby-on-rails-maintenance">Explore Rails maintenance and development <LinkIndicator /></Link></p>
+              <Link href="/showcases/ruby-on-rails-redesign">See the gradual redesign story <LinkIndicator /></Link>
+            </article>
+          </div>
+          <p className="rails-intro rails-engagement-note">AI tools support investigation and implementation. Our engineers remain responsible for review, checks on affected workflows and production verification. Response targets and ongoing coverage are agreed separately for your application.</p>
+          <RailsCall>Discuss your starting point</RailsCall>
         </div>
       </section>
       <OwnershipProcess />

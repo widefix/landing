@@ -14,6 +14,16 @@ const service: FocusedService = {
   "cta": "Discuss Rails maintenance",
   "sections": [
     {
+      "id": "getting-started",
+      "title": "What you receive at the start of maintenance",
+      "intro": "Bring your next business priority and the problems affecting customers. We agree the initial review scope, access and budget before committing to ongoing work.",
+      "items": [
+        { "title": "A shared delivery plan", "icon": "priorities", "detail": "Receive one prioritized backlog covering product changes and application risks. Agree the first outcome, acceptance checks and the decisions that need your input." },
+        { "title": "Clear operating responsibilities", "icon": "ownership", "detail": "Document included systems, technical contacts, support hours, spending limits and escalation arrangements. Identify access or monitoring gaps before relying on the support process." },
+        { "title": "A verified first change", "icon": "review", "detail": "Carry the agreed change through investigation, implementation and release. Receive a summary of checks, observed results and remaining risks. Select a suitable production observation period and business metric together where relevant." }
+      ]
+    },
+    {
       "id": "support-scope",
       "title": "What ongoing maintenance covers",
       "items": [
