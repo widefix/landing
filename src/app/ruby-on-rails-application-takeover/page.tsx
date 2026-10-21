@@ -39,24 +39,12 @@ export default function RailsTakeoverPage() {
       </section>
       <section className="rails-section" id="handover">
         <div className="inner">
-          <h2>A handover starts with understanding your application</h2>
-          <p className="rails-intro">We begin with your business priorities and the current state of the product. Together, we agree on access, responsibilities and the first work to tackle.</p>
+          <h2>What you receive from the initial takeover work</h2>
+          <p className="rails-intro">Start with a walkthrough of your product and the handover situation. We agree the review scope, required access, budget and pace before starting. The initial work produces a shared technical picture and an actionable handover plan.</p>
           <div className="rails-card-grid">
-            <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="review" /><h3>Review the existing system</h3></div><p>Walk through the codebase, Ruby and Rails versions, database, tests, background jobs and third-party integrations. Identify the parts your customers depend on most.</p></article>
-            <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="handover" /><h3>Plan the operational handover</h3></div><p>Map hosting, deployments, monitoring and access with your outgoing developer or team where available. Document how the application runs and how changes reach production.</p></article>
-            <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="priorities" /><h3>Agree on the first priorities</h3></div><p>Turn the findings into a practical plan: urgent production issues, upgrade risks, maintenance needs and your feature backlog. Set a clear scope and communication rhythm.</p></article>
-          </div>
-        </div>
-      </section>
-      <section className="rails-section" id="first-weeks">
-        <div className="inner">
-          <p className="rails-eyebrow">A practical starting plan</p>
-          <h2>What the first weeks of a Rails takeover can look like</h2>
-          <p className="rails-intro">Every inherited application is different. We agree on the scope and pace after learning about your product, rather than promising a fixed timeline before seeing the system.</p>
-          <div className="rails-card-grid">
-            <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="review" /><h3>Understand the business and code</h3></div><p>Discuss critical user journeys, current incidents and goals. Review the repository, runtime, database, dependencies and third-party services.</p></article>
-            <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="production" /><h3>Map production responsibilities</h3></div><p>Check access, deployment and rollback paths, monitoring, backups and operational documentation. Identify gaps and agree on who handles which risks.</p></article>
-            <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="priorities" /><h3>Prioritize safe improvements</h3></div><p>Share a practical list of urgent fixes, upgrades and product work. Agree on the support arrangement and start with the most valuable, manageable changes.</p></article>
+            <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="review" /><h3>Review the existing system</h3></div><p>Receive a prioritized assessment of the codebase, dependencies, tests, jobs and integrations, tied to the customer workflows that matter most. Findings distinguish verified problems from risks that need further investigation.</p></article>
+            <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="handover" /><h3>Plan the operational handover</h3></div><p>Receive an access and responsibility map covering hosting, deployment, monitoring and essential accounts. Document the release and rollback paths, identify access gaps and agree incident contacts. Work with your outgoing team where available.</p></article>
+            <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="priorities" /><h3>Agree on the first priorities</h3></div><p>Receive a shared backlog of urgent fixes, upgrade risks and product work, with an agreed first change and acceptance checks. Confirm communication, budget and support expectations; verify the first release against the agreed checks.</p></article>
           </div>
         </div>
       </section>
@@ -76,7 +64,7 @@ export default function RailsTakeoverPage() {
       <OwnershipProcess />
       <section className="rails-section">
         <div className="inner">
-          <h2>Keep the product running. Keep the product growing</h2>
+          <h2>Keep your product running and growing</h2>
           <p className="rails-intro">Application ownership includes ongoing development. We can improve performance, upgrade dependencies, maintain infrastructure, connect payment and accounting systems, and ship new web and mobile features around your Rails backend.</p>
           <div className="rails-card-grid">
             <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="production" /><h3>Production recovery</h3></div><p>See how we restored a stalled background queue and eliminated recurring Heroku errors for ShopWired.</p><Link href="/showcases/shopwired-queue-optimization">Read the case study <LinkIndicator /></Link></article>

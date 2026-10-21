@@ -55,11 +55,11 @@ const service: FocusedService = {
     {
       "id": "deliverables",
       "title": "What recovery leaves behind",
-      "intro": "We agree access, availability and response arrangements before starting. The initial discussion establishes whether the required incident coverage fits our capacity.",
+      "intro": "We agree access, availability and response arrangements before starting. Start by describing the affected workflow, when failures began and the logs or monitoring available. The initial discussion establishes whether the required incident coverage fits our capacity.",
       "items": [
         {
           "title": "Incident findings and validated fixes",
-          "detail": "Receive the diagnosis, changes delivered, checks performed and any unresolved risks. Validate recovery with request errors, queue progress or integration consistency as appropriate.",
+          "detail": "Receive the diagnosis, changes delivered, checks performed and any unresolved risks. Compare the affected workflow before and after the fix using request errors, queue progress or integration consistency. Agree an observation period and document what the evidence does and does not establish.",
           "icon": "review"
         },
         {
