@@ -31,7 +31,7 @@ export default function HomePage() {
         <div className="inner rails-hero-grid">
           <div>
             <p className="rails-eyebrow">Ruby on Rails application ownership</p>
-            <h1>We take ownership of existing <span>Ruby on Rails</span> applications</h1>
+            <h1>We maintain existing <span>Ruby on Rails</span> applications</h1>
 
             <p className="rails-lead">Need someone to take over and maintain your Rails app reliably?</p>
             <p className="rails-intro">We maintain, stabilize and improve existing Rails applications from production issues and upgrades to new features and infrastructure. Keep your product moving without unnecessary rewrites or rebuilding your engineering team.</p>
