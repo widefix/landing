@@ -9,7 +9,7 @@
 <meta name="twitter:site" content="@{{ site.owner.twitter }}">
 <meta name="twitter:creator" content="@{{ site.owner.twitter }}">
 
-{% assign social_image = page.social_image | default: page.image_svg | default: page.image | default: 'post.jpg' %}
+{% assign social_image = page.social_image | default: page.image_svg | default: page.image | default: 'engineering-notes.jpg' %}
 {% if social_image contains '://' %}
 {% assign social_image_url = social_image %}
 {% else %}

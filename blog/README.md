@@ -18,7 +18,7 @@ Edit `about-author.md` to update Andrei's profile. Use `rake featured_post` to c
 
 ## Social preview images
 
-Open Graph and Twitter previews use the page's hero (`image_svg` or `image`), with `images/post.jpg` as the fallback for pages without a hero. Set `social_image` to a filename under `images/` when the hero needs a separate preview version, especially for SVG artwork. Use PNG or JPEG for that version and fit the full artwork into a 1200 × 630 frame. Optional `social_image_width` and `social_image_height` fields publish its dimensions. Article structured data uses the same preview image.
+Open Graph and Twitter previews use the page's hero (`image_svg` or `image`), with `images/engineering-notes.jpg` as the fallback for pages without a hero. Set `social_image` to a filename under `images/` when the hero needs a separate preview version, especially for SVG artwork. Use PNG or JPEG for that version and fit the full artwork into a 1200 × 630 frame. Optional `social_image_width` and `social_image_height` fields publish its dimensions. Article structured data uses the same preview image.
 
 To regenerate the Paperclip article's preview:
 
@@ -29,4 +29,4 @@ magick /tmp/widefix-paperclip-hero.png -background '#173C32' -gravity center -ex
 
 ## Social previews
 
-`_plugins/social_previews.rb` generates 1200 x 630 JPEG previews during every Jekyll build. It uses `social_image` when explicitly supplied, then `image_svg`, then `image`. Pages without artwork use `images/post.jpg`. The same generated preview is used for Open Graph and X/Twitter. The original hero stays unchanged on the article itself.
+`_plugins/social_previews.rb` generates 1200 x 630 JPEG previews during every Jekyll build. It uses `social_image` when explicitly supplied, then `image_svg`, then `image`. Pages without artwork use `images/engineering-notes.jpg`. The same generated preview is used for Open Graph and X/Twitter. The original hero stays unchanged on the article itself.

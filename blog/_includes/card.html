@@ -2,7 +2,7 @@
   <a class="card-image" href="{{ site.url }}{{ post.url }}" tabindex="-1" aria-hidden="true">
     {% if post.image_svg %}<img src="{{ site.url }}/images/{{ post.image_svg }}" alt="" loading="lazy" width="960" height="540">
     {% elsif post.image %}<img src="{{ site.url }}/images/{{ post.image }}" alt="" loading="lazy" width="960" height="540">
-    {% else %}<img src="{{ site.url }}/images/post.jpg" alt="" loading="lazy" width="960" height="540">{% endif %}
+    {% else %}<img src="{{ site.url }}/images/engineering-notes.jpg" alt="" loading="lazy" width="1200" height="630">{% endif %}
   </a>
   <div class="card-body">
     <div class="card-meta"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %d, %Y' }}</time>{% if post.featured_post %}<span>Editor’s pick</span>{% endif %}</div>

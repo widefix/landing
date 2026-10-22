@@ -18,9 +18,9 @@ module WideFix
           .find { |value| value.is_a?(String) && !value.empty? }
         next if original && original.match?(%r{\Ahttps?://})
 
-        original ||= 'post.jpg'
+        original ||= 'engineering-notes.jpg'
         source = File.expand_path(original, File.join(site.source, 'images'))
-        source = File.join(site.source, 'images', 'post.jpg') unless File.file?(source)
+        source = File.join(site.source, 'images', 'engineering-notes.jpg') unless File.file?(source)
         name = "#{File.basename(source, '.*')}-#{Digest::SHA256.hexdigest(source.sub(site.source, ''))[0, 12]}.jpg"
         relative = "social/#{name}"
         site.config['widefix_social_previews'][relative] = source

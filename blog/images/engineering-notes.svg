@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+<title id="title">WideFix engineering notes</title>
+<desc id="description">An open notebook, a ruby, and balanced stones overlooking peaceful green hills at sunrise, representing patient care for real Rails applications.</desc>
+<defs>
+<linearGradient id="sky" x2="0" y2="1"><stop stop-color="#bed0c9"/><stop offset="1" stop-color="#f1dfb6"/></linearGradient>
+<linearGradient id="land" x2="0" y2="1"><stop stop-color="#8b9e7c"/><stop offset="1" stop-color="#476c58"/></linearGradient>
+<linearGradient id="page" x2="0" y2="1"><stop stop-color="#fff3d6"/><stop offset="1" stop-color="#e9d4ac"/></linearGradient>
+<filter id="grain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".6" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".065"/></feComponentTransfer><feBlend in="SourceGraphic" mode="soft-light"/></filter>
+</defs>
+<g filter="url(#grain)">
+<path fill="url(#sky)" d="M0 0h1200v630H0z"/>
+<circle cx="980" cy="150" r="92" fill="#fff1c7" opacity=".18"/><circle cx="980" cy="150" r="65" fill="#fff1c7"/>
+<g fill="none" stroke="#f8efdb" stroke-linecap="round" opacity=".5"><path d="M730 98q60-16 120 0" stroke-width="12"/><path d="M1020 253q65-14 131-2" stroke-width="8"/></g>
+<path d="M0 398Q160 320 320 369T640 337T940 316T1200 299V630H0z" fill="#a5b6a1"/>
+<path d="M0 464Q165 385 340 427T680 391T1000 365T1200 389V630H0z" fill="#819d88"/>
+<path d="M0 527Q230 419 463 479T850 436T1200 456V630H0z" fill="url(#land)"/>
+<path d="M315 630q60-83 193-107t181-68q-22 59-143 91t-148 84z" fill="#d3bd8d" opacity=".85"/>
+<path d="M620 521q192-60 443-17l70 126H554z" fill="#526d55"/>
+<ellipse cx="853" cy="542" rx="241" ry="30" fill="#2d5144" opacity=".22"/>
+<path d="m630 407 173 16 181-52 51 156-190 42-191-34z" fill="#284e43" stroke="#284e43" stroke-width="12" stroke-linejoin="round"/>
+<path d="m640 395 169 25 168-61 42 151-176 44-183-34z" fill="#c9b78f"/>
+<path d="m644 380 164 31q76-48 164-66l39 151q-91 15-169 53-83-34-182-43z" fill="url(#page)"/>
+<path d="m808 411 34 138" fill="none" stroke="#bca37d" stroke-width="3"/>
+<g fill="none" stroke="#9ba58b" stroke-width="4" stroke-linecap="round"><path d="m675 421 105 19m-100 1 109 20m-105 0 72 14m-67 7 105 20"/><path d="m848 433 22-8m-17 25 46-16m-41 33 75-25m-70 42 52-17m-46 34 78-25"/></g>
+<path d="m922 367 10 38 12-12 15 3-12-38" fill="#b96e58"/>
+<path d="m605 517 22-30 41 3 22 30-42 43z" fill="#ad5b51" stroke="#7e4943" stroke-width="2" stroke-linejoin="round"/>
+<path d="m605 517 42-4 21-23m-41-3 20 26 43 7m-43-7 1 50" fill="none" stroke="#e3a08a" stroke-width="3"/>
+<ellipse cx="1073" cy="515" rx="53" ry="16" fill="#7f8b78"/><ellipse cx="1071" cy="491" rx="38" ry="15" fill="#a5ad92"/><ellipse cx="1077" cy="468" rx="25" ry="12" fill="#d3c9aa"/>
+<path d="M1120 551q-11-63 4-102" fill="none" stroke="#344f40" stroke-width="4"/><path d="M1119 509q-37-4-29-29 25 0 29 29m1-24q32-1 34-29-29 0-34 29" fill="#a5b287"/>
+<g fill="#d5c395" opacity=".7"><ellipse cx="101" cy="581" rx="46" ry="8"/><ellipse cx="182" cy="553" rx="25" ry="5"/><ellipse cx="520" cy="597" rx="25" ry="6"/></g>
+</g>
+<g fill="#244c40" font-family="Georgia, 'Times New Roman', serif">
+<text x="82" y="113" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="4">WIDEFIX / ENGINEERING NOTES</text>
+<text x="77" y="216" font-size="67">Care for the code</text><text x="77" y="292" font-size="67">that carries</text><text x="77" y="368" font-size="67">your business</text>
+<path d="M82 404h56" stroke="#b16b50" stroke-width="3"/>
+<text x="82" y="444" font-family="Arial, Helvetica, sans-serif" font-size="18">Rails ownership, maintenance &amp; lessons learned</text>
+</g>
+</svg>
