@@ -12,6 +12,7 @@ type ServiceIcon = ComponentProps<typeof SituationIcon>['kind'];
 export interface FocusedService {
   slug: string; title: string; description: string; heading: string; intro: string;
   image: string; imageAlt: string; cta: string;
+  imageWidth?: number; imageHeight?: number;
   evidenceHeading?: string; evidenceEyebrow?: string;
   sections: { id: string; title: string; intro?: string; items: { title: string; detail: string; icon?: ServiceIcon }[] }[];
   evidence: { title: string; detail: string; href: string; icon?: ServiceIcon; linkLabel?: string }[];
@@ -29,7 +30,7 @@ export default function FocusedServicePage({ service, children }: { service: Foc
   return <main className="rails-home rails-services">
     <section className="rails-section rails-hero"><div className="inner rails-hero-grid">
       <div><p className="rails-eyebrow">Services for existing applications</p><h1>{service.heading}</h1><p className="rails-intro">{service.intro}</p><div className="rails-actions"><RailsCall>{service.cta}</RailsCall><Link href="#evidence">See supporting work →</Link></div></div>
-      <div className="rails-hero-aside"><Image src={service.image} alt={service.imageAlt} width={560} height={490} priority /></div>
+      <div className="rails-hero-aside"><Image src={service.image} alt={service.imageAlt} width={service.imageWidth ?? 560} height={service.imageHeight ?? 490} sizes="(max-width: 900px) 100vw, 45vw" priority /></div>
     </div></section>
     {service.sections.map((section, index) => <section key={section.id} id={section.id} className={`rails-section ${index % 2 === 0 ? 'rails-tinted' : ''}`}><div className="inner">
       <h2>{section.title}</h2>{section.intro && <p className="rails-intro">{section.intro}</p>}
@@ -57,3 +58,4 @@ export default function FocusedServicePage({ service, children }: { service: Foc
     <section className="rails-section rails-final-cta"><div className="inner"><h2>{service.cta}</h2><p>Tell us about your application, the current problem and your priorities. We will agree on the scope, access needed and a practical first step.</p><div className="rails-actions"><RailsCall>{service.cta}</RailsCall><Link href="/contact">Send your project details →</Link></div></div></section>
   </main>;
 }
+

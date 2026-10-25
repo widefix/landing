@@ -105,6 +105,12 @@ const service: FocusedService = {
   ],
   "reading": [
     {
+      "title": "Ruby and Rails upgrade assessment",
+      "icon": "review",
+      "detail": "Identify compatibility blockers, critical workflow checks and a first delivery milestone before committing to an upgrade.",
+      "href": "/ruby-on-rails-upgrade-assessment"
+    },
+    {
       "title": "Legacy Rails maintenance and incremental modernization",
       "icon": "upgrades",
       "detail": "Plan dependency upgrades, strengthen tests and modernize an aging application in manageable stages.",
@@ -158,3 +164,4 @@ export default function Page() {
     </FocusedServicePage>
   );
 }
+
