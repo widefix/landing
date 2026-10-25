@@ -1,1 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="138" height="35" viewBox="0 0 138 35" role="img" aria-labelledby="title"><title id="title">Mezuka</title><rect width="138" height="35" rx="4" fill="#fff"/><text x="69" y="25" text-anchor="middle" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#183d32">MEZUKA</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="456" height="111" viewBox="0 0 456 111" role="img" aria-labelledby="mezuka-title mezuka-description">
+  <title id="mezuka-title">Mezuka</title>
+  <desc id="mezuka-description">Red Mezuka wordmark beside an open circular M emblem</desc>
+  <g fill="#ff0000">
+    <path d="M26 0 59.5 28 93.5 0C109.4 11.4 118.5 29.2 118.5 49.2c0 6.3-.9 12.3-2.8 18.2H92.4a37.6 37.6 0 0 0-.9-38.1L59.5 56 27 29.3a37.6 37.6 0 0 0-.9 38.1H2.8A59.4 59.4 0 0 1 0 49.2C0 29.2 9.5 11.4 26 0Z"/>
+    <path d="M7.2 77.3h27.1a37.8 37.8 0 0 0 49.9 0h27.1a59.2 59.2 0 0 1-104.1 0Z"/>
+    <path d="m149.6 95.2 3.8-52h16.8l10.1 24.6 10.2-24.6H207l3.9 52h-13.6L195.6 61l-10.3 23.2h-12L163.4 61l-2.6 34.2Z"/>
+    <path d="M219.2 43.2h32.6v10.6h-19.9v9.4h15.5l1.5 10.4h-17v11.1H252v10.5h-32.8Z"/>
+    <path d="M259.2 43.2h39.7v9.7l-24.2 31.8h23.1l1.6 10.5h-40.8v-9.8l24.5-31.6h-22.5Z"/>
+    <path d="M306.5 43.2h13.1v31.5c0 7 2.8 10.6 8.8 10.6 6.1 0 9-3.6 9-10.6V43.2h13v32.1c0 14.3-7.9 20.9-22.1 20.9-14.1 0-21.8-6.6-21.8-20.9Z"/>
+    <path d="M359.8 43.2h13v22.1l16.8-22.1h14l-19 24.6 19.9 25.6-13.8 2.5-17.9-24.8v24.1h-13Z"/>
+    <path fill-rule="evenodd" d="m424.3 43.2-18.7 52h13.1l3.6-11h17.5l3.6 11.5 12.6-2.3-17.4-50.2Zm6.7 13.3 5.6 17.5h-11.3Z"/>
+  </g>
+</svg>
