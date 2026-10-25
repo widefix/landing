@@ -6,6 +6,7 @@ import mezuka from '@/cases/mezuka';
 import { socialPreview, socialTwitter } from '@/lib/socialPreview';
 import shared from '../worshiponline-paperclip-activestorage/worshiponline.module.scss';
 import styles from './mezuka.module.scss';
+import DownloadPDF from '../worshiponline-paperclip-activestorage/DownloadPDF';
 
 const { body, metadata: copy } = mezuka;
 const hero = body.bannerTopImageSrc;
@@ -61,7 +62,10 @@ export default function MezukaShowcase() {
           <h1>A food delivery MVP <span>built from scratch</span></h1>
           <p className={shared.heroLead}>From business requirements to a working minimum viable product (MVP), integrated restaurant workflows and a team of 10 developers.</p>
           <p className={shared.heroLead}>Built December 2014–June 2016. The product did not launch because of a market-fit mismatch.</p>
-          <a className={shared.primaryLink} href="#delivery">Explore the work delivered <LinkIndicator /></a>
+          <div className={shared.heroActions}>
+            <a className={shared.primaryLink} href="#delivery">Explore the work delivered <LinkIndicator /></a>
+            <DownloadPDF filename="mezuka-food-delivery-platform.pdf" />
+          </div>
         </div>
         <div className={shared.heroVisual}><Image src={hero} alt="Mezuka customer interface with account registration, restaurant search and a map" width={500} height={350} priority sizes="(max-width: 860px) 100vw, 52vw" /></div>
       </div>
