@@ -1,3 +1,4 @@
+import LinkIndicator from '@/components/LinkIndicator';
 import GemDownloadPDF from '@/components/GemDownloadPDF';
 import { socialPreview, socialTwitter } from '@/lib/socialPreview';
 import type { Metadata } from 'next';
@@ -218,7 +219,7 @@ export default function ActualDbSchemaPage() {
           <p>We take ownership of existing Ruby on Rails applications, from production issues and upgrades to ongoing development. The same practical experience shapes the tools we build for Rails teams.</p>
           <div className="schema-actions">
             <Link className="schema-button" href="/services">Explore our Rails maintenance services</Link>
-            <Link className="schema-text-link" href="/migration-data">Explore Migration Data →</Link>
+            <Link className="schema-text-link" href="/migration-data">Explore Migration Data <LinkIndicator /></Link>
           </div>
         </div>
       </section>

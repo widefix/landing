@@ -1,3 +1,4 @@
+import LinkIndicator from '@/components/LinkIndicator';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './FounderPublications.module.css';
@@ -20,24 +21,24 @@ export default function FounderPublications() {
             <p>The book explores using Rake to organize and automate development tasks. This is the same area of engineering behind his Rails tooling: making repetitive work easier and helping teams maintain a reliable development workflow.</p>
             <p>Published under his earlier name, Andrey Koleshko.</p>
             <div className="rails-actions">
-              <a href="https://www.packtpub.com/en-us/product/rake-task-management-essentials-9781783280773" target="_blank" rel="noopener noreferrer">View the book at Packt →</a>
-              <Link href="/blog/how-to-generate-rake-task/">Read the article that started it →</Link>
+              <a href="https://www.packtpub.com/en-us/product/rake-task-management-essentials-9781783280773" target="_blank" rel="noopener noreferrer">View the book at Packt <LinkIndicator /></a>
+              <Link href="/blog/how-to-generate-rake-task/">Read the article that started it <LinkIndicator /></Link>
             </div>
           </div>
         </article>
-        <div className="rails-actions"><Link href="/recognition">Explore recognition &amp; contributions →</Link></div>
+        <div className="rails-actions"><Link href="/recognition">Explore recognition &amp; contributions <LinkIndicator /></Link></div>
         <div className={`rails-card-grid ${styles.tools}`}>
           <article className="rails-card">
             <p className="rails-eyebrow">Open-source Rails tooling</p>
             <h3>actual_db_schema</h3>
             <p>A tool for keeping the local database schema aligned when switching branches in a Rails application.</p>
-            <Link href="/actual-db-schema">Explore actual_db_schema →</Link>
+            <Link href="/actual-db-schema">Explore actual_db_schema <LinkIndicator /></Link>
           </article>
           <article className="rails-card">
             <p className="rails-eyebrow">Open-source Rails tooling</p>
             <h3>migration_data</h3>
             <p>A Rails gem for adding testable data hooks to schema migrations.</p>
-            <Link href="/migration-data">Explore migration_data →</Link>
+            <Link href="/migration-data">Explore migration_data <LinkIndicator /></Link>
           </article>
         </div>
       </div>

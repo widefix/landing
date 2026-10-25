@@ -8,6 +8,7 @@ Apply these conventions when creating or editing pages in this repository.
 - Match the existing typography, container widths, section spacing, colors, buttons, borders, and responsive breakpoints rather than introducing a separate visual style.
 - Keep hero copy and the hero image or product visual side by side on desktop, with the visual below the copy on smaller screens. Preserve the image's aspect ratio and keep it within its container.
 - Use the shared site header and footer.
+- For decorative link indicators everywhere, use the shared `LinkIndicator` component from `@/components/LinkIndicator`, not text arrows such as `→`, `->`, or `↗`. It renders the `link-indicator` span with `aria-hidden="true"` and the 14×14 SVG chevron (`viewBox="0 0 16 16"`, path `m6 4 4 4-4 4`, currentColor stroke, width 1.7, rounded caps and joins, `focusable="false"`). In Jekyll templates use the equivalent `link-indicator.html` include; preserve the same markup in generated HTML such as PDF links.
 - Add relevant icons to benefit cards, use-case listings, and setup cards. Follow the existing green icon treatment: simple line SVGs in pale green backgrounds. Mark decorative icons as hidden from assistive technology.
 
 ## Copy

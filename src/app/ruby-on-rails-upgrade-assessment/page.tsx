@@ -37,8 +37,11 @@ const service: FocusedService = {
     { title: 'Palladium: a documented Rails upgrade', icon: 'upgrades', detail: 'Explore an existing-application upgrade from our client work and the engineering context behind it.', href: '/showcases/palladium-rails-upgrade' },
     { title: 'Dependency modernization in a live product', icon: 'production', detail: 'Our Paperclip to ActiveStorage account explains staged migration, preserving existing files and checking the cutover.', href: '/blog/migrate-paperclip-to-activestorage-without-downtime/', linkLabel: 'Read the engineering account' },
   ],
-  reading: [
+  articles: [
     { title: 'Planning a Rails upgrade', detail: 'What a useful assessment should resolve before implementation starts.', href: '/blog/planning-a-rails-upgrade/' },
+    { title: 'Is your working Rails app still supported?', detail: 'Check Ruby, Rails and hosting support to understand upgrade risks and prioritize the next steps.', href: '/blog/your-rails-app-still-works-is-it-still-supported/' },
+  ],
+  reading: [
     { title: 'Legacy Rails maintenance', detail: 'Carry the plan into incremental modernization of an aging application.', href: '/legacy-ruby-on-rails-maintenance' },
     { title: 'Ongoing Rails maintenance', detail: 'Keep dependencies, production support and product development on a shared roadmap.', href: '/ruby-on-rails-maintenance' },
   ],

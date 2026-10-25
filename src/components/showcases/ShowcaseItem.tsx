@@ -1,3 +1,4 @@
+import LinkIndicator from '@/components/LinkIndicator';
 import Image from 'next/image'
 import Link from 'next/link'
 import { showcasePositioning } from '@/lib/showcasePositioning'
@@ -36,7 +37,7 @@ export default function ShowcaseItem({
               <Image src={companyImageSrc} alt={companyName} width="104" height="25"/>
             </Link>
           </div>
-          <Link href={`/showcases/${slug}`} className="slide-learn-more" aria-label={`Read case study: ${title}`}>Read case study <span aria-hidden="true">↗</span></Link>
+          <Link href={`/showcases/${slug}`} className="slide-learn-more" aria-label={`Read case study: ${title}`}>Read case study <LinkIndicator /></Link>
         </div>
       </div>
     </div>

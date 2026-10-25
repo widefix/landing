@@ -1,3 +1,4 @@
+import LinkIndicator from '@/components/LinkIndicator';
 import ServiceRecognition from '@/components/rails/ServiceRecognition';
 import FocusedServicePage, { serviceMetadata, type FocusedService } from '@/components/rails/FocusedServicePage';
 import ClutchWidget from '@/components/ClutchWidget';
@@ -157,7 +158,7 @@ export default function Page() {
           <div className="rails-review-panel">
             <div className="rails-situation-heading"><SituationIcon kind="communication" /><h3>What clients say about working with WideFix</h3></div>
             <div className="rails-review-widget"><ClutchWidget /></div>
-            <div className="rails-actions"><a href="https://clutch.co/profile/widefix#reviews" target="_blank" rel="noopener noreferrer">Read all WideFix reviews on Clutch ↗</a></div>
+            <div className="rails-actions"><a href="https://clutch.co/profile/widefix#reviews" target="_blank" rel="noopener noreferrer">Read all WideFix reviews on Clutch <LinkIndicator /></a></div>
           </div>
         </div>
       </section>

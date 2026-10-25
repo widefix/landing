@@ -1,3 +1,4 @@
+import LinkIndicator from '@/components/LinkIndicator';
 import Link from 'next/link';
 import SituationIcon from './SituationIcon';
 import styles from './CommunityRecognition.module.css';
@@ -13,7 +14,7 @@ export default function CommunityRecognition() {
   return <section className={`rails-section rails-tinted ${styles.section}`} aria-labelledby="community-recognition-title"><div className="inner">
     <p className="rails-eyebrow">Recognition &amp; contributions</p>
     <h2 id="community-recognition-title">Recognized by the Ruby community</h2>
-    <div className={`rails-card-grid ${styles.grid}`}>{achievements.map(item => <article className="rails-card" key={item.title}><div className="rails-situation-heading"><SituationIcon kind={item.icon} /><h3>{item.title}</h3></div><p>{item.detail}</p><Link href={`/recognition#${item.anchor}`}>View the original sources →</Link></article>)}</div>
-    <div className="rails-actions"><Link href="/recognition">Explore recognition &amp; contributions →</Link></div>
+    <div className={`rails-card-grid ${styles.grid}`}>{achievements.map(item => <article className="rails-card" key={item.title}><div className="rails-situation-heading"><SituationIcon kind={item.icon} /><h3>{item.title}</h3></div><p>{item.detail}</p><Link href={`/recognition#${item.anchor}`}>View the original sources <LinkIndicator /></Link></article>)}</div>
+    <div className="rails-actions"><Link href="/recognition">Explore recognition &amp; contributions <LinkIndicator /></Link></div>
   </div></section>;
 }
