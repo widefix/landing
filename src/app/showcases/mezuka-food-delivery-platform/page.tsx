@@ -69,7 +69,7 @@ export default function MezukaShowcase() {
     </div></section>
     <section className={shared.intro}><div className={shared.container}>
       <div className={shared.introHeading}><p className={shared.sectionTag}>THE PRODUCT</p><h2>{body.description}</h2></div>
-      <div className={shared.introBody}>{body.descriptionText}{body.problemText}</div>
+      <div className={`${shared.introBody} ${styles.lessonsCopy}`}>{body.descriptionText}{body.problemText}</div>
     </div></section>
     <section className={shared.timeline} id="delivery"><div className={shared.container}>
       <div className={shared.sectionHeader}><p className={shared.sectionTag}>THE WORK DELIVERED</p><h2>Own the application from requirements to implementation</h2></div>
@@ -95,7 +95,15 @@ export default function MezukaShowcase() {
     </div></section>
     <section className={shared.intro} id="outcome"><div className={shared.container}>
       <div className={shared.introHeading}><p className={shared.sectionTag}>DELIVERY AND COMMERCIAL OUTCOME</p><h2>A working MVP with an unlaunched business</h2></div>
-      <div className={shared.introBody}>{body.resultText}<p>The distinction matters: completing an application and finding product-market fit are separate milestones. A new product needs demand validation alongside engineering delivery.</p></div>
+      <div className={shared.introBody}>{body.resultText}</div>
+    </div></section>
+    <section className={shared.intro} aria-labelledby="lessons-title"><div className={shared.container}>
+      <div className={shared.introHeading}><p className={shared.sectionTag}>LESSONS LEARNED</p><h2 id="lessons-title">Strong technology is only part of a successful business</h2></div>
+      <div className={`${shared.introBody} ${styles.lessonsCopy}`}>
+        <p>Mezuka reinforced a lasting lesson for us: even strong engineering and a working product with complex features are not enough to establish a successful, profitable business. Technical delivery and commercial success are different milestones.</p>
+        <p>A business also needs product-market fit, a clear business strategy, marketing, sales and effective communication with customers, partners and the team. Those efforts need to develop alongside the product; adding more features cannot substitute for understanding demand and finding a viable way to reach and serve customers.</p>
+        <p>For founders and application owners, the practical lesson is to validate demand early, test how customers will discover and buy the offering, and keep product priorities connected to what those conversations reveal. Engineering should support that business strategy, with clear communication between the people building the product and those bringing it to market.</p>
+      </div>
     </div></section>
     <section className={shared.intro} aria-labelledby="clutch-title"><div className={shared.container}>
       <div className={shared.introHeading}><p className={shared.sectionTag}>FOUNDER REVIEW + PROJECT PORTFOLIO</p><h2 id="clutch-title">Read more about Mezuka on Clutch</h2></div>

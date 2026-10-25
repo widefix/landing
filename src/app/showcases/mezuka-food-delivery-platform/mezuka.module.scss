@@ -75,3 +75,5 @@
 @media (max-width: 600px) {
   .projectGrid { grid-template-columns: 1fr; }
 }
+
+.lessonsCopy > p + p { margin-top: 24px; }
