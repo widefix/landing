@@ -89,6 +89,7 @@ main .clients > .inner > .container {
 }
 
 .link-indicator {
+    position: relative;
     display: inline-flex;
     width: 22px;
     height: 22px;
@@ -97,8 +98,18 @@ main .clients > .inner > .container {
     vertical-align: middle;
     margin-left: 6px;
     border-radius: 50%;
-    background: color-mix(in srgb, currentColor 9%, transparent);
     transition: transform 160ms ease;
+
+    // Keep the tint compatible with the PDF renderer's CSS color parser.
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background: currentColor;
+        opacity: 0.09;
+        pointer-events: none;
+    }
 }
 
 a:hover .link-indicator,
