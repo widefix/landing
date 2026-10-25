@@ -51,7 +51,7 @@ const coreServices = [
     id: 'rails-upgrades', title: 'Ruby & Rails upgrades', icon: 'what-we-do/icon-quality-assurance.svg',
     description: 'Bring an aging stack forward through manageable steps. We review compatibility and protect existing behavior as dependencies change.',
     items: ['Ruby, Rails and gem upgrades', 'Deprecated code and dependency fixes', 'Regression tests for critical workflows', 'Staged releases and rollback planning'],
-    href: '/legacy-ruby-on-rails-maintenance', link: 'Explore legacy Rails maintenance',
+    href: '/ruby-on-rails-upgrade-assessment', link: 'Start with an upgrade assessment',
   },
   {
     id: 'performance-reliability', title: 'Performance & reliability', icon: 'what-we-do/icon-optimization.svg',
@@ -190,3 +190,4 @@ export default function ServicesPage() {
     </main>
   );
 }
+

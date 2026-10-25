@@ -149,7 +149,7 @@ export default function HomePage() {
                   <span>BOOK</span>
                 </div>
               </Link>
-              <p>Packt invited Andrei Kaleshka to write <em>Rake Task Management Essentials</em> after discovering his technical article. <Link href="/team#open-source-publications">Read the story behind the book →</Link></p>
+              <p>Packt invited Andrei Kaleshka to write <em>Rake Task Management Essentials</em> after discovering his technical article. <Link href="/team#open-source-publications">Read the story behind the book <LinkIndicator /></Link></p>
             </div>
             <div className="item tech-blog">
               <Link href="https://widefix.com/blog/spike-of-signups-business-threat/" target="_blank">

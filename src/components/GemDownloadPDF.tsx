@@ -26,7 +26,7 @@ export default function GemDownloadPDF({ filename }: { filename: string }) {
         if (!source) return;
         const link = document.createElement('a');
         link.href = new URL(source.src, window.location.href).href;
-        link.textContent = 'Watch the product walkthrough →';
+        link.innerHTML = 'Watch the product walkthrough <span class="link-indicator" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" focusable="false"><path d="m6 4 4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>';
         video.replaceWith(link);
       });
       copy.querySelectorAll<HTMLElement>('.schema-reddit-embed').forEach(embed => {
@@ -36,7 +36,7 @@ export default function GemDownloadPDF({ filename }: { filename: string }) {
         const url = source ? new URL(source) : null;
         const link = document.createElement('a');
         link.href = url ? `https://www.reddit.com${url.pathname}` : fallback?.href || '';
-        link.textContent = 'Read the developer’s comment on Reddit →';
+        link.innerHTML = 'Read the developer’s comment on Reddit <span class="link-indicator" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" focusable="false"><path d="m6 4 4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>';
         embed.replaceChildren(link);
       });
       const { downloadShowcasePDF } = await import('@/lib/showcasePdf');

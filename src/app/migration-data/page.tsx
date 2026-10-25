@@ -1,3 +1,4 @@
+import LinkIndicator from '@/components/LinkIndicator';
 import GemDownloadPDF from '@/components/GemDownloadPDF';
 import type { Metadata } from 'next';
 import Image from 'next/image';
@@ -110,7 +111,7 @@ export default function MigrationDataPage() {
           <div className="schema-stats-intro">
             <p className="schema-eyebrow">Published on RubyGems</p>
             <h2 id="migration-stats-title">A tool developers keep downloading</h2>
-            <Link className="schema-text-link" href="https://rubygems.org/gems/migration_data" target="_blank" rel="noopener noreferrer">View migration_data on RubyGems →</Link>
+            <Link className="schema-text-link" href="https://rubygems.org/gems/migration_data" target="_blank" rel="noopener noreferrer">View migration_data on RubyGems <LinkIndicator /></Link>
           </div>
           <dl className="schema-stats-values">
             <div><dt>Total downloads</dt><dd>3.26M</dd></div>
@@ -126,25 +127,25 @@ export default function MigrationDataPage() {
           <p className="schema-eyebrow">From the project community</p>
           <h2 id="migration-testimonials-title">What developers are saying</h2>
           <p className="schema-section-intro">Public feedback from migration_data users and contributors on GitHub. Each quote links to the original discussion.</p>
-          <p>The gem is also listed in <a href="https://github.com/IonicaBizau/made-in-belarus#ruby" target="_blank" rel="noopener noreferrer">Made in Belarus →</a>, a collection of open-source projects made in Belarus.</p>
+          <p>The gem is also listed in <a href="https://github.com/IonicaBizau/made-in-belarus#ruby" target="_blank" rel="noopener noreferrer">Made in Belarus <LinkIndicator /></a>, a collection of open-source projects made in Belarus.</p>
           <div className="schema-testimonial-grid">
             <div className="schema-testimonial-column">
               <figure className="migration-testimonial">
                 <p className="schema-eyebrow">User feedback · GitHub</p>
                 <blockquote><p>I just used this gem with Rails 7.0.4 and minitest and it works fine, found it quite useful.</p></blockquote>
-                <figcaption><a href="https://github.com/ka8725/migration_data/issues/47" target="_blank" rel="noopener noreferrer">KjellMorgenstern →</a><span>Reported use with Rails 7.0.4 and Minitest</span></figcaption>
+                <figcaption><a href="https://github.com/ka8725/migration_data/issues/47" target="_blank" rel="noopener noreferrer">KjellMorgenstern <LinkIndicator /></a><span>Reported use with Rails 7.0.4 and Minitest</span></figcaption>
               </figure>
             </div>
             <div className="schema-testimonial-column">
               <figure className="migration-testimonial">
                 <p className="schema-eyebrow">User feedback · GitHub</p>
                 <blockquote><p>Hi, thanks for developing the awesome gem!</p></blockquote>
-                <figcaption><a href="https://github.com/ka8725/migration_data/issues/30" target="_blank" rel="noopener noreferrer">fursich →</a><span>Opening excerpt from a column-cache issue report</span></figcaption>
+                <figcaption><a href="https://github.com/ka8725/migration_data/issues/30" target="_blank" rel="noopener noreferrer">fursich <LinkIndicator /></a><span>Opening excerpt from a column-cache issue report</span></figcaption>
               </figure>
               <figure className="migration-testimonial">
                 <p className="schema-eyebrow">Contributor feedback · GitHub</p>
                 <blockquote><p>Thanks @ka8725. Awesome work! Just arrived home and seeing this now</p></blockquote>
-                <figcaption><a href="https://github.com/ka8725/migration_data/pull/13#issuecomment-169847155" target="_blank" rel="noopener noreferrer">mapreal19 →</a><span>Comment in a contribution discussion</span></figcaption>
+                <figcaption><a href="https://github.com/ka8725/migration_data/pull/13#issuecomment-169847155" target="_blank" rel="noopener noreferrer">mapreal19 <LinkIndicator /></a><span>Comment in a contribution discussion</span></figcaption>
               </figure>
             </div>
           </div>
@@ -198,7 +199,7 @@ export default function MigrationDataPage() {
             <h2 id="migration-testing-title">Test the backfill directly</h2>
             <p>Load the migration with <code>require_migration</code>, create a user with no status, and call the data method. Then assert that the user received the expected value.</p>
             <p>This RSpec example assumes FactoryBot is configured and the test database already has the status column. It tests the record update separately from the schema operation.</p>
-            <Link className="schema-text-link" href={`${projectUrl}#testing-migrations`} target="_blank" rel="noopener noreferrer">Explore the testing helper →</Link>
+            <Link className="schema-text-link" href={`${projectUrl}#testing-migrations`} target="_blank" rel="noopener noreferrer">Explore the testing helper <LinkIndicator /></Link>
           </div>
           <div className="schema-install-panel"><pre><code>{testExample}</code></pre></div>
         </div>
@@ -216,9 +217,9 @@ export default function MigrationDataPage() {
           <p className="schema-eyebrow">Engineering knowledge, shared</p>
           <h2 id="migration-related-title">The story behind the tool</h2>
           <div className="schema-feature-grid">
-            <article><span className="schema-feature-index">01</span><h3>Change data in migrations like a boss</h3><p>Andrei&apos;s article explains the approaches that led to migration_data and why tests matter for migration code.</p><Link className="schema-text-link" href="/blog/change-data-in-migrations-like-a-boss/">Read the original article →</Link></article>
-            <article><span className="schema-feature-index">02</span><h3>Keep your local schema aligned</h3><p>Actual DB Schema addresses another migration problem: database state left behind when you switch Git branches.</p><Link className="schema-text-link" href="/actual-db-schema">Explore Actual DB Schema →</Link></article>
-            <article><span className="schema-feature-index">03</span><h3>Contribute to the project</h3><p>Read the source, report an issue, or propose an improvement to migration_data.</p><Link className="schema-text-link" href={projectUrl} target="_blank" rel="noopener noreferrer">Visit GitHub →</Link></article>
+            <article><span className="schema-feature-index">01</span><h3>Change data in migrations like a boss</h3><p>Andrei&apos;s article explains the approaches that led to migration_data and why tests matter for migration code.</p><Link className="schema-text-link" href="/blog/change-data-in-migrations-like-a-boss/">Read the original article <LinkIndicator /></Link></article>
+            <article><span className="schema-feature-index">02</span><h3>Keep your local schema aligned</h3><p>Actual DB Schema addresses another migration problem: database state left behind when you switch Git branches.</p><Link className="schema-text-link" href="/actual-db-schema">Explore Actual DB Schema <LinkIndicator /></Link></article>
+            <article><span className="schema-feature-index">03</span><h3>Contribute to the project</h3><p>Read the source, report an issue, or propose an improvement to migration_data.</p><Link className="schema-text-link" href={projectUrl} target="_blank" rel="noopener noreferrer">Visit GitHub <LinkIndicator /></Link></article>
           </div>
         </div>
       </section>

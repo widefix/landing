@@ -1,3 +1,4 @@
+import LinkIndicator from '@/components/LinkIndicator';
 import ServiceRecognition from '@/components/rails/ServiceRecognition';
 import FocusedServicePage, { serviceMetadata, type FocusedService } from '@/components/rails/FocusedServicePage';
 import ClutchWidget from '@/components/ClutchWidget';
@@ -105,6 +106,12 @@ const service: FocusedService = {
   ],
   "reading": [
     {
+      "title": "Ruby and Rails upgrade assessment",
+      "icon": "review",
+      "detail": "Identify compatibility blockers, critical workflow checks and a first delivery milestone before committing to an upgrade.",
+      "href": "/ruby-on-rails-upgrade-assessment"
+    },
+    {
       "title": "Legacy Rails maintenance and incremental modernization",
       "icon": "upgrades",
       "detail": "Plan dependency upgrades, strengthen tests and modernize an aging application in manageable stages.",
@@ -151,10 +158,11 @@ export default function Page() {
           <div className="rails-review-panel">
             <div className="rails-situation-heading"><SituationIcon kind="communication" /><h3>What clients say about working with WideFix</h3></div>
             <div className="rails-review-widget"><ClutchWidget /></div>
-            <div className="rails-actions"><a href="https://clutch.co/profile/widefix#reviews" target="_blank" rel="noopener noreferrer">Read all WideFix reviews on Clutch ↗</a></div>
+            <div className="rails-actions"><a href="https://clutch.co/profile/widefix#reviews" target="_blank" rel="noopener noreferrer">Read all WideFix reviews on Clutch <LinkIndicator /></a></div>
           </div>
         </div>
       </section>
     </FocusedServicePage>
   );
 }
+

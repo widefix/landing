@@ -1,3 +1,4 @@
+import LinkIndicator from '@/components/LinkIndicator';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -121,7 +122,7 @@ export default function WorshipOnlineMobileShowcase() {
                   <Image src={`/img/showcases/mobile-demos/${video.key}.jpg`} alt={`${video.label} walkthrough preview`} width={592} height={1280} loading="eager" />
                   <iframe src={`https://fast.wistia.net/embed/iframe/${video.id}?videoFoam=true&autoPlay=false`} title={`WorshipOnline: ${video.label}`} loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen data-pdf-exclude />
                 </div>
-                <div className={styles.videoCopy}><p className={styles.videoLabel}>{video.label}</p><h3>{video.title}</h3><p>{video.description}</p><a href={video.source} target="_blank" rel="noopener noreferrer">Watch in the help center <span aria-hidden="true">↗</span></a></div>
+                <div className={styles.videoCopy}><p className={styles.videoLabel}>{video.label}</p><h3>{video.title}</h3><p>{video.description}</p><a href={video.source} target="_blank" rel="noopener noreferrer">Watch in the help center <LinkIndicator /></a></div>
               </article>
             ))}
           </div>
@@ -144,8 +145,8 @@ export default function WorshipOnlineMobileShowcase() {
           <p className={`${shared.sectionTag} ${styles.tag}`}>A PRODUCT PEOPLE USE</p>
           <h2>Published on both stores. Rated by musicians</h2>
           <div className={styles.ratingGrid}>
-            <a href={appStore} target="_blank" rel="noopener noreferrer" className={styles.ratingCard}><span>Apple App Store · US</span><strong>4.9<small>/ 5</small></strong><span className={styles.stars} aria-hidden="true">★★★★★</span><p>6.1K ratings</p><span className={styles.storeLink}>View the iOS app ↗</span></a>
-            <a href={googlePlay} target="_blank" rel="noopener noreferrer" className={styles.ratingCard}><span>Google Play · Overall listing</span><strong>4.7<small>/ 5</small></strong><span className={styles.stars} aria-hidden="true">★★★★★</span><p>292 reviews · 10K+ downloads</p><span className={styles.storeLink}>View the Android app ↗</span></a>
+            <a href={appStore} target="_blank" rel="noopener noreferrer" className={styles.ratingCard}><span>Apple App Store · US</span><strong>4.9<small>/ 5</small></strong><span className={styles.stars} aria-hidden="true">★★★★★</span><p>6.1K ratings</p><span className={styles.storeLink}>View the iOS app <LinkIndicator /></span></a>
+            <a href={googlePlay} target="_blank" rel="noopener noreferrer" className={styles.ratingCard}><span>Google Play · Overall listing</span><strong>4.7<small>/ 5</small></strong><span className={styles.stars} aria-hidden="true">★★★★★</span><p>292 reviews · 10K+ downloads</p><span className={styles.storeLink}>View the Android app <LinkIndicator /></span></a>
           </div>
           <p className={styles.ratingNote}>Store listing snapshot checked October 8, 2026. Ratings and counts can change and differ by storefront or device.</p>
           <div className={styles.deliveryOutcomes}><div><strong>React Native</strong><span>Shared app for iOS and Android</span></div><div><strong>C audio engine</strong><span>Custom processing with synchronized tracks</span></div><div><strong>Both stores</strong><span>Publication and client-team support</span></div></div>
@@ -157,7 +158,7 @@ export default function WorshipOnlineMobileShowcase() {
           <p className={`${shared.sectionTag} ${styles.lightTag}`}>FROM TECHNICAL CHALLENGE TO LIVE PRODUCT</p>
           <h2>Need a team that owns the difficult part?</h2>
           <p>We combine application development with the engineering needed to make the product work, then help your team through release and ongoing improvements.</p>
-          <Link href="https://calendly.com/andrei-kaleshka/30min" target="_blank" rel="noopener noreferrer" className={`${shared.outcomeLink} ${styles.primaryAction}`}>Discuss your application <span aria-hidden="true">↗</span></Link>
+          <Link href="https://calendly.com/andrei-kaleshka/30min" target="_blank" rel="noopener noreferrer" className={`${shared.outcomeLink} ${styles.primaryAction}`}>Discuss your application <LinkIndicator /></Link>
         </div>
       </section>
     </main>

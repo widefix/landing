@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1000" role="img" aria-labelledby="title description">
+  <title id="title">Survey the route before the climb</title>
+  <desc id="description">A map and compass on a surveyor's table overlook a mountain valley. Three marked waypoints follow a winding route across the landscape, representing an upgrade planned in verifiable stages.</desc>
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#a7c2ca"/><stop offset="1" stop-color="#f4dfb4"/></linearGradient>
+    <linearGradient id="land" x2="0" y2="1"><stop stop-color="#9dac85"/><stop offset="1" stop-color="#426e62"/></linearGradient>
+    <linearGradient id="table" x2="0" y2="1"><stop stop-color="#a17c55"/><stop offset="1" stop-color="#674e3e"/></linearGradient>
+    <radialGradient id="sun"><stop stop-color="#fff2c9"/><stop offset="1" stop-color="#ffedba" stop-opacity="0"/></radialGradient>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".4" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".1"/></feComponentTransfer><feBlend in="SourceGraphic" mode="soft-light"/></filter>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#223f3b" flood-opacity=".3"/></filter>
+  </defs>
+  <g filter="url(#grain)">
+    <path fill="url(#sky)" d="M0 0h1800v1000H0z"/>
+    <circle cx="1360" cy="180" r="280" fill="url(#sun)"/><circle cx="1360" cy="180" r="62" fill="#fff0c4"/>
+    <path fill="#a6b8b4" d="m0 390 210-180 180 135 260-230 220 230 210-105 150 100 220-155 150 135 200-100v600H0z"/>
+    <path fill="#eee6d0" d="m650 115 115 120-111-40-90 36zM1450 185l72 65-70-17-51 20z"/>
+    <path fill="#759a99" d="m0 490 270-160 210 130 280-170 190 175 260-130 220 115 200-90 170 115v525H0z"/>
+    <path fill="url(#land)" d="M0 545q230-105 460 10t420 8 410-40 510 26v451H0z"/>
+    <path fill="#adc8c0" d="M1160 495q170 10 100 75t-295 90-220 150l170 190H450q-150-195 35-278t405-120 270-107z"/>
+    <path fill="none" stroke="#d6bd87" stroke-width="27" d="M170 775q250-170 500-137t410-86 255-55 215-95"/>
+    <path fill="none" stroke="#f5dfac" stroke-width="9" d="M170 775q250-170 500-137t410-86 255-55 215-95"/>
+    <g stroke="#224d46" stroke-width="8" fill="#f4d295">
+      <path d="M680 630v-100l76 22-76 24M1080 548v-100l76 22-76 24M1500 439v-100l76 22-76 24"/>
+    </g>
+    <g fill="#355c4d"><path d="m88 619 35-100 35 100h-28v58h-14v-58zM1595 610l43-135 43 135h-33v65h-20v-65zM1690 650l35-108 35 108h-26v51h-18v-51z"/></g>
+    <path fill="url(#table)" d="m0 788 740-87 690 233-190 66H0z"/>
+    <g stroke="#503f34" stroke-width="4" opacity=".4"><path d="m0 860 818-93M0 945l1040-116M240 1000l983-111"/></g>
+    <g filter="url(#shadow)">
+      <path fill="#dfcda6" stroke="#b3a380" stroke-width="3" d="m140 796 548-55 459 165-658 68z"/>
+      <path fill="#f2e5c8" d="m140 796 180-18 370 175-201 21zM500 760l188-19 459 165-218 23z"/>
+      <g fill="none" stroke="#a6ad8d" stroke-width="3" opacity=".75"><path d="M246 815q130-58 256 0t271 15M300 846q120-50 235 2t327 9M381 881q120-34 218-5t347 0M488 918q103-18 195 5"/><path d="m371 790 259 135M580 769l284 128" stroke="#c3b594"/></g>
+      <path fill="none" stroke="#b47852" stroke-width="7" stroke-linecap="round" stroke-dasharray="12 12" d="M433 912q-55-68 95-66t134-39 149 43"/>
+      <g fill="#267858" stroke="#f6e8c6" stroke-width="4"><circle cx="433" cy="912" r="11"/><circle cx="610" cy="841" r="11"/><circle cx="811" cy="850" r="11"/></g>
+      <ellipse cx="1120" cy="854" rx="89" ry="48" fill="#c3a36b" stroke="#f1d6a1" stroke-width="7"/>
+      <ellipse cx="1120" cy="848" rx="72" ry="36" fill="#e9dfbd"/>
+      <path fill="#315e58" d="m1120 818 16 31-16 25-16-25z"/><path fill="#b77855" d="m1120 818 16 31h-32z"/>
+      <circle cx="1120" cy="849" r="5" fill="#e9c27f"/>
+    </g>
+    <path fill="none" stroke="#f3dfb5" stroke-width="8" stroke-linecap="round" opacity=".5" d="M75 180q150-40 280-5M1030 95q120-30 200-5"/>
+  </g>
+</svg>

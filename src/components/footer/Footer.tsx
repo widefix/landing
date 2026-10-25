@@ -1,3 +1,4 @@
+import LinkIndicator from '@/components/LinkIndicator';
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -11,7 +12,7 @@ export default function Header() {
               © {new Date().getFullYear()} Widefix. All rights reserved.
             </div>
             <div className="footer-right">
-              <Link href="/recognition">Recognition &amp; contributions →</Link>
+              <Link href="/recognition">Recognition &amp; contributions <LinkIndicator /></Link>
               <ul>
                 <li>
                   <Link href="https://www.linkedin.com/company/widefix/" target="_blank" rel="nofollow">

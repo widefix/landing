@@ -1,3 +1,4 @@
+import LinkIndicator from '@/components/LinkIndicator';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -114,7 +115,7 @@ export default function ShowcasePage({ params }: { params: { slug: string } }) {
           </div>
           <div className={styles.decisionMatrixScroll} role="region" aria-label="Zapier versus self-made solution decision matrix" tabIndex={0}>
             <table className={styles.decisionMatrix}>
-              <caption>Scores from the decision matrix: 1 is a lower fit and 5 is a higher fit. <a href="https://gist.github.com/ka8725/242f49a4c82008790533c201c4b3e561" target="_blank" rel="noopener noreferrer">View the source analysis ↗</a></caption>
+              <caption>Scores from the decision matrix: 1 is a lower fit and 5 is a higher fit. <a href="https://gist.github.com/ka8725/242f49a4c82008790533c201c4b3e561" target="_blank" rel="noopener noreferrer">View the source analysis <LinkIndicator /></a></caption>
               <thead><tr><th scope="col">Criterion</th><th scope="col">Zapier</th><th scope="col">Self-made</th><th scope="col">Tradeoff</th></tr></thead>
               <tbody>{tmaDecisionCriteria.map(([criterion, zapier, selfMade, tradeoff]) => <tr key={criterion}>
                 <th scope="row">{criterion}</th>
@@ -136,7 +137,7 @@ export default function ShowcasePage({ params }: { params: { slug: string } }) {
         </div>
       </section>
 
-      {articles.length > 0 && <section className={styles.articles}><div className={shared.container}><p className={shared.sectionTag}>THE ENGINEERING DETAILS</p><h2>More about the work</h2><div className={styles.articleGrid}>{articles.map(article => <a key={article.url} href={article.url} target="_blank" rel="noopener noreferrer"><h3>{article.title || article.solution}</h3><p>{article.results}</p><span>Read the article ↗</span></a>)}</div></div></section>}
+      {articles.length > 0 && <section className={styles.articles}><div className={shared.container}><p className={shared.sectionTag}>THE ENGINEERING DETAILS</p><h2>More about the work</h2><div className={styles.articleGrid}>{articles.map(article => <a key={article.url} href={article.url} target="_blank" rel="noopener noreferrer"><h3>{article.title || article.solution}</h3><p>{article.results}</p><span>Read the article <LinkIndicator /></span></a>)}</div></div></section>}
 
       <section className={`${shared.outcome} ${styles.outcome}`} id="help">
         <div className={shared.container}>
@@ -145,13 +146,13 @@ export default function ShowcasePage({ params }: { params: { slug: string } }) {
           <p>Need someone to take over your Rails app? We maintain, stabilize and improve existing Rails applications, from production issues and upgrades to new features and infrastructure. Keep your product moving without unnecessary rewrites or rebuilding your engineering team.</p>
           {showcase.slug === 'public-api-development' && <p>Looking for a fractional CTO for Rails? Discuss the technical direction, cross-team coordination, and ongoing ownership your application needs.</p>}
           {showcase.slug === 'palladium-rails-upgrade' && <p>If your Rails developer left, we can help you understand the inherited codebase and prioritize an old Rails app rescue, maintenance, and upgrades.</p>}
-          <Link href="https://calendly.com/andrei-kaleshka/30min" target="_blank" rel="noopener noreferrer" className={`${shared.outcomeLink} ${styles.action}`}>Discuss your Rails app <span aria-hidden="true">↗</span></Link>
-          {(relatedServiceLinks[showcase.slug] || []).map(service => <Link key={service.href} href={service.href} className={styles.serviceLink}>{service.title} →</Link>)}
-          <Link href="/ruby-on-rails-application-takeover" className={styles.serviceLink}>Explore existing Rails app takeover <span aria-hidden="true">→</span></Link>
+          <Link href="https://calendly.com/andrei-kaleshka/30min" target="_blank" rel="noopener noreferrer" className={`${shared.outcomeLink} ${styles.action}`}>Discuss your Rails app <LinkIndicator /></Link>
+          {(relatedServiceLinks[showcase.slug] || []).map(service => <Link key={service.href} href={service.href} className={styles.serviceLink}>{service.title} <LinkIndicator /></Link>)}
+          <Link href="/ruby-on-rails-application-takeover" className={styles.serviceLink}>Explore existing Rails app takeover <LinkIndicator /></Link>
         </div>
       </section>
 
-      <section className={styles.related} id="other"><div className={shared.container}><p className={shared.sectionTag}>MORE EXISTING PRODUCTS IMPROVED</p><h2>Other issues fixed</h2><div className={styles.relatedGrid}>{otherShowcases.map(item => <Link href={`/showcases/${item.slug}`} key={item.slug}><Image src={item.body.detailsImageSrc} alt="" width={396} height={264} sizes="(max-width: 860px) 100vw, 33vw" /><div><span>{item.preview.companyName} / {item.preview.solution}</span><h3>{item.preview.title || item.preview.solution}</h3><p>{item.preview.results}</p><strong>Read case study ↗</strong></div></Link>)}</div></div></section>
+      <section className={styles.related} id="other"><div className={shared.container}><p className={shared.sectionTag}>MORE EXISTING PRODUCTS IMPROVED</p><h2>Other issues fixed</h2><div className={styles.relatedGrid}>{otherShowcases.map(item => <Link href={`/showcases/${item.slug}`} key={item.slug}><Image src={item.body.detailsImageSrc} alt="" width={396} height={264} sizes="(max-width: 860px) 100vw, 33vw" /><div><span>{item.preview.companyName} / {item.preview.solution}</span><h3>{item.preview.title || item.preview.solution}</h3><p>{item.preview.results}</p><strong>Read case study <LinkIndicator /></strong></div></Link>)}</div></div></section>
     </main>
   );
 }
