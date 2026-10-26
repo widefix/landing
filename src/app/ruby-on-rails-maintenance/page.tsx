@@ -9,7 +9,7 @@ const service: FocusedService = {
   "title": "Ruby on Rails Maintenance & SaaS Support | WideFix",
   "description": "Ongoing Ruby on Rails maintenance for live SaaS products: production fixes, updates, monitoring and continued development, with agreed support hours and budget.",
   "heading": "Ruby on Rails maintenance for your live SaaS",
-  "intro": "Keep your Rails application running and keep shipping useful changes. WideFix provides ongoing maintenance and production support for founders and teams who need experienced engineers to own the existing product.",
+  "intro": "Keep your Rails application running smoothly and continuously deliver valuable updates. WideFix specializes in Ruby on Rails maintenance tailored for SaaS founders, CTOs, and product owners who require expert engineers to take full ownership of your existing codebase. Our services include production issue resolution, dependency upgrades, performance tuning, and PostgreSQL consulting, all structured with clear support hours and budget controls to fit your business needs.",
   "image": "/img/showcases/worshiponline-ownership.svg",
   "imageAlt": "Worship Online: ongoing Rails support and technical ownership",
   "cta": "Discuss Rails maintenance",
