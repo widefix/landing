@@ -94,7 +94,7 @@ const supportingServices = [
     id: 'new-products', title: 'New products & MVPs', icon: 'productboard-icon.svg',
     description: 'Have a new product or an adjacent idea to launch? We can build a focused first version and continue developing it after release.',
     items: ['Scope and product priorities', 'Rails backends and web interfaces', 'Mobile experiences where needed', 'Testing, deployment and ongoing development'],
-    href: 'https://github.com/widefix/pocketmoney/', link: 'Explore our BudgetingKid source code',
+    href: '/mvp-development', link: 'Explore MVP development',
   },
 ];
 

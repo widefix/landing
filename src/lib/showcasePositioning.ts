@@ -45,13 +45,13 @@ export const showcasePositioning: Record<string, ShowcasePositioning> = {
   },
   'tma-sport-lokkaroom-financial-report': {
     steps: ['Build the Rails reporting interface', 'Consolidate three financial sources'],
-    cardLabel: 'Rails reporting integrations',
-    hook: 'RAILS INTEGRATIONS + FINANCIAL REPORTING',
-    headline: 'Three payment sources. One financial report',
+    cardLabel: 'Financial reporting MVP',
+    hook: 'MVP DEVELOPMENT + FINANCIAL REPORTING',
+    headline: 'A financial reporting MVP connecting three payment sources',
     value: 'Add the reporting your business needs to an existing Ruby on Rails application. A consolidated view of transactions and charges gives the team one place to review financial activity across platforms.',
     help: 'Need new reporting or integrations in your Rails app?', theme: 'green',
-    title: 'TMA Sport: Rails Financial Reporting & Stripe Integrations - WideFix',
-    description: 'Ruby on Rails and ActiveAdmin financial reporting for Lokkaroom, consolidating EventCube, Shopify and Stripe in response to an urgent business request.',
+    title: 'TMA Sport: Financial Reporting MVP & Rails Integrations - WideFix',
+    description: 'A Ruby on Rails and ActiveAdmin financial reporting MVP for Lokkaroom, consolidating EventCube, Shopify and Stripe in response to an urgent business request.',
   },
   'palladium-rails-upgrade': {
     steps: ['Resolve dependencies and startup failures', 'Adapt code loading and framework behavior'],
