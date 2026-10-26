@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1000" role="img" aria-labelledby="title description">
+  <title id="title">Inspect the gate before reopening it</title>
+  <desc id="description">A brass magnifying glass reveals a ruby-red lock on a workshop gate. Pattern cards rest on the workbench beside a green inspection seal, representing a review of untrusted patterns and verification of a patched runtime.</desc>
+  <defs>
+    <linearGradient id="room" x2="0" y2="1"><stop stop-color="#263f49"/><stop offset="1" stop-color="#547a75"/></linearGradient>
+    <linearGradient id="light" x2="1" y2="1"><stop stop-color="#f8e7ba" stop-opacity=".5"/><stop offset="1" stop-color="#f8e7ba" stop-opacity="0"/></linearGradient>
+    <linearGradient id="wood" x2="0" y2="1"><stop stop-color="#ab845b"/><stop offset="1" stop-color="#5c493d"/></linearGradient>
+    <linearGradient id="door" x2="1" y2="1"><stop stop-color="#769487"/><stop offset="1" stop-color="#345d56"/></linearGradient>
+    <linearGradient id="brass" x2="1" y2="1"><stop stop-color="#fae7ae"/><stop offset=".5" stop-color="#b88b4c"/><stop offset="1" stop-color="#f0d69c"/></linearGradient>
+    <radialGradient id="glass"><stop stop-color="#b7d6cd" stop-opacity=".05"/><stop offset="1" stop-color="#b7d6cd" stop-opacity=".35"/></radialGradient>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".45" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".08"/></feComponentTransfer><feBlend in="SourceGraphic" mode="soft-light"/></filter>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#142f31" flood-opacity=".4"/></filter>
+  </defs>
+  <g filter="url(#grain)">
+    <path fill="url(#room)" d="M0 0h1800v1000H0z"/>
+    <path fill="#203c42" d="M110 105h430v480H110z"/>
+    <path fill="#c0d1b7" d="M136 130h378v428H136z"/>
+    <path fill="#7f9c8e" d="m136 424 98-100 105 80 90-137 85 73v218H136z"/>
+    <path fill="#476b61" d="m136 496 128-87 108 70 142-43v122H136z"/>
+    <path fill="none" stroke="#26434a" stroke-width="22" d="M324 120v450M125 338h400"/>
+    <path fill="url(#light)" d="m137 132 377 2 1050 866H575z"/>
+    <path fill="#203a3e" d="M918 90h638v742H918z"/>
+    <path fill="#b1ac88" d="M939 110h595v717H939z"/>
+    <path fill="url(#door)" stroke="#294d49" stroke-width="10" d="M965 133h543v670H965z"/>
+    <g stroke="#355c53" stroke-width="7" opacity=".65"><path d="M1074 134v668M1182 134v668M1290 134v668M1398 134v668"/></g>
+    <path fill="none" stroke="#a6b89b" stroke-width="9" opacity=".4" d="M983 156h505M983 777h505"/>
+    <g fill="#b8a46f" stroke="#645d40" stroke-width="4"><path d="M1463 226h70v38h-70zM1463 637h70v38h-70z"/></g>
+    <path fill="#284840" stroke="#8da38b" stroke-width="5" d="M1052 334h191v228h-191z"/>
+    <g filter="url(#shadow)">
+      <path fill="none" stroke="url(#brass)" stroke-width="25" d="M1100 419v-53a48 48 0 0 1 96 0v53"/>
+      <path fill="#a14843" stroke="#e4be86" stroke-width="6" d="m1074 409 147 0 16 44-89 87-90-87z"/>
+      <path fill="#d17b60" d="m1074 409 74 43 73-43-73 131z"/>
+      <path fill="#873e3d" d="m1058 453 90-1-74-43zM1148 452l89 1-89 87z"/>
+      <circle cx="1148" cy="454" r="13" fill="#294943"/><path fill="#294943" d="m1141 459-4 29h22l-4-29z"/>
+    </g>
+    <g filter="url(#shadow)">
+      <circle cx="1148" cy="432" r="178" fill="url(#glass)" stroke="url(#brass)" stroke-width="23"/>
+      <circle cx="1148" cy="432" r="160" fill="none" stroke="#ecdfb6" stroke-width="4" opacity=".6"/>
+      <path fill="none" stroke="#eaf3df" stroke-width="12" stroke-linecap="round" opacity=".55" d="M1035 383q23-67 86-76"/>
+      <path fill="none" stroke="#b99661" stroke-width="45" d="m1275 558 56 57"/>
+      <path fill="none" stroke="#353e39" stroke-width="70" stroke-linecap="round" d="m1323 606 151 155"/>
+      <path fill="none" stroke="#708075" stroke-width="12" stroke-linecap="round" d="m1330 614 132 135"/>
+    </g>
+    <path fill="url(#wood)" d="m0 735 783-71 1017 170v166H0z"/>
+    <g fill="none" stroke="#493e34" stroke-width="4" opacity=".4"><path d="m0 811 785-82 1015 172M0 917l786-100 1014 169M370 1000l418-88 485 88"/></g>
+    <g filter="url(#shadow)">
+      <path fill="#c5b58d" stroke="#a59370" stroke-width="3" d="m208 786 371-42 270 120-413 58z"/>
+      <path fill="#eee2bd" d="m178 757 371-41 270 120-413 58z"/>
+      <path fill="none" stroke="#9eaa8b" stroke-width="5" d="m239 766 257-27M276 785l257-27M313 804l112-12"/>
+      <g fill="none" stroke="#a4644f" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"><path d="m459 812-30 4 25 24 30-4M535 802l20 30M522 821l44-7M614 805l18 8-1-22"/></g>
+      <path fill="#eee2bd" d="m914 819 292-34 191 86-309 46z"/>
+      <circle cx="1153" cy="852" r="47" fill="#3e7a61" stroke="#b0bd8c" stroke-width="6"/>
+      <path fill="none" stroke="#eee2bd" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" d="m1129 852 16 17 32-36"/>
+    </g>
+    <g fill="#c1ad7c" opacity=".5"><circle cx="703" cy="185" r="3"/><circle cx="759" cy="377" r="4"/><circle cx="606" cy="268" r="3"/><circle cx="827" cy="527" r="3"/></g>
+  </g>
+</svg>
