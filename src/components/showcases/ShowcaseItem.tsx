@@ -34,7 +34,7 @@ export default function ShowcaseItem({
         <div className="slide-footer">
           <div className="client-img">
             <Link href={`/showcases/${slug}`}>
-              <Image src={companyImageSrc} alt={companyName} width="104" height="25"/>
+              <Image src={companyImageSrc} alt={companyName} width={slug === 'budgetingkid' ? 44 : 104} height={slug === 'budgetingkid' ? 40 : 25}/>
             </Link>
           </div>
           <Link href={`/showcases/${slug}`} className="slide-learn-more" aria-label={`Read case study: ${title}`}>Read case study <LinkIndicator /></Link>

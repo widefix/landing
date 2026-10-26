@@ -108,6 +108,7 @@ export default function MVPDevelopmentPage() {
               <div>
                 <p>BudgetingKid is our open-source Rails application for helping families manage children&apos;s allowances and budgets. Explore the working product and its source code to see a concrete example of our MVP development approach.</p>
                 <div className="schema-actions">
+                  <Link className="schema-text-link" href="/showcases/budgetingkid">Read the BudgetingKid showcase <LinkIndicator /></Link>
                   <Link className="schema-text-link" href="https://github.com/widefix/pocketmoney/" target="_blank" rel="noopener noreferrer">Explore the source code <LinkIndicator /></Link>
                   <Link className="schema-text-link" href="https://get.budgetingkid.com/" target="_blank" rel="noopener noreferrer">Visit the BudgetingKid website <LinkIndicator /></Link>
                   <Link className="schema-text-link" href="https://budgetingkid.com" target="_blank" rel="noopener noreferrer">Try the live app <LinkIndicator /></Link>
