@@ -7,7 +7,7 @@ import { RailsCall } from '@/components/rails/RailsOwnership';
 import { socialPreview, socialTwitter } from '@/lib/socialPreview';
 
 const title = 'MVP Development with Ruby on Rails - WideFix';
-const description = 'Build a focused first version with WideFix: practical scope, technical leadership, Rails implementation and ongoing development. Explore our Mezuka and Lokkaroom MVP work.';
+const description = 'Build a focused first version with WideFix: practical scope, technical leadership, Rails implementation and ongoing development. Explore Mezuka, Lokkaroom and our open-source BudgetingKid app.';
 const image = '/img/showcases/lokkaroom-financial-report.svg';
 
 export const metadata: Metadata = {
@@ -93,7 +93,7 @@ export default function MVPDevelopmentPage() {
       <section className="schema-section schema-install" id="mvp-examples" aria-labelledby="mvp-examples-title">
         <div className="schema-inner">
           <p className="schema-eyebrow">Examples from our work</p>
-          <h2 id="mvp-examples-title">Two different problems, two focused MVPs</h2>
+          <h2 id="mvp-examples-title">Focused MVPs for different product needs</h2>
           <div className="schema-capability-list">
             <article>
               <div className="schema-capability-heading"><SituationIcon kind="ownership" /><h3>Mezuka food delivery platform</h3></div>
@@ -102,6 +102,17 @@ export default function MVPDevelopmentPage() {
             <article>
               <div className="schema-capability-heading"><SituationIcon kind="payments" /><h3>Lokkaroom financial reporting for TMA Sport</h3></div>
               <div><p>We built a financial reporting MVP using Ruby on Rails and ActiveAdmin to consolidate transactions and charges from EventCube, Shopify and Stripe. Comparing Zapier with a custom solution across 17 criteria helped make the implementation tradeoffs explicit before building.</p><Link className="schema-text-link" href="/showcases/tma-sport-lokkaroom-financial-report">Read the Lokkaroom showcase <LinkIndicator /></Link></div>
+            </article>
+            <article>
+              <div className="schema-capability-heading"><SituationIcon kind="expertise" /><h3>BudgetingKid open-source allowance tracker</h3></div>
+              <div>
+                <p>BudgetingKid is our open-source Rails application for helping families manage children&apos;s allowances and budgets. Explore the working product and its source code to see a concrete example of our MVP development approach.</p>
+                <div className="schema-actions">
+                  <Link className="schema-text-link" href="https://github.com/widefix/pocketmoney/" target="_blank" rel="noopener noreferrer">Explore the source code <LinkIndicator /></Link>
+                  <Link className="schema-text-link" href="https://get.budgetingkid.com/" target="_blank" rel="noopener noreferrer">Visit the BudgetingKid website <LinkIndicator /></Link>
+                  <Link className="schema-text-link" href="https://budgetingkid.com" target="_blank" rel="noopener noreferrer">Try the live app <LinkIndicator /></Link>
+                </div>
+              </div>
             </article>
           </div>
         </div>
