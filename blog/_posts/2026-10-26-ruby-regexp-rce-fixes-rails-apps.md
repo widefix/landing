@@ -87,6 +87,32 @@ Keep the escaping immediately next to construction and test the intended search 
 
 I would treat this as a product and code review alongside the runtime update. I would not assume that accepting arbitrary pattern syntax becomes a sensible feature simply because a patch is available.
 
+## My upgrade from Ruby 3.4.9 to 3.4.12 hit an ffi build failure
+
+When I tried this upgrade myself, moving from Ruby **3.4.9 to 3.4.12**, `bundle install` failed while building `ffi` **1.16.3** on my Apple Silicon Mac. In this application, the dependency came through `flat-ui-sass`, `bootstrap-sass`, and `sassc`.
+
+The build log showed the bundled libffi being compiled, then stopped with:
+
+```text
+Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
+error: invalid CFI advance_loc expression
+An error occurred while installing ffi (1.16.3), and Bundler cannot continue.
+```
+
+The blocker was compiling ffi's bundled libffi with my Xcode tools. I fixed it by telling ffi to use Homebrew's libffi instead:
+
+```sh
+brew install libffi
+bundle config set --local build.ffi "--enable-system-libffi --with-ffi-dir=$(brew --prefix libffi)"
+bundle install
+```
+
+Homebrew's libffi was already installed on my machine, so I only needed the last two commands. Using `brew --prefix libffi` avoided hard-coding the Homebrew installation path. The Bundler setting applies locally to this project; it describes how to build ffi on this machine, rather than a deployment setting for every environment.
+
+I also updated the `RUBY VERSION` entry in `Gemfile.lock` from `ruby 3.4.9p82` to `ruby 3.4.12p148` to match the runtime upgrade. That metadata change records the version; it does not install Ruby or replace running processes.
+
+This resolved my local installation blocker. It is one concrete example of why I leave room for native dependency checks even in a patch-level security update. A build failure on my development machine does not establish that Ruby 3.4.12 is broken generally, and getting Bundler working locally is still only a step toward the production verification below.
+
 ## Ship the runtime update through the whole application
 
 My recommended release checklist is:
