@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1000" viewBox="0 0 1800 1000" role="img" aria-labelledby="title desc">
+<title id="title">Weighing the future of Ruby work</title>
+<desc id="desc">A brass balance holds a faceted ruby on one pan and an established application building on the other. An engineer tends the building, representing the relationship between developer capacity and the work needed to maintain existing Rails products. The balance is conceptual, not a measured economic chart.</desc>
+<defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#bdd1cb"/><stop offset="1" stop-color="#f4e9ce"/></linearGradient><linearGradient id="ruby" x2="1" y2="1"><stop stop-color="#ee9b86"/><stop offset="1" stop-color="#9d3849"/></linearGradient><linearGradient id="ground" x2="0" y2="1"><stop stop-color="#8da591"/><stop offset="1" stop-color="#456b5a"/></linearGradient></defs>
+<path fill="url(#sky)" d="M0 0h1800v1000H0z"/><circle cx="1450" cy="190" r="100" fill="#fff0c6"/>
+<path fill="#a8bca9" d="M0 640q300-160 600-20t600-15 600 10v385H0z"/><path fill="url(#ground)" d="M0 800q400-180 900-20t900-55v275H0z"/>
+<ellipse cx="900" cy="885" rx="600" ry="55" fill="#2d554a" opacity=".2"/>
+<path fill="#dec294" d="m680 900 65-90h310l65 90z"/><path fill="#b39262" d="M870 340h60v480h-60z"/>
+<circle cx="900" cy="310" r="46" fill="#c7a26a"/><circle cx="900" cy="310" r="21" fill="#f4dfb4"/>
+<path d="M410 340h980" fill="none" stroke="#997848" stroke-width="24" stroke-linecap="round"/>
+<g fill="none" stroke="#997848" stroke-width="9" stroke-linejoin="round"><path d="m445 345-140 340h280zM1355 345l-175 340h350z"/></g>
+<path fill="#c7a26a" d="M280 685h330q-25 78-165 78t-165-78M1155 685h400q-35 78-200 78t-200-78"/>
+<path fill="url(#ruby)" stroke="#8f4550" stroke-width="6" stroke-linejoin="round" d="m340 550 60-70h100l60 70-110 125z"/>
+<path fill="#f4b39a" d="m340 550 60-70 45 70z"/><path fill="#d87974" d="m445 550 55-70 60 70z"/><path fill="#ad4357" d="m445 550 115 0-110 125z"/>
+<g stroke="#f2c0a4" stroke-width="4" fill="none"><path d="m400 480 45 70 55-70M340 550h220M445 550l5 125"/></g>
+<path fill="#e6d8b6" d="M1205 500h290v175h-290z"/><path fill="#3f655b" d="m1185 500 165-100 165 100z"/><path fill="#537c6b" d="m1225 485 125-75 125 75z"/>
+<g fill="#6a9390" stroke="#fcf0d5" stroke-width="6"><path d="M1235 530h50v45h-50zM1315 530h50v45h-50zM1395 530h50v45h-50zM1235 600h50v45h-50zM1395 600h50v45h-50z"/></g><path fill="#966a53" d="M1320 605h50v70h-50z"/>
+<g stroke-linecap="round"><path d="m1510 835 30-88 35 86m-32-77-45 25m45-25 36-51" fill="none" stroke="#344e55" stroke-width="20"/><path fill="#d4ae6e" d="m1528 709 37 8-10 64-42-12z"/><circle cx="1551" cy="689" r="23" fill="#c58c68"/><path d="m1581 701 12-28" stroke="#997848" stroke-width="9"/></g>
+<g fill="#d9c49b"><path d="M260 900h100v12H260zM280 870h80v12h-80z"/><circle cx="1240" cy="865" r="7"/><circle cx="1270" cy="880" r="5"/></g>
+<g stroke="#365d4b" stroke-width="7" fill="#70915f"><path d="M200 890v-100m0 50q-50-5-45-40 45 0 45 40m0-20q5-45 45-45 5 40-45 45M1640 900v-80m0 40q-45-5-40-40 40 0 40 40m0-15q5-40 40-40 5 35-40 40"/></g>
+</svg>
