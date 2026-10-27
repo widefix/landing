@@ -23,7 +23,7 @@ My Rails application started reporting exceptions for URLs that had nothing to d
 /panel/.env
 ```
 
-Rollbar was using up my monitoring quota, and I also received New Relic alerts about deviations in request processing time.
+Rollbar was using up my monitoring quota, and the situation triggered a critical New Relic alert about a deviation in request processing time. It became a false-positive distraction: I had to stop what I was doing and investigate what looked like an urgent application problem.
 
 The application was rejecting these requests. But rejecting unwanted traffic still had a cost.
 
@@ -80,7 +80,7 @@ An exception inside a framework is not always an application failure that needs 
 
 New Relic's web transaction chart showed a temporary rise in response time, reaching roughly 160 ms before returning close to its earlier baseline. Most of the increase appeared in the **Web external** category, with middleware also contributing.
 
-I also received alerts about deviations in request processing time.
+The situation triggered a **critical alert in New Relic**, pulling my attention away from planned work. For me, this was a false positive for an urgent application incident: scanner traffic and monitoring noise demanded attention as though there were a customer-facing failure. The response-time deviation was real; the distraction came from treating it as an emergency that needed my immediate intervention.
 
 The chart shows a performance change, but it does not identify its cause. It covers a different time window from the Rollbar events, so these two screenshots alone do not establish a connection between that particular scan burst and the slowdown.
 
