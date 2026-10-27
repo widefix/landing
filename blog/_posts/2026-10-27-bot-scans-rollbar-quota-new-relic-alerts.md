@@ -29,14 +29,28 @@ The application was rejecting these requests. But rejecting unwanted traffic sti
 
 ## What were these requests?
 
-<!-- Add the original Rollbar screenshot here before publication.
-Suggested alt text: Rollbar events showing a burst of GET requests for private-key and environment files.
-Caption: Multiple requests for secret-related paths arrived within the same second and generated routing errors.
--->
+![Rollbar events showing GET requests for private-key and environment files]({{ site.baseurl }}/images/bot-scans-rollbar.png)
+
+*Multiple requests for secret-related paths arrived within the same second and generated routing errors.*
 
 These looked like automated scans searching for exposed secrets. Environment files often contain database credentials, API tokens, and other sensitive configuration. Scanners try common paths across public websites, hoping to find a deployment that accidentally serves them.
 
-The requests carried several different crawler names. Those names do not establish who sent them: a client can put any name in its `User-Agent` header.
+### AI bot names appeared in the scan traffic
+
+What caught my attention was that these requests also carried names associated with AI bots. Rollbar's **browser** column shows parsed client labels rather than complete raw `User-Agent` headers. Counting only the 13 visible rows, the most frequent readable labels were:
+
+| Client label displayed by Rollbar | Visible requests |
+| --- | ---: |
+| `crawler` | 3 |
+| `PerplexityBot 1.0` | 3 |
+| `OAI-AdsBot 1.0` | 2 |
+| `MoonshotBot 1.0` | 1 |
+
+The remaining four rows show two unknown labels and two icon-only entries. I cannot recover their exact user-agent strings from this screenshot. These counts describe this small screenshot, not the most popular bots across all application traffic.
+
+**AI-associated bot names are present in this scan traffic, but the names do not verify the sender.** `PerplexityBot` is a [documented AI search crawler name](https://docs.perplexity.ai/docs/resources/perplexity-crawlers); the screenshot also displays `MoonshotBot` and `OAI-AdsBot`. I would not attribute those requests to their apparent operators without verifying their source. A scanner can put any name in its `User-Agent` header, including a familiar AI bot name.
+
+For a team investigating this, the next step is to inspect the raw user agents and client IPs in request logs, then compare those IPs with the operator's published verification guidance where available. The `server.host` column in this screenshot identifies my application server, not the scanner's source IP. A recognizable bot label should not make a request for secrets less suspicious.
 
 The more useful evidence was the pattern: requests for secret-related filenames across many directories, arriving in rapid succession.
 
@@ -60,10 +74,9 @@ An exception inside a framework is not always an application failure that needs 
 
 ## What New Relic showed
 
-<!-- Add the original New Relic screenshot here before publication.
-Suggested alt text: New Relic web transaction time chart with a temporary response-time spike to roughly 160 milliseconds.
-Caption: Response time rose temporarily, with most of the increase in Web external and a smaller middleware contribution, before returning close to baseline.
--->
+![New Relic web transaction time chart showing a temporary response-time spike to roughly 160 milliseconds]({{ site.baseurl }}/images/bot-scans-newrelic.png)
+
+*Response time rose temporarily, with most of the increase in Web external and a smaller middleware contribution, before returning close to baseline.*
 
 New Relic's web transaction chart showed a temporary rise in response time, reaching roughly 160 ms before returning close to its earlier baseline. Most of the increase appeared in the **Web external** category, with middleware also contributing.
 
