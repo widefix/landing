@@ -11,14 +11,14 @@ export default function ShowcasesPage() {
         <div className="inner portfolio-inner">
           <div className="portfolio">
             <div className="portfolio-copy">
-              <p className="portfolio-eyebrow">Existing applications. Real business results.</p>
-              <h1>We take ownership of existing Ruby on Rails applications</h1>
+              <p className="portfolio-eyebrow">Real projects, practical results</p>
+              <h1>See what we&apos;ve improved in real Rails applications</h1>
               <p className="portfolio-description">
-                Need someone to take over your Rails app? We maintain, stabilize and improve existing Rails applications, from production issues and upgrades to new features and infrastructure. Keep your product moving without unnecessary rewrites or rebuilding your engineering team.
+                From system integrations and performance improvements to product development and ongoing maintenance, explore the work we&apos;ve done to help real applications move forward.
               </p>
               <div className="portfolio-actions">
                 <a className="portfolio-primary-link" href="#case-studies">Explore case studies</a>
-                <a className="portfolio-secondary-link" href="/ruby-on-rails-application-takeover">Discuss your Rails app takeover</a>
+                <a className="portfolio-secondary-link" href="/contact">Discuss a project</a>
               </div>
             </div>
 
