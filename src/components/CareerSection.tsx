@@ -96,7 +96,7 @@ export default function CareerSection() {
           </div>
         </div>
 
-        <div className="open-positions-section">
+        <div className="open-positions-section" id="open-positions">
           <h3>Current Open Positions:</h3>
           <div className="positions-grid">
             <div className="position-card">
