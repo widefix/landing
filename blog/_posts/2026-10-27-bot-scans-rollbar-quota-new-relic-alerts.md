@@ -120,6 +120,39 @@ If scan traffic becomes expensive enough to affect customers, rate limiting or f
 
 For my immediate problem, filtering routing errors was a small change with a clear purpose: preserve error-reporting capacity for failures worth investigating.
 
+## Another solution: reject scans earlier with Rack::Attack
+
+I also added [Rack::Attack](https://github.com/rack/rack-attack) to the application. For known scan paths, it is more efficient than filtering Rollbar reports alone: it returns a response before routing raises an exception and before the downstream exception-reporting middleware runs. That avoids routing and exception-handling work for those requests, while preserving monitoring capacity and reducing triage noise for the team. It still uses application-server resources; I have not measured a speedup or confirmed that it eliminates the New Relic alert.
+
+```ruby
+# Gemfile (then run bundle install)
+gem 'rack-attack', '~> 6.8'
+
+# config/application.rb, inside the Application class
+# Resolve the client IP before rejecting requests.
+config.middleware.move_after ActionDispatch::RemoteIp, Rack::Attack
+```
+
+The configuration matches paths rather than spoofable bot names. Here is a shortened version of the rules I added: secret-file probes receive 403, and dynamic traffic is limited to 300 requests per client IP per minute, returning 429 above that limit. GET and HEAD health checks are excluded, and static files are served earlier in this application's middleware stack.
+
+```ruby
+# config/initializers/rack_attack.rb
+Rack::Attack.cache.store = ActiveSupport::Cache::MemoryStore.new(size: 16.megabytes)
+
+Rack::Attack.blocklist('secret-file probes') do |request|
+  path = Rack::Utils.unescape_path(request.path).downcase
+  path.match?(%r{/(?:\.env(?:[._-][^/]*)?|\.git|\.ssh|private[-_]key)(?:/|\z)})
+end
+
+Rack::Attack.throttle('dynamic requests/ip', limit: 300, period: 60) do |request|
+  next if %w[GET HEAD].include?(request.request_method) && request.path == '/health'
+
+  ActionDispatch::Request.new(request.env).remote_ip
+end
+```
+
+The in-memory counters suit my current single-process Puma deployment; they reset on restart and need a shared Redis or Memcached store before scaling across processes or servers. Proxy forwarding must preserve the real client IP, and the limit should be tuned to legitimate traffic, including users sharing an IP. Rack::Attack complements the Rollbar filter: it rejects known probes early, while the filter still suppresses routing-error reports for other unmatched URLs. Neither guarantees fewer performance alerts or stops distributed scans using many IPs.
+
 ## Monitoring capacity is part of reliability
 
 For a team, filtering expected routing errors preserves the error-reporting budget for actionable failures and reduces time spent triaging scanner traffic. A cleaner error feed also makes customer-facing bugs easier to spot and prioritize. The benefit is shared: developers spend less time investigating irrelevant events, and the team gets more useful coverage from its monitoring subscription.
