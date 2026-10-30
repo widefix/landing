@@ -16,7 +16,7 @@ export default async function generateSocialImages() {
     '/img/showcases/technology-cloud.svg',
     '/img/showcases/worshiponline-ownership.svg',
   ]);
-  for (const file of ['src/showcases.tsx', 'src/cases/seo-optimization.tsx', 'src/cases/budgetingkid.tsx']) {
+  for (const file of ['src/showcases.tsx', 'src/cases/seo-optimization.tsx', 'src/cases/budgetingkid.tsx', 'src/cases/korner.tsx']) {
     const source = await readFile(path.join(root, file), 'utf8');
     for (const [, image] of source.matchAll(/bannerTopImageSrc:\s*['"]([^'"]+)['"]/g)) sources.add(image);
   }

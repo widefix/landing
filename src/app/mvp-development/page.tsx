@@ -115,6 +115,10 @@ export default function MVPDevelopmentPage() {
                 </div>
               </div>
             </article>
+            <article>
+              <div className="schema-capability-heading"><SituationIcon kind="production" /><h3>Korner sports club platform</h3></div>
+              <div><p>Korner started as a court-booking MVP for soccer fields and grew into a platform for soccer, padel and multi-sport clubs. It runs on a Ruby on Rails backend with a Flutter app built, released and published on the App Store and Google Play.</p><div className="schema-actions"><Link className="schema-text-link" href="/showcases/korner-sports-club-management-platform">Read the Korner showcase <LinkIndicator /></Link><Link className="schema-text-link" href="https://kornerclub.com/en" target="_blank" rel="noopener noreferrer">Visit Korner <LinkIndicator /></Link></div></div>
+            </article>
           </div>
         </div>
       </section>

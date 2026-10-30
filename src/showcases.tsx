@@ -3,6 +3,7 @@ import { ReactNode } from 'react';
 import SeoOptimization from '@/cases/seo-optimization';
 import Mezuka from '@/cases/mezuka';
 import BudgetingKid from '@/cases/budgetingkid';
+import Korner from '@/cases/korner';
 import { CategoryName, ResultBoxColor, Showcase, SwiperSlideColor } from './enums';
 
 const showcases: Showcase[] = [
@@ -989,6 +990,7 @@ const showcases: Showcase[] = [
       description: "How WideFix migrated WorshipOnline from Paperclip to ActiveStorage through dual-writing, a backfill, staged model cutovers, custom S3 keys and CloudFront URLs.",
     },
   },
+  Korner,
   BudgetingKid,
   Mezuka,
   SeoOptimization
