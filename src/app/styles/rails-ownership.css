@@ -107,6 +107,11 @@
   margin-bottom: 0;
 }
 
+.rails-performance .rails-situation-icon {
+  background: #edf7f1;
+  color: #267858;
+}
+
 .ownership-step-heading {
   display: flex;
   align-items: center;

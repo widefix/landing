@@ -15,6 +15,7 @@ export interface FocusedService {
   image: string; imageAlt: string; cta: string;
   imageWidth?: number; imageHeight?: number;
   evidenceHeading?: string; evidenceEyebrow?: string;
+  articlesHeading?: string; relatedServicesIntro?: string;
   sections: { id: string; title: string; intro?: string; items: { title: string; detail: string; icon?: ServiceIcon }[] }[];
   evidence: { title: string; detail: string; href: string; icon?: ServiceIcon; linkLabel?: string }[];
   reading: { title: string; href: string; detail?: string; icon?: ServiceIcon }[];
@@ -28,8 +29,8 @@ export function serviceMetadata(service: FocusedService): Metadata {
     twitter: socialTwitter(service.image, service.imageAlt) };
 }
 
-export default function FocusedServicePage({ service, children }: { service: FocusedService; children?: React.ReactNode }) {
-  return <main className="rails-home rails-services">
+export default function FocusedServicePage({ service, children, className = '' }: { service: FocusedService; children?: React.ReactNode; className?: string }) {
+  return <main className={`rails-home rails-services ${className}`}>
     <section className="rails-section rails-hero"><div className="inner rails-hero-grid">
       <div><p className="rails-eyebrow">Services for existing applications</p><h1>{service.heading}</h1><p className="rails-intro">{service.intro}</p><div className="rails-actions"><RailsCall>{service.cta}</RailsCall><Link href="#evidence">See supporting work <LinkIndicator /></Link></div></div>
       <div className="rails-hero-aside"><Image src={service.image} alt={service.imageAlt} width={service.imageWidth ?? 560} height={service.imageHeight ?? 490} sizes="(max-width: 900px) 100vw, 45vw" priority /></div>
@@ -40,10 +41,10 @@ export default function FocusedServicePage({ service, children }: { service: Foc
     </div></section>)}
     <section className="rails-section" id="evidence"><div className="inner"><p className="rails-eyebrow">{service.evidenceEyebrow || 'Documented client work'}</p><h2>{service.evidenceHeading || 'Evidence behind the offer'}</h2><div className="rails-card-grid">{service.evidence.map(item => <article className="rails-card" key={item.href}><div className="rails-situation-heading">{item.icon && <SituationIcon kind={item.icon} />}<h3>{item.title}</h3></div><p>{item.detail}</p><Link href={item.href}>{item.linkLabel || 'Read the case study'} <LinkIndicator /></Link></article>)}</div></div></section>
     {children}
-    {service.articles && service.articles.length > 0 && <section className="rails-section" aria-labelledby="upgrade-articles-title">
+    {service.articles && service.articles.length > 0 && <section className="rails-section" aria-labelledby="service-articles-title">
       <div className="inner">
         <p className="rails-eyebrow">Further reading</p>
-        <h2 id="upgrade-articles-title">Articles to help plan your Rails upgrade</h2>
+        <h2 id="service-articles-title">{service.articlesHeading || 'Articles to help plan your Rails upgrade'}</h2>
         <div className="rails-card-grid rails-resource-grid">{service.articles.map(item => <article className="rails-card rails-resource-card" key={item.href}>
           <p className="rails-eyebrow">Engineering article</p>
           <div className="rails-situation-heading"><SituationIcon kind={item.icon || 'review'} /><h3>{item.title}</h3></div>
@@ -56,7 +57,7 @@ export default function FocusedServicePage({ service, children }: { service: Foc
       <div className="inner">
         <p className="rails-eyebrow">Explore the next step</p>
         <h2 id="related-services-title">{service.articles ? 'Related services' : 'Engineering details and related services'}</h2>
-        <p className="rails-intro">{service.articles ? 'Explore focused services to carry your upgrade plan forward.' : 'Explore focused services for your application and the technical experience behind our work.'}</p>
+        <p className="rails-intro">{service.relatedServicesIntro || (service.articles ? 'Explore focused services to carry your upgrade plan forward.' : 'Explore focused services for your application and the technical experience behind our work.')}</p>
         <div className="rails-card-grid rails-resource-grid">{service.reading.map(item => {
           const isArticle = item.href.includes('/blog/');
           return <article className="rails-card rails-resource-card" key={item.href}>
@@ -72,4 +73,3 @@ export default function FocusedServicePage({ service, children }: { service: Foc
     <section className="rails-section rails-final-cta"><div className="inner"><h2>{service.cta}</h2><p>Tell us about your application, the current problem and your priorities. We will agree on the scope, access needed and a practical first step.</p><div className="rails-actions"><RailsCall>{service.cta}</RailsCall><Link href="/contact">Send your project details <LinkIndicator /></Link></div></div></section>
   </main>;
 }
-

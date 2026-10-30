@@ -2,21 +2,44 @@ import FocusedServicePage, { serviceMetadata, type FocusedService } from '@/comp
 
 const service: FocusedService = {
   "slug": "ruby-on-rails-performance",
-  "title": "Ruby on Rails Performance Audit & Optimization | WideFix",
-  "description": "Rails performance consulting for slow requests, N+1 queries, queues, memory and timeouts. A measured audit, prioritized fixes and before-and-after validation.",
-  "heading": "Ruby on Rails performance: find the bottleneck, measure the improvement",
-  "intro": "CostaDelHome’s search pages went from 10 seconds to 100ms after our performance work. If slow requests or background processing are holding your product back, we investigate the cause and validate changes against an agreed baseline.",
+  "title": "Ruby on Rails Performance Optimization & Tuning | WideFix",
+  "description": "Ruby on Rails performance optimization for slow pages, PostgreSQL queries and stalled jobs. Get a measured audit, prioritized fixes and before-and-after validation.",
+  "heading": "Ruby on Rails performance optimization for your existing application",
+  "intro": "Slow pages, timeouts and delayed jobs make customers wait and interrupt your team. WideFix investigates the bottleneck, delivers agreed fixes and measures the result. Our Rails performance tuning covers Ruby code, ActiveRecord, PostgreSQL and background processing without starting with a rewrite.",
   "image": "/img/showcases/costa-del-home-search.svg",
+  "imageWidth": 687,
+  "imageHeight": 377,
   "imageAlt": "CostaDelHome search performance: 10 seconds to 100ms",
-  "cta": "Discuss a Rails performance audit",
+  "cta": "Discuss your Rails performance",
   "sections": [
+    {
+      "id": "when-to-start",
+      "title": "When slow Rails performance becomes a business problem",
+      "items": [
+        {
+          "title": "Customers wait for everyday tasks",
+          "detail": "Search, dashboards or reports take too long to open. Start with the workflows customers actually use and a target response time, rather than optimizing code that is already fast enough.",
+          "icon": "momentum"
+        },
+        {
+          "title": "Jobs delay work and interrupt teammates",
+          "detail": "Backed-up queues delay imports, notifications or integrations. Investigate the processing path so your team can spend less time retrying jobs and answering questions about missing updates.",
+          "icon": "production"
+        },
+        {
+          "title": "Your team needs specialist help",
+          "detail": "A busy developer, inherited codebase or unclear bottleneck can leave performance work stuck. Bring in a Rails specialist for a bounded investigation, with findings your team can use or ask us to implement.",
+          "icon": "expertise"
+        }
+      ]
+    },
     {
       "id": "bottlenecks",
       "title": "Where we investigate",
       "items": [
         {
           "title": "Slow requests and database access",
-          "detail": "Trace slow endpoints, repeated queries and N+1 loading. Review SQL, execution plans, indexes and caching when the database is involved; separate database time from Ruby work and external calls.",
+          "detail": "Trace slow endpoints, repeated ActiveRecord queries and N+1 loading. Review PostgreSQL execution plans, indexes and caching when the database is involved; separate database time from Ruby work and external calls.",
           "icon": "review"
         },
         {
@@ -66,10 +89,16 @@ const service: FocusedService = {
           "title": "Customer and operational metrics",
           "detail": "Track median and tail request latency where traffic allows, error and timeout rates, queue wait time and worker throughput. Confirm that faster processing preserves the expected behavior.",
           "icon": "momentum"
+        },
+        {
+          "title": "A handover your team can reuse",
+          "detail": "Document the benchmark, changes and monitoring checks so teammates can investigate future slowdowns without depending on the original developer. Agree whether follow-up belongs with your team or ongoing WideFix maintenance.",
+          "icon": "handover"
         }
       ]
     }
   ],
+  "evidenceHeading": "Rails performance results from existing client applications",
   "evidence": [
     {
       "title": "CostaDelHome: 100× faster search",
@@ -78,19 +107,20 @@ const service: FocusedService = {
       "icon": "momentum"
     },
     {
+      "title": "Kajabi Experts: Ruby processing moved into SQL",
+      "detail": "Made slow Rails pages usable by moving expensive Ruby-side processing into SQL. The published benchmark measured 79.74× higher processing throughput, not an end-to-end page speed guarantee.",
+      "href": "/showcases/kajabi-experts-performance",
+      "icon": "review"
+    },
+    {
       "title": "ShopWired: queue recovery",
       "detail": "Redesigned DelayedJob handling and dispatching to unblock a stalled queue and eliminate recurring daily Heroku H12 errors.",
       "href": "/showcases/shopwired-queue-optimization",
       "icon": "production"
     }
   ],
-  "reading": [
-    {
-      "title": "PostgreSQL performance consulting",
-      "href": "/postgresql-performance-consulting",
-      "icon": "review",
-      "detail": "Investigate slow SQL, execution plans, indexes, locks and connection pressure with a focused database engagement."
-    },
+  "articlesHeading": "Rails and PostgreSQL performance articles from our engineering work",
+  "articles": [
     {
       "title": "Why SQL knowledge matters for Rails performance",
       "href": "/blog/importance-sql-for-rails-experts/",
@@ -98,10 +128,31 @@ const service: FocusedService = {
       "detail": "Explore how SQL knowledge helps identify bottlenecks and improve Rails application performance."
     },
     {
-      "title": "Measuring Rails optimization with Ruby and SQL",
+      "title": "Optimizing Rails with ChatGPT, Ruby and SQL",
       "href": "/blog/optimize-performance-of-rails-app-with-chatgpt/",
       "icon": "review",
-      "detail": "Read a practical comparison of Ruby and SQL approaches, with measurements of optimization results."
+      "detail": "Compare measured Ruby and SQL implementations, and see why generated optimizations still need correctness checks."
+    },
+    {
+      "title": "Select the latest records with PostgreSQL window functions",
+      "href": "/blog/select-unique-latest-grouped-records-from-db/",
+      "icon": "review",
+      "detail": "Build a recent-records query in SQL and integrate it with ActiveRecord instead of grouping the data in Ruby."
+    },
+    {
+      "title": "Benchmarking Rails URL generation",
+      "href": "/blog/rails-url-for-helper-can-be-slow/",
+      "icon": "expertise",
+      "detail": "A historical Rails benchmark showing how helper choices affect rendering work. Re-measure on your current Rails version before applying its conclusions."
+    }
+  ],
+  "relatedServicesIntro": "Start with a focused performance engagement, or connect the findings to database consulting, application rescue or ongoing maintenance.",
+  "reading": [
+    {
+      "title": "PostgreSQL performance consulting",
+      "href": "/postgresql-performance-consulting",
+      "icon": "review",
+      "detail": "Investigate slow SQL, execution plans, indexes, locks and connection pressure with a focused database engagement."
     },
     {
       "title": "Rails rescue and production stabilization",
@@ -121,5 +172,5 @@ const service: FocusedService = {
 export const metadata = serviceMetadata(service);
 
 export default function Page() {
-  return <FocusedServicePage service={service} />;
+  return <FocusedServicePage service={service} className="rails-performance" />;
 }

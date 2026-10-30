@@ -8,7 +8,7 @@ import type { Metadata } from 'next';
 import { OwnershipCTA, OwnershipProcess, RailsCall } from '@/components/rails/RailsOwnership';
 
 const title = 'Ruby on Rails Maintenance, Development & Modernization - WideFix';
-const description = 'Services for existing Rails applications: takeover, maintenance, production support, Ruby and Rails upgrades, feature development, infrastructure and integrations.';
+const description = 'Services for existing Rails applications: takeover, maintenance, performance optimization, PostgreSQL consulting, upgrades, feature development and integrations.';
 
 export const metadata: Metadata = {
   title,
@@ -54,10 +54,10 @@ const coreServices = [
     href: '/ruby-on-rails-upgrade-assessment', link: 'Start with an upgrade assessment',
   },
   {
-    id: 'performance-reliability', title: 'Performance & reliability', icon: 'what-we-do/icon-optimization.svg',
-    description: 'Find what is slowing your application down or interrupting your customers. Address the underlying bottlenecks and measure the result.',
-    items: ['PostgreSQL queries and database tuning', 'Background queues and failed jobs', 'Memory usage, caching and response times', 'Timeouts, error handling and observability'],
-    href: '/ruby-on-rails-performance', link: 'Explore Rails performance consulting',
+    id: 'performance-reliability', title: 'Ruby on Rails performance optimization', icon: 'what-we-do/icon-optimization.svg',
+    description: 'Make slow pages and delayed jobs a measured engineering priority. Our Rails performance tuning connects customer workflows to the Ruby, ActiveRecord or PostgreSQL bottleneck behind them.',
+    items: ['Performance audit and prioritized fixes', 'PostgreSQL queries and N+1 investigations', 'Background queues, memory and caching', 'Before-and-after validation and team handover'],
+    href: '/ruby-on-rails-performance', link: 'Explore Rails performance optimization',
   },
   {
     id: 'development-modernization', title: 'Feature development & modernization', icon: 'web-dev-icon.svg',
@@ -190,4 +190,3 @@ export default function ServicesPage() {
     </main>
   );
 }
-
