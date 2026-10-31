@@ -1,0 +1,80 @@
+// Player app gallery: a booking walkthrough, then raw app screenshots in a CSS phone frame.
+.flow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: center;
+  margin: 32px 0 56px;
+
+  video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.screens {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  align-items: end;
+
+  figure {
+    margin: 0;
+  }
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (max-width: 560px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.phone {
+  position: relative;
+  width: 72%;
+  margin: 0 auto;
+  padding: 9px;
+  border-radius: 40px;
+  background: #193b5e;
+  box-shadow: 0 18px 40px rgba(25, 59, 94, 0.18);
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 31px;
+  }
+
+  // Dynamic Island, positioned over the blank centre of the screenshot's status bar.
+  &::after {
+    content: '';
+    position: absolute;
+    top: calc(9px + 1.6%);
+    left: 50%;
+    width: 30%;
+    height: 3.6%;
+    border-radius: 999px;
+    background: #0b1726;
+    transform: translateX(-50%);
+  }
+
+  @media (max-width: 560px) {
+    width: min(72%, 300px);
+  }
+}
