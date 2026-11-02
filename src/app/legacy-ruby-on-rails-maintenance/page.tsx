@@ -5,7 +5,7 @@ const service: FocusedService = {
   "title": "Legacy Ruby on Rails Maintenance & Modernization | WideFix",
   "description": "Maintain an aging Rails application with outdated dependencies, weak tests and unsupported versions. Plan incremental upgrades and migrations around live workflows.",
   "heading": "Legacy Ruby on Rails maintenance without losing the working product",
-  "intro": "An older Rails application can still serve your business well. We assess outdated dependencies, unsupported versions and gaps in tests, then plan incremental modernization while maintaining the features your customers depend on.",
+  "intro": "An older Rails application can still serve your business well. WideFix specializes in taking over legacy Ruby on Rails codebases, providing expert maintenance, incremental upgrades, and modernization tailored to your business needs. We assess outdated dependencies, unsupported versions, and gaps in tests, then plan incremental modernization while maintaining the features your customers depend on. Whether you need to stabilize your app, improve performance, or prepare for future growth, our services ensure your legacy Rails app remains reliable and scalable.",
   "image": "/img/showcases/worshiponline-storage-migration.svg",
   "imageAlt": "Incremental storage migration for a live Rails application",
   "cta": "Discuss your legacy Rails application",
