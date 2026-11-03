@@ -831,12 +831,16 @@ body.blog-modern .author-credentials a {
   font-size: 26px !important;
 }
 .search-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0;
   border: 0;
   background: #eef2f6;
   border-radius: 50%;
   width: 36px;
   height: 36px;
-  font-size: 24px !important;
 }
 .blog-search label {
   display: block;
