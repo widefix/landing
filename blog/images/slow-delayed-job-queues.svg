@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+<title id="title">Find the real reason your jobs are waiting</title>
+<desc id="description">A green landscape with three worker lanes. A long line of rust-colored job boxes piles up in front of a single busy worker gear, while two idle worker gears sit beside empty lanes. A clock shows a long wait, and a small memory gauge drops from high to low.</desc>
+<defs>
+  <linearGradient id="paper" x2="0" y2="1"><stop stop-color="#f5edda"/><stop offset="1" stop-color="#e5dcc4"/></linearGradient>
+  <linearGradient id="hill" x2="0" y2="1"><stop stop-color="#789784"/><stop offset="1" stop-color="#355f50"/></linearGradient>
+  <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".035"/></feComponentTransfer><feBlend in="SourceGraphic" mode="multiply"/></filter>
+  <g id="gear"><circle r="27" fill="none" stroke-width="9" stroke-dasharray="9 8"/><circle r="17" stroke-width="5"/><circle r="6" stroke="none"/></g>
+</defs>
+<g filter="url(#grain)">
+<path fill="url(#paper)" d="M0 0h1200v630H0z"/>
+<circle cx="1060" cy="110" r="60" fill="#e3c68f" opacity=".65"/>
+<path d="M0 490Q180 430 360 477T730 453T1200 419V630H0Z" fill="#b4c1a6"/>
+<path d="M0 548Q200 469 400 525T800 490T1200 480V630H0Z" fill="url(#hill)"/>
+<g fill="#244e40" font-family="Georgia,serif">
+<text x="65" y="85" font-family="Arial,sans-serif" font-size="16" font-weight="700" letter-spacing="3">WIDEFIX / RAILS MAINTENANCE</text>
+<text x="62" y="160" font-size="46">Find the real reason</text>
+<text x="62" y="216" font-size="46">your jobs are waiting</text>
+</g>
+<path d="M67 248h60" stroke="#b46c51" stroke-width="3"/>
+<g font-family="Arial,sans-serif" fill="#456655" font-size="19"><text x="66" y="290">Metrics, workers, priorities, memory.</text><text x="66" y="322">Lessons from slow Delayed Job queues.</text></g>
+<!-- Worker lanes -->
+<g fill="#ebe1c8" stroke="#355c49" stroke-width="4" stroke-linejoin="round">
+<rect x="650" y="160" width="380" height="58" rx="10"/>
+<rect x="650" y="248" width="380" height="58" rx="10"/>
+<rect x="650" y="336" width="380" height="58" rx="10"/>
+</g>
+<!-- Backed-up jobs in the first lane -->
+<g fill="#bc795e" stroke="#925a47" stroke-width="2">
+<rect x="662" y="174" width="40" height="30" rx="5"/>
+<rect x="710" y="174" width="40" height="30" rx="5"/>
+<rect x="758" y="174" width="40" height="30" rx="5"/>
+<rect x="806" y="174" width="40" height="30" rx="5"/>
+<rect x="854" y="174" width="40" height="30" rx="5"/>
+<rect x="606" y="170" width="40" height="30" rx="5" transform="rotate(-10 626 185)"/>
+</g>
+<!-- Busy worker -->
+<g fill="#355c49" stroke="#355c49" transform="translate(965 189)"><use href="#gear"/></g>
+<g fill="none" stroke="#b46c51" stroke-width="3" stroke-linecap="round"><path d="M1004 166q14 23 0 46"/><path d="M1016 156q22 33 0 66"/></g>
+<!-- Idle workers -->
+<g fill="#9fb6a5" stroke="#9fb6a5" opacity=".9"><use href="#gear" transform="translate(965 277)"/><use href="#gear" transform="translate(965 365)"/></g>
+<g font-family="Arial,sans-serif" font-size="15" fill="#5d7a69" font-weight="700" letter-spacing="1"><text x="682" y="283">IDLE</text><text x="682" y="371">IDLE</text></g>
+<g stroke="#9fb6a5" stroke-width="3" stroke-dasharray="6 9" stroke-linecap="round"><path d="M732 277h180M732 365h180"/></g>
+<!-- Long wait clock -->
+<g transform="translate(650 105)"><circle r="34" fill="#f5edda" stroke="#355c49" stroke-width="5"/><path d="M0 0V-21M0 0l15 10" stroke="#b46c51" stroke-width="5" stroke-linecap="round"/><circle r="4" fill="#355c49"/></g>
+<!-- Memory gauge -->
+<g transform="translate(1085 330)">
+<rect x="-22" y="-112" width="44" height="160" rx="8" fill="#ebe1c8" stroke="#355c49" stroke-width="4"/>
+<rect x="-13" y="6" width="26" height="33" rx="4" fill="#6f9a82"/>
+<rect x="-13" y="-103" width="26" height="109" rx="4" fill="#bc795e" opacity=".28"/>
+<path d="M-40 -95v80m0 0-9-12m9 12 9-12" fill="none" stroke="#b46c51" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<text y="76" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="#355c49">MEM</text>
+</g>
+</g>
+</svg>
