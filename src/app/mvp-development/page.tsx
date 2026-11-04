@@ -119,6 +119,10 @@ export default function MVPDevelopmentPage() {
               <div className="schema-capability-heading"><SituationIcon kind="production" /><h3>Korner sports club platform</h3></div>
               <div><p>Korner started as a court-booking MVP for soccer fields and grew into a platform for soccer, padel and multi-sport clubs. It runs on a Ruby on Rails backend with a Flutter app built, released and published on the App Store and Google Play.</p><div className="schema-actions"><Link className="schema-text-link" href="/showcases/korner-sports-club-management-platform">Read the Korner showcase <LinkIndicator /></Link><Link className="schema-text-link" href="https://kornerclub.com/en" target="_blank" rel="noopener noreferrer">Visit Korner <LinkIndicator /></Link></div></div>
             </article>
+            <article>
+              <div className="schema-capability-heading"><SituationIcon kind="communication" /><h3>Beeplan CRM for creatives with AI</h3></div>
+              <div><p>Beeplan is a paid SaaS CRM for creatives and studios, built on Ruby on Rails with Stripe subscriptions, Google Calendar sync and Beevo, an AI project manager built into the product. Its Flutter apps for iOS and Android are in development.</p><div className="schema-actions"><Link className="schema-text-link" href="/showcases/beeplan-crm-ai-project-manager">Read the Beeplan showcase <LinkIndicator /></Link><Link className="schema-text-link" href="https://www.beeplan.app/" target="_blank" rel="noopener noreferrer">Visit Beeplan <LinkIndicator /></Link></div></div>
+            </article>
           </div>
         </div>
       </section>

@@ -4,6 +4,7 @@ import SeoOptimization from '@/cases/seo-optimization';
 import Mezuka from '@/cases/mezuka';
 import BudgetingKid from '@/cases/budgetingkid';
 import Korner from '@/cases/korner';
+import Beeplan from '@/cases/beeplan';
 import { CategoryName, ResultBoxColor, Showcase, SwiperSlideColor } from './enums';
 
 const showcases: Showcase[] = [
@@ -991,6 +992,7 @@ const showcases: Showcase[] = [
     },
   },
   Korner,
+  Beeplan,
   BudgetingKid,
   Mezuka,
   SeoOptimization
