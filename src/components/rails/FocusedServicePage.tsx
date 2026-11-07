@@ -14,6 +14,8 @@ export interface FocusedService {
   slug: string; title: string; description: string; heading: string; intro: string;
   image: string; imageAlt: string; cta: string;
   imageWidth?: number; imageHeight?: number;
+  heroProof?: { label: string; href: string }[];
+  finalIntro?: string;
   evidenceHeading?: string; evidenceEyebrow?: string;
   articlesHeading?: string; relatedServicesIntro?: string;
   sections: { id: string; title: string; intro?: string; items: { title: string; detail: string; icon?: ServiceIcon }[] }[];
@@ -32,7 +34,7 @@ export function serviceMetadata(service: FocusedService): Metadata {
 export default function FocusedServicePage({ service, children, className = '' }: { service: FocusedService; children?: React.ReactNode; className?: string }) {
   return <main className={`rails-home rails-services ${className}`}>
     <section className="rails-section rails-hero"><div className="inner rails-hero-grid">
-      <div><p className="rails-eyebrow">Services for existing applications</p><h1>{service.heading}</h1><p className="rails-intro">{service.intro}</p><div className="rails-actions"><RailsCall>{service.cta}</RailsCall><Link href="#evidence">See supporting work <LinkIndicator /></Link></div></div>
+      <div><p className="rails-eyebrow">Services for existing applications</p><h1>{service.heading}</h1><p className="rails-intro">{service.intro}</p><div className="rails-actions"><RailsCall>{service.cta}</RailsCall><Link href="#evidence">See supporting work <LinkIndicator /></Link></div>{service.heroProof && <ul className="rails-hero-proof">{service.heroProof.map(proof => <li key={proof.href}><Link href={proof.href}>{proof.label} <LinkIndicator /></Link></li>)}</ul>}</div>
       <div className="rails-hero-aside"><Image src={service.image} alt={service.imageAlt} width={service.imageWidth ?? 560} height={service.imageHeight ?? 490} sizes="(max-width: 900px) 100vw, 45vw" priority /></div>
     </div></section>
     {service.sections.map((section, index) => <section key={section.id} id={section.id} className={`rails-section ${index % 2 === 0 ? 'rails-tinted' : ''}`}><div className="inner">
@@ -70,6 +72,6 @@ export default function FocusedServicePage({ service, children, className = '' }
         <div className="rails-actions"><Link href="/services">All WideFix services <LinkIndicator /></Link></div>
       </div>
     </section>
-    <section className="rails-section rails-final-cta"><div className="inner"><h2>{service.cta}</h2><p>Tell us about your application, the current problem and your priorities. We will agree on the scope, access needed and a practical first step.</p><div className="rails-actions"><RailsCall>{service.cta}</RailsCall><Link href="/contact">Send your project details <LinkIndicator /></Link></div></div></section>
+    <section className="rails-section rails-final-cta"><div className="inner"><h2>{service.cta}</h2><p>{service.finalIntro || "Tell us about your application, the current problem and your priorities. We will agree on the scope, access needed and a practical first step."}</p><div className="rails-actions"><RailsCall>{service.cta}</RailsCall><Link href="/contact">Send your project details <LinkIndicator /></Link></div></div></section>
   </main>;
 }

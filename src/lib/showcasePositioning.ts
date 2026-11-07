@@ -128,10 +128,10 @@ export const showcasePositioning: Record<string, ShowcasePositioning> = {
     cardLabel: 'Legacy Rails modernization',
     hook: 'LEGACY RAILS APPLICATION MODERNIZATION',
     headline: 'A new interface. The Rails backend your business relies on',
-    value: 'Modernize an old Rails app while preserving the backend, mobile API, and existing service. A gradual interface rollout let the business improve conversions without an unnecessary application rewrite.',
+    value: 'Modernize an old Rails app while preserving the backend, mobile API, and existing service. A gradual interface rollout kept the old interface available while users moved to the new design.',
     help: 'Need to modernize an old Rails app without rebuilding it?', theme: 'amber',
     title: 'WorshipOnline: Legacy Rails App Redesign, Zero Downtime - WideFix',
-    description: 'Modernized an existing Ruby on Rails app with a staged UI redesign and zero downtime, achieving 20% more daily signups and 30% revenue growth.',
+    description: 'Modernized an existing Ruby on Rails app with a staged UI rollout, fallback interface and preserved mobile API. Includes reported outcomes and measurement limits.',
   },
   'shopwired-queue-optimization': {
     steps: ['Repair queue handling and dispatch', 'Expand and stabilize integrations'],

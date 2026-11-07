@@ -69,7 +69,7 @@ const showcases: Showcase[] = [
       solutionFirstText: <p>We fixed defects and added automated tests.</p>,
       solutionSecondText: <p>We brought in specialists with the right expertise and coordinated work with the project budget in mind.</p>,
       resultBoxes: [],
-      resultText: <p>Support and feature development continued beyond the initial redesign request.</p>,
+      resultText: <><p>Support and feature development continued beyond the initial redesign request. WideFix handled defects, automated tests and specialist coordination alongside ongoing delivery.</p><p>In a <a href="https://clutch.co/profile/widefix#reviews">Clutch review dated September 23, 2026</a>, Worship Online CEO Shalon Palmer describes WideFix taking ownership. The client dates the relationship to September 2019 and describes it as ongoing at the time of the review. This supports the continuity account; this case does not publish response-time statistics or an uptime measurement window.</p></>,
       helpTitle: 'Need Ruby on Rails application support and maintenance?',
     },
     metadata: {
@@ -767,7 +767,7 @@ const showcases: Showcase[] = [
       companyName: "WorshipOnline",
       solution: "System Design",
       title: "Ruby on Rails App Redesign",
-      results: "We redesigned the app with zero downtime, achieving 20% more signups and 30% revenue increase.",
+      results: "Rolled out a new interface gradually, retained the existing mobile API and kept the old interface available as a fallback.",
       wrapperColor: SwiperSlideColor.yellow,
       buttonColor: SwiperSlideColor.blue,
       companyImageSrc: "/img/showcases/clients/wo.svg",
@@ -776,7 +776,7 @@ const showcases: Showcase[] = [
     body: {
       bannerTopTitle: (
         <h1>
-          Risk-free Ruby on Rails app <span className="oval">redesign</span> with zero <span className="stripe">downtime</span>
+          Staged Ruby on Rails app <span className="oval">redesign</span> with zero <span className="stripe">downtime</span>
         </h1>
       ),
       bannerTopImageSrc: "/img/showcases/system-redesign.jpg",
@@ -786,13 +786,13 @@ const showcases: Showcase[] = [
       description: "Complete UI/UX overhaul without disrupting existing users",
       descriptionText: (
         <p>
-          Successfully redesigned and migrated a Ruby on Rails application to a new front-end while maintaining <strong><i>zero downtime</i></strong> and preserving full functionality for existing mobile app users. The gradual migration approach resulted in <strong><i>20% increase in daily signups</i></strong> and <strong><i>30% revenue growth</i></strong>.
+          Successfully redesigned and migrated a Ruby on Rails application to a new front-end while maintaining <strong><i>zero downtime</i></strong> and preserving full functionality for existing mobile app users. The rollout used the existing Rails backend and preserved the mobile API.
         </p>
       ),
-      detailsTitle: 'Zero-Risk Redesign Strategy',
+      detailsTitle: 'A staged rollout with a fallback interface',
       detailsText: (
         <p>
-          We adopted the existing back-end for the new design and built a completely new front-end, seamlessly integrating it with the updated back-end architecture. <strong><i>All changes were implemented with zero downtime</i></strong> and no risks to the business or existing mobile app users. We implemented a gradual user migration system with the ability to switch back to the old UI in case of any issues, ensuring <strong><i>complete risk mitigation</i></strong>.
+          We adopted the existing back-end for the new design and built a completely new front-end, seamlessly integrating it with the updated back-end architecture. We reported no downtime during the rollout. A gradual migration let users switch back to the old UI if issues appeared. Keeping both interfaces available reduced rollout risk; it did not eliminate it.
         </p>
       ),
       detailsImageSrc: "/img/showcases/case/redesign-architecture.svg",
@@ -812,46 +812,31 @@ const showcases: Showcase[] = [
         </p>
       ),
       resultBoxes: [
-        {
-          color: ResultBoxColor.green,
-          imageSrc: "/img/showcases/case/icons/user.svg",
-          message: "Daily signups increase",
-          number: "+20%"
-        },
-        {
-          color: ResultBoxColor.blue,
-          imageSrc: "/img/showcases/case/icons/money.svg",
-          message: "Revenue growth",
-          number: "+30%"
-        },
-        {
-          color: ResultBoxColor.lightGreen,
-          imageSrc: "/img/showcases/case/icons/flag.svg",
-          message: "System downtime",
-          number: "0min"
-        }
+        { color: ResultBoxColor.green, imageSrc: "/img/showcases/case/icons/user.svg", message: "User migration", number: "Staged" },
+        { color: ResultBoxColor.blue, imageSrc: "/img/showcases/case/icons/flag.svg", message: "Previous interface", number: "Fallback" },
       ],
       resultText: (
-        <p>
-          The redesign was completed with <strong><i>zero downtime</i></strong> and no disruption to existing services. We achieved a <strong><i>20% increase in daily new user signups</i></strong> and a <strong><i>30% increase in revenue</i></strong>. The gradual migration approach ensured that all existing mobile app users continued to have uninterrupted service throughout the entire process.
-        </p>
+        <>
+          <p>WideFix reported no downtime during the staged interface rollout, with the existing mobile API retained. The original <a href="https://widefix.com/blog/risk-free-redesign-ruby-on-rails-app/">engineering account</a>, published August 30, 2023, describes the approach and reports revenue growth.</p>
+          <p>Earlier versions of this case listed 20% more daily signups and 30% revenue growth. The published account does not establish the comparison windows, signup measurement method or attribution to the redesign alone. Those percentages are therefore not presented as validated redesign outcomes here. No production observation window or independent uptime audit is published.</p>
+        </>
       ),
-      helpTitle: "Need help with risk-free application redesign?",
+      helpTitle: "Need help planning a staged application redesign?",
       related: [
         {
           companyName: "WorshipOnline",
-          solution: "Prevent account sharing",
-          results: "We implemented an on-premises solution to combat account sharing.",
+          solution: "Staged Rails application redesign",
+          results: "The engineering account of keeping the old interface available during a gradual rollout.",
           wrapperColor: SwiperSlideColor.green,
           buttonColor: SwiperSlideColor.green,
           companyImageSrc: "/img/showcases/clients/wo.svg",
-          url: "https://blog.widefix.com/risk-free-redesign-ruby-on-rails-app/"
+          url: "https://widefix.com/blog/risk-free-redesign-ruby-on-rails-app/"
         }
       ]
     },
     metadata: {
       title: "Ruby on Rails App Redesign - WideFix",
-      description: "See how we redesigned a Ruby on Rails application with zero downtime, achieving 20% more signups and 30% revenue increase."
+      description: "A staged Rails interface redesign with a fallback UI and preserved mobile API, including the limits of the reported results."
     }
   },
   {
@@ -894,7 +879,7 @@ const showcases: Showcase[] = [
       ),
       solutionFirstText: (
         <p>
-          We performed a comprehensive analysis of the DelayedJob queue architecture and identified critical bottlenecks in job handling and dispatching. By <strong><i>redesigning the queue management system</i></strong>, we eliminated the daily performance issues and queue stalls that had plagued the platform. We implemented proper monitoring and error handling to prevent future incidents.
+          We performed a comprehensive analysis of the DelayedJob queue architecture and identified critical bottlenecks in job handling and dispatching. By <strong><i>redesigning the queue management system</i></strong>, we eliminated the daily performance issues and queue stalls that had plagued the platform. We added monitoring and error handling to make failures easier to detect and investigate.
         </p>
       ),
       solutionSecondText: (
@@ -912,8 +897,8 @@ const showcases: Showcase[] = [
         {
           color: ResultBoxColor.orange,
           imageSrc: "/img/showcases/case/icons/stock.svg",
-          message: "Job processing time",
-          number: "Hours → ms"
+          message: "Queue recovery",
+          number: "Unblocked"
         },
         {
           color: ResultBoxColor.blue,
@@ -930,7 +915,7 @@ const showcases: Showcase[] = [
       ],
       resultText: (
         <p>
-          We reduced the backlog from <strong><i>hundreds of thousands of stuck jobs to zero</i></strong>, cut job processing time from <strong><i>hours to milliseconds</i></strong>, and eliminated recurring H12 errors. The platform now processes background jobs reliably, and the addition of new integrations expanded the platform&apos;s e-commerce capabilities significantly. System uptime and reliability improved dramatically, providing a seamless experience for merchants and end users.
+          Our delivery account reports that the stuck backlog was cleared and recurring H12 errors stopped after changes to DelayedJob handling and dispatch. Earlier copy described “hours to milliseconds” without distinguishing queue wait time from job execution time. No comparable timing samples, workload conditions or observation window are published, so that timing claim has been removed. The <a href="https://clutch.co/profile/widefix#reviews">ShopWired client review dated November 6, 2026</a> corroborates improved stability and fewer support issues, but does not independently verify queue counts or timing. It describes an integration engagement beginning in January 2024; the queue recovery dates are not separately documented.
         </p>
       ),
       helpTitle: "Need help with performance optimization and integrations?",
