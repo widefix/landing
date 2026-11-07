@@ -44,9 +44,9 @@ export default function RecognitionPage() {
             <SituationIcon kind="ownership" />
             <p className="rails-eyebrow">Independent client feedback</p>
             <strong className={styles.rating}>4.9<span>/5</span></strong>
-            <p>12 client reviews on Clutch</p>
+            <p>13 client reviews on Clutch</p>
             <SourceLink href={`${sources.clutch}#reviews`}>Read the reviews</SourceLink>
-            <p className={styles.note}>Profile checked October 13, 2026</p>
+            <p className={styles.note}>Profile checked November 7, 2026</p>
           </aside>
         </div>
       </section>
@@ -61,11 +61,11 @@ export default function RecognitionPage() {
           <h2>Industry recognition</h2>
           <div className="rails-card-grid">
             <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="ownership" /><h3>Clutch Premier Verified</h3></div><p>WideFix’s profile carries Clutch’s Premier Verified designation. This is a business-verification credential, separate from an award or a directory ranking.</p><SourceLink href={`${sources.clutch}#verification`}>View the verification details</SourceLink></article>
-            <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="communication" /><h3>4.9/5 across 12 client reviews</h3></div><p>The profile’s overall review section shows 12 reviews and a 4.9/5 average. Read the engagement details and individual feedback alongside the score.</p><SourceLink href={`${sources.clutch}#reviews`}>Read the original reviews</SourceLink></article>
+            <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="communication" /><h3>4.9/5 across 13 client reviews</h3></div><p>The profile’s overall review section shows 13 reviews and a 4.9/5 average. Read the engagement details and individual feedback alongside the score.</p><SourceLink href={`${sources.clutch}#reviews`}>Read the original reviews</SourceLink></article>
             <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="expertise" /><h3>Clutch award badges</h3></div><p>WideFix displays Clutch badges for Ruby on Rails development in 2023 and 2024, and application management and support in 2026. Each badge refers to its stated category and year.</p><SourceLink href={sources.clutch}>Visit the Clutch profile</SourceLink></article>
           </div>
           <ClutchAwards />
-          <p className={styles.note}>Clutch profile snapshot: October 13, 2026. Directory positions can change and depend on the ranking’s category and location.</p>
+          <p className={styles.note}>Clutch profile snapshot: November 7, 2026. Directory positions can change and depend on the ranking’s category and location.</p>
         </div>
       </section>
 
@@ -87,10 +87,10 @@ export default function RecognitionPage() {
           <h2>Open-source tools for working Rails applications</h2>
           <p className="rails-intro">Created by WideFix founder Andrei Kaleshka to address migration problems encountered in real Rails projects. Their source code, releases, and public feedback are available for review.</p>
           <div className={`${styles.twoColumns} rails-card-grid`}>
-            <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="upgrades" /><h3>actual_db_schema</h3></div><p>Tracks executed migration source and helps clean up phantom migrations after switching Git branches.</p><p className={styles.downloads}>753,655 <span>RubyGems downloads</span></p><div className="rails-actions"><Link href="/actual-db-schema">Explore the gem <LinkIndicator /></Link><SourceLink href="https://github.com/widefix/actual_db_schema">GitHub source</SourceLink><SourceLink href="https://rubygems.org/gems/actual_db_schema">RubyGems</SourceLink></div></article>
-            <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="review" /><h3>migration_data</h3></div><p>Adds directly testable data hooks to Rails migrations, with explicit execution order and rollback hooks.</p><p className={styles.downloads}>3,260,577 <span>RubyGems downloads</span></p><div className="rails-actions"><Link href="/migration-data">Explore the gem <LinkIndicator /></Link><SourceLink href="https://github.com/ka8725/migration_data">GitHub source</SourceLink><SourceLink href="https://rubygems.org/gems/migration_data">RubyGems</SourceLink></div><p className={styles.note}>Also listed in <SourceLink href="https://github.com/IonicaBizau/made-in-belarus#ruby">Made in Belarus</SourceLink></p></article>
+            <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="upgrades" /><h3>actual_db_schema</h3></div><p>Tracks executed migration source and helps clean up phantom migrations after switching Git branches.</p><p className={styles.downloads}>799,738 <span>RubyGems downloads</span></p><div className="rails-actions"><Link href="/actual-db-schema">Explore the gem <LinkIndicator /></Link><SourceLink href="https://github.com/widefix/actual_db_schema">GitHub source</SourceLink><SourceLink href="https://rubygems.org/gems/actual_db_schema">RubyGems</SourceLink></div></article>
+            <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="review" /><h3>migration_data</h3></div><p>Adds directly testable data hooks to Rails migrations, with explicit execution order and rollback hooks.</p><p className={styles.downloads}>3,286,766 <span>RubyGems downloads</span></p><div className="rails-actions"><Link href="/migration-data">Explore the gem <LinkIndicator /></Link><SourceLink href="https://github.com/ka8725/migration_data">GitHub source</SourceLink><SourceLink href="https://rubygems.org/gems/migration_data">RubyGems</SourceLink></div><p className={styles.note}>Also listed in <SourceLink href="https://github.com/IonicaBizau/made-in-belarus#ruby">Made in Belarus</SourceLink></p></article>
           </div>
-          <p className={styles.note}>RubyGems API snapshots, October 13, 2026. Download counts include repeat downloads and are not counts of unique users or active installations.</p>
+          <p className={styles.note}>RubyGems API snapshots, November 7, 2026. Download counts include repeat downloads and are not counts of unique users or active installations.</p>
         </div>
       </section>
 

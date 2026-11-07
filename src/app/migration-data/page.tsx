@@ -114,11 +114,11 @@ export default function MigrationDataPage() {
             <Link className="schema-text-link" href="https://rubygems.org/gems/migration_data" target="_blank" rel="noopener noreferrer">View migration_data on RubyGems <LinkIndicator /></Link>
           </div>
           <dl className="schema-stats-values">
-            <div><dt>Total downloads</dt><dd>3.26M</dd></div>
+            <div><dt>Total downloads</dt><dd>3.29M</dd></div>
             <div><dt>Published version</dt><dd>0.6.0</dd></div>
             <div><dt>License</dt><dd>MIT</dd></div>
           </dl>
-          <p className="schema-stats-note">RubyGems snapshot, October 13, 2026: 3,260,281 downloads. Counts include repeat downloads and do not represent unique users or active installations.</p>
+          <p className="schema-stats-note">RubyGems API snapshot, November 7, 2026: 3,286,766 downloads. Counts include repeat downloads and do not represent unique users or active installations.</p>
         </div>
       </section>
 

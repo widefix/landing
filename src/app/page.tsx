@@ -240,8 +240,8 @@ export default function HomePage() {
               </div>
             </div>
             <div className="achievement-item">
-              <div className="number">753K+</div>
-              <p><Link href="https://rubygems.org/gems/actual_db_schema" target="_blank" rel="nofollow">Actual DB Schema</Link> downloads · RubyGems, October 13, 2026</p>
+              <div className="number">799K+</div>
+              <p><Link href="https://rubygems.org/gems/actual_db_schema" target="_blank" rel="nofollow">Actual DB Schema</Link> downloads · RubyGems, November 7, 2026</p>
               <div className="achievement-tags">
                 <div className="achievement-tag solutions">Solutions</div>
                 <div className="achievement-tag team">Team</div>

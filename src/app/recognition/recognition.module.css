@@ -1,6 +1,10 @@
 .page { overflow-wrap: anywhere; }
 .proofPanel { padding: 36px; border: 1px solid #dae5ef; border-radius: 24px; background: #fff; box-shadow: 0 12px 40px #193b5e0d; }
 .proofPanel > :first-child { margin-bottom: 20px; }
+.proofPanel > a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin-top: 20px; padding: 10px 16px; box-sizing: border-box; border: 1px solid #dce4ed; border-radius: 10px; background: #f7fafc; color: #245c94; font-weight: 600; font-size: 15px; line-height: 1.4; text-decoration: none; }
+.proofPanel > a:hover { background: #eaf2fa; border-color: #245c94; }
+.proofPanel > a:focus-visible { outline: 3px solid #276cb4; outline-offset: 5px; }
+
 .rating { display: block; font-size: 76px; line-height: 1.1; color: #193b5e; }
 .rating span { font-size: 32px; color: #61768b; }
 .note { font-size: 14px; color: #617084; line-height: 1.6; margin-top: 24px; }
