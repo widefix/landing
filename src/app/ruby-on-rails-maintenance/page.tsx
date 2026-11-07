@@ -10,11 +10,9 @@ const service: FocusedService = {
   "description": "Ongoing Ruby on Rails maintenance for live SaaS products: production fixes, updates, monitoring and continued development, with agreed support hours and budget.",
   "heading": "Ruby on Rails maintenance and support for existing applications",
   "intro": "For founders and teams running an existing Rails product: resolve production problems, keep dependencies maintained and deliver the next useful change. WideFix takes technical ownership of inherited applications, with scope, support hours and budget agreed before work begins.",
-  heroProof: [
-    { label: 'Worship Online: takeover followed by ongoing maintenance', href: '/showcases/worshiponline-application-support-maintenance' },
-    { label: 'ShopWired: stalled queue recovery and integration support', href: '/showcases/shopwired-queue-optimization' },
-    { label: '4.9/5 across 13 Clutch reviews · checked November 7, 2026', href: 'https://clutch.co/profile/widefix#reviews' },
-  ],
+  evidencePosition: 'after-hero',
+  evidenceEyebrow: 'Client work and independent reviews',
+  evidenceHeading: 'Experience maintaining existing Rails applications',
   finalIntro: 'Send your Ruby and Rails versions, hosting provider, current problem and desired support. Include your time zone and any business deadline so we can discuss access, assessment scope and the first delivery milestone.',
   "image": "/img/showcases/worshiponline-ownership.svg",
   imageWidth: 960,
@@ -110,6 +108,13 @@ const service: FocusedService = {
       "icon": "production",
       "detail": "Recovered a stalled DelayedJob queue, cleared the stuck backlog and repaired third-party integrations. Read the case for the reported outcomes and measurement limits.",
       "href": "/showcases/shopwired-queue-optimization"
+    },
+    {
+      title: '4.9/5 across 13 Clutch reviews',
+      icon: 'review',
+      detail: 'Read individual client engagements and feedback on delivery. Clutch profile checked November 7, 2026.',
+      href: 'https://clutch.co/profile/widefix#reviews',
+      linkLabel: 'Read the reviews',
     }
   ],
   articlesHeading: 'Guides for choosing and budgeting Rails maintenance',

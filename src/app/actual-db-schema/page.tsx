@@ -112,11 +112,11 @@ export default function ActualDbSchemaPage() {
             </Link>
           </div>
           <dl className="schema-stats-values">
-            <div><dt>Total downloads</dt><dd>753K+</dd></div>
+            <div><dt>Total downloads</dt><dd>799K+</dd></div>
             <div><dt>Current release</dt><dd>0.10.0</dd></div>
             <div><dt>License</dt><dd>MIT</dd></div>
           </dl>
-          <p className="schema-stats-note">RubyGems API snapshot, October 13, 2026: 753,655 downloads. Download counts include repeat downloads and do not represent unique users or active installations.</p>
+          <p className="schema-stats-note">RubyGems API snapshot, November 7, 2026: 799,738 downloads. Download counts include repeat downloads and do not represent unique users or active installations.</p>
         </div>
       </section>
 
