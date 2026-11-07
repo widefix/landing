@@ -25,6 +25,8 @@
 .rails-home .rails-card a { display: inline-block; margin-top: 24px; }
 .rails-case-grid .rails-card { display: flex; flex-direction: column; align-items: flex-start; }
 .rails-case-grid img { object-fit: contain; object-position: left center; margin-bottom: 28px; }
+.rails-case-grid .rails-client-label { display: inline-flex; align-items: center; padding: 8px 14px; margin-bottom: 28px; border-radius: 8px; background: #000; }
+.rails-case-grid .rails-client-label img { display: block; margin-bottom: 0; }
 .rails-case-grid .rails-card a { margin-top: auto; padding-top: 24px; }
 .rails-home .rails-text-link { display: inline-block; margin-top: 32px; }
 .ownership-steps { list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; padding: 0; margin: 40px 0 0; counter-reset: none; }
