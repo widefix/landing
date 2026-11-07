@@ -1,5 +1,6 @@
 ---
 layout: post
+modified: 2026-11-07
 title: "Ruby Regexp RCE Fixes: What Rails App Owners Should Check"
 headline: "Ruby Regexp RCE Fixes: What Rails App Owners Should Check"
 description: "Ruby's October 2026 regexp fixes explained for Rails teams: assess untrusted patterns, update the runtime, and verify the deployed application."
@@ -36,6 +37,14 @@ Ruby 4.0.8 lacks one fix. The affected boundary is compiling attacker-controlled
 The identifiers belong to GitLab: **CVE-2026-89078, CVE-2026-93577, CVE-2026-97229, and CVE-2026-110264**. At publication, Ruby had not requested separate identifiers. The announcement also names `Regexp.union`; review its argument types rather than treating every call as equivalent.
 
 If an immediate upgrade is impossible, upstream recommends stopping compilation of untrusted patterns. Recheck the announcement for updates when acting on this article.
+
+## November 7 update: exploitation evidence from October 28–29
+
+On October 29, [CISA added GitLab CVE-2026-97229 to its Known Exploited Vulnerabilities catalog](https://content.govdelivery.com/accounts/USDHSCISA/bulletins/4310049), citing evidence of active exploitation. That establishes exploitation of the GitLab vulnerability. It does not establish widespread attacks against arbitrary Rails applications; each application's exposure still needs the input review below.
+
+[Alpine Linux's October 28 incident report](https://www.alpinelinux.org/posts/gitlab-security-incident-cve-2026-97229/) shows why checking the deployed runtime matters. Its custom GitLab image used its own Ruby, so upgrading GitLab left the interpreter unpatched. Alpine rebuilt the instance after attempted exploitation. It found no evidence of successful code execution but could not rule it out.
+
+For me, this makes the completion criterion concrete: verify the patched interpreter in the deployed image and in the execution contexts of web processes and workers. Include CI infrastructure in the inventory, especially self-managed GitLab and custom images. An application version or a successful build alone cannot establish that the running Ruby received the fix.
 
 ## Start with the feature, then trace the input
 
@@ -117,7 +126,7 @@ This resolved my local installation blocker. It is one concrete example of why I
 
 My recommended release checklist is:
 
-1. **Inventory what runs.** Record Ruby versions for web processes, workers, scheduled jobs, and separately built services. Capture `RUBY_DESCRIPTION` from each environment's execution context. A fresh console alone does not prove every long-running process has been replaced.
+1. **Inventory what runs.** Record Ruby versions for web processes, workers, scheduled jobs, separately built services, and CI infrastructure, including self-managed GitLab where present. Check the interpreter inside deployed images as well as running environments. Capture `RUBY_DESCRIPTION` from each environment's execution context. A fresh console alone does not prove every long-running process has been replaced.
 2. **Align the version declarations.** Check `.ruby-version`, the Gemfile's Ruby declaration, lockfile metadata, Docker base images, CI configuration, and hosting settings where applicable. Use the patched release appropriate to the application's series; avoid introducing a major-version migration into a focused patch without a reason.
 3. **Build and verify.** Rebuild the application artifact, run the relevant regression checks, and exercise search, imports, rules, and jobs that the review identified. Do not try malicious patterns against production as a verification shortcut.
 4. **Deploy every process type.** Replace web and worker processes and update scheduled execution environments. Check for old instances left behind after a partial rollout.
@@ -135,4 +144,4 @@ At WideFix, we take technical ownership of existing Rails applications and provi
 
 If your original developer has left, our [Rails application takeover service](/ruby-on-rails-application-takeover) provides a starting point for understanding the codebase and its deployment. Bring your known Ruby version and any configurable search or matching features. The useful next step is to agree the review scope, identify the running environments, and plan the first verified release.
 
-*Published October 26, 2026. Version recommendations above reflect the linked October 23 releases; check current upstream guidance before upgrading.*
+*Published October 26, 2026; updated November 7 with the October 28–29 exploitation reports and runtime verification guidance. Version recommendations above reflect the linked October 23 releases; check current upstream guidance before upgrading.*
