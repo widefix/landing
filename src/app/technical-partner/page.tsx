@@ -77,7 +77,7 @@ export default function TechnicalPartnerPage() {
           <div>
           <p className="rails-eyebrow">Long-term technical partnership</p>
           <h1>Your Technical Partner for <span>Ruby on Rails Applications</span></h1>
-          <p className="rails-intro">More than developers who implement tickets. We take ownership of your application&apos;s technical challenges, identify risks, recommend solutions, and help you make engineering decisions that serve your business.</p>
+          <p className="rails-intro">More than developers who implement tickets. We act as your fractional Ruby on Rails technical partner, taking full ownership of your application’s maintenance, upgrades, performance tuning, and PostgreSQL consulting. Whether you need a reliable codebase takeover, rescue from technical debt, or ongoing hands-on support, we provide expert guidance and delivery that aligns with your business goals.</p>
           <div className="rails-actions"><RailsCall /><Link href="#how-we-work">How we work <LinkIndicator /></Link></div>
           </div>
           <div className="rails-hero-aside">
