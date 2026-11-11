@@ -1,28 +1,29 @@
+import type { ClutchReferral } from '@/lib/clutchReferral'
 import Image from 'next/image'
 import ContactForm from './ContactForm'
 import ClientTrust from '@/components/rails/ClientTrust'
 import ClutchAwards from '@/components/rails/ClutchAwards'
 import ClutchWidget from '@/components/ClutchWidget'
 
-export default function ContactComponent() {
+export default function ContactComponent({ referral }: { referral?: ClutchReferral }) {
   return (
     <>
       <section className="rails-section rails-hero contact-hero" id="contact">
         <div className="inner contact-hero-grid">
           <div className="contact-hero-copy">
-            <p className="rails-eyebrow">Your application. A clear next step.</p>
-            <h1>Let&apos;s talk about your <span>Rails application</span></h1>
+            <p className="rails-eyebrow">{referral ? referral.label : 'Your application, a clear next step'}</p>
+            <h1>Let&apos;s talk about your <span>{referral?.focus ?? 'Rails application'}</span></h1>
             <p className="hero-description">
-              Tell us where your application stands today, what needs attention and what you want to build next. We&apos;ll discuss a practical path for handover, maintenance and ongoing development.
+              {referral?.description ?? "Tell us where your application stands today, what needs attention and what you want to build next. We’ll discuss a practical path for handover, maintenance and ongoing development."}
             </p>
             <ClutchAwards />
           </div>
           <div className="contact-form-container" aria-labelledby="contact-form-title">
             <div className="form-header">
               <h2 id="contact-form-title">Tell us about your application</h2>
-              <p>Share your current setup, priorities and any handover concerns.</p>
+              <p>{referral ? `Share your goals, current setup and priorities for your ${referral.focus}.` : 'Share your current setup, priorities and any handover concerns.'}</p>
             </div>
-            <div className="modern-form"><ContactForm /></div>
+            <div className="modern-form"><ContactForm referral={referral} /></div>
           </div>
         </div>
       </section>
@@ -63,7 +64,7 @@ export default function ContactComponent() {
       <section className="reviews has-vertical-paddings" aria-labelledby="contact-reviews-title">
         <div className="inner">
           <header>
-            <h2 id="contact-reviews-title">Read what our <span>clients</span> have to say.</h2>
+            <h2 id="contact-reviews-title">Read what our <span>clients</span> have to say</h2>
           </header>
           <div className="slider-wrapper">
             <ClutchWidget />

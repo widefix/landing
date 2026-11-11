@@ -1,8 +1,9 @@
 "use client"
 
+import type { ClutchReferral } from '@/lib/clutchReferral'
 import { useState, FormEvent } from 'react'
 
-export default function ContactForm() {
+export default function ContactForm({ referral }: { referral?: ClutchReferral }) {
   const [result, setResult] = useState<string>("");
   const [resultType, setResultType] = useState<'success' | 'error' | ''>('');
 
@@ -37,6 +38,12 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={onSubmit} className="contact-form">
+      {referral && <>
+        <input type="hidden" name="utm_source" value="clutch.co" />
+        <input type="hidden" name="utm_medium" value="referral" />
+        <input type="hidden" name="utm_campaign" value={referral.campaign} />
+        <input type="hidden" name="clutch_directory" value={referral.label} />
+      </>}
       <div className="form-grid">
         <div className="form-row">
           <div className="form-field">
@@ -59,7 +66,7 @@ export default function ContactForm() {
         <div className="form-row">
           <div className="form-field full-width">
             <label htmlFor="message" className="form-label">Application Details</label>
-            <textarea id="message" name="message" className="form-textarea" rows={4} placeholder="Tell us about your Rails application, current challenges, and what you want to build next..."></textarea>
+            <textarea id="message" name="message" className="form-textarea" rows={4} placeholder={`Tell us about your ${referral?.focus ?? 'Rails application'}, current challenges, and what you want to build next...`}></textarea>
           </div>
         </div>
 
