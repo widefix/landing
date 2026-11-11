@@ -1,7 +1,6 @@
 import { socialPreview, socialTwitter } from '@/lib/socialPreview';
 import type { Metadata } from "next";
-import { getClutchReferral, type ReferralParams } from '@/lib/clutchReferral';
-import ContactComponent from '@/components/contact/ContactComponent';
+import ReferralContact from '@/components/contact/ReferralContact';
 
 export const metadata: Metadata = {
   title: "Contact - WideFix",
@@ -21,10 +20,10 @@ export const metadata: Metadata = {
   }
 };
 
-export default function ContactPage({ searchParams }: { searchParams: ReferralParams }) {
+export default function ContactPage() {
   return (
     <main className="rails-home rails-contact">
-      <ContactComponent referral={getClutchReferral(searchParams)} />
+      <ReferralContact />
     </main>
   )
 }

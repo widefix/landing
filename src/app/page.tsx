@@ -1,3 +1,4 @@
+import ClutchReferralRedirect from '@/components/ClutchReferralRedirect';
 import CommunityRecognition from '@/components/rails/CommunityRecognition';
 import type { Metadata } from 'next';
 import { socialPreview, socialTwitter } from '@/lib/socialPreview';
@@ -27,6 +28,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <main className="rails-home rails-homepage">
+      <ClutchReferralRedirect />
       <section className="rails-section rails-hero">
         <div className="inner rails-hero-grid">
           <div>
