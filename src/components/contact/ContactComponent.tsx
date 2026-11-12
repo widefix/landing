@@ -80,22 +80,20 @@ export default function ContactComponent({ referral }: { referral?: ClutchReferr
           </p>
           <div className="rails-card-grid">
             {[
-              ['Americas', 'United States, Canada, Mexico, Brazil, Argentina'],
-              ['Europe', 'United Kingdom, Germany, France, Netherlands, Poland'],
-              ['Asia Pacific', 'Australia, New Zealand, Singapore, Japan'],
-            ].map(([region, countries]) => (
+              { region: 'Americas', countries: [['🇺🇸', 'United States'], ['🇨🇦', 'Canada'], ['🇲🇽', 'Mexico'], ['🇧🇷', 'Brazil'], ['🇦🇷', 'Argentina']] },
+              { region: 'Europe', countries: [['🇬🇧', 'United Kingdom'], ['🇩🇪', 'Germany'], ['🇫🇷', 'France'], ['🇳🇱', 'Netherlands'], ['🇵🇱', 'Poland']] },
+              { region: 'Asia Pacific', countries: [['🇦🇺', 'Australia'], ['🇳🇿', 'New Zealand'], ['🇸🇬', 'Singapore'], ['🇯🇵', 'Japan']] },
+            ].map(({ region, countries }) => (
               <div className="rails-card" key={region}>
-                <div className="rails-situation-heading">
-                  <span className="rails-situation-icon" aria-hidden="true">
-                    <svg viewBox="0 0 32 32" width={28} height={28} fill="none" stroke="currentColor" strokeWidth={1.7} strokeLinecap="round" strokeLinejoin="round" focusable="false">
-                      <circle cx="16" cy="16" r="12" />
-                      <ellipse cx="16" cy="16" rx="5" ry="12" />
-                      <path d="M4 16h24M7 8h18M7 24h18" />
-                    </svg>
-                  </span>
-                  <h3>{region}</h3>
-                </div>
-                <p>{countries}</p>
+                <h3>{region}</h3>
+                <ul className="contact-country-list">
+                  {countries.map(([flag, country]) => (
+                    <li key={country}>
+                      <span className="contact-country-flag" aria-hidden="true">{flag}</span>
+                      <span>{country}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>

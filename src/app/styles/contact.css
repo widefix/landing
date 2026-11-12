@@ -237,9 +237,27 @@
 }
 
 /* Match the shared section and card styling on the contact pages. */
-.rails-contact .contact-global-reach .rails-situation-icon {
-    background: #edf7f1;
-    color: #267858;
+.rails-contact .contact-country-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 20px 0 0;
+    padding: 0;
+    list-style: none;
+    color: #5f6675;
+}
+
+.rails-contact .contact-country-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    line-height: 1.65;
+}
+
+.rails-contact .contact-country-flag {
+    flex: 0 0 32px;
+    font-size: 24px;
+    line-height: 1;
 }
 
 /* Button Enhancements */
