@@ -34,3 +34,25 @@ export function getClutchReferral(params: ReferralParams) {
 }
 
 export type ClutchReferral = NonNullable<ReturnType<typeof getClutchReferral>>;
+
+// Stable paths for the directory links configured in Clutch.
+export const clutchContactSlugs: Record<string, string> = {
+  'developers-financial-services-industry': 'fintech-software',
+  'developers-small-business': 'small-business-software',
+  'developers-information-technology-industry': 'it-services-software',
+  'developers-ruby-rails': 'ruby-on-rails',
+  'pl-developers-small-business': 'small-business-software-poland',
+  'developers-poland': 'software-development-poland',
+  'developers': 'custom-software',
+  'web-developers': 'web-development',
+  'web-developers-financial-services-industry': 'fintech-web-development',
+  'web-developers-small-business': 'small-business-web-development',
+  'pl-web-developers': 'web-development-poland',
+  'pl-web-developers-warsaw': 'web-development-warsaw',
+};
+
+export function getClutchContactPath(campaign: string) {
+  return Object.hasOwn(clutchContactSlugs, campaign)
+    ? `/contact/${clutchContactSlugs[campaign]}`
+    : '/contact';
+}
