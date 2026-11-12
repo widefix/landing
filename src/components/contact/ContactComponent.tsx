@@ -72,29 +72,32 @@ export default function ContactComponent({ referral }: { referral?: ClutchReferr
         </div>
       </section>
 
-      <section className="global-reach has-vertical-paddings">
+      <section className="rails-section rails-tinted contact-global-reach" aria-labelledby="global-reach-title">
         <div className="inner">
-          <div className="global-content">
-            <div className="global-text">
-              <h2>Global <span>Expertise</span>, Local <span>Understanding</span></h2>
-              <p>
-                We work with clients across the globe, bringing world-class software development expertise to businesses in every corner of the world.
-              </p>
-              <div className="regions-list">
-                <div className="region-group">
-                  <h4>Americas</h4>
-                  <p>United States, Canada, Mexico, Brazil, Argentina</p>
+          <h2 id="global-reach-title">Global Expertise, Local Understanding</h2>
+          <p className="rails-intro">
+            We work with clients across the globe, bringing world-class software development expertise to businesses in every corner of the world.
+          </p>
+          <div className="rails-card-grid">
+            {[
+              ['Americas', 'United States, Canada, Mexico, Brazil, Argentina'],
+              ['Europe', 'United Kingdom, Germany, France, Netherlands, Poland'],
+              ['Asia Pacific', 'Australia, New Zealand, Singapore, Japan'],
+            ].map(([region, countries]) => (
+              <div className="rails-card" key={region}>
+                <div className="rails-situation-heading">
+                  <span className="rails-situation-icon" aria-hidden="true">
+                    <svg viewBox="0 0 32 32" width={28} height={28} fill="none" stroke="currentColor" strokeWidth={1.7} strokeLinecap="round" strokeLinejoin="round" focusable="false">
+                      <circle cx="16" cy="16" r="12" />
+                      <ellipse cx="16" cy="16" rx="5" ry="12" />
+                      <path d="M4 16h24M7 8h18M7 24h18" />
+                    </svg>
+                  </span>
+                  <h3>{region}</h3>
                 </div>
-                <div className="region-group">
-                  <h4>Europe</h4>
-                  <p>United Kingdom, Germany, France, Netherlands, Poland</p>
-                </div>
-                <div className="region-group">
-                  <h4>Asia Pacific</h4>
-                  <p>Australia, New Zealand, Singapore, Japan</p>
-                </div>
+                <p>{countries}</p>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>

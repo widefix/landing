@@ -236,57 +236,10 @@
     }
 }
 
-/* Global Reach Section */
-.global-reach {
-    background: linear-gradient(135deg, #163B9B 0%, #1e40af 100%);
-    color: white;
-}
-
-.global-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-}
-
-@media (max-width: 768px) {
-    .global-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        text-align: center;
-    }
-}
-
-.global-text h2 {
-    font: 700 2.5rem/1.2 var(--font-montserrat), sans-serif;
-    margin-bottom: 1.5rem;
-}
-
-.global-text h2 span {
-    color: #fbbf24;
-}
-
-.global-text > p {
-    font: 400 1.25rem/1.6 var(--font-inter), sans-serif;
-    margin-bottom: 2rem;
-    opacity: 0.9;
-}
-
-.regions-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.region-group h4 {
-    font: 600 1.125rem/1.3 var(--font-montserrat), sans-serif;
-    color: #fbbf24;
-    margin-bottom: 0.5rem;
-}
-
-.region-group p {
-    font: 400 1rem/1.5 var(--font-inter), sans-serif;
-    opacity: 0.8;
+/* Match the shared section and card styling on the contact pages. */
+.rails-contact .contact-global-reach .rails-situation-icon {
+    background: #edf7f1;
+    color: #267858;
 }
 
 /* Button Enhancements */
