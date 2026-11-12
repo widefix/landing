@@ -12,6 +12,7 @@ export default function Header() {
               © {new Date().getFullYear()} Widefix. All rights reserved.
             </div>
             <div className="footer-right">
+              <Link href="/team-cost-calculator">Team cost calculator <LinkIndicator /></Link>
               <Link href="/recognition">Recognition &amp; contributions <LinkIndicator /></Link>
               <ul>
                 <li>

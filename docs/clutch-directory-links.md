@@ -6,8 +6,6 @@ Campaign values are unchanged so existing attribution remains consistent. The pa
 
 | Directory | URL |
 | --- | --- |
-| Custom software development for fintech | https://widefix.com/contact/fintech-software?utm_source=clutch.co&utm_medium=referral&utm_campaign=developers-financial-services-industry |
-| Custom software development for small businesses | https://widefix.com/contact/small-business-software?utm_source=clutch.co&utm_medium=referral&utm_campaign=developers-small-business |
 | Custom software development for IT services | https://widefix.com/contact/it-services-software?utm_source=clutch.co&utm_medium=referral&utm_campaign=developers-information-technology-industry |
 | Ruby on Rails development | https://widefix.com/contact/ruby-on-rails?utm_source=clutch.co&utm_medium=referral&utm_campaign=developers-ruby-rails |
 | Software development for small businesses in Poland | https://widefix.com/contact/small-business-software-poland?utm_source=clutch.co&utm_medium=referral&utm_campaign=pl-developers-small-business |
