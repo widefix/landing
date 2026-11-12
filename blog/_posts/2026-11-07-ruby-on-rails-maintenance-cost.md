@@ -2,8 +2,8 @@
 layout: post
 title: "Ruby on Rails maintenance cost: what you can get from $1,500 a month"
 headline: "Budget for the work your existing Rails application needs"
-modified: 2026-11-13 00:22:00 +0100
-description: "Rails maintenance plans from $1,500 a month, or 25 to 40 team hours a week for larger products. Senior developers from $50 per hour and a solutions architect at $80. Learn how to scope a realistic budget."
+modified: 2026-11-13 00:23:00 +0100
+description: "See what $1,500 or $3,000 a month can cover for your Rails app, with senior developers from $50/hour, architect time at $80/hour and clear spending limits."
 tags: [rails, maintenance, technical-ownership]
 featured_post: false
 toc: true
@@ -15,32 +15,32 @@ A monthly Rails maintenance price is useful only when you know what it buys. Two
 
 When taking over an existing application, I would separate the initial investigation from recurring upkeep and planned changes. The investigation can reveal missing access, unsupported dependencies or a fragile deployment that makes the original estimate incomplete.
 
-This guide explains how to scope a Rails maintenance budget, including how WideFix prices team capacity. WideFix plans start at $1,500 a month, about 30 developer hours. The final scope depends on your application's condition, support requirements and development priorities.
+This guide explains how to scope a Rails maintenance budget, including how WideFix prices team capacity. Plans start at $1,500 a month, about 30 developer hours at the $50 starting rate. The final scope depends on your application's condition, support requirements and development priorities.
 
 ## What does a Rails maintenance team cost?
 
 WideFix prices team capacity, and all prices here are in USD. **Senior developers start from $50 per hour. A solutions architect is $80 per hour** and joins for planning, reviews and architecture decisions rather than for every hour of the week. Most of the hours go to a senior developer. Capacity ranges from a small monthly plan to larger engagements of 25 to 40 team hours a week.
 
-| Budget | Capacity | Illustrative split | What it can cover |
+| Budget | Team hours | Illustrative split | What it can cover |
 | --- | --- | --- | --- |
-| $1,500 a month | About 30 hours a month, roughly 7 a week | Mostly developer time | Routine upkeep: dependency review, monitoring follow-up and small fixes |
-| $3,000 a month | About 60 hours a month, roughly 14 a week | Mostly developer time | Upkeep plus mid-size features, depending on the application |
-| About $5,807 a month ($1,340 a week) | 25 hours a week | 22 developer hours + 3 architect hours | Upkeep with room for planned improvements |
-| About $9,187 a month ($2,120 a week) | 40 hours a week | 36 developer hours + 4 architect hours | Upkeep and feature work in one backlog |
+| $1,500 a month | About 30 a month (7 a week) | Mostly developer time | Routine upkeep: dependency review, monitoring follow-up and small fixes |
+| $3,000 a month | About 60 a month (14 a week) | Mostly developer time | Upkeep plus mid-size features, depending on the application |
+| About $5,807 a month ($1,340 a week) | 25 a week (about 108 a month) | 22 developer hours + 3 architect hours | Upkeep with room for planned improvements |
+| About $9,187 a month ($2,120 a week) | 40 a week (about 173 a month) | 36 developer hours + 4 architect hours | Upkeep and feature work in one backlog |
 
-Monthly figures use 52 ÷ 12 weeks. Other budgets are simply hours × rate: at the $50 starting developer rate, each $1,000 buys about 20 developer hours. These splits are examples, not packages. The right mix depends on how much planning, review and decision-making your application needs compared with hands-on development.
+Hours use the $50 developer and $80 architect rates. Each architect hour costs 1.6 developer hours, so more architect time means fewer hours within the same budget. Weekly engagements are converted to monthly figures using 52 ÷ 12 weeks. These splits are examples, not packages.
 
-We agree the weekly or monthly capacity and the split with you before work starts. Work beyond that capacity needs your approval. Unused hours are credited as a proportional discount on your next invoice. On monthly plans up to $3,000, the initial assessment is included in the first month's hours. For engagements of 25 to 40 hours a week, it is priced case by case, because it depends on access, documentation and the state of the code.
+We agree the weekly or monthly capacity and the split with you before work starts. Work beyond that capacity needs your approval. Planning, investigation, testing and deployment count toward the hours. Unused hours are credited as a proportional discount on your next invoice. On monthly plans up to $3,000, the initial assessment is included in the first month's hours. For engagements of 25 to 40 hours a week, it is priced case by case, because it depends on access, documentation and the state of the code.
 
 Whether this capacity fits your application depends on its condition, integrations and expected workload. We review those factors with you, agree on priorities and define a realistic scope before starting.
 
 ## What if my budget is $1,500 a month?
 
-A smaller budget can still protect your application. At the $50 starting developer rate, $1,500 buys about 30 developer hours a month, roughly 7 hours a week. Each solutions architect hour at $80 uses up 1.6 developer hours of that budget, so architect time would be used sparingly.
+A smaller budget can still fund useful maintenance. At the $50 starting developer rate, $1,500 buys about 30 developer hours a month, roughly 7 hours a week. Architect time comes out of the same budget: two architect hours cost $160, leaving 26.8 developer hours.
 
 What the $1,500 plan includes:
 
-- The initial assessment, within the first month's hours.
+- The initial assessment, which uses part of the first month's hours. How much depends on your application.
 - A proportional credit on your next invoice for unused hours.
 - Support hours, incident coverage and notice set out in your agreement before work begins. Continuous out-of-hours coverage is not implied.
 - The option to stage an upgrade if your application runs on a Rails version that no longer receives security fixes. We can work in small steps within the monthly hours; how many steps it takes depends on how far behind the application is, and a step that will not fit gets its own estimate.
@@ -54,15 +54,23 @@ With a small budget, I would spend the hours in this order:
 3. Follow up on errors and monitoring alerts that your customers are likely to notice.
 4. Fix small problems in the workflows your business uses every day.
 
-Anything outside that list waits or gets its own estimate. A smaller plan has less room for surprises, so tell us which workflow matters most to your business.
+These are starting priorities, not a fixed task list. A production incident may displace planned work within the same budget; extra hours still need your approval. Tell us which workflow matters most to your business so we can prioritize accordingly.
 
 **[Tell us what you want to improve and your monthly budget](/ruby-on-rails-maintenance). We'll help you turn both into a realistic plan.**
+
+## What if my budget is $3,000 a month?
+
+At the $50 starting developer rate, $3,000 buys about 60 developer hours a month. That leaves room to add a mid-size feature alongside upkeep, instead of limiting the work to small fixes. What fits depends on your application, so we estimate a feature against your codebase, including testing and deployment, before agreeing what to deliver.
+
+For a real example of a feature added to an existing product, see how we [expanded Costa Del Home's property-management CRM](/showcases/costa-del-home-crm-enhancement) to support multiple managers per property. That showcase is not a $3,000 package or evidence of how many hours it took.
+
+Architect time and urgent maintenance come out of the same monthly hours. If a feature needs more than the budget allows, extra hours need your approval before we go over.
 
 ## What can larger capacity cover?
 
 At larger weekly capacity, and depending on the application, a few weeks of work could cover moving to another server, investigating and fixing a performance bottleneck, building a feature, or completing a defined stage of a larger upgrade or redesign.
 
-Investigation, testing and deployment form part of your time allocation. We agree on how urgent maintenance affects planned feature work and explain when a larger task needs to span multiple months.
+We agree on how urgent maintenance affects planned feature work and explain when a larger task needs to span multiple months.
 
 Larger applications, wider support coverage or more ambitious development plans may need more than 40 hours a week or additional specialists. **We can assemble a broader team and adjust capacity as your needs grow.** Our [Worship Online maintenance showcase](/showcases/worshiponline-application-support-maintenance) explains how we coordinated specialist expertise around the product's needs and budget.
 
@@ -83,9 +91,9 @@ Keep hosting, paid monitoring, third-party subscriptions and specialist audits v
 
 Assume one Rails application, working deployment access, usable tests, documented integrations and no unresolved production incident. The business needs dependency review, monitoring follow-up and occasional small fixes.
 
-Ask for a recurring allocation with a prioritized backlog and a spending ceiling. For illustration, a $1,500 monthly plan gives about 30 developer hours, roughly 7 hours a week. Specify how often dependencies and alerts are reviewed, what counts as a small fix and what happens to unused time. A major framework upgrade or a new integration needs its own estimate if it will not fit the allocation, although a long upgrade can be staged in smaller steps.
+Ask for a recurring allocation with a prioritized backlog and a spending ceiling. For illustration, a $1,500 monthly plan buys about 30 developer hours at $50/hour. Specify how often dependencies and alerts are reviewed, what counts as a small fix and what happens to unused time. A major framework upgrade or a new integration needs its own estimate if it will not fit the allocation, although a long upgrade can be staged in smaller steps.
 
-The useful output is a record of completed work, remaining risks and the next priority. A quiet month should not leave you guessing whether maintenance happened.
+The useful output is a record of completed work, hours used, remaining risks and the next priority. If fewer hours are needed, the unused portion becomes a credit on the next invoice.
 
 ### Maintenance plus product development after takeover
 
@@ -97,7 +105,7 @@ This scope needs technical ownership as well as implementation. Ask who makes ar
 
 ## Turn the scope into a budget
 
-For an hourly proposal, use **agreed capacity × agreed rate**, then add any separately priced assessment and known external costs. For a fixed monthly proposal, list included tasks and limits, setup fees, overage rules and exclusions. Keep a reserve only if you agree what triggers its use; it should not authorize unlimited extra work.
+For an hourly proposal, use **developer hours × developer rate + architect hours × architect rate**, then add any separately priced assessment and known external costs. For a fixed monthly proposal, list included tasks and limits, setup fees, overage rules and exclusions. Keep a reserve only if you agree what triggers its use; it should not authorize unlimited extra work.
 
 Ask each provider to price the same assumptions. If one proposal includes a major Rails upgrade and another excludes it, comparing monthly totals will mislead you. If capacity is flexible, agree how changes are requested and when the new budget takes effect.
 
@@ -114,11 +122,15 @@ Hiring, freelancers, fixed-tier retainers and capacity-based pricing solve diffe
 | Fixed-tier retainer | A predictable monthly fee | Included hours, support limits and what falls outside the tier |
 | Capacity-based plan | Hours matched to your priorities, with a developer and an architect as needed | You must agree priorities and approve work beyond the agreed capacity |
 
-Published retainer prices vary widely. As of November 12, 2026, [Rumrail lists Rails maintenance plans](https://rumrail.com/) at $1,795 per month plus a one-time $995 setup fee, $3,500 per month and from $5,500 per month, with included support described differently in each tier. Our $1,500 plan, about 30 developer hours a month, is closest to Rumrail's entry tier, which lists limited support hours without stating a number. Our $3,000 plan, about 60 developer hours, is priced just below Rumrail's $3,500 tier. At the rates above, WideFix's 25 to 40 team hours a week comes to roughly $5,400 to $9,200 a month, closer to a dedicated-engineer plan. These are not like-for-like quotes. Compare what each proposal includes, not only the monthly total, using the [maintenance company comparison](/blog/ruby-on-rails-maintenance-companies/).
+As of November 12, 2026, [Rumrail lists Rails maintenance plans](https://rumrail.com/) at $1,795 per month plus a one-time $995 setup fee, $3,500 per month and from $5,500 per month. Its entry tier lists limited support hours without stating a number.
+
+WideFix's $1,500 and $3,000 monthly budgets are lower than those first two listed fees, but that does not establish equivalent coverage or better value. Our illustrative 25- and 40-hour weekly teams cost about $5,807 and $9,187 per month respectively. Compare included hours, responsibilities, setup costs and coverage, not only the monthly total. The [maintenance company comparison](/blog/ruby-on-rails-maintenance-companies/) can help you ask the same questions of each provider.
 
 ## What can delayed maintenance cost?
 
-The [Rails maintenance policy](https://rubyonrails.org/maintenance) gives each minor release series bug fixes for one year and security fixes for two years after its first release. After that, it says, dealing with bugs and security issues is your own responsibility unless you upgrade. An application on an unsupported series therefore carries security work that nobody else is doing. In my experience, the upgrade also grows more expensive the longer it waits.
+The [Rails maintenance policy](https://rubyonrails.org/maintenance) normally gives each minor release series bug fixes for one year and security fixes for two years after its first release. Check the policy for your release's support dates and any extensions. After support ends, you cannot rely on new official releases to fix its bugs and security issues; you need an upgrade or an explicitly maintained alternative. In my experience, the upgrade also grows more expensive the longer it waits.
+
+Staging an upgrade helps control spending, but it does not restore official support while the old version remains in production. We assess the immediate risks as well as the upgrade work.
 
 Not every saving is about security. When we moved Costa Del Home from Heroku to AWS with Dokku, its monthly hosting bill fell from €400 to €50, which is €4,200 a year at those prices. That result came from one project's circumstances and is not a guarantee for yours.
 
@@ -138,15 +150,15 @@ Not every saving is about security. When we moved Costa Del Home from Heroku to 
 
 ### How much does Rails maintenance cost at WideFix?
 
-Plans start at $1,500 a month, about 30 developer hours. Senior developers start from $50 per hour and a solutions architect is $80 per hour. Larger engagements run 25 to 40 team hours a week, roughly $5,400 to $9,200 a month with the example splits above. More architect time raises the total, and the final figure depends on your application.
+Plans start at $1,500 a month, about 30 developer hours at the $50 starting rate. Architect time is $80 per hour and comes out of the same budget. The illustrative 25- and 40-hour weekly teams above cost about $5,807 and $9,187 a month. Your agreed rates and role split determine the final figure.
 
 ### What can I get for $1,500 a month?
 
-About 30 developer hours a month, which can cover routine upkeep but not heavy feature development or a redesign.
+About 30 developer hours at the $50 starting rate. This can cover routine upkeep. Heavy feature development or a redesign needs more capacity or a staged plan.
 
 ### What can I get for $3,000 a month?
 
-About 60 developer hours a month. That can cover routine upkeep and mid-size features, depending on your application.
+About 60 developer hours at the $50 starting rate. That can cover routine upkeep and mid-size features, depending on your application.
 
 ### Do I pay for an architect during every hour?
 
@@ -182,7 +194,7 @@ These showcases illustrate the kinds of work we deliver, from improving existing
 - **Restore reliable processing.** We [repaired ShopWired's stalled background-job queue](/showcases/shopwired-queue-optimization), improved monitoring and eliminated recurring Heroku H12 errors.
 - **Add functionality to an existing product.** We [expanded Costa Del Home's property-management CRM](/showcases/costa-del-home-crm-enhancement) to support multiple managers per property, migrating existing relationships without downtime.
 - **Modernize in stages.** We [redesigned Worship Online's Rails application incrementally](/showcases/ruby-on-rails-redesign), keeping the service available and preserving compatibility with existing mobile clients.
-- **Launch an MVP quickly.** For an urgent client request, we [built TMA Sport's Lokkaroom financial report](/showcases/tma-sport-lokkaroom-financial-report) on Rails and ActiveAdmin, consolidating transactions and charges from EventCube, Shopify and Stripe. Before building, we compared Zapier with a purpose-built solution across 17 criteria.
+- **Build a focused MVP.** For an urgent client request, we [built TMA Sport's Lokkaroom financial report](/showcases/tma-sport-lokkaroom-financial-report) on Rails and ActiveAdmin, consolidating transactions and charges from EventCube, Shopify and Stripe. Before building, we compared Zapier with a purpose-built solution across 17 criteria.
 - **Build a SaaS product with AI.** [Beeplan](/showcases/beeplan-crm-ai-project-manager) is a Rails CRM for creatives and studios with Beevo, an AI project manager built into the product. Yasir Guzman, a member of our team, built it. Its Flutter apps for iOS and Android are in development.
 - **Grow an MVP into a product.** [Korner](/showcases/korner-sports-club-management-platform) began as a court-booking MVP and grew into a sports club platform with a Rails backend and a Flutter app on both app stores. Yasir built it too and owns the product.
 
