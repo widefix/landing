@@ -23,6 +23,7 @@ export function generateMetadata({ params }: { params: { directory: string } }):
   return {
     title,
     description: referral.description,
+    robots: { index: false, follow: true },
     alternates: { canonical: url },
     twitter: { ...socialTwitter('/img/contact.jpg', 'Contact WideFix'), title, description: referral.description },
     openGraph: {

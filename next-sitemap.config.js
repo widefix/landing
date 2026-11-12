@@ -4,6 +4,7 @@ const { join } = require('node:path');
 module.exports = {
   siteUrl: 'https://widefix.com',
   generateRobotsTxt: true,
+  exclude: ['/contact/*'],
   // Client-rendered showcase routes are absent from the build's static routes.
   additionalPaths: async (config) => {
     const source = readFileSync(join(__dirname, 'src/showcases.tsx'), 'utf8');
