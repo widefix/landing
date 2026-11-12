@@ -2,8 +2,8 @@
 layout: post
 title: "Ruby on Rails maintenance cost: how to scope a useful budget"
 headline: "Budget for the work your existing Rails application needs"
-modified: 2026-11-07 12:00:00 +0100
-description: "Separate Rails onboarding, recurring maintenance, incidents and feature delivery to compare quotes with clear assumptions and spending controls."
+modified: 2026-11-12 22:00:00 +0100
+description: "Explore Rails maintenance starting at $2,000 per month, what approximately 40 engineering hours can cover, and how to scope a realistic budget."
 tags: [rails, maintenance, technical-ownership]
 featured_post: false
 toc: true
@@ -15,7 +15,40 @@ A monthly Rails maintenance price is useful only when you know what it buys. Two
 
 When taking over an existing application, I would separate the initial investigation from recurring upkeep and planned changes. The investigation can reveal missing access, unsupported dependencies or a fragile deployment that makes the original estimate incomplete.
 
-This is a scoping guide, not a price list. WideFix quotes the assessment and ongoing work against the application's needs; the examples below are illustrative scopes, not observed averages, fixed packages or delivery promises.
+This guide explains how to scope a Rails maintenance budget, including WideFix's starting engagement of $2,000 per month. The final scope depends on your application's condition, support requirements and development priorities.
+
+## What can you achieve with $2,000 a month?
+
+You don't need a full-time engineering team to move your Rails application forward. **WideFix engagements can start at $2,000 per month**, providing approximately 40 hours of engineering work for a small-business Rails application with manageable support needs.
+
+Whether that budget fits your application depends on its condition, integrations and expected workload. We review those factors with you, agree on priorities and define a realistic scope before starting.
+
+Depending on the application, a month's work could cover moving to another server, investigating and fixing a performance bottleneck, building a feature, or completing a defined stage of a larger upgrade or redesign.
+
+### Examples from our work
+
+These showcases illustrate the kinds of improvements we deliver. Each project had its own scope; they are not fixed $2,000 packages or evidence that the complete project took 40 hours.
+
+- **Reduce hosting costs.** We [moved Costa Del Home from Heroku to AWS with Dokku](/showcases/costa-del-home-heroku-to-aws), reducing its monthly hosting bill from €400 to €50.
+- **Restore reliable processing.** We [repaired ShopWired's stalled background-job queue](/showcases/shopwired-queue-optimization), improved monitoring and eliminated recurring Heroku H12 errors.
+- **Add functionality to an existing product.** We [expanded Costa Del Home's property-management CRM](/showcases/costa-del-home-crm-enhancement) to support multiple managers per property, migrating existing relationships without downtime.
+- **Modernize in stages.** We [redesigned Worship Online's Rails application incrementally](/showcases/ruby-on-rails-redesign), keeping the service available and preserving compatibility with existing mobile clients.
+
+Investigation, testing and deployment form part of your time allocation. We agree on how urgent maintenance affects planned feature work and explain when a larger task needs to span multiple months.
+
+Larger applications, wider support coverage or more ambitious development plans may require a higher budget and additional specialists. **We can assemble a broader team and adjust capacity as your needs grow.** Our [Worship Online maintenance showcase](/showcases/worshiponline-application-support-maintenance) explains how we coordinated specialist expertise around the product's needs and budget.
+
+### Experienced engineers and clear technical ownership
+
+You work directly with experienced engineers who maintain and improve real production applications. Modern tools, including AI, help us reduce repetitive work and spend more of the available time solving your business problems.
+
+**Andrei Kaleshka, WideFix founder and solutions architect, is involved in planning, prioritization, defining scope and selecting the right engineers for each engagement.** You have someone connecting the technical work to your business priorities. We agree on how planning and specialist time count toward the allocation before work begins.
+
+My teammates and I have also built and tried launching our own products, gaining firsthand experience with limited budgets and product decisions. [BudgetingKid](/showcases/budgetingkid), our family-budgeting application, is one example of taking an idea through development and deciding on its commercial future.
+
+We agree on spending limits, explain trade-offs and report what was delivered, what remains and what needs your decision. If your goals exceed the available budget, we propose a phased plan.
+
+**[Tell us what you want to improve and your monthly budget](/ruby-on-rails-maintenance). We'll help you turn both into a realistic plan.**
 
 ## Separate four parts of the budget
 
@@ -59,14 +92,15 @@ Avoid equating acknowledgement with resolution. An engineer can acknowledge an i
 - Which application, background workers and integrations are included?
 - What access and documentation must the business provide?
 - What does the assessment produce, and when do we agree the recurring scope?
+- How do planning, coordination and specialist time count toward the allocation?
 - Which hours and time zone are covered, and what happens outside that window?
 - Who approves extra work, and when is an estimate revised?
 - How do unused capacity, incidents and feature requests affect the budget?
 - Who owns technical decisions, and what absence cover is actually available?
 - What notice and handover work apply when the engagement ends?
 
-## Use delivery evidence to test the assumptions
+## Agree on the next step
 
-WideFix's [Worship Online maintenance case](/showcases/worshiponline-application-support-maintenance) describes takeover, defect fixes, tests and continued delivery. Its value for budgeting is the range of responsibilities, not a transferable monthly price. Our [ShopWired queue recovery case](/showcases/shopwired-queue-optimization) illustrates why job dispatch and integrations can need focused investigation before routine upkeep is enough. Neither case establishes a universal maintenance cost.
+Use the showcases above to discuss the responsibilities and outcomes you need. Then ask for a scope based on your own application; another project's results do not establish its maintenance cost or yours.
 
 At WideFix, taking over existing Ruby on Rails applications means establishing technical ownership before committing to an ongoing maintenance plan. For an initial discussion, send your Ruby and Rails versions, hosting, current problem and desired support through our [Rails maintenance page](/ruby-on-rails-maintenance). For an aging codebase, our [legacy Rails maintenance service](/legacy-ruby-on-rails-maintenance) describes incremental upgrade work. Bring the same assumptions to every conversation; the [maintenance company comparison](/blog/ruby-on-rails-maintenance-companies/) can help form a shortlist.
