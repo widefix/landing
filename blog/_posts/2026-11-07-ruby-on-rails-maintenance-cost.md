@@ -2,7 +2,7 @@
 layout: post
 title: "Ruby on Rails maintenance cost: what you can get from $1,500 a month"
 headline: "Budget for the work your existing Rails application needs"
-modified: 2026-11-13 00:55:00 +0100
+modified: 2026-11-13 01:00:00 +0100
 description: "See what $1,500 or $3,000 a month can cover for your Rails app, with senior developers from $50/hour, architect time at $80/hour and clear spending limits."
 tags: [rails, maintenance, technical-ownership]
 featured_post: false
@@ -30,7 +30,7 @@ WideFix prices team capacity, and all prices here are in USD. **Senior developer
 
 Hours use the $50 developer and $80 architect rates. Each architect hour costs 1.6 developer hours, so more architect time means fewer hours within the same budget. Weekly engagements are converted to monthly figures using 52 ÷ 12 weeks. These splits are examples, not packages.
 
-To see these figures with your own numbers, open the [team cost calculator](/team-cost-calculator) with [$1,500 a month](/team-cost-calculator#v=3&mode=budget&architect-share=7&rate-architect=80&rate-developer=50&rate-qa=35&budget=1500&qa-share=0), [$3,000 a month](/team-cost-calculator#v=3&mode=budget&architect-share=7&rate-architect=80&rate-developer=50&rate-qa=35&budget=3000&qa-share=0), [25 hours a week](/team-cost-calculator#v=3&mode=team&architect-share=12&rate-architect=80&rate-developer=50&rate-qa=35&developer-count=1&developer-hours=22&qa-count=0&qa-hours=2) or [40 hours a week](/team-cost-calculator#v=3&mode=team&architect-share=10&rate-architect=80&rate-developer=50&rate-qa=35&developer-count=1&developer-hours=36&qa-count=0&qa-hours=2). It starts from these rates and lets you change the budget, the architect share and every rate. Its result is a planning estimate, not a quote.
+To see these figures with your own numbers, open the [team cost calculator](/team-cost-calculator) with [$1,500 a month][calc-1500], [$3,000 a month][calc-3000], [25 hours a week][calc-25h] or [40 hours a week][calc-40h]. It starts from these rates and lets you change the budget, the architect share and every rate. The calculator counts architect time inside the budget, so at a 7% architect share $1,500 gives 28.8 team hours and $3,000 gives 57.6, slightly below the developer-only figures of 30 and 60 above. Its result is a planning estimate, not a quote.
 
 We agree the weekly or monthly capacity and the split with you before work starts. Work beyond that capacity needs your approval. Planning, investigation, testing and deployment count toward the hours. Unused hours are credited as a proportional discount on your next invoice. On monthly plans up to $3,000, the initial assessment is included in the first month's hours. For engagements of 25 to 40 hours a week, it is priced case by case, because it depends on access, documentation and the state of the code.
 
@@ -58,19 +58,19 @@ With a small budget, I would spend the hours in this order:
 
 These are starting priorities, not a fixed task list. A production incident may displace planned work within the same budget; extra hours still need your approval. Tell us which workflow matters most to your business so we can prioritize accordingly.
 
-To see how the hours change with your own architect share or rates, [open the calculator with $1,500 a month](/team-cost-calculator#v=3&mode=budget&architect-share=7&rate-architect=80&rate-developer=50&rate-qa=35&budget=1500&qa-share=0).
+To see how the hours change with your own architect share or rates, [open the calculator with $1,500 a month][calc-1500].
 
 **[Tell us what you want to improve and your monthly budget](/ruby-on-rails-maintenance). We'll help you turn both into a realistic plan.**
 
 ## What if my budget is $3,000 a month?
 
-At the $50 starting developer rate, $3,000 buys about 60 developer hours a month. That leaves room to add a mid-size feature alongside upkeep, instead of limiting the work to small fixes. What fits depends on your application, so we estimate a feature against your codebase, including testing and deployment, before agreeing what to deliver.
+At the $50 starting developer rate, $3,000 buys about 60 developer hours a month. With a 7% architect share, that is about 4 architect hours and 53.6 developer hours. This still leaves room to add a mid-size feature alongside upkeep, instead of limiting the work to small fixes. What fits depends on your application, so we estimate a feature against your codebase, including testing and deployment, before agreeing what to deliver.
 
 For a real example of a feature added to an existing product, see how we [expanded Costa Del Home's property-management CRM](/showcases/costa-del-home-crm-enhancement) to support multiple managers per property. That showcase is not a $3,000 package or evidence of how many hours it took.
 
 Architect time and urgent maintenance come out of the same monthly hours. If a feature needs more than the budget allows, extra hours need your approval before we go over.
 
-[Open the calculator with $3,000 a month](/team-cost-calculator#v=3&mode=budget&architect-share=7&rate-architect=80&rate-developer=50&rate-qa=35&budget=3000&qa-share=0) to see the hours at your own architect share and rates.
+[Open the calculator with $3,000 a month][calc-3000] to see the hours at your own architect share and rates.
 
 ## What can larger capacity cover?
 
@@ -160,11 +160,11 @@ Plans start at $1,500 a month, about 30 developer hours at the $50 starting rate
 
 ### What can I get for $1,500 a month?
 
-About 30 developer hours at the $50 starting rate. This can cover routine upkeep. Heavy feature development or a redesign needs more capacity or a staged plan. [See $1,500 a month in the calculator](/team-cost-calculator#v=3&mode=budget&architect-share=7&rate-architect=80&rate-developer=50&rate-qa=35&budget=1500&qa-share=0).
+About 30 developer hours at the $50 starting rate. This can cover routine upkeep. Heavy feature development or a redesign needs more capacity or a staged plan. [See $1,500 a month in the calculator][calc-1500].
 
 ### What can I get for $3,000 a month?
 
-About 60 developer hours at the $50 starting rate. That can cover routine upkeep and mid-size features, depending on your application. [See $3,000 a month in the calculator](/team-cost-calculator#v=3&mode=budget&architect-share=7&rate-architect=80&rate-developer=50&rate-qa=35&budget=3000&qa-share=0).
+About 60 developer hours at the $50 starting rate. That can cover routine upkeep and mid-size features, depending on your application. [See $3,000 a month in the calculator][calc-3000].
 
 ### Do I pay for an architect during every hour?
 
@@ -211,3 +211,12 @@ Products like these still need technical ownership after launch. That ongoing wo
 Use the showcases above to discuss the responsibilities and outcomes you need. Then ask for a scope based on your own application; another project's results do not establish its maintenance cost or yours.
 
 At WideFix, taking over existing Ruby on Rails applications means establishing technical ownership before committing to an ongoing maintenance plan. For an initial discussion, send your Ruby and Rails versions, hosting, current problem, desired support and your monthly budget through our [Rails maintenance page](/ruby-on-rails-maintenance). To see what your budget buys first, try the [team cost calculator](/team-cost-calculator). For an aging codebase, our [legacy Rails maintenance service](/legacy-ruby-on-rails-maintenance) describes incremental upgrade work. Bring the same assumptions to every conversation; the [maintenance company comparison](/blog/ruby-on-rails-maintenance-companies/) can help form a shortlist.
+
+{% comment %}
+Calculator links carry the starting rates (80, 50 and 35) in the URL. Regenerate them if prices change.
+{% endcomment %}
+
+[calc-1500]: /team-cost-calculator#v=3&mode=budget&architect-share=7&rate-architect=80&rate-developer=50&rate-qa=35&budget=1500&qa-share=0
+[calc-3000]: /team-cost-calculator#v=3&mode=budget&architect-share=7&rate-architect=80&rate-developer=50&rate-qa=35&budget=3000&qa-share=0
+[calc-25h]: /team-cost-calculator#v=3&mode=team&architect-share=12&rate-architect=80&rate-developer=50&rate-qa=35&developer-count=1&developer-hours=22&qa-count=0&qa-hours=2
+[calc-40h]: /team-cost-calculator#v=3&mode=team&architect-share=10&rate-architect=80&rate-developer=50&rate-qa=35&developer-count=1&developer-hours=36&qa-count=0&qa-hours=2
