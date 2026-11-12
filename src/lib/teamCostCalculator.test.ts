@@ -1,121 +1,201 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import {
-  dailyTeamCost, defaultTeam, fieldError, teamFragment, teamFromFragment,
-  validTeam, workingPeriods,
+  defaultRates, defaultState, estimate, examples, isValid, periodTotals, stateFragment,
+  stateFromFragment, totalHours, validate, type CalculatorState,
 } from './teamCostCalculator.ts';
 
-test('default team requires an architect at $80 per hour for two hours daily', () => {
-  const team = defaultTeam();
-  assert.equal(dailyTeamCost(team), 160);
-  assert.equal(team.developer.rate, '50');
-  assert.equal(team.qa.rate, '35');
-  team.architect.count = '0';
-  assert.equal(validTeam(team), false);
-  assert.throws(() => dailyTeamCost(team));
-  assert.throws(() => teamFragment(team));
+function close(actual: number, expected: number, tolerance = 0.01) {
+  assert.ok(Math.abs(actual - expected) <= tolerance, `${actual} is not within ${tolerance} of ${expected}`);
+}
+
+function example(id: string): CalculatorState {
+  const found = examples.find(item => item.id === id);
+  assert.ok(found, id);
+  return found.build();
+}
+
+function team(overrides: Partial<CalculatorState> = {}): CalculatorState {
+  return { ...defaultState(), mode: 'team', ...overrides };
+}
+
+test('defaults use the published starting rates and open in budget mode without a budget', () => {
+  const state = defaultState();
+  assert.deepEqual(state.rates, defaultRates);
+  assert.deepEqual(defaultRates, { architect: '80', developer: '50', qa: '35' });
+  assert.equal(state.mode, 'budget');
+  assert.equal(state.budget, '');
+  assert.ok(validate(state).budget);
+  assert.throws(() => estimate(state));
+  assert.throws(() => stateFragment(state));
 });
 
-test('all role combinations and agreed working periods produce the expected totals', () => {
-  for (const [developer, qa, expected] of [
-    [false, false, 160], [true, false, 560], [false, true, 230], [true, true, 630],
-  ] as const) {
-    const team = defaultTeam();
-    team.developer.count = developer ? '1' : '0';
-    team.qa.count = qa ? '1' : '0';
-    assert.equal(dailyTeamCost(team), expected);
+test('the default team is valid and costs about $1,531 a month', () => {
+  const state = team();
+  assert.ok(isValid(state));
+  const periods = periodTotals(estimate(state));
+  close(periods[0].cost, 353.33);
+  close(periods[1].cost, 1531.11);
+});
+
+test('$1,500 a month at 7% architect share matches the article: about 28.8 hours, 2 architect hours', () => {
+  const result = estimate(example('budget-1500'));
+  const [week, month, quarter, year] = periodTotals(result);
+  close(month.cost, 1500);
+  close(quarter.cost, 4500);
+  close(year.cost, 18000);
+  close(week.cost, 346.15);
+  close(month.hours, 28.79);
+  close(result.weeklyHours.architect * 52 / 12, 2.02);
+  close(result.weeklyHours.developer * 52 / 12, 26.78);
+  close(month.hours, 1500 / (0.07 * 80 + 0.93 * 50), 1e-9);
+});
+
+test('$3,000 a month doubles the hours of $1,500 at the same split', () => {
+  const small = totalHours(estimate(example('budget-1500')).weeklyHours);
+  const large = totalHours(estimate(example('budget-3000')).weeklyHours);
+  close(large, small * 2, 1e-9);
+  close(periodTotals(estimate(example('budget-3000')))[1].hours, 57.58);
+});
+
+test('team examples reproduce the 25 and 40 hour weekly figures in the article', () => {
+  const small = estimate(example('team-25'));
+  close(small.weeklyHours.architect, 3, 1e-9);
+  close(totalHours(small.weeklyHours), 25, 1e-9);
+  close(small.weeklyCost, 1340, 1e-9);
+  close(periodTotals(small)[1].cost, 5806.67);
+
+  const large = estimate(example('team-40'));
+  close(large.weeklyHours.architect, 4, 1e-9);
+  close(totalHours(large.weeklyHours), 40, 1e-9);
+  close(large.weeklyCost, 2120, 1e-9);
+  close(periodTotals(large)[1].cost, 9186.67);
+});
+
+test('a 20% architect share with 32 developer hours reproduces the takeover example', () => {
+  const result = estimate(team({ developerHours: '32', architectShare: '20' }));
+  close(result.weeklyHours.architect, 8, 1e-9);
+  close(result.weeklyCost, 2240, 1e-9);
+  close(periodTotals(result)[1].cost, 9706.67);
+});
+
+test('headcounts multiply hours per person and the architect share follows total team hours', () => {
+  const result = estimate(team({ developerCount: '3', developerHours: '10', qaCount: '2', qaHours: '5', architectShare: '10' }));
+  assert.equal(result.weeklyHours.developer, 30);
+  assert.equal(result.weeklyHours.qa, 10);
+  close(result.weeklyHours.architect, 4.444, 0.001);
+  close(totalHours(result.weeklyHours) * 0.1, result.weeklyHours.architect, 1e-9);
+  close(result.weeklyCost, 2205.56);
+});
+
+test('setting headcount to zero removes a role and custom rates apply', () => {
+  const state = team({ developerCount: '0', qaCount: '2', qaHours: '4', rates: { architect: '100', developer: '50', qa: '40' } });
+  const result = estimate(state);
+  assert.equal(result.weeklyHours.developer, 0);
+  close(result.weeklyHours.architect, 8 * 0.1 / 0.9, 1e-9);
+  close(result.weeklyCost, 8 * 40 + (8 * 0.1 / 0.9) * 100, 1e-9);
+});
+
+test('budget mode supports QA shares and a zero developer share', () => {
+  const withQa = { ...defaultState(), budget: '3000', architectShare: '10', qaShare: '20' };
+  const qaResult = estimate(withQa);
+  close(qaResult.weeklyHours.qa / totalHours(qaResult.weeklyHours), 0.2, 1e-9);
+  const all = { ...defaultState(), budget: '1000', architectShare: '50', qaShare: '50' };
+  assert.ok(isValid(all));
+  assert.equal(estimate(all).weeklyHours.developer, 0);
+  assert.equal(validate({ ...all, qaShare: '51' }).qaShare, 'Architect and QA shares together cannot exceed 100%.');
+});
+
+test('free rates are allowed unless the whole team would be free', () => {
+  const free = { ...defaultState(), budget: '1000', rates: { architect: '0', developer: '0', qa: '0' } };
+  assert.ok(validate(free).rates);
+  assert.throws(() => estimate(free));
+  assert.ok(isValid({ ...free, rates: { architect: '0', developer: '50', qa: '0' } }));
+});
+
+test('invalid inputs never produce estimates or links', () => {
+  for (const value of ['', ' ', '-1', 'NaN', 'Infinity', '1e309', '1000001']) {
+    assert.ok(validate(team({ rates: { ...defaultRates, developer: value } }))['rate-developer'], `rate ${value}`);
   }
-  const totals = workingPeriods.map(period => 630 * period.days);
-  assert.deepEqual(totals, [3150, 13650, 40950, 163800]);
-});
-
-test('fractional hours, custom rates and free work are supported', () => {
-  const team = defaultTeam();
-  team.architect = { count: '1', hours: '1.5', rate: '92.75' };
-  team.qa = { count: '1', hours: '.25', rate: '0' };
-  assert.equal(dailyTeamCost(team), 139.125);
-});
-
-test('invalid inputs never produce estimates or share links', () => {
-  for (const value of ['', ' ', '-1', 'NaN', 'Infinity', '1e309']) {
-    assert.ok(fieldError(value, 'rate'));
-    assert.ok(fieldError(value, 'hours'));
+  for (const value of ['', '0', '-1', '60.01', 'abc']) {
+    assert.ok(validate(team({ developerHours: value })).developerHours, `hours ${value}`);
+    assert.ok(validate(team({ qaHours: value })).qaHours, `QA hours ${value}`);
   }
-  assert.ok(fieldError('0', 'hours'));
-  assert.ok(fieldError('24.01', 'hours'));
-  assert.ok(fieldError('1000001', 'rate'));
-  assert.equal(fieldError('24', 'hours'), undefined);
-  assert.equal(fieldError('0', 'rate'), undefined);
-  const team = defaultTeam();
-  team.architect.hours = '';
-  assert.throws(() => dailyTeamCost(team));
-  assert.throws(() => teamFragment(team));
-});
-
-test('share links round-trip all selections, hours and rates without mutating defaults', () => {
-  const team = defaultTeam();
-  team.developer = { count: '3', rate: '61.25', hours: '6.5' };
-  team.qa = { count: '2', rate: '42.5', hours: '1.5' };
-  const fragment = teamFragment(team);
-  assert.deepEqual(teamFromFragment(`#${fragment}`), team);
-  assert.equal(teamFragment(teamFromFragment(fragment)), fragment);
-  assert.notEqual(fragment, teamFragment(defaultTeam()));
-  assert.equal(defaultTeam().developer.count, '0');
-});
-
-test('malformed, incomplete and unsupported shared configurations are rejected', () => {
-  const fragment = teamFragment(defaultTeam());
-  for (const invalid of [
-    '', 'garbage', fragment.replace('v=2', 'v=3'),
-    fragment.replace('architect-count=1', 'architect-count=0'),
-    fragment.replace('architect-count=1', 'architect-count=2'),
-    fragment.replace('architect-rate=80', 'architect-rate=-80'),
-    fragment.replace('architect-hours=2', 'architect-hours=25'),
-    fragment.replace('architect-hours=2', 'architect-hours='),
-    fragment.replace('qa-count=0', 'qa-count=yes'),
-    fragment.replace('qa-count=0', 'qa-count=1.5'),
-    fragment.replace('developer-count=0', 'developer-count=-1'),
-    fragment.replace('&developer-count=0', ''),
-    fragment.replace('&qa-hours=2', ''),
-    `${fragment}&v=2`,
-  ]) {
-    assert.throws(() => teamFromFragment(invalid));
+  for (const value of ['', '-1', '1.5', '1001', 'abc']) {
+    assert.ok(validate(team({ developerCount: value })).developerCount, `count ${value}`);
+  }
+  for (const value of ['', '0', '0.99', '50.01', '100']) {
+    assert.ok(validate(team({ architectShare: value })).architectShare, `share ${value}`);
+  }
+  for (const value of ['', '0', '-5', '1000001']) {
+    assert.ok(validate({ ...defaultState(), budget: value }).budget, `budget ${value}`);
+  }
+  for (const state of [team({ developerHours: '' }), { ...defaultState(), budget: '0' }]) {
+    assert.throws(() => estimate(state));
+    assert.throws(() => stateFragment(state));
   }
 });
 
-test('multiple developers and QA multiply each role cost across all working periods', () => {
-  const team = defaultTeam();
-  team.developer.count = '3';
-  team.qa.count = '2';
-  assert.equal(dailyTeamCost(team), 1500);
-  assert.deepEqual(workingPeriods.map(period => dailyTeamCost(team) * period.days),
-    [7500, 32500, 97500, 390000]);
-  team.developer.count = '0';
-  assert.equal(dailyTeamCost(team), 300);
-  team.qa.count = '0';
-  assert.equal(dailyTeamCost(team), 160);
+test('a team mode estimate needs at least one developer or QA hour', () => {
+  const state = team({ developerCount: '0', qaCount: '0' });
+  assert.ok(validate(state).team);
+  assert.throws(() => estimate(state));
+  assert.ok(isValid(team({ developerCount: '0', qaCount: '1' })));
 });
 
-test('counts must be nonnegative safe whole numbers', () => {
-  for (const count of ['', ' ', '-1', '1.5', 'Infinity', 'NaN', '9007199254740992']) {
-    assert.ok(fieldError(count, 'count'));
-    const team = defaultTeam();
-    team.developer.count = count;
-    assert.equal(validTeam(team), false);
-    assert.throws(() => dailyTeamCost(team));
-    assert.throws(() => teamFragment(team));
+test('only the selected mode is validated', () => {
+  assert.ok(isValid({ ...defaultState(), budget: '1500', developerHours: '' }));
+  assert.ok(isValid(team({ budget: '', qaShare: 'x' })));
+});
+
+test('share links round-trip both modes without mutating defaults', () => {
+  const budget = { ...defaultState(), budget: '2750.5', architectShare: '8', qaShare: '15', rates: { architect: '90', developer: '55', qa: '40' } };
+  const team1 = team({ developerCount: '3', developerHours: '12.5', qaCount: '2', qaHours: '4', architectShare: '12.5' });
+  for (const state of [budget, team1, example('budget-1500'), example('team-40')]) {
+    const fragment = stateFragment(state);
+    const loaded = stateFromFragment(`#${fragment}`);
+    assert.equal(stateFragment(loaded), fragment);
+    assert.equal(loaded.mode, state.mode);
+    assert.equal(loaded.architectShare, String(Number(state.architectShare)));
+    close(estimate(loaded).weeklyCost, estimate(state).weeklyCost, 1e-9);
   }
-  assert.equal(fieldError('0', 'count'), undefined);
-  assert.equal(fieldError('12', 'count'), undefined);
+  assert.deepEqual(defaultState().rates, defaultRates);
+  assert.equal(defaultState().budget, '');
 });
 
-test('original shared links still restore zero or one person per role', () => {
-  const fragment = 'v=1&architect-included=1&architect-rate=90&architect-hours=3&developer-included=1&developer-rate=55&developer-hours=6&qa-included=0&qa-rate=40&qa-hours=2';
-  const team = teamFromFragment(fragment);
-  assert.equal(team.architect.count, '1');
-  assert.equal(team.developer.count, '1');
-  assert.equal(team.qa.count, '0');
-  assert.equal(dailyTeamCost(team), 600);
-  assert.deepEqual(teamFromFragment(teamFragment(team)), team);
-  assert.throws(() => teamFromFragment(fragment.replace('developer-included=1', 'developer-included=2')));
+test('links carry only the fields for their mode', () => {
+  const budgetKeys = Array.from(new URLSearchParams(stateFragment(example('budget-1500'))).keys());
+  assert.ok(budgetKeys.includes('budget') && budgetKeys.includes('qa-share'));
+  assert.ok(!budgetKeys.includes('developer-count'));
+  const teamKeys = Array.from(new URLSearchParams(stateFragment(example('team-25'))).keys());
+  assert.ok(teamKeys.includes('developer-hours') && teamKeys.includes('qa-count'));
+  assert.ok(!teamKeys.includes('budget'));
+});
+
+test('malformed, incomplete, mixed and unsupported links are rejected', () => {
+  const budget = stateFragment(example('budget-1500'));
+  const teamFragment = stateFragment(example('team-25'));
+  const invalid = [
+    '', 'garbage', 'v=3', budget.replace('v=3', 'v=2'), budget.replace('v=3', 'v=4'),
+    budget.replace('mode=budget', 'mode=other'), budget.replace('mode=budget', 'mode=team'),
+    budget.replace(/&budget=[^&]*/, ''), `${budget}&developer-hours=6`, `${budget}&v=3`, `${budget}&extra=1`,
+    budget.replace('budget=1500', 'budget='), budget.replace('budget=1500', 'budget=-1'),
+    budget.replace('architect-share=7', 'architect-share=0'), budget.replace('architect-share=7', 'architect-share=51'),
+    budget.replace('qa-share=0', 'qa-share=95'), budget.replace('rate-developer=50', 'rate-developer=abc'),
+    teamFragment.replace('developer-hours=22', 'developer-hours=61'), teamFragment.replace('qa-count=0', 'qa-count=1.5'),
+    teamFragment.replace('developer-count=1', 'developer-count=0'),
+    teamFragment.replace(/&qa-hours=[^&]*/, ''),
+  ];
+  for (const fragment of invalid) {
+    assert.throws(() => stateFromFragment(fragment), fragment);
+  }
+});
+
+test('every example is valid and uses the published starting rates', () => {
+  for (const item of examples) {
+    const state = item.build();
+    assert.ok(isValid(state), item.id);
+    assert.deepEqual(state.rates, defaultRates);
+    assert.ok(totalHours(estimate(state).weeklyHours) > 0);
+  }
 });

@@ -14,11 +14,16 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Team cost calculator
 
-Visit `/team-cost-calculator` (also linked in the footer) to estimate a team budget in USD. One solution architect is required; developer and QA headcounts are editable nonnegative whole numbers, with zero excluding that role. Default hourly rates per person are $80, $50 and $35 respectively. The initial example uses two architect hours per working day; optional roles start at zero people, with eight developer hours and two QA hours per person.
+Visit `/team-cost-calculator` (also linked in the footer) to plan a team budget in USD. The page has two modes, and its logic lives in [teamCostCalculator.ts](src/lib/teamCostCalculator.ts):
 
-Rates and daily hours per person are editable and apply equally to everyone in that role. Each role's daily cost is headcount × hourly rate × daily hours per person. Estimates use 5 working days per week, 260 / 12 per month, 65 per quarter and 260 per year, excluding adjustments for holidays, time off, taxes or extra costs. Daily hours must be greater than zero and at most 24; rates can range from $0 to $1,000,000 per hour. Fields for excluded roles remain editable and must also be valid before sharing.
+- **I have a monthly budget** turns a budget into team hours. Set the architect's share of team hours (1% to 50%) and an optional QA share; developers cover the rest.
+- **I have a team in mind** turns a team into a cost. One solution architect is always included; developer and QA headcounts are whole numbers (zero leaves a role out) with hours per person per week.
 
-The share link updates with the configuration. Version 2 URL fragments preserve all headcounts, rates and hours without server storage, and work with static exports. Original version 1 links still load, mapping included roles to one person and excluded roles to zero. Links are not access-controlled: anyone with a link can read the configuration. Editing a received estimate produces a new link and does not change the original. Invalid shared configurations display an error and explicitly show defaults.
+The architect is counted as a share of total team hours, so the team needs at least one developer or QA hour. Starting hourly rates are $80 architect, $50 developer and $35 QA, defined once in `defaultRates`; keep the blog posts and service pages in sync when they change. All rates are editable, from $0 to $1,000,000 per hour. Hours per person must be above 0 and at most 60 a week. The page opens in budget mode with no budget, and example buttons ($1,500 and $3,000 a month, 25 and 40 hours a week) match the figures in the maintenance cost article.
+
+Estimates use the same hours every week: a month averages 52 ÷ 12 weeks, a quarter 13 weeks and a year 52 weeks, with no adjustment for holidays, time off, taxes or extra costs. Only the fields for the selected mode must be valid.
+
+The share link updates with the configuration. Version 3 URL fragments hold the mode and only that mode's fields, without server storage, and work with static exports. Earlier versions of the link, which used daily hours, are not supported and show the invalid-link message with defaults. Links are not access-controlled: anyone with a link can read the configuration. Editing a received estimate produces a new link and does not change the original.
 
 Run the calculator's unit tests with Node.js 22.6 or newer:
 
