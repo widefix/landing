@@ -10,6 +10,9 @@ export const roleNames: Record<RoleId, string> = {
 // Single source for the published starting rates; keep the blog and service pages in sync.
 export const defaultRates: Record<RoleId, string> = { architect: '80', developer: '50', qa: '35' };
 
+// Update when rates are reviewed; shown on the maintenance page and in the calculator.
+export const pricesAsOf = 'November 2026';
+
 export const periods = [
   { id: 'week', name: 'Week', weeks: 1, label: '1 week' },
   { id: 'month', name: 'Month', weeks: 52 / 12, label: '52 ÷ 12 weeks on average' },
@@ -62,6 +65,8 @@ export function defaultState(): CalculatorState {
   };
 }
 
+export const exampleArchitectShare = '7';
+
 export const examples = [
   { id: 'budget-1500', label: '$1,500 a month', build: () => budgetExample('1500') },
   { id: 'budget-3000', label: '$3,000 a month', build: () => budgetExample('3000') },
@@ -70,7 +75,7 @@ export const examples = [
 ] as const;
 
 function budgetExample(budget: string): CalculatorState {
-  return { ...defaultState(), mode: 'budget', budget, architectShare: '7' };
+  return { ...defaultState(), mode: 'budget', budget, architectShare: exampleArchitectShare };
 }
 
 function teamExample(developerHours: string, architectShare: string): CalculatorState {
@@ -243,4 +248,57 @@ export function stateFromFragment(fragment: string): CalculatorState {
   }
   if (!isValid(state)) throw new Error('Invalid values in calculator link.');
   return state;
+}
+
+export type PricingPlan = {
+  id: 'budget-1500' | 'budget-3000' | 'weekly';
+  title: string;
+  hours: string;
+  coverage: string;
+  href: string;
+  linkLabel: string;
+};
+
+const wholeNumber = new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 });
+const dollars = (value: number) => `$${wholeNumber.format(value)}`;
+
+function exampleById(id: typeof examples[number]['id']): CalculatorState {
+  const found = examples.find(item => item.id === id);
+  if (!found) throw new Error(`Unknown example ${id}`);
+  return found.build();
+}
+
+function calculatorPath(state: CalculatorState): string {
+  return `/team-cost-calculator#${stateFragment(state)}`;
+}
+
+// Published plan figures come from the calculator's own examples so the site cannot drift from it.
+export function pricingPlans(): PricingPlan[] {
+  const monthly = (id: 'budget-1500' | 'budget-3000', title: string, coverage: string): PricingPlan => {
+    const state = exampleById(id);
+    const [week, month] = periodTotals(estimate(state));
+    return {
+      id,
+      title,
+      hours: `About ${wholeNumber.format(month.hours)} team hours a month, roughly ${wholeNumber.format(week.hours)} a week`,
+      coverage,
+      href: calculatorPath(state),
+      linkLabel: `See ${title} in the calculator`,
+    };
+  };
+  const small = exampleById('team-25');
+  const smallMonth = periodTotals(estimate(small))[1].cost;
+  const largeMonth = periodTotals(estimate(exampleById('team-40')))[1].cost;
+  return [
+    monthly('budget-1500', '$1,500 a month', 'Routine upkeep for a healthy application: dependency review, monitoring follow-up and small fixes.'),
+    monthly('budget-3000', '$3,000 a month', 'Upkeep with room for features alongside it. Each feature is estimated against your codebase before we agree what to deliver.'),
+    {
+      id: 'weekly',
+      title: '25 to 40 hours a week',
+      hours: `About ${dollars(smallMonth)} to ${dollars(largeMonth)} a month`,
+      coverage: 'Upkeep with planned improvements and feature work in one backlog. The initial assessment is priced case by case.',
+      href: calculatorPath(small),
+      linkLabel: 'See 25 hours a week in the calculator',
+    },
+  ];
 }
