@@ -15,6 +15,11 @@ image_svg: slow-delayed-job-queues.svg
 author:
     name: Samuel Ebeagu
     linkedin: ebeagusamuel
+reviewers:
+    - name: Andrei Kaleshka
+      linkedin: ka8725
+    - name: Yasir Guzman
+      linkedin: yasir-guzman
 ---
 
 *"Some jobs are waiting in the queue for too long."*
@@ -254,4 +259,4 @@ None of these were dramatic bugs. Each was a reasonable decision that stopped be
 
 Background jobs are easy to overlook when you take over a Rails application, because they fail quietly. A queue with no worker, an unset environment variable or a job-picking rule written years ago keeps running until a customer notices that their exports are late. For application owners, that means delayed orders, stale stock and alerts nobody trusts. For the team, it means investigations that depend on whoever remembers how the queues were set up.
 
-Part of taking technical ownership is knowing which process runs each queue, what each alert actually measures, and whether worker counts match what the dynos can handle. If you are inheriting a Rails app with background jobs, start by listing every queue next to the process and dyno that runs it, then check how your alerts measure wait time. If you would like help with that, our [Ruby on Rails application takeover](/ruby-on-rails-application-takeover) and [ongoing Rails maintenance](/ruby-on-rails-maintenance) work is a good place to start. For another example of monitoring noise hiding real problems, see [how bot scans used up a Rollbar quota and triggered New Relic alerts](https://widefix.com/blog/bot-scans-rollbar-quota-new-relic-alerts/).
+Part of taking technical ownership is knowing which process runs each queue, what each alert actually measures, and whether worker counts match what the dynos can handle. If you are inheriting a Rails app with background jobs, start by listing every queue next to the process and dyno that runs it, then check how your alerts measure wait time. If you would like help with that, our [Ruby on Rails application takeover](/ruby-on-rails-application-takeover) and [ongoing Rails maintenance](/ruby-on-rails-maintenance) work is a good place to start. For another example of monitoring noise hiding real problems, see [how bot scans used up a Rollbar quota and triggered New Relic alerts](/blog/bot-scans-rollbar-quota-new-relic-alerts/).
