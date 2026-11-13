@@ -55,6 +55,7 @@
 .rails-faq-answer { padding-bottom: 24px; }
 .rails-home .rails-faq-answer p { color: #5f6675; margin: 0; font-size: 16px; line-height: 1.75; }
 .rails-home .rails-faq-answer p + p { margin-top: 16px; }
+.rails-home .rails-faq-answer a { display: inline-block; margin-top: 16px; color: #245c94; font-weight: 600; text-underline-offset: 5px; }
 @media (max-width: 900px) { .rails-home .rails-section .rails-faq-grid { grid-template-columns: 1fr; gap: 32px; } }
 @media (max-width: 600px) { .rails-faq summary { font-size: 17px; gap: 16px; } }
 @media (max-width: 1000px) {

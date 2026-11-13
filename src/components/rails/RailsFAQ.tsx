@@ -1,4 +1,53 @@
-const questions = [
+import Link from 'next/link';
+import LinkIndicator from '@/components/LinkIndicator';
+import { defaultRates, exampleArchitectShare, pricesAsOf, pricingPlans } from '@/lib/teamCostCalculator';
+
+type Question = { question: string; answer: string; detail: string; href?: string; linkLabel?: string };
+
+const lowerFirst = (text: string) => text.charAt(0).toLowerCase() + text.slice(1);
+const [smallPlan, mediumPlan, weeklyPlan] = pricingPlans();
+const pricingHref = '/ruby-on-rails-maintenance#pricing';
+
+const costQuestion: Question = {
+  question: 'How much does Rails maintenance cost?',
+  answer: `Plans start at ${smallPlan.title}. That buys ${lowerFirst(smallPlan.hours)}. Senior developers start from $${defaultRates.developer} per hour and a solutions architect is $${defaultRates.architect} per hour. Larger products run 25 to 40 team hours a week, ${lowerFirst(weeklyPlan.hours)}. Prices are current as of ${pricesAsOf}.`,
+  detail: 'The final scope depends on the condition of the application, the support you need and whether you also want new development. We agree it with you before work begins.',
+  href: pricingHref,
+  linkLabel: 'See pricing and plan terms',
+};
+
+const pricingQuestions: Question[] = [
+  {
+    question: `What can I get for ${smallPlan.title}?`,
+    answer: `${smallPlan.hours}, at a ${exampleArchitectShare}% architect share. ${smallPlan.coverage} Heavy feature development or a redesign needs a larger budget or a staged plan.`,
+    detail: 'Architect time comes out of the same budget. If your Rails version no longer receives security fixes, we can stage the upgrade in small steps.',
+    href: smallPlan.href,
+    linkLabel: `See ${smallPlan.title} in the calculator`,
+  },
+  {
+    question: 'Can I see what my budget buys before we talk?',
+    answer: 'Yes. The team cost calculator turns a monthly budget into team hours, or a team into a weekly, monthly, quarterly and yearly cost. You can change every rate and the architect share, share the result with a partner, or send it to us.',
+    detail: `The calculator starts from the published rates: $${defaultRates.developer} for a senior developer and $${defaultRates.architect} for a solutions architect.`,
+    href: '/team-cost-calculator',
+    linkLabel: 'Open the team cost calculator',
+  },
+  {
+    question: 'What if I need more hours, or use fewer?',
+    answer: 'Work beyond the agreed capacity needs your approval before we go over, and capacity can be adjusted as your needs change. Unused hours are credited as a proportional discount on your next invoice.',
+    detail: 'Planning, investigation, testing and deployment count toward the hours.',
+    href: pricingHref,
+    linkLabel: 'Read the plan terms',
+  },
+  {
+    question: 'Is the initial assessment included in the price?',
+    answer: `On monthly plans up to ${mediumPlan.title.replace(' a month', '')}, it is included in the first month's hours. For engagements of 25 to 40 hours a week it is priced case by case, because it depends on access, documentation and the state of the code.`,
+    detail: 'The assessment covers access, documentation, deployment and the first priorities, so the recurring scope can be agreed on facts.',
+    href: pricingHref,
+    linkLabel: 'Read the plan terms',
+  },
+];
+
+const questions: Question[] = [
   {
     question: 'Can you take over an application if our previous developer has left?',
     answer: 'Yes. We specialize in taking over existing Rails applications, including projects where the original developer or agency is no longer available. We start by understanding the codebase, infrastructure, and business priorities.',
@@ -24,11 +73,7 @@ const questions = [
     answer: 'Not necessarily. We discuss the application, priorities and expected workload before recommending a focused takeover, ongoing maintenance or maintenance with development.',
     detail: 'We will explain the proposed scope and engagement terms before work begins. The first conversation does not commit you to a full development contract.',
   },
-  {
-    question: 'How much does Rails maintenance cost?',
-    answer: 'It depends on the size and condition of the application, the support coverage you need and whether you also want new development. We can discuss an appropriate scope after learning about your situation.',
-    detail: 'Rather than quoting an invented fixed price, we clarify priorities, expected workload and working arrangements before proposing an engagement.',
-  },
+  costQuestion,
   {
     question: 'What happens if production breaks?',
     answer: 'We start by understanding the impact, available monitoring and recovery options. As part of the handover we agree on incident contacts, responsibilities and response expectations.',
@@ -51,7 +96,8 @@ const questions = [
   },
 ];
 
-export default function RailsFAQ({ detailed = false }: { detailed?: boolean }) {
+export default function RailsFAQ({ detailed = false, pricing = false }: { detailed?: boolean; pricing?: boolean }) {
+  const items = pricing ? questions.flatMap(item => (item === costQuestion ? [item, ...pricingQuestions] : [item])) : questions;
   return (
     <section className="rails-section rails-tinted rails-faq-section" id="faq" aria-labelledby="rails-faq-title">
       <div className="inner rails-faq-grid">
@@ -61,10 +107,10 @@ export default function RailsFAQ({ detailed = false }: { detailed?: boolean }) {
           <p className="rails-intro">You can bring us the problem. We&apos;ll help you understand what the application needs and take responsibility for the next steps.</p>
         </div>
         <div className="rails-faq">
-          {questions.map(({ question, answer, detail }) => (
+          {items.map(({ question, answer, detail, href, linkLabel }) => (
             <details key={question}>
               <summary>{question}</summary>
-              <div className="rails-faq-answer"><p>{answer}</p>{detailed && <p>{detail}</p>}</div>
+              <div className="rails-faq-answer"><p>{answer}</p>{detailed && <p>{detail}</p>}{href && <Link href={href}>{linkLabel} <LinkIndicator /></Link>}</div>
             </details>
           ))}
           {detailed && <details><summary>What should I bring to the first call?</summary><div className="rails-faq-answer"><p>Tell us what the application does, who currently maintains it, and what is most urgent. Share the repository, documentation, and infrastructure information you have when we agree on the review. You do not need to prepare a technical audit before talking to us.</p></div></details>}
