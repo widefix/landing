@@ -18,7 +18,7 @@ export default function MaintenancePricing() {
         <h2 id="maintenance-pricing-title">Starting prices for Rails maintenance</h2>
         <p className="rails-intro">
           WideFix prices team capacity in hours, in USD. Senior developers start from ${defaultRates.developer} per hour and a solutions architect is ${defaultRates.architect} per hour.
-          Hours below include a {exampleArchitectShare}% architect share, so architect time comes out of the same budget.
+          The monthly plans include a {exampleArchitectShare}% architect share; the weekly examples use 12% at 25 hours and 10% at 40 hours. Architect time is included in the stated hours and costs.
         </p>
         <div className="rails-card-grid">
           {plans.map(plan => (
