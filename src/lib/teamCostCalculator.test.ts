@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import {
-  defaultRates, defaultState, estimate, examples, isValid, periodTotals, stateFragment,
+  defaultRates, defaultState, estimate, exampleArchitectShare, examples, isValid, periodTotals, pricingPlans, stateFragment,
   stateFromFragment, totalHours, validate, type CalculatorState,
 } from './teamCostCalculator.ts';
 
@@ -197,5 +197,27 @@ test('every example is valid and uses the published starting rates', () => {
     assert.ok(isValid(state), item.id);
     assert.deepEqual(state.rates, defaultRates);
     assert.ok(totalHours(estimate(state).weeklyHours) > 0);
+  }
+});
+
+test('published pricing plans come from the calculator examples and match the article', () => {
+  const plans = pricingPlans();
+  assert.deepEqual(plans.map(plan => plan.id), ['budget-1500', 'budget-3000', 'weekly']);
+  assert.equal(plans[0].hours, 'About 29 team hours a month, roughly 7 a week');
+  assert.equal(plans[1].hours, 'About 58 team hours a month, roughly 13 a week');
+  assert.equal(plans[2].hours, 'About $5,807 to $9,187 a month');
+  assert.equal(exampleArchitectShare, '7');
+  for (const plan of plans) {
+    assert.ok(plan.href.startsWith('/team-cost-calculator#'), plan.id);
+    const state = stateFromFragment(plan.href.split('#')[1]);
+    assert.deepEqual(state.rates, defaultRates);
+    assert.ok(!plan.title.endsWith('.'), 'titles must not end with a period');
+    assert.ok(plan.coverage.length > 0 && plan.linkLabel.endsWith('in the calculator'));
+  }
+  assert.equal(stateFromFragment(plans[0].href.split('#')[1]).budget, '1500');
+  assert.equal(stateFromFragment(plans[1].href.split('#')[1]).budget, '3000');
+  assert.equal(stateFromFragment(plans[2].href.split('#')[1]).developerHours, '22');
+  for (const plan of plans.slice(0, 2)) {
+    assert.ok(!/mid-size/i.test(plan.coverage), 'the mid-size claim was deliberately removed');
   }
 });

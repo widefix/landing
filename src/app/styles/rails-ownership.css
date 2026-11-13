@@ -81,6 +81,8 @@
 .rails-home .rails-service-list { margin-top: 20px; padding-left: 20px; list-style: disc; color: #5f6675; line-height: 1.65; }
 .rails-service-list li + li { margin-top: 8px; }
 .rails-service-grid .rails-card > a { margin-top: auto; padding-top: 24px; }
+.rails-pricing-terms { margin-top: 24px; }
+.rails-pricing-terms h3 { margin: 0; }
 .rails-home .rails-section .rails-advisory-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: start; }
 .rails-founder-card > img { border-radius: 50%; margin-bottom: 24px; }
 @media (max-width: 700px) {
