@@ -2,8 +2,8 @@
 layout: post
 title: "Ruby on Rails maintenance cost: what you can get from $1,500 a month"
 headline: "Budget for the work your existing Rails application needs"
-modified: 2026-11-13 01:00:00 +0100
-description: "See what $1,500 or $3,000 a month can cover for your Rails app, with senior developers from $50/hour, architect time at $80/hour and clear spending limits."
+modified: 2026-11-13 01:05:00 +0100
+description: "See what $1,500 or $3,000 a month buys for your Rails app: developers from $50/hour, architect time at $80/hour, and a calculator for your own budget."
 tags: [rails, maintenance, technical-ownership]
 featured_post: false
 toc: true
@@ -68,7 +68,7 @@ At the $50 starting developer rate, $3,000 buys about 60 developer hours a month
 
 For a real example of a feature added to an existing product, see how we [expanded Costa Del Home's property-management CRM](/showcases/costa-del-home-crm-enhancement) to support multiple managers per property. That showcase is not a $3,000 package or evidence of how many hours it took.
 
-Architect time and urgent maintenance come out of the same monthly hours. If a feature needs more than the budget allows, extra hours need your approval before we go over.
+Urgent maintenance comes out of the same monthly hours. If a feature needs more than the budget allows, extra hours need your approval before we go over.
 
 [Open the calculator with $3,000 a month][calc-3000] to see the hours at your own architect share and rates.
 
