@@ -558,6 +558,14 @@ body.blog-modern .article-byline img {
 .article-byline a {
   font-weight: 600;
 }
+.article-reviewers {
+  margin: 12px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+.article-reviewers a {
+  font-weight: 600;
+}
 .article-cover {
   border-radius: var(--radius);
   overflow: hidden;
@@ -677,6 +685,18 @@ body.blog-modern .article-author img {
 .article-author a {
   font-size: 13px;
   font-weight: 600;
+}
+body.blog-modern .article-contact a.button-link {
+  gap: 12px;
+  margin-top: 4px;
+  background: #193b59;
+  color: #fff !important;
+  font-size: 14px;
+}
+body.blog-modern .article-contact a.button-link:hover,
+body.blog-modern .article-contact a.button-link:focus-visible {
+  background-color: #1c527d;
+  box-shadow: 0 0 0 3px rgba(28, 82, 125, 0.25);
 }
 .related-posts {
   margin-top: 60px;
