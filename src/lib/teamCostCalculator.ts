@@ -302,3 +302,45 @@ export function pricingPlans(): PricingPlan[] {
     },
   ];
 }
+
+const oneDecimal = new Intl.NumberFormat('en-US', { maximumFractionDigits: 1 });
+const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
+
+export function estimateContactPath(state: CalculatorState): string {
+  return `/contact?estimate=${encodeURIComponent(stateFragment(state))}`;
+}
+
+// Rebuilds every figure from a validated link, so a crafted URL cannot put arbitrary text in the form.
+export function estimateContactMessage(fragment: string, origin: string): string | undefined {
+  let state: CalculatorState;
+  try {
+    state = stateFromFragment(fragment);
+  } catch {
+    return undefined;
+  }
+  const result = estimate(state);
+  const [week, month] = periodTotals(result);
+  const rate = (id: RoleId) => `$${Number(state.rates[id])}`;
+  const lines = ['I would like to discuss this estimate from the WideFix team cost calculator.', ''];
+  if (state.mode === 'budget') {
+    lines.push(
+      `Monthly budget: ${money.format(Number(state.budget))}`,
+      `Team hours: about ${oneDecimal.format(month.hours)} a month (${oneDecimal.format(week.hours)} a week)`,
+    );
+  } else {
+    lines.push(
+      `Developers: ${Number(state.developerCount)} × ${Number(state.developerHours)} hours a week`,
+      `QA specialists: ${Number(state.qaCount)} × ${Number(state.qaHours)} hours a week`,
+      `Estimated cost: ${money.format(week.cost)} a week, ${money.format(month.cost)} a month`,
+    );
+  }
+  lines.push(
+    `Architect share of team hours: ${Number(state.architectShare)}%`,
+    `Hourly rates: architect ${rate('architect')}, developer ${rate('developer')}, QA ${rate('qa')}`,
+    `Estimate: ${origin}/team-cost-calculator#${stateFragment(state)}`,
+    '',
+    'About my Rails application:',
+    '',
+  );
+  return lines.join('\n');
+}

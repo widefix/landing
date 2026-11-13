@@ -3,8 +3,9 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import LinkIndicator from '@/components/LinkIndicator';
+import { RailsCall } from '@/components/rails/RailsOwnership';
 import {
-  defaultState, estimate, examples, limits, periodTotals, periods, pricesAsOf, roleIds, roleNames,
+  defaultState, estimate, estimateContactPath, examples, limits, periodTotals, periods, pricesAsOf, roleIds, roleNames,
   stateFragment, stateFromFragment, validate,
   type CalculatorState, type FieldName, type RoleId,
 } from '@/lib/teamCostCalculator';
@@ -279,6 +280,10 @@ export default function TeamCostCalculator() {
                       : 'Correct the highlighted fields to see your estimate and generate a shareable link.'}
                   </p>
                 )}
+              </div>
+              <div className={styles.cta}>
+                <RailsCall>Discuss this plan with WideFix</RailsCall>
+                <Link href={valid ? estimateContactPath(state) : '/contact'} className={styles.textLink}>{valid ? 'Send this estimate to WideFix' : 'Prefer to write? Get in touch'} <LinkIndicator /></Link>
               </div>
               <p className={styles.assumptions}>Months average 52 ÷ 12 weeks; quarters use 13 weeks and years 52. Assumes the same hours every week, without holidays or time off. Architect time is counted as a share of total team hours.</p>
               <p className={styles.disclaimer}>Planning estimate in USD, not a quote. Starting rates are current as of {pricesAsOf} and may change. Taxes and any additional costs are not included.</p>

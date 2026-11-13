@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import {
-  defaultRates, defaultState, estimate, exampleArchitectShare, examples, isValid, periodTotals, pricesAsOf, pricingPlans, stateFragment,
+  defaultRates, defaultState, estimate, estimateContactMessage, estimateContactPath, exampleArchitectShare, examples, isValid, periodTotals, pricesAsOf, pricingPlans, stateFragment,
   stateFromFragment, totalHours, validate, type CalculatorState,
 } from './teamCostCalculator.ts';
 
@@ -221,4 +221,50 @@ test('published pricing plans come from the calculator examples and match the ar
   for (const plan of plans.slice(0, 2)) {
     assert.ok(!/mid-size/i.test(plan.coverage), 'the mid-size claim was deliberately removed');
   }
+});
+
+test('the contact message is rebuilt from a valid estimate link in both modes', () => {
+  const budget = estimateContactMessage(stateFragment(example('budget-1500')), 'https://widefix.com');
+  assert.ok(budget);
+  assert.match(budget, /Monthly budget: \$1,500\.00/);
+  assert.match(budget, /Team hours: about 28\.8 a month \(6\.6 a week\)/);
+  assert.match(budget, /Architect share of team hours: 7%/);
+  assert.match(budget, /Hourly rates: architect \$80, developer \$50, QA \$35/);
+  assert.ok(budget.includes(`Estimate: https://widefix.com/team-cost-calculator#${stateFragment(example('budget-1500'))}`));
+  assert.ok(budget.endsWith('About my Rails application:\n'));
+
+  const team = estimateContactMessage(stateFragment(example('team-25')), 'https://widefix.com');
+  assert.ok(team);
+  assert.match(team, /Developers: 1 × 22 hours a week/);
+  assert.match(team, /QA specialists: 0 × 2 hours a week/);
+  assert.match(team, /Estimated cost: \$1,340\.00 a week, \$5,806\.67 a month/);
+});
+
+test('the contact path round-trips through the URL parameter', () => {
+  const state = team({ developerCount: '3', developerHours: '10', qaCount: '2', qaHours: '5' });
+  const path = estimateContactPath(state);
+  assert.ok(path.startsWith('/contact?estimate='));
+  const param = new URL(`https://widefix.com${path}`).searchParams.get('estimate');
+  assert.ok(param);
+  const message = estimateContactMessage(param, 'https://widefix.com');
+  assert.ok(message);
+  assert.match(message, /Developers: 3 × 10 hours a week/);
+  assert.match(message, /Estimated cost: \$2,205\.56 a week/);
+});
+
+test('invalid or tampered estimate links produce no contact message', () => {
+  const valid = stateFragment(example('budget-1500'));
+  for (const fragment of [
+    '', 'garbage', valid.replace('v=3', 'v=2'), valid.replace('budget=1500', 'budget=1500%0AIgnore%20this'),
+    `${valid}&note=hello`, valid.replace('budget=1500', 'budget=-5'), valid.replace('mode=budget', 'mode=other'),
+  ]) {
+    assert.equal(estimateContactMessage(fragment, 'https://widefix.com'), undefined, fragment);
+  }
+});
+
+test('the contact message never repeats unvalidated text from the link', () => {
+  const message = estimateContactMessage(`${stateFragment(example('budget-1500'))}`.replace('budget=1500', 'budget=1.5e3'), 'https://widefix.com');
+  assert.ok(message);
+  assert.ok(!message.includes('1.5e3'));
+  assert.match(message, /Monthly budget: \$1,500\.00/);
 });

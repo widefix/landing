@@ -3,7 +3,7 @@
 import type { ClutchReferral } from '@/lib/clutchReferral'
 import { useState, FormEvent } from 'react'
 
-export default function ContactForm({ referral }: { referral?: ClutchReferral }) {
+export default function ContactForm({ referral, estimateMessage }: { referral?: ClutchReferral; estimateMessage?: string }) {
   const [result, setResult] = useState<string>("");
   const [resultType, setResultType] = useState<'success' | 'error' | ''>('');
 
@@ -66,7 +66,7 @@ export default function ContactForm({ referral }: { referral?: ClutchReferral })
         <div className="form-row">
           <div className="form-field full-width">
             <label htmlFor="message" className="form-label">Application Details</label>
-            <textarea id="message" name="message" className="form-textarea" rows={4} placeholder={`Tell us about your ${referral?.focus ?? 'Rails application'}, current challenges, and what you want to build next...`}></textarea>
+            <textarea key={estimateMessage ?? 'blank'} id="message" name="message" className="form-textarea" rows={estimateMessage ? 10 : 4} defaultValue={estimateMessage} placeholder={`Tell us about your ${referral?.focus ?? 'Rails application'}, current challenges, and what you want to build next...`}></textarea>
           </div>
         </div>
 

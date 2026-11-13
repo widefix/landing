@@ -25,6 +25,8 @@ Estimates use the same hours every week: a month averages 52 ÷ 12 weeks, a quar
 
 The share link updates with the configuration. Version 3 URL fragments hold the mode and only that mode's fields, without server storage, and work with static exports. Earlier versions of the link, which used daily hours, are not supported and show the invalid-link message with defaults. Links are not access-controlled: anyone with a link can read the configuration. Editing a received estimate produces a new link and does not change the original.
 
+Inside the results block, "Discuss this plan with WideFix" opens the Calendly call, like the site's other discuss buttons. "Send this estimate to WideFix" opens `/contact?estimate=…` with the message pre-filled. The contact page rebuilds that message from the validated link, so every figure comes from the calculator's own code and an invalid or tampered link leaves the form empty.
+
 Run the calculator's unit tests with Node.js 22.6 or newer:
 
 ```bash

@@ -5,7 +5,7 @@ import ClientTrust from '@/components/rails/ClientTrust'
 import ClutchAwards from '@/components/rails/ClutchAwards'
 import ClutchWidget from '@/components/ClutchWidget'
 
-export default function ContactComponent({ referral }: { referral?: ClutchReferral }) {
+export default function ContactComponent({ referral, estimateMessage }: { referral?: ClutchReferral; estimateMessage?: string }) {
   return (
     <>
       <section className="rails-section rails-hero contact-hero" id="contact">
@@ -21,9 +21,9 @@ export default function ContactComponent({ referral }: { referral?: ClutchReferr
           <div className="contact-form-container" aria-labelledby="contact-form-title">
             <div className="form-header">
               <h2 id="contact-form-title">Tell us about your application</h2>
-              <p>{referral ? `Share your goals, current setup and priorities for your ${referral.focus}.` : 'Share your current setup, priorities and any handover concerns.'}</p>
+              <p>{estimateMessage ? 'Your estimate is already in the message below. Add details about your application and priorities.' : referral ? `Share your goals, current setup and priorities for your ${referral.focus}.` : 'Share your current setup, priorities and any handover concerns.'}</p>
             </div>
-            <div className="modern-form"><ContactForm referral={referral} /></div>
+            <div className="modern-form"><ContactForm referral={referral} estimateMessage={estimateMessage} /></div>
           </div>
         </div>
       </section>

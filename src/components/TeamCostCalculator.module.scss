@@ -198,6 +198,19 @@
   th[scope="row"] { font-weight: 600; }
 }
 
+.cta { display: grid; gap: 16px; margin: 28px 0 8px; }
+.page .cta > a:first-child {
+  display: block;
+  height: auto;
+  min-height: 52px;
+  padding: 15px 24px;
+  box-sizing: border-box;
+  line-height: 1.4;
+  text-align: center;
+  white-space: normal;
+}
+.cta > a:last-child { justify-self: start; }
+
 .page .assumptions { margin: 14px 0 0; font-size: 13px; }
 .page .disclaimer { margin: 16px 0; font-size: 12px; }
 .share { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px; margin-top: 48px; padding: 32px; border: 1px solid #d3deec; border-radius: 8px; }
