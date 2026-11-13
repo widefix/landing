@@ -26,7 +26,7 @@ All prices are in USD. **Senior developers start from $50 per hour. A solutions 
 | $1,500 a month | About 29 a month (7 a week) | Routine upkeep: dependency review, monitoring follow-up and small fixes |
 | $3,000 a month | About 58 a month (13 a week) | Upkeep with room for features alongside it, each estimated first |
 
-Larger products run 25 to 40 team hours a week, about $5,807 to $9,187 a month. Weekly figures are converted to monthly ones using 52 ÷ 12 weeks. The [pricing section of our maintenance page][pricing] lists the terms that apply to every plan: approval for extra hours, credit for unused hours, the initial assessment, and support and notice arrangements.
+Larger products run 25 to 40 team hours a week, about $5,807 to $9,187 a month. Weekly figures are converted to monthly ones using 52 ÷ 12 weeks. The [pricing section of our maintenance page][pricing] lists the terms that apply to every plan: approval for extra hours, credit for unused hours, the initial assessment, and support and notice arrangements. Prices are current as of November 2026 and may change; rates are agreed before work begins.
 
 To try your own numbers, open the [team cost calculator](/team-cost-calculator) with [$1,500 a month][calc-1500], [$3,000 a month][calc-3000], [25 hours a week][calc-25h] or [40 hours a week][calc-40h]. You can change the budget, the architect share and every rate. Its results are planning estimates, not quotes.
 
@@ -174,7 +174,7 @@ Ask for a scope based on your own application; another project's results do not 
 At WideFix, taking over existing Ruby on Rails applications means establishing technical ownership before committing to an ongoing maintenance plan. For an initial discussion, send your Ruby and Rails versions, hosting, current problem, desired support and your monthly budget through our [Rails maintenance page](/ruby-on-rails-maintenance). To see what your budget buys first, try the [team cost calculator](/team-cost-calculator). For an aging codebase, our [legacy Rails maintenance service](/legacy-ruby-on-rails-maintenance) describes incremental upgrade work. Bring the same assumptions to every conversation; the [maintenance company comparison](/blog/ruby-on-rails-maintenance-companies/) can help form a shortlist.
 
 {% comment %}
-The hour and price figures above are produced by the calculator (src/lib/teamCostCalculator.ts) at a 7% architect share, and the same code drives the pricing section of /ruby-on-rails-maintenance. Calculator links carry the starting rates (80, 50 and 35) in the URL. Update all of them together if prices change.
+The hour and price figures above are produced by the calculator (src/lib/teamCostCalculator.ts) at a 7% architect share, and the same code drives the pricing section of /ruby-on-rails-maintenance. Calculator links carry the starting rates (80, 50 and 35) in the URL. The "current as of November 2026" note is also set by pricesAsOf in that file. Update all of them together if prices change.
 {% endcomment %}
 
 [pricing]: /ruby-on-rails-maintenance#pricing

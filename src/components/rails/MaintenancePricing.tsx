@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import LinkIndicator from '@/components/LinkIndicator';
 import SituationIcon from './SituationIcon';
-import { defaultRates, exampleArchitectShare, pricingPlans, type PricingPlan } from '@/lib/teamCostCalculator';
+import { defaultRates, exampleArchitectShare, pricesAsOf, pricingPlans, type PricingPlan } from '@/lib/teamCostCalculator';
 
 const icons: Record<PricingPlan['id'], 'priorities' | 'momentum' | 'ownership'> = {
   'budget-1500': 'priorities',
@@ -41,7 +41,7 @@ export default function MaintenancePricing() {
             <li>Planning, investigation, testing and deployment count toward the hours.</li>
           </ul>
         </div>
-        <p className="rails-intro">These are planning figures, not quotes. The final scope depends on your application&apos;s condition, support needs and development priorities.</p>
+        <p className="rails-intro">These are planning figures, not quotes. Prices are current as of {pricesAsOf} and may change; rates are agreed before work begins. The final scope depends on your application&apos;s condition, support needs and development priorities.</p>
         <div className="rails-actions">
           <Link href="/team-cost-calculator">Open the team cost calculator <LinkIndicator /></Link>
           <Link href="/blog/ruby-on-rails-maintenance-cost/">Read how to scope a Rails maintenance budget <LinkIndicator /></Link>

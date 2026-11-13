@@ -10,6 +10,9 @@ export const roleNames: Record<RoleId, string> = {
 // Single source for the published starting rates; keep the blog and service pages in sync.
 export const defaultRates: Record<RoleId, string> = { architect: '80', developer: '50', qa: '35' };
 
+// Update when rates are reviewed; shown on the maintenance page and in the calculator.
+export const pricesAsOf = 'November 2026';
+
 export const periods = [
   { id: 'week', name: 'Week', weeks: 1, label: '1 week' },
   { id: 'month', name: 'Month', weeks: 52 / 12, label: '52 ÷ 12 weeks on average' },

@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import {
-  defaultRates, defaultState, estimate, exampleArchitectShare, examples, isValid, periodTotals, pricingPlans, stateFragment,
+  defaultRates, defaultState, estimate, exampleArchitectShare, examples, isValid, periodTotals, pricesAsOf, pricingPlans, stateFragment,
   stateFromFragment, totalHours, validate, type CalculatorState,
 } from './teamCostCalculator.ts';
 
@@ -201,6 +201,7 @@ test('every example is valid and uses the published starting rates', () => {
 });
 
 test('published pricing plans come from the calculator examples and match the article', () => {
+  assert.match(pricesAsOf, /^[A-Z][a-z]+ \d{4}$/, 'pricesAsOf must read like "November 2026"');
   const plans = pricingPlans();
   assert.deepEqual(plans.map(plan => plan.id), ['budget-1500', 'budget-3000', 'weekly']);
   assert.equal(plans[0].hours, 'About 29 team hours a month, roughly 7 a week');
