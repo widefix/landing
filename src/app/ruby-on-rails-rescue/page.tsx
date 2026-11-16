@@ -8,7 +8,7 @@ const service: FocusedService = {
   "intro": "Recurring crashes, stalled jobs and broken integrations can make every release feel risky. We diagnose the immediate failure, restore dependable processing and leave a recovery plan your team can use.",
   "image": "/img/showcases/shopwired-queue-rescue.svg",
   "imageAlt": "ShopWired: stalled queue recovery and production stabilization",
-  "cta": "Discuss your Rails recovery priorities",
+  "cta": "Discuss your Rails recovery priorities with our experts to quickly stabilize your application and minimize downtime.",
   "sections": [
     {
       "id": "diagnosis",
