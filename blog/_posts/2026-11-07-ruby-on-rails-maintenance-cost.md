@@ -2,8 +2,8 @@
 layout: post
 title: "Ruby on Rails maintenance cost: what you can get from $1,500 a month"
 headline: "Budget for the work your existing Rails application needs"
-modified: 2026-11-13 01:30:00 +0100
-description: "See what $1,500 or $3,000 a month buys for your Rails app: developers from $50/hour, architect time at $80/hour, and a calculator for your own budget."
+modified: 2026-11-17
+description: "Scope Rails maintenance from $1,500 a month, or a $3,000 shared team budget with a lead, second engineer and technical decisions delegated to WideFix."
 tags: [rails, maintenance, technical-ownership]
 featured_post: false
 toc: true
@@ -56,6 +56,47 @@ At the $50 starting rate, $3,000 buys 60 developer hours a month, or about 58 te
 For a real example of a feature added to an existing product, see how we [expanded Costa Del Home's property-management CRM](/showcases/costa-del-home-crm-enhancement) to support multiple managers per property. That showcase is not a $3,000 package or evidence of how many hours it took.
 
 [Open the calculator with $3,000 a month][calc-3000] to see the hours at your own architect share and rates.
+
+## Can two engineers share a $3,000 monthly budget?
+
+For a small existing Rails application, **ask for a named lead and a second engineer who stays familiar with the project, sharing one monthly allocation**. This can fit a need for 10–15 team hours a week at our published starting rates. The standard $3,000 calculator example gives about 58 team hours a month, roughly 13 a week, including architect time. These are total hours across the team.
+
+A second engineer needs recurring involvement to be useful as cover. Reviews, a bounded fix, a shared release and maintained deployment notes help them take over without the founder having to explain the entire system again. That involvement uses paid time within the same budget.
+
+Here is an illustrative allocation at the published starting rates, with a slightly different architect share from the calculator example:
+
+| Role | Monthly hours | Rate | Monthly cost |
+| --- | --- | --- | --- |
+| Lead Rails developer | 44 | $50/hour | $2,200 |
+| Second Rails engineer | 9 | $50/hour | $450 |
+| Solutions architect | 4 | $80/hour | $320 |
+| Total planned work | 57 | | $2,970 |
+
+That leaves $30 of the $3,000 ceiling unallocated. The 57 hours average about 13.2 hours a week using 52 ÷ 12 weeks per month. This is a planning example, not a staffing commitment or a promise of a particular feature output. Confirm the named people, agreed rates, allocation and cover before work starts. The lead and second engineer are two people; architect involvement is included separately and does not replace engineering cover.
+
+The lead owns day-to-day technical delivery. The second engineer contributes through reviews and shared tasks and can cover the agreed responsibilities when the lead is unavailable. I support planning, prioritization, scope and architecture decisions. We coordinate those roles internally rather than asking the founder to distribute technical tickets between people.
+
+All investigation, coordination, review, testing, deployment, documentation and onboarding come from the same allocation. On this monthly plan, the initial assessment uses the first month's hours, so that month has less capacity for changes. Incidents can displace planned features. Hosting, paid tools and any separately agreed out-of-hours support need their own cost assumptions.
+
+For the commercial scope and current terms, see [Rails maintenance and the shared team arrangement](/ruby-on-rails-maintenance#small-saas). A healthy small application is a better fit for this budget than a product with frequent incidents, a major upgrade and a large feature backlog competing at once.
+
+## What can a founder delegate, and what still needs their input?
+
+The purpose of this arrangement is to reduce the founder's technical coordination work. You should be able to describe a customer problem without choosing the SQL fix, writing an implementation ticket or deciding which engineer deploys it.
+
+| Responsibility | WideFix handles within the agreed scope | Founder involvement |
+| --- | --- | --- |
+| Priorities | Translate customer problems into technical work and recommend a sequence | Explain business goals and approve material trade-offs |
+| Maintenance and features | Investigate, estimate, implement, review, test and release agreed changes | Clarify expected customer behavior and acceptance criteria |
+| Day-to-day coordination | Distribute work, coordinate reviews and maintain shared notes | Receive a concise weekly update rather than assign every technical task |
+| Budget | Track hours, explain risks and request approval before extra work | Approve additional spending or changes in scope |
+| Incidents and continuity | Follow the agreed escalation path and named absence arrangements | Supply a business escalation contact for decisions outside delegated authority |
+
+Onboarding needs more owner involvement: product context, account access and clarification of important customer workflows. After handover, agree an update rhythm covering completed work, customer impact, hours used, remaining risks and decisions needed. Routine technical choices can stay with the team within agreed authority. We do not promise zero owner involvement or a fixed number of minutes per week.
+
+A second engineer is also different from continuous incident coverage. Define the support window, time zone, severity levels, acknowledgement target and who covers an absence. An acknowledgement within an agreed hour does not mean every incident is resolved in that hour. Out-of-hours availability requires an explicit agreement.
+
+Our [Worship Online maintenance case](/showcases/worshiponline-application-support-maintenance) illustrates application takeover and ongoing coordination of specialist work. It does not establish that the entire engagement cost $3,000 a month or that it used the illustrative allocation above. If the previous developer has left, start with an [application takeover plan](/ruby-on-rails-application-takeover) before relying on ongoing cover.
 
 ## What can larger capacity cover?
 
