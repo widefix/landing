@@ -164,12 +164,20 @@ export const metadata = serviceMetadata(service);
 export default function Page() {
   const startingPlan = pricingPlans()[0];
   return (
-    <FocusedServicePage service={service} className="rails-maintenance-page" heroSummary={
-      <div className="rails-maintenance-pricing-summary">
-        <p><strong>Rails maintenance starts at USD {startingPlan.title}.</strong> {startingPlan.hours}, including solutions architect time. Senior developers start at ${defaultRates.developer}/hour; architect time is ${defaultRates.architect}/hour. Unused hours receive a proportional credit on the next invoice.</p>
-        <p>Need a lead and a second engineer within $3,000 a month? See the <Link href="#small-saas">shared team arrangement</Link> and <Link href="/blog/ruby-on-rails-maintenance-cost/#can-two-engineers-share-a-3000-monthly-budget">example allocation</Link>.</p>
-        <Link className="rails-text-link" href="#pricing">See full pricing and terms <LinkIndicator /></Link>
-      </div>
+    <FocusedServicePage service={service} className="rails-maintenance-page" beforeEvidence={
+      <section className="rails-section rails-tinted" aria-labelledby="maintenance-starting-price-title">
+        <div className="inner">
+          <p className="rails-eyebrow">Maintenance budget</p>
+          <h2 id="maintenance-starting-price-title">Rails maintenance starts at USD {startingPlan.title}</h2>
+          <p className="rails-intro">{startingPlan.hours}, including solutions architect time. Senior developers start at ${defaultRates.developer}/hour; architect time is ${defaultRates.architect}/hour. Unused hours receive a proportional credit on the next invoice.</p>
+          <p className="rails-intro">Need a lead and a second engineer within $3,000 a month? Explore how two engineers can share the monthly allocation.</p>
+          <div className="rails-actions">
+            <Link href="#small-saas">See the shared team arrangement <LinkIndicator /></Link>
+            <Link href="/blog/ruby-on-rails-maintenance-cost/#can-two-engineers-share-a-3000-monthly-budget">See the example allocation <LinkIndicator /></Link>
+            <Link href="#pricing">See full pricing and terms <LinkIndicator /></Link>
+          </div>
+        </div>
+      </section>
     }>
       <MaintenancePricing />
       <section className="rails-section" aria-labelledby="maintenance-questions-title">

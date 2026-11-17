@@ -39,7 +39,6 @@ export default function HomePage() {
 
             <p className="rails-lead">Need someone to take over and maintain your Rails app reliably?</p>
             <p className="rails-intro">We maintain, stabilize and improve existing Rails applications from production issues and upgrades to new features and infrastructure. Focus on your business while we handle technical investigation, implementation and releases within an agreed scope and budget.</p>
-            <p><Link href="#founder-maintenance">Need a lead and a second engineer within $3,000 a month? See how a shared part-time team works <LinkIndicator /></Link></p>
             <div className="rails-actions"><RailsCall /><Link href="#how-we-take-over">How we take over <LinkIndicator /></Link></div>
 
           </div>
