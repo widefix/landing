@@ -59,6 +59,9 @@ export default function Header() {
               <li className={pathname === '/services' ? 'active' : ''}>
                 <Link href="/services"><svg className="header-nav-icon" aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="7" width="18" height="14" rx="2" /><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12a23 23 0 0 0 18 0M12 11v4" /></svg><span>Services</span></Link>
               </li>
+              <li>
+                <Link href="/ruby-on-rails-maintenance#pricing"><svg className="header-nav-icon" aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 10h18M7 15h3" /></svg><span>Pricing</span></Link>
+              </li>
               <li className={pathname === '/career' ? 'active' : ''}>
                 <Link href="/career"><svg className="header-nav-icon" aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M4 21h16M6 21v-6h4v6m0 0V10h4v11m0 0V5h4v16M4 10l5-5 4 2 6-5" /></svg><span>Career</span></Link>
               </li>

@@ -1,3 +1,5 @@
+import Link from 'next/link';
+import { defaultRates, pricingPlans } from '@/lib/teamCostCalculator';
 import LinkIndicator from '@/components/LinkIndicator';
 import ServiceRecognition from '@/components/rails/ServiceRecognition';
 import FocusedServicePage, { serviceMetadata, type FocusedService } from '@/components/rails/FocusedServicePage';
@@ -160,8 +162,14 @@ const service: FocusedService = {
 export const metadata = serviceMetadata(service);
 
 export default function Page() {
+  const startingPlan = pricingPlans()[0];
   return (
-    <FocusedServicePage service={service} className="rails-maintenance-page">
+    <FocusedServicePage service={service} className="rails-maintenance-page" heroSummary={
+      <div className="rails-maintenance-pricing-summary">
+        <p><strong>Rails maintenance starts at USD {startingPlan.title}.</strong> {startingPlan.hours}, including solutions architect time. Senior developers start at ${defaultRates.developer}/hour; architect time is ${defaultRates.architect}/hour. Unused hours receive a proportional credit on the next invoice.</p>
+        <Link className="rails-text-link" href="#pricing">See full pricing and terms <LinkIndicator /></Link>
+      </div>
+    }>
       <MaintenancePricing />
       <section className="rails-section" aria-labelledby="maintenance-questions-title">
         <div className="inner">

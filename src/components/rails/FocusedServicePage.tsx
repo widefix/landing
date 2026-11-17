@@ -31,11 +31,11 @@ export function serviceMetadata(service: FocusedService): Metadata {
     twitter: socialTwitter(service.image, service.imageAlt) };
 }
 
-export default function FocusedServicePage({ service, children, className = '' }: { service: FocusedService; children?: React.ReactNode; className?: string }) {
+export default function FocusedServicePage({ service, children, heroSummary, className = '' }: { service: FocusedService; children?: React.ReactNode; heroSummary?: React.ReactNode; className?: string }) {
   const evidenceSection = <section className="rails-section" id="evidence"><div className="inner"><p className="rails-eyebrow">{service.evidenceEyebrow || 'Documented client work'}</p><h2>{service.evidenceHeading || 'Evidence behind the offer'}</h2><div className="rails-card-grid">{service.evidence.map(item => <article className="rails-card" key={item.href}><div className="rails-situation-heading">{item.icon && <SituationIcon kind={item.icon} />}<h3>{item.title}</h3></div><p>{item.detail}</p><Link href={item.href}>{item.linkLabel || 'Read the case study'} <LinkIndicator /></Link></article>)}</div></div></section>;
   return <main className={`rails-home rails-services ${className}`}>
     <section className="rails-section rails-hero"><div className="inner rails-hero-grid">
-      <div><p className="rails-eyebrow">Services for existing applications</p><h1>{service.heading}</h1><p className="rails-intro">{service.intro}</p><div className="rails-actions"><RailsCall>{service.cta}</RailsCall><Link href="#evidence">See supporting work <LinkIndicator /></Link></div></div>
+      <div><p className="rails-eyebrow">Services for existing applications</p><h1>{service.heading}</h1><p className="rails-intro">{service.intro}</p>{heroSummary}<div className="rails-actions"><RailsCall>{service.cta}</RailsCall><Link href="#evidence">See supporting work <LinkIndicator /></Link></div></div>
       <div className="rails-hero-aside"><Image src={service.image} alt={service.imageAlt} width={service.imageWidth ?? 560} height={service.imageHeight ?? 490} sizes="(max-width: 900px) 100vw, 45vw" priority /></div>
     </div></section>
     {service.evidencePosition === 'after-hero' && evidenceSection}
