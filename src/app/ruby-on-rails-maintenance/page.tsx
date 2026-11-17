@@ -56,23 +56,23 @@ const service: FocusedService = {
     },
     {
       "id": "small-saas",
-      "title": "Support for founders without an internal engineering team",
-      "intro": "You do not need a full-time engineering department to support an existing SaaS. Start with a part-time engagement and a clear owner for technical decisions.",
+      "title": "A lead and a second engineer within one monthly budget",
+      "intro": "For a small Rails application, discuss a $3,000 monthly budget with a named lead and a second engineer for continuity. At the published starting rates and 7% architect share, this is about 58 shared team hours a month, roughly 13 a week. Confirm the two engineers, role split and absence arrangements before work begins.",
       "items": [
         {
-          "title": "Priorities you can understand",
+          "title": "A lead accountable for technical delivery",
           "icon": "priorities",
-          "detail": "Review customer problems, technical risks and feature requests together. Explain the options and agree which work to do first."
+          "detail": "The lead investigates problems, organizes the backlog and carries agreed changes through implementation, testing and release. Andrei Kaleshka supports planning, scope and technical decisions. You bring business priorities without having to manage the engineers or write technical tickets."
         },
         {
-          "title": "Communication and budget control",
+          "title": "A second engineer who can take over",
           "icon": "communication",
-          "detail": "Agree on a regular progress update, one shared backlog and a spending limit. Estimate larger changes before committing and flag scope changes for a decision."
+          "detail": "Allocate some of the same hours to reviews and shared tasks so a second engineer understands the application, has appropriate access and can use the deployment notes. Define who covers an absence and when they are available; two names alone do not establish coverage."
         },
         {
-          "title": "Access and continuity",
+          "title": "Business decisions stay with you",
           "icon": "ownership",
-          "detail": "Document the application, deployment and essential integrations. Keep business-owned accounts and repository access clear so support does not depend on one person."
+          "detail": "Provide product context and access during onboarding, then agree priorities and receive a concise weekly update on progress, risks and hours. We handle routine technical coordination within the scope. You approve business trade-offs and extra spending; no fixed amount of founder time is promised."
         }
       ]
     },
@@ -167,6 +167,7 @@ export default function Page() {
     <FocusedServicePage service={service} className="rails-maintenance-page" heroSummary={
       <div className="rails-maintenance-pricing-summary">
         <p><strong>Rails maintenance starts at USD {startingPlan.title}.</strong> {startingPlan.hours}, including solutions architect time. Senior developers start at ${defaultRates.developer}/hour; architect time is ${defaultRates.architect}/hour. Unused hours receive a proportional credit on the next invoice.</p>
+        <p>Need a lead and a second engineer within $3,000 a month? See the <Link href="#small-saas">shared team arrangement</Link> and <Link href="/blog/ruby-on-rails-maintenance-cost/#can-two-engineers-share-a-3000-monthly-budget">example allocation</Link>.</p>
         <Link className="rails-text-link" href="#pricing">See full pricing and terms <LinkIndicator /></Link>
       </div>
     }>

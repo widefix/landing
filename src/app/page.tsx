@@ -1,3 +1,4 @@
+import { pricingPlans } from '@/lib/teamCostCalculator';
 import ClutchReferralRedirect from '@/components/ClutchReferralRedirect';
 import CommunityRecognition from '@/components/rails/CommunityRecognition';
 import type { Metadata } from 'next';
@@ -26,6 +27,7 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
+  const founderPlan = pricingPlans()[1];
   return (
     <main className="rails-home rails-homepage">
       <ClutchReferralRedirect />
@@ -36,7 +38,8 @@ export default function HomePage() {
             <h1>We take ownership of existing <span>Ruby on Rails</span> applications</h1>
 
             <p className="rails-lead">Need someone to take over and maintain your Rails app reliably?</p>
-            <p className="rails-intro">We maintain, stabilize and improve existing Rails applications from production issues and upgrades to new features and infrastructure. Keep your product moving without unnecessary rewrites or rebuilding your engineering team.</p>
+            <p className="rails-intro">We maintain, stabilize and improve existing Rails applications from production issues and upgrades to new features and infrastructure. Focus on your business while we handle technical investigation, implementation and releases within an agreed scope and budget.</p>
+            <p><Link href="#founder-maintenance">Need a lead and a second engineer within $3,000 a month? See how a shared part-time team works <LinkIndicator /></Link></p>
             <div className="rails-actions"><RailsCall /><Link href="#how-we-take-over">How we take over <LinkIndicator /></Link></div>
 
           </div>
@@ -67,12 +70,18 @@ export default function HomePage() {
           <Link className="rails-text-link" href="/ruby-on-rails-application-takeover">Explore our Rails application takeover service <LinkIndicator /></Link>
         </div>
       </section>
-      <section className="rails-section rails-tinted">
+      <section className="rails-section rails-tinted" id="founder-maintenance">
         <div className="inner">
-          <p className="rails-eyebrow">Ownership in everyday delivery</p>
+          <p className="rails-eyebrow">Part-time Rails team for founders</p>
           <h2>Bring the business problem and we own the technical delivery</h2>
-          <p className="rails-intro">Tell us what is affecting your customers or holding your product back. We investigate the system, recommend a solution and agree on scope and success criteria with you. We carry the work through implementation, release and verification, with concise updates and decisions raised early. You do not need to translate every concern into a technical ticket.</p>
-          <Link className="rails-text-link" href="/technical-partner#delivery">How we keep work moving <LinkIndicator /></Link>
+          <p className="rails-intro">For a small existing Rails application, a budget of {founderPlan.title} provides {founderPlan.hours.toLowerCase()}, including architect time. That fits a need for around 10–15 shared team hours a week, depending on the agreed rates and role split. Maintenance and new features use the same allocation.</p>
+          <div className="rails-card-grid">
+            <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="ownership" /><h3>A lead with a second engineer for continuity</h3></div><p>Discuss a named lead who owns day-to-day delivery and a second engineer who stays familiar through reviews and shared tasks. We agree their allocation, absence cover and availability before work starts; both share the same budget.</p></article>
+            <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="production" /><h3>Technical work handled within the agreed scope</h3></div><p>We investigate problems, organize technical tasks, implement changes, test and release them. Andrei Kaleshka supports planning and technical decisions. You do not need to coordinate the engineers or write technical tickets.</p></article>
+            <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="communication" /><h3>Your input stays focused on the business</h3></div><p>You explain product priorities, provide access during onboarding and approve business trade-offs or extra spending. Agree a concise weekly update; we raise decisions that need your input and handle routine technical coordination.</p></article>
+          </div>
+          <p>Shared hours include planning, reviews, testing, deployment and keeping the second engineer familiar. This is part-time capacity; support windows and response targets are agreed separately.</p>
+          <div className="rails-actions"><Link href="/ruby-on-rails-maintenance#small-saas">Discuss a lead and second engineer within $3,000 a month <LinkIndicator /></Link><Link href="/blog/ruby-on-rails-maintenance-cost/#can-two-engineers-share-a-3000-monthly-budget">See an example allocation <LinkIndicator /></Link></div>
         </div>
       </section>
       <section className="rails-section" id="starting-points" aria-labelledby="starting-points-title">

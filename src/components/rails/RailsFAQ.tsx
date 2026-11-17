@@ -18,6 +18,13 @@ const costQuestion: Question = {
 
 const pricingQuestions: Question[] = [
   {
+    question: 'Can $3,000 a month cover a lead and a second engineer?',
+    answer: `${mediumPlan.hours}, including architect time, can be split across a lead and a second engineer. Discuss this format for a small existing Rails app; confirm the named engineers, allocation and absence cover before starting. These are shared hours, not hours per person.`,
+    detail: 'Reviews, coordination and keeping the second engineer familiar use the same allocation. You set business priorities and approve trade-offs; we organize technical delivery within the agreed scope. Support windows and response targets are agreed separately.',
+    href: '/ruby-on-rails-maintenance#small-saas',
+    linkLabel: 'See the lead and second engineer arrangement',
+  },
+  {
     question: `What can I get for ${smallPlan.title}?`,
     answer: `${smallPlan.hours}, at a ${exampleArchitectShare}% architect share. ${smallPlan.coverage} Heavy feature development or a redesign needs a larger budget or a staged plan.`,
     detail: 'Architect time comes out of the same budget. If your Rails version no longer receives security fixes, we can stage the upgrade in small steps.',
