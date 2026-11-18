@@ -38,7 +38,7 @@ export default function HomePage() {
             <h1>We take ownership of existing <span>Ruby on Rails</span> applications</h1>
 
             <p className="rails-lead">Need someone to take over and maintain your Rails app reliably?</p>
-            <p className="rails-intro">We maintain, stabilize and improve existing Rails applications from production issues and upgrades to new features and infrastructure. Focus on your business while we handle technical investigation, implementation and releases within an agreed scope and budget.</p>
+            <p className="rails-intro">Tell us what’s affecting your customers or holding back your business. We’ll investigate your Rails app, agree on priorities with you, and handle implementation, testing, and release within the agreed scope and budget.</p>
             <div className="rails-actions"><RailsCall /><Link href="#how-we-take-over">How we take over <LinkIndicator /></Link></div>
 
           </div>
@@ -81,6 +81,7 @@ export default function HomePage() {
           </div>
           <p>Shared hours include planning, reviews, testing, deployment and keeping the second engineer familiar. This is part-time capacity; support windows and response targets are agreed separately.</p>
           <div className="rails-actions"><Link href="/ruby-on-rails-maintenance#small-saas">Discuss a lead and second engineer within $3,000 a month <LinkIndicator /></Link><Link href="/blog/ruby-on-rails-maintenance-cost/#can-two-engineers-share-a-3000-monthly-budget">See an example allocation <LinkIndicator /></Link></div>
+          <Link className="rails-text-link" href="/showcases/stripe-integration">How we fixed subscription access at Worship Online <LinkIndicator /></Link>
         </div>
       </section>
       <section className="rails-section" id="starting-points" aria-labelledby="starting-points-title">
