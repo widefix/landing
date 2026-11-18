@@ -80,7 +80,7 @@ export default function HomePage() {
             <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="communication" /><h3>Your input stays focused on the business</h3></div><p>You explain product priorities, provide access during onboarding and approve business trade-offs or extra spending. Agree a concise weekly update; we raise decisions that need your input and handle routine technical coordination.</p></article>
           </div>
           <p>Shared hours include planning, reviews, testing, deployment and keeping the second engineer familiar. This is part-time capacity; support windows and response targets are agreed separately.</p>
-          <div className="rails-actions"><Link href="/ruby-on-rails-maintenance#small-saas">Discuss a lead and second engineer within $3,000 a month <LinkIndicator /></Link><Link href="/blog/ruby-on-rails-maintenance-cost/#can-two-engineers-share-a-3000-monthly-budget">See an example allocation <LinkIndicator /></Link></div>
+          <div className="rails-actions"><Link href="/ruby-on-rails-maintenance#maintenance-budgets">Discuss a lead and second engineer within $3,000 a month <LinkIndicator /></Link><Link href="/blog/ruby-on-rails-maintenance-cost/#can-two-engineers-share-a-3000-monthly-budget">See an example allocation <LinkIndicator /></Link></div>
           <Link className="rails-text-link" href="/showcases/stripe-integration">How we fixed subscription access at Worship Online <LinkIndicator /></Link>
         </div>
       </section>

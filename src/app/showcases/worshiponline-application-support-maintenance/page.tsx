@@ -65,6 +65,19 @@ export default function WorshipOnlineOwnershipShowcase() {
       </div>
     </section>
 
+    <section className={styles.intro} aria-label="Takeover summary and client evidence">
+      <div className={styles.container}>
+        <div className={styles.introHeading}><p className={styles.sectionTag}>CASE SUMMARY</p><h2>What we inherited and took responsibility for</h2><p>Summary reviewed <time dateTime="2026-11-18">November 18, 2026</time></p></div>
+        <div className={styles.introBody}><p><strong>Inherited:</strong> A live Rails application, a redesign request and an outgoing developer.</p>
+          <p><strong>Responsibility:</strong> Technical ownership, defect fixes, automated testing, redesign delivery and specialist coordination.</p>
+          <p><strong>Changed:</strong> Maintenance and feature delivery continued together beyond the initial redesign request.</p>
+          <p>Shalon Palmer’s verified Clutch review, dated September 23, 2026, corroborates technical ownership and ongoing product development. The client dates the relationship to September 2019 and describes it as ongoing at review time.</p>
+          <Link href="https://clutch.co/profile/widefix#:~:text=Web%20Development%20for%20Media%20%26%20Education%20Company">Read Worship Online’s client review on Clutch <LinkIndicator /></Link>
+          <p>The delivery details above are WideFix’s account. No measured uptime, response-time or performance improvement is claimed in this summary.</p>
+        </div>
+      </div>
+    </section>
+
     <section className={styles.intro}>
       <div className={styles.container}>
         <div className={styles.introHeading}>

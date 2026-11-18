@@ -1,3 +1,4 @@
+import { ServiceData } from '@/components/rails/StructuredData';
 import { socialPreview, socialTwitter } from '@/lib/socialPreview';
 
 import LinkIndicator from '@/components/LinkIndicator';
@@ -21,6 +22,7 @@ export const metadata: Metadata = {
 export default function RailsTakeoverPage() {
   return (
     <main className="rails-home rails-takeover">
+      <ServiceData slug="ruby-on-rails-application-takeover" name="Ruby on Rails application takeover" description="WideFix can take technical ownership of your existing Rails application. We learn the system, keep it running and continue developing the product." />
       <section className="rails-section rails-hero">
         <div className="inner rails-hero-grid">
           <div>
@@ -100,6 +102,7 @@ export default function RailsTakeoverPage() {
           </div>
         </div>
       </section>
+      <section className="rails-section"><div className="inner"><p className="rails-eyebrow">Prepare for the handover</p><h2>A founder’s checklist when your Rails developer leaves</h2><p>Gather the accounts you control, identify missing access and decide which customer workflows need attention first. See what we investigate and what you receive from the initial review.</p><Link className="rails-text-link" href="/blog/rails-developer-left-handover-checklist/">Read the Rails handover checklist <LinkIndicator /></Link></div></section>
       <RailsFAQ detailed />
       <OwnershipCTA />
     </main>
