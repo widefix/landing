@@ -26,7 +26,7 @@ export default function GemDownloadPDF({ filename }: { filename: string }) {
         if (!source) return;
         const link = document.createElement('a');
         link.href = new URL(source.src, window.location.href).href;
-        link.innerHTML = 'Watch the product walkthrough <span class="link-indicator" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" focusable="false"><g stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4H4v16h6"></path><path d="M9 12h11m-4-4 4 4-4 4"></path></g></svg></span>';
+        link.innerHTML = 'Watch the product walkthrough <span class="link-indicator" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" focusable="false"><g stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></g></svg></span>';
         video.replaceWith(link);
       });
       copy.querySelectorAll<HTMLElement>('.schema-reddit-embed').forEach(embed => {
@@ -36,7 +36,7 @@ export default function GemDownloadPDF({ filename }: { filename: string }) {
         const url = source ? new URL(source) : null;
         const link = document.createElement('a');
         link.href = url ? `https://www.reddit.com${url.pathname}` : fallback?.href || '';
-        link.innerHTML = 'Read the developer’s comment on Reddit <span class="link-indicator" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" focusable="false"><g stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4H4v16h6"></path><path d="M9 12h11m-4-4 4 4-4 4"></path></g></svg></span>';
+        link.innerHTML = 'Read the developer’s comment on Reddit <span class="link-indicator" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" focusable="false"><g stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></g></svg></span>';
         embed.replaceChildren(link);
       });
       const { downloadShowcasePDF } = await import('@/lib/showcasePdf');
