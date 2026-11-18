@@ -84,6 +84,7 @@ const service: FocusedService = {
     }
   ],
   "reading": [
+    { "title": "Rails upgrade consulting", "icon": "upgrades", "detail": "Get focused help implementing Ruby and Rails upgrades, resolving compatibility blockers and planning staged releases.", "href": "/ruby-on-rails-upgrade-consulting" },
     {
       "title": "Ruby and Rails upgrade: personal experience",
       "href": "/blog/ruby-and-rails-upgrade-personal-experience/",

@@ -42,6 +42,7 @@ const service: FocusedService = {
     { title: 'Is your working Rails app still supported?', detail: 'Check Ruby, Rails and hosting support to understand upgrade risks and prioritize the next steps.', href: '/blog/your-rails-app-still-works-is-it-still-supported/' },
   ],
   reading: [
+    { title: 'Rails upgrade consulting', icon: 'upgrades', detail: 'Carry the assessment into compatibility fixes, critical workflow testing and staged releases with WideFix.', href: '/ruby-on-rails-upgrade-consulting' },
     { title: 'Legacy Rails maintenance', detail: 'Carry the plan into incremental modernization of an aging application.', href: '/legacy-ruby-on-rails-maintenance' },
     { title: 'Ongoing Rails maintenance', detail: 'Keep dependencies, production support and product development on a shared roadmap.', href: '/ruby-on-rails-maintenance' },
   ],
