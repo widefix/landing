@@ -48,10 +48,10 @@ const coreServices = [
     items: ['Production bug diagnosis and fixes', 'Application and job monitoring', 'Dependency and security updates', 'Tests, operational documentation and support'],
   },
   {
-    id: 'rails-upgrades', title: 'Ruby & Rails upgrades', icon: 'what-we-do/icon-quality-assurance.svg',
+    id: 'rails-upgrades', title: 'Rails upgrade consulting', icon: 'what-we-do/icon-quality-assurance.svg',
     description: 'Bring an aging stack forward through manageable steps. We review compatibility and protect existing behavior as dependencies change.',
     items: ['Ruby, Rails and gem upgrades', 'Deprecated code and dependency fixes', 'Regression tests for critical workflows', 'Staged releases and rollback planning'],
-    href: '/ruby-on-rails-upgrade-assessment', link: 'Start with an upgrade assessment',
+    href: '/ruby-on-rails-upgrade-consulting', link: 'Explore Rails upgrade consulting',
   },
   {
     id: 'performance-reliability', title: 'Ruby on Rails performance optimization', icon: 'what-we-do/icon-optimization.svg',

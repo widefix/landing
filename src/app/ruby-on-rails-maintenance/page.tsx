@@ -126,6 +126,7 @@ const service: FocusedService = {
     { title: 'Plan your Rails maintenance budget', href: '/blog/ruby-on-rails-maintenance-cost/', detail: 'Separate onboarding, recurring upkeep, incidents and feature delivery before comparing quotes.', icon: 'priorities' },
   ],
   "reading": [
+    { "title": "Rails upgrade consulting", "icon": "upgrades", "detail": "Plan and implement a focused upgrade alongside ongoing maintenance, with compatibility fixes, workflow checks and agreed release milestones.", "href": "/ruby-on-rails-upgrade-consulting" },
     {
       "title": "Ruby and Rails upgrade assessment",
       "icon": "review",
