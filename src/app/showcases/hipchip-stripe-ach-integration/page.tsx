@@ -64,6 +64,19 @@ export default function HipChipShowcase() {
         </div>
       </section>
 
+    <section className={shared.intro} aria-label="Takeover summary and client evidence">
+      <div className={shared.container}>
+        <div className={shared.introHeading}><p className={shared.sectionTag}>CASE SUMMARY</p><h2>What we inherited and took responsibility for</h2><p>Summary reviewed <time dateTime="2026-11-18">November 18, 2026</time></p></div>
+        <div className={shared.introBody}><p><strong>Inherited:</strong> A legacy Rails application needing a new technical owner after its developer left.</p>
+          <p><strong>Responsibility:</strong> Application maintenance, automated tests and payment integration work.</p>
+          <p><strong>Changed:</strong> Stripe became the primary payment processor, ACH payments were added and Braintree remained available as a backup.</p>
+          <p>Scot Rosenblum’s verified Clutch review, dated November 11, 2025, corroborates the Stripe migration, interface improvements and delivery to the agreed deadline. It does not independently establish every technical detail in this case.</p>
+          <Link href="https://clutch.co/profile/widefix#:~:text=E-Commerce%20Platform%20Migration%20for%20Group%20Gifting%20Platform">Read HipChip’s client review on Clutch <LinkIndicator /></Link>
+          <p>The delivery details above are WideFix’s account. No measured uptime, response-time or performance improvement is claimed in this summary.</p>
+        </div>
+      </div>
+    </section>
+
       <section className={shared.intro}>
         <div className={shared.container}>
           <div className={shared.introHeading}><p className={shared.sectionTag}>EXISTING RAILS APP TAKEOVER</p><h2>The Rails developer left. We took ownership</h2></div>

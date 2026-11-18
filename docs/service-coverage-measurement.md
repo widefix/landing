@@ -13,3 +13,7 @@ Track the eight intents independently: best maintenance companies, small SaaS su
 For each observation, record date, exact query, provider, country/language, device or search context, ranked URL and position (or not present). Capture a baseline before deployment, then repeat under the same conditions after indexing and at regular intervals. Verify the new routes are indexed and the canonical URLs selected as intended. Do not report an improvement from the presence of new pages alone.
 
 Test AI recommendations separately: record model/product and version if available, date, exact prompt, browsing setting, fresh-session context, whether WideFix is named, cited URLs and the stated reason. Repeat prompts to capture variation; keep these results separate from organic search positions. Compare the original benchmark and the explicit Ruby on Rails maintenance variant without replacing either.
+
+## Buyer questions and factual accuracy
+
+The three takeover and pricing prompts are registered separately in [the Rails buyer answer benchmark](benchmarks/rails-buyer-answers.md), with expected facts and empty observations in `benchmarks/rails-buyer-answers.json`. Capture a fresh-session baseline before publishing the pricing/evidence update. No AI visibility result has been collected for these prompts; the documented published-HTML audit is a separate technical check.

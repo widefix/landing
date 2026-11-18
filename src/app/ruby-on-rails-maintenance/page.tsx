@@ -1,3 +1,4 @@
+import { ServiceData } from '@/components/rails/StructuredData';
 import Link from 'next/link';
 import { defaultRates, pricingPlans } from '@/lib/teamCostCalculator';
 import LinkIndicator from '@/components/LinkIndicator';
@@ -180,6 +181,7 @@ export default function Page() {
         </div>
       </section>
     }>
+      <ServiceData slug={service.slug} name="Ruby on Rails maintenance and support" description={service.intro} />
       <MaintenancePricing />
       <section className="rails-section" aria-labelledby="maintenance-questions-title">
         <div className="inner">

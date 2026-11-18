@@ -11,6 +11,7 @@ const icons: Record<PricingPlan['id'], 'priorities' | 'momentum' | 'ownership'> 
 
 export default function MaintenancePricing() {
   const plans = pricingPlans();
+  const monthlyPlans = plans.filter(plan => plan.id !== 'weekly');
   return (
     <section className="rails-section rails-tinted" id="pricing" aria-labelledby="maintenance-pricing-title">
       <div className="inner">
@@ -20,12 +21,24 @@ export default function MaintenancePricing() {
           WideFix prices team capacity in hours, in USD. Senior developers start from ${defaultRates.developer} per hour and a solutions architect is ${defaultRates.architect} per hour.
           The monthly plans include a {exampleArchitectShare}% architect share; the weekly examples use 12% at 25 hours and 10% at 40 hours. Architect time is included in the stated hours and costs.
         </p>
+        <div id="maintenance-budgets" className="rails-pricing-table-wrap" role="region" aria-labelledby="maintenance-budgets-caption" tabIndex={0}>
+          <table className="rails-pricing-table">
+            <caption id="maintenance-budgets-caption">Monthly Rails maintenance budgets in USD</caption>
+            <thead><tr><th scope="col">Monthly budget</th><th scope="col">Shared team capacity</th><th scope="col">Work that can fit</th><th scope="col">Team and incident coverage</th></tr></thead>
+            <tbody>{monthlyPlans.map(plan => <tr key={plan.id}>
+              <th scope="row">{plan.title}<br /><Link href={plan.href}>{plan.linkLabel} <LinkIndicator /></Link></th>
+              <td>{plan.hours}, including architect time. These are total team hours, not hours per person.</td>
+              <td>{plan.id === 'budget-1500' ? plan.coverage : 'Maintenance and scoped feature work share the allocation. Each change is estimated against your application before we agree priorities.'} Large upgrades or redesigns may need a separate milestone or larger budget.</td>
+              <td>{plan.id === 'budget-3000' ? 'A named lead and second engineer arrangement is available by agreement, including allocation and absence cover. ' : 'Agree the engineer allocation and responsibilities before work begins. '}Support windows, incident coverage and response targets are agreed separately; continuous out-of-hours coverage is not included by default.</td>
+            </tr>)}</tbody>
+          </table>
+        </div>
+        <p>Planning, investigation, reviews, coordination, testing, releases and keeping a second engineer familiar all use the same allocation. These budgets buy part-time capacity, not two dedicated engineers.</p>
         <div className="rails-card-grid">
-          {plans.map(plan => (
+          {plans.filter(plan => plan.id === 'weekly').map(plan => (
             <article className="rails-card" key={plan.id}>
               <div className="rails-situation-heading"><SituationIcon kind={icons[plan.id]} /><h3>{plan.title}</h3></div>
-              <p><strong>{plan.hours}</strong></p>
-              <p>{plan.coverage}</p>
+              <p><strong>{plan.hours}</strong></p><p>{plan.coverage}</p>
               <Link href={plan.href}>{plan.linkLabel} <LinkIndicator /></Link>
             </article>
           ))}

@@ -6,14 +6,14 @@ type Question = { question: string; answer: string; detail: string; href?: strin
 
 const lowerFirst = (text: string) => text.charAt(0).toLowerCase() + text.slice(1);
 const [smallPlan, mediumPlan, weeklyPlan] = pricingPlans();
-const pricingHref = '/ruby-on-rails-maintenance#pricing';
+const pricingHref = '/ruby-on-rails-maintenance#maintenance-budgets';
 
 const costQuestion: Question = {
   question: 'How much does Rails maintenance cost?',
   answer: `Plans start at ${smallPlan.title}. That buys ${lowerFirst(smallPlan.hours)}. Senior developers start from $${defaultRates.developer} per hour and a solutions architect is $${defaultRates.architect} per hour. Larger products run 25 to 40 team hours a week, ${lowerFirst(weeklyPlan.hours)}. Prices are current as of ${pricesAsOf}.`,
   detail: 'The final scope depends on the condition of the application, the support you need and whether you also want new development. We agree it with you before work begins.',
   href: pricingHref,
-  linkLabel: 'See pricing and plan terms',
+  linkLabel: 'Compare monthly budgets and coverage',
 };
 
 const pricingQuestions: Question[] = [
@@ -21,8 +21,8 @@ const pricingQuestions: Question[] = [
     question: 'Can $3,000 a month cover a lead and a second engineer?',
     answer: `${mediumPlan.hours}, including architect time, can be split across a lead and a second engineer. Discuss this format for a small existing Rails app; confirm the named engineers, allocation and absence cover before starting. These are shared hours, not hours per person.`,
     detail: 'Reviews, coordination and keeping the second engineer familiar use the same allocation. You set business priorities and approve trade-offs; we organize technical delivery within the agreed scope. Support windows and response targets are agreed separately.',
-    href: '/ruby-on-rails-maintenance#small-saas',
-    linkLabel: 'See the lead and second engineer arrangement',
+    href: pricingHref,
+    linkLabel: 'Compare shared hours and team arrangements',
   },
   {
     question: `What can I get for ${smallPlan.title}?`,

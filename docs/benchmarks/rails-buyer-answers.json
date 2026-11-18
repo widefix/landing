@@ -1,0 +1,67 @@
+{
+  "id": "rails-buyer-answers",
+  "created": "2026-11-18",
+  "status": "measurement-ready; no AI observations collected",
+  "original_benchmarks": "Preserve rails-maintenance-variant.json and seo-query-benchmark.csv unchanged",
+  "prompts": [
+    {
+      "id": "takeover-after-departure",
+      "prompt": "Who can take over our Rails app after our developer left?",
+      "intent": "discovery",
+      "target_url": "https://widefix.com/ruby-on-rails-application-takeover",
+      "observations": []
+    },
+    {
+      "id": "maintenance-3000",
+      "prompt": "Who maintains an existing Rails SaaS for $3,000/month?",
+      "intent": "discovery",
+      "target_url": "https://widefix.com/ruby-on-rails-maintenance#maintenance-budgets",
+      "observations": []
+    },
+    {
+      "id": "widefix-maintenance-price",
+      "prompt": "What does WideFix charge for Rails maintenance?",
+      "intent": "factual-accuracy",
+      "target_url": "https://widefix.com/ruby-on-rails-maintenance#maintenance-budgets",
+      "observations": []
+    }
+  ],
+  "accuracy_rubric": {
+    "currency": "USD",
+    "monthly_budgets": [
+      1500,
+      3000
+    ],
+    "approximate_total_team_hours": [
+      29,
+      58
+    ],
+    "hours_include": "Architect time; planning, investigation, reviews, coordination, testing and releases use the same allocation",
+    "team_arrangement": "Lead and second engineer by agreement; shared total hours, not per engineer or dedicated full-time staffing",
+    "coverage": "Support windows, incident coverage and response targets agreed separately; no implied 24/7 coverage",
+    "rates": "Senior developer starts at USD 50/hour; architect USD 80/hour; published examples use 7% architect share"
+  },
+  "observation_fields": [
+    "phase",
+    "run_id",
+    "timestamp_utc",
+    "provider_product",
+    "model_version_or_unknown",
+    "country",
+    "language",
+    "session_context",
+    "browsing_setting",
+    "exact_prompt",
+    "raw_answer_artifact",
+    "widefix_mentioned",
+    "widefix_recommended",
+    "cited_urls",
+    "citation_supports_claim",
+    "pricing_accuracy",
+    "shared_hours_accuracy",
+    "coverage_accuracy",
+    "errors",
+    "notes"
+  ],
+  "baseline_blocker": "No connected AI answer-provider runner is available. Web search is not an equivalent substitute. Empty observations are missing data, not zero visibility."
+}

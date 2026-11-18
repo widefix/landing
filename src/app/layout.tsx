@@ -1,3 +1,4 @@
+import { OrganizationData } from '@/components/rails/StructuredData';
 import { socialPreview, socialTwitter } from '@/lib/socialPreview';
 import type { Metadata } from "next";
 import Script from "next/script";
@@ -86,6 +87,7 @@ export default function RootLayout({
         )}
       </head>
       <body>
+        <OrganizationData />
         <Header />
         {children}
         <Footer />
