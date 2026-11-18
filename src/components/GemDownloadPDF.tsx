@@ -26,7 +26,7 @@ export default function GemDownloadPDF({ filename }: { filename: string }) {
         if (!source) return;
         const link = document.createElement('a');
         link.href = new URL(source.src, window.location.href).href;
-        link.innerHTML = 'Watch the product walkthrough <span class="link-indicator" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" focusable="false"><path d="m6 4 4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>';
+        link.innerHTML = 'Watch the product walkthrough <span class="link-indicator" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" focusable="false"><g stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4H4v16h6"></path><path d="M9 12h11m-4-4 4 4-4 4"></path></g></svg></span>';
         video.replaceWith(link);
       });
       copy.querySelectorAll<HTMLElement>('.schema-reddit-embed').forEach(embed => {
@@ -36,7 +36,7 @@ export default function GemDownloadPDF({ filename }: { filename: string }) {
         const url = source ? new URL(source) : null;
         const link = document.createElement('a');
         link.href = url ? `https://www.reddit.com${url.pathname}` : fallback?.href || '';
-        link.innerHTML = 'Read the developer’s comment on Reddit <span class="link-indicator" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" focusable="false"><path d="m6 4 4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>';
+        link.innerHTML = 'Read the developer’s comment on Reddit <span class="link-indicator" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" focusable="false"><g stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4H4v16h6"></path><path d="M9 12h11m-4-4 4 4-4 4"></path></g></svg></span>';
         embed.replaceChildren(link);
       });
       const { downloadShowcasePDF } = await import('@/lib/showcasePdf');

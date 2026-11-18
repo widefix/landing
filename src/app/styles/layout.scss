@@ -88,8 +88,8 @@ main .clients > .inner > .container {
     margin-top: 0;
 }
 
+/* WideFix text links: short warm rule and one continuous exit icon. */
 .link-indicator {
-    position: relative;
     display: inline-flex;
     width: 22px;
     height: 22px;
@@ -97,28 +97,27 @@ main .clients > .inner > .container {
     justify-content: center;
     vertical-align: middle;
     margin-left: 6px;
-    border-radius: 50%;
-    transition: transform 160ms ease;
-
-    // Keep the tint compatible with the PDF renderer's CSS color parser.
-    &::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        border-radius: inherit;
-        background: currentColor;
-        opacity: 0.09;
-        pointer-events: none;
-    }
+    color: #193b5e;
+    transition: transform 220ms ease;
 }
-
-a:hover .link-indicator,
-a:focus-visible .link-indicator {
-    transform: translateX(3px);
+.link-indicator::before { content: none; }
+a:has(.link-indicator):not(.button):not(.button-link):not(.nav-work) {
+    color: #276CB4;
+    text-decoration: none;
+    background-image: linear-gradient(#c9372d, #c9372d);
+    background-position: left bottom;
+    background-size: 22px 2px;
+    background-repeat: no-repeat;
+    padding-bottom: 3px;
+    transition: background-size 220ms ease;
 }
-
+a:has(.link-indicator):not(.button):not(.button-link):not(.nav-work):hover,
+a:has(.link-indicator):not(.button):not(.button-link):not(.nav-work):focus-visible {
+    background-size: 100% 2px;
+}
+a:hover .link-indicator, a:focus-visible .link-indicator { transform: translateX(2px); }
+.button .link-indicator, .button-link .link-indicator, .nav-work .link-indicator { color: inherit; }
 @media (prefers-reduced-motion: reduce) {
-    .link-indicator { transition: none; }
-    a:hover .link-indicator,
-    a:focus-visible .link-indicator { transform: none; }
+    a:has(.link-indicator), .link-indicator { transition: none !important; }
+    a:hover .link-indicator, a:focus-visible .link-indicator { transform: none; }
 }

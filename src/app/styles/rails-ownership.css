@@ -144,6 +144,14 @@
   justify-self: center;
 }
 
+.rails-takeover .founder-reading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 32px;
+  margin-top: 24px;
+}
+
 .rails-hero-awards { display: flex; align-items: center; flex-wrap: wrap; gap: 20px; margin-top: 28px; }
 .rails-hero-awards img { display: block; width: auto; height: 112px; max-width: 110px; object-fit: contain; }
 @media (max-width: 600px) {

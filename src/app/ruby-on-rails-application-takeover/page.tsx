@@ -1,3 +1,4 @@
+import NotchLink from '@/components/NotchLink';
 import { ServiceData } from '@/components/rails/StructuredData';
 import { socialPreview, socialTwitter } from '@/lib/socialPreview';
 
@@ -45,9 +46,9 @@ export default function RailsTakeoverPage() {
           <h2>Built your Rails app yourself?</h2>
           <p className="rails-intro">Whether you wrote the code yourself or built it with AI, we can take over maintenance, deployments and feature development while you focus on the business.</p>
           <p>Start by walking us through your app and business priorities. We review the code and deployment setup, agree the first work and monthly budget, and plan the handover with you.</p>
-          <div className="rails-actions">
-            <Link href="/blog/ruby-on-rails-maintenance-cost/#can-two-engineers-share-a-3000-monthly-budget">See the $3,000/month example <LinkIndicator /></Link>
-            <Link href="/showcases/worshiponline-application-support-maintenance">See how we took over Worship Online <LinkIndicator /></Link>
+          <div className="founder-reading">
+            <NotchLink href="/blog/ruby-on-rails-maintenance-cost/#can-two-engineers-share-a-3000-monthly-budget">The $3,000/month example</NotchLink>
+            <NotchLink href="/showcases/worshiponline-application-support-maintenance">The Worship Online handover</NotchLink>
           </div>
         </div>
       </section>
