@@ -291,7 +291,7 @@ export function pricingPlans(): PricingPlan[] {
   const largeMonth = periodTotals(estimate(exampleById('team-40')))[1].cost;
   return [
     monthly('budget-1500', '$1,500 a month', 'Routine upkeep for a healthy application: dependency review, monitoring follow-up and small fixes.'),
-    monthly('budget-3000', '$3,000 a month', 'Upkeep with room for features alongside it. Each feature is estimated against your codebase before we agree what to deliver.'),
+    monthly('budget-3000', '$3,000 a month', 'A named lead manages day-to-day work, and a second engineer stays familiar with your app to cover agreed absences. The team shares these hours across maintenance and feature work.'),
     {
       id: 'weekly',
       title: '25 to 40 hours a week',
