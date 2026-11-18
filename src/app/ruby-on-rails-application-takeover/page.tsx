@@ -39,6 +39,18 @@ export default function RailsTakeoverPage() {
           </div>
         </div>
       </section>
+      <section className="rails-section rails-tinted" id="founder-handover">
+        <div className="inner">
+          <p className="rails-eyebrow">From building it yourself to handing it over</p>
+          <h2>Built your Rails app yourself?</h2>
+          <p className="rails-intro">Whether you wrote the code yourself or built it with AI, we can take over maintenance, deployments and feature development while you focus on the business.</p>
+          <p>Start by walking us through your app and business priorities. We review the code and deployment setup, agree the first work and monthly budget, and plan the handover with you.</p>
+          <div className="rails-actions">
+            <Link href="/blog/ruby-on-rails-maintenance-cost/#can-two-engineers-share-a-3000-monthly-budget">See the $3,000/month example <LinkIndicator /></Link>
+            <Link href="/showcases/worshiponline-application-support-maintenance">See how we took over Worship Online <LinkIndicator /></Link>
+          </div>
+        </div>
+      </section>
       <section className="rails-section" id="handover">
         <div className="inner">
           <h2>What you receive from the initial takeover work</h2>
