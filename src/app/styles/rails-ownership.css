@@ -145,11 +145,18 @@
 }
 
 .rails-takeover .founder-reading {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.founder-reading .rails-card {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px 32px;
-  margin-top: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.rails-home .founder-reading .rails-card > a { margin-top: auto; }
+.founder-reading .rails-card > p { margin-bottom: 24px; }
+.founder-reading .rails-situation-icon { background: #edf7f1; color: #267858; }
+@media (max-width: 600px) {
+  .rails-takeover .founder-reading { grid-template-columns: 1fr; }
 }
 
 .rails-hero-awards { display: flex; align-items: center; flex-wrap: wrap; gap: 20px; margin-top: 28px; }
