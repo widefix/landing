@@ -1168,12 +1168,12 @@ body.blog-modern .author-credentials a {
     justify-content: center;
     vertical-align: middle;
     margin-left: 6px;
-    color: #193b5e;
+    color: var(--resource-link-icon, #193b5e);
     transition: transform 220ms ease;
 }
 .link-indicator::before { content: none; }
 a:has(.link-indicator):not(.button):not(.button-link):not(.nav-work) {
-    color: #276CB4;
+    color: var(--resource-link-color, #276CB4);
     text-decoration: none;
     background-image: linear-gradient(#c9372d, #c9372d);
     background-position: left bottom;
@@ -1191,4 +1191,12 @@ a:hover .link-indicator, a:focus-visible .link-indicator { transform: translateX
 @media (prefers-reduced-motion: reduce) {
     a:has(.link-indicator), .link-indicator { transition: none !important; }
     a:hover .link-indicator, a:focus-visible .link-indicator { transform: none; }
+}
+
+/* Dark sections supply contrast without changing the warm underline. */
+:is(.rails-final-cta, .ai-integrations, .schema-ai, .schema-final-cta,
+    .portfolio-primary-link, .nav-work,
+    main section.has-vertical-paddings > .inner > header) {
+    --resource-link-color: #fff;
+    --resource-link-icon: #fff;
 }
