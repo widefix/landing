@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title description">
+  <title id="title">From signup offer to verified payment</title>
+  <desc id="description">Two screens show the same promotional price of $40 at signup and at checkout, connected by an equals sign. A check mark confirms that the amount charged matches the offer.</desc>
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0v32" fill="none" stroke="#244653" stroke-opacity=".07"/>
+    </pattern>
+    <clipPath id="frame">
+      <rect width="1200" height="720" rx="24"/>
+    </clipPath>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#244653" flood-opacity=".14"/>
+    </filter>
+  </defs>
+  <g clip-path="url(#frame)">
+    <rect width="1200" height="720" fill="#f2efe5"/>
+    <rect width="1200" height="720" fill="url(#grid)"/>
+  </g>
+  <g fill="#244653" font-family="Arial, sans-serif">
+    <text x="80" y="91" font-size="20" letter-spacing="3">BLACK FRIDAY CHECKOUT</text>
+    <text x="80" y="153" font-size="44" font-weight="700">Does the charge match the offer?</text>
+  </g>
+  <path d="M500 399h200" stroke="#719885" stroke-width="4"/>
+  <g filter="url(#shadow)" stroke="#bfcac0" stroke-width="2">
+    <rect x="80" y="220" width="420" height="354" rx="22" fill="#fffaf0"/>
+    <rect x="700" y="220" width="420" height="354" rx="22" fill="#fffaf0"/>
+  </g>
+  <path d="M81 292h418m202 0h418" stroke="#d8dfd4" stroke-width="2"/>
+  <rect x="116" y="327" width="348" height="207" rx="14" fill="#f5e6c7"/>
+  <rect x="736" y="327" width="348" height="207" rx="14" fill="#dcebdd"/>
+  <circle cx="600" cy="399" r="38" fill="#dcebdd" stroke="#719885" stroke-width="2"/>
+  <g fill="none" stroke="#244653" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M587 393h26m-26 12h26"/>
+    <path d="M120 251h16l13 13-12 12-17-16z"/>
+    <path d="M778 258h-30m0-9h30a3 3 0 0 1 3 3v17a3 3 0 0 1-3 3h-30a3 3 0 0 1-3-3v-17a3 3 0 0 1 3-3z"/>
+  </g>
+  <circle cx="128" cy="257" r="2" fill="#244653"/>
+  <g fill="#244653" font-family="Arial, sans-serif" font-weight="700">
+    <text x="165" y="268" font-size="25">Signup</text>
+    <text x="802" y="268" font-size="25">Checkout</text>
+    <text x="144" y="385" font-size="23">Promotional price</text>
+    <text x="764" y="385" font-size="23">Amount charged</text>
+    <text x="144" y="483" font-size="78">$40</text>
+    <text x="764" y="483" font-size="78">$40</text>
+  </g>
+  <circle cx="1022" cy="457" r="25" fill="#408069"/>
+  <path d="m1011 457 7 7 14-15" fill="none" stroke="#fffaf0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
