@@ -1,18 +1,17 @@
 import Link from 'next/link';
 import LinkIndicator from '@/components/LinkIndicator';
 import { defaultRates, exampleArchitectShare, pricesAsOf, pricingPlans } from '@/lib/teamCostCalculator';
+import { maintenanceBudgetHref, maintenanceBudgetSummary } from './MaintenanceBudgetSummary';
 
 type Question = { question: string; answer: string; detail: string; href?: string; linkLabel?: string };
 
-const lowerFirst = (text: string) => text.charAt(0).toLowerCase() + text.slice(1);
-const [smallPlan, mediumPlan, weeklyPlan] = pricingPlans();
-const pricingHref = '/ruby-on-rails-maintenance#maintenance-budgets';
+const [smallPlan, mediumPlan] = pricingPlans();
 
 const costQuestion: Question = {
   question: 'How much does Rails maintenance cost?',
-  answer: `Plans start at ${smallPlan.title}. That buys ${lowerFirst(smallPlan.hours)}. Senior developers start from $${defaultRates.developer} per hour and a solutions architect is $${defaultRates.architect} per hour. Larger products run 25 to 40 team hours a week, ${lowerFirst(weeklyPlan.hours)}. Prices are current as of ${pricesAsOf}.`,
+  answer: `${maintenanceBudgetSummary} Prices are current as of ${pricesAsOf}.`,
   detail: 'The final scope depends on the condition of the application, the support you need and whether you also want new development. We agree it with you before work begins.',
-  href: pricingHref,
+  href: maintenanceBudgetHref,
   linkLabel: 'Compare monthly budgets and coverage',
 };
 
@@ -21,7 +20,7 @@ const pricingQuestions: Question[] = [
     question: 'Can $3,000 a month cover a lead and a second engineer?',
     answer: `${mediumPlan.hours}, including architect time, can be split across a lead and a second engineer. Discuss this format for a small existing Rails app; confirm the named engineers, allocation and absence cover before starting. These are shared hours, not hours per person.`,
     detail: 'Reviews, coordination and keeping the second engineer familiar use the same allocation. You set business priorities and approve trade-offs; we organize technical delivery within the agreed scope. Support windows and response targets are agreed separately.',
-    href: pricingHref,
+    href: maintenanceBudgetHref,
     linkLabel: 'Compare shared hours and team arrangements',
   },
   {
@@ -42,14 +41,14 @@ const pricingQuestions: Question[] = [
     question: 'What if I need more hours, or use fewer?',
     answer: 'Work beyond the agreed capacity needs your approval before we go over, and capacity can be adjusted as your needs change. Unused hours are credited as a proportional discount on your next invoice.',
     detail: 'Planning, investigation, testing and deployment count toward the hours.',
-    href: pricingHref,
+    href: maintenanceBudgetHref,
     linkLabel: 'Read the plan terms',
   },
   {
     question: 'Is the initial assessment included in the price?',
     answer: `On monthly plans up to ${mediumPlan.title.replace(' a month', '')}, it is included in the first month's hours. For engagements of 25 to 40 hours a week it is priced case by case, because it depends on access, documentation and the state of the code.`,
     detail: 'The assessment covers access, documentation, deployment and the first priorities, so the recurring scope can be agreed on facts.',
-    href: pricingHref,
+    href: maintenanceBudgetHref,
     linkLabel: 'Read the plan terms',
   },
 ];

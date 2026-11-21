@@ -1,12 +1,12 @@
 import { ServiceData } from '@/components/rails/StructuredData';
 import Link from 'next/link';
-import { defaultRates, pricingPlans } from '@/lib/teamCostCalculator';
 import LinkIndicator from '@/components/LinkIndicator';
 import ServiceRecognition from '@/components/rails/ServiceRecognition';
 import FocusedServicePage, { serviceMetadata, type FocusedService } from '@/components/rails/FocusedServicePage';
 import ClutchWidget from '@/components/ClutchWidget';
 import SituationIcon from '@/components/rails/SituationIcon';
 import MaintenancePricing from '@/components/rails/MaintenancePricing';
+import MaintenanceBudgetSummary from '@/components/rails/MaintenanceBudgetSummary';
 
 const service: FocusedService = {
   "slug": "ruby-on-rails-maintenance",
@@ -164,15 +164,13 @@ const service: FocusedService = {
 export const metadata = serviceMetadata(service);
 
 export default function Page() {
-  const startingPlan = pricingPlans()[0];
   return (
     <FocusedServicePage service={service} className="rails-maintenance-page" beforeEvidence={
       <section className="rails-section rails-tinted" aria-labelledby="maintenance-starting-price-title">
         <div className="inner">
           <p className="rails-eyebrow">Maintenance budget</p>
-          <h2 id="maintenance-starting-price-title">Rails maintenance starts at USD {startingPlan.title}</h2>
-          <p className="rails-intro">{startingPlan.hours}, including solutions architect time. Senior developers start at ${defaultRates.developer}/hour; architect time is ${defaultRates.architect}/hour. Unused hours receive a proportional credit on the next invoice.</p>
-          <p className="rails-intro">Need a lead and a second engineer within $3,000 a month? Explore how two engineers can share the monthly allocation.</p>
+          <h2 id="maintenance-starting-price-title">Monthly Rails maintenance budgets</h2>
+          <MaintenanceBudgetSummary heading="h3" href="#maintenance-budgets" />
           <div className="rails-actions">
             <Link href="#small-saas">See the shared team arrangement <LinkIndicator /></Link>
             <Link href="/blog/ruby-on-rails-maintenance-cost/#can-two-engineers-share-a-3000-monthly-budget">See the example allocation <LinkIndicator /></Link>
