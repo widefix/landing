@@ -170,7 +170,7 @@ export default function Page() {
         <div className="inner">
           <p className="rails-eyebrow">Maintenance budget</p>
           <h2 id="maintenance-starting-price-title">Monthly Rails maintenance budgets</h2>
-          <MaintenanceBudgetSummary href="#maintenance-budgets" />
+          <MaintenanceBudgetSummary heading="h3" href="#maintenance-budgets" />
           <div className="rails-actions">
             <Link href="#small-saas">See the shared team arrangement <LinkIndicator /></Link>
             <Link href="/blog/ruby-on-rails-maintenance-cost/#can-two-engineers-share-a-3000-monthly-budget">See the example allocation <LinkIndicator /></Link>

@@ -174,6 +174,20 @@
 }
 
 .rails-homepage .rails-hero { padding: 20px 0 32px; }
+.rails-home .rails-maintenance-budget {
+  background: #f1f6fc;
+  font-size: .7875rem;
+  margin-top: 24px;
+  max-width: 42rem;
+  padding: 16px 20px;
+}
+.rails-home .rails-section .rails-maintenance-budget :is(h2, h3) {
+  font-size: .9rem;
+  letter-spacing: normal;
+  line-height: 1.4;
+}
+.rails-home .rails-maintenance-budget p,
+.rails-home .rails-maintenance-budget .rails-text-link { margin-top: 8px; }
 @media (max-width: 600px) {
   .rails-homepage .rails-hero { padding: 20px 0 24px; }
 }

@@ -45,8 +45,8 @@ export default function RailsTakeoverPage() {
           <p className="rails-eyebrow">From building it yourself to handing it over</p>
           <h2>Built your Rails app yourself?</h2>
           <p className="rails-intro">Whether you wrote the code yourself or built it with AI, we can take over maintenance, deployments and feature development while you focus on the business.</p>
-          <MaintenanceBudgetSummary />
           <p>Start by walking us through your app and business priorities. We review the code and deployment setup, agree the first work and monthly budget, and plan the handover with you.</p>
+          <MaintenanceBudgetSummary heading="h3" />
           <div className="rails-card-grid founder-reading">
             <article className="rails-card">
               <div className="rails-situation-heading"><SituationIcon kind="payments" /><h3>The $3,000/month example</h3></div>

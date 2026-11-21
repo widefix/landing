@@ -124,9 +124,9 @@ export default function ServicesPage() {
           <div>
             <p className="rails-eyebrow">Services for the whole application</p>
             <h1>Maintain, modernize and develop your <span>Rails application</span></h1>
-            <p className="rails-intro">From taking over an existing codebase to shipping the next feature, we handle the work that keeps your product dependable and moving forward. Rails is our specialty; the rest of your stack is part of the job.</p>
-            <MaintenanceBudgetSummary />
+            <p className="rails-intro">From taking over an existing codebase to shipping the next feature, we handle the work that keeps your product dependable and moving forward.</p>
             <div className="rails-actions"><RailsCall /><Link href="#our-services">Explore our services <LinkIndicator /></Link></div>
+            <MaintenanceBudgetSummary />
           </div>
           <div className="rails-hero-aside">
             <Image src="/img/rails-services-hero.svg" alt="Rails services: maintenance, upgrades, performance, development, infrastructure and integrations" width={560} height={490} priority />

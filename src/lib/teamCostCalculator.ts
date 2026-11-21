@@ -259,6 +259,11 @@ export type PricingPlan = {
   linkLabel: string;
 };
 
+type MonthlyPricingPlan = PricingPlan & {
+  monthlyBudget: string;
+  monthlyHours: string;
+};
+
 const wholeNumber = new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 });
 const dollars = (value: number) => `$${wholeNumber.format(value)}`;
 
@@ -273,14 +278,19 @@ function calculatorPath(state: CalculatorState): string {
 }
 
 // Published plan figures come from the calculator's own examples so the site cannot drift from it.
-export function pricingPlans(): PricingPlan[] {
-  const monthly = (id: 'budget-1500' | 'budget-3000', title: string, coverage: string): PricingPlan => {
+export function pricingPlans(): [MonthlyPricingPlan, MonthlyPricingPlan, PricingPlan] {
+  const monthly = (id: 'budget-1500' | 'budget-3000', coverage: string): MonthlyPricingPlan => {
     const state = exampleById(id);
     const [week, month] = periodTotals(estimate(state));
+    const monthlyBudget = dollars(Number(state.budget));
+    const monthlyHours = wholeNumber.format(month.hours);
+    const title = `${monthlyBudget} a month`;
     return {
       id,
       title,
-      hours: `About ${wholeNumber.format(month.hours)} team hours a month, roughly ${wholeNumber.format(week.hours)} a week`,
+      hours: `About ${monthlyHours} team hours a month, roughly ${wholeNumber.format(week.hours)} a week`,
+      monthlyBudget,
+      monthlyHours,
       coverage,
       href: calculatorPath(state),
       linkLabel: `See ${title} in the calculator`,
@@ -290,8 +300,8 @@ export function pricingPlans(): PricingPlan[] {
   const smallMonth = periodTotals(estimate(small))[1].cost;
   const largeMonth = periodTotals(estimate(exampleById('team-40')))[1].cost;
   return [
-    monthly('budget-1500', '$1,500 a month', 'Routine upkeep for a healthy application: dependency review, monitoring follow-up and small fixes.'),
-    monthly('budget-3000', '$3,000 a month', 'A named lead manages day-to-day work, and a second engineer stays familiar with your app to cover agreed absences. The team shares these hours across maintenance and feature work.'),
+    monthly('budget-1500', 'Routine upkeep for a healthy application: dependency review, monitoring follow-up and small fixes.'),
+    monthly('budget-3000', 'A named lead manages day-to-day work, and a second engineer stays familiar with your app to cover agreed absences. The team shares these hours across maintenance and feature work.'),
     {
       id: 'weekly',
       title: '25 to 40 hours a week',
