@@ -1,6 +1,6 @@
-import { pricingPlans } from '@/lib/teamCostCalculator';
 import ClutchReferralRedirect from '@/components/ClutchReferralRedirect';
 import CommunityRecognition from '@/components/rails/CommunityRecognition';
+import MaintenanceBudgetSummary from '@/components/rails/MaintenanceBudgetSummary';
 import type { Metadata } from 'next';
 import { socialPreview, socialTwitter } from '@/lib/socialPreview';
 
@@ -27,7 +27,6 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  const founderPlan = pricingPlans()[1];
   return (
     <main className="rails-home rails-homepage">
       <ClutchReferralRedirect />
@@ -39,6 +38,7 @@ export default function HomePage() {
 
             <p className="rails-lead">Need someone to take over and maintain your Rails app reliably?</p>
             <p className="rails-intro">Tell us what’s affecting your customers or holding back your business. We’ll investigate your Rails app, agree on priorities with you, and handle implementation, testing, and release within the agreed scope and budget.</p>
+            <MaintenanceBudgetSummary />
             <div className="rails-actions"><RailsCall /><Link href="#how-we-take-over">How we take over <LinkIndicator /></Link></div>
 
           </div>
@@ -73,7 +73,6 @@ export default function HomePage() {
         <div className="inner">
           <p className="rails-eyebrow">Part-time Rails team for founders</p>
           <h2>Bring the business problem and we own the technical delivery</h2>
-          <p className="rails-intro">For a small existing Rails application, a budget of {founderPlan.title} provides {founderPlan.hours.toLowerCase()}, including architect time. That fits a need for around 10–15 shared team hours a week, depending on the agreed rates and role split. Maintenance and new features use the same allocation.</p>
           <div className="rails-card-grid">
             <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="ownership" /><h3>A lead with a second engineer for continuity</h3></div><p>Discuss a named lead who owns day-to-day delivery and a second engineer who stays familiar through reviews and shared tasks. We agree their allocation, absence cover and availability before work starts; both share the same budget.</p></article>
             <article className="rails-card"><div className="rails-situation-heading"><SituationIcon kind="production" /><h3>Technical work handled within the agreed scope</h3></div><p>We investigate problems, organize technical tasks, implement changes, test and release them. Andrei Kaleshka supports planning and technical decisions. You do not need to coordinate the engineers or write technical tickets.</p></article>

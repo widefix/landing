@@ -1,6 +1,7 @@
 import { socialPreview, socialTwitter } from '@/lib/socialPreview';
 
 import LinkIndicator from '@/components/LinkIndicator';
+import MaintenanceBudgetSummary from '@/components/rails/MaintenanceBudgetSummary';
 import SituationIcon from '@/components/rails/SituationIcon';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -124,6 +125,7 @@ export default function ServicesPage() {
             <p className="rails-eyebrow">Services for the whole application</p>
             <h1>Maintain, modernize and develop your <span>Rails application</span></h1>
             <p className="rails-intro">From taking over an existing codebase to shipping the next feature, we handle the work that keeps your product dependable and moving forward. Rails is our specialty; the rest of your stack is part of the job.</p>
+            <MaintenanceBudgetSummary />
             <div className="rails-actions"><RailsCall /><Link href="#our-services">Explore our services <LinkIndicator /></Link></div>
           </div>
           <div className="rails-hero-aside">

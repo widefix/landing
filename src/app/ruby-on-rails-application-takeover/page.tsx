@@ -6,6 +6,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import SituationIcon from '@/components/rails/SituationIcon';
+import MaintenanceBudgetSummary from '@/components/rails/MaintenanceBudgetSummary';
 import RailsFAQ from '@/components/rails/RailsFAQ';
 import { OwnershipProcess, OwnershipCTA, RailsCall } from '@/components/rails/RailsOwnership';
 
@@ -44,6 +45,7 @@ export default function RailsTakeoverPage() {
           <p className="rails-eyebrow">From building it yourself to handing it over</p>
           <h2>Built your Rails app yourself?</h2>
           <p className="rails-intro">Whether you wrote the code yourself or built it with AI, we can take over maintenance, deployments and feature development while you focus on the business.</p>
+          <MaintenanceBudgetSummary />
           <p>Start by walking us through your app and business priorities. We review the code and deployment setup, agree the first work and monthly budget, and plan the handover with you.</p>
           <div className="rails-card-grid founder-reading">
             <article className="rails-card">
