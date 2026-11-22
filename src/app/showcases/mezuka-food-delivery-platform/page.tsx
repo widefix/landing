@@ -90,7 +90,7 @@ export default function MezukaShowcase() {
       {openSourceGroups.map(group => <div className={styles.projectGroup} key={group.title}>
         <h3>{group.title}</h3>
         <ul className={styles.projectGrid}>{group.projects.map(project => <li key={project.repo}>
-          <a className={styles.projectCard} href={`https://github.com/mezuka/${project.repo}`} target="_blank" rel="noopener noreferrer">
+          <a className={`${styles.projectCard} button-link`} href={`https://github.com/mezuka/${project.repo}`} target="_blank" rel="noopener noreferrer">
             <span className={styles.projectIcon} aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" focusable="false"><path d={project.icon} /></svg></span>
             <div className={styles.projectCopy}><h4>{project.name}</h4><p>{project.description}</p><span className={styles.projectLink}>View on GitHub <LinkIndicator /></span></div>
           </a>

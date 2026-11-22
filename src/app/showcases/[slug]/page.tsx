@@ -137,7 +137,7 @@ export default function ShowcasePage({ params }: { params: { slug: string } }) {
         </div>
       </section>
 
-      {articles.length > 0 && <section className={styles.articles}><div className={shared.container}><p className={shared.sectionTag}>THE ENGINEERING DETAILS</p><h2>More about the work</h2><div className={styles.articleGrid}>{articles.map(article => <a key={article.url} href={article.url} target="_blank" rel="noopener noreferrer"><h3>{article.title || article.solution}</h3><p>{article.results}</p><span>Read the article <LinkIndicator /></span></a>)}</div></div></section>}
+      {articles.length > 0 && <section className={styles.articles}><div className={shared.container}><p className={shared.sectionTag}>THE ENGINEERING DETAILS</p><h2>More about the work</h2><div className={styles.articleGrid}>{articles.map(article => <a key={article.url} className="button-link" href={article.url} target="_blank" rel="noopener noreferrer"><h3>{article.title || article.solution}</h3><p>{article.results}</p><span>Read the article <LinkIndicator /></span></a>)}</div></div></section>}
 
       <section className={`${shared.outcome} ${styles.outcome}`} id="help">
         <div className={shared.container}>
@@ -152,7 +152,7 @@ export default function ShowcasePage({ params }: { params: { slug: string } }) {
         </div>
       </section>
 
-      <section className={styles.related} id="other"><div className={shared.container}><p className={shared.sectionTag}>MORE EXISTING PRODUCTS IMPROVED</p><h2>Other issues fixed</h2><div className={styles.relatedGrid}>{otherShowcases.map(item => <Link href={`/showcases/${item.slug}`} key={item.slug}><Image src={item.body.detailsImageSrc} alt="" width={396} height={264} sizes="(max-width: 860px) 100vw, 33vw" /><div><span>{item.preview.companyName} / {item.preview.solution}</span><h3>{item.preview.title || item.preview.solution}</h3><p>{item.preview.results}</p><strong>Read case study <LinkIndicator /></strong></div></Link>)}</div></div></section>
+      <section className={styles.related} id="other"><div className={shared.container}><p className={shared.sectionTag}>MORE EXISTING PRODUCTS IMPROVED</p><h2>Other issues fixed</h2><div className={styles.relatedGrid}>{otherShowcases.map(item => <Link href={`/showcases/${item.slug}`} key={item.slug} className="button-link"><Image src={item.body.detailsImageSrc} alt="" width={396} height={264} sizes="(max-width: 860px) 100vw, 33vw" /><div><span>{item.preview.companyName} / {item.preview.solution}</span><h3>{item.preview.title || item.preview.solution}</h3><p>{item.preview.results}</p><strong>Read case study <LinkIndicator /></strong></div></Link>)}</div></div></section>
     </main>
   );
 }

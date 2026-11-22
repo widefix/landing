@@ -91,7 +91,7 @@ main .clients > .inner > .container {
 /* Resource links keep a full warm underline without a decorative icon.
    Retain the shared marker so existing links use one consistent treatment. */
 .link-indicator { display: none; }
-a:has(.link-indicator):not(.button):not(.button-link):not(.nav-work) {
+a:has(.link-indicator):not(.button):not(.button-link):not(.schema-button):not([class*="outcomeLink"]):not([class*="primaryLink"]):not(.nav-work) {
     color: var(--resource-link-color, #276CB4);
     text-decoration: underline;
     text-decoration-color: #c9372d;
@@ -100,7 +100,7 @@ a:has(.link-indicator):not(.button):not(.button-link):not(.nav-work) {
     text-decoration-skip-ink: auto;
     transition: color 160ms ease;
 }
-a:has(.link-indicator):not(.button):not(.button-link):not(.nav-work):is(:hover, :focus-visible) {
+a:has(.link-indicator):not(.button):not(.button-link):not(.schema-button):not([class*="outcomeLink"]):not([class*="primaryLink"]):not(.nav-work):is(:hover, :focus-visible) {
     color: #c9372d;
 }
 a:has(.link-indicator):focus-visible {

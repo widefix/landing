@@ -125,9 +125,11 @@ export default function HipChipShowcase() {
           <p className={shared.sectionTag}>OLD RAILS APP RESCUE</p><h2>Need an existing Rails app takeover?</h2>
           <p>If your Rails developer left or your legacy Rails application needs attention, we can take ownership, add automated tests, and prioritize maintenance, performance improvements, and new integrations with you.</p>
           <p>Looking for a fractional CTO for Rails? Discuss the technical direction, priorities, and ongoing ownership your application needs.</p>
+          <div className={shared.heroActions}>
           <Link href="/ruby-on-rails-maintenance" className={shared.outcomeLink}>Ongoing Rails maintenance <LinkIndicator /></Link>
           <Link href="/legacy-ruby-on-rails-maintenance" className={shared.outcomeLink}>Legacy Rails modernization <LinkIndicator /></Link>
           <Link href="https://calendly.com/andrei-kaleshka/30min" target="_blank" rel="noopener noreferrer" className={shared.outcomeLink}>Discuss your application <LinkIndicator /></Link>
+          </div>
         </div>
       </section>
     </main>

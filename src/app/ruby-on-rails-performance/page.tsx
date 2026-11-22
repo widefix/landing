@@ -11,6 +11,7 @@ const service: FocusedService = {
   "imageHeight": 377,
   "imageAlt": "CostaDelHome search performance: 10 seconds to 100ms",
   "cta": "Discuss your Rails performance",
+  "evidencePosition": "after-hero",
   "sections": [
     {
       "id": "when-to-start",
@@ -108,15 +109,23 @@ const service: FocusedService = {
     },
     {
       "title": "Kajabi Experts: Ruby processing moved into SQL",
-      "detail": "Made slow Rails pages usable by moving expensive Ruby-side processing into SQL. The published benchmark measured 79.74× higher processing throughput, not an end-to-end page speed guarantee.",
+      "detail": "Pages had become too slow for users to open. We moved expensive Ruby-side processing into SQL and checked that the page returned the expected data. WideFix measured 79.74× higher processing throughput and separately reported page loads falling from over 30 seconds to 300 ms. Neither figure predicts performance on another application.",
       "href": "/showcases/kajabi-experts-performance",
-      "icon": "review"
+      "icon": "review",
+      "linkLabel": "Read the Kajabi Experts case study"
     },
     {
       "title": "ShopWired: queue recovery",
       "detail": "Redesigned DelayedJob handling and dispatching to unblock a stalled queue and eliminate recurring daily Heroku H12 errors.",
       "href": "/showcases/shopwired-queue-optimization",
       "icon": "production"
+    },
+    {
+      "title": "Worship Online: client feedback on website speed",
+      "detail": "In a verified Clutch review, Worship Online’s CEO reported that the website became faster and easier to use during WideFix’s ongoing work. The review gives no timings and describes a separate engagement from Kajabi.",
+      "href": "https://clutch.co/profile/widefix#:~:text=Web%20Development%20for%20Media%20%26%20Education%20Company",
+      "icon": "review",
+      "linkLabel": "Read Worship Online’s client review on Clutch"
     }
   ],
   "articlesHeading": "Rails and PostgreSQL performance articles from our engineering work",

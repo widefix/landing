@@ -6,12 +6,14 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import SituationIcon from '@/components/rails/SituationIcon';
-import MaintenanceBudgetSummary from '@/components/rails/MaintenanceBudgetSummary';
+import MaintenanceBudgetSummary, { maintenanceBudgetHref } from '@/components/rails/MaintenanceBudgetSummary';
 import RailsFAQ from '@/components/rails/RailsFAQ';
 import { OwnershipProcess, OwnershipCTA, RailsCall } from '@/components/rails/RailsOwnership';
+import { pricingPlans } from '@/lib/teamCostCalculator';
 
 const title = 'Ruby on Rails Application Takeover - WideFix';
 const description = 'Need a team to take over your existing Rails application? WideFix handles the handover, production stability, maintenance, upgrades and ongoing feature development.';
+const [, development] = pricingPlans();
 export const metadata: Metadata = {
   title, description,
   alternates: { canonical: 'https://widefix.com/ruby-on-rails-application-takeover' },
@@ -30,7 +32,7 @@ export default function RailsTakeoverPage() {
             <p className="rails-eyebrow">A dependable handover for a live product</p>
             <h1>Need someone to take over your existing <span>Rails application?</span></h1>
             <p className="rails-intro">Whether your developer has left, your agency is moving on or your team needs Rails expertise, WideFix can take technical ownership of your application. We learn the system, keep it running and continue developing the product.</p>
-            <div className="rails-actions"><RailsCall /><Link href="#handover">What happens during a handover? <LinkIndicator /></Link></div>
+            <div className="rails-actions"><RailsCall /><Link href={maintenanceBudgetHref}>See the {development.monthlyBudget}/month maintenance option <LinkIndicator /></Link><Link href="#handover">What happens during a handover? <LinkIndicator /></Link></div>
           </div>
           <div className="rails-hero-aside">
             <Image src="/img/rails-ownership-hero.svg"
@@ -49,13 +51,13 @@ export default function RailsTakeoverPage() {
           <MaintenanceBudgetSummary heading="h3" />
           <div className="rails-card-grid founder-reading">
             <article className="rails-card">
-              <div className="rails-situation-heading"><SituationIcon kind="payments" /><h3>The $3,000/month example</h3></div>
-              <p>See how a lead and a second engineer can share a monthly budget for a small Rails application, including architect time.</p>
-              <Link href="/blog/ruby-on-rails-maintenance-cost/#can-two-engineers-share-a-3000-monthly-budget">Explore the example allocation <LinkIndicator /></Link>
+              <div className="rails-situation-heading"><SituationIcon kind="payments" /><h3>The {development.monthlyBudget}/month maintenance option</h3></div>
+              <p>At published starting rates, a small Rails app can get about {development.monthlyHours} shared team hours a month, including architect time. A named lead and a second engineer can share those hours by agreement. Absence cover, support windows and incident response are agreed separately; there is no default out-of-hours coverage.</p>
+              <Link href={maintenanceBudgetHref}>See monthly pricing and coverage <LinkIndicator /></Link>
             </article>
             <article className="rails-card">
               <div className="rails-situation-heading"><SituationIcon kind="handover" /><h3>The Worship Online handover</h3></div>
-              <p>See how we took over an existing Rails application and continued with maintenance, product work and technical coordination.</p>
+              <p>See how we took over an existing Rails application and continued with maintenance, product work and technical coordination. The engagement cost is confidential; this case shows how we take ownership, not what the monthly budget buys.</p>
               <Link href="/showcases/worshiponline-application-support-maintenance">Read the ownership story <LinkIndicator /></Link>
             </article>
           </div>

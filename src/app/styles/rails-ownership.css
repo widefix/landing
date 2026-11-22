@@ -174,20 +174,33 @@
 }
 
 .rails-homepage .rails-hero { padding: 20px 0 32px; }
-.rails-home .rails-maintenance-budget {
+.rails-card.rails-maintenance-budget {
   background: #f1f6fc;
+  color: #193b5e;
   font-size: .7875rem;
   margin-top: 24px;
   max-width: 42rem;
   padding: 16px 20px;
 }
+.rails-maintenance-budget :is(h2, h3),
 .rails-home .rails-section .rails-maintenance-budget :is(h2, h3) {
+  color: #193b5e;
   font-size: .9rem;
   letter-spacing: normal;
   line-height: 1.4;
 }
+.rails-maintenance-budget p,
+.rails-maintenance-budget .rails-text-link,
 .rails-home .rails-maintenance-budget p,
 .rails-home .rails-maintenance-budget .rails-text-link { margin-top: 8px; }
+.rails-maintenance-budget p { color: #5f6675; }
+.rails-maintenance-budget .rails-text-link {
+  display: inline-block;
+  color: #245c94;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
 @media (max-width: 600px) {
   .rails-homepage .rails-hero { padding: 20px 0 24px; }
 }

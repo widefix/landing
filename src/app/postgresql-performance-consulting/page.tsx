@@ -10,6 +10,7 @@ const service: FocusedService = {
   "image": "/img/rails-services-hero.svg",
   "imageAlt": "Database investigation and optimization for existing applications",
   "cta": "Discuss your PostgreSQL bottleneck",
+  "evidencePosition": "after-hero",
   "sections": [
     {
       "id": "investigation",
@@ -59,24 +60,31 @@ const service: FocusedService = {
   "evidence": [
     {
       "title": "Kajabi Experts: Rails and SQL optimization",
-      "detail": "We moved expensive Ruby-side processing into SQL to make slow pages usable again. The published processing benchmark shows 79.74× higher throughput; the article separately reports page loading falling from over 30 seconds to 300ms. These are distinct measurements, not Core Web Vitals results.",
+      "detail": "When slow pages were effectively unusable, we moved expensive Ruby-side processing into SQL and checked that the page returned the expected data. WideFix measured 79.74× higher processing throughput and separately reported page loads falling from over 30 seconds to 300 ms. These are project-specific results, not Core Web Vitals measurements.",
       "href": "/showcases/kajabi-experts-performance",
       "icon": "momentum",
       "linkLabel": "Read the Kajabi Experts case study"
     },
     {
-      "title": "SQL knowledge for Rails experts",
-      "detail": "An engineering article about using SQL to understand and improve Rails applications.",
+      "title": "How the Ruby and SQL benchmark was run",
+      "detail": "Read WideFix’s write-up for the benchmark setup, query changes and measurements behind the Kajabi Experts case study.",
       "href": "/blog/importance-sql-for-rails-experts/",
       "icon": "review",
       "linkLabel": "Read the engineering article"
     },
     {
-      "title": "Financial planning in PostgreSQL",
-      "detail": "A practical demonstration of PostgreSQL queries for financial planning, illustrating database-specific SQL techniques.",
-      "href": "/blog/financial-plan-on-postgresql/",
+      "title": "Public Ruby and SQL benchmark demo",
+      "detail": "Inspect WideFix’s example implementations and run your own comparison. The demo is not the client application or an independent measurement of its page speed.",
+      "href": "https://github.com/widefix/demo-fast-sql",
+      "icon": "expertise",
+      "linkLabel": "Inspect the benchmark demo on GitHub"
+    },
+    {
+      "title": "PostgreSQL work listed on Clutch",
+      "detail": "WideFix’s company overview on Clutch lists PostgreSQL, performance and architecture work. This is a service description, not independent verification of the Kajabi results.",
+      "href": "https://clutch.co/profile/widefix",
       "icon": "review",
-      "linkLabel": "Read the PostgreSQL article"
+      "linkLabel": "See the Clutch company overview"
     }
   ],
   "reading": [

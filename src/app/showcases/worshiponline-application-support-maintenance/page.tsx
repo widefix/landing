@@ -1,4 +1,5 @@
 import LinkIndicator from '@/components/LinkIndicator';
+import MaintenanceBudgetSummary, { maintenancePricingHref } from '@/components/rails/MaintenanceBudgetSummary';
 import { socialPreview, socialTwitter } from '@/lib/socialPreview';
 import type { Metadata } from 'next';
 import Image from 'next/image';
@@ -46,12 +47,13 @@ export default function WorshipOnlineOwnershipShowcase() {
         <div className={styles.heroGrid}>
           <div className={styles.heroCopy}>
             <p className={styles.eyebrow}>WORSHIP ONLINE / RUBY ON RAILS APPLICATION SUPPORT AND MAINTENANCE</p>
-            <h1>From a redesign request to <span>long-term Rails ownership.</span></h1>
+            <h1>From a redesign request to <span>long-term Rails ownership</span></h1>
             <p className={styles.heroLead}>When the previous developer was leaving, WideFix took over an existing Rails application, repaired defects, built test coverage and delivered a redesign—while finding the right specialist skills for the work and budget.</p>
             <div className={styles.heroActions}>
-              <Link href="#approach" className={styles.primaryLink}>Explore our approach <span aria-hidden="true">↓</span></Link>
+              <Link href="#approach" className={styles.primaryLink}>Explore our approach <LinkIndicator /></Link>
               <Link href="/ruby-on-rails-application-takeover" className={styles.secondaryLink}>Our Rails takeover service</Link>
             </div>
+            <MaintenanceBudgetSummary />
           </div>
           <div className={styles.heroVisual}>
             <Image src={image} alt="Worship Online application takeover from inherited Rails code through stabilization and team coordination to ongoing support and redesign" width={960} height={560} priority sizes="(max-width: 860px) 100vw, 52vw" />
@@ -71,7 +73,7 @@ export default function WorshipOnlineOwnershipShowcase() {
         <div className={styles.introBody}><p><strong>Inherited:</strong> A live Rails application, a redesign request and an outgoing developer.</p>
           <p><strong>Responsibility:</strong> Technical ownership, defect fixes, automated testing, redesign delivery and specialist coordination.</p>
           <p><strong>Changed:</strong> Maintenance and feature delivery continued together beyond the initial redesign request.</p>
-          <p>Shalon Palmer’s verified Clutch review, dated September 23, 2026, corroborates technical ownership and ongoing product development. The client dates the relationship to September 2019 and describes it as ongoing at review time.</p>
+          <p>Shalon Palmer’s verified Clutch review, dated September 23, 2026, corroborates technical ownership and ongoing product development. The client dates the relationship to September 2019 and describes it as ongoing at review time. The review lists the engagement cost as confidential.</p>
           <Link href="https://clutch.co/profile/widefix#:~:text=Web%20Development%20for%20Media%20%26%20Education%20Company">Read Worship Online’s client review on Clutch <LinkIndicator /></Link>
           <p>The delivery details above are WideFix’s account. No measured uptime, response-time or performance improvement is claimed in this summary.</p>
         </div>
@@ -147,7 +149,9 @@ export default function WorshipOnlineOwnershipShowcase() {
         <p className={styles.sectionTag}>WHAT APPLICATION OWNERSHIP DELIVERED</p>
         <h2>More than a redesign: an ongoing technical partner.</h2>
         <p>WideFix took over the inherited Rails application, addressed accumulated defects, expanded automated testing and delivered redesign work while coordinating specialist expertise against project needs and budget. That engagement continued into application support, maintenance and technical modernization.</p>
-        <Link href="/ruby-on-rails-maintenance" className={styles.outcomeLink}>Explore ongoing Rails maintenance <LinkIndicator /></Link><Link href="/technical-partner#fractional-cto" className={styles.outcomeLink}>Fractional CTO and specialist coordination <LinkIndicator /></Link><Link href="/ruby-on-rails-application-takeover" className={styles.outcomeLink}>Discuss taking over your Rails application <LinkIndicator /></Link>
+        <div className={styles.heroActions}>
+        <Link href={maintenancePricingHref} className={styles.outcomeLink}>See Rails maintenance pricing and coverage <LinkIndicator /></Link><Link href="/technical-partner#fractional-cto" className={styles.outcomeLink}>Fractional CTO and specialist coordination <LinkIndicator /></Link><Link href="/ruby-on-rails-application-takeover" className={styles.outcomeLink}>Discuss taking over your Rails application <LinkIndicator /></Link>
+        </div>
       </div>
     </section>
   </main>;

@@ -195,8 +195,10 @@ export default function WorshipOnlineStorageShowcase() {
           <p className={styles.sectionTag}>THE RESULT</p>
           <h2>Paperclip out. A supported storage path in place.</h2>
           <p>ActiveStorage took over in stages, while public delivery stayed on the CloudFront path. Removing Paperclip cleared a dependency barrier; later Rails and Ruby upgrades could proceed on their own schedule.</p>
+          <div className={styles.heroActions}>
           <Link href="https://calendly.com/andrei-kaleshka/30min" target="_blank" rel="noreferrer" className={styles.outcomeLink}>Talk through a Rails migration <LinkIndicator /></Link>
           <Link href="/legacy-ruby-on-rails-maintenance" className={styles.outcomeLink}>Legacy Rails maintenance and modernization <LinkIndicator /></Link>
+          </div>
         </div>
       </section>
     </main>

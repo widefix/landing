@@ -1,4 +1,5 @@
 import ShowcaseItems from '@/components/showcases/ShowcaseItems'
+import MaintenanceBudgetSummary from '@/components/rails/MaintenanceBudgetSummary';
 import Image from 'next/image'
 import categories from '@/categories.tsx';
 
@@ -20,6 +21,7 @@ export default function ShowcasesPage() {
                 <a className="portfolio-primary-link" href="#case-studies">Explore case studies</a>
                 <a className="portfolio-secondary-link" href="/contact">Discuss a project</a>
               </div>
+              <MaintenanceBudgetSummary />
             </div>
 
             <figure className="portfolio-media">
