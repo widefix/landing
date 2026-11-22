@@ -180,6 +180,17 @@ export default function Page() {
       </section>
     }>
       <ServiceData slug={service.slug} name="Ruby on Rails maintenance and support" description={service.intro} />
+      <section className="rails-section rails-tinted" aria-labelledby="after-hours-support">
+        <div className="inner">
+          <p className="rails-eyebrow">A note from Andrei Kaleshka, founder of WideFix</p>
+          <h2 id="after-hours-support">Does WideFix handle urgent Ruby on Rails issues outside business hours?</h2>
+          <p className="rails-intro">Yes, when I&apos;m available. I don&apos;t work a fixed nine-to-five, so if your checkout stops taking payments or a release blocks customers while I&apos;m online, I can start investigating that evening or early the next morning instead of waiting for office hours.</p>
+          <p>That flexibility is not 24/7 on-call coverage. If you need a guaranteed acknowledgement window, we agree on it up front. An acknowledgement is not a deadline for the fix.</p>
+          <div className="rails-actions">
+            <a href="/blog/urgent-rails-issues-after-hours/">Read how I handle urgent Rails issues after hours <LinkIndicator /></a>
+          </div>
+        </div>
+      </section>
       <MaintenancePricing />
       <section className="rails-section" aria-labelledby="maintenance-questions-title">
         <div className="inner">
