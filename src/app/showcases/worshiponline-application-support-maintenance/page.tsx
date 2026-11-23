@@ -148,7 +148,7 @@ export default function WorshipOnlineOwnershipShowcase() {
       <div className={styles.container}>
         <p className={styles.sectionTag}>WHAT APPLICATION OWNERSHIP DELIVERED</p>
         <h2>More than a redesign: an ongoing technical partner.</h2>
-        <p>WideFix took over the inherited Rails application, addressed accumulated defects, expanded automated testing and delivered redesign work while coordinating specialist expertise against project needs and budget. That engagement continued into application support, maintenance and technical modernization.</p>
+        <p>WideFix took over the inherited Rails application, addressed accumulated defects, expanded automated testing and delivered redesign work while coordinating specialist expertise against project needs and budget. Our ongoing Rails maintenance service ensures your application remains stable, secure, and performant with proactive defect resolution, dependency upgrades, and PostgreSQL consulting. We provide tailored support plans that align with your business priorities and budget, helping you avoid costly downtime and technical debt. That engagement continued into application support, maintenance and technical modernization.</p>
         <div className={styles.heroActions}>
         <Link href={maintenancePricingHref} className={styles.outcomeLink}>See Rails maintenance pricing and coverage <LinkIndicator /></Link><Link href="/technical-partner#fractional-cto" className={styles.outcomeLink}>Fractional CTO and specialist coordination <LinkIndicator /></Link><Link href="/ruby-on-rails-application-takeover" className={styles.outcomeLink}>Discuss taking over your Rails application <LinkIndicator /></Link>
         </div>
