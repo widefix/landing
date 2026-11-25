@@ -119,6 +119,13 @@
                         background-repeat: no-repeat, no-repeat;
                     }
                 }
+                &.react-native-audio-mixer {
+                    .content {
+                        background: url("/img/audio-mixer-icon.svg"), linear-gradient(0.3deg, #193B5E 0.28%, rgba(38, 120, 88, 0.25) 105.47%);
+                        background-position: right 16px top 16px, center;
+                        background-repeat: no-repeat, no-repeat;
+                    }
+                }
                 &.toptal-resume {
                     .content {
                         background: url("/img/toptal-quality-item.svg");

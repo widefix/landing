@@ -12,6 +12,7 @@ export default async function generateSocialImages() {
     '/img/rails-services-hero.svg',
     '/img/rails-technical-partner-hero.svg',
     '/img/actual-db-schema-hero.png',
+    '/img/react-native-audio-mixer-hero.svg',
     '/img/contact.jpg',
     '/img/showcases/technology-cloud.svg',
     '/img/showcases/worshiponline-ownership.svg',
