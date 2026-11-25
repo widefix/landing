@@ -205,6 +205,15 @@ export default function HomePage() {
               </Link>
               <p>Keeps Rails development databases aligned with the current branch by handling phantom migrations.</p>
             </div>
+            <div className="item react-native-audio-mixer">
+              <Link href="/react-native-audio-mixer">
+                <div className="content">
+                  <span>Open-Sourced Library</span>
+                  <h3>React Native Audio Mixer</h3>
+                </div>
+              </Link>
+              <p>Plays several audio stems in sync in React Native apps, with volume, pan, mute and solo for every track. Try it in your browser.</p>
+            </div>
           </div>
         </div>
       </section>

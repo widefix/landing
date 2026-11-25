@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">React Native Audio Mixer</title>
+  <desc id="desc">Four audio tracks named bass, chords, melody and click, each with a waveform, a volume fader and a level meter, playing in sync on a phone.</desc>
+  <rect width="960" height="540" fill="#f7f9fa"/>
+  <rect x="56" y="64" width="400" height="412" rx="10" fill="#ffffff" stroke="#d7e4df" stroke-width="2"/>
+  <text x="88" y="118" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#267858" font-weight="700" letter-spacing="1.5">OPEN-SOURCE REACT NATIVE LIBRARY</text>
+  <text x="88" y="176" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="700" fill="#193b5e">React Native</text>
+  <text x="88" y="224" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="700" fill="#193b5e">Audio Mixer</text>
+  <text x="88" y="276" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#526273">Multitrack audio in sync,</text>
+  <text x="88" y="302" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#526273">with volume, pan, mute and solo</text>
+  <text x="88" y="328" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#526273">for every track</text>
+  <rect x="88" y="380" width="152" height="40" rx="4" fill="#193b5e"/>
+  <text x="164" y="406" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#ffffff">iOS · Android</text>
+  <text x="260" y="406" font-family="Menlo, monospace" font-size="14" fill="#245c94">npm · MIT</text>
+
+  <rect x="560" y="40" width="300" height="460" rx="38" fill="#193b5e"/>
+  <rect x="574" y="54" width="272" height="432" rx="28" fill="#ffffff"/>
+  <rect x="680" y="66" width="60" height="8" rx="4" fill="#d7e4df"/>
+  <circle cx="616" cy="116" r="20" fill="#193b5e"/>
+  <path d="M610 106v20l16-10z" fill="#ffffff"/>
+  <text x="648" y="112" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#718091">Demo song · 4 stems</text>
+  <rect x="648" y="122" width="170" height="5" rx="2.5" fill="#eaf0ed"/>
+  <rect x="648" y="122" width="74" height="5" rx="2.5" fill="#267858"/>
+
+  <g font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#193b5e">
+    <text x="596" y="182">Bass</text>
+    <text x="596" y="262">Chords</text>
+    <text x="596" y="342">Melody</text>
+    <text x="596" y="422">Click</text>
+  </g>
+  <g fill="none" stroke="#5fb38a" stroke-width="2.4" stroke-linecap="round">
+    <path d="M596 200c8-10 12 10 20 0s12-12 20 0 12 12 20 0 12-10 20 0 12 12 20 0 12-12 20 0 12 10 20 0 12-12 20 0 12 12 20 0"/>
+    <path d="M596 280c6-14 10 14 16 0s10-16 16 0 10 16 16 0 10-14 16 0 10 16 16 0 10-16 16 0 10 14 16 0 10-16 16 0 10 16 16 0 10-14 16 0 10 14 16 0 10-14 16 0"/>
+    <path d="M596 360c10-6 14 12 24 4s14-16 24 0 14 10 24-6 14-4 24 8 14-12 24-4 14 14 24 2 14-10 24 0 14 6 24-2"/>
+    <path d="M596 440h8l4-12 4 12h40l4-12 4 12h40l4-12 4 12h40l4-12 4 12h40"/>
+  </g>
+  <g>
+    <rect x="800" y="168" width="28" height="14" rx="3" fill="#ffffff" stroke="#cbd6d1"/>
+    <text x="814" y="179" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" fill="#526273">M</text>
+    <rect x="800" y="248" width="28" height="14" rx="3" fill="#ffffff" stroke="#cbd6d1"/>
+    <text x="814" y="259" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" fill="#526273">M</text>
+    <rect x="800" y="328" width="28" height="14" rx="3" fill="#ffffff" stroke="#cbd6d1"/>
+    <text x="814" y="339" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" fill="#526273">M</text>
+    <rect x="800" y="408" width="28" height="14" rx="3" fill="#a22929"/>
+    <text x="814" y="419" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" fill="#ffffff">M</text>
+  </g>
+  <g fill="#eaf0ed">
+    <rect x="596" y="220" width="232" height="6" rx="3"/>
+    <rect x="596" y="300" width="232" height="6" rx="3"/>
+    <rect x="596" y="380" width="232" height="6" rx="3"/>
+    <rect x="596" y="460" width="232" height="6" rx="3"/>
+  </g>
+  <g fill="#267858">
+    <rect x="596" y="220" width="150" height="6" rx="3"/>
+    <rect x="596" y="300" width="186" height="6" rx="3"/>
+    <rect x="596" y="380" width="96" height="6" rx="3"/>
+      </g>
+</svg>
