@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title description">
+  <title id="title">Start with one server</title>
+  <desc id="description">A web browser and a mobile phone connect to one Rails application server. A dashed line connects that server to a separate database.</desc>
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0v32" fill="none" stroke="#244653" stroke-opacity=".08"/>
+    </pattern>
+    <clipPath id="frame">
+      <rect width="1200" height="720" rx="24"/>
+    </clipPath>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="145%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#244653" flood-opacity=".14"/>
+    </filter>
+  </defs>
+  <g clip-path="url(#frame)">
+    <rect width="1200" height="720" fill="#f2efe5"/>
+    <rect width="1200" height="720" fill="url(#grid)"/>
+    <circle cx="603" cy="402" r="220" fill="#e4ecdf" fill-opacity=".75"/>
+  </g>
+  <g fill="#244653" font-family="Arial, sans-serif">
+    <text x="80" y="94" font-size="20" letter-spacing="3">RAILS IN PRODUCTION</text>
+    <text x="80" y="158" font-size="50" font-weight="700">Start with one server</text>
+  </g>
+  <g fill="none" stroke="#719885" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M291 318h91q18 0 18 18v44q0 20 20 20h30M255 488h127q18 0 18-18v-50q0-20 20-20"/>
+    <path d="M757 400h132" stroke-dasharray="8 10"/>
+  </g>
+  <g fill="#719885">
+    <circle cx="291" cy="318" r="6"/>
+    <circle cx="255" cy="488" r="6"/>
+    <circle cx="400" cy="400" r="6"/>
+    <circle cx="889" cy="400" r="6"/>
+  </g>
+  <g filter="url(#shadow)" stroke="#becbc0" stroke-width="2">
+    <rect x="80" y="247" width="211" height="143" rx="16" fill="#fffaf0"/>
+    <rect x="157" y="421" width="98" height="134" rx="17" fill="#fffaf0"/>
+    <rect x="450" y="244" width="307" height="312" rx="24" fill="#fffaf0"/>
+    <rect x="889" y="309" width="231" height="182" rx="20" fill="#fffaf0"/>
+  </g>
+  <path d="M81 281h209" stroke="#becbc0" stroke-width="2"/>
+  <g fill="#719885">
+    <circle cx="100" cy="264" r="3"/>
+    <circle cx="111" cy="264" r="3"/>
+    <circle cx="122" cy="264" r="3"/>
+  </g>
+  <rect x="100" y="303" width="65" height="62" rx="7" fill="#dcebdd"/>
+  <rect x="172" y="441" width="68" height="82" rx="6" fill="#dcebdd"/>
+  <g fill="none" stroke="#719885" stroke-width="4" stroke-linecap="round">
+    <path d="M180 315h82m-82 17h57m-57 17h68M188 456h36m-36 14h29m-20 69h18"/>
+  </g>
+  <g fill="#dcebdd" stroke="#a5c3ad" stroke-width="2">
+    <rect x="481" y="280" width="245" height="46" rx="9"/>
+    <rect x="481" y="337" width="245" height="46" rx="9"/>
+    <rect x="481" y="394" width="245" height="46" rx="9"/>
+  </g>
+  <g fill="#408069">
+    <circle cx="503" cy="303" r="5"/>
+    <circle cx="503" cy="360" r="5"/>
+    <circle cx="503" cy="417" r="5"/>
+  </g>
+  <path d="M675 296v14m12-14v14m12-14v14m-24 43v14m12-14v14m12-14v14m-24 43v14m12-14v14m12-14v14" fill="none" stroke="#719885" stroke-width="3" stroke-linecap="round"/>
+  <g fill="#f5e6c7" stroke="#9a794c" stroke-width="2.5">
+    <path d="M972 357v63c0 8 15 15 33 15s33-7 33-15v-63z"/>
+    <ellipse cx="1005" cy="357" rx="33" ry="14"/>
+    <path d="M972 378c0 8 15 14 33 14s33-6 33-14m-66 21c0 8 15 14 33 14s33-6 33-14" fill="none"/>
+  </g>
+  <g fill="#244653" font-family="Arial, sans-serif" text-anchor="middle">
+    <text x="603" y="490" font-size="28" font-weight="700">Rails app server</text>
+    <text x="603" y="519" font-size="20">4 vCPUs / 8 GB RAM</text>
+    <text x="1005" y="467" font-size="21" font-weight="700">Database VM</text>
+    <text x="206" y="599" font-size="21" font-weight="700">Web and mobile</text>
+  </g>
+</svg>
