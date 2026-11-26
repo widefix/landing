@@ -67,6 +67,35 @@ Daily averages from the server’s logs, Nov 16–24, 2026:
 
 The Ruby on Rails app runs on a single virtual machine with 4 vCPUs and 8 GB of RAM. We host the database hosted on its own virtual machine. We also have Web, iOS and Android front-end apps that connect to the back end via an API.
 
+#### Production monitoring
+
+These production dashboards cover a longer period than the daily averages above.
+
+<figure>
+  <img src="../images/start-with-one-server/cpu.png" alt="CPU utilization chart from August to November 2026, with all three plotted lines below 12%." width="2022" height="604" loading="lazy">
+  <figcaption>CPU utilization stayed below 12% in the chart.</figcaption>
+</figure>
+
+<figure>
+  <img src="../images/start-with-one-server/memory-used.png" alt="Memory utilization chart from August to November 2026, with the three plotted lines ranging from roughly 45% to 70% used." width="2022" height="604" loading="lazy">
+  <figcaption>Memory use ranged from roughly 45% to 70% in the chart.</figcaption>
+</figure>
+
+<figure>
+  <img src="../images/start-with-one-server/web-throughput.png" alt="Web throughput chart showing mostly steady traffic before a late spike and an overall average of 143.91 requests per minute." width="1308" height="502" loading="lazy">
+  <figcaption>Web throughput averaged 143.91 requests per minute.</figcaption>
+</figure>
+
+<figure>
+  <img src="../images/start-with-one-server/web-transaction-time.png" alt="Web transaction time chart with a breakdown by application component, showing 140.77 ms for the app server and 1.10 seconds for browser page load." width="1308" height="718" loading="lazy">
+  <figcaption>The dashboard shows 140.77 ms for app-server response time and 1.10 seconds for browser page load.</figcaption>
+</figure>
+
+<figure>
+  <img src="../images/start-with-one-server/apdex.png" alt="Apdex chart with both lines near 1 for most of the period. The dashboard shows 0.98 for the app server and 1.00 for the browser." width="1308" height="718" loading="lazy">
+  <figcaption>Apdex, a measure of response-time satisfaction, was 0.98 for the app server and 1.00 for the browser.</figcaption>
+</figure>
+
 This setup is much easier than the alternative one with a load balancer. It reduces complexity and operational overhead, simplifies maintenance and troubleshooting. And hence it is **cost-effective**.
 
 If there's a problem, we can add more RAM to the server. So the app is secured for now. That might happen, so we may not need to add more servers to our infrastructure and never come up with a load balancer, that would be more expensive solution. Keeping the infrastructure simple, saves the client a thousand bucks each month. They can invest that money in more important areas like marketing, branding, business and data analysis.
