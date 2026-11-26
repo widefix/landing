@@ -11,7 +11,7 @@ image_svg: start-with-one-server.svg
 
 ## It all starts with a question: How many servers do we need?
 
-15 years ago I was at starting point of my software development career. I had about 2 years of experience when an ambitious startup asked me a tricky question. This startup aimed to dominate the global market and attract millions of users. It was like eBay but focused on a specific niche and targeted artisans. I didn't even have experience maintaining an app in production. The question was, "**How many servers would we need?**" That question shocked me. I felt my mind blanking, as if a power failure had shut down my thoughts. I couldn't find an answer. I thought, "I need to find a precise number. If I don’t, I'm doomed." I tried to solve this puzzle mathematically. I read articles online about the topic. Still, I couldn't escape that trap. How wrong I was! I wasted hours and days on useless work.
+Fifteen years ago, I was at the starting point of my software development career. I had about 2 years of experience when an ambitious startup asked me a tricky question. This startup aimed to dominate the global market and attract millions of users. It was like eBay but focused on a specific niche and targeted artisans. I didn't even have experience maintaining an app in production. The question was, "**How many servers would we need?**" That question shocked me. I felt my mind blanking, as if a power failure had shut down my thoughts. I couldn't find an answer. I thought, "I need to find a precise number. If I don’t, I'm doomed." I tried to solve this puzzle mathematically. I read articles online about the topic. Still, I couldn't escape that trap. How wrong I was! I wasted hours and days on useless work.
 
 ## Be simple
 
@@ -23,7 +23,7 @@ Now, over a decade later, that question makes me smile. I would simply say, "**Y
 
 ## Focus on business problems
 
-Today, I maintain legacy Ruby on Rails applications. We often joked about the challenges of maintaining such applications. We used to associate legacy with code that is too poor and hard to understand and maintain. People viewed "Legacy" as a negative term, almost a curse for IT projects. We owe all that to popular, authoritative authors. We also owe it to our interpretation of their standards.
+Today, I maintain legacy Ruby on Rails applications. We often joked about the challenges of maintaining such applications. We used to associate "legacy" with code that is poorly written and hard to understand and maintain. People viewed "legacy" as a negative term, almost a curse for IT projects. We owe all that to popular, authoritative authors. We also owe it to our interpretation of their standards.
 
 The apps I manage are definitely legacy. When I inherit apps, they usually have security, performance, SEO, and infrastructure problems. Still, they generate revenue. Their product code and infrastructure might be a bit too basic. But it gets the job done! These apps serve both the business and the customers well. With some tuning, I fix all the issues above. This gives the business another boost to its growth potential.
 
@@ -33,7 +33,7 @@ I'm not saying that investing in solid infrastructure and architecture is useles
 
 ## One example that illustrates this principle
 
-Let's see the following numbers that support my thoughts above. I pick one IT product to show how it works on practice. It has been in production since 2015. It's built on **Ruby on Rails**. This observation will help me to explain why I think that having one small server is enough.
+Let's look at the following numbers that support my thoughts above. I picked one IT product to show how this works in practice. It has been in production since 2015 and is built on **Ruby on Rails**. This example will help me explain why I think that having one small server is enough.
 
 ### Active users
 
@@ -65,7 +65,7 @@ Daily averages from the server’s logs, Nov 16–24, 2026:
 | Nov 23 | 8.0% | 65.5% |
 | Nov 24 | 5.8% | 52.8% |
 
-The Ruby on Rails app runs on a single virtual machine with 4 vCPUs and 8 GB of RAM. We host the database hosted on its own virtual machine. We also have Web, iOS and Android front-end apps that connect to the back end via an API.
+The Ruby on Rails app runs on a single virtual machine with 4 vCPUs and 8 GB of RAM. The database is hosted on its own virtual machine. We also have web, iOS, and Android front-end apps that connect to the back end via an API.
 
 #### Production monitoring
 
@@ -96,11 +96,11 @@ These production dashboards cover a longer period than the daily averages above.
   <figcaption>Apdex, a measure of response-time satisfaction, was 0.98 for the app server and 1.00 for the browser.</figcaption>
 </figure>
 
-This setup is much easier than the alternative one with a load balancer. It reduces complexity and operational overhead, simplifies maintenance and troubleshooting. And hence it is **cost-effective**.
+This setup is much simpler than the alternative with a load balancer. It reduces complexity and operational overhead and simplifies maintenance and troubleshooting. Hence, it is **cost-effective**.
 
-The numbers suggest that increasing RAM should be our first infrastructure priority. With more users in the future, we can add more RAM to the server. But the app is secured for now. That might even happen so that we may not need to add more servers to our infrastructure and never come up with a load balancer, that would be more expensive solution. Keeping the infrastructure simple, saves the client a decent amount of bucks each month. They can invest that money in higher-priority areas such as marketing, branding, and business and data analysis.
+The numbers suggest that increasing RAM should be our first infrastructure priority. With more users in the future, we can add more RAM to the server. But the app is safe for now. We may never need to add more servers or introduce a load balancer, which would be a more expensive solution. Keeping the infrastructure simple saves the client a decent amount of money each month. They can invest that money in higher-priority areas such as marketing, branding, and business and data analysis.
 
-These are numbers that support this potential growth:
+These numbers support this potential growth:
 
 | Month   | Active users | MoM    | Logins |
 |---------|-------------:|-------:|-------:|
@@ -131,23 +131,23 @@ There are about 20% more active users each year.
 
 For this product, the simple architecture is the key to sustainable growth.
 
-## What about AI vibe-coded projects
+## What about AI vibe-coded projects?
 
-I once inherited a commercial vibe-coded project. Unfortunately, it never gained traction due to market fit issues and low sales. Choosing the right product and timing is crucial. But even without real users, I noticed several technical problems in the code:
+I once inherited a commercial vibe-coded project. Unfortunately, it never gained traction due to market fit issues and low sales. Choosing the right product and timing is crucial. Even without real users, I noticed several technical problems in the code:
 
 - Overcomplicated architecture
 - Excessive lines of code
 - Bloated, overly complex UI
 
-These issues stood out when I compared this app against apps with real users. AI often makes things complicated from the start. This makes it hard to launch a product built solely through vibe coding. It lacks proper QA and checks to see if it fits the market.
+These issues stood out when I compared this app against apps with real users. AI often makes things complicated from the start. This makes it hard to launch a product built solely through vibe coding, which lacks proper QA and checks on market fit.
 
 We create vibe-coded products internally for our team, and I see these same issues. While we can manage them internally, paying customers won't tolerate them.
 
-It doesn't matter who or what complicates things from the start, though. The overcomplication can be made by both humans and AI. The crucial part is that once you have it too complicated from a start it will be very hard to move forward later. It's a lost opportunity and potential growth.
+It doesn't matter who or what complicates things from the start, though. The overcomplication can be made by both humans and AI. The crucial part is that once a product is too complicated from the start, it is very hard to move forward later. It's a lost opportunity for growth.
 
 ## Conclusion
 
-Keeping tech simple is an important part of unlocking a business's growth potential. Start with simple flat tech. **Ruby on Rails** is a perfect fit for building an MVP. It's been like that since its early rise and it is still relevant in 2026 in AI era. And I'm pretty sure it will be like that in 2027. And yeah — start with one server and adjust when necessary. Even if you are going to take over the world.
+Keeping tech simple is an important part of unlocking a business's growth potential. Start with simple flat tech. **Ruby on Rails** is a perfect fit for building an MVP. It has been that way since its early rise, and it is still relevant in 2026, in the AI era. I'm pretty sure it will be in 2027, too. And yes, start with one server and adjust when necessary. Even if you are going to take over the world.
 
 While AI accelerates software development, it won't replace people. IT products serve human needs. So human insight remains essential to building useful products.
 
