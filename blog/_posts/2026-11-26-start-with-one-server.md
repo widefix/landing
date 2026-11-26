@@ -98,7 +98,7 @@ These production dashboards cover a longer period than the daily averages above.
 
 This setup is much easier than the alternative one with a load balancer. It reduces complexity and operational overhead, simplifies maintenance and troubleshooting. And hence it is **cost-effective**.
 
-If there's a problem, we can add more RAM to the server. So the app is secured for now. That might happen, so we may not need to add more servers to our infrastructure and never come up with a load balancer, that would be more expensive solution. Keeping the infrastructure simple, saves the client a thousand bucks each month. They can invest that money in more important areas like marketing, branding, business and data analysis.
+The numbers suggest that increasing RAM should be our first infrastructure priority. With more users in the future, we can add more RAM to the server. But the app is secured for now. That might even happen so that we may not need to add more servers to our infrastructure and never come up with a load balancer, that would be more expensive solution. Keeping the infrastructure simple, saves the client a thousand bucks each month. They can invest that money in more important areas like marketing, branding, business and data analysis.
 
 These are numbers that support this potential growth:
 
