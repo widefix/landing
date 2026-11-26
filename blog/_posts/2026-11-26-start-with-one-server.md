@@ -127,7 +127,7 @@ These numbers support this potential growth:
 | 2026-09 | 14,840 |  +1.5% | 38,550 |
 | 2026-10 | 14,666 |  −1.2% | 37,468 |
 
-There are about 20% more active users each year.
+Monthly active users were about 22% higher on average in January–October 2026 than in the same months of 2025.
 
 For this product, the simple architecture is the key to sustainable growth.
 
